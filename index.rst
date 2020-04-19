@@ -10,7 +10,14 @@ Welcome to pyfan's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: pyfan.util.rmd
+   :members:
 
+.. autosummary::
+  :toctree: _autosummary
+
+  pyfan.util.rmd.bookdownparse
+  pyfan.util.rmd.rmdparse
 
 Indices and tables
 ==================
