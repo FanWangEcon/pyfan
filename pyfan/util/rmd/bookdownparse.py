@@ -9,10 +9,12 @@ import frontmatter
 import pyfan.util.rmd.rmdparse as rmdparse
 import os
 
+
 def fs_yml2readme(sfc_prj='R4Econ',
                   sph_prj='C:/Users/fan/R4Econ/',
                   spn_prj_bookdown_yml='_bookdown.yml',
-                  spn_prj_readme_toc='README_toc.md'):
+                  spn_prj_readme_toc='README_toc.md',
+                  ls_st_ignore=['index.Rmd']):
     """Write to file README detailed TOC for files in bookdown yaml list
 
     Parameters
@@ -25,6 +27,8 @@ def fs_yml2readme(sfc_prj='R4Econ',
         yml file name under project root contains rmd names under 'rmd_files' key
     spn_prj_readme_toc : string
         md generated file name under project root
+    ls_st_ignore: list
+        list of string names to ignore
     """
 
     spn_readme = sph_prj + spn_prj_readme_toc
@@ -36,7 +40,6 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
     ls_st_rmd_files = ob_book_yml['rmd_files']
 
-    ls_st_ignore = ['index.Rmd']
     sfc_main = '_main.Rmd'
     ctr_chapter = 0
     ctr_section = 0
@@ -98,7 +101,6 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
 
 if __name__ == '__main__':
-
     # sfc_prj = 'R4Econ'
     # sph_prj = 'C:/Users/fan/R4Econ/'
     # spn_prj_bookdown_yml = '_bookdown.yml'
