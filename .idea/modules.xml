@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../fanwangecon.github.io/.idea/fanwangecon.github.io.iml" filepath="$PROJECT_DIR$/../fanwangecon.github.io/.idea/fanwangecon.github.io.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pyfan.iml" filepath="$PROJECT_DIR$/.idea/pyfan.iml" />
     </modules>
   </component>

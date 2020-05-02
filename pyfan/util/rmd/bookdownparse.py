@@ -62,6 +62,7 @@ def fs_yml2readme(sfc_prj='R4Econ',
             if it_pound == 1:
                 ctr_chapter = ctr_chapter + 1
                 ctr_section = 0
+                ctr_subsection = 0
                 st_text_out = '# ' + str(ctr_chapter) + ' ' + \
                               ob_yml_rmd_main.replace("#", "")
                 if ctr_chapter != 1:
@@ -110,4 +111,5 @@ if __name__ == '__main__':
     #               sph_prj=sph_prj,
     #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
     #               spn_prj_readme_toc=spn_prj_readme_toc)
-    fs_yml2readme()
+
+    fs_yml2readme(sfc_prj='Stat4Econ', sph_prj='C:/Users/fan/Stat4Econ/')

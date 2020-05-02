@@ -16,8 +16,6 @@ Welcome to pyfan's documentation!
 .. autosummary::
   :toctree: _autosummary
 
-  pyfan.util.rmd.bookdownparse
-  pyfan.util.rmd.rmdparse
 
 Indices and tables
 ==================
