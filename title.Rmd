@@ -1,0 +1,5 @@
+---
+title: "A Collection of Python Examples"
+author: "Fan Wang"
+date: '`r format(Sys.Date(), "%Y-%m-%d")`'
+---

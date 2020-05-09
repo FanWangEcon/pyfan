@@ -1,0 +1,57 @@
+---
+title: "Python String Manipulation Examples"
+titleshort: "Python String Manipulation Examples"
+description: |
+  Various string manipulations
+core:
+  - package: py
+    code: |
+      zip()
+date: 2020-05-09
+date_start: 2020-05-09
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### Strings
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+#### Replace a Set of Strings in String
+
+Replace terms in string
+
+```{python}
+# define string
+st_full = """
+abc is a great efg, probably xyz. Yes, xyz is great, like efg. 
+eft good, EFG capitalized, efg good again. 
+A B C or abc or ABC. Interesting xyz. 
+"""
+
+# define new and old
+ls_st_old = ['abc', 'efg', 'xyz']
+ls_st_new = ['123', '456', '789']
+
+# zip and loop and replace
+for old, new in zip(ls_st_old, ls_st_new):
+  st_full = st_full.replace(old, new)
+
+# print
+print(st_full)
+```

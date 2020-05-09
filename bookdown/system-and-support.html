@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 System and Support | A Collection of Python Examples</title>
+  <meta name="description" content="Reading from file and replace strings in file." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 System and Support | A Collection of Python Examples" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Reading from file and replace strings in file." />
+  <meta name="github-repo" content="fanwangecon/R4Econ" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 System and Support | A Collection of Python Examples" />
+  
+  <meta name="twitter:description" content="Reading from file and replace strings in file." />
+  
+
+<meta name="author" content="Fan Wang" />
+
+
+<meta name="date" content="2020-05-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="array-matrix-dataframe.html"/>
+<link rel="next" href="index-and-code-links.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92953468-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92953468-5');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Collection of Python Examples</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html"><i class="fa fa-check"></i><b>1</b> Array, Matrix, Dataframe</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>2</b> System and Support</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>2.1</b> File In and Out</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="system-and-support.html"><a href="system-and-support.html#reading-editing-compile-and-convert-tex-with-pandoc"><i class="fa fa-check"></i><b>2.1.1</b> Reading, Editing, Compile and Convert Tex with Pandoc</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#array-matrix-dataframe-links"><i class="fa fa-check"></i><b>A.1</b> Array, Matrix, Dataframe links</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.2</b> System and Support links</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 File In and Out</span> links</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://fanwangecon.github.io/pyfan/bookdown/index.html" target="blank">pyfan Bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of Python Examples</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="system-and-support" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> System and Support</h1>
+
+<div id="file-in-and-out" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> File In and Out</h2>
+
+<div id="reading-editing-compile-and-convert-tex-with-pandoc" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Reading, Editing, Compile and Convert Tex with Pandoc</h3>
+<blockquote>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<ul>
+<li>python create a text file</li>
+<li>python write file from paragraphs</li>
+</ul>
+<div id="generate-a-tex-file" class="section level4" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Generate a tex file</h4>
+<p>Will a bare-bone tex file with some texts inside, save inside the *_file* subfolder.</p>
+<p>First, create the text text string, note the the linebreaks utomatically generate linebreaks, note that slash need double slash:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="system-and-support.html#cb3-1"></a><span class="co"># Create the Tex Text</span></span>
+<span id="cb3-2"><a href="system-and-support.html#cb3-2"></a><span class="co"># Note that trible quotes begin first and end last lines</span></span>
+<span id="cb3-3"><a href="system-and-support.html#cb3-3"></a>stf_tex_contents <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span><span class="ch">\\</span><span class="st">documentclass[12pt,english]</span><span class="sc">{article}</span></span>
+<span id="cb3-4"><a href="system-and-support.html#cb3-4"></a><span class="ch">\\</span><span class="st">usepackage[bottom]</span><span class="sc">{footmisc}</span></span>
+<span id="cb3-5"><a href="system-and-support.html#cb3-5"></a><span class="ch">\\</span><span class="st">usepackage[urlcolor=blue]</span><span class="sc">{hyperref}</span></span>
+<span id="cb3-6"><a href="system-and-support.html#cb3-6"></a><span class="ch">\\</span><span class="st">begin</span><span class="sc">{document}</span></span>
+<span id="cb3-7"><a href="system-and-support.html#cb3-7"></a><span class="ch">\\</span><span class="st">title{A Latex Testing File}</span></span>
+<span id="cb3-8"><a href="system-and-support.html#cb3-8"></a><span class="ch">\\</span><span class="st">author{</span><span class="ch">\\</span><span class="st">href{http://fanwangecon.github.io/}{Fan Wang} </span><span class="ch">\\</span><span class="st">thanks{See information </span><span class="ch">\\</span><span class="st">href{https://fanwangecon.github.io/Tex4Econ/}</span><span class="sc">{Tex4Econ}</span><span class="st"> for more.</span><span class="sc">}}</span></span>
+<span id="cb3-9"><a href="system-and-support.html#cb3-9"></a><span class="ch">\\</span><span class="st">maketitle</span></span>
+<span id="cb3-10"><a href="system-and-support.html#cb3-10"></a><span class="st">Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.</span></span>
+<span id="cb3-11"><a href="system-and-support.html#cb3-11"></a><span class="ch">\\</span><span class="st">paragraph{</span><span class="ch">\\</span><span class="st">href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}</span><span class="sc">{Data}</span><span class="st">}</span></span>
+<span id="cb3-12"><a href="system-and-support.html#cb3-12"></a><span class="st">Village closure information is taken from a village head survey.</span><span class="ch">\\</span><span class="st">footnote{Generally students went to schools.}</span></span>
+<span id="cb3-13"><a href="system-and-support.html#cb3-13"></a><span class="ch">\\</span><span class="st">end</span><span class="sc">{document}</span><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb3-14"><a href="system-and-support.html#cb3-14"></a><span class="co"># Print</span></span>
+<span id="cb3-15"><a href="system-and-support.html#cb3-15"></a><span class="bu">print</span>(stf_tex_contents)</span></code></pre></div>
+<pre><code>## \documentclass[12pt,english]{article}
+## \usepackage[bottom]{footmisc}
+## \usepackage[urlcolor=blue]{hyperref}
+## \begin{document}
+## \title{A Latex Testing File}
+## \author{\href{http://fanwangecon.github.io/}{Fan Wang} \thanks{See information \href{https://fanwangecon.github.io/Tex4Econ/}{Tex4Econ} for more.}}
+## \maketitle
+## Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.
+## \paragraph{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}{Data}}
+## Village closure information is taken from a village head survey.\footnote{Generally students went to schools.}
+## \end{document}</code></pre>
+<p>Second, write the contents of the file to a new tex file stored inside the *_file* subfolder of the directory:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="system-and-support.html#cb5-1"></a><span class="co"># Relative file name</span></span>
+<span id="cb5-2"><a href="system-and-support.html#cb5-2"></a>srt_file_tex <span class="op">=</span> <span class="st">&quot;_file/&quot;</span></span>
+<span id="cb5-3"><a href="system-and-support.html#cb5-3"></a>sna_file_tex <span class="op">=</span> <span class="st">&quot;test_fan&quot;</span></span>
+<span id="cb5-4"><a href="system-and-support.html#cb5-4"></a>srn_file_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></span>
+<span id="cb5-5"><a href="system-and-support.html#cb5-5"></a><span class="co"># Open new file</span></span>
+<span id="cb5-6"><a href="system-and-support.html#cb5-6"></a>fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex, <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb5-7"><a href="system-and-support.html#cb5-7"></a><span class="co"># Write to File</span></span>
+<span id="cb5-8"><a href="system-and-support.html#cb5-8"></a>fl_tex_contents.write(stf_tex_contents)</span>
+<span id="cb5-9"><a href="system-and-support.html#cb5-9"></a><span class="co"># print</span></span></code></pre></div>
+<pre><code>## 617</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="system-and-support.html#cb7-1"></a>fl_tex_contents.close()</span></code></pre></div>
+</div>
+<div id="replace-strings-in-a-tex-file" class="section level4" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Replace Strings in a tex file</h4>
+<p>Replace a set of strings in the file just generated by a set of alternative strings.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="system-and-support.html#cb8-1"></a><span class="co"># Open file Get text</span></span>
+<span id="cb8-2"><a href="system-and-support.html#cb8-2"></a>fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex)</span>
+<span id="cb8-3"><a href="system-and-support.html#cb8-3"></a>stf_tex_contents <span class="op">=</span> fl_tex_contents.read()</span>
+<span id="cb8-4"><a href="system-and-support.html#cb8-4"></a><span class="bu">print</span>(srn_file_tex)</span>
+<span id="cb8-5"><a href="system-and-support.html#cb8-5"></a></span>
+<span id="cb8-6"><a href="system-and-support.html#cb8-6"></a><span class="co"># define new and old</span></span></code></pre></div>
+<pre><code>## _file/test_fan.tex</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="system-and-support.html#cb10-1"></a>ls_st_old <span class="op">=</span> [<span class="st">&#39;information&#39;</span>, <span class="st">&#39;Latex&#39;</span>]</span>
+<span id="cb10-2"><a href="system-and-support.html#cb10-2"></a>ls_st_new <span class="op">=</span> [<span class="st">&#39;INFOREPLACE&#39;</span>, <span class="st">&#39;LATEX&#39;</span>]</span>
+<span id="cb10-3"><a href="system-and-support.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="system-and-support.html#cb10-4"></a><span class="co"># zip and loop and replace</span></span>
+<span id="cb10-5"><a href="system-and-support.html#cb10-5"></a><span class="cf">for</span> old, new <span class="kw">in</span> <span class="bu">zip</span>(ls_st_old, ls_st_new):</span>
+<span id="cb10-6"><a href="system-and-support.html#cb10-6"></a>  stf_tex_contents <span class="op">=</span> stf_tex_contents.replace(old, new)</span>
+<span id="cb10-7"><a href="system-and-support.html#cb10-7"></a><span class="bu">print</span>(stf_tex_contents)</span>
+<span id="cb10-8"><a href="system-and-support.html#cb10-8"></a></span>
+<span id="cb10-9"><a href="system-and-support.html#cb10-9"></a><span class="co"># write to file with replacements </span></span></code></pre></div>
+<pre><code>## \documentclass[12pt,english]{article}
+## \usepackage[bottom]{footmisc}
+## \usepackage[urlcolor=blue]{hyperref}
+## \begin{document}
+## \title{A LATEX Testing File}
+## \author{\href{http://fanwangecon.github.io/}{Fan Wang} \thanks{See INFOREPLACE \href{https://fanwangecon.github.io/Tex4Econ/}{Tex4Econ} for more.}}
+## \maketitle
+## Ipsum INFOREPLACE dolor sit amet, consectetur adipiscing elit. Integer LATEX placerat nunc orci.
+## \paragraph{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}{Data}}
+## Village closure INFOREPLACE is taken from a village head survey.\footnote{Generally students went to schools.}
+## \end{document}</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="system-and-support.html#cb12-1"></a>sna_file_edited_tex <span class="op">=</span> <span class="st">&quot;test_fan_edited&quot;</span></span>
+<span id="cb12-2"><a href="system-and-support.html#cb12-2"></a>srn_file_edited_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></span>
+<span id="cb12-3"><a href="system-and-support.html#cb12-3"></a>fl_tex_ed_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_edited_tex, <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb12-4"><a href="system-and-support.html#cb12-4"></a>fl_tex_ed_contents.write(stf_tex_contents)</span></code></pre></div>
+<pre><code>## 617</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="system-and-support.html#cb14-1"></a>fl_tex_ed_contents.close()</span></code></pre></div>
+</div>
+<div id="convert-tex-file-to-pandoc-and-compile-latex" class="section level4" number="2.1.1.3">
+<h4><span class="header-section-number">2.1.1.3</span> Convert Tex File to Pandoc and Compile Latex</h4>
+<p>Compile tex file to pdf and clean up the extraneous pdf outputs.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="system-and-support.html#cb15-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb15-2"><a href="system-and-support.html#cb15-2"></a><span class="im">import</span> os </span>
+<span id="cb15-3"><a href="system-and-support.html#cb15-3"></a></span>
+<span id="cb15-4"><a href="system-and-support.html#cb15-4"></a><span class="co"># Convert tex to pdf</span></span>
+<span id="cb15-5"><a href="system-and-support.html#cb15-5"></a>subprocess.call([<span class="st">&#39;C:/texlive/2019/bin/win32/xelatex.exe&#39;</span>, <span class="st">&#39;-output-directory&#39;</span>,</span>
+<span id="cb15-6"><a href="system-and-support.html#cb15-6"></a>                 srt_file_tex, srn_file_edited_tex], shell<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb15-7"><a href="system-and-support.html#cb15-7"></a><span class="co"># Clean pdf extraneous output                 </span></span></code></pre></div>
+<pre><code>## 0</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="system-and-support.html#cb17-1"></a>ls_st_remove_suffix <span class="op">=</span> [<span class="st">&#39;aux&#39;</span>,<span class="st">&#39;log&#39;</span>,<span class="st">&#39;out&#39;</span>,<span class="st">&#39;bbl&#39;</span>,<span class="st">&#39;blg&#39;</span>]</span>
+<span id="cb17-2"><a href="system-and-support.html#cb17-2"></a><span class="cf">for</span> st_suffix <span class="kw">in</span> ls_st_remove_suffix:</span>
+<span id="cb17-3"><a href="system-and-support.html#cb17-3"></a>    srn_cur_file <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix</span>
+<span id="cb17-4"><a href="system-and-support.html#cb17-4"></a>    <span class="cf">if</span> (os.path.isfile(srn_cur_file)):</span>
+<span id="cb17-5"><a href="system-and-support.html#cb17-5"></a>        os.remove(srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix)</span></code></pre></div>
+<p>Use pandoc to convert tex file</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="system-and-support.html#cb18-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb18-2"><a href="system-and-support.html#cb18-2"></a></span>
+<span id="cb18-3"><a href="system-and-support.html#cb18-3"></a><span class="co"># md file name</span></span>
+<span id="cb18-4"><a href="system-and-support.html#cb18-4"></a>srn_file_md <span class="op">=</span> srt_file_tex <span class="op">+</span> <span class="st">&quot;test_fan_edited.md&quot;</span></span>
+<span id="cb18-5"><a href="system-and-support.html#cb18-5"></a><span class="co"># Convert tex to md</span></span>
+<span id="cb18-6"><a href="system-and-support.html#cb18-6"></a>subprocess.call([<span class="st">&#39;pandoc&#39;</span>, <span class="st">&#39;-s&#39;</span>, srn_file_tex, <span class="st">&#39;-o&#39;</span>, srn_file_md])</span>
+<span id="cb18-7"><a href="system-and-support.html#cb18-7"></a><span class="co"># Open md file</span></span></code></pre></div>
+<pre><code>## 0</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="system-and-support.html#cb20-1"></a>fl_md_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_md)</span>
+<span id="cb20-2"><a href="system-and-support.html#cb20-2"></a><span class="bu">print</span>(fl_md_contents.read())</span></code></pre></div>
+<pre><code>## ---
+## author:
+## - &#39;[Fan Wang](http://fanwangecon.github.io/) [^1]&#39;
+## title: A Latex Testing File
+## ---
+## 
+## \maketitle
+## Ipsum information dolor sit amet, consectetur adipiscing elit. Integer
+## Latex placerat nunc orci.
+## 
+## #### [Data](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132)
+## 
+## Village closure information is taken from a village head survey.[^2]
+## 
+## [^1]: See information
+##     [Tex4Econ](https://fanwangecon.github.io/Tex4Econ/) for more.
+## 
+## [^2]: Generally students went to schools.</code></pre>
+</div>
+<div id="search-for-files-with-suffix-in-several-folders" class="section level4" number="2.1.1.4">
+<h4><span class="header-section-number">2.1.1.4</span> Search for Files with Suffix in Several Folders</h4>
+<ul>
+<li>python search all files in folders with suffix</li>
+</ul>
+<p>Search for files in several directories that have a particular suffix. Then decompose directory into sub-components.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="system-and-support.html#cb22-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb22-2"><a href="system-and-support.html#cb22-2"></a></span>
+<span id="cb22-3"><a href="system-and-support.html#cb22-3"></a><span class="co"># directories to search in</span></span>
+<span id="cb22-4"><a href="system-and-support.html#cb22-4"></a>ls_spt_srh <span class="op">=</span> [<span class="st">&quot;C:/Users/fan/R4Econ/amto/array/&quot;</span>, </span>
+<span id="cb22-5"><a href="system-and-support.html#cb22-5"></a>              <span class="st">&quot;C:/Users/fan/R4Econ/amto/list&quot;</span>]</span>
+<span id="cb22-6"><a href="system-and-support.html#cb22-6"></a></span>
+<span id="cb22-7"><a href="system-and-support.html#cb22-7"></a><span class="co"># get file names</span></span>
+<span id="cb22-8"><a href="system-and-support.html#cb22-8"></a>ls_spn_found <span class="op">=</span> [spn_file <span class="cf">for</span> spt_srh <span class="kw">in</span> ls_spt_srh </span>
+<span id="cb22-9"><a href="system-and-support.html#cb22-9"></a>                         <span class="cf">for</span> spn_file <span class="kw">in</span> Path(spt_srh).rglob(<span class="st">&#39;*.R&#39;</span>)]</span>
+<span id="cb22-10"><a href="system-and-support.html#cb22-10"></a><span class="cf">for</span> spn_found <span class="kw">in</span> ls_spn_found:</span>
+<span id="cb22-11"><a href="system-and-support.html#cb22-11"></a>  drive, path_and_file <span class="op">=</span> os.path.splitdrive(spn_found)</span>
+<span id="cb22-12"><a href="system-and-support.html#cb22-12"></a>  path_no_suffix <span class="op">=</span> os.path.splitext(spn_found)[<span class="dv">0</span>]</span>
+<span id="cb22-13"><a href="system-and-support.html#cb22-13"></a>  path_no_file, <span class="bu">file</span> <span class="op">=</span> os.path.split(spn_found)</span>
+<span id="cb22-14"><a href="system-and-support.html#cb22-14"></a>  file_no_suffix <span class="op">=</span> Path(spn_found).stem</span>
+<span id="cb22-15"><a href="system-and-support.html#cb22-15"></a>  <span class="bu">print</span>(<span class="st">&#39;file:&#39;</span>, <span class="bu">file</span>, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">drive:&#39;</span>, drive,</span>
+<span id="cb22-16"><a href="system-and-support.html#cb22-16"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">file no suffix:&#39;</span>, file_no_suffix,</span>
+<span id="cb22-17"><a href="system-and-support.html#cb22-17"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">full path:&#39;</span>, spn_found, </span>
+<span id="cb22-18"><a href="system-and-support.html#cb22-18"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no fle:&#39;</span>, path_no_file,</span>
+<span id="cb22-19"><a href="system-and-support.html#cb22-19"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no suf:&#39;</span>, path_no_suffix, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
+<pre><code>## file: fs_ary_basics.R 
+## drive: C: 
+## file no suffix: fs_ary_basics 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_basics.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_basics 
+## 
+## file: fs_ary_generate.R 
+## drive: C: 
+## file no suffix: fs_ary_generate 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_generate.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_generate 
+## 
+## file: fs_ary_mesh.R 
+## drive: C: 
+## file no suffix: fs_ary_mesh 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_mesh.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_mesh 
+## 
+## file: fs_ary_string.R 
+## drive: C: 
+## file no suffix: fs_ary_string 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string 
+## 
+## file: fs_meshr.R 
+## drive: C: 
+## file no suffix: fs_meshr 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr 
+## 
+## file: fs_listr.R 
+## drive: C: 
+## file no suffix: fs_listr 
+## full path: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_listr.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\list\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_listr 
+## 
+## file: fs_lst_basics.R 
+## drive: C: 
+## file no suffix: fs_lst_basics 
+## full path: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\list\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="array-matrix-dataframe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="index-and-code-links.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["A-Collection-of-Python-Examples.pdf", "PDF"]],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

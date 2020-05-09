@@ -14,4 +14,5 @@ pyfan/pkgtest/smop/solver.py
 pyfan/util/__init__.py
 pyfan/util/rmd/__init__.py
 pyfan/util/rmd/bookdownparse.py
+pyfan/util/rmd/mattexmd.py
 pyfan/util/rmd/rmdparse.py

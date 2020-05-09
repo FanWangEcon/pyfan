@@ -21,7 +21,7 @@ copyright = '2020, Fan Wang'
 author = 'Fan Wang'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.31'
+release = '0.1.32'
 
 # -- General configuration ---------------------------------------------------
 

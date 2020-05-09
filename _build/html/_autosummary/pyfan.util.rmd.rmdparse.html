@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>pyfan.util.rmd.rmdparse &#8212; pyfan 0.1.31 documentation</title>
+    <title>pyfan.util.rmd.rmdparse &#8212; pyfan 0.1.32 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,8 +30,28 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="pyfan-util-rmd-rmdparse">
-<h1>pyfan.util.rmd.rmdparse<a class="headerlink" href="#pyfan-util-rmd-rmdparse" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-pyfan.util.rmd.rmdparse">
+<span id="pyfan-util-rmd-rmdparse"></span><h1>pyfan.util.rmd.rmdparse<a class="headerlink" href="#module-pyfan.util.rmd.rmdparse" title="Permalink to this headline">¶</a></h1>
+<p>Fan Rmd Fronter Matter Core Parser</p>
+<p>In mine Rmd files front matter, there are some special parameters that
+provide summaries for the key contents in the code, and also provide
+key programs and dependencies that were used. The information can be parsed
+to string lists. The special strings are meant to be used with a special
+README.md github pages file. The goal is to automatically gather meta-data
+across RMD files within folders in a package to prepare data needed to provide
+a detailed table of content type contents needed for a README.md file.</p>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fs_rmd_yml_parse</span></code>([sfc_prj, sph_prj, …])</p></td>
+<td><p>Parse Yaml Frontmatter to get list of paths, summaries, dependencies</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 

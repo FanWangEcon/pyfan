@@ -1,0 +1,591 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={A Collection of Python Examples},
+  pdfauthor={Fan Wang},
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+% \floatplacement{figure}{H}
+\usepackage[labelformat = empty]{caption}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=1.0in,
+	right=1.0in,
+	top=1.0in,
+	bottom=1.0in,
+}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{A Collection of Python Examples}
+\author{Fan Wang}
+\date{2020-05-09}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+This is a work-in-progress \href{https://fanwangecon.github.io/pyfan/}{website} consisting of python tutorials and examples to accomplish. Files are written with \href{https://rmarkdown.rstudio.com/}{RMD} \citep{R-rmarkdown}. Materials are gathered from various \href{https://fanwangecon.github.io/research}{projects} in which python code is used for research and paper-administrative tasks. Files are from \href{https://fanwangecon.github.io/}{\textbf{Fan}}'s \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository which has an associated \href{https://pypi.org/project/pyfan/}{package}. The package functionalize various tasks tested out in the Rmd files. In addition, the \href{https://github.com/FanWangEcon/pyecon}{pyecon} repository and the associated \href{https://pypi.org/project/pyecon/}{package} contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.
+
+From \href{https://fanwangecon.github.io/}{Fan}'s other repositories: For dynamic borrowing and savings problems, see \href{https://fanwangecon.github.io/CodeDynaAsset/}{Dynamic Asset Repository (Matlab)}; For code examples, see also \href{https://fanwangecon.github.io/M4Econ/}{Matlab Example Code}, \href{https://fanwangecon.github.io/R4Econ/}{R Example Code}, and \href{https://fanwangecon.github.io/Stata4Econ/}{Stata Example Code}; For intro econ with Matlab, see \href{https://fanwangecon.github.io/Math4Econ/}{Intro Mathematics for Economists}, and for intro stat with R, see \href{https://fanwangecon.github.io/Stat4Econ/}{Intro Statistics for Undergraduates}. See \href{https://github.com/FanWangEcon}{here} for all of \href{https://fanwangecon.github.io/}{Fan}'s public repositories.
+
+The site is built using \href{https://bookdown.org/}{Bookdown} \citep{R-bookdown}.
+
+Please contact \href{https://fanwangecon.github.io/}{FanWangEcon} for issues or problems.
+
+\hypertarget{array-matrix-dataframe}{%
+\chapter{Array, Matrix, Dataframe}\label{array-matrix-dataframe}}
+
+\hypertarget{array}{%
+\section{Array}\label{array}}
+
+\hypertarget{strings}{%
+\subsection{Strings}\label{strings}}
+
+\begin{quote}
+Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{replace-a-set-of-strings-in-string}{%
+\subsubsection{Replace a Set of Strings in String}\label{replace-a-set-of-strings-in-string}}
+
+Replace terms in string
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define string}
+\NormalTok{st\_full }\OperatorTok{=} \StringTok{"""}
+\StringTok{abc is a great efg, probably xyz. Yes, xyz is great, like efg. }
+\StringTok{eft good, EFG capitalized, efg good again. }
+\StringTok{A B C or abc or ABC. Interesting xyz. }
+\StringTok{"""}
+
+\CommentTok{\# define new and old}
+\NormalTok{ls\_st\_old }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}efg\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_new }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}123\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}456\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}789\textquotesingle{}}\NormalTok{]}
+
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls\_st\_old, ls\_st\_new):}
+\NormalTok{  st\_full }\OperatorTok{=}\NormalTok{ st\_full.replace(old, new)}
+
+\CommentTok{\# print}
+\BuiltInTok{print}\NormalTok{(st\_full)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 123 is a great 456, probably 789. Yes, 789 is great, like 456. 
+## eft good, EFG capitalized, 456 good again. 
+## A B C or 123 or ABC. Interesting 789.
+\end{verbatim}
+
+\hypertarget{system-and-support}{%
+\chapter{System and Support}\label{system-and-support}}
+
+\hypertarget{file-in-and-out}{%
+\section{File In and Out}\label{file-in-and-out}}
+
+\hypertarget{reading-editing-compile-and-convert-tex-with-pandoc}{%
+\subsection{Reading, Editing, Compile and Convert Tex with Pandoc}\label{reading-editing-compile-and-convert-tex-with-pandoc}}
+
+\begin{quote}
+Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  python create a text file
+\item
+  python write file from paragraphs
+\end{itemize}
+
+\hypertarget{generate-a-tex-file}{%
+\subsubsection{Generate a tex file}\label{generate-a-tex-file}}
+
+Will a bare-bone tex file with some texts inside, save inside the *\_file* subfolder.
+
+First, create the text text string, note the the linebreaks utomatically generate linebreaks, note that slash need double slash:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create the Tex Text}
+\CommentTok{\# Note that trible quotes begin first and end last lines}
+\NormalTok{stf\_tex\_contents }\OperatorTok{=} \StringTok{"""}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{documentclass[12pt,english]}\SpecialCharTok{\{article\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{usepackage[bottom]}\SpecialCharTok{\{footmisc\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{usepackage[urlcolor=blue]}\SpecialCharTok{\{hyperref\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{begin}\SpecialCharTok{\{document\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{title\{A Latex Testing File\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{author\{}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{http://fanwangecon.github.io/\}\{Fan Wang\} }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{thanks\{See information }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{https://fanwangecon.github.io/Tex4Econ/\}}\SpecialCharTok{\{Tex4Econ\}}\StringTok{ for more.}\SpecialCharTok{\}\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{maketitle}
+\StringTok{Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{paragraph\{}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=3140132\}}\SpecialCharTok{\{Data\}}\StringTok{\}}
+\StringTok{Village closure information is taken from a village head survey.}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{footnote\{Generally students went to schools.\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{end}\SpecialCharTok{\{document\}}\StringTok{"""}
+\CommentTok{\# Print}
+\BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## \documentclass[12pt,english]{article}
+## \usepackage[bottom]{footmisc}
+## \usepackage[urlcolor=blue]{hyperref}
+## \begin{document}
+## \title{A Latex Testing File}
+## \author{\href{http://fanwangecon.github.io/}{Fan Wang} \thanks{See information \href{https://fanwangecon.github.io/Tex4Econ/}{Tex4Econ} for more.}}
+## \maketitle
+## Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.
+## \paragraph{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}{Data}}
+## Village closure information is taken from a village head survey.\footnote{Generally students went to schools.}
+## \end{document}
+\end{verbatim}
+
+Second, write the contents of the file to a new tex file stored inside the *\_file* subfolder of the directory:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Relative file name}
+\NormalTok{srt\_file\_tex }\OperatorTok{=} \StringTok{"\_file/"}
+\NormalTok{sna\_file\_tex }\OperatorTok{=} \StringTok{"test\_fan"}
+\NormalTok{srn\_file\_tex }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_tex }\OperatorTok{+} \StringTok{".tex"}
+\CommentTok{\# Open new file}
+\NormalTok{fl\_tex\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_tex\_contents.write(stf\_tex\_contents)}
+\CommentTok{\# print}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 617
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_tex\_contents.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{replace-strings-in-a-tex-file}{%
+\subsubsection{Replace Strings in a tex file}\label{replace-strings-in-a-tex-file}}
+
+Replace a set of strings in the file just generated by a set of alternative strings.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Open file Get text}
+\NormalTok{fl\_tex\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex)}
+\NormalTok{stf\_tex\_contents }\OperatorTok{=}\NormalTok{ fl\_tex\_contents.read()}
+\BuiltInTok{print}\NormalTok{(srn\_file\_tex)}
+
+\CommentTok{\# define new and old}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## _file/test_fan.tex
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ls\_st\_old }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}information\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Latex\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_new }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}INFOREPLACE\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}LATEX\textquotesingle{}}\NormalTok{]}
+
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls\_st\_old, ls\_st\_new):}
+\NormalTok{  stf\_tex\_contents }\OperatorTok{=}\NormalTok{ stf\_tex\_contents.replace(old, new)}
+\BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
+
+\CommentTok{\# write to file with replacements }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## \documentclass[12pt,english]{article}
+## \usepackage[bottom]{footmisc}
+## \usepackage[urlcolor=blue]{hyperref}
+## \begin{document}
+## \title{A LATEX Testing File}
+## \author{\href{http://fanwangecon.github.io/}{Fan Wang} \thanks{See INFOREPLACE \href{https://fanwangecon.github.io/Tex4Econ/}{Tex4Econ} for more.}}
+## \maketitle
+## Ipsum INFOREPLACE dolor sit amet, consectetur adipiscing elit. Integer LATEX placerat nunc orci.
+## \paragraph{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}{Data}}
+## Village closure INFOREPLACE is taken from a village head survey.\footnote{Generally students went to schools.}
+## \end{document}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sna\_file\_edited\_tex }\OperatorTok{=} \StringTok{"test\_fan\_edited"}
+\NormalTok{srn\_file\_edited\_tex }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{".tex"}
+\NormalTok{fl\_tex\_ed\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_edited\_tex, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\NormalTok{fl\_tex\_ed\_contents.write(stf\_tex\_contents)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 617
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_tex\_ed\_contents.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{convert-tex-file-to-pandoc-and-compile-latex}{%
+\subsubsection{Convert Tex File to Pandoc and Compile Latex}\label{convert-tex-file-to-pandoc-and-compile-latex}}
+
+Compile tex file to pdf and clean up the extraneous pdf outputs.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ subprocess}
+\ImportTok{import}\NormalTok{ os }
+
+\CommentTok{\# Convert tex to pdf}
+\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}C:/texlive/2019/bin/win32/xelatex.exe\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}output{-}directory\textquotesingle{}}\NormalTok{,}
+\NormalTok{                 srt\_file\_tex, srn\_file\_edited\_tex], shell}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\CommentTok{\# Clean pdf extraneous output                 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ls\_st\_remove\_suffix }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}aux\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}log\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}out\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}bbl\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}blg\textquotesingle{}}\NormalTok{]}
+\ControlFlowTok{for}\NormalTok{ st\_suffix }\KeywordTok{in}\NormalTok{ ls\_st\_remove\_suffix:}
+\NormalTok{    srn\_cur\_file }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st\_suffix}
+    \ControlFlowTok{if}\NormalTok{ (os.path.isfile(srn\_cur\_file)):}
+\NormalTok{        os.remove(srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st\_suffix)}
+\end{Highlighting}
+\end{Shaded}
+
+Use pandoc to convert tex file
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ subprocess}
+
+\CommentTok{\# md file name}
+\NormalTok{srn\_file\_md }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+} \StringTok{"test\_fan\_edited.md"}
+\CommentTok{\# Convert tex to md}
+\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}pandoc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}s\textquotesingle{}}\NormalTok{, srn\_file\_tex, }\StringTok{\textquotesingle{}{-}o\textquotesingle{}}\NormalTok{, srn\_file\_md])}
+\CommentTok{\# Open md file}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_md\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_md)}
+\BuiltInTok{print}\NormalTok{(fl\_md\_contents.read())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ---
+## author:
+## - '[Fan Wang](http://fanwangecon.github.io/) [^1]'
+## title: A Latex Testing File
+## ---
+## 
+## \maketitle
+## Ipsum information dolor sit amet, consectetur adipiscing elit. Integer
+## Latex placerat nunc orci.
+## 
+## #### [Data](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132)
+## 
+## Village closure information is taken from a village head survey.[^2]
+## 
+## [^1]: See information
+##     [Tex4Econ](https://fanwangecon.github.io/Tex4Econ/) for more.
+## 
+## [^2]: Generally students went to schools.
+\end{verbatim}
+
+\hypertarget{search-for-files-with-suffix-in-several-folders}{%
+\subsubsection{Search for Files with Suffix in Several Folders}\label{search-for-files-with-suffix-in-several-folders}}
+
+\begin{itemize}
+\tightlist
+\item
+  python search all files in folders with suffix
+\end{itemize}
+
+Search for files in several directories that have a particular suffix. Then decompose directory into sub-components.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ pathlib }\ImportTok{import}\NormalTok{ Path}
+
+\CommentTok{\# directories to search in}
+\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/array/"}\NormalTok{, }
+              \StringTok{"C:/Users/fan/R4Econ/amto/list"}\NormalTok{]}
+
+\CommentTok{\# get file names}
+\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh }
+                         \ControlFlowTok{for}\NormalTok{ spn\_file }\KeywordTok{in}\NormalTok{ Path(spt\_srh).rglob(}\StringTok{\textquotesingle{}*.R\textquotesingle{}}\NormalTok{)]}
+\ControlFlowTok{for}\NormalTok{ spn\_found }\KeywordTok{in}\NormalTok{ ls\_spn\_found:}
+\NormalTok{  drive, path\_and\_file }\OperatorTok{=}\NormalTok{ os.path.splitdrive(spn\_found)}
+\NormalTok{  path\_no\_suffix }\OperatorTok{=}\NormalTok{ os.path.splitext(spn\_found)[}\DecValTok{0}\NormalTok{]}
+\NormalTok{  path\_no\_file, }\BuiltInTok{file} \OperatorTok{=}\NormalTok{ os.path.split(spn\_found)}
+\NormalTok{  file\_no\_suffix }\OperatorTok{=}\NormalTok{ Path(spn\_found).stem}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}file:\textquotesingle{}}\NormalTok{, }\BuiltInTok{file}\NormalTok{, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{drive:\textquotesingle{}}\NormalTok{, drive,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{file no suffix:\textquotesingle{}}\NormalTok{, file\_no\_suffix,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{full path:\textquotesingle{}}\NormalTok{, spn\_found, }
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no fle:\textquotesingle{}}\NormalTok{, path\_no\_file,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no suf:\textquotesingle{}}\NormalTok{, path\_no\_suffix, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## file: fs_ary_basics.R 
+## drive: C: 
+## file no suffix: fs_ary_basics 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_basics.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_basics 
+## 
+## file: fs_ary_generate.R 
+## drive: C: 
+## file no suffix: fs_ary_generate 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_generate.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_generate 
+## 
+## file: fs_ary_mesh.R 
+## drive: C: 
+## file no suffix: fs_ary_mesh 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_mesh.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_mesh 
+## 
+## file: fs_ary_string.R 
+## drive: C: 
+## file no suffix: fs_ary_string 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string 
+## 
+## file: fs_meshr.R 
+## drive: C: 
+## file no suffix: fs_meshr 
+## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr 
+## 
+## file: fs_listr.R 
+## drive: C: 
+## file no suffix: fs_listr 
+## full path: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_listr.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\list\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_listr 
+## 
+## file: fs_lst_basics.R 
+## drive: C: 
+## file no suffix: fs_lst_basics 
+## full path: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics.R 
+## pt no fle: C:\Users\fan\R4Econ\amto\list\htmlpdfr 
+## pt no suf: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics
+\end{verbatim}
+
+\hypertarget{appendix-appendix}{%
+\appendix}
+
+
+\hypertarget{index-and-code-links}{%
+\chapter{Index and Code Links}\label{index-and-code-links}}
+
+\hypertarget{array-matrix-dataframe-links}{%
+\section{Array, Matrix, Dataframe links}\label{array-matrix-dataframe-links}}
+
+\hypertarget{section-1.1-arrayarray-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{array}{Section 1.1 Array} links}{Section 1.1 Array links}}\label{section-1.1-arrayarray-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html}{Python String Manipulation Examples}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Various string manipulations
+  \item
+    \textbf{py}: \emph{zip()}
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{system-and-support-links}{%
+\section{System and Support links}\label{system-and-support-links}}
+
+\hypertarget{section-2.1-file-in-and-outfile-in-and-out-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 2.1 File In and Out} links}{Section 2.1 File In and Out links}}\label{section-2.1-file-in-and-outfile-in-and-out-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html}{Python Reading and Writing to File Examples}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Reading from file and replace strings in file.
+  \item
+    \textbf{py}: \emph{open() + write() + replace() + {[}c for b in {[}{[}1,2{]},{[}2,3{]}{]} for c in b{]}}
+  \item
+    \textbf{subprocess}: \emph{read()}
+  \item
+    \textbf{pathlib}: \emph{Path().rglob() + Path().stem}
+  \item
+    \textbf{os}: \emph{remove() + listdir() + path.isfile() + path.splitdrive() + os.path.splitext() + os.path.split()}
+  \end{itemize}
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
