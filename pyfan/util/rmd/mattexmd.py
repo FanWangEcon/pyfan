@@ -77,3 +77,8 @@ for spn_found_tex in ls_spn_found_tex:
     print(spn_found_tex)
     print(spn_md)
     subprocess.call(['pandoc', '-s', str(spn_found_tex), '-o', str(spn_md)])
+
+# m4econ to root
+# with several testing md files with preamble/frontmatter, generate bookdown
+# after generating bookdown, add in personalized preamble.
+# generate a folder with only preambles, and merge the md files created here with those

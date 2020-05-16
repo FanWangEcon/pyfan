@@ -32,6 +32,25 @@ try(source("../../../.Rprofile"))
 `r text_shared_preamble_two`
 `r text_shared_preamble_thr`
 
+#### Search if Names Include Strings
+
+Given a list of strings, loop but skip if string contains elements string list. 
+
+```{python}
+# define string
+ls_st_ignore = ['abc', 'efg', 'xyz']
+ls_st_loop = ['ab cefg sdf', '12345', 'xyz', 'abc xyz', 'good morning']
+
+# zip and loop and replace
+for st_loop in ls_st_loop:
+  if sum([st_ignore in st_loop for st_ignore in ls_st_ignore]):
+    print('skip:', st_loop)
+  else:
+    print('not skip:', st_loop)
+
+```
+
+
 #### Replace a Set of Strings in String
 
 Replace terms in string

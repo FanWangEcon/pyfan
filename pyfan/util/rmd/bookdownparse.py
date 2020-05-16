@@ -14,7 +14,7 @@ def fs_yml2readme(sfc_prj='R4Econ',
                   sph_prj='C:/Users/fan/R4Econ/',
                   spn_prj_bookdown_yml='_bookdown.yml',
                   spn_prj_readme_toc='README_toc.md',
-                  ls_st_ignore=['index.Rmd']):
+                  ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd']):
     """Write to file README detailed TOC for files in bookdown yaml list
 
     Parameters
@@ -40,7 +40,7 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
     ls_st_rmd_files = ob_book_yml['rmd_files']
 
-    sfc_main = '_main.Rmd'
+    sfc_main = 'main.Rmd'
     ctr_chapter = 0
     ctr_section = 0
     ctr_subsection = 0
@@ -112,4 +112,4 @@ if __name__ == '__main__':
     #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
     #               spn_prj_readme_toc=spn_prj_readme_toc)
 
-    fs_yml2readme(sfc_prj='Stat4Econ', sph_prj='C:/Users/fan/Stat4Econ/')
+    fs_yml2readme(sfc_prj='R4Econ', sph_prj='C:/Users/fan/R4Econ/')

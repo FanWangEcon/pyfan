@@ -128,6 +128,9 @@ Compile tex file to pdf and clean up the extraneous pdf outputs.
 import subprocess
 import os 
 
+# Change to local directory so path in tex respected.
+os.chdir("C:/Users/fan/pyfan/vig/support/inout")
+
 # Convert tex to pdf
 subprocess.call(['C:/texlive/2019/bin/win32/xelatex.exe', '-output-directory',
                  srt_file_tex, srn_file_edited_tex], shell=False)
@@ -159,6 +162,24 @@ print(fl_md_contents.read())
 
 Search for files in several directories that have a particular suffix. Then decompose directory into sub-components. 
 
+Search file inside several folders (not recursively in subfolders):
+
+```{python}
+from pathlib import Path
+
+# directories to search in
+ls_spt_srh = ["C:/Users/fan/R4Econ/amto/", 
+              "C:/Users/fan/R4Econ/function/"]
+
+# get file names in folders (not recursively)
+ls_spn_found = [spn_file for spt_srh in ls_spt_srh 
+                         for spn_file in Path(spt_srh).glob('*.Rmd')]
+for spn_found in ls_spn_found:
+print(spn_found)
+```
+
+Search file recursivesly in all subfolders of folders:
+
 ```{python}
 from pathlib import Path
 
@@ -166,7 +187,7 @@ from pathlib import Path
 ls_spt_srh = ["C:/Users/fan/R4Econ/amto/array/", 
               "C:/Users/fan/R4Econ/amto/list"]
 
-# get file names
+# get file names recursively in all subfolders
 ls_spn_found = [spn_file for spt_srh in ls_spt_srh 
                          for spn_file in Path(spt_srh).rglob('*.R')]
 for spn_found in ls_spn_found:
