@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-05-09}
+\date{2020-05-17}
 
 \begin{document}
 \maketitle
@@ -158,7 +158,7 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-This is a work-in-progress \href{https://fanwangecon.github.io/pyfan/}{website} consisting of python tutorials and examples to accomplish. Files are written with \href{https://rmarkdown.rstudio.com/}{RMD} \citep{R-rmarkdown}. Materials are gathered from various \href{https://fanwangecon.github.io/research}{projects} in which python code is used for research and paper-administrative tasks. Files are from \href{https://fanwangecon.github.io/}{\textbf{Fan}}'s \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository which has an associated \href{https://pypi.org/project/pyfan/}{package}. The package functionalize various tasks tested out in the Rmd files. In addition, the \href{https://github.com/FanWangEcon/pyecon}{pyecon} repository and the associated \href{https://pypi.org/project/pyecon/}{package} contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.
+This is a work-in-progress \href{https://fanwangecon.github.io/pyfan/}{website} consisting of python tutorials and examples to accomplish. Files are written with \href{https://rmarkdown.rstudio.com/}{RMD} \citep{R-rmarkdown}. Materials are gathered from various \href{https://fanwangecon.github.io/research}{projects} in which python code is used for research and paper-administrative tasks. Files are from \href{https://fanwangecon.github.io/}{\textbf{Fan}}'s \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository which has an associated \href{https://pypi.org/project/pyfan/}{package}. The package functionalize various tasks tested out in the Rmd files. In addition, the \href{https://github.com/FanWangEcon/pyecon}{pyecon} repository and the associated \href{https://pypi.org/project/pyecon/}{package} (\href{https://pyfan.readthedocs.io/en/latest/}{readthedocs}) contain functions and rmd files related explicitly to solving economic models.
 
 From \href{https://fanwangecon.github.io/}{Fan}'s other repositories: For dynamic borrowing and savings problems, see \href{https://fanwangecon.github.io/CodeDynaAsset/}{Dynamic Asset Repository (Matlab)}; For code examples, see also \href{https://fanwangecon.github.io/M4Econ/}{Matlab Example Code}, \href{https://fanwangecon.github.io/R4Econ/}{R Example Code}, and \href{https://fanwangecon.github.io/Stata4Econ/}{Stata Example Code}; For intro econ with Matlab, see \href{https://fanwangecon.github.io/Math4Econ/}{Intro Mathematics for Economists}, and for intro stat with R, see \href{https://fanwangecon.github.io/Stat4Econ/}{Intro Statistics for Undergraduates}. See \href{https://github.com/FanWangEcon}{here} for all of \href{https://fanwangecon.github.io/}{Fan}'s public repositories.
 
@@ -178,6 +178,34 @@ Please contact \href{https://fanwangecon.github.io/}{FanWangEcon} for issues or 
 \begin{quote}
 Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
+
+\hypertarget{search-if-names-include-strings}{%
+\subsubsection{Search if Names Include Strings}\label{search-if-names-include-strings}}
+
+Given a list of strings, loop but skip if string contains elements string list.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define string}
+\NormalTok{ls\_st\_ignore }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}efg\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_loop }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}ab cefg sdf\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}12345\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}abc xyz\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}good morning\textquotesingle{}}\NormalTok{]}
+
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ st\_loop }\KeywordTok{in}\NormalTok{ ls\_st\_loop:}
+  \ControlFlowTok{if} \BuiltInTok{sum}\NormalTok{([st\_ignore }\KeywordTok{in}\NormalTok{ st\_loop }\ControlFlowTok{for}\NormalTok{ st\_ignore }\KeywordTok{in}\NormalTok{ ls\_st\_ignore]):}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}skip:\textquotesingle{}}\NormalTok{, st\_loop)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}not skip:\textquotesingle{}}\NormalTok{, st\_loop)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## skip: ab cefg sdf
+## not skip: 12345
+## skip: xyz
+## skip: abc xyz
+## not skip: good morning
+\end{verbatim}
 
 \hypertarget{replace-a-set-of-strings-in-string}{%
 \subsubsection{Replace a Set of Strings in String}\label{replace-a-set-of-strings-in-string}}
@@ -331,7 +359,7 @@ Replace a set of strings in the file just generated by a set of alternative stri
 \NormalTok{  stf\_tex\_contents }\OperatorTok{=}\NormalTok{ stf\_tex\_contents.replace(old, new)}
 \BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
 
-\CommentTok{\# write to file with replacements }
+\CommentTok{\# write to file with replacements}
 \end{Highlighting}
 \end{Shaded}
 
@@ -376,12 +404,15 @@ Compile tex file to pdf and clean up the extraneous pdf outputs.
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ subprocess}
-\ImportTok{import}\NormalTok{ os }
+\ImportTok{import}\NormalTok{ os}
+
+\CommentTok{\# Change to local directory so path in tex respected.}
+\NormalTok{os.chdir(}\StringTok{"C:/Users/fan/pyfan/vig/support/inout"}\NormalTok{)}
 
 \CommentTok{\# Convert tex to pdf}
 \NormalTok{subprocess.call([}\StringTok{\textquotesingle{}C:/texlive/2019/bin/win32/xelatex.exe\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}output{-}directory\textquotesingle{}}\NormalTok{,}
 \NormalTok{                 srt\_file\_tex, srn\_file\_edited\_tex], shell}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
-\CommentTok{\# Clean pdf extraneous output                 }
+\CommentTok{\# Clean pdf extraneous output}
 \end{Highlighting}
 \end{Shaded}
 
@@ -456,16 +487,41 @@ Use pandoc to convert tex file
 
 Search for files in several directories that have a particular suffix. Then decompose directory into sub-components.
 
+Search file inside several folders (not recursively in subfolders):
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ pathlib }\ImportTok{import}\NormalTok{ Path}
 
 \CommentTok{\# directories to search in}
-\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/array/"}\NormalTok{, }
+\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/"}\NormalTok{,}
+              \StringTok{"C:/Users/fan/R4Econ/function/"}\NormalTok{]}
+
+\CommentTok{\# get file names in folders (not recursively)}
+\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh}
+                         \ControlFlowTok{for}\NormalTok{ spn\_file }\KeywordTok{in}\NormalTok{ Path(spt\_srh).glob(}\StringTok{\textquotesingle{}*.Rmd\textquotesingle{}}\NormalTok{)]}
+\ControlFlowTok{for}\NormalTok{ spn\_found }\KeywordTok{in}\NormalTok{ ls\_spn\_found:}
+  \BuiltInTok{print}\NormalTok{(spn\_found)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\Users\fan\R4Econ\amto\main.Rmd
+## C:\Users\fan\R4Econ\function\main.Rmd
+\end{verbatim}
+
+Search file recursivesly in all subfolders of folders:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ pathlib }\ImportTok{import}\NormalTok{ Path}
+
+\CommentTok{\# directories to search in}
+\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/array/"}\NormalTok{,}
               \StringTok{"C:/Users/fan/R4Econ/amto/list"}\NormalTok{]}
 
-\CommentTok{\# get file names}
-\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh }
+\CommentTok{\# get file names recursively in all subfolders}
+\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh}
                          \ControlFlowTok{for}\NormalTok{ spn\_file }\KeywordTok{in}\NormalTok{ Path(spt\_srh).rglob(}\StringTok{\textquotesingle{}*.R\textquotesingle{}}\NormalTok{)]}
 \ControlFlowTok{for}\NormalTok{ spn\_found }\KeywordTok{in}\NormalTok{ ls\_spn\_found:}
 \NormalTok{  drive, path\_and\_file }\OperatorTok{=}\NormalTok{ os.path.splitdrive(spn\_found)}
@@ -474,7 +530,7 @@ Search for files in several directories that have a particular suffix. Then deco
 \NormalTok{  file\_no\_suffix }\OperatorTok{=}\NormalTok{ Path(spn\_found).stem}
   \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}file:\textquotesingle{}}\NormalTok{, }\BuiltInTok{file}\NormalTok{, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{drive:\textquotesingle{}}\NormalTok{, drive,}
         \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{file no suffix:\textquotesingle{}}\NormalTok{, file\_no\_suffix,}
-        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{full path:\textquotesingle{}}\NormalTok{, spn\_found, }
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{full path:\textquotesingle{}}\NormalTok{, spn\_found,}
         \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no fle:\textquotesingle{}}\NormalTok{, path\_no\_file,}
         \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no suf:\textquotesingle{}}\NormalTok{, path\_no\_suffix, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
@@ -508,13 +564,6 @@ Search for files in several directories that have a particular suffix. Then deco
 ## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string.R 
 ## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
 ## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_ary_string 
-## 
-## file: fs_meshr.R 
-## drive: C: 
-## file no suffix: fs_meshr 
-## full path: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr.R 
-## pt no fle: C:\Users\fan\R4Econ\amto\array\htmlpdfr 
-## pt no suf: C:\Users\fan\R4Econ\amto\array\htmlpdfr\fs_meshr 
 ## 
 ## file: fs_listr.R 
 ## drive: C: 

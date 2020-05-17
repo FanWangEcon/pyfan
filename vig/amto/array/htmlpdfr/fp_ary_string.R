@@ -1,6 +1,27 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE-------------------------------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
+
+## # define string
+
+## ls_st_ignore = ['abc', 'efg', 'xyz']
+
+## ls_st_loop = ['ab cefg sdf', '12345', 'xyz', 'abc xyz', 'good morning']
+
+## 
+## # zip and loop and replace
+
+## for st_loop in ls_st_loop:
+
+##   if sum([st_ignore in st_loop for st_ignore in ls_st_ignore]):
+
+##     print('skip:', st_loop)
+
+##   else:
+
+##     print('not skip:', st_loop)
+
+## 
 
 ## # define string
 

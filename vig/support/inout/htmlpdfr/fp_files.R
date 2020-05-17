@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE-------------------------------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -97,6 +97,11 @@ try(source("../../../.Rprofile"))
 ## import os
 
 ## 
+## # Change to local directory so path in tex respected.
+
+## os.chdir("C:/Users/fan/pyfan/vig/support/inout")
+
+## 
 ## # Convert tex to pdf
 
 ## subprocess.call(['C:/texlive/2019/bin/win32/xelatex.exe', '-output-directory',
@@ -139,12 +144,33 @@ try(source("../../../.Rprofile"))
 ## 
 ## # directories to search in
 
+## ls_spt_srh = ["C:/Users/fan/R4Econ/amto/",
+
+##               "C:/Users/fan/R4Econ/function/"]
+
+## 
+## # get file names in folders (not recursively)
+
+## ls_spn_found = [spn_file for spt_srh in ls_spt_srh
+
+##                          for spn_file in Path(spt_srh).glob('*.Rmd')]
+
+## for spn_found in ls_spn_found:
+
+##   print(spn_found)
+
+
+## from pathlib import Path
+
+## 
+## # directories to search in
+
 ## ls_spt_srh = ["C:/Users/fan/R4Econ/amto/array/",
 
 ##               "C:/Users/fan/R4Econ/amto/list"]
 
 ## 
-## # get file names
+## # get file names recursively in all subfolders
 
 ## ls_spn_found = [spn_file for spt_srh in ls_spt_srh
 
