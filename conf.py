@@ -12,7 +12,11 @@
 #
 import os
 import sys
+<<<<<<< HEAD
 # import sphinx_bootstrap_theme
+=======
+import sphinx_bootstrap_theme
+>>>>>>> a3e82e13bf2e149a1f9e4b54d50fdd33b068034c
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
