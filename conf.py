@@ -66,3 +66,8 @@ html_static_path = ['_static']
 # Sphinx error: master file [..]/checkouts/latest/contents.rst not found #2569
 # https://github.com/readthedocs/readthedocs.org/issues/2569
 master_doc = 'index'
+
+# AUTO API
+extensions.append('autoapi.extension')
+autoapi_type = 'python'
+autoapi_dirs = ['pyfan']

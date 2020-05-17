@@ -6,11 +6,6 @@ pyfan.egg-info/SOURCES.txt
 pyfan.egg-info/dependency_links.txt
 pyfan.egg-info/requires.txt
 pyfan.egg-info/top_level.txt
-pyfan/pkgtest/smop/fs_pkgtest_smop.Rmd
-pyfan/pkgtest/smop/simple.m
-pyfan/pkgtest/smop/simple.py
-pyfan/pkgtest/smop/solver.m
-pyfan/pkgtest/smop/solver.py
 pyfan/util/__init__.py
 pyfan/util/pdf/__init__.py
 pyfan/util/pdf/pdfgen.py
