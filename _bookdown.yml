@@ -7,87 +7,87 @@ delete_merged_file: true
 rmd_files:
 
   - index.Rmd
-  - vig/amto/_main.Rmd
-  # - vig/amto/list/_main.Rmd
+  - vig/amto/main.Rmd
+  # - vig/amto/list/main.Rmd
   # - vig/amto/list/fs_lst_basics.Rmd
-  - vig/amto/array/_main.Rmd
+  - vig/amto/array/main.Rmd
   # - vig/amto/array/fs_ary_basics.Rmd
   # - vig/amto/array/fs_ary_generate.Rmd
   - vig/amto/array/fp_ary_string.Rmd
   # - vig/amto/array/fs_ary_mesh.Rmd
-  # - vig/amto/matrix/_main.Rmd
+  # - vig/amto/matrix/main.Rmd
   # - vig/amto/matrix/fs_mat_generate.Rmd
   # - vig/amto/matrix/fs_mat_linear_algebra.Rmd
-  # - vig/amto/tibble/_main.Rmd
+  # - vig/amto/tibble/main.Rmd
   # - vig/amto/tibble/fs_tib_basics.Rmd
   # - vig/amto/tibble/fs_tib_factors.Rmd
   # - vig/amto/tibble/fs_tib_random_draws.Rmd
   # - vig/amto/tibble/fs_tib_na.Rmd
   # - vig/amto/tibble/fs_tib_string.Rmd
   #
-  # - vig/summarize/_main.Rmd
-  # - vig/summarize/count/_main.Rmd
+  # - vig/summarize/main.Rmd
+  # - vig/summarize/count/main.Rmd
   # - vig/summarize/count/fs_count_basics.Rmd
-  # - vig/summarize/index/_main.Rmd
+  # - vig/summarize/index/main.Rmd
   # - vig/summarize/index/fs_index_populate.Rmd
-  # - vig/summarize/aggregate/_main.Rmd
+  # - vig/summarize/aggregate/main.Rmd
   # - vig/summarize/aggregate/fs_group_unique_agg.Rmd
   # - vig/summarize/aggregate/fs_group_summ_one.Rmd
   # - vig/summarize/aggregate/fs_group_summ_wide.Rmd
-  # - vig/summarize/dist/_main.Rmd
+  # - vig/summarize/dist/main.Rmd
   # - vig/summarize/dist/fst_hist_onevar.Rmd
-  # - vig/summarize/multivar/_main.Rmd
+  # - vig/summarize/multivar/main.Rmd
   # - vig/summarize/multivar/fs_func_multivar.Rmd
   #
-  # - vig/function/_main.Rmd
-  # - vig/function/mutatef/_main.Rmd
+  # - vig/function/main.Rmd
+  # - vig/function/mutatef/main.Rmd
   # - vig/function/mutatef/fs_funceval.Rmd
   # - vig/function/mutatef/fs_func_choice_states.Rmd
-  # - vig/function/dof/_main.Rmd
+  # - vig/function/dof/main.Rmd
   # - vig/function/dof/fs_funceval_group.Rmd
   # - vig/function/dof/fs_funceval_expand.Rmd
-  # - vig/function/noloop/_main.Rmd
+  # - vig/function/noloop/main.Rmd
   # - vig/function/noloop/fs_applysapplymutate.Rmd
   #
-  # - vig/panel/_main.Rmd
-  # - vig/panel/basic/_main.Rmd
+  # - vig/panel/main.Rmd
+  # - vig/panel/basic/main.Rmd
   # - vig/panel/basic/fs_genpanel.Rmd
   # - vig/panel/basic/fs_joining.Rmd
-  # - vig/panel/widelong/_main.Rmd
+  # - vig/panel/widelong/main.Rmd
   # - vig/panel/widelong/fs_pivotwider.Rmd
   #
-  # - vig/linreg/_main.Rmd
-  # - vig/linreg/ivreg/_main.Rmd
+  # - vig/linreg/main.Rmd
+  # - vig/linreg/ivreg/main.Rmd
   # - vig/linreg/ivreg/fs_lin_ivregrow.Rmd
   # - vig/linreg/ivreg/fs_lin_ivloop.Rmd
-  # - vig/linreg/decompose/_main.Rmd
+  # - vig/linreg/decompose/main.Rmd
   # - vig/linreg/decompose/fs_lin_decompose.Rmd
   #
-  # - vig/regnonlin/_main.Rmd
-  # - vig/regnonlin/logit/_main.Rmd
+  # - vig/regnonlin/main.Rmd
+  # - vig/regnonlin/logit/main.Rmd
   # - vig/regnonlin/logit/fs_logit_birhs.Rmd
   #
-  # - vig/optimization/_main.Rmd
-  # - vig/optimization/root_bisect/_main.Rmd
+  # - vig/optimization/main.Rmd
+  # - vig/optimization/root_bisect/main.Rmd
   # - vig/optimization/root_bisect/fs_bisec_joint.Rmd
   #
-  # - vig/math/_main.Rmd
-  # - vig/math/integration/_main.Rmd
+  # - vig/math/main.Rmd
+  # - vig/math/integration/main.Rmd
   # - vig/math/integration/fs_integrate_normal.Rmd
-  # - vig/math/solutions/_main.Rmd
+  # - vig/math/solutions/main.Rmd
   # - vig/math/solutions/fs_solu_x_lin.Rmd
-  # - vig/math/func_ineq/_main.Rmd
+  # - vig/math/func_ineq/main.Rmd
   # - vig/math/func_ineq/fs_gini_disc.Rmd
   # - vig/math/func_ineq/fs_atkinson_ces.Rmd
   #
-  # - vig/tabgraph/_main.Rmd
-  # - vig/tabgraph/baseplot/_main.Rmd
+  # - vig/tabgraph/main.Rmd
+  # - vig/tabgraph/baseplot/main.Rmd
   # - vig/tabgraph/baseplot/fs_base_curve.Rmd
-  # - vig/tabgraph/inout/_main.Rmd
+  # - vig/tabgraph/inout/main.Rmd
   # - vig/tabgraph/inout/fs_img_io.Rmd
 
-  - vig/support/_main.Rmd
-  - vig/support/inout/_main.Rmd
+  - vig/support/main.Rmd
+  - vig/support/inout/main.Rmd
   - vig/support/inout/fp_files.Rmd
 
   - README_appendix.md

@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46ae83e3-acb5-4af9-96c0-b4d43a97591e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.Rprofile" beforeDir="false" afterPath="$PROJECT_DIR$/.Rprofile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_bookdown.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_bookdown.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/README.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/README.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.bookdownparse.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.bookdownparse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.rmdparse.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.rmdparse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_static/documentation_options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_output.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_output.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_output_kniti_html.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/_output_kniti_html.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_output_kniti_pdf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/_output_kniti_pdf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/amto/array/fp_ary_string.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/amto/array/fp_ary_string.Rmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/amto/_main.Rmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/amto/array/_main.Rmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/_main.Rmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/_main.Rmd" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,22 +222,22 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1588036478090" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom" timestamp="1589662594090">
+    <state width="1914" height="1046" key="GridCell.Tab.0.bottom" timestamp="1589663929398">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589662594090" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.center" timestamp="1589662594089">
+    <state width="1914" height="1046" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.center" timestamp="1589663929398">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589662594089" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.left" timestamp="1589662594089">
+    <state width="1914" height="1046" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.left" timestamp="1589663929398">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589662594089" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.right" timestamp="1589662594090">
+    <state width="1914" height="1046" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.right" timestamp="1589663929398">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589662594090" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
     <state x="461" y="226" key="SettingsEditor" timestamp="1587329143730">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>

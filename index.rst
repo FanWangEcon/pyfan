@@ -7,15 +7,11 @@ Welcome to pyfan's documentation!
 =================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4 
    :caption: Contents:
-
-.. automodule:: pyfan.util.rmd
-   :members:
 
 .. autosummary::
   :toctree: _autosummary
-
 
 Indices and tables
 ==================
