@@ -69,4 +69,4 @@ master_doc = 'index'
 
 # AUTO API
 autoapi_type = 'python'
-autoapi_dirs = ['pyfan', 'src']
+autoapi_dirs = ['pyfan']
