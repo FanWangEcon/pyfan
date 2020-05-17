@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 
 
-def fp_pdf_gen_clean(ls_spt_srh=None,
+def ff_pdf_gen_clean(ls_spt_srh=None,
                      spt_out='C:/Users/fan/Documents/Dropbox (UH-ECON)/' +
                              'Project Emily Minority Survey/' +
                              'EthLang/reg_lang_abi_cls/',

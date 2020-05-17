@@ -6,4 +6,6 @@
 *.js linguist-vendored
 *.m linguist-vendored
 *.sh linguist-vendored
-*.sh linguist-vendored
+*.r linguist-vendored
+*.Rmd linguist-vendored
+*.tex linguist-vendored
