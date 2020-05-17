@@ -30,9 +30,9 @@ release = '0.1.33'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'sphinx_rtd_theme'
+    'sphinx_rtd_theme',
+    'autoapi.extension'
 ]
 autosummary_generate = True
 napoleon_numpy_docstring = True
@@ -68,6 +68,5 @@ html_static_path = ['_static']
 master_doc = 'index'
 
 # AUTO API
-extensions.append('autoapi.extension')
 autoapi_type = 'python'
 autoapi_dirs = ['pyfan']
