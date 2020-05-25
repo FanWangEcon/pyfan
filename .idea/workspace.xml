@@ -2,35 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46ae83e3-acb5-4af9-96c0-b4d43a97591e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.Rprofile" beforeDir="false" afterPath="$PROJECT_DIR$/.Rprofile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_appendix.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_appendix.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_pre.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_pre.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_toc.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_toc.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_bookdown.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_bookdown.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/README.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/README.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.bookdownparse.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.bookdownparse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.rmdparse.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_autosummary/pyfan.util.rmd.rmdparse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/_static/documentation_options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/py-modindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_output.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_output.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_output_kniti_html.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/_output_kniti_html.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_output_kniti_pdf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/_output_kniti_pdf.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.tex" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/array-matrix-dataframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/array-matrix-dataframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/index-and-code-links.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index-and-code-links.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/search_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/system-and-support.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/system-and-support.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/index.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan.egg-info/PKG-INFO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/pdf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/pdf/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/amto/_main.Rmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/amto/array/_main.Rmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/_main.Rmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/_main.Rmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.R" beforeDir="false" afterPath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.html" beforeDir="false" afterPath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/amto/array/htmlpdfr/fp_ary_string.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.R" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fanwangecon.github.io" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.bookdownparse">
+  <component name="RunManager" selected="Python.mattexmd">
     <configuration name="bookdownparse" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pyfan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,6 +76,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="getfiles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyfan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyfan/util/path" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/util/path/getfiles.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pdfgen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="movefiles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pyfan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -110,53 +134,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyfan/util/pdf" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyfan/util/path" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="rmdparse" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pyfan" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyfan/util/rmd" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/util/rmd/rmdparse.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="yaml2tex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="fanwangecon.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../fanwangecon.github.io/_cv/templating" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../fanwangecon.github.io/_cv/templating/yaml2tex.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/util/path/movefiles.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,11 +149,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bookdownparse" />
-        <item itemvalue="Python.pdfgen" />
         <item itemvalue="Python.mattexmd" />
-        <item itemvalue="Python.yaml2tex" />
-        <item itemvalue="Python.rmdparse" />
+        <item itemvalue="Python.bookdownparse" />
+        <item itemvalue="Python.movefiles" />
+        <item itemvalue="Python.getfiles" />
       </list>
     </recent_temporary>
   </component>
@@ -214,37 +195,45 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587329106641">
+    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590369433464">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1587329106641" />
+    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590369433464" />
     <state x="740" y="340" key="FileChooserDialogImpl" timestamp="1588036478090">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1588036478090" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom" timestamp="1589663929398">
+    <state width="1914" height="1046" key="GridCell.Tab.0.bottom" timestamp="1590370698700">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.center" timestamp="1589663929398">
+    <state width="1914" height="1046" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590370698700" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.center" timestamp="1590370698700">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.left" timestamp="1589663929398">
+    <state width="1914" height="1046" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590370698700" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.left" timestamp="1590370698700">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.right" timestamp="1589663929398">
+    <state width="1914" height="1046" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590370698700" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.right" timestamp="1590370698700">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589663929398" />
+    <state width="1914" height="1046" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590370698700" />
     <state x="461" y="226" key="SettingsEditor" timestamp="1587329143730">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="461" y="226" key="SettingsEditor/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1587329143730" />
-    <state x="640" y="409" key="com.intellij.ide.util.TipDialog" timestamp="1589662475476">
+    <state x="640" y="409" key="com.intellij.ide.util.TipDialog" timestamp="1590322766727">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="640" y="409" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1589662475476" />
+    <state x="640" y="409" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590322766727" />
+    <state x="614" y="178" width="692" height="813" key="find.popup" timestamp="1590322472507">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="614" y="178" width="692" height="813" key="find.popup/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590322472507" />
+    <state x="601" y="311" width="700" height="530" key="recent.locations.popup" timestamp="1590279505818">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="601" y="311" width="700" height="530" key="recent.locations.popup/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590279505818" />
   </component>
 </project>

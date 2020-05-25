@@ -1,0 +1,88 @@
+---
+title: "Python Dictionary Exampls and Usages"
+titleshort: "Python Dictionary Exampls and Usages"
+description: |
+  List comprehension with dictionary
+core:
+  - package: py
+    code: |
+      dc = {'key': "name", 'val': 1}
+date: 2020-05-23
+date_start: 2020-05-23
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### Dictionary
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+#### Create a List of Dictionaries
+
+```{python}
+import datetime
+import pprint
+ls_dc_exa =  [
+    {"file": "mat_matlab",
+     "title": "One Variable Graphs and Tables",
+     "description": "Frequency table, bar chart and histogram",
+     "val": 1,
+     "date": datetime.date(2020, 5, 2)},
+    {"file": "mat_two",
+     "title": "Second file",
+     "description": "Second file.",
+     "val": [1, 2, 3],
+     "date": datetime.date(2020, 5, 2)},
+    {"file": "mat_algebra_rules",
+     "title": "Opening a Dataset",
+     "description": "Opening a Dataset.",
+     "val": 1.1,
+     "date": datetime.date(2018, 12, 1)}
+]
+pprint.pprint(ls_dc_exa, width=1)
+```
+
+#### Select by Keys in Dictionary
+
+Given a list of dictionary, search if key name is in list:
+
+```{python}
+# string to search through
+ls_str_file_ids = ['mat_matlab', 'mat_algebra_rules']
+# select subset
+ls_dc_selected = [dc_exa
+                  for dc_exa in ls_dc_exa
+                  if dc_exa['file'] in ls_str_file_ids]
+# print
+pprint.pprint(ls_dc_selected, width=1)
+```
+
+Search and Select by Multiple Keys in Dictionary. Using two keys below:
+
+```{python}
+# string to search through
+ls_str_file_ids = ['mat_matlab', 'mat_algebra_rules']
+# select subset
+ls_dc_selected = [dc_exa
+                  for dc_exa in ls_dc_exa
+                  if ((dc_exa['file'] in ls_str_file_ids) 
+                      and
+                      (dc_exa['val']== 1))]
+# print
+pprint.pprint(ls_dc_selected, width=1)
+```

@@ -7,6 +7,9 @@ pyfan.egg-info/dependency_links.txt
 pyfan.egg-info/requires.txt
 pyfan.egg-info/top_level.txt
 pyfan/util/__init__.py
+pyfan/util/path/__init__.py
+pyfan/util/path/getfiles.py
+pyfan/util/path/movefiles.py
 pyfan/util/pdf/__init__.py
 pyfan/util/pdf/pdfgen.py
 pyfan/util/rmd/__init__.py

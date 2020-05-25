@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Index and Code Links | A Collection of Python Examples</title>
-  <meta name="description" content="Reading from file and replace strings in file." />
+  <meta name="description" content="Python Implementation Examples for Research Tasks" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Index and Code Links | A Collection of Python Examples" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Reading from file and replace strings in file." />
+  <meta property="og:description" content="Python Implementation Examples for Research Tasks" />
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="A Index and Code Links | A Collection of Python Examples" />
   
-  <meta name="twitter:description" content="Reading from file and replace strings in file." />
+  <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
   
 
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-05-17" />
+<meta name="date" content="2020-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="system-and-support.html"/>
 
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -62,26 +61,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -90,9 +88,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -142,29 +140,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html"><i class="fa fa-check"></i><b>1</b> Array, Matrix, Dataframe</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
-<ul>
+<li class="chapter" data-level="1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html"><i class="fa fa-check"></i><b>1</b> Array, Matrix, Dataframe</a><ul>
+<li class="chapter" data-level="1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>2</b> System and Support</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>2.1</b> File In and Out</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="system-and-support.html"><a href="system-and-support.html#reading-editing-compile-and-convert-tex-with-pandoc"><i class="fa fa-check"></i><b>2.1.1</b> Reading, Editing, Compile and Convert Tex with Pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>2</b> System and Support</a><ul>
+<li class="chapter" data-level="2.1" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>2.1</b> File In and Out</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="system-and-support.html"><a href="system-and-support.html#read-and-write-and-convert"><i class="fa fa-check"></i><b>2.1.1</b> Read and Write and Convert</a></li>
+<li class="chapter" data-level="2.1.2" data-path="system-and-support.html"><a href="system-and-support.html#folder-operations"><i class="fa fa-check"></i><b>2.1.2</b> Folder Operations</a></li>
+<li class="chapter" data-level="2.1.3" data-path="system-and-support.html"><a href="system-and-support.html#parse-yaml"><i class="fa fa-check"></i><b>2.1.3</b> Parse Yaml</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
-<ul>
-<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#array-matrix-dataframe-links"><i class="fa fa-check"></i><b>A.1</b> Array, Matrix, Dataframe links</a>
-<ul>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a><ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#array-matrix-dataframe-links"><i class="fa fa-check"></i><b>A.1</b> Array, Matrix, Dataframe links</a><ul>
 <li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
+<li class="chapter" data-level="A.1.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.2-dictionarydictionary-links"><i class="fa fa-check"></i><b>A.1.2</b> <span>Section 1.2 Dictionary</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.2</b> System and Support links</a>
-<ul>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.2</b> System and Support links</a><ul>
 <li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 File In and Out</span> links</a></li>
 </ul></li>
 </ul></li>
@@ -188,11 +185,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="index-and-code-links" class="section level1" number="3">
+<div id="index-and-code-links" class="section level1">
 <h1><span class="header-section-number">A</span> Index and Code Links</h1>
-<div id="array-matrix-dataframe-links" class="section level2" number="3.1">
+<div id="array-matrix-dataframe-links" class="section level2">
 <h2><span class="header-section-number">A.1</span> Array, Matrix, Dataframe links</h2>
-<div id="section-1.1-arrayarray-links" class="section level3" number="3.1.1">
+<div id="section-1.1-arrayarray-links" class="section level3">
 <h3><span class="header-section-number">A.1.1</span> <a href="array-matrix-dataframe.html#array">Section 1.1 Array</a> links</h3>
 <ol style="list-style-type: decimal">
 <li><a href="https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html">Python String Manipulation Examples</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html"><strong>html</strong></a>
@@ -202,24 +199,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 </div>
+<div id="section-1.2-dictionarydictionary-links" class="section level3">
+<h3><span class="header-section-number">A.1.2</span> <a href="array-matrix-dataframe.html#dictionary-1">Section 1.2 Dictionary</a> links</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html">Python Dictionary Exampls and Usages</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html"><strong>html</strong></a>
+<ul>
+<li>List comprehension with dictionary</li>
+<li><strong>py</strong>: <em>dc = {‘key’: “name”, ‘val’: 1}</em></li>
+</ul></li>
+</ol>
 </div>
-<div id="system-and-support-links" class="section level2" number="3.2">
+</div>
+<div id="system-and-support-links" class="section level2">
 <h2><span class="header-section-number">A.2</span> System and Support links</h2>
-<div id="section-2.1-file-in-and-outfile-in-and-out-links" class="section level3" number="3.2.1">
+<div id="section-2.1-file-in-and-outfile-in-and-out-links" class="section level3">
 <h3><span class="header-section-number">A.2.1</span> <a href="system-and-support.html#file-in-and-out">Section 2.1 File In and Out</a> links</h3>
 <ol style="list-style-type: decimal">
 <li><a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html">Python Reading and Writing to File Examples</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html"><strong>html</strong></a>
 <ul>
 <li>Reading from file and replace strings in file.</li>
+<li>Convert text file to latex using pandoc and clean.</li>
+<li>Search for files in several folders with file substring.</li>
+<li>Get path root, file name, file stem, etc from path.</li>
 <li><strong>py</strong>: <em>open() + write() + replace() + [c for b in [[1,2],[2,3]] for c in b]</em></li>
 <li><strong>subprocess</strong>: <em>read()</em></li>
 <li><strong>pathlib</strong>: <em>Path().rglob() + Path().stem</em></li>
 <li><strong>os</strong>: <em>remove() + listdir() + path.isfile() + path.splitdrive() + os.path.splitext() + os.path.split()</em></li>
 </ul></li>
+<li><a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html">Python Directory and Folder Operations</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_folders.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html"><strong>html</strong></a>
+<ul>
+<li>Generate new folders and files.</li>
+<li>Generate subfolder recursively.</li>
+<li>Copying and moving files across folders.</li>
+<li>Aggregate subfolders into a folder and move.</li>
+<li><strong>py</strong>: <em>open(srt, ‘w’) + write() + close()</em></li>
+<li><strong>os</strong>: <em>os.listdir() + os.path.join(‘/’, ‘c:’, ‘fa’, ‘fb’)</em></li>
+<li><strong>pathlib</strong>: <em>Path(srt).mkdir(parents=True, exist_ok=True) + [Path(spn).stem for spn in Path(srt).rglob(st)]</em></li>
+<li><strong>shutil</strong>: <em>shutil.copyfile(‘/fa/fl.txt’, ‘/fb/fl.txt’) + shutil.copy2(‘/fa/fl.txt’, ‘/fb’) + shutil.rmtree(‘/fb’)</em></li>
+<li><strong>distutils</strong>: <em>dir_util.copy_tree(‘/fa’, ‘/fb’)</em></li>
+</ul></li>
+<li><a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_yaml.html">Python Yaml File Parsing</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_yaml.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_yaml.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_yaml.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_yaml.html"><strong>html</strong></a>
+<ul>
+<li>Parse and read yaml files.</li>
+<li><strong>yaml</strong>: <em>load(fl_yaml, Loader=yaml.BaseLoader) + dump()</em></li>
+<li><strong>pprint</strong>: <em>pprint.pprint(ls_dict_yml, width=1)</em></li>
+</ul></li>
 </ol>
 
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references">
 <div>
 <p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>

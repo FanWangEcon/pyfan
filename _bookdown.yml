@@ -15,6 +15,8 @@ rmd_files:
   # - vig/amto/array/fs_ary_generate.Rmd
   - vig/amto/array/fp_ary_string.Rmd
   # - vig/amto/array/fs_ary_mesh.Rmd
+  - vig/amto/dict/main.Rmd
+  - vig/amto/dict/fp_dict.Rmd
   # - vig/amto/matrix/main.Rmd
   # - vig/amto/matrix/fs_mat_generate.Rmd
   # - vig/amto/matrix/fs_mat_linear_algebra.Rmd
@@ -89,6 +91,8 @@ rmd_files:
   - vig/support/main.Rmd
   - vig/support/inout/main.Rmd
   - vig/support/inout/fp_files.Rmd
+  - vig/support/inout/fp_folders.Rmd
+  - vig/support/inout/fp_yaml.Rmd
 
   - README_appendix.md
 

@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://github.com/FanWangEcon/pyfan)  [![Star](https://img.shields.io/github/stars/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/stargazers) [![Fork](https://img.shields.io/github/forks/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/network/members) [![Star](https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/watchers)
 
-This is a work-in-progress [website](https://fanwangecon.github.io/pyfan/) consisting of python tutorials and examples for various research tasks. Book version: [bookdown site](https://fanwangecon.github.io/pyfan/bookdown) and [bookdown pdf](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf). Associated python package's [docs](https://pyfan.readthedocs.io/en/latest/).
+This is a work-in-progress [website](https://fanwangecon.github.io/pyfan/) consisting of python tutorials and examples for various research tasks. Book version: [bookdown site](https://fanwangecon.github.io/pyfan/bookdown) and [bookdown pdf](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf). The associated python package's functions are not documented here, but shown here [docs](https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html#module-pyfan).
 
 Files are written with [RMD](https://rmarkdown.rstudio.com/) [@R-rmarkdown]. Materials are gathered from various [projects](https://fanwangecon.github.io/research) in which python code is used for research and paper-administrative tasks. Files are from [**Fan**](https://fanwangecon.github.io/)'s [pyfan](https://github.com/FanWangEcon/pyfan) repository which has an associated [package](https://pypi.org/project/pyfan/). The package functionalize various tasks tested out in the Rmd files. In addition, the [pyecon](https://github.com/FanWangEcon/pyecon) repository and the associated [package](https://pypi.org/project/pyecon/) contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.
 
@@ -18,16 +18,39 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 	+ Various string manipulations
 	+ **py**: *zip()*
 
+## 1.2  Dictionary
+
+1. [Python Dictionary Exampls and Usages](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html)
+	+ List comprehension with dictionary
+	+ **py**: *dc = {'key': "name", 'val': 1}*
+
 # 2  System and Support
 
 ## 2.1  File In and Out
 
 1. [Python Reading and Writing to File Examples](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html)
 	+ Reading from file and replace strings in file.
+	+ Convert text file to latex using pandoc and clean. 
+	+ Search for files in several folders with file substring.
+	+ Get path root, file name, file stem, etc from path.
 	+ **py**: *open() + write() + replace() + [c for b in [[1,2],[2,3]] for c in b]*
 	+ **subprocess**: *read()*
 	+ **pathlib**: *Path().rglob() + Path().stem*
 	+ **os**: *remove() + listdir() + path.isfile() + path.splitdrive() + os.path.splitext() + os.path.split()*
+2. [Python Directory and Folder Operations](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_folders.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html)
+	+ Generate new folders and files.
+	+ Generate subfolder recursively.
+	+ Copying and moving files across folders. 
+	+ Aggregate subfolders into a folder and move. 
+	+ **py**: *open(srt, 'w') + write() + close()*
+	+ **os**: *os.listdir()       + os.path.join('/', 'c:', 'fa', 'fb')*
+	+ **pathlib**: *Path(srt).mkdir(parents=True, exist_ok=True) + [Path(spn).stem for spn in Path(srt).rglob(st)]*
+	+ **shutil**: *shutil.copyfile('/fa/fl.txt', '/fb/fl.txt') + shutil.copy2('/fa/fl.txt', '/fb') + shutil.rmtree('/fb')*
+	+ **distutils**: *dir_util.copy_tree('/fa', '/fb')*
+3. [Python Yaml File Parsing](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_yaml.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_yaml.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_yaml.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_yaml.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_yaml.html)
+	+ Parse and read yaml files.
+	+ **yaml**: *load(fl_yaml, Loader=yaml.BaseLoader)       + dump()*
+	+ **pprint**: *pprint.pprint(ls_dict_yml, width=1)*
 
 ----
 Please contact [![](https://img.shields.io/github/followers/fanwangecon?label=FanWangEcon&style=social)](https://github.com/FanWangEcon) [![](https://img.shields.io/twitter/follow/fanwangecon?label=%20&style=social)](https://twitter.com/fanwangecon) for issues or problems.

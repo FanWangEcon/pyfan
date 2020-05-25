@@ -14,7 +14,8 @@ def fs_yml2readme(sfc_prj='R4Econ',
                   sph_prj='C:/Users/fan/R4Econ/',
                   spn_prj_bookdown_yml='_bookdown.yml',
                   spn_prj_readme_toc='README_toc.md',
-                  ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd']):
+                  ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd'],
+                  verbose=False):
     """Write to file README detailed TOC for files in bookdown yaml list
 
     Parameters
@@ -29,6 +30,19 @@ def fs_yml2readme(sfc_prj='R4Econ',
         md generated file name under project root
     ls_st_ignore: list
         list of string names to ignore
+    verbose: bool
+        print details
+
+    Returns
+    -------
+    None
+        nothing is returned, the spn_prj_readme_toc toc file is generated
+
+    Examples
+    --------
+
+    >>> fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)
+
     """
 
     spn_readme = sph_prj + spn_prj_readme_toc
@@ -36,7 +50,7 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
     spn_yml = sph_prj + spn_prj_bookdown_yml
     with open(spn_yml, 'r') as f:
-        ob_book_yml = yaml.load(f)
+        ob_book_yml = yaml.load(f, Loader=yaml.BaseLoader)
 
     ls_st_rmd_files = ob_book_yml['rmd_files']
 
@@ -48,7 +62,8 @@ def fs_yml2readme(sfc_prj='R4Econ',
     for sfc in ls_st_rmd_files:
 
         if sfc in ls_st_ignore:
-            print('ignore')
+            if verbose:
+                print('ignore:' + sfc)
 
         elif sfc_main in sfc:
 
@@ -75,6 +90,8 @@ def fs_yml2readme(sfc_prj='R4Econ',
                 if ctr_section != 1:
                     st_text_out = '\n' + st_text_out
             # write to file
+            if verbose:
+                print(st_text_out)
             f_core.write(st_text_out)
 
         else:
@@ -87,6 +104,8 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
             # write to file file title and main
             st_text_out = str(ctr_subsection) + '. ' + st_head_link + '\n'
+            if verbose:
+                print(st_text_out)
             f_core.write(st_text_out)
 
             # write to file file desc
@@ -112,4 +131,4 @@ if __name__ == '__main__':
     #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
     #               spn_prj_readme_toc=spn_prj_readme_toc)
 
-    fs_yml2readme(sfc_prj='R4Econ', sph_prj='C:/Users/fan/R4Econ/')
+    fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)

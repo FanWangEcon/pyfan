@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 System and Support | A Collection of Python Examples</title>
-  <meta name="description" content="Reading from file and replace strings in file." />
+  <meta name="description" content="Python Implementation Examples for Research Tasks" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 System and Support | A Collection of Python Examples" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Reading from file and replace strings in file." />
+  <meta property="og:description" content="Python Implementation Examples for Research Tasks" />
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 System and Support | A Collection of Python Examples" />
   
-  <meta name="twitter:description" content="Reading from file and replace strings in file." />
+  <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
   
 
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-05-17" />
+<meta name="date" content="2020-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="array-matrix-dataframe.html"/>
 <link rel="next" href="index-and-code-links.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -62,26 +61,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -90,9 +88,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -142,29 +140,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html"><i class="fa fa-check"></i><b>1</b> Array, Matrix, Dataframe</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
-<ul>
+<li class="chapter" data-level="1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html"><i class="fa fa-check"></i><b>1</b> Array, Matrix, Dataframe</a><ul>
+<li class="chapter" data-level="1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="array-matrix-dataframe.html"><a href="array-matrix-dataframe.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>2</b> System and Support</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>2.1</b> File In and Out</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="system-and-support.html"><a href="system-and-support.html#reading-editing-compile-and-convert-tex-with-pandoc"><i class="fa fa-check"></i><b>2.1.1</b> Reading, Editing, Compile and Convert Tex with Pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>2</b> System and Support</a><ul>
+<li class="chapter" data-level="2.1" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>2.1</b> File In and Out</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="system-and-support.html"><a href="system-and-support.html#read-and-write-and-convert"><i class="fa fa-check"></i><b>2.1.1</b> Read and Write and Convert</a></li>
+<li class="chapter" data-level="2.1.2" data-path="system-and-support.html"><a href="system-and-support.html#folder-operations"><i class="fa fa-check"></i><b>2.1.2</b> Folder Operations</a></li>
+<li class="chapter" data-level="2.1.3" data-path="system-and-support.html"><a href="system-and-support.html#parse-yaml"><i class="fa fa-check"></i><b>2.1.3</b> Parse Yaml</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
-<ul>
-<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#array-matrix-dataframe-links"><i class="fa fa-check"></i><b>A.1</b> Array, Matrix, Dataframe links</a>
-<ul>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a><ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#array-matrix-dataframe-links"><i class="fa fa-check"></i><b>A.1</b> Array, Matrix, Dataframe links</a><ul>
 <li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
+<li class="chapter" data-level="A.1.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.2-dictionarydictionary-links"><i class="fa fa-check"></i><b>A.1.2</b> <span>Section 1.2 Dictionary</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.2</b> System and Support links</a>
-<ul>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.2</b> System and Support links</a><ul>
 <li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 File In and Out</span> links</a></li>
 </ul></li>
 </ul></li>
@@ -188,14 +185,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="system-and-support" class="section level1" number="2">
+<div id="system-and-support" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> System and Support</h1>
 
-<div id="file-in-and-out" class="section level2" number="2.1">
+<div id="file-in-and-out" class="section level2">
 <h2><span class="header-section-number">2.1</span> File In and Out</h2>
 
-<div id="reading-editing-compile-and-convert-tex-with-pandoc" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Reading, Editing, Compile and Convert Tex with Pandoc</h3>
+<div id="read-and-write-and-convert" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Read and Write and Convert</h3>
 <blockquote>
 <p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
@@ -203,25 +200,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>python create a text file</li>
 <li>python write file from paragraphs</li>
 </ul>
-<div id="generate-a-tex-file" class="section level4" number="2.1.1.1">
+<div id="generate-a-tex-file" class="section level4">
 <h4><span class="header-section-number">2.1.1.1</span> Generate a tex file</h4>
 <p>Will a bare-bone tex file with some texts inside, save inside the *_file* subfolder.</p>
 <p>First, create the text text string, note the the linebreaks utomatically generate linebreaks, note that slash need double slash:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="system-and-support.html#cb5-1"></a><span class="co"># Create the Tex Text</span></span>
-<span id="cb5-2"><a href="system-and-support.html#cb5-2"></a><span class="co"># Note that trible quotes begin first and end last lines</span></span>
-<span id="cb5-3"><a href="system-and-support.html#cb5-3"></a>stf_tex_contents <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span><span class="ch">\\</span><span class="st">documentclass[12pt,english]</span><span class="sc">{article}</span></span>
-<span id="cb5-4"><a href="system-and-support.html#cb5-4"></a><span class="ch">\\</span><span class="st">usepackage[bottom]</span><span class="sc">{footmisc}</span></span>
-<span id="cb5-5"><a href="system-and-support.html#cb5-5"></a><span class="ch">\\</span><span class="st">usepackage[urlcolor=blue]</span><span class="sc">{hyperref}</span></span>
-<span id="cb5-6"><a href="system-and-support.html#cb5-6"></a><span class="ch">\\</span><span class="st">begin</span><span class="sc">{document}</span></span>
-<span id="cb5-7"><a href="system-and-support.html#cb5-7"></a><span class="ch">\\</span><span class="st">title{A Latex Testing File}</span></span>
-<span id="cb5-8"><a href="system-and-support.html#cb5-8"></a><span class="ch">\\</span><span class="st">author{</span><span class="ch">\\</span><span class="st">href{http://fanwangecon.github.io/}{Fan Wang} </span><span class="ch">\\</span><span class="st">thanks{See information </span><span class="ch">\\</span><span class="st">href{https://fanwangecon.github.io/Tex4Econ/}</span><span class="sc">{Tex4Econ}</span><span class="st"> for more.</span><span class="sc">}}</span></span>
-<span id="cb5-9"><a href="system-and-support.html#cb5-9"></a><span class="ch">\\</span><span class="st">maketitle</span></span>
-<span id="cb5-10"><a href="system-and-support.html#cb5-10"></a><span class="st">Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.</span></span>
-<span id="cb5-11"><a href="system-and-support.html#cb5-11"></a><span class="ch">\\</span><span class="st">paragraph{</span><span class="ch">\\</span><span class="st">href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}</span><span class="sc">{Data}</span><span class="st">}</span></span>
-<span id="cb5-12"><a href="system-and-support.html#cb5-12"></a><span class="st">Village closure information is taken from a village head survey.</span><span class="ch">\\</span><span class="st">footnote{Generally students went to schools.}</span></span>
-<span id="cb5-13"><a href="system-and-support.html#cb5-13"></a><span class="ch">\\</span><span class="st">end</span><span class="sc">{document}</span><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb5-14"><a href="system-and-support.html#cb5-14"></a><span class="co"># Print</span></span>
-<span id="cb5-15"><a href="system-and-support.html#cb5-15"></a><span class="bu">print</span>(stf_tex_contents)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Create the Tex Text</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co"># Note that trible quotes begin first and end last lines</span></a>
+<a class="sourceLine" id="cb11-3" title="3">stf_tex_contents <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span><span class="ch">\\</span><span class="st">documentclass[12pt,english]</span><span class="sc">{article}</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="ch">\\</span><span class="st">usepackage[bottom]</span><span class="sc">{footmisc}</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="ch">\\</span><span class="st">usepackage[urlcolor=blue]</span><span class="sc">{hyperref}</span></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="ch">\\</span><span class="st">begin</span><span class="sc">{document}</span></a>
+<a class="sourceLine" id="cb11-7" title="7"><span class="ch">\\</span><span class="st">title{A Latex Testing File}</span></a>
+<a class="sourceLine" id="cb11-8" title="8"><span class="ch">\\</span><span class="st">author{</span><span class="ch">\\</span><span class="st">href{http://fanwangecon.github.io/}{Fan Wang} </span><span class="ch">\\</span><span class="st">thanks{See information </span><span class="ch">\\</span><span class="st">href{https://fanwangecon.github.io/Tex4Econ/}</span><span class="sc">{Tex4Econ}</span><span class="st"> for more.</span><span class="sc">}}</span></a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="ch">\\</span><span class="st">maketitle</span></a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="st">Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.</span></a>
+<a class="sourceLine" id="cb11-11" title="11"><span class="ch">\\</span><span class="st">paragraph{</span><span class="ch">\\</span><span class="st">href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}</span><span class="sc">{Data}</span><span class="st">}</span></a>
+<a class="sourceLine" id="cb11-12" title="12"><span class="st">Village closure information is taken from a village head survey.</span><span class="ch">\\</span><span class="st">footnote{Generally students went to schools.}</span></a>
+<a class="sourceLine" id="cb11-13" title="13"><span class="ch">\\</span><span class="st">end</span><span class="sc">{document}</span><span class="st">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb11-14" title="14"><span class="co"># Print</span></a>
+<a class="sourceLine" id="cb11-15" title="15"><span class="bu">print</span>(stf_tex_contents)</a></code></pre></div>
 <pre><code>## \documentclass[12pt,english]{article}
 ## \usepackage[bottom]{footmisc}
 ## \usepackage[urlcolor=blue]{hyperref}
@@ -234,37 +231,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Village closure information is taken from a village head survey.\footnote{Generally students went to schools.}
 ## \end{document}</code></pre>
 <p>Second, write the contents of the file to a new tex file stored inside the *_file* subfolder of the directory:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="system-and-support.html#cb7-1"></a><span class="co"># Relative file name</span></span>
-<span id="cb7-2"><a href="system-and-support.html#cb7-2"></a>srt_file_tex <span class="op">=</span> <span class="st">&quot;_file/&quot;</span></span>
-<span id="cb7-3"><a href="system-and-support.html#cb7-3"></a>sna_file_tex <span class="op">=</span> <span class="st">&quot;test_fan&quot;</span></span>
-<span id="cb7-4"><a href="system-and-support.html#cb7-4"></a>srn_file_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></span>
-<span id="cb7-5"><a href="system-and-support.html#cb7-5"></a><span class="co"># Open new file</span></span>
-<span id="cb7-6"><a href="system-and-support.html#cb7-6"></a>fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex, <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb7-7"><a href="system-and-support.html#cb7-7"></a><span class="co"># Write to File</span></span>
-<span id="cb7-8"><a href="system-and-support.html#cb7-8"></a>fl_tex_contents.write(stf_tex_contents)</span>
-<span id="cb7-9"><a href="system-and-support.html#cb7-9"></a><span class="co"># print</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Relative file name</span></a>
+<a class="sourceLine" id="cb13-2" title="2">srt_file_tex <span class="op">=</span> <span class="st">&quot;_file/&quot;</span></a>
+<a class="sourceLine" id="cb13-3" title="3">sna_file_tex <span class="op">=</span> <span class="st">&quot;test_fan&quot;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">srn_file_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="co"># Open new file</span></a>
+<a class="sourceLine" id="cb13-6" title="6">fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex, <span class="st">&#39;w&#39;</span>)</a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="co"># Write to File</span></a>
+<a class="sourceLine" id="cb13-8" title="8">fl_tex_contents.write(stf_tex_contents)</a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="co"># print</span></a></code></pre></div>
 <pre><code>## 617</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="system-and-support.html#cb9-1"></a>fl_tex_contents.close()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1">fl_tex_contents.close()</a></code></pre></div>
 </div>
-<div id="replace-strings-in-a-tex-file" class="section level4" number="2.1.1.2">
+<div id="replace-strings-in-a-tex-file" class="section level4">
 <h4><span class="header-section-number">2.1.1.2</span> Replace Strings in a tex file</h4>
 <p>Replace a set of strings in the file just generated by a set of alternative strings.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="system-and-support.html#cb10-1"></a><span class="co"># Open file Get text</span></span>
-<span id="cb10-2"><a href="system-and-support.html#cb10-2"></a>fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex)</span>
-<span id="cb10-3"><a href="system-and-support.html#cb10-3"></a>stf_tex_contents <span class="op">=</span> fl_tex_contents.read()</span>
-<span id="cb10-4"><a href="system-and-support.html#cb10-4"></a><span class="bu">print</span>(srn_file_tex)</span>
-<span id="cb10-5"><a href="system-and-support.html#cb10-5"></a></span>
-<span id="cb10-6"><a href="system-and-support.html#cb10-6"></a><span class="co"># define new and old</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="co"># Open file Get text</span></a>
+<a class="sourceLine" id="cb16-2" title="2">fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex)</a>
+<a class="sourceLine" id="cb16-3" title="3">stf_tex_contents <span class="op">=</span> fl_tex_contents.read()</a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="bu">print</span>(srn_file_tex)</a>
+<a class="sourceLine" id="cb16-5" title="5"></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co"># define new and old</span></a></code></pre></div>
 <pre><code>## _file/test_fan.tex</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="system-and-support.html#cb12-1"></a>ls_st_old <span class="op">=</span> [<span class="st">&#39;information&#39;</span>, <span class="st">&#39;Latex&#39;</span>]</span>
-<span id="cb12-2"><a href="system-and-support.html#cb12-2"></a>ls_st_new <span class="op">=</span> [<span class="st">&#39;INFOREPLACE&#39;</span>, <span class="st">&#39;LATEX&#39;</span>]</span>
-<span id="cb12-3"><a href="system-and-support.html#cb12-3"></a></span>
-<span id="cb12-4"><a href="system-and-support.html#cb12-4"></a><span class="co"># zip and loop and replace</span></span>
-<span id="cb12-5"><a href="system-and-support.html#cb12-5"></a><span class="cf">for</span> old, new <span class="kw">in</span> <span class="bu">zip</span>(ls_st_old, ls_st_new):</span>
-<span id="cb12-6"><a href="system-and-support.html#cb12-6"></a>  stf_tex_contents <span class="op">=</span> stf_tex_contents.replace(old, new)</span>
-<span id="cb12-7"><a href="system-and-support.html#cb12-7"></a><span class="bu">print</span>(stf_tex_contents)</span>
-<span id="cb12-8"><a href="system-and-support.html#cb12-8"></a></span>
-<span id="cb12-9"><a href="system-and-support.html#cb12-9"></a><span class="co"># write to file with replacements</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1">ls_st_old <span class="op">=</span> [<span class="st">&#39;information&#39;</span>, <span class="st">&#39;Latex&#39;</span>]</a>
+<a class="sourceLine" id="cb18-2" title="2">ls_st_new <span class="op">=</span> [<span class="st">&#39;INFOREPLACE&#39;</span>, <span class="st">&#39;LATEX&#39;</span>]</a>
+<a class="sourceLine" id="cb18-3" title="3"></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="co"># zip and loop and replace</span></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="cf">for</span> old, new <span class="kw">in</span> <span class="bu">zip</span>(ls_st_old, ls_st_new):</a>
+<a class="sourceLine" id="cb18-6" title="6">  stf_tex_contents <span class="op">=</span> stf_tex_contents.replace(old, new)</a>
+<a class="sourceLine" id="cb18-7" title="7"><span class="bu">print</span>(stf_tex_contents)</a>
+<a class="sourceLine" id="cb18-8" title="8"></a>
+<a class="sourceLine" id="cb18-9" title="9"><span class="co"># write to file with replacements</span></a></code></pre></div>
 <pre><code>## \documentclass[12pt,english]{article}
 ## \usepackage[bottom]{footmisc}
 ## \usepackage[urlcolor=blue]{hyperref}
@@ -276,43 +273,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## \paragraph{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132}{Data}}
 ## Village closure INFOREPLACE is taken from a village head survey.\footnote{Generally students went to schools.}
 ## \end{document}</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="system-and-support.html#cb14-1"></a>sna_file_edited_tex <span class="op">=</span> <span class="st">&quot;test_fan_edited&quot;</span></span>
-<span id="cb14-2"><a href="system-and-support.html#cb14-2"></a>srn_file_edited_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></span>
-<span id="cb14-3"><a href="system-and-support.html#cb14-3"></a>fl_tex_ed_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_edited_tex, <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb14-4"><a href="system-and-support.html#cb14-4"></a>fl_tex_ed_contents.write(stf_tex_contents)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1">sna_file_edited_tex <span class="op">=</span> <span class="st">&quot;test_fan_edited&quot;</span></a>
+<a class="sourceLine" id="cb20-2" title="2">srn_file_edited_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.tex&quot;</span></a>
+<a class="sourceLine" id="cb20-3" title="3">fl_tex_ed_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_edited_tex, <span class="st">&#39;w&#39;</span>)</a>
+<a class="sourceLine" id="cb20-4" title="4">fl_tex_ed_contents.write(stf_tex_contents)</a></code></pre></div>
 <pre><code>## 617</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="system-and-support.html#cb16-1"></a>fl_tex_ed_contents.close()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1">fl_tex_ed_contents.close()</a></code></pre></div>
 </div>
-<div id="convert-tex-file-to-pandoc-and-compile-latex" class="section level4" number="2.1.1.3">
+<div id="convert-tex-file-to-pandoc-and-compile-latex" class="section level4">
 <h4><span class="header-section-number">2.1.1.3</span> Convert Tex File to Pandoc and Compile Latex</h4>
-<p>Compile tex file to pdf and clean up the extraneous pdf outputs.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="system-and-support.html#cb17-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb17-2"><a href="system-and-support.html#cb17-2"></a><span class="im">import</span> os</span>
-<span id="cb17-3"><a href="system-and-support.html#cb17-3"></a></span>
-<span id="cb17-4"><a href="system-and-support.html#cb17-4"></a><span class="co"># Change to local directory so path in tex respected.</span></span>
-<span id="cb17-5"><a href="system-and-support.html#cb17-5"></a>os.chdir(<span class="st">&quot;C:/Users/fan/pyfan/vig/support/inout&quot;</span>)</span>
-<span id="cb17-6"><a href="system-and-support.html#cb17-6"></a></span>
-<span id="cb17-7"><a href="system-and-support.html#cb17-7"></a><span class="co"># Convert tex to pdf</span></span>
-<span id="cb17-8"><a href="system-and-support.html#cb17-8"></a>subprocess.call([<span class="st">&#39;C:/texlive/2019/bin/win32/xelatex.exe&#39;</span>, <span class="st">&#39;-output-directory&#39;</span>,</span>
-<span id="cb17-9"><a href="system-and-support.html#cb17-9"></a>                 srt_file_tex, srn_file_edited_tex], shell<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb17-10"><a href="system-and-support.html#cb17-10"></a><span class="co"># Clean pdf extraneous output</span></span></code></pre></div>
+<p>Compile tex file to pdf and clean up the extraneous pdf outputs. See <a href="https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/util/pdf/pdfgen/index.html#pyfan.util.pdf.pdfgen.ff_pdf_gen_clean">ff_pdf_gen_clean</a>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1"><span class="im">import</span> subprocess</a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb23-3" title="3"></a>
+<a class="sourceLine" id="cb23-4" title="4"><span class="co"># Change to local directory so path in tex respected.</span></a>
+<a class="sourceLine" id="cb23-5" title="5">os.chdir(<span class="st">&quot;C:/Users/fan/pyfan/vig/support/inout&quot;</span>)</a>
+<a class="sourceLine" id="cb23-6" title="6"></a>
+<a class="sourceLine" id="cb23-7" title="7"><span class="co"># Convert tex to pdf</span></a>
+<a class="sourceLine" id="cb23-8" title="8">subprocess.call([<span class="st">&#39;C:/texlive/2019/bin/win32/xelatex.exe&#39;</span>, <span class="st">&#39;-output-directory&#39;</span>,</a>
+<a class="sourceLine" id="cb23-9" title="9">                 srt_file_tex, srn_file_edited_tex], shell<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb23-10" title="10"><span class="co"># Clean pdf extraneous output</span></a></code></pre></div>
 <pre><code>## 0</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="system-and-support.html#cb19-1"></a>ls_st_remove_suffix <span class="op">=</span> [<span class="st">&#39;aux&#39;</span>,<span class="st">&#39;log&#39;</span>,<span class="st">&#39;out&#39;</span>,<span class="st">&#39;bbl&#39;</span>,<span class="st">&#39;blg&#39;</span>]</span>
-<span id="cb19-2"><a href="system-and-support.html#cb19-2"></a><span class="cf">for</span> st_suffix <span class="kw">in</span> ls_st_remove_suffix:</span>
-<span id="cb19-3"><a href="system-and-support.html#cb19-3"></a>    srn_cur_file <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix</span>
-<span id="cb19-4"><a href="system-and-support.html#cb19-4"></a>    <span class="cf">if</span> (os.path.isfile(srn_cur_file)):</span>
-<span id="cb19-5"><a href="system-and-support.html#cb19-5"></a>        os.remove(srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1">ls_st_remove_suffix <span class="op">=</span> [<span class="st">&#39;aux&#39;</span>,<span class="st">&#39;log&#39;</span>,<span class="st">&#39;out&#39;</span>,<span class="st">&#39;bbl&#39;</span>,<span class="st">&#39;blg&#39;</span>]</a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="cf">for</span> st_suffix <span class="kw">in</span> ls_st_remove_suffix:</a>
+<a class="sourceLine" id="cb25-3" title="3">    srn_cur_file <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix</a>
+<a class="sourceLine" id="cb25-4" title="4">    <span class="cf">if</span> (os.path.isfile(srn_cur_file)):</a>
+<a class="sourceLine" id="cb25-5" title="5">        os.remove(srt_file_tex <span class="op">+</span> sna_file_edited_tex <span class="op">+</span> <span class="st">&quot;.&quot;</span> <span class="op">+</span> st_suffix)</a></code></pre></div>
 <p>Use pandoc to convert tex file</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="system-and-support.html#cb20-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb20-2"><a href="system-and-support.html#cb20-2"></a></span>
-<span id="cb20-3"><a href="system-and-support.html#cb20-3"></a><span class="co"># md file name</span></span>
-<span id="cb20-4"><a href="system-and-support.html#cb20-4"></a>srn_file_md <span class="op">=</span> srt_file_tex <span class="op">+</span> <span class="st">&quot;test_fan_edited.md&quot;</span></span>
-<span id="cb20-5"><a href="system-and-support.html#cb20-5"></a><span class="co"># Convert tex to md</span></span>
-<span id="cb20-6"><a href="system-and-support.html#cb20-6"></a>subprocess.call([<span class="st">&#39;pandoc&#39;</span>, <span class="st">&#39;-s&#39;</span>, srn_file_tex, <span class="st">&#39;-o&#39;</span>, srn_file_md])</span>
-<span id="cb20-7"><a href="system-and-support.html#cb20-7"></a><span class="co"># Open md file</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1"><span class="im">import</span> subprocess</a>
+<a class="sourceLine" id="cb26-2" title="2"></a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="co"># md file name</span></a>
+<a class="sourceLine" id="cb26-4" title="4">srn_file_md <span class="op">=</span> srt_file_tex <span class="op">+</span> <span class="st">&quot;test_fan_edited.md&quot;</span></a>
+<a class="sourceLine" id="cb26-5" title="5"><span class="co"># Convert tex to md</span></a>
+<a class="sourceLine" id="cb26-6" title="6">subprocess.call([<span class="st">&#39;pandoc&#39;</span>, <span class="st">&#39;-s&#39;</span>, srn_file_tex, <span class="st">&#39;-o&#39;</span>, srn_file_md])</a>
+<a class="sourceLine" id="cb26-7" title="7"><span class="co"># Open md file</span></a></code></pre></div>
 <pre><code>## 0</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="system-and-support.html#cb22-1"></a>fl_md_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_md)</span>
-<span id="cb22-2"><a href="system-and-support.html#cb22-2"></a><span class="bu">print</span>(fl_md_contents.read())</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1">fl_md_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_md)</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="bu">print</span>(fl_md_contents.read())</a></code></pre></div>
 <pre><code>## ---
 ## author:
 ## - &#39;[Fan Wang](http://fanwangecon.github.io/) [^1]&#39;
@@ -332,46 +329,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## [^2]: Generally students went to schools.</code></pre>
 </div>
-<div id="search-for-files-with-suffix-in-several-folders" class="section level4" number="2.1.1.4">
+<div id="search-for-files-with-suffix-in-several-folders" class="section level4">
 <h4><span class="header-section-number">2.1.1.4</span> Search for Files with Suffix in Several Folders</h4>
 <ul>
 <li>python search all files in folders with suffix</li>
 </ul>
 <p>Search for files in several directories that have a particular suffix. Then decompose directory into sub-components.</p>
 <p>Search file inside several folders (not recursively in subfolders):</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="system-and-support.html#cb24-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb24-2"><a href="system-and-support.html#cb24-2"></a></span>
-<span id="cb24-3"><a href="system-and-support.html#cb24-3"></a><span class="co"># directories to search in</span></span>
-<span id="cb24-4"><a href="system-and-support.html#cb24-4"></a>ls_spt_srh <span class="op">=</span> [<span class="st">&quot;C:/Users/fan/R4Econ/amto/&quot;</span>,</span>
-<span id="cb24-5"><a href="system-and-support.html#cb24-5"></a>              <span class="st">&quot;C:/Users/fan/R4Econ/function/&quot;</span>]</span>
-<span id="cb24-6"><a href="system-and-support.html#cb24-6"></a></span>
-<span id="cb24-7"><a href="system-and-support.html#cb24-7"></a><span class="co"># get file names in folders (not recursively)</span></span>
-<span id="cb24-8"><a href="system-and-support.html#cb24-8"></a>ls_spn_found <span class="op">=</span> [spn_file <span class="cf">for</span> spt_srh <span class="kw">in</span> ls_spt_srh</span>
-<span id="cb24-9"><a href="system-and-support.html#cb24-9"></a>                         <span class="cf">for</span> spn_file <span class="kw">in</span> Path(spt_srh).glob(<span class="st">&#39;*.Rmd&#39;</span>)]</span>
-<span id="cb24-10"><a href="system-and-support.html#cb24-10"></a><span class="cf">for</span> spn_found <span class="kw">in</span> ls_spn_found:</span>
-<span id="cb24-11"><a href="system-and-support.html#cb24-11"></a>  <span class="bu">print</span>(spn_found)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1"><span class="im">from</span> pathlib <span class="im">import</span> Path</a>
+<a class="sourceLine" id="cb30-2" title="2"></a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="co"># directories to search in</span></a>
+<a class="sourceLine" id="cb30-4" title="4">ls_spt_srh <span class="op">=</span> [<span class="st">&quot;C:/Users/fan/R4Econ/amto/&quot;</span>,</a>
+<a class="sourceLine" id="cb30-5" title="5">              <span class="st">&quot;C:/Users/fan/R4Econ/function/&quot;</span>]</a>
+<a class="sourceLine" id="cb30-6" title="6"></a>
+<a class="sourceLine" id="cb30-7" title="7"><span class="co"># get file names in folders (not recursively)</span></a>
+<a class="sourceLine" id="cb30-8" title="8">ls_spn_found <span class="op">=</span> [spn_file <span class="cf">for</span> spt_srh <span class="kw">in</span> ls_spt_srh</a>
+<a class="sourceLine" id="cb30-9" title="9">                         <span class="cf">for</span> spn_file <span class="kw">in</span> Path(spt_srh).glob(<span class="st">&#39;*.Rmd&#39;</span>)]</a>
+<a class="sourceLine" id="cb30-10" title="10"><span class="cf">for</span> spn_found <span class="kw">in</span> ls_spn_found:</a>
+<a class="sourceLine" id="cb30-11" title="11">  <span class="bu">print</span>(spn_found)</a></code></pre></div>
 <pre><code>## C:\Users\fan\R4Econ\amto\main.Rmd
 ## C:\Users\fan\R4Econ\function\main.Rmd</code></pre>
 <p>Search file recursivesly in all subfolders of folders:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="system-and-support.html#cb26-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb26-2"><a href="system-and-support.html#cb26-2"></a></span>
-<span id="cb26-3"><a href="system-and-support.html#cb26-3"></a><span class="co"># directories to search in</span></span>
-<span id="cb26-4"><a href="system-and-support.html#cb26-4"></a>ls_spt_srh <span class="op">=</span> [<span class="st">&quot;C:/Users/fan/R4Econ/amto/array/&quot;</span>,</span>
-<span id="cb26-5"><a href="system-and-support.html#cb26-5"></a>              <span class="st">&quot;C:/Users/fan/R4Econ/amto/list&quot;</span>]</span>
-<span id="cb26-6"><a href="system-and-support.html#cb26-6"></a></span>
-<span id="cb26-7"><a href="system-and-support.html#cb26-7"></a><span class="co"># get file names recursively in all subfolders</span></span>
-<span id="cb26-8"><a href="system-and-support.html#cb26-8"></a>ls_spn_found <span class="op">=</span> [spn_file <span class="cf">for</span> spt_srh <span class="kw">in</span> ls_spt_srh</span>
-<span id="cb26-9"><a href="system-and-support.html#cb26-9"></a>                         <span class="cf">for</span> spn_file <span class="kw">in</span> Path(spt_srh).rglob(<span class="st">&#39;*.R&#39;</span>)]</span>
-<span id="cb26-10"><a href="system-and-support.html#cb26-10"></a><span class="cf">for</span> spn_found <span class="kw">in</span> ls_spn_found:</span>
-<span id="cb26-11"><a href="system-and-support.html#cb26-11"></a>  drive, path_and_file <span class="op">=</span> os.path.splitdrive(spn_found)</span>
-<span id="cb26-12"><a href="system-and-support.html#cb26-12"></a>  path_no_suffix <span class="op">=</span> os.path.splitext(spn_found)[<span class="dv">0</span>]</span>
-<span id="cb26-13"><a href="system-and-support.html#cb26-13"></a>  path_no_file, <span class="bu">file</span> <span class="op">=</span> os.path.split(spn_found)</span>
-<span id="cb26-14"><a href="system-and-support.html#cb26-14"></a>  file_no_suffix <span class="op">=</span> Path(spn_found).stem</span>
-<span id="cb26-15"><a href="system-and-support.html#cb26-15"></a>  <span class="bu">print</span>(<span class="st">&#39;file:&#39;</span>, <span class="bu">file</span>, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">drive:&#39;</span>, drive,</span>
-<span id="cb26-16"><a href="system-and-support.html#cb26-16"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">file no suffix:&#39;</span>, file_no_suffix,</span>
-<span id="cb26-17"><a href="system-and-support.html#cb26-17"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">full path:&#39;</span>, spn_found,</span>
-<span id="cb26-18"><a href="system-and-support.html#cb26-18"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no fle:&#39;</span>, path_no_file,</span>
-<span id="cb26-19"><a href="system-and-support.html#cb26-19"></a>        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no suf:&#39;</span>, path_no_suffix, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1"><span class="im">from</span> pathlib <span class="im">import</span> Path</a>
+<a class="sourceLine" id="cb32-2" title="2"></a>
+<a class="sourceLine" id="cb32-3" title="3"><span class="co"># directories to search in</span></a>
+<a class="sourceLine" id="cb32-4" title="4">ls_spt_srh <span class="op">=</span> [<span class="st">&quot;C:/Users/fan/R4Econ/amto/array/&quot;</span>,</a>
+<a class="sourceLine" id="cb32-5" title="5">              <span class="st">&quot;C:/Users/fan/R4Econ/amto/list&quot;</span>]</a>
+<a class="sourceLine" id="cb32-6" title="6"></a>
+<a class="sourceLine" id="cb32-7" title="7"><span class="co"># get file names recursively in all subfolders</span></a>
+<a class="sourceLine" id="cb32-8" title="8">ls_spn_found <span class="op">=</span> [spn_file <span class="cf">for</span> spt_srh <span class="kw">in</span> ls_spt_srh</a>
+<a class="sourceLine" id="cb32-9" title="9">                         <span class="cf">for</span> spn_file <span class="kw">in</span> Path(spt_srh).rglob(<span class="st">&#39;*.R&#39;</span>)]</a>
+<a class="sourceLine" id="cb32-10" title="10"><span class="cf">for</span> spn_found <span class="kw">in</span> ls_spn_found:</a>
+<a class="sourceLine" id="cb32-11" title="11">  drive, path_and_file <span class="op">=</span> os.path.splitdrive(spn_found)</a>
+<a class="sourceLine" id="cb32-12" title="12">  path_no_suffix <span class="op">=</span> os.path.splitext(spn_found)[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb32-13" title="13">  path_no_file, <span class="bu">file</span> <span class="op">=</span> os.path.split(spn_found)</a>
+<a class="sourceLine" id="cb32-14" title="14">  file_no_suffix <span class="op">=</span> Path(spn_found).stem</a>
+<a class="sourceLine" id="cb32-15" title="15">  <span class="bu">print</span>(<span class="st">&#39;file:&#39;</span>, <span class="bu">file</span>, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">drive:&#39;</span>, drive,</a>
+<a class="sourceLine" id="cb32-16" title="16">        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">file no suffix:&#39;</span>, file_no_suffix,</a>
+<a class="sourceLine" id="cb32-17" title="17">        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">full path:&#39;</span>, spn_found,</a>
+<a class="sourceLine" id="cb32-18" title="18">        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no fle:&#39;</span>, path_no_file,</a>
+<a class="sourceLine" id="cb32-19" title="19">        <span class="st">&#39;</span><span class="ch">\n</span><span class="st">pt no suf:&#39;</span>, path_no_suffix, <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</a></code></pre></div>
 <pre><code>## file: fs_ary_basics.R 
 ## drive: C: 
 ## file no suffix: fs_ary_basics 
@@ -413,6 +410,506 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## full path: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics.R 
 ## pt no fle: C:\Users\fan\R4Econ\amto\list\htmlpdfr 
 ## pt no suf: C:\Users\fan\R4Econ\amto\list\htmlpdfr\fs_lst_basics</code></pre>
+
+</div>
+</div>
+<div id="folder-operations" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Folder Operations</h3>
+<blockquote>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<div id="new-folder-and-files" class="section level4">
+<h4><span class="header-section-number">2.1.2.1</span> New Folder and Files</h4>
+<ol style="list-style-type: decimal">
+<li>create a folder and subfolder</li>
+<li>create two files in the new folder</li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" title="1"><span class="im">import</span> pathlib</a>
+<a class="sourceLine" id="cb34-2" title="2"></a>
+<a class="sourceLine" id="cb34-3" title="3"><span class="co"># folder root</span></a>
+<a class="sourceLine" id="cb34-4" title="4">srt_folder <span class="op">=</span> <span class="st">&quot;_folder/&quot;</span></a>
+<a class="sourceLine" id="cb34-5" title="5"></a>
+<a class="sourceLine" id="cb34-6" title="6"><span class="co"># new folder</span></a>
+<a class="sourceLine" id="cb34-7" title="7">srt_subfolder <span class="op">=</span> srt_folder <span class="op">+</span> <span class="st">&quot;fa/&quot;</span></a>
+<a class="sourceLine" id="cb34-8" title="8"><span class="co"># new subfolder</span></a>
+<a class="sourceLine" id="cb34-9" title="9">srt_subfolder <span class="op">=</span> srt_subfolder <span class="op">+</span> <span class="st">&quot;faa/&quot;</span></a>
+<a class="sourceLine" id="cb34-10" title="10"><span class="co"># generate folders recursively</span></a>
+<a class="sourceLine" id="cb34-11" title="11">pathlib.Path(srt_subfolder).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb34-12" title="12"></a>
+<a class="sourceLine" id="cb34-13" title="13"><span class="co"># Open new file</span></a>
+<a class="sourceLine" id="cb34-14" title="14">fl_tex_contents_aa <span class="op">=</span> <span class="bu">open</span>(srt_subfolder <span class="op">+</span> <span class="st">&quot;file_a.txt&quot;</span>, <span class="st">&#39;w&#39;</span>)</a>
+<a class="sourceLine" id="cb34-15" title="15"><span class="co"># Write to File</span></a>
+<a class="sourceLine" id="cb34-16" title="16">fl_tex_contents_aa.write(<span class="st">&#39;contents of file a&#39;</span>)</a></code></pre></div>
+<pre><code>## 18</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1">fl_tex_contents_aa.close()</a>
+<a class="sourceLine" id="cb36-2" title="2"></a>
+<a class="sourceLine" id="cb36-3" title="3"><span class="co"># Open another new file and save</span></a>
+<a class="sourceLine" id="cb36-4" title="4">fl_tex_contents_ab <span class="op">=</span> <span class="bu">open</span>(srt_subfolder <span class="op">+</span> <span class="st">&quot;file_b.txt&quot;</span>, <span class="st">&#39;w&#39;</span>)</a>
+<a class="sourceLine" id="cb36-5" title="5"><span class="co"># Write to File</span></a>
+<a class="sourceLine" id="cb36-6" title="6">fl_tex_contents_ab.write(<span class="st">&#39;contents of file b&#39;</span>)</a></code></pre></div>
+<pre><code>## 18</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1">fl_tex_contents_ab.close()</a></code></pre></div>
+<p>Generate more folders without files:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="co"># generate folders recursively</span></a>
+<a class="sourceLine" id="cb39-2" title="2">pathlib.Path(<span class="st">&quot;_folder/fb/fba/&quot;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb39-3" title="3"><span class="co"># generate folders recursively</span></a>
+<a class="sourceLine" id="cb39-4" title="4">pathlib.Path(<span class="st">&quot;_folder/fc/&quot;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb39-5" title="5"><span class="co"># generate folders recursively</span></a>
+<a class="sourceLine" id="cb39-6" title="6">pathlib.Path(<span class="st">&quot;_folder/fd/&quot;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+</div>
+<div id="copy-a-file-from-one-folder-to-another" class="section level4">
+<h4><span class="header-section-number">2.1.2.2</span> Copy a File from One Folder to Another</h4>
+<p>Move the two files from *_folder/fa/faa* to *_folder/faa* as well as to *_folder/fb/faa<em>. Use </em>shutil.copy2* so that more metadata is copied over. But <em>copyfile</em> is faster.</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/123238/8280804">How do I copy a file in Python?</a></li>
+</ul>
+<p>Moving one file:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1"><span class="im">import</span> shutil</a>
+<a class="sourceLine" id="cb40-2" title="2"><span class="co"># Faster method</span></a>
+<a class="sourceLine" id="cb40-3" title="3">shutil.copyfile(<span class="st">&#39;_folder/fa/faa/file_a.txt&#39;</span>, <span class="st">&#39;_folder/fb/file_a.txt&#39;</span>)</a>
+<a class="sourceLine" id="cb40-4" title="4"><span class="co"># More metadat copied, and don&#39;t need to specify name </span></a></code></pre></div>
+<pre><code>## &#39;_folder/fb/file_a.txt&#39;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" title="1">shutil.copy2(<span class="st">&#39;_folder/fa/faa/file_a.txt&#39;</span>, <span class="st">&#39;_folder/fb/fba&#39;</span>)</a></code></pre></div>
+<pre><code>## &#39;_folder/fb/fba\\file_a.txt&#39;</code></pre>
+</div>
+<div id="copy-folder-to-multiple-destimations" class="section level4">
+<h4><span class="header-section-number">2.1.2.3</span> Copy Folder to Multiple Destimations</h4>
+<p>Move Entire Folder, <a href="https://stackoverflow.com/a/31039095/8280804">How do I copy an entire directory of files into an existing directory using Python?</a>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" title="1"><span class="im">from</span> distutils.dir_util <span class="im">import</span> copy_tree</a>
+<a class="sourceLine" id="cb44-2" title="2"></a>
+<a class="sourceLine" id="cb44-3" title="3"><span class="co"># Move contents from fa/faa/ to fc/faa</span></a>
+<a class="sourceLine" id="cb44-4" title="4">srt_curroot <span class="op">=</span> <span class="st">&#39;_folder/fa/&#39;</span></a>
+<a class="sourceLine" id="cb44-5" title="5">srt_folder <span class="op">=</span> <span class="st">&#39;faa/&#39;</span></a>
+<a class="sourceLine" id="cb44-6" title="6">srt_newroot <span class="op">=</span> <span class="st">&#39;_folder/fc/&#39;</span></a>
+<a class="sourceLine" id="cb44-7" title="7"></a>
+<a class="sourceLine" id="cb44-8" title="8"><span class="co"># Full source and destination</span></a>
+<a class="sourceLine" id="cb44-9" title="9">srt_sourc <span class="op">=</span> srt_curroot <span class="op">+</span> srt_folder</a>
+<a class="sourceLine" id="cb44-10" title="10">srt_desct <span class="op">=</span> srt_newroot <span class="op">+</span> srt_folder</a>
+<a class="sourceLine" id="cb44-11" title="11"></a>
+<a class="sourceLine" id="cb44-12" title="12"><span class="co"># Check/Create new Directory </span></a>
+<a class="sourceLine" id="cb44-13" title="13">pathlib.Path(srt_desct).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb44-14" title="14"></a>
+<a class="sourceLine" id="cb44-15" title="15"><span class="co"># Move</span></a>
+<a class="sourceLine" id="cb44-16" title="16">copy_tree(srt_sourc, srt_desct)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fc/faa/file_a.txt&#39;, &#39;_folder/fc/faa/file_b.txt&#39;]</code></pre>
+<p>Move contents to multiple destinations:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" title="1"><span class="im">from</span> distutils.dir_util <span class="im">import</span> copy_tree</a>
+<a class="sourceLine" id="cb46-2" title="2"><span class="co"># Check/Create new Directory </span></a>
+<a class="sourceLine" id="cb46-3" title="3">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fa_images&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-4" title="4">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fb_images&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-5" title="5">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fc_images&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-6" title="6">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fz_img&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-7" title="7">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fz_other&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-8" title="8"></a>
+<a class="sourceLine" id="cb46-9" title="9"><span class="co"># Move</span></a>
+<a class="sourceLine" id="cb46-10" title="10">copy_tree(<span class="st">&#39;_folder/fa/faa/&#39;</span>, <span class="st">&#39;_folder/fd/faa/fa_images&#39;</span>)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fa_images\\file_a.txt&#39;, &#39;_folder/fd/faa/fa_images\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" title="1">copy_tree(<span class="st">&#39;_folder/fa/faa/&#39;</span>, <span class="st">&#39;_folder/fd/faa/fb_images&#39;</span>)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fb_images\\file_a.txt&#39;, &#39;_folder/fd/faa/fb_images\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" title="1">copy_tree(<span class="st">&#39;_folder/fa/faa/&#39;</span>, <span class="st">&#39;_folder/fd/faa/fc_images&#39;</span>)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fc_images\\file_a.txt&#39;, &#39;_folder/fd/faa/fc_images\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" title="1">copy_tree(<span class="st">&#39;_folder/fa/faa/&#39;</span>, <span class="st">&#39;_folder/fd/faa/fz_img&#39;</span>)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fz_img\\file_a.txt&#39;, &#39;_folder/fd/faa/fz_img\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" title="1">copy_tree(<span class="st">&#39;_folder/fa/faa/&#39;</span>, <span class="st">&#39;_folder/fd/faa/fz_other&#39;</span>)</a>
+<a class="sourceLine" id="cb54-2" title="2"><span class="co"># Empty Folder</span></a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fz_other\\file_a.txt&#39;, &#39;_folder/fd/faa/fz_other\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" title="1">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fd_images&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb56-2" title="2">pathlib.Path(<span class="st">&#39;_folder/fd/faa/fe_images&#39;</span>).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+</div>
+<div id="search-for-files-in-folder" class="section level4">
+<h4><span class="header-section-number">2.1.2.4</span> Search for Files in Folder</h4>
+<p>Find the total number of files in a folder.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" title="1"><span class="im">import</span> pathlib</a>
+<a class="sourceLine" id="cb57-2" title="2"><span class="co"># the number of files in folder found with search critiera</span></a>
+<a class="sourceLine" id="cb57-3" title="3">st_fle_search <span class="op">=</span> <span class="st">&#39;*.txt&#39;</span></a>
+<a class="sourceLine" id="cb57-4" title="4">ls_spn <span class="op">=</span> [Path(spn).stem <span class="cf">for</span> spn <span class="kw">in</span> Path(<span class="st">&#39;_folder/fd/faa/fa_images&#39;</span>).rglob(st_fle_search)]</a>
+<a class="sourceLine" id="cb57-5" title="5"><span class="bu">print</span>(ls_spn)</a>
+<a class="sourceLine" id="cb57-6" title="6"></a>
+<a class="sourceLine" id="cb57-7" title="7"><span class="co"># count files in a non-empty folder</span></a></code></pre></div>
+<pre><code>## [&#39;file_a&#39;, &#39;file_b&#39;]</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" title="1">srn <span class="op">=</span> <span class="st">&#39;_folder/fd/faa/fa_images&#39;</span></a>
+<a class="sourceLine" id="cb59-2" title="2">[spn <span class="cf">for</span> spn <span class="kw">in</span> Path(srn).rglob(st_fle_search)]</a></code></pre></div>
+<pre><code>## [WindowsPath(&#39;_folder/fd/faa/fa_images/file_a.txt&#39;), WindowsPath(&#39;_folder/fd/faa/fa_images/file_b.txt&#39;)]</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" title="1">bl_folder_is_empty <span class="op">=</span> <span class="bu">len</span>([spn <span class="cf">for</span> spn <span class="kw">in</span> Path(srn).rglob(st_fle_search)])<span class="op">&gt;</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb61-2" title="2"><span class="bu">print</span>(bl_folder_is_empty)</a>
+<a class="sourceLine" id="cb61-3" title="3"></a>
+<a class="sourceLine" id="cb61-4" title="4"><span class="co"># count files in an empty folder</span></a></code></pre></div>
+<pre><code>## True</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" title="1">srn <span class="op">=</span> <span class="st">&#39;_folder/fd/faa/fd_images&#39;</span></a>
+<a class="sourceLine" id="cb63-2" title="2">[spn <span class="cf">for</span> spn <span class="kw">in</span> Path(srn).rglob(st_fle_search)]</a></code></pre></div>
+<pre><code>## []</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" title="1">bl_folder_is_empty <span class="op">=</span> <span class="bu">len</span>([spn <span class="cf">for</span> spn <span class="kw">in</span> Path(srn).rglob(st_fle_search)])<span class="op">&gt;</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb65-2" title="2"><span class="bu">print</span>(bl_folder_is_empty)</a></code></pre></div>
+<pre><code>## False</code></pre>
+</div>
+<div id="search-for-folder-names" class="section level4">
+<h4><span class="header-section-number">2.1.2.5</span> Search for Folder Names</h4>
+<ul>
+<li><a href="https://stackoverflow.com/a/40404282/8280804">python search for folders containing strings</a></li>
+</ul>
+<p>Search for folders with certain search word in folder name, and only keep if folder actually has files.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" title="1"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb67-2" title="2"></a>
+<a class="sourceLine" id="cb67-3" title="3"><span class="co"># get all folder names in folder</span></a>
+<a class="sourceLine" id="cb67-4" title="4">ls_spt <span class="op">=</span> os.listdir(<span class="st">&#39;_folder/fd/faa/&#39;</span>)</a>
+<a class="sourceLine" id="cb67-5" title="5"><span class="bu">print</span>(ls_spt)</a>
+<a class="sourceLine" id="cb67-6" title="6"></a>
+<a class="sourceLine" id="cb67-7" title="7"><span class="co"># Select only subfolder names containing _images</span></a></code></pre></div>
+<pre><code>## [&#39;fa_images&#39;, &#39;fb_images&#39;, &#39;fc_images&#39;, &#39;fd_images&#39;, &#39;fe_images&#39;, &#39;fz_img&#39;, &#39;fz_other&#39;, &#39;_img&#39;]</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" title="1">srt <span class="op">=</span> <span class="st">&#39;_folder/fd/faa/&#39;</span></a>
+<a class="sourceLine" id="cb69-2" title="2">st_search <span class="op">=</span> <span class="st">&#39;_images&#39;</span></a>
+<a class="sourceLine" id="cb69-3" title="3">ls_srt_found <span class="op">=</span> [srt <span class="op">+</span> spt </a>
+<a class="sourceLine" id="cb69-4" title="4">                <span class="cf">for</span> spt <span class="kw">in</span> os.listdir(srt) </a>
+<a class="sourceLine" id="cb69-5" title="5">                <span class="cf">if</span> st_search <span class="kw">in</span> spt]</a>
+<a class="sourceLine" id="cb69-6" title="6"><span class="bu">print</span>(ls_srt_found)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fa_images&#39;, &#39;_folder/fd/faa/fb_images&#39;, &#39;_folder/fd/faa/fc_images&#39;, &#39;_folder/fd/faa/fd_images&#39;, &#39;_folder/fd/faa/fe_images&#39;]</code></pre>
+</div>
+<div id="find-non-empty-folders-by-name" class="section level4">
+<h4><span class="header-section-number">2.1.2.6</span> Find Non-empty Folders by Name</h4>
+<p>Search:</p>
+<ol style="list-style-type: decimal">
+<li>Get subfolders in folder with string in name</li>
+<li>Only collect if there are files in the subfolder</li>
+</ol>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" title="1"><span class="im">import</span> pathlib</a>
+<a class="sourceLine" id="cb71-2" title="2"></a>
+<a class="sourceLine" id="cb71-3" title="3"><span class="co"># Select only subfolder names containing _images</span></a>
+<a class="sourceLine" id="cb71-4" title="4">srt <span class="op">=</span> <span class="st">&#39;_folder/fd/faa/&#39;</span></a>
+<a class="sourceLine" id="cb71-5" title="5"><span class="co"># the folder names must contain _images</span></a>
+<a class="sourceLine" id="cb71-6" title="6">st_srt_srh <span class="op">=</span> <span class="st">&#39;_images&#39;</span></a>
+<a class="sourceLine" id="cb71-7" title="7"><span class="co"># there must be files in the folder with this string</span></a>
+<a class="sourceLine" id="cb71-8" title="8">st_fle_srh <span class="op">=</span> <span class="st">&#39;*.txt&#39;</span></a>
+<a class="sourceLine" id="cb71-9" title="9"></a>
+<a class="sourceLine" id="cb71-10" title="10"><span class="co"># All folders that have String</span></a>
+<a class="sourceLine" id="cb71-11" title="11">ls_srt_found <span class="op">=</span> [srt <span class="op">+</span> spt </a>
+<a class="sourceLine" id="cb71-12" title="12">                <span class="cf">for</span> spt <span class="kw">in</span> os.listdir(srt) </a>
+<a class="sourceLine" id="cb71-13" title="13">                <span class="cf">if</span> st_srt_srh <span class="kw">in</span> spt]</a>
+<a class="sourceLine" id="cb71-14" title="14"><span class="bu">print</span>(ls_srt_found)</a>
+<a class="sourceLine" id="cb71-15" title="15"></a>
+<a class="sourceLine" id="cb71-16" title="16"><span class="co"># All folders that have String and that are nonempty</span></a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fa_images&#39;, &#39;_folder/fd/faa/fb_images&#39;, &#39;_folder/fd/faa/fc_images&#39;, &#39;_folder/fd/faa/fd_images&#39;, &#39;_folder/fd/faa/fe_images&#39;]</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb73-1" title="1">ls_srt_found <span class="op">=</span> [srt <span class="op">+</span> spt</a>
+<a class="sourceLine" id="cb73-2" title="2">                <span class="cf">for</span> spt <span class="kw">in</span> os.listdir(srt)</a>
+<a class="sourceLine" id="cb73-3" title="3">                <span class="cf">if</span> ((st_srt_srh <span class="kw">in</span> spt) </a>
+<a class="sourceLine" id="cb73-4" title="4">                    <span class="kw">and</span> </a>
+<a class="sourceLine" id="cb73-5" title="5">                    (<span class="bu">len</span>([spn <span class="cf">for</span> spn </a>
+<a class="sourceLine" id="cb73-6" title="6">                          <span class="kw">in</span> Path(srt <span class="op">+</span> spt).rglob(st_fle_srh)])<span class="op">&gt;</span><span class="dv">0</span>)) ]</a>
+<a class="sourceLine" id="cb73-7" title="7"><span class="bu">print</span>(ls_srt_found)</a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/fa_images&#39;, &#39;_folder/fd/faa/fb_images&#39;, &#39;_folder/fd/faa/fc_images&#39;]</code></pre>
+</div>
+<div id="found-folders-to-new-folder" class="section level4">
+<h4><span class="header-section-number">2.1.2.7</span> Found Folders to new Folder</h4>
+<ol style="list-style-type: decimal">
+<li>Search for subfolders by folder name string in a folder</li>
+<li>Select nonempty subfolders</li>
+<li>Move nonsempty subfolders to one new folder</li>
+<li>Move this single combination folder</li>
+</ol>
+<p>The results here are implemented as function in the <a href="https://github.com/FanWangEcon/pyfan">pyfan</a> package: <a href="https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/util/path/movefiles/index.html#pyfan.util.path.movefiles.fp_agg_move_subfiles">fp_agg_move_subfiles</a>.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" title="1"><span class="im">import</span> pathlib</a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb75-3" title="3"><span class="im">import</span> shutil</a>
+<a class="sourceLine" id="cb75-4" title="4"><span class="im">from</span> distutils.dir_util <span class="im">import</span> copy_tree</a>
+<a class="sourceLine" id="cb75-5" title="5"></a>
+<a class="sourceLine" id="cb75-6" title="6"><span class="co"># 1 Define Parameters</span></a>
+<a class="sourceLine" id="cb75-7" title="7"></a>
+<a class="sourceLine" id="cb75-8" title="8"><span class="co"># Select only subfolder names containing _images</span></a>
+<a class="sourceLine" id="cb75-9" title="9">srt <span class="op">=</span> <span class="st">&#39;_folder/fd/faa/&#39;</span></a>
+<a class="sourceLine" id="cb75-10" title="10"><span class="co"># the folder names must contain _images</span></a>
+<a class="sourceLine" id="cb75-11" title="11">st_srt_srh <span class="op">=</span> <span class="st">&#39;_images&#39;</span></a>
+<a class="sourceLine" id="cb75-12" title="12"><span class="co"># there must be files in the folder with this string</span></a>
+<a class="sourceLine" id="cb75-13" title="13">st_fle_srh <span class="op">=</span> <span class="st">&#39;*.txt&#39;</span></a>
+<a class="sourceLine" id="cb75-14" title="14"></a>
+<a class="sourceLine" id="cb75-15" title="15"><span class="co"># new aggregating folder name</span></a>
+<a class="sourceLine" id="cb75-16" title="16">srt_agg <span class="op">=</span> <span class="st">&#39;_img&#39;</span></a>
+<a class="sourceLine" id="cb75-17" title="17"></a>
+<a class="sourceLine" id="cb75-18" title="18"><span class="co"># folders to move aggregation files towards</span></a>
+<a class="sourceLine" id="cb75-19" title="19">ls_srt_dest <span class="op">=</span> [<span class="st">&#39;_folder/fd/faa/&#39;</span>, <span class="st">&#39;_folder/&#39;</span>]</a>
+<a class="sourceLine" id="cb75-20" title="20"></a>
+<a class="sourceLine" id="cb75-21" title="21"><span class="co"># delete source</span></a>
+<a class="sourceLine" id="cb75-22" title="22">bl_delete_source <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb75-23" title="23"></a>
+<a class="sourceLine" id="cb75-24" title="24"><span class="co"># 2 Gather Folders </span></a>
+<a class="sourceLine" id="cb75-25" title="25">ls_ls_srt_found <span class="op">=</span> [[srt <span class="op">+</span> spt, spt]</a>
+<a class="sourceLine" id="cb75-26" title="26">                    <span class="cf">for</span> spt <span class="kw">in</span> os.listdir(srt)</a>
+<a class="sourceLine" id="cb75-27" title="27">                    <span class="cf">if</span> ((st_srt_srh <span class="kw">in</span> spt) </a>
+<a class="sourceLine" id="cb75-28" title="28">                        <span class="kw">and</span> </a>
+<a class="sourceLine" id="cb75-29" title="29">                        (<span class="bu">len</span>([spn <span class="cf">for</span> spn </a>
+<a class="sourceLine" id="cb75-30" title="30">                              <span class="kw">in</span> Path(srt <span class="op">+</span> spt).rglob(st_fle_srh)])<span class="op">&gt;</span><span class="dv">0</span>)) ]</a>
+<a class="sourceLine" id="cb75-31" title="31"><span class="bu">print</span>(ls_ls_srt_found)</a>
+<a class="sourceLine" id="cb75-32" title="32"></a>
+<a class="sourceLine" id="cb75-33" title="33"><span class="co"># 3 Loop over destination folders, loop over source folders</span></a></code></pre></div>
+<pre><code>## [[&#39;_folder/fd/faa/fa_images&#39;, &#39;fa_images&#39;], [&#39;_folder/fd/faa/fb_images&#39;, &#39;fb_images&#39;], [&#39;_folder/fd/faa/fc_images&#39;, &#39;fc_images&#39;]]</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" title="1"><span class="cf">for</span> srt <span class="kw">in</span> ls_srt_dest:</a>
+<a class="sourceLine" id="cb77-2" title="2"></a>
+<a class="sourceLine" id="cb77-3" title="3">  <span class="co"># Move each folder over</span></a>
+<a class="sourceLine" id="cb77-4" title="4">  <span class="cf">for</span> ls_srt_found <span class="kw">in</span> ls_ls_srt_found:</a>
+<a class="sourceLine" id="cb77-5" title="5"></a>
+<a class="sourceLine" id="cb77-6" title="6">    <span class="co"># Paths</span></a>
+<a class="sourceLine" id="cb77-7" title="7">    srt_source <span class="op">=</span> ls_srt_found[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb77-8" title="8">    srt_dest <span class="op">=</span> os.path.join(srt, srt_agg, ls_srt_found[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb77-9" title="9">    </a>
+<a class="sourceLine" id="cb77-10" title="10">    <span class="co"># dest folders</span></a>
+<a class="sourceLine" id="cb77-11" title="11">    pathlib.Path(srt_dest).mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb77-12" title="12">    </a>
+<a class="sourceLine" id="cb77-13" title="13">    <span class="co"># move</span></a>
+<a class="sourceLine" id="cb77-14" title="14">    copy_tree(ls_srt_found[<span class="dv">0</span>], srt_dest)</a>
+<a class="sourceLine" id="cb77-15" title="15"></a>
+<a class="sourceLine" id="cb77-16" title="16"><span class="co"># 4. Delete Sources</span></a></code></pre></div>
+<pre><code>## [&#39;_folder/fd/faa/_img\\fa_images\\file_a.txt&#39;, &#39;_folder/fd/faa/_img\\fa_images\\file_b.txt&#39;]
+## [&#39;_folder/fd/faa/_img\\fb_images\\file_a.txt&#39;, &#39;_folder/fd/faa/_img\\fb_images\\file_b.txt&#39;]
+## [&#39;_folder/fd/faa/_img\\fc_images\\file_a.txt&#39;, &#39;_folder/fd/faa/_img\\fc_images\\file_b.txt&#39;]
+## [&#39;_folder/_img\\fa_images\\file_a.txt&#39;, &#39;_folder/_img\\fa_images\\file_b.txt&#39;]
+## [&#39;_folder/_img\\fb_images\\file_a.txt&#39;, &#39;_folder/_img\\fb_images\\file_b.txt&#39;]
+## [&#39;_folder/_img\\fc_images\\file_a.txt&#39;, &#39;_folder/_img\\fc_images\\file_b.txt&#39;]</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" title="1"><span class="cf">if</span> bl_delete_source:</a>
+<a class="sourceLine" id="cb79-2" title="2">  <span class="cf">for</span> ls_srt_found <span class="kw">in</span> ls_ls_srt_found:</a>
+<a class="sourceLine" id="cb79-3" title="3">    shutil.rmtree(ls_srt_found[<span class="dv">0</span>])</a></code></pre></div>
+
+</div>
+</div>
+<div id="parse-yaml" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Parse Yaml</h3>
+<blockquote>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<p>Use the <a href="https://pypi.org/project/PyYAML/">PyYAML</a> to parse yaml.</p>
+<div id="write-and-create-a-simple-yaml-file" class="section level4">
+<h4><span class="header-section-number">2.1.3.1</span> Write and Create a Simple YAML file</h4>
+<p>First, Yaml as a string variable:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" title="1"><span class="co"># Create the Tex Text</span></a>
+<a class="sourceLine" id="cb80-2" title="2"><span class="co"># Note that trible quotes begin first and end last lines</span></a>
+<a class="sourceLine" id="cb80-3" title="3">stf_tex_contents <span class="op">=</span> <span class="st">&quot;&quot;&quot;\</span></a>
+<a class="sourceLine" id="cb80-4" title="4"><span class="st">- file: matrix_matlab</span></a>
+<a class="sourceLine" id="cb80-5" title="5"><span class="st">  title: &quot;One Variable Graphs and Tables&quot;</span></a>
+<a class="sourceLine" id="cb80-6" title="6"><span class="st">  description: |</span></a>
+<a class="sourceLine" id="cb80-7" title="7"><span class="st">    Frequency table, bar chart and histogram.</span></a>
+<a class="sourceLine" id="cb80-8" title="8"><span class="st">    R function and lapply to generate graphs/tables for different variables.</span></a>
+<a class="sourceLine" id="cb80-9" title="9"><span class="st">  core:</span></a>
+<a class="sourceLine" id="cb80-10" title="10"><span class="st">  - package: r</span></a>
+<a class="sourceLine" id="cb80-11" title="11"><span class="st">    code: |</span></a>
+<a class="sourceLine" id="cb80-12" title="12"><span class="st">      c(&#39;word1&#39;,&#39;word2&#39;)</span></a>
+<a class="sourceLine" id="cb80-13" title="13"><span class="st">      function()</span></a>
+<a class="sourceLine" id="cb80-14" title="14"><span class="st">      for (ctr in c(1,2)) </span><span class="sc">{}</span></a>
+<a class="sourceLine" id="cb80-15" title="15"><span class="st">  - package: dplyr</span></a>
+<a class="sourceLine" id="cb80-16" title="16"><span class="st">    code: |</span></a>
+<a class="sourceLine" id="cb80-17" title="17"><span class="st">      group_by()</span></a>
+<a class="sourceLine" id="cb80-18" title="18"><span class="st">  date: 2020-05-02</span></a>
+<a class="sourceLine" id="cb80-19" title="19"><span class="st">  output:</span></a>
+<a class="sourceLine" id="cb80-20" title="20"><span class="st">    pdf_document:</span></a>
+<a class="sourceLine" id="cb80-21" title="21"><span class="st">      pandoc_args: &#39;../_output_kniti_pdf.yaml&#39;</span></a>
+<a class="sourceLine" id="cb80-22" title="22"><span class="st">      includes:</span></a>
+<a class="sourceLine" id="cb80-23" title="23"><span class="st">        in_header: &#39;../preamble.tex&#39;</span></a>
+<a class="sourceLine" id="cb80-24" title="24"><span class="st">  urlcolor: blue</span></a>
+<a class="sourceLine" id="cb80-25" title="25"><span class="st">- file: matrix_algebra_rules</span></a>
+<a class="sourceLine" id="cb80-26" title="26"><span class="st">  title: &quot;Opening a Dataset&quot;</span></a>
+<a class="sourceLine" id="cb80-27" title="27"><span class="st">  titleshort: &quot;Opening a Dataset&quot;</span></a>
+<a class="sourceLine" id="cb80-28" title="28"><span class="st">  description: |</span></a>
+<a class="sourceLine" id="cb80-29" title="29"><span class="st">    Opening a Dataset.</span></a>
+<a class="sourceLine" id="cb80-30" title="30"><span class="st">  core:</span></a>
+<a class="sourceLine" id="cb80-31" title="31"><span class="st">  - package: r</span></a>
+<a class="sourceLine" id="cb80-32" title="32"><span class="st">    code: |</span></a>
+<a class="sourceLine" id="cb80-33" title="33"><span class="st">      setwd()</span></a>
+<a class="sourceLine" id="cb80-34" title="34"><span class="st">  - package: readr</span></a>
+<a class="sourceLine" id="cb80-35" title="35"><span class="st">    code: |</span></a>
+<a class="sourceLine" id="cb80-36" title="36"><span class="st">      write_csv()</span></a>
+<a class="sourceLine" id="cb80-37" title="37"><span class="st">  date: 2020-05-02</span></a>
+<a class="sourceLine" id="cb80-38" title="38"><span class="st">  date_start: 2018-12-01</span></a>
+<a class="sourceLine" id="cb80-39" title="39"><span class="st">- file: matrix_two</span></a>
+<a class="sourceLine" id="cb80-40" title="40"><span class="st">  title: &quot;Third file&quot;</span></a>
+<a class="sourceLine" id="cb80-41" title="41"><span class="st">  titleshort: &quot;Third file&quot;</span></a>
+<a class="sourceLine" id="cb80-42" title="42"><span class="st">  description: |</span></a>
+<a class="sourceLine" id="cb80-43" title="43"><span class="st">    Third file description.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb80-44" title="44"><span class="co"># Print</span></a>
+<a class="sourceLine" id="cb80-45" title="45"><span class="bu">print</span>(stf_tex_contents)</a></code></pre></div>
+<pre><code>## - file: matrix_matlab
+##   title: &quot;One Variable Graphs and Tables&quot;
+##   description: |
+##     Frequency table, bar chart and histogram.
+##     R function and lapply to generate graphs/tables for different variables.
+##   core:
+##   - package: r
+##     code: |
+##       c(&#39;word1&#39;,&#39;word2&#39;)
+##       function()
+##       for (ctr in c(1,2)) {}
+##   - package: dplyr
+##     code: |
+##       group_by()
+##   date: 2020-05-02
+##   output:
+##     pdf_document:
+##       pandoc_args: &#39;../_output_kniti_pdf.yaml&#39;
+##       includes:
+##         in_header: &#39;../preamble.tex&#39;
+##   urlcolor: blue
+## - file: matrix_algebra_rules
+##   title: &quot;Opening a Dataset&quot;
+##   titleshort: &quot;Opening a Dataset&quot;
+##   description: |
+##     Opening a Dataset.
+##   core:
+##   - package: r
+##     code: |
+##       setwd()
+##   - package: readr
+##     code: |
+##       write_csv()
+##   date: 2020-05-02
+##   date_start: 2018-12-01
+## - file: matrix_two
+##   title: &quot;Third file&quot;
+##   titleshort: &quot;Third file&quot;
+##   description: |
+##     Third file description.</code></pre>
+<p>Second, write the contents of the file to a new tex file stored inside the *_file* subfolder of the directory:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" title="1"><span class="co"># Relative file name</span></a>
+<a class="sourceLine" id="cb82-2" title="2">srt_file_tex <span class="op">=</span> <span class="st">&quot;_file/&quot;</span></a>
+<a class="sourceLine" id="cb82-3" title="3">sna_file_tex <span class="op">=</span> <span class="st">&quot;test_yml_fan&quot;</span></a>
+<a class="sourceLine" id="cb82-4" title="4">srn_file_tex <span class="op">=</span> srt_file_tex <span class="op">+</span> sna_file_tex <span class="op">+</span> <span class="st">&quot;.yml&quot;</span></a>
+<a class="sourceLine" id="cb82-5" title="5"><span class="co"># Open new file</span></a>
+<a class="sourceLine" id="cb82-6" title="6">fl_tex_contents <span class="op">=</span> <span class="bu">open</span>(srn_file_tex, <span class="st">&#39;w&#39;</span>)</a>
+<a class="sourceLine" id="cb82-7" title="7"><span class="co"># Write to File</span></a>
+<a class="sourceLine" id="cb82-8" title="8">fl_tex_contents.write(stf_tex_contents)</a>
+<a class="sourceLine" id="cb82-9" title="9"><span class="co"># print</span></a></code></pre></div>
+<pre><code>## 908</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" title="1">fl_tex_contents.close()</a></code></pre></div>
+</div>
+<div id="select-subset-of-values-by-key" class="section level4">
+<h4><span class="header-section-number">2.1.3.2</span> Select Subset of Values by Key</h4>
+<p>Load Yaml file created prior, the output is a list of dictionaries:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" title="1"><span class="im">import</span> yaml </a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="im">import</span> pprint</a>
+<a class="sourceLine" id="cb85-3" title="3"><span class="co"># Open yaml file</span></a>
+<a class="sourceLine" id="cb85-4" title="4">fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_file_tex)</a>
+<a class="sourceLine" id="cb85-5" title="5"><span class="co"># load yaml </span></a>
+<a class="sourceLine" id="cb85-6" title="6">ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</a>
+<a class="sourceLine" id="cb85-7" title="7"><span class="co"># type</span></a>
+<a class="sourceLine" id="cb85-8" title="8"><span class="bu">type</span>(ls_dict_yml)</a></code></pre></div>
+<pre><code>## &lt;class &#39;list&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" title="1"><span class="bu">type</span>(ls_dict_yml[<span class="dv">0</span>])</a>
+<a class="sourceLine" id="cb87-2" title="2"><span class="co"># display</span></a></code></pre></div>
+<pre><code>## &lt;class &#39;dict&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" title="1">pprint.pprint(ls_dict_yml, width<span class="op">=</span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [{&#39;core&#39;: [{&#39;code&#39;: &quot;c(&#39;word1&#39;,&#39;word2&#39;)\n&quot;
+##                     &#39;function()\n&#39;
+##                     &#39;for &#39;
+##                     &#39;(ctr &#39;
+##                     &#39;in &#39;
+##                     &#39;c(1,2)) &#39;
+##                     &#39;{}\n&#39;,
+##             &#39;package&#39;: &#39;r&#39;},
+##            {&#39;code&#39;: &#39;group_by()\n&#39;,
+##             &#39;package&#39;: &#39;dplyr&#39;}],
+##   &#39;date&#39;: &#39;2020-05-02&#39;,
+##   &#39;description&#39;: &#39;Frequency &#39;
+##                  &#39;table, &#39;
+##                  &#39;bar &#39;
+##                  &#39;chart &#39;
+##                  &#39;and &#39;
+##                  &#39;histogram.\n&#39;
+##                  &#39;R &#39;
+##                  &#39;function &#39;
+##                  &#39;and &#39;
+##                  &#39;lapply &#39;
+##                  &#39;to &#39;
+##                  &#39;generate &#39;
+##                  &#39;graphs/tables &#39;
+##                  &#39;for &#39;
+##                  &#39;different &#39;
+##                  &#39;variables.\n&#39;,
+##   &#39;file&#39;: &#39;matrix_matlab&#39;,
+##   &#39;output&#39;: {&#39;pdf_document&#39;: {&#39;includes&#39;: {&#39;in_header&#39;: &#39;../preamble.tex&#39;},
+##                               &#39;pandoc_args&#39;: &#39;../_output_kniti_pdf.yaml&#39;}},
+##   &#39;title&#39;: &#39;One &#39;
+##            &#39;Variable &#39;
+##            &#39;Graphs &#39;
+##            &#39;and &#39;
+##            &#39;Tables&#39;,
+##   &#39;urlcolor&#39;: &#39;blue&#39;},
+##  {&#39;core&#39;: [{&#39;code&#39;: &#39;setwd()\n&#39;,
+##             &#39;package&#39;: &#39;r&#39;},
+##            {&#39;code&#39;: &#39;write_csv()\n&#39;,
+##             &#39;package&#39;: &#39;readr&#39;}],
+##   &#39;date&#39;: &#39;2020-05-02&#39;,
+##   &#39;date_start&#39;: &#39;2018-12-01&#39;,
+##   &#39;description&#39;: &#39;Opening &#39;
+##                  &#39;a &#39;
+##                  &#39;Dataset.\n&#39;,
+##   &#39;file&#39;: &#39;matrix_algebra_rules&#39;,
+##   &#39;title&#39;: &#39;Opening &#39;
+##            &#39;a &#39;
+##            &#39;Dataset&#39;,
+##   &#39;titleshort&#39;: &#39;Opening &#39;
+##                 &#39;a &#39;
+##                 &#39;Dataset&#39;},
+##  {&#39;description&#39;: &#39;Third &#39;
+##                  &#39;file &#39;
+##                  &#39;description.&#39;,
+##   &#39;file&#39;: &#39;matrix_two&#39;,
+##   &#39;title&#39;: &#39;Third &#39;
+##            &#39;file&#39;,
+##   &#39;titleshort&#39;: &#39;Third &#39;
+##                 &#39;file&#39;}]</code></pre>
+<p>Select yaml information by <em>file</em> name which is a key shared by components of the list:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" title="1">ls_str_file_ids <span class="op">=</span> [<span class="st">&#39;matrix_two&#39;</span>]</a>
+<a class="sourceLine" id="cb91-2" title="2">ls_dict_selected <span class="op">=</span> [dict_yml <span class="cf">for</span> dict_yml <span class="kw">in</span> ls_dict_yml <span class="cf">if</span> dict_yml[<span class="st">&#39;file&#39;</span>] <span class="kw">in</span> ls_str_file_ids]</a>
+<a class="sourceLine" id="cb91-3" title="3">pprint.pprint(ls_dc_selected, width<span class="op">=</span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [{&#39;date&#39;: datetime.date(2020, 5, 2),
+##   &#39;description&#39;: &#39;Frequency &#39;
+##                  &#39;table, &#39;
+##                  &#39;bar &#39;
+##                  &#39;chart &#39;
+##                  &#39;and &#39;
+##                  &#39;histogram&#39;,
+##   &#39;file&#39;: &#39;mat_matlab&#39;,
+##   &#39;title&#39;: &#39;One &#39;
+##            &#39;Variable &#39;
+##            &#39;Graphs &#39;
+##            &#39;and &#39;
+##            &#39;Tables&#39;,
+##   &#39;val&#39;: 1}]</code></pre>
+</div>
+<div id="dump-list-of-dictionary-as-yaml" class="section level4">
+<h4><span class="header-section-number">2.1.3.3</span> Dump List of Dictionary as YAML</h4>
+<ul>
+<li><a href="https://stackoverflow.com/a/8641732/8280804">py yaml dump pipe</a></li>
+</ul>
+<p>Given a list of dictionaries, dump values to yaml. Note that dumped output does not use pipe for long sentences, but use single quote and space line, which works with the <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/util/rmd/rmdparse.py">rmdparrse.py</a> function without problem.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" title="1">ls_dict_selected <span class="op">=</span> [dict_yml <span class="cf">for</span> dict_yml <span class="kw">in</span> ls_dict_yml </a>
+<a class="sourceLine" id="cb93-2" title="2">                    <span class="cf">if</span> dict_yml[<span class="st">&#39;file&#39;</span>] <span class="kw">in</span> [<span class="st">&#39;matrix_two&#39;</span>,<span class="st">&#39;matrix_matlab&#39;</span>]]</a>
+<a class="sourceLine" id="cb93-3" title="3"><span class="bu">print</span>(yaml.dump(ls_dict_selected))</a></code></pre></div>
+<pre><code>## - core:
+##   - code: &#39;c(&#39;&#39;word1&#39;&#39;,&#39;&#39;word2&#39;&#39;)
+## 
+##       function()
+## 
+##       for (ctr in c(1,2)) {}
+## 
+##       &#39;
+##     package: r
+##   - code: &#39;group_by()
+## 
+##       &#39;
+##     package: dplyr
+##   date: &#39;2020-05-02&#39;
+##   description: &#39;Frequency table, bar chart and histogram.
+## 
+##     R function and lapply to generate graphs/tables for different variables.
+## 
+##     &#39;
+##   file: matrix_matlab
+##   output:
+##     pdf_document:
+##       includes:
+##         in_header: ../preamble.tex
+##       pandoc_args: ../_output_kniti_pdf.yaml
+##   title: One Variable Graphs and Tables
+##   urlcolor: blue
+## - description: Third file description.
+##   file: matrix_two
+##   title: Third file
+##   titleshort: Third file</code></pre>
 
 </div>
 </div>

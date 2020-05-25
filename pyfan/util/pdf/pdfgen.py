@@ -99,4 +99,4 @@ def ff_pdf_gen_clean(ls_spt_srh=None,
 
 
 if __name__ == '__main__':
-    fp_pdf_gen_clean()
+    ff_pdf_gen_clean()
