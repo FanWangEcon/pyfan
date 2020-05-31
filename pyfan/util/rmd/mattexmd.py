@@ -114,7 +114,7 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
     the md file would not work. Importantly, convert how images are stored to
     aggregate subfolder. Which relies on movefiles.py to generate to put
     in the image folder structure as specified here which is under an
-    aggregate _img folder.
+    aggregate img folder.
 
     Parameters
     ----------
@@ -170,7 +170,7 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
                      '\\end{lstlisting}',
                      'lstlisting',
                      'subsection', 'subsubsection',
-                     '{_img/' + sna_file + '_images/']
+                     '{img/' + sna_file + '_images/']
 
         # zip and loop and replace
         for old, new in zip(ls_st_old, ls_st_new):

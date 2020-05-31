@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46ae83e3-acb5-4af9-96c0-b4d43a97591e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.Rprofile" beforeDir="false" afterPath="$PROJECT_DIR$/.Rprofile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_appendix.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_appendix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_pre.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_pre.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_toc.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_toc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_bookdown.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_bookdown.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_file/test_fan_edited.md" beforeDir="false" afterPath="$PROJECT_DIR$/_file/test_fan_edited.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.tex" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/A-Collection-of-Python-Examples.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/array-matrix-dataframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/array-matrix-dataframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/index-and-code-links.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index-and-code-links.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/search_index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookdown/system-and-support.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/system-and-support.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan/util/path/movefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/path/movefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/rmdparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/rmdparse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.md" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

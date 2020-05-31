@@ -7,7 +7,7 @@ from distutils.dir_util import copy_tree
 def fp_agg_move_subfiles(spt_root_src="C:/Users/fan/pyfan/vig/support/inout/_folder/fd/faa/",
                          st_srt_srh="_images",
                          st_fle_srh="*",
-                         srt_agg='_img',
+                         srt_agg='img',
                          ls_srt_dest=['C:/Users/fan/pyfan/vig/support/inout/_folder/fd/faa/',
                                       'C:/Users/fan/pyfan/vig/support/inout/_folder/'],
                          bl_delete_src=True,
@@ -51,7 +51,7 @@ def fp_agg_move_subfiles(spt_root_src="C:/Users/fan/pyfan/vig/support/inout/_fol
     >>> fp_agg_move_subfiles(spt_root_src="C:/Users/fan/Math4Econ/matrix_application/",
     >>> 					 st_srt_srh="_images",
     >>> 					 st_fle_srh="*.png",
-    >>> 					 srt_agg='_img',
+    >>> 					 srt_agg='img',
     >>> 					 ls_srt_dest=["C:/Users/fan/Math4Econ/"],
     >>> 					 bl_delete_src=False,
     >>> 					 bl_test=False,
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     # spt_root_src_u = "C:/Users/fan/Math4Econ/matrix_application/"
     # st_srt_srh_u = "_images"
     # st_fle_srh_u = "*.png"
-    # srt_agg_u = '_img'
+    # srt_agg_u = 'img'
     # ls_srt_dest_u = [spt_root_src_u,
     #                  "C:/Users/fan/Math4Econ/"]
     # bl_delete_src_u = False
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     spt_root_src_u = "C:/Users/fan/Math4Econ/matrix_application/"
     st_srt_srh_u = "twogoods_images"
     st_fle_srh_u = "*.png"
-    srt_agg_u = '_img'
+    srt_agg_u = 'img'
     ls_srt_dest_u = ['C:/Users/fan/Math4Econ/matrix_application/', 'C:/Users/fan/Math4Econ/']
     bl_delete_src_u = True
     bl_test_u = False
