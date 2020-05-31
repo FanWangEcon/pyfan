@@ -31,7 +31,8 @@ def fs_rmd_yml_parse(sfc_prj='R4Econ',
                      sph_branch='/master',
                      sph_pdf='htmlpdfr',
                      sph_html='htmlpdfr',
-                     sph_r='htmlpdfr'):
+                     sph_r='htmlpdfr',
+                     st_file_type='r'):
     """Parse Yaml Frontmatter to get list of paths, summaries, dependencies
 
     Parameters
@@ -53,7 +54,11 @@ def fs_rmd_yml_parse(sfc_prj='R4Econ',
     sph_html : string
         subfolder to store html files in the rmd folder
     sph_r : string
-        subfolder to store r files in the rmd folder
+        subfolder to store r files in the rmd folder does not
+        have to be r, any other raw file type, m of py for example
+    st_file_type: string
+        the RMD file is for which underlying language: r for R, m for matlab, py
+        for python
     """
 
     # 1. [Count Unique Groups and Mean within Groups](
@@ -79,17 +84,36 @@ def fs_rmd_yml_parse(sfc_prj='R4Econ',
 
     sph_source_blob_root = sph_github_root + sfc_prj + '/blob' + sph_branch + '/' + spt_rmd_path + '/'
     sph_rmd_pdf = sph_source_blob_root + sph_pdf + '/' + sfc_file_base + '.pdf'
-    sph_rmd_r = sph_source_blob_root + sph_r + '/' + sfc_file_base + '.R'
     sph_rmd_rmd = sph_source_blob_root + '/' + sfc_file_base + '.Rmd'
 
     sph_source_web_root = sph_gitpages_root + sfc_prj + '/' + spt_rmd_path + '/'
     sph_rmd_html = sph_source_web_root + sph_html + '/' + sfc_file_base + '.html'
 
     st_head_link = '[' + st_title + '](' + sph_rmd_html + '):'
-    st_head_link = st_head_link + ' [**rmd**](' + sph_rmd_rmd + ')'
-    st_head_link = st_head_link + ' \\| [**r**](' + sph_rmd_r + ')'
-    st_head_link = st_head_link + ' \\| [**pdf**](' + sph_rmd_pdf + ')'
-    st_head_link = st_head_link + ' \\| [**html**](' + sph_rmd_html + ')'
+
+    if st_file_type == 'r':
+
+        sph_rmd_r = sph_source_blob_root + sph_r + '/' + sfc_file_base + '.R'
+
+        st_head_link = st_head_link + ' [**rmd**](' + sph_rmd_rmd + ')'
+        st_head_link = st_head_link + ' \\| [**r**](' + sph_rmd_r + ')'
+        st_head_link = st_head_link + ' \\| [**pdf**](' + sph_rmd_pdf + ')'
+        st_head_link = st_head_link + ' \\| [**html**](' + sph_rmd_html + ')'
+    elif st_file_type == 'm':
+
+        sph_rmd_m = sph_source_blob_root + sph_r + '/' + sfc_file_base + '.m'
+        # assume mlx and rmd same folder
+        sph_rmd_mlx = sph_source_blob_root + sfc_file_base + '.mlx'
+
+        st_head_link = st_head_link + ' [**mlx**](' + sph_rmd_mlx + ')'
+        st_head_link = st_head_link + ' \\| [**m**](' + sph_rmd_m + ')'
+        st_head_link = st_head_link + ' \\| [**pdf**](' + sph_rmd_pdf + ')'
+        st_head_link = st_head_link + ' \\| [**html**](' + sph_rmd_html + ')'
+    elif st_file_type == 'py':
+        st_head_link = st_head_link + ' [**rmd**](' + sph_rmd_rmd + ')'
+        # st_head_link = st_head_link + ' \\| [**m**](' + sph_rmd_r + ')'
+        st_head_link = st_head_link + ' \\| [**pdf**](' + sph_rmd_pdf + ')'
+        st_head_link = st_head_link + ' \\| [**html**](' + sph_rmd_html + ')'
 
     # Function Details Bullet Points
     if 'description' in ls_front_keys:

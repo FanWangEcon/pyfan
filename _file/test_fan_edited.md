@@ -4,7 +4,6 @@ author:
 title: A Latex Testing File
 ---
 
-\maketitle
 Ipsum information dolor sit amet, consectetur adipiscing elit. Integer
 Latex placerat nunc orci.
 

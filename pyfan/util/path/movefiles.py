@@ -84,29 +84,45 @@ def fp_agg_move_subfiles(spt_root_src="C:/Users/fan/pyfan/vig/support/inout/_fol
                 print('srt_source:' + srt_source + ', srt_dest:' + srt_dest)
 
             # if not testing
-            if ~bl_test:
+            if not bl_test:
                 # dest folders
                 pathlib.Path(srt_dest).mkdir(parents=True, exist_ok=True)
                 # move
                 copy_tree(srt_source, srt_dest)
 
     # 3. Delete Sources
-    if bl_delete_src and ~bl_test:
+    if bl_delete_src and not bl_test:
         for ls_srt_found in ls_ls_srt_found:
             shutil.rmtree(ls_srt_found[0])
 
 
 if __name__ == '__main__':
+    # spt_root_src_u = "C:/Users/fan/Math4Econ/matrix_application/"
+    # st_srt_srh_u = "_images"
+    # st_fle_srh_u = "*.png"
+    # srt_agg_u = '_img'
+    # ls_srt_dest_u = [spt_root_src_u,
+    #                  "C:/Users/fan/Math4Econ/"]
+    # bl_delete_src_u = False
+    # bl_test_u = False
+    # verbose_u = False
+    # fp_agg_move_subfiles(spt_root_src=spt_root_src_u,
+    #                      st_srt_srh=st_srt_srh_u,
+    #                      st_fle_srh=st_fle_srh_u,
+    #                      srt_agg=srt_agg_u,
+    #                      ls_srt_dest=ls_srt_dest_u,
+    #                      bl_delete_src=bl_delete_src_u,
+    #                      bl_test=bl_test_u,
+    #                      verbose=verbose_u)
 
     spt_root_src_u = "C:/Users/fan/Math4Econ/matrix_application/"
-    st_srt_srh_u = "_images"
+    st_srt_srh_u = "twogoods_images"
     st_fle_srh_u = "*.png"
     srt_agg_u = '_img'
-    ls_srt_dest_u = [spt_root_src_u,
-                    "C:/Users/fan/Math4Econ/"]
-    bl_delete_src_u = False
+    ls_srt_dest_u = ['C:/Users/fan/Math4Econ/matrix_application/', 'C:/Users/fan/Math4Econ/']
+    bl_delete_src_u = True
     bl_test_u = False
-    verbose_u = False
+    verbose_u = True
     fp_agg_move_subfiles(spt_root_src=spt_root_src_u,
                          st_srt_srh=st_srt_srh_u,
                          st_fle_srh=st_fle_srh_u,

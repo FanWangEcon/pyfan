@@ -15,6 +15,10 @@ def fs_yml2readme(sfc_prj='R4Econ',
                   spn_prj_bookdown_yml='_bookdown.yml',
                   spn_prj_readme_toc='README_toc.md',
                   ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd'],
+                  sph_pdf='htmlpdfr',
+                  sph_html='htmlpdfr',
+                  sph_r='htmlpdfr',
+                  st_file_type='r',
                   verbose=False):
     """Write to file README detailed TOC for files in bookdown yaml list
 
@@ -30,6 +34,16 @@ def fs_yml2readme(sfc_prj='R4Econ',
         md generated file name under project root
     ls_st_ignore: list
         list of string names to ignore
+    sph_pdf : string
+        subfolder to store pdf files in the rmd folder
+    sph_html : string
+        subfolder to store html files in the rmd folder
+    sph_r : string
+        subfolder to store r files in the rmd folder does not
+        have to be r, any other raw file type, m of py for example
+    st_file_type: string
+        the RMD file is for which underlying language: r for R, m for matlab, py
+        for python
     verbose: bool
         print details
 
@@ -100,7 +114,11 @@ def fs_yml2readme(sfc_prj='R4Econ',
             ctr_subsection = ctr_subsection + 1
             st_head_link, ls_desc_out, ls_code_out = \
                 rmdparse.fs_rmd_yml_parse(
-                    sfc_prj=sfc_prj, sph_prj=sph_prj, spn_prj_rmd=sfc)
+                    sfc_prj=sfc_prj, sph_prj=sph_prj, spn_prj_rmd=sfc,
+                    sph_pdf=sph_pdf,
+                    sph_html=sph_html,
+                    sph_r=sph_r,
+                    st_file_type=st_file_type)
 
             # write to file file title and main
             st_text_out = str(ctr_subsection) + '. ' + st_head_link + '\n'
@@ -131,4 +149,15 @@ if __name__ == '__main__':
     #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
     #               spn_prj_readme_toc=spn_prj_readme_toc)
 
-    fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)
+    # fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)
+
+    fs_yml2readme(sfc_prj='Math4Econ',
+                  sph_prj='C:/Users/fan/Math4Econ/',
+                  spn_prj_bookdown_yml='_bookdown.yml',
+                  spn_prj_readme_toc='README_toc.md',
+                  ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd'],
+                  sph_pdf='htmlpdfm',
+                  sph_html='htmlpdfm',
+                  sph_r='htmlpdfm',
+                  st_file_type='m',
+                  verbose=True)

@@ -7,7 +7,7 @@ import time
 
 
 def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
-              ls_srt_subfolders=['matrix_basics/', 'matrix_application/'],
+              ls_srt_subfolders=['calconevar/'],
               snm_folder_yml='preamble.yml',
               st_yml_file_key='file',
               st_rglob_md='*.md', verbose=False):
@@ -37,6 +37,7 @@ def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
     -------
     None
         nothing is returned, mlx generated tex files updates, and pandoc md generated
+
     """
 
     ls_spn_found_md = \
@@ -55,6 +56,26 @@ def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
         # Open existing md file
         fl_md = open(spn_md)
         tx_fl_md = fl_md.read()
+
+        # Link String
+        st_link_line_1 = "**back to** [**Fan**](https://fanwangecon.github.io)**'s** [**Intro Math\n"
+        st_link_line_2 = "for Econ**](https://fanwangecon.github.io/Math4Econ/)**,** [**Matlab\n"
+        st_link_line_3 = "Examples**](https://fanwangecon.github.io/M4Econ/)**, or** [**Dynamic\n"
+        st_link_line_4 = "Asset**](https://fanwangecon.github.io/CodeDynaAsset/) **Repositories**\n"
+        st_link_lines = st_link_line_1 + st_link_line_2 + st_link_line_3 + st_link_line_4
+
+        st_link_rep_1 = "```{r global_options, include = FALSE}\ntry(source('../.Rprofile'))\n```\n"
+        st_link_rep_2 = "\n`r text_shared_preamble_one`\n`r text_shared_preamble_two`\n`r text_shared_preamble_thr`\n"
+
+        # replace md elements
+        ls_st_old = ['![image]', '.png)', st_link_line_1, st_link_line_2, st_link_line_3, st_link_line_4]
+        ls_st_new = ['![]', '.png){width=500px}', st_link_rep_1, st_link_rep_2, '', '']
+
+        # zip and loop and replace
+        for old, new in zip(ls_st_old, ls_st_new):
+            tx_fl_md = tx_fl_md.replace(old, new)
+        if verbose:
+            print(tx_fl_md)
 
         # Open and get yml component
         # Assume that there is a yml file under the immediate path
@@ -85,7 +106,7 @@ def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
 
 
 def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
-                 ls_srt_subfolders=['matrix_basics/', 'matrix_application/'],
+                 ls_srt_subfolders=['calconevar/'],
                  st_rglob_tex='*.tex', verbose=False):
     """Edit and replace MLX based tex and convert to markdown
 
@@ -110,6 +131,12 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
     -------
     None
         nothing is returned, mlx generated tex files updates, and pandoc md generated
+
+    Examples
+    --------
+
+    >>> fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)
+
     """
 
     # spt_root = "C:/Users/fan/Math4Econ/"
@@ -171,18 +198,35 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
 
 
 if __name__ == '__main__':
-    spt_root_u = "C:/Users/fan/Math4Econ/"
-    ls_srt_subfolders_u = ['calconevar/', 'derivative/', 'derivative_application/',
-                           'matrix_basics/',
-                           'opti_firm_constrained/', 'opti_hh_constrained_brsv/',
-                           'opti_hh_constrained_brsv_inequality/']
-    ls_srt_subfolders_u = ['matrix_basics/', 'matrix_application/']
-    st_rglob_tex_u = '*.tex'
-    st_rglob_md_u = '*.md'
-    verbose_u = False
+    # spt_root_u = "C:/Users/fan/Math4Econ/"
+    # ls_srt_subfolders_u = ['calconevar/', 'derivative/', 'derivative_application/',
+    #                        'matrix_basics/',
+    #                        'opti_firm_constrained/', 'opti_hh_constrained_brsv/',
+    #                        'opti_hh_constrained_brsv_inequality/']
+    # ls_srt_subfolders_u = ['matrix_basics/', 'matrix_application/']
+    # st_rglob_tex_u = '*.tex'
+    # st_rglob_md_u = '*.md'
+    # verbose_u = False
+    #
+    # fp_mlxtex2md(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
+    #              st_rglob_tex=st_rglob_tex_u, verbose=verbose_u)
+    #
+    # fp_md2rmd(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
+    #           st_rglob_md=st_rglob_md_u, verbose=verbose_u)
+    # from subprocess import Popen, PIPE
+    #
+    # # python -c "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
+    #
+    # spg_py_run = "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
+    # # spg_py_run = "1+1"
+    #
+    # cmd_popen = Popen(["python", "-c",
+    #                    "\"" + spg_py_run + "\""],
+    #                   stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    # print(cmd_popen)
+    # output, err = cmd_popen.communicate()
+    # print(output.decode('utf-8'))
+    # print(err.decode('utf-8'))
 
-    fp_mlxtex2md(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
-                 st_rglob_tex=st_rglob_tex_u, verbose=verbose_u)
-
-    fp_md2rmd(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
-              st_rglob_md=st_rglob_md_u, verbose=verbose_u)
+    # fp_mlxtex2md()
+    fp_md2rmd()

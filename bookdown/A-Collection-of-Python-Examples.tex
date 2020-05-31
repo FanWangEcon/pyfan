@@ -95,7 +95,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-05-24}
+\date{2020-05-31}
 
 \begin{document}
 \maketitle
@@ -176,7 +176,7 @@ Please contact \href{https://fanwangecon.github.io/}{FanWangEcon} for issues or 
 \subsection{Strings}\label{strings}}
 
 \begin{quote}
-Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
 \hypertarget{search-if-names-include-strings}{%
@@ -186,16 +186,16 @@ Given a list of strings, loop but skip if string contains elements string list.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# define string}
-\NormalTok{ls_st_ignore }\OperatorTok{=}\NormalTok{ [}\StringTok{'abc'}\NormalTok{, }\StringTok{'efg'}\NormalTok{, }\StringTok{'xyz'}\NormalTok{]}
-\NormalTok{ls_st_loop }\OperatorTok{=}\NormalTok{ [}\StringTok{'ab cefg sdf'}\NormalTok{, }\StringTok{'12345'}\NormalTok{, }\StringTok{'xyz'}\NormalTok{, }\StringTok{'abc xyz'}\NormalTok{, }\StringTok{'good morning'}\NormalTok{]}
+\CommentTok{\# define string}
+\NormalTok{ls\_st\_ignore }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}efg\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_loop }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}ab cefg sdf\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}12345\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}abc xyz\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}good morning\textquotesingle{}}\NormalTok{]}
 
-\CommentTok{# zip and loop and replace}
-\ControlFlowTok{for}\NormalTok{ st_loop }\KeywordTok{in}\NormalTok{ ls_st_loop:}
-  \ControlFlowTok{if} \BuiltInTok{sum}\NormalTok{([st_ignore }\KeywordTok{in}\NormalTok{ st_loop }\ControlFlowTok{for}\NormalTok{ st_ignore }\KeywordTok{in}\NormalTok{ ls_st_ignore]):}
-    \BuiltInTok{print}\NormalTok{(}\StringTok{'skip:'}\NormalTok{, st_loop)}
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ st\_loop }\KeywordTok{in}\NormalTok{ ls\_st\_loop:}
+  \ControlFlowTok{if} \BuiltInTok{sum}\NormalTok{([st\_ignore }\KeywordTok{in}\NormalTok{ st\_loop }\ControlFlowTok{for}\NormalTok{ st\_ignore }\KeywordTok{in}\NormalTok{ ls\_st\_ignore]):}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}skip:\textquotesingle{}}\NormalTok{, st\_loop)}
   \ControlFlowTok{else}\NormalTok{:}
-    \BuiltInTok{print}\NormalTok{(}\StringTok{'not skip:'}\NormalTok{, st_loop)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}not skip:\textquotesingle{}}\NormalTok{, st\_loop)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -214,23 +214,23 @@ Replace terms in string
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# define string}
-\NormalTok{st_full }\OperatorTok{=} \StringTok{"""}
+\CommentTok{\# define string}
+\NormalTok{st\_full }\OperatorTok{=} \StringTok{"""}
 \StringTok{abc is a great efg, probably xyz. Yes, xyz is great, like efg. }
 \StringTok{eft good, EFG capitalized, efg good again. }
 \StringTok{A B C or abc or ABC. Interesting xyz. }
 \StringTok{"""}
 
-\CommentTok{# define new and old}
-\NormalTok{ls_st_old }\OperatorTok{=}\NormalTok{ [}\StringTok{'abc'}\NormalTok{, }\StringTok{'efg'}\NormalTok{, }\StringTok{'xyz'}\NormalTok{]}
-\NormalTok{ls_st_new }\OperatorTok{=}\NormalTok{ [}\StringTok{'123'}\NormalTok{, }\StringTok{'456'}\NormalTok{, }\StringTok{'789'}\NormalTok{]}
+\CommentTok{\# define new and old}
+\NormalTok{ls\_st\_old }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}efg\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}xyz\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_new }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}123\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}456\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}789\textquotesingle{}}\NormalTok{]}
 
-\CommentTok{# zip and loop and replace}
-\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls_st_old, ls_st_new):}
-\NormalTok{  st_full }\OperatorTok{=}\NormalTok{ st_full.replace(old, new)}
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls\_st\_old, ls\_st\_new):}
+\NormalTok{  st\_full }\OperatorTok{=}\NormalTok{ st\_full.replace(old, new)}
 
-\CommentTok{# print}
-\BuiltInTok{print}\NormalTok{(st_full)}
+\CommentTok{\# print}
+\BuiltInTok{print}\NormalTok{(st\_full)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -248,7 +248,7 @@ Replace terms in string
 \subsection{Dictionary}\label{dictionary-1}}
 
 \begin{quote}
-Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
 \hypertarget{create-a-list-of-dictionaries}{%
@@ -258,24 +258,24 @@ Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collectio
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ datetime}
 \ImportTok{import}\NormalTok{ pprint}
-\NormalTok{ls_dc_exa }\OperatorTok{=}\NormalTok{  [}
-\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat_matlab"}\NormalTok{,}
+\NormalTok{ls\_dc\_exa }\OperatorTok{=}\NormalTok{  [}
+\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat\_matlab"}\NormalTok{,}
      \StringTok{"title"}\NormalTok{: }\StringTok{"One Variable Graphs and Tables"}\NormalTok{,}
      \StringTok{"description"}\NormalTok{: }\StringTok{"Frequency table, bar chart and histogram"}\NormalTok{,}
      \StringTok{"val"}\NormalTok{: }\DecValTok{1}\NormalTok{,}
      \StringTok{"date"}\NormalTok{: datetime.date(}\DecValTok{2020}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{)\},}
-\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat_two"}\NormalTok{,}
+\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat\_two"}\NormalTok{,}
      \StringTok{"title"}\NormalTok{: }\StringTok{"Second file"}\NormalTok{,}
      \StringTok{"description"}\NormalTok{: }\StringTok{"Second file."}\NormalTok{,}
      \StringTok{"val"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{],}
      \StringTok{"date"}\NormalTok{: datetime.date(}\DecValTok{2020}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{)\},}
-\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat_algebra_rules"}\NormalTok{,}
+\NormalTok{    \{}\StringTok{"file"}\NormalTok{: }\StringTok{"mat\_algebra\_rules"}\NormalTok{,}
      \StringTok{"title"}\NormalTok{: }\StringTok{"Opening a Dataset"}\NormalTok{,}
      \StringTok{"description"}\NormalTok{: }\StringTok{"Opening a Dataset."}\NormalTok{,}
      \StringTok{"val"}\NormalTok{: }\FloatTok{1.1}\NormalTok{,}
      \StringTok{"date"}\NormalTok{: datetime.date(}\DecValTok{2018}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{1}\NormalTok{)\}}
 \NormalTok{]}
-\NormalTok{pprint.pprint(ls_dc_exa, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{pprint.pprint(ls\_dc\_exa, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -321,14 +321,14 @@ Given a list of dictionary, search if key name is in list:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# string to search through}
-\NormalTok{ls_str_file_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{'mat_matlab'}\NormalTok{, }\StringTok{'mat_algebra_rules'}\NormalTok{]}
-\CommentTok{# select subset}
-\NormalTok{ls_dc_selected }\OperatorTok{=}\NormalTok{ [dc_exa}
-                  \ControlFlowTok{for}\NormalTok{ dc_exa }\KeywordTok{in}\NormalTok{ ls_dc_exa}
-                  \ControlFlowTok{if}\NormalTok{ dc_exa[}\StringTok{'file'}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls_str_file_ids]}
-\CommentTok{# print}
-\NormalTok{pprint.pprint(ls_dc_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\CommentTok{\# string to search through}
+\NormalTok{ls\_str\_file\_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}mat\_matlab\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}mat\_algebra\_rules\textquotesingle{}}\NormalTok{]}
+\CommentTok{\# select subset}
+\NormalTok{ls\_dc\_selected }\OperatorTok{=}\NormalTok{ [dc\_exa}
+                  \ControlFlowTok{for}\NormalTok{ dc\_exa }\KeywordTok{in}\NormalTok{ ls\_dc\_exa}
+                  \ControlFlowTok{if}\NormalTok{ dc\_exa[}\StringTok{\textquotesingle{}file\textquotesingle{}}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls\_str\_file\_ids]}
+\CommentTok{\# print}
+\NormalTok{pprint.pprint(ls\_dc\_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -362,16 +362,16 @@ Search and Select by Multiple Keys in Dictionary. Using two keys below:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# string to search through}
-\NormalTok{ls_str_file_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{'mat_matlab'}\NormalTok{, }\StringTok{'mat_algebra_rules'}\NormalTok{]}
-\CommentTok{# select subset}
-\NormalTok{ls_dc_selected }\OperatorTok{=}\NormalTok{ [dc_exa}
-                  \ControlFlowTok{for}\NormalTok{ dc_exa }\KeywordTok{in}\NormalTok{ ls_dc_exa}
-                  \ControlFlowTok{if}\NormalTok{ ((dc_exa[}\StringTok{'file'}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls_str_file_ids) }
+\CommentTok{\# string to search through}
+\NormalTok{ls\_str\_file\_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}mat\_matlab\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}mat\_algebra\_rules\textquotesingle{}}\NormalTok{]}
+\CommentTok{\# select subset}
+\NormalTok{ls\_dc\_selected }\OperatorTok{=}\NormalTok{ [dc\_exa}
+                  \ControlFlowTok{for}\NormalTok{ dc\_exa }\KeywordTok{in}\NormalTok{ ls\_dc\_exa}
+                  \ControlFlowTok{if}\NormalTok{ ((dc\_exa[}\StringTok{\textquotesingle{}file\textquotesingle{}}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls\_str\_file\_ids) }
                       \KeywordTok{and}
-\NormalTok{                      (dc_exa[}\StringTok{'val'}\NormalTok{]}\OperatorTok{==} \DecValTok{1}\NormalTok{))]}
-\CommentTok{# print}
-\NormalTok{pprint.pprint(ls_dc_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{                      (dc\_exa[}\StringTok{\textquotesingle{}val\textquotesingle{}}\NormalTok{]}\OperatorTok{==} \DecValTok{1}\NormalTok{))]}
+\CommentTok{\# print}
+\NormalTok{pprint.pprint(ls\_dc\_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -392,8 +392,779 @@ Search and Select by Multiple Keys in Dictionary. Using two keys below:
 ##   'val': 1}]
 \end{verbatim}
 
+\hypertarget{get-data}{%
+\chapter{Get Data}\label{get-data}}
+
+\hypertarget{environmental-data}{%
+\section{Environmental Data}\label{environmental-data}}
+
+\hypertarget{ecmwf-era5-data}{%
+\subsection{ECMWF ERA5 Data}\label{ecmwf-era5-data}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{basic-conda-setup}{%
+\subsubsection{Basic Conda Setup}\label{basic-conda-setup}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Download \href{https://www.anaconda.com/products/individual}{Anaconda} for Python 3. For more involved conda instructions see \href{https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html}{here}
+\item
+  Open up \emph{anaconda prompt} with admin rights (right click choose as admin).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Inside anaconda prompt}
+\ExtensionTok{where}\NormalTok{ python}
+\ExtensionTok{where}\NormalTok{ anaconda}
+\CommentTok{\# C:/ProgramData/Anaconda3/Scripts/anaconda.exe}
+\CommentTok{\# C:/ProgramData/Anaconda3/python.exe}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Add to Path
+\item
+  Install cdsapi and eccodes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{conda}\NormalTok{ config {-}{-}add channels conda{-}forge}
+\ExtensionTok{conda}\NormalTok{ install {-}c conda{-}forge eccodes {-}y}
+\end{Highlighting}
+\end{Shaded}
+\end{enumerate}
+
+\hypertarget{account-registration}{%
+\subsubsection{Account Registration}\label{account-registration}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Register for an \href{cds.climate.copernicus.eu}{account}
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp/\#!/terms/licence-to-use-copernicus-products}{Agree to Licence}
+\item
+  Go to your CDS user page copy the url and key: \href{https://cds.climate.copernicus.eu/user}{Get url and key}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    this has UID, 4XXXX, and API KEY, 4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX
+  \item
+    together they should look like: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX
+  \end{itemize}
+\item
+  Open up an editor (notepad++ for example), create an empty file, paste the url and your UID:APIKEY into the file as below. Save file as: \emph{C:/Users/fan/.cdsapirc}. Under user root, as \emph{.cdsapirc} file. Note \emph{.cdsapirc} is the file name, you are saving that under the directory \emph{C:/Users/fan/}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{url}\NormalTok{: https://cds.climate.copernicus.eu/api/v2}
+\ExtensionTok{key}\NormalTok{: 4XXXX:4XXXfXXX{-}XXXf{-}4XXX{-}9XXX{-}7XXXebXXfdXX}
+\end{Highlighting}
+\end{Shaded}
+\end{enumerate}
+
+\hypertarget{run-api-request-via-jupyter-notebook}{%
+\subsubsection{Run API Request via Jupyter Notebook}\label{run-api-request-via-jupyter-notebook}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  open up Jupyter Notebook (this opens up a browser page)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    cd ``C:/Users/fan/Downloads''
+  \item
+    jupyter notebook
+  \end{itemize}
+\item
+  create a new \emph{python3} file somewhere you like
+\item
+  name the file \emph{cdstest} (saved as ipynb file)
+\item
+  paste the code below inside the \emph{ipynb} file you opened (modify \emph{spt\_root}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ cdsapi }
+\ImportTok{import}\NormalTok{ urllib.request}
+\CommentTok{\# download folder}
+\NormalTok{spt\_root }\OperatorTok{=} \StringTok{"C:/Users/fan/downloads/\_data/"}
+\NormalTok{spn\_dl\_test\_grib }\OperatorTok{=}\NormalTok{ spt\_root }\OperatorTok{+} \StringTok{"test\_china\_temp.grib"}
+\CommentTok{\# request}
+\NormalTok{c }\OperatorTok{=}\NormalTok{ cdsapi.Client()}
+\NormalTok{res }\OperatorTok{=}\NormalTok{ c.retrieve(}\StringTok{"reanalysis{-}era5{-}pressure{-}levels"}\NormalTok{,}
+\NormalTok{  \{}
+    \StringTok{\textquotesingle{}product\_type\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}reanalysis\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}variable\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}temperature\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}pressure\_level\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}1000\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}2008\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}month\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}01\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}day\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}01\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}12:00\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}format\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}netcdf\textquotesingle{}}\NormalTok{,                 }
+    \StringTok{\textquotesingle{}area\textquotesingle{}}\NormalTok{          : [}\FloatTok{53.31}\NormalTok{, }\DecValTok{73}\NormalTok{, }\FloatTok{4.15}\NormalTok{, }\DecValTok{135}\NormalTok{], }
+    \StringTok{\textquotesingle{}grid\textquotesingle{}}\NormalTok{          : [}\FloatTok{1.0}\NormalTok{, }\FloatTok{1.0}\NormalTok{],}
+    \StringTok{"format"}\NormalTok{: }\StringTok{"grib"}
+\NormalTok{  \},}
+\NormalTok{  spn\_dl\_test\_grib}
+\NormalTok{)}
+\CommentTok{\# show results}
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}print results\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(res)}
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(res))}
+\end{Highlighting}
+\end{Shaded}
+\item
+  click run
+\end{enumerate}
+
+\hypertarget{run-api-request-via-ipython}{%
+\subsubsection{Run API request via Ipython}\label{run-api-request-via-ipython}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In Anaconda Prompt: \emph{ipython}
+\item
+  Open a file in notepad++ or elsewhere, copy the code above over and edit the spt\_root to reflect your directories
+\item
+  Select the entire code in the notepad++ page, and copy all lines
+\item
+  Now inside ipython, type percentage and paste: \%paste
+\item
+  This should run the file above and save the grib file in the folder you specified with the name you specified.
+\end{enumerate}
+
+\hypertarget{convert-crib-data-to-csv}{%
+\subsubsection{Convert CRIB data to CSV}\label{convert-crib-data-to-csv}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  inside conda prompt cd into the folder where you downloaded the grib file
+\item
+  \emph{grib\_ls} shows what is in the grib file
+\item
+  \emph{grib\_get\_data} translates grib to csv
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd} \StringTok{"C:/Users/fan/downloads/\_data/"}
+\ExtensionTok{grib\_ls}\NormalTok{ test\_china\_temp.grib}
+\ExtensionTok{grib\_get\_data}\NormalTok{ test\_china\_temp.grib }\OperatorTok{\textgreater{}}\NormalTok{ test\_china\_temp\_raw.csv}
+\end{Highlighting}
+\end{Shaded}
+\end{enumerate}
+
+\hypertarget{more-advanced-download-setup-and-instructions}{%
+\subsubsection{More Advanced Download Setup and Instructions}\label{more-advanced-download-setup-and-instructions}}
+
+\hypertarget{conda-enviornment-and-installation}{%
+\paragraph{Conda Enviornment and Installation}\label{conda-enviornment-and-installation}}
+
+In conda, set up a conda environment for downloading ECMWF data using the ECMWF API. (\href{https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html}{Conda Set-up})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Set up}
+\ExtensionTok{conda}\NormalTok{ deactivate}
+\ExtensionTok{conda}\NormalTok{ list env}
+\ExtensionTok{conda}\NormalTok{ env remove {-}n wk\_ecmwf}
+\ExtensionTok{conda}\NormalTok{ create {-}n wk\_ecmwf {-}y}
+\ExtensionTok{conda}\NormalTok{ activate wk\_ecmwf}
+
+\CommentTok{\# Add conda{-}forge to channel in env}
+\ExtensionTok{conda}\NormalTok{ config {-}{-}env {-}{-}add channels conda{-}forge}
+\ExtensionTok{conda}\NormalTok{ config {-}{-}get channels}
+\ExtensionTok{conda}\NormalTok{ config {-}{-}get channels {-}{-}env}
+
+\CommentTok{\# Install}
+\ExtensionTok{conda}\NormalTok{ install cdsapi {-}y}
+\ExtensionTok{conda}\NormalTok{ install {-}c conda{-}forge eccodes {-}y}
+\end{Highlighting}
+\end{Shaded}
+
+This creates the conda env that we are using here for python.
+
+\hypertarget{config-file-.cdsapirc}{%
+\paragraph{Config File .cdsapirc}\label{config-file-.cdsapirc}}
+
+Open up the \emph{cdsapirc}, create new if does note exist. Below, open up the file and save the text. See \href{https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html}{Python Reading and Writing to File Examples}.
+
+First, get the \href{4000fe9a-498f-4ce8-9caf-7796eb64fd9d}{text} for the config file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stf\_cds\_cdsapirc }\OperatorTok{=} \StringTok{"""\textbackslash{}}
+\StringTok{url: https://cds.climate.copernicus.eu/api/v2}
+\StringTok{key: 46756:4000fe9a{-}498f{-}4ce8{-}9caf{-}7796eb64fd9d\textbackslash{}}
+\StringTok{"""}
+\BuiltInTok{print}\NormalTok{(stf\_cds\_cdsapirc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## url: https://cds.climate.copernicus.eu/api/v2
+## key: 46756:4000fe9a-498f-4ce8-9caf-7796eb64fd9d
+\end{verbatim}
+
+Second save text to file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Relative file name}
+\NormalTok{spt\_file\_cds }\OperatorTok{=} \StringTok{"C:/Users/fan/"}
+\NormalTok{snm\_file\_cds }\OperatorTok{=} \StringTok{".cdsapirc"}
+\NormalTok{spn\_file\_cds }\OperatorTok{=}\NormalTok{ spt\_file\_cds }\OperatorTok{+}\NormalTok{ snm\_file\_cds }
+\CommentTok{\# Open new file}
+\NormalTok{fl\_cdsapirc\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(spn\_file\_cds, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_cdsapirc\_contents.write(stf\_cds\_cdsapirc)}
+\CommentTok{\# Close}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 93
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_cdsapirc\_contents.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Open the config file to check}
+\ExtensionTok{code} \StringTok{"C:/Users/fan/.cdsapirc"}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{generate-api-requests}{%
+\subsubsection{Generate API Requests}\label{generate-api-requests}}
+
+Go to the sites below, choose download data, pick what is needed, and then select \emph{Show API request} at the bottom of page:
+
+\textbf{ERA5 pressure levels from 1979 to present}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/reanalysis-era5-pressure-levels}{ERA5 hourly pressure}
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/reanalysis-era5-pressure-levels-monthly-means}{ERA5 monthly pressure}
+\end{itemize}
+
+\textbf{ERA5 single levels from 1979 to present}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/reanalysis-era5-single-levels}{ERA5 hourly pressure}
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp\#!/dataset/reanalysis-era5-single-levels-monthly-means}{ERA5 monthly pressure}
+\end{itemize}
+
+\hypertarget{api-request-china-temp-test}{%
+\paragraph{API Request China Temp Test}\label{api-request-china-temp-test}}
+
+API function is \href{https://github.com/ecmwf/cdsapi/blob/master/cdsapi/api.py}{here}.
+
+Select based on China's area, some testing data and download grib file. The data is from 2008, Jan 1st, at 12 noon?
+
+Open up Jupyter notebook: \emph{jupyter notebook}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# import module in conda env wk\_ecmwf}
+\ImportTok{import}\NormalTok{ cdsapi }
+\ImportTok{import}\NormalTok{ urllib.request}
+
+\CommentTok{\# download folder}
+\NormalTok{spt\_root }\OperatorTok{=} \StringTok{"C:/Users/fan/pyfan/vig/getdata/envir/"}
+\NormalTok{spn\_dl\_test\_grib }\OperatorTok{=}\NormalTok{ spt\_root }\OperatorTok{+} \StringTok{"\_data/test/test\_china\_temp.grib"}
+
+\CommentTok{\# request}
+\NormalTok{c }\OperatorTok{=}\NormalTok{ cdsapi.Client()}
+\NormalTok{res }\OperatorTok{=}\NormalTok{ c.retrieve(}\StringTok{"reanalysis{-}era5{-}pressure{-}levels"}\NormalTok{,}
+\NormalTok{  \{}
+    \StringTok{\textquotesingle{}product\_type\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}reanalysis\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}variable\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}temperature\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}pressure\_level\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}1000\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}year\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}2008\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}month\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}01\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}day\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}01\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}12:00\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}format\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}netcdf\textquotesingle{}}\NormalTok{,                 }
+    \StringTok{\textquotesingle{}area\textquotesingle{}}\NormalTok{          : [}\FloatTok{53.31}\NormalTok{, }\DecValTok{73}\NormalTok{, }\FloatTok{4.15}\NormalTok{, }\DecValTok{135}\NormalTok{], }
+    \StringTok{\textquotesingle{}grid\textquotesingle{}}\NormalTok{          : [}\FloatTok{1.0}\NormalTok{, }\FloatTok{1.0}\NormalTok{],}
+    \StringTok{"format"}\NormalTok{: }\StringTok{"grib"}
+\NormalTok{  \},}
+\NormalTok{  spn\_dl\_test\_grib}
+\NormalTok{)}
+\CommentTok{\# show results}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 2020-05-31 12:17:20,308 INFO Welcome to the CDS
+## 2020-05-31 12:17:20,308 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels
+## 2020-05-31 12:17:21,024 INFO Request is completed
+## 2020-05-31 12:17:21,025 INFO Downloading http://136.156.133.41/cache-compute-0013/cache/data8/adaptor.mars.internal-1590942354.413081-3635-7-1f784973-5a00-47b3-b6fb-fb1a77c8087f.grib to C:/Users/fan/pyfan/vig/getdata/envir/_data/test/test_china_temp.grib (6.3K)
+##   0%|          | 0.00/6.33k [00:00<?, ?B/s]                                           2020-05-31 12:17:21,260 INFO Download rate 26.8K/s
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}print results\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## print results
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Result(content_length=6480,content_type=application/x-grib,location=http://136.156.133.41/cache-compute-0013/cache/data8/adaptor.mars.internal-1590942354.413081-3635-7-1f784973-5a00-47b3-b6fb-fb1a77c8087f.grib)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(res))}
+
+\CommentTok{\# download }
+\CommentTok{\# response = urllib.request.urlopen(\textquotesingle{}http://www.example.com/\textquotesingle{})}
+\CommentTok{\# html = response.read()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <class 'cdsapi.api.Result'>
+\end{verbatim}
+
+Convert grib to raw csv, open up command line:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd} \StringTok{"C:/Users/fan/pyfan/vig/getdata/envir/\_data/test/"}
+\ExtensionTok{grib\_ls}\NormalTok{ test\_china\_temp.grib}
+\ExtensionTok{grib\_get\_data}\NormalTok{ test\_china\_temp.grib }\OperatorTok{\textgreater{}}\NormalTok{ test\_china\_temp\_raw.csv}
+\end{Highlighting}
+\end{Shaded}
+
+Format the CSV file (is not comma separated)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{spt\_root }\OperatorTok{=} \StringTok{"C:/Users/fan/pyfan/vig/getdata/envir/\_data/test/"}
+\NormalTok{spn\_csv\_raw }\OperatorTok{=}\NormalTok{ spt\_root }\OperatorTok{+} \StringTok{"test\_china\_temp\_raw.csv"}
+\NormalTok{spn\_csv\_edi }\OperatorTok{=}\NormalTok{ spt\_root }\OperatorTok{+} \StringTok{"test\_china\_temp.csv"}
+
+\ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(spn\_csv\_raw, }\StringTok{\textquotesingle{}r\textquotesingle{}}\NormalTok{) }\ImportTok{as}\NormalTok{ f\_in, }\BuiltInTok{open}\NormalTok{(spn\_csv\_edi, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{) }\ImportTok{as}\NormalTok{ f\_out:}
+\NormalTok{    f\_out.write(}\BuiltInTok{next}\NormalTok{(f\_in))}
+\NormalTok{    [f\_out.write(}\StringTok{\textquotesingle{},\textquotesingle{}}\NormalTok{.join(line.split()) }\OperatorTok{+} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{) }\ControlFlowTok{for}\NormalTok{ line }\KeywordTok{in}\NormalTok{ f\_in]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 27
+## [31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31]
+\end{verbatim}
+
+Show CSV results:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Path and Read}
+\NormalTok{spt\_root =}\StringTok{ "C:/Users/fan/pyfan/vig/getdata/envir/"}
+\NormalTok{spn\_dl\_test\_csv =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(spt\_root, }\StringTok{"\_data/test/test\_china\_temp.csv"}\NormalTok{)}
+\NormalTok{china\_weather\_data \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(spn\_dl\_test\_csv)}
+
+\CommentTok{\# Top 50 rows}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(china\_weather\_data, }\DecValTok{50}\NormalTok{), }
+      \DataTypeTok{caption=}\StringTok{"Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{kable\_styling\_fc}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!h]
+
+\caption{\label{tab:unnamed-chunk-22}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
+\centering
+\begin{tabular}[t]{r|r|r}
+\hline
+Latitude & Longitude & Value\\
+\hline
+\rowcolor{gray!6}  53.15 & 73 & 260.6515\\
+\hline
+53.15 & 74 & 259.9796\\
+\hline
+\rowcolor{gray!6}  53.15 & 75 & 259.2227\\
+\hline
+53.15 & 76 & 258.5929\\
+\hline
+\rowcolor{gray!6}  53.15 & 77 & 258.2765\\
+\hline
+53.15 & 78 & 258.0636\\
+\hline
+\rowcolor{gray!6}  53.15 & 79 & 258.0069\\
+\hline
+53.15 & 80 & 257.7267\\
+\hline
+\rowcolor{gray!6}  53.15 & 81 & 258.8370\\
+\hline
+53.15 & 82 & 260.9239\\
+\hline
+\rowcolor{gray!6}  53.15 & 83 & 262.5440\\
+\hline
+53.15 & 84 & 263.9083\\
+\hline
+\rowcolor{gray!6}  53.15 & 85 & 264.8976\\
+\hline
+53.15 & 86 & 264.6729\\
+\hline
+\rowcolor{gray!6}  53.15 & 87 & 264.1827\\
+\hline
+53.15 & 88 & 265.0587\\
+\hline
+\rowcolor{gray!6}  53.15 & 89 & 264.9425\\
+\hline
+53.15 & 90 & 266.2960\\
+\hline
+\rowcolor{gray!6}  53.15 & 91 & 269.0958\\
+\hline
+53.15 & 92 & 270.3165\\
+\hline
+\rowcolor{gray!6}  53.15 & 93 & 269.0030\\
+\hline
+53.15 & 94 & 268.4210\\
+\hline
+\rowcolor{gray!6}  53.15 & 95 & 264.9591\\
+\hline
+53.15 & 96 & 261.9249\\
+\hline
+\rowcolor{gray!6}  53.15 & 97 & 264.5304\\
+\hline
+53.15 & 98 & 265.3995\\
+\hline
+\rowcolor{gray!6}  53.15 & 99 & 268.2374\\
+\hline
+53.15 & 100 & 269.9444\\
+\hline
+\rowcolor{gray!6}  53.15 & 101 & 272.6202\\
+\hline
+53.15 & 102 & 270.6798\\
+\hline
+\rowcolor{gray!6}  53.15 & 103 & 270.0919\\
+\hline
+53.15 & 104 & 269.6876\\
+\hline
+\rowcolor{gray!6}  53.15 & 105 & 271.4718\\
+\hline
+53.15 & 106 & 271.2403\\
+\hline
+\rowcolor{gray!6}  53.15 & 107 & 271.1163\\
+\hline
+53.15 & 108 & 269.3849\\
+\hline
+\rowcolor{gray!6}  53.15 & 109 & 270.7247\\
+\hline
+53.15 & 110 & 269.6388\\
+\hline
+\rowcolor{gray!6}  53.15 & 111 & 268.6622\\
+\hline
+53.15 & 112 & 267.6036\\
+\hline
+\rowcolor{gray!6}  53.15 & 113 & 267.4796\\
+\hline
+53.15 & 114 & 266.6983\\
+\hline
+\rowcolor{gray!6}  53.15 & 115 & 266.2911\\
+\hline
+53.15 & 116 & 266.5880\\
+\hline
+\rowcolor{gray!6}  53.15 & 117 & 265.4513\\
+\hline
+53.15 & 118 & 264.4630\\
+\hline
+\rowcolor{gray!6}  53.15 & 119 & 260.6183\\
+\hline
+53.15 & 120 & 259.3018\\
+\hline
+\rowcolor{gray!6}  53.15 & 121 & 258.4161\\
+\hline
+53.15 & 122 & 258.8429\\
+\hline
+\end{tabular}
+\end{table}
+
+``ERA5 is a comprehensive reanalysis, from 1979 (soon to be backdated to 1950) to near real time, which assimilates as many observations as possible in the upper air and near surface. The ERA5 atmospheric model is coupled with a land surface model and a wave model.''
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Register for an \href{cds.climate.copernicus.eu}{account}
+\item
+  \href{https://cds.climate.copernicus.eu/cdsapp/\#!/terms/licence-to-use-copernicus-products}{Agree to Licence}
+\end{enumerate}
+
+\hypertarget{learning}{%
+\subsubsection{Learning}\label{learning}}
+
+\hypertarget{terminologies}{%
+\paragraph{Terminologies}\label{terminologies}}
+
+\textbf{Links}:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cds.climate.copernicus.eu/live/queue}{status of the CDS queue}.
+\end{itemize}
+
+\textbf{Terminologies}:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{}{single level parameters}
+\end{itemize}
+
+\hypertarget{single-level-parameters}{%
+\paragraph{Single Level Parameters}\label{single-level-parameters}}
+
+\href{https://confluence.ecmwf.int/display/CKB/ERA5?src=breadcrumbs-parent}{ERA5 Variables}?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://confluence.ecmwf.int/pages/viewpage.action?pageId=82870405\#ERA5:datadocumentation-Table1}{Table 1: surface and single level parameters: invariants}
+\item
+  \href{https://confluence.ecmwf.int/pages/viewpage.action?pageId=82870405\#ERA5:datadocumentation-Table9}{Table 9: pressure level parameters: instantaneous}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Temperature
+\end{itemize}
+
+\href{https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5}{ER5 Data Download Instructions}.
+
 \hypertarget{system-and-support}{%
 \chapter{System and Support}\label{system-and-support}}
+
+\hypertarget{command-line}{%
+\section{Command Line}\label{command-line}}
+
+\hypertarget{python-command-line}{%
+\subsection{Python Command Line}\label{python-command-line}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{execute-command-line-python-functions}{%
+\subsubsection{Execute Command Line Python Functions}\label{execute-command-line-python-functions}}
+
+\begin{itemize}
+\tightlist
+\item
+  run python from command line
+\item
+  run python function with parameters from command line
+\end{itemize}
+
+Here run python from command line inside python itself.
+
+Run:
+- from py.fan.util.rmd.mattexmd import fp\_mlxtex2md
+- fp\_mlxtex2md(spt\_root=`C:/Users/fan/Math4Econ/matrix\_application/', ls\_srt\_subfolders=None, st\_rglob\_tex=`twogoods.tex', verbose=True)
+
+Run:
+- python -c ``from pyfan.util.rmd.mattexmd import fp\_mlxtex2md; fp\_mlxtex2md(spt\_root=`C:/Users/fan/Math4Econ/matrix\_application/', ls\_srt\_subfolders=None, st\_rglob\_tex=`twogoods.tex', verbose=True)''
+
+\hypertarget{run-matlab-functions}{%
+\subsection{Run Matlab Functions}\label{run-matlab-functions}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{generate-a-template-matlab-script}{%
+\subsubsection{Generate A template Matlab Script}\label{generate-a-template-matlab-script}}
+
+Generate an example matlab script file with parameter \emph{x}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Example Matlab Function}
+\NormalTok{stf\_m\_contents }\OperatorTok{=} \StringTok{"""\textbackslash{}}
+\StringTok{a = x + 1}
+\StringTok{b = 10*x\textbackslash{}}
+\StringTok{"""}
+\CommentTok{\# Print}
+\BuiltInTok{print}\NormalTok{(stf\_m\_contents)}
+\CommentTok{\# Open new file}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## a = x + 1
+## b = 10*x
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_m\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{"\_m/fs\_test.m"}\NormalTok{, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_m\_contents.write(stf\_m\_contents)}
+\CommentTok{\# print}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl\_m\_contents.close()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{run-the-matlab-function-from-commandline}{%
+\subsubsection{Run the Matlab Function from Commandline}\label{run-the-matlab-function-from-commandline}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.mathworks.com/matlabcentral/answers/327116-run-function-from-command-line}{run matlab function from command line}
+\item
+  \href{https://stackoverflow.com/a/1996540/8280804}{Retrieving the output of subprocess.call}
+\item
+  \url{https://www.mathworks.com/help/matlab/ref/matlabwindows.html}
+\end{itemize}
+
+First, check where matlab is installed:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ subprocess}
+\NormalTok{cmd\_popen }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"where"}\NormalTok{, }\StringTok{"matlab"}\NormalTok{],}
+\NormalTok{                             stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE)}
+\NormalTok{output, err }\OperatorTok{=}\NormalTok{ cmd\_popen.communicate()}
+\BuiltInTok{print}\NormalTok{(output.decode(}\StringTok{\textquotesingle{}utf{-}8\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\Program Files\MATLAB\R2019b\bin\matlab.exe
+\end{verbatim}
+
+Second, run the matlab file, first definet he parameter x:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ os}
+\CommentTok{\# print and set directory}
+\BuiltInTok{print}\NormalTok{(os.getcwd())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\Users\fan\pyfan
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.chdir(}\StringTok{\textquotesingle{}\_m\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(os.getcwd())}
+\CommentTok{\# run matlab script saved prior}
+\CommentTok{\# running command line: matlab {-}batch "fs\_test; exit"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\Users\fan\pyfan\_m
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cmd\_popen }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"matlab"}\NormalTok{, }\StringTok{"{-}batch"}\NormalTok{, }\StringTok{"}\CharTok{\textbackslash{}"}\StringTok{x=1; fs\_test; exit}\CharTok{\textbackslash{}"}\StringTok{"}\NormalTok{],}
+\NormalTok{                             stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE)}
+\NormalTok{output, err }\OperatorTok{=}\NormalTok{ cmd\_popen.communicate()}
+\BuiltInTok{print}\NormalTok{(output.decode(}\StringTok{\textquotesingle{}utf{-}8\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## a =
+## 
+##      2
+## 
+## 
+## b =
+## 
+##     10
+## 
+\end{verbatim}
+
+Third, run the function again, but with \emph{x=3}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{os.chdir(}\StringTok{\textquotesingle{}\_m\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(os.getcwd())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\Users\fan\pyfan\_m
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(subprocess.Popen([}\StringTok{"matlab"}\NormalTok{, }\StringTok{"{-}batch"}\NormalTok{, }\StringTok{"}\CharTok{\textbackslash{}"}\StringTok{x=5; fs\_test; exit}\CharTok{\textbackslash{}"}\StringTok{"}\NormalTok{],}
+\NormalTok{                       stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                       stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                       stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE).communicate()[}\DecValTok{0}\NormalTok{].decode(}\StringTok{\textquotesingle{}utf{-}8\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## a =
+## 
+##      6
+## 
+## 
+## b =
+## 
+##     50
+## 
+\end{verbatim}
 
 \hypertarget{file-in-and-out}{%
 \section{File In and Out}\label{file-in-and-out}}
@@ -402,7 +1173,7 @@ Search and Select by Multiple Keys in Dictionary. Using two keys below:
 \subsection{Read and Write and Convert}\label{read-and-write-and-convert}}
 
 \begin{quote}
-Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
 \begin{itemize}
@@ -422,9 +1193,9 @@ First, create the text text string, note the the linebreaks utomatically generat
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Create the Tex Text}
-\CommentTok{# Note that trible quotes begin first and end last lines}
-\NormalTok{stf_tex_contents }\OperatorTok{=} \StringTok{"""}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{documentclass[12pt,english]}\SpecialCharTok{\{article\}}
+\CommentTok{\# Create the Tex Text}
+\CommentTok{\# Note that trible quotes begin first and end last lines}
+\NormalTok{stf\_tex\_contents }\OperatorTok{=} \StringTok{"""}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{documentclass[12pt,english]}\SpecialCharTok{\{article\}}
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{usepackage[bottom]}\SpecialCharTok{\{footmisc\}}
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{usepackage[urlcolor=blue]}\SpecialCharTok{\{hyperref\}}
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{begin}\SpecialCharTok{\{document\}}
@@ -432,11 +1203,11 @@ First, create the text text string, note the the linebreaks utomatically generat
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{author\{}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{http://fanwangecon.github.io/\}\{Fan Wang\} }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{thanks\{See information }\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{https://fanwangecon.github.io/Tex4Econ/\}}\SpecialCharTok{\{Tex4Econ\}}\StringTok{ for more.}\SpecialCharTok{\}\}}
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{maketitle}
 \StringTok{Ipsum information dolor sit amet, consectetur adipiscing elit. Integer Latex placerat nunc orci.}
-\CharTok{\textbackslash{}\textbackslash{}}\StringTok{paragraph\{}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3140132\}}\SpecialCharTok{\{Data\}}\StringTok{\}}
+\CharTok{\textbackslash{}\textbackslash{}}\StringTok{paragraph\{}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{href\{https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=3140132\}}\SpecialCharTok{\{Data\}}\StringTok{\}}
 \StringTok{Village closure information is taken from a village head survey.}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{footnote\{Generally students went to schools.\}}
 \CharTok{\textbackslash{}\textbackslash{}}\StringTok{end}\SpecialCharTok{\{document\}}\StringTok{"""}
-\CommentTok{# Print}
-\BuiltInTok{print}\NormalTok{(stf_tex_contents)}
+\CommentTok{\# Print}
+\BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -458,15 +1229,15 @@ Second, write the contents of the file to a new tex file stored inside the *\_fi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Relative file name}
-\NormalTok{srt_file_tex }\OperatorTok{=} \StringTok{"_file/"}
-\NormalTok{sna_file_tex }\OperatorTok{=} \StringTok{"test_fan"}
-\NormalTok{srn_file_tex }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_tex }\OperatorTok{+} \StringTok{".tex"}
-\CommentTok{# Open new file}
-\NormalTok{fl_tex_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_tex, }\StringTok{'w'}\NormalTok{)}
-\CommentTok{# Write to File}
-\NormalTok{fl_tex_contents.write(stf_tex_contents)}
-\CommentTok{# print}
+\CommentTok{\# Relative file name}
+\NormalTok{srt\_file\_tex }\OperatorTok{=} \StringTok{"\_file/"}
+\NormalTok{sna\_file\_tex }\OperatorTok{=} \StringTok{"test\_fan"}
+\NormalTok{srn\_file\_tex }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_tex }\OperatorTok{+} \StringTok{".tex"}
+\CommentTok{\# Open new file}
+\NormalTok{fl\_tex\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_tex\_contents.write(stf\_tex\_contents)}
+\CommentTok{\# print}
 \end{Highlighting}
 \end{Shaded}
 
@@ -476,7 +1247,7 @@ Second, write the contents of the file to a new tex file stored inside the *\_fi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_tex_contents.close()}
+\NormalTok{fl\_tex\_contents.close()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -487,12 +1258,12 @@ Replace a set of strings in the file just generated by a set of alternative stri
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Open file Get text}
-\NormalTok{fl_tex_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_tex)}
-\NormalTok{stf_tex_contents }\OperatorTok{=}\NormalTok{ fl_tex_contents.read()}
-\BuiltInTok{print}\NormalTok{(srn_file_tex)}
+\CommentTok{\# Open file Get text}
+\NormalTok{fl\_tex\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex)}
+\NormalTok{stf\_tex\_contents }\OperatorTok{=}\NormalTok{ fl\_tex\_contents.read()}
+\BuiltInTok{print}\NormalTok{(srn\_file\_tex)}
 
-\CommentTok{# define new and old}
+\CommentTok{\# define new and old}
 \end{Highlighting}
 \end{Shaded}
 
@@ -502,15 +1273,15 @@ Replace a set of strings in the file just generated by a set of alternative stri
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ls_st_old }\OperatorTok{=}\NormalTok{ [}\StringTok{'information'}\NormalTok{, }\StringTok{'Latex'}\NormalTok{]}
-\NormalTok{ls_st_new }\OperatorTok{=}\NormalTok{ [}\StringTok{'INFOREPLACE'}\NormalTok{, }\StringTok{'LATEX'}\NormalTok{]}
+\NormalTok{ls\_st\_old }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}information\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Latex\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_st\_new }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}INFOREPLACE\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}LATEX\textquotesingle{}}\NormalTok{]}
 
-\CommentTok{# zip and loop and replace}
-\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls_st_old, ls_st_new):}
-\NormalTok{  stf_tex_contents }\OperatorTok{=}\NormalTok{ stf_tex_contents.replace(old, new)}
-\BuiltInTok{print}\NormalTok{(stf_tex_contents)}
+\CommentTok{\# zip and loop and replace}
+\ControlFlowTok{for}\NormalTok{ old, new }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls\_st\_old, ls\_st\_new):}
+\NormalTok{  stf\_tex\_contents }\OperatorTok{=}\NormalTok{ stf\_tex\_contents.replace(old, new)}
+\BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
 
-\CommentTok{# write to file with replacements}
+\CommentTok{\# write to file with replacements}
 \end{Highlighting}
 \end{Shaded}
 
@@ -530,10 +1301,10 @@ Replace a set of strings in the file just generated by a set of alternative stri
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sna_file_edited_tex }\OperatorTok{=} \StringTok{"test_fan_edited"}
-\NormalTok{srn_file_edited_tex }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_edited_tex }\OperatorTok{+} \StringTok{".tex"}
-\NormalTok{fl_tex_ed_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_edited_tex, }\StringTok{'w'}\NormalTok{)}
-\NormalTok{fl_tex_ed_contents.write(stf_tex_contents)}
+\NormalTok{sna\_file\_edited\_tex }\OperatorTok{=} \StringTok{"test\_fan\_edited"}
+\NormalTok{srn\_file\_edited\_tex }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{".tex"}
+\NormalTok{fl\_tex\_ed\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_edited\_tex, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\NormalTok{fl\_tex\_ed\_contents.write(stf\_tex\_contents)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -543,7 +1314,7 @@ Replace a set of strings in the file just generated by a set of alternative stri
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_tex_ed_contents.close()}
+\NormalTok{fl\_tex\_ed\_contents.close()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -557,13 +1328,13 @@ Compile tex file to pdf and clean up the extraneous pdf outputs. See \href{https
 \ImportTok{import}\NormalTok{ subprocess}
 \ImportTok{import}\NormalTok{ os}
 
-\CommentTok{# Change to local directory so path in tex respected.}
+\CommentTok{\# Change to local directory so path in tex respected.}
 \NormalTok{os.chdir(}\StringTok{"C:/Users/fan/pyfan/vig/support/inout"}\NormalTok{)}
 
-\CommentTok{# Convert tex to pdf}
-\NormalTok{subprocess.call([}\StringTok{'C:/texlive/2019/bin/win32/xelatex.exe'}\NormalTok{, }\StringTok{'-output-directory'}\NormalTok{,}
-\NormalTok{                 srt_file_tex, srn_file_edited_tex], shell}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
-\CommentTok{# Clean pdf extraneous output}
+\CommentTok{\# Convert tex to pdf}
+\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}C:/texlive/2019/bin/win32/xelatex.exe\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}output{-}directory\textquotesingle{}}\NormalTok{,}
+\NormalTok{                 srt\_file\_tex, srn\_file\_edited\_tex], shell}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\CommentTok{\# Clean pdf extraneous output}
 \end{Highlighting}
 \end{Shaded}
 
@@ -573,11 +1344,11 @@ Compile tex file to pdf and clean up the extraneous pdf outputs. See \href{https
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ls_st_remove_suffix }\OperatorTok{=}\NormalTok{ [}\StringTok{'aux'}\NormalTok{,}\StringTok{'log'}\NormalTok{,}\StringTok{'out'}\NormalTok{,}\StringTok{'bbl'}\NormalTok{,}\StringTok{'blg'}\NormalTok{]}
-\ControlFlowTok{for}\NormalTok{ st_suffix }\KeywordTok{in}\NormalTok{ ls_st_remove_suffix:}
-\NormalTok{    srn_cur_file }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_edited_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st_suffix}
-    \ControlFlowTok{if}\NormalTok{ (os.path.isfile(srn_cur_file)):}
-\NormalTok{        os.remove(srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_edited_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st_suffix)}
+\NormalTok{ls\_st\_remove\_suffix }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}aux\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}log\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}out\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}bbl\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}blg\textquotesingle{}}\NormalTok{]}
+\ControlFlowTok{for}\NormalTok{ st\_suffix }\KeywordTok{in}\NormalTok{ ls\_st\_remove\_suffix:}
+\NormalTok{    srn\_cur\_file }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st\_suffix}
+    \ControlFlowTok{if}\NormalTok{ (os.path.isfile(srn\_cur\_file)):}
+\NormalTok{        os.remove(srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_edited\_tex }\OperatorTok{+} \StringTok{"."} \OperatorTok{+}\NormalTok{ st\_suffix)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -587,11 +1358,11 @@ Use pandoc to convert tex file
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ subprocess}
 
-\CommentTok{# md file name}
-\NormalTok{srn_file_md }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+} \StringTok{"test_fan_edited.md"}
-\CommentTok{# Convert tex to md}
-\NormalTok{subprocess.call([}\StringTok{'pandoc'}\NormalTok{, }\StringTok{'-s'}\NormalTok{, srn_file_tex, }\StringTok{'-o'}\NormalTok{, srn_file_md])}
-\CommentTok{# Open md file}
+\CommentTok{\# md file name}
+\NormalTok{srn\_file\_md }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+} \StringTok{"test\_fan\_edited.md"}
+\CommentTok{\# Convert tex to md}
+\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}pandoc\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}s\textquotesingle{}}\NormalTok{, srn\_file\_tex, }\StringTok{\textquotesingle{}{-}o\textquotesingle{}}\NormalTok{, srn\_file\_md])}
+\CommentTok{\# Open md file}
 \end{Highlighting}
 \end{Shaded}
 
@@ -601,8 +1372,8 @@ Use pandoc to convert tex file
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_md_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_md)}
-\BuiltInTok{print}\NormalTok{(fl_md_contents.read())}
+\NormalTok{fl\_md\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_md)}
+\BuiltInTok{print}\NormalTok{(fl\_md\_contents.read())}
 \end{Highlighting}
 \end{Shaded}
 
@@ -613,7 +1384,6 @@ Use pandoc to convert tex file
 ## title: A Latex Testing File
 ## ---
 ## 
-## \maketitle
 ## Ipsum information dolor sit amet, consectetur adipiscing elit. Integer
 ## Latex placerat nunc orci.
 ## 
@@ -644,15 +1414,15 @@ Search file inside several folders (not recursively in subfolders):
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ pathlib }\ImportTok{import}\NormalTok{ Path}
 
-\CommentTok{# directories to search in}
-\NormalTok{ls_spt_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/"}\NormalTok{,}
+\CommentTok{\# directories to search in}
+\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/"}\NormalTok{,}
               \StringTok{"C:/Users/fan/R4Econ/function/"}\NormalTok{]}
 
-\CommentTok{# get file names in folders (not recursively)}
-\NormalTok{ls_spn_found }\OperatorTok{=}\NormalTok{ [spn_file }\ControlFlowTok{for}\NormalTok{ spt_srh }\KeywordTok{in}\NormalTok{ ls_spt_srh}
-                         \ControlFlowTok{for}\NormalTok{ spn_file }\KeywordTok{in}\NormalTok{ Path(spt_srh).glob(}\StringTok{'*.Rmd'}\NormalTok{)]}
-\ControlFlowTok{for}\NormalTok{ spn_found }\KeywordTok{in}\NormalTok{ ls_spn_found:}
-  \BuiltInTok{print}\NormalTok{(spn_found)}
+\CommentTok{\# get file names in folders (not recursively)}
+\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh}
+                         \ControlFlowTok{for}\NormalTok{ spn\_file }\KeywordTok{in}\NormalTok{ Path(spt\_srh).glob(}\StringTok{\textquotesingle{}*.Rmd\textquotesingle{}}\NormalTok{)]}
+\ControlFlowTok{for}\NormalTok{ spn\_found }\KeywordTok{in}\NormalTok{ ls\_spn\_found:}
+  \BuiltInTok{print}\NormalTok{(spn\_found)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -667,23 +1437,23 @@ Search file recursivesly in all subfolders of folders:
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ pathlib }\ImportTok{import}\NormalTok{ Path}
 
-\CommentTok{# directories to search in}
-\NormalTok{ls_spt_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/array/"}\NormalTok{,}
+\CommentTok{\# directories to search in}
+\NormalTok{ls\_spt\_srh }\OperatorTok{=}\NormalTok{ [}\StringTok{"C:/Users/fan/R4Econ/amto/array/"}\NormalTok{,}
               \StringTok{"C:/Users/fan/R4Econ/amto/list"}\NormalTok{]}
 
-\CommentTok{# get file names recursively in all subfolders}
-\NormalTok{ls_spn_found }\OperatorTok{=}\NormalTok{ [spn_file }\ControlFlowTok{for}\NormalTok{ spt_srh }\KeywordTok{in}\NormalTok{ ls_spt_srh}
-                         \ControlFlowTok{for}\NormalTok{ spn_file }\KeywordTok{in}\NormalTok{ Path(spt_srh).rglob(}\StringTok{'*.R'}\NormalTok{)]}
-\ControlFlowTok{for}\NormalTok{ spn_found }\KeywordTok{in}\NormalTok{ ls_spn_found:}
-\NormalTok{  drive, path_and_file }\OperatorTok{=}\NormalTok{ os.path.splitdrive(spn_found)}
-\NormalTok{  path_no_suffix }\OperatorTok{=}\NormalTok{ os.path.splitext(spn_found)[}\DecValTok{0}\NormalTok{]}
-\NormalTok{  path_no_file, }\BuiltInTok{file} \OperatorTok{=}\NormalTok{ os.path.split(spn_found)}
-\NormalTok{  file_no_suffix }\OperatorTok{=}\NormalTok{ Path(spn_found).stem}
-  \BuiltInTok{print}\NormalTok{(}\StringTok{'file:'}\NormalTok{, }\BuiltInTok{file}\NormalTok{, }\StringTok{'}\CharTok{\textbackslash{}n}\StringTok{drive:'}\NormalTok{, drive,}
-        \StringTok{'}\CharTok{\textbackslash{}n}\StringTok{file no suffix:'}\NormalTok{, file_no_suffix,}
-        \StringTok{'}\CharTok{\textbackslash{}n}\StringTok{full path:'}\NormalTok{, spn_found,}
-        \StringTok{'}\CharTok{\textbackslash{}n}\StringTok{pt no fle:'}\NormalTok{, path_no_file,}
-        \StringTok{'}\CharTok{\textbackslash{}n}\StringTok{pt no suf:'}\NormalTok{, path_no_suffix, }\StringTok{'}\CharTok{\textbackslash{}n}\StringTok{'}\NormalTok{)}
+\CommentTok{\# get file names recursively in all subfolders}
+\NormalTok{ls\_spn\_found }\OperatorTok{=}\NormalTok{ [spn\_file }\ControlFlowTok{for}\NormalTok{ spt\_srh }\KeywordTok{in}\NormalTok{ ls\_spt\_srh}
+                         \ControlFlowTok{for}\NormalTok{ spn\_file }\KeywordTok{in}\NormalTok{ Path(spt\_srh).rglob(}\StringTok{\textquotesingle{}*.R\textquotesingle{}}\NormalTok{)]}
+\ControlFlowTok{for}\NormalTok{ spn\_found }\KeywordTok{in}\NormalTok{ ls\_spn\_found:}
+\NormalTok{  drive, path\_and\_file }\OperatorTok{=}\NormalTok{ os.path.splitdrive(spn\_found)}
+\NormalTok{  path\_no\_suffix }\OperatorTok{=}\NormalTok{ os.path.splitext(spn\_found)[}\DecValTok{0}\NormalTok{]}
+\NormalTok{  path\_no\_file, }\BuiltInTok{file} \OperatorTok{=}\NormalTok{ os.path.split(spn\_found)}
+\NormalTok{  file\_no\_suffix }\OperatorTok{=}\NormalTok{ Path(spn\_found).stem}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}file:\textquotesingle{}}\NormalTok{, }\BuiltInTok{file}\NormalTok{, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{drive:\textquotesingle{}}\NormalTok{, drive,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{file no suffix:\textquotesingle{}}\NormalTok{, file\_no\_suffix,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{full path:\textquotesingle{}}\NormalTok{, spn\_found,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no fle:\textquotesingle{}}\NormalTok{, path\_no\_file,}
+        \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{pt no suf:\textquotesingle{}}\NormalTok{, path\_no\_suffix, }\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -735,7 +1505,7 @@ Search file recursivesly in all subfolders of folders:
 \subsection{Folder Operations}\label{folder-operations}}
 
 \begin{quote}
-Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
 \hypertarget{new-folder-and-files}{%
@@ -754,20 +1524,20 @@ Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collectio
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pathlib}
 
-\CommentTok{# folder root}
-\NormalTok{srt_folder }\OperatorTok{=} \StringTok{"_folder/"}
+\CommentTok{\# folder root}
+\NormalTok{srt\_folder }\OperatorTok{=} \StringTok{"\_folder/"}
 
-\CommentTok{# new folder}
-\NormalTok{srt_subfolder }\OperatorTok{=}\NormalTok{ srt_folder }\OperatorTok{+} \StringTok{"fa/"}
-\CommentTok{# new subfolder}
-\NormalTok{srt_subfolder }\OperatorTok{=}\NormalTok{ srt_subfolder }\OperatorTok{+} \StringTok{"faa/"}
-\CommentTok{# generate folders recursively}
-\NormalTok{pathlib.Path(srt_subfolder).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\CommentTok{\# new folder}
+\NormalTok{srt\_subfolder }\OperatorTok{=}\NormalTok{ srt\_folder }\OperatorTok{+} \StringTok{"fa/"}
+\CommentTok{\# new subfolder}
+\NormalTok{srt\_subfolder }\OperatorTok{=}\NormalTok{ srt\_subfolder }\OperatorTok{+} \StringTok{"faa/"}
+\CommentTok{\# generate folders recursively}
+\NormalTok{pathlib.Path(srt\_subfolder).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 
-\CommentTok{# Open new file}
-\NormalTok{fl_tex_contents_aa }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srt_subfolder }\OperatorTok{+} \StringTok{"file_a.txt"}\NormalTok{, }\StringTok{'w'}\NormalTok{)}
-\CommentTok{# Write to File}
-\NormalTok{fl_tex_contents_aa.write(}\StringTok{'contents of file a'}\NormalTok{)}
+\CommentTok{\# Open new file}
+\NormalTok{fl\_tex\_contents\_aa }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srt\_subfolder }\OperatorTok{+} \StringTok{"file\_a.txt"}\NormalTok{, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_tex\_contents\_aa.write(}\StringTok{\textquotesingle{}contents of file a\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -777,12 +1547,12 @@ Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collectio
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_tex_contents_aa.close()}
+\NormalTok{fl\_tex\_contents\_aa.close()}
 
-\CommentTok{# Open another new file and save}
-\NormalTok{fl_tex_contents_ab }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srt_subfolder }\OperatorTok{+} \StringTok{"file_b.txt"}\NormalTok{, }\StringTok{'w'}\NormalTok{)}
-\CommentTok{# Write to File}
-\NormalTok{fl_tex_contents_ab.write(}\StringTok{'contents of file b'}\NormalTok{)}
+\CommentTok{\# Open another new file and save}
+\NormalTok{fl\_tex\_contents\_ab }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srt\_subfolder }\OperatorTok{+} \StringTok{"file\_b.txt"}\NormalTok{, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_tex\_contents\_ab.write(}\StringTok{\textquotesingle{}contents of file b\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -792,7 +1562,7 @@ Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collectio
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_tex_contents_ab.close()}
+\NormalTok{fl\_tex\_contents\_ab.close()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -800,12 +1570,12 @@ Generate more folders without files:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# generate folders recursively}
-\NormalTok{pathlib.Path(}\StringTok{"_folder/fb/fba/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\CommentTok{# generate folders recursively}
-\NormalTok{pathlib.Path(}\StringTok{"_folder/fc/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\CommentTok{# generate folders recursively}
-\NormalTok{pathlib.Path(}\StringTok{"_folder/fd/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\CommentTok{\# generate folders recursively}
+\NormalTok{pathlib.Path(}\StringTok{"\_folder/fb/fba/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\CommentTok{\# generate folders recursively}
+\NormalTok{pathlib.Path(}\StringTok{"\_folder/fc/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\CommentTok{\# generate folders recursively}
+\NormalTok{pathlib.Path(}\StringTok{"\_folder/fd/"}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -825,9 +1595,9 @@ Moving one file:
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ shutil}
-\CommentTok{# Faster method}
-\NormalTok{shutil.copyfile(}\StringTok{'_folder/fa/faa/file_a.txt'}\NormalTok{, }\StringTok{'_folder/fb/file_a.txt'}\NormalTok{)}
-\CommentTok{# More metadat copied, and don't need to specify name }
+\CommentTok{\# Faster method}
+\NormalTok{shutil.copyfile(}\StringTok{\textquotesingle{}\_folder/fa/faa/file\_a.txt\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fb/file\_a.txt\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# More metadat copied, and don\textquotesingle{}t need to specify name }
 \end{Highlighting}
 \end{Shaded}
 
@@ -837,7 +1607,7 @@ Moving one file:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{shutil.copy2(}\StringTok{'_folder/fa/faa/file_a.txt'}\NormalTok{, }\StringTok{'_folder/fb/fba'}\NormalTok{)}
+\NormalTok{shutil.copy2(}\StringTok{\textquotesingle{}\_folder/fa/faa/file\_a.txt\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fb/fba\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -852,22 +1622,22 @@ Move Entire Folder, \href{https://stackoverflow.com/a/31039095/8280804}{How do I
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ distutils.dir_util }\ImportTok{import}\NormalTok{ copy_tree}
+\ImportTok{from}\NormalTok{ distutils.dir\_util }\ImportTok{import}\NormalTok{ copy\_tree}
 
-\CommentTok{# Move contents from fa/faa/ to fc/faa}
-\NormalTok{srt_curroot }\OperatorTok{=} \StringTok{'_folder/fa/'}
-\NormalTok{srt_folder }\OperatorTok{=} \StringTok{'faa/'}
-\NormalTok{srt_newroot }\OperatorTok{=} \StringTok{'_folder/fc/'}
+\CommentTok{\# Move contents from fa/faa/ to fc/faa}
+\NormalTok{srt\_curroot }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fa/\textquotesingle{}}
+\NormalTok{srt\_folder }\OperatorTok{=} \StringTok{\textquotesingle{}faa/\textquotesingle{}}
+\NormalTok{srt\_newroot }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fc/\textquotesingle{}}
 
-\CommentTok{# Full source and destination}
-\NormalTok{srt_sourc }\OperatorTok{=}\NormalTok{ srt_curroot }\OperatorTok{+}\NormalTok{ srt_folder}
-\NormalTok{srt_desct }\OperatorTok{=}\NormalTok{ srt_newroot }\OperatorTok{+}\NormalTok{ srt_folder}
+\CommentTok{\# Full source and destination}
+\NormalTok{srt\_sourc }\OperatorTok{=}\NormalTok{ srt\_curroot }\OperatorTok{+}\NormalTok{ srt\_folder}
+\NormalTok{srt\_desct }\OperatorTok{=}\NormalTok{ srt\_newroot }\OperatorTok{+}\NormalTok{ srt\_folder}
 
-\CommentTok{# Check/Create new Directory }
-\NormalTok{pathlib.Path(srt_desct).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\CommentTok{\# Check/Create new Directory }
+\NormalTok{pathlib.Path(srt\_desct).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 
-\CommentTok{# Move}
-\NormalTok{copy_tree(srt_sourc, srt_desct)}
+\CommentTok{\# Move}
+\NormalTok{copy\_tree(srt\_sourc, srt\_desct)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -879,16 +1649,16 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ distutils.dir_util }\ImportTok{import}\NormalTok{ copy_tree}
-\CommentTok{# Check/Create new Directory }
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fa_images'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fb_images'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fc_images'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fz_img'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fz_other'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\ImportTok{from}\NormalTok{ distutils.dir\_util }\ImportTok{import}\NormalTok{ copy\_tree}
+\CommentTok{\# Check/Create new Directory }
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fa\_images\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fb\_images\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fc\_images\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fz\_img\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fz\_other\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 
-\CommentTok{# Move}
-\NormalTok{copy_tree(}\StringTok{'_folder/fa/faa/'}\NormalTok{, }\StringTok{'_folder/fd/faa/fa_images'}\NormalTok{)}
+\CommentTok{\# Move}
+\NormalTok{copy\_tree(}\StringTok{\textquotesingle{}\_folder/fa/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fd/faa/fa\_images\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -898,7 +1668,7 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{copy_tree(}\StringTok{'_folder/fa/faa/'}\NormalTok{, }\StringTok{'_folder/fd/faa/fb_images'}\NormalTok{)}
+\NormalTok{copy\_tree(}\StringTok{\textquotesingle{}\_folder/fa/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fd/faa/fb\_images\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -908,7 +1678,7 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{copy_tree(}\StringTok{'_folder/fa/faa/'}\NormalTok{, }\StringTok{'_folder/fd/faa/fc_images'}\NormalTok{)}
+\NormalTok{copy\_tree(}\StringTok{\textquotesingle{}\_folder/fa/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fd/faa/fc\_images\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -918,7 +1688,7 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{copy_tree(}\StringTok{'_folder/fa/faa/'}\NormalTok{, }\StringTok{'_folder/fd/faa/fz_img'}\NormalTok{)}
+\NormalTok{copy\_tree(}\StringTok{\textquotesingle{}\_folder/fa/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fd/faa/fz\_img\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -928,8 +1698,8 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{copy_tree(}\StringTok{'_folder/fa/faa/'}\NormalTok{, }\StringTok{'_folder/fd/faa/fz_other'}\NormalTok{)}
-\CommentTok{# Empty Folder}
+\NormalTok{copy\_tree(}\StringTok{\textquotesingle{}\_folder/fa/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/fd/faa/fz\_other\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Empty Folder}
 \end{Highlighting}
 \end{Shaded}
 
@@ -939,8 +1709,8 @@ Move contents to multiple destinations:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fd_images'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
-\NormalTok{pathlib.Path(}\StringTok{'_folder/fd/faa/fe_images'}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fd\_images\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{pathlib.Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fe\_images\textquotesingle{}}\NormalTok{).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -952,12 +1722,12 @@ Find the total number of files in a folder.
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pathlib}
-\CommentTok{# the number of files in folder found with search critiera}
-\NormalTok{st_fle_search }\OperatorTok{=} \StringTok{'*.txt'}
-\NormalTok{ls_spn }\OperatorTok{=}\NormalTok{ [Path(spn).stem }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(}\StringTok{'_folder/fd/faa/fa_images'}\NormalTok{).rglob(st_fle_search)]}
-\BuiltInTok{print}\NormalTok{(ls_spn)}
+\CommentTok{\# the number of files in folder found with search critiera}
+\NormalTok{st\_fle\_search }\OperatorTok{=} \StringTok{\textquotesingle{}*.txt\textquotesingle{}}
+\NormalTok{ls\_spn }\OperatorTok{=}\NormalTok{ [Path(spn).stem }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(}\StringTok{\textquotesingle{}\_folder/fd/faa/fa\_images\textquotesingle{}}\NormalTok{).rglob(st\_fle\_search)]}
+\BuiltInTok{print}\NormalTok{(ls\_spn)}
 
-\CommentTok{# count files in a non-empty folder}
+\CommentTok{\# count files in a non{-}empty folder}
 \end{Highlighting}
 \end{Shaded}
 
@@ -967,8 +1737,8 @@ Find the total number of files in a folder.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{srn }\OperatorTok{=} \StringTok{'_folder/fd/faa/fa_images'}
-\NormalTok{[spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st_fle_search)]}
+\NormalTok{srn }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fd/faa/fa\_images\textquotesingle{}}
+\NormalTok{[spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st\_fle\_search)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -978,10 +1748,10 @@ Find the total number of files in a folder.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bl_folder_is_empty }\OperatorTok{=} \BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st_fle_search)])}\OperatorTok{>}\DecValTok{0}
-\BuiltInTok{print}\NormalTok{(bl_folder_is_empty)}
+\NormalTok{bl\_folder\_is\_empty }\OperatorTok{=} \BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st\_fle\_search)])}\OperatorTok{\textgreater{}}\DecValTok{0}
+\BuiltInTok{print}\NormalTok{(bl\_folder\_is\_empty)}
 
-\CommentTok{# count files in an empty folder}
+\CommentTok{\# count files in an empty folder}
 \end{Highlighting}
 \end{Shaded}
 
@@ -991,8 +1761,8 @@ Find the total number of files in a folder.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{srn }\OperatorTok{=} \StringTok{'_folder/fd/faa/fd_images'}
-\NormalTok{[spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st_fle_search)]}
+\NormalTok{srn }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fd/faa/fd\_images\textquotesingle{}}
+\NormalTok{[spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st\_fle\_search)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1002,8 +1772,8 @@ Find the total number of files in a folder.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bl_folder_is_empty }\OperatorTok{=} \BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st_fle_search)])}\OperatorTok{>}\DecValTok{0}
-\BuiltInTok{print}\NormalTok{(bl_folder_is_empty)}
+\NormalTok{bl\_folder\_is\_empty }\OperatorTok{=} \BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }\KeywordTok{in}\NormalTok{ Path(srn).rglob(st\_fle\_search)])}\OperatorTok{\textgreater{}}\DecValTok{0}
+\BuiltInTok{print}\NormalTok{(bl\_folder\_is\_empty)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1026,11 +1796,11 @@ Search for folders with certain search word in folder name, and only keep if fol
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ os}
 
-\CommentTok{# get all folder names in folder}
-\NormalTok{ls_spt }\OperatorTok{=}\NormalTok{ os.listdir(}\StringTok{'_folder/fd/faa/'}\NormalTok{)}
-\BuiltInTok{print}\NormalTok{(ls_spt)}
+\CommentTok{\# get all folder names in folder}
+\NormalTok{ls\_spt }\OperatorTok{=}\NormalTok{ os.listdir(}\StringTok{\textquotesingle{}\_folder/fd/faa/\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(ls\_spt)}
 
-\CommentTok{# Select only subfolder names containing _images}
+\CommentTok{\# Select only subfolder names containing \_images}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1040,12 +1810,12 @@ Search for folders with certain search word in folder name, and only keep if fol
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{srt }\OperatorTok{=} \StringTok{'_folder/fd/faa/'}
-\NormalTok{st_search }\OperatorTok{=} \StringTok{'_images'}
-\NormalTok{ls_srt_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt }
+\NormalTok{srt }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fd/faa/\textquotesingle{}}
+\NormalTok{st\_search }\OperatorTok{=} \StringTok{\textquotesingle{}\_images\textquotesingle{}}
+\NormalTok{ls\_srt\_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt }
                 \ControlFlowTok{for}\NormalTok{ spt }\KeywordTok{in}\NormalTok{ os.listdir(srt) }
-                \ControlFlowTok{if}\NormalTok{ st_search }\KeywordTok{in}\NormalTok{ spt]}
-\BuiltInTok{print}\NormalTok{(ls_srt_found)}
+                \ControlFlowTok{if}\NormalTok{ st\_search }\KeywordTok{in}\NormalTok{ spt]}
+\BuiltInTok{print}\NormalTok{(ls\_srt\_found)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1071,20 +1841,20 @@ Search:
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ pathlib}
 
-\CommentTok{# Select only subfolder names containing _images}
-\NormalTok{srt }\OperatorTok{=} \StringTok{'_folder/fd/faa/'}
-\CommentTok{# the folder names must contain _images}
-\NormalTok{st_srt_srh }\OperatorTok{=} \StringTok{'_images'}
-\CommentTok{# there must be files in the folder with this string}
-\NormalTok{st_fle_srh }\OperatorTok{=} \StringTok{'*.txt'}
+\CommentTok{\# Select only subfolder names containing \_images}
+\NormalTok{srt }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fd/faa/\textquotesingle{}}
+\CommentTok{\# the folder names must contain \_images}
+\NormalTok{st\_srt\_srh }\OperatorTok{=} \StringTok{\textquotesingle{}\_images\textquotesingle{}}
+\CommentTok{\# there must be files in the folder with this string}
+\NormalTok{st\_fle\_srh }\OperatorTok{=} \StringTok{\textquotesingle{}*.txt\textquotesingle{}}
 
-\CommentTok{# All folders that have String}
-\NormalTok{ls_srt_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt }
+\CommentTok{\# All folders that have String}
+\NormalTok{ls\_srt\_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt }
                 \ControlFlowTok{for}\NormalTok{ spt }\KeywordTok{in}\NormalTok{ os.listdir(srt) }
-                \ControlFlowTok{if}\NormalTok{ st_srt_srh }\KeywordTok{in}\NormalTok{ spt]}
-\BuiltInTok{print}\NormalTok{(ls_srt_found)}
+                \ControlFlowTok{if}\NormalTok{ st\_srt\_srh }\KeywordTok{in}\NormalTok{ spt]}
+\BuiltInTok{print}\NormalTok{(ls\_srt\_found)}
 
-\CommentTok{# All folders that have String and that are nonempty}
+\CommentTok{\# All folders that have String and that are nonempty}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1094,13 +1864,13 @@ Search:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ls_srt_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt}
+\NormalTok{ls\_srt\_found }\OperatorTok{=}\NormalTok{ [srt }\OperatorTok{+}\NormalTok{ spt}
                 \ControlFlowTok{for}\NormalTok{ spt }\KeywordTok{in}\NormalTok{ os.listdir(srt)}
-                \ControlFlowTok{if}\NormalTok{ ((st_srt_srh }\KeywordTok{in}\NormalTok{ spt) }
+                \ControlFlowTok{if}\NormalTok{ ((st\_srt\_srh }\KeywordTok{in}\NormalTok{ spt) }
                     \KeywordTok{and} 
 \NormalTok{                    (}\BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }
-                          \KeywordTok{in}\NormalTok{ Path(srt }\OperatorTok{+}\NormalTok{ spt).rglob(st_fle_srh)])}\OperatorTok{>}\DecValTok{0}\NormalTok{)) ]}
-\BuiltInTok{print}\NormalTok{(ls_srt_found)}
+                          \KeywordTok{in}\NormalTok{ Path(srt }\OperatorTok{+}\NormalTok{ spt).rglob(st\_fle\_srh)])}\OperatorTok{\textgreater{}}\DecValTok{0}\NormalTok{)) ]}
+\BuiltInTok{print}\NormalTok{(ls\_srt\_found)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1131,36 +1901,36 @@ The results here are implemented as function in the \href{https://github.com/Fan
 \ImportTok{import}\NormalTok{ pathlib}
 \ImportTok{import}\NormalTok{ os}
 \ImportTok{import}\NormalTok{ shutil}
-\ImportTok{from}\NormalTok{ distutils.dir_util }\ImportTok{import}\NormalTok{ copy_tree}
+\ImportTok{from}\NormalTok{ distutils.dir\_util }\ImportTok{import}\NormalTok{ copy\_tree}
 
-\CommentTok{# 1 Define Parameters}
+\CommentTok{\# 1 Define Parameters}
 
-\CommentTok{# Select only subfolder names containing _images}
-\NormalTok{srt }\OperatorTok{=} \StringTok{'_folder/fd/faa/'}
-\CommentTok{# the folder names must contain _images}
-\NormalTok{st_srt_srh }\OperatorTok{=} \StringTok{'_images'}
-\CommentTok{# there must be files in the folder with this string}
-\NormalTok{st_fle_srh }\OperatorTok{=} \StringTok{'*.txt'}
+\CommentTok{\# Select only subfolder names containing \_images}
+\NormalTok{srt }\OperatorTok{=} \StringTok{\textquotesingle{}\_folder/fd/faa/\textquotesingle{}}
+\CommentTok{\# the folder names must contain \_images}
+\NormalTok{st\_srt\_srh }\OperatorTok{=} \StringTok{\textquotesingle{}\_images\textquotesingle{}}
+\CommentTok{\# there must be files in the folder with this string}
+\NormalTok{st\_fle\_srh }\OperatorTok{=} \StringTok{\textquotesingle{}*.txt\textquotesingle{}}
 
-\CommentTok{# new aggregating folder name}
-\NormalTok{srt_agg }\OperatorTok{=} \StringTok{'_img'}
+\CommentTok{\# new aggregating folder name}
+\NormalTok{srt\_agg }\OperatorTok{=} \StringTok{\textquotesingle{}\_img\textquotesingle{}}
 
-\CommentTok{# folders to move aggregation files towards}
-\NormalTok{ls_srt_dest }\OperatorTok{=}\NormalTok{ [}\StringTok{'_folder/fd/faa/'}\NormalTok{, }\StringTok{'_folder/'}\NormalTok{]}
+\CommentTok{\# folders to move aggregation files towards}
+\NormalTok{ls\_srt\_dest }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}\_folder/fd/faa/\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}\_folder/\textquotesingle{}}\NormalTok{]}
 
-\CommentTok{# delete source}
-\NormalTok{bl_delete_source }\OperatorTok{=} \VariableTok{False}
+\CommentTok{\# delete source}
+\NormalTok{bl\_delete\_source }\OperatorTok{=} \VariableTok{False}
 
-\CommentTok{# 2 Gather Folders }
-\NormalTok{ls_ls_srt_found }\OperatorTok{=}\NormalTok{ [[srt }\OperatorTok{+}\NormalTok{ spt, spt]}
+\CommentTok{\# 2 Gather Folders }
+\NormalTok{ls\_ls\_srt\_found }\OperatorTok{=}\NormalTok{ [[srt }\OperatorTok{+}\NormalTok{ spt, spt]}
                     \ControlFlowTok{for}\NormalTok{ spt }\KeywordTok{in}\NormalTok{ os.listdir(srt)}
-                    \ControlFlowTok{if}\NormalTok{ ((st_srt_srh }\KeywordTok{in}\NormalTok{ spt) }
+                    \ControlFlowTok{if}\NormalTok{ ((st\_srt\_srh }\KeywordTok{in}\NormalTok{ spt) }
                         \KeywordTok{and} 
 \NormalTok{                        (}\BuiltInTok{len}\NormalTok{([spn }\ControlFlowTok{for}\NormalTok{ spn }
-                              \KeywordTok{in}\NormalTok{ Path(srt }\OperatorTok{+}\NormalTok{ spt).rglob(st_fle_srh)])}\OperatorTok{>}\DecValTok{0}\NormalTok{)) ]}
-\BuiltInTok{print}\NormalTok{(ls_ls_srt_found)}
+                              \KeywordTok{in}\NormalTok{ Path(srt }\OperatorTok{+}\NormalTok{ spt).rglob(st\_fle\_srh)])}\OperatorTok{\textgreater{}}\DecValTok{0}\NormalTok{)) ]}
+\BuiltInTok{print}\NormalTok{(ls\_ls\_srt\_found)}
 
-\CommentTok{# 3 Loop over destination folders, loop over source folders}
+\CommentTok{\# 3 Loop over destination folders, loop over source folders}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1170,22 +1940,22 @@ The results here are implemented as function in the \href{https://github.com/Fan
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{for}\NormalTok{ srt }\KeywordTok{in}\NormalTok{ ls_srt_dest:}
+\ControlFlowTok{for}\NormalTok{ srt }\KeywordTok{in}\NormalTok{ ls\_srt\_dest:}
 
-  \CommentTok{# Move each folder over}
-  \ControlFlowTok{for}\NormalTok{ ls_srt_found }\KeywordTok{in}\NormalTok{ ls_ls_srt_found:}
+  \CommentTok{\# Move each folder over}
+  \ControlFlowTok{for}\NormalTok{ ls\_srt\_found }\KeywordTok{in}\NormalTok{ ls\_ls\_srt\_found:}
 
-    \CommentTok{# Paths}
-\NormalTok{    srt_source }\OperatorTok{=}\NormalTok{ ls_srt_found[}\DecValTok{0}\NormalTok{]}
-\NormalTok{    srt_dest }\OperatorTok{=}\NormalTok{ os.path.join(srt, srt_agg, ls_srt_found[}\DecValTok{1}\NormalTok{])}
+    \CommentTok{\# Paths}
+\NormalTok{    srt\_source }\OperatorTok{=}\NormalTok{ ls\_srt\_found[}\DecValTok{0}\NormalTok{]}
+\NormalTok{    srt\_dest }\OperatorTok{=}\NormalTok{ os.path.join(srt, srt\_agg, ls\_srt\_found[}\DecValTok{1}\NormalTok{])}
     
-    \CommentTok{# dest folders}
-\NormalTok{    pathlib.Path(srt_dest).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+    \CommentTok{\# dest folders}
+\NormalTok{    pathlib.Path(srt\_dest).mkdir(parents}\OperatorTok{=}\VariableTok{True}\NormalTok{, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
     
-    \CommentTok{# move}
-\NormalTok{    copy_tree(ls_srt_found[}\DecValTok{0}\NormalTok{], srt_dest)}
+    \CommentTok{\# move}
+\NormalTok{    copy\_tree(ls\_srt\_found[}\DecValTok{0}\NormalTok{], srt\_dest)}
 
-\CommentTok{# 4. Delete Sources}
+\CommentTok{\# 4. Delete Sources}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1200,9 +1970,9 @@ The results here are implemented as function in the \href{https://github.com/Fan
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{ bl_delete_source:}
-  \ControlFlowTok{for}\NormalTok{ ls_srt_found }\KeywordTok{in}\NormalTok{ ls_ls_srt_found:}
-\NormalTok{    shutil.rmtree(ls_srt_found[}\DecValTok{0}\NormalTok{])}
+\ControlFlowTok{if}\NormalTok{ bl\_delete\_source:}
+  \ControlFlowTok{for}\NormalTok{ ls\_srt\_found }\KeywordTok{in}\NormalTok{ ls\_ls\_srt\_found:}
+\NormalTok{    shutil.rmtree(ls\_srt\_found[}\DecValTok{0}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1210,7 +1980,7 @@ The results here are implemented as function in the \href{https://github.com/Fan
 \subsection{Parse Yaml}\label{parse-yaml}}
 
 \begin{quote}
-Go to the \href{https://github.com/FanWangEcon//pyfan/blob/master/.//A-Collection-of-Python-Examples.Rmd}{\textbf{RMD}}, \href{https://github.com/FanWangEcon//pyfan/blob/master/.//htmlpdfr/A-Collection-of-Python-Examples.pdf}{\textbf{PDF}}, or \href{https://fanwangecon.github.io//pyfan/.//htmlpdfr/A-Collection-of-Python-Examples.html}{\textbf{HTML}} version of this file. Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
 Use the \href{https://pypi.org/project/PyYAML/}{PyYAML} to parse yaml.
@@ -1222,51 +1992,51 @@ First, Yaml as a string variable:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Create the Tex Text}
-\CommentTok{# Note that trible quotes begin first and end last lines}
-\NormalTok{stf_tex_contents }\OperatorTok{=} \StringTok{"""\textbackslash{}}
-\StringTok{- file: matrix_matlab}
+\CommentTok{\# Create the Tex Text}
+\CommentTok{\# Note that trible quotes begin first and end last lines}
+\NormalTok{stf\_tex\_contents }\OperatorTok{=} \StringTok{"""\textbackslash{}}
+\StringTok{{-} file: matrix\_matlab}
 \StringTok{  title: "One Variable Graphs and Tables"}
 \StringTok{  description: |}
 \StringTok{    Frequency table, bar chart and histogram.}
 \StringTok{    R function and lapply to generate graphs/tables for different variables.}
 \StringTok{  core:}
-\StringTok{  - package: r}
+\StringTok{  {-} package: r}
 \StringTok{    code: |}
-\StringTok{      c('word1','word2')}
+\StringTok{      c(\textquotesingle{}word1\textquotesingle{},\textquotesingle{}word2\textquotesingle{})}
 \StringTok{      function()}
 \StringTok{      for (ctr in c(1,2)) }\SpecialCharTok{\{\}}
-\StringTok{  - package: dplyr}
+\StringTok{  {-} package: dplyr}
 \StringTok{    code: |}
-\StringTok{      group_by()}
-\StringTok{  date: 2020-05-02}
+\StringTok{      group\_by()}
+\StringTok{  date: 2020{-}05{-}02}
 \StringTok{  output:}
-\StringTok{    pdf_document:}
-\StringTok{      pandoc_args: '../_output_kniti_pdf.yaml'}
+\StringTok{    pdf\_document:}
+\StringTok{      pandoc\_args: \textquotesingle{}../\_output\_kniti\_pdf.yaml\textquotesingle{}}
 \StringTok{      includes:}
-\StringTok{        in_header: '../preamble.tex'}
+\StringTok{        in\_header: \textquotesingle{}../preamble.tex\textquotesingle{}}
 \StringTok{  urlcolor: blue}
-\StringTok{- file: matrix_algebra_rules}
+\StringTok{{-} file: matrix\_algebra\_rules}
 \StringTok{  title: "Opening a Dataset"}
 \StringTok{  titleshort: "Opening a Dataset"}
 \StringTok{  description: |}
 \StringTok{    Opening a Dataset.}
 \StringTok{  core:}
-\StringTok{  - package: r}
+\StringTok{  {-} package: r}
 \StringTok{    code: |}
 \StringTok{      setwd()}
-\StringTok{  - package: readr}
+\StringTok{  {-} package: readr}
 \StringTok{    code: |}
-\StringTok{      write_csv()}
-\StringTok{  date: 2020-05-02}
-\StringTok{  date_start: 2018-12-01}
-\StringTok{- file: matrix_two}
+\StringTok{      write\_csv()}
+\StringTok{  date: 2020{-}05{-}02}
+\StringTok{  date\_start: 2018{-}12{-}01}
+\StringTok{{-} file: matrix\_two}
 \StringTok{  title: "Third file"}
 \StringTok{  titleshort: "Third file"}
 \StringTok{  description: |}
 \StringTok{    Third file description."""}
-\CommentTok{# Print}
-\BuiltInTok{print}\NormalTok{(stf_tex_contents)}
+\CommentTok{\# Print}
+\BuiltInTok{print}\NormalTok{(stf\_tex\_contents)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1317,15 +2087,15 @@ Second, write the contents of the file to a new tex file stored inside the *\_fi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Relative file name}
-\NormalTok{srt_file_tex }\OperatorTok{=} \StringTok{"_file/"}
-\NormalTok{sna_file_tex }\OperatorTok{=} \StringTok{"test_yml_fan"}
-\NormalTok{srn_file_tex }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_tex }\OperatorTok{+} \StringTok{".yml"}
-\CommentTok{# Open new file}
-\NormalTok{fl_tex_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_tex, }\StringTok{'w'}\NormalTok{)}
-\CommentTok{# Write to File}
-\NormalTok{fl_tex_contents.write(stf_tex_contents)}
-\CommentTok{# print}
+\CommentTok{\# Relative file name}
+\NormalTok{srt\_file\_tex }\OperatorTok{=} \StringTok{"\_file/"}
+\NormalTok{sna\_file\_tex }\OperatorTok{=} \StringTok{"test\_yml\_fan"}
+\NormalTok{srn\_file\_tex }\OperatorTok{=}\NormalTok{ srt\_file\_tex }\OperatorTok{+}\NormalTok{ sna\_file\_tex }\OperatorTok{+} \StringTok{".yml"}
+\CommentTok{\# Open new file}
+\NormalTok{fl\_tex\_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex, }\StringTok{\textquotesingle{}w\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Write to File}
+\NormalTok{fl\_tex\_contents.write(stf\_tex\_contents)}
+\CommentTok{\# print}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1335,7 +2105,7 @@ Second, write the contents of the file to a new tex file stored inside the *\_fi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fl_tex_contents.close()}
+\NormalTok{fl\_tex\_contents.close()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1348,12 +2118,12 @@ Load Yaml file created prior, the output is a list of dictionaries:
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ yaml }
 \ImportTok{import}\NormalTok{ pprint}
-\CommentTok{# Open yaml file}
-\NormalTok{fl_yaml }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_tex)}
-\CommentTok{# load yaml }
-\NormalTok{ls_dict_yml }\OperatorTok{=}\NormalTok{ yaml.load(fl_yaml, Loader}\OperatorTok{=}\NormalTok{yaml.BaseLoader)}
-\CommentTok{# type}
-\BuiltInTok{type}\NormalTok{(ls_dict_yml)}
+\CommentTok{\# Open yaml file}
+\NormalTok{fl\_yaml }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn\_file\_tex)}
+\CommentTok{\# load yaml }
+\NormalTok{ls\_dict\_yml }\OperatorTok{=}\NormalTok{ yaml.load(fl\_yaml, Loader}\OperatorTok{=}\NormalTok{yaml.BaseLoader)}
+\CommentTok{\# type}
+\BuiltInTok{type}\NormalTok{(ls\_dict\_yml)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1363,8 +2133,8 @@ Load Yaml file created prior, the output is a list of dictionaries:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\BuiltInTok{type}\NormalTok{(ls_dict_yml[}\DecValTok{0}\NormalTok{])}
-\CommentTok{# display}
+\BuiltInTok{type}\NormalTok{(ls\_dict\_yml[}\DecValTok{0}\NormalTok{])}
+\CommentTok{\# display}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1374,7 +2144,7 @@ Load Yaml file created prior, the output is a list of dictionaries:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pprint.pprint(ls_dict_yml, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{pprint.pprint(ls\_dict\_yml, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1445,9 +2215,9 @@ Select yaml information by \emph{file} name which is a key shared by components 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ls_str_file_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{'matrix_two'}\NormalTok{]}
-\NormalTok{ls_dict_selected }\OperatorTok{=}\NormalTok{ [dict_yml }\ControlFlowTok{for}\NormalTok{ dict_yml }\KeywordTok{in}\NormalTok{ ls_dict_yml }\ControlFlowTok{if}\NormalTok{ dict_yml[}\StringTok{'file'}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls_str_file_ids]}
-\NormalTok{pprint.pprint(ls_dc_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{ls\_str\_file\_ids }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}matrix\_two\textquotesingle{}}\NormalTok{]}
+\NormalTok{ls\_dict\_selected }\OperatorTok{=}\NormalTok{ [dict\_yml }\ControlFlowTok{for}\NormalTok{ dict\_yml }\KeywordTok{in}\NormalTok{ ls\_dict\_yml }\ControlFlowTok{if}\NormalTok{ dict\_yml[}\StringTok{\textquotesingle{}file\textquotesingle{}}\NormalTok{] }\KeywordTok{in}\NormalTok{ ls\_str\_file\_ids]}
+\NormalTok{pprint.pprint(ls\_dc\_selected, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1481,9 +2251,9 @@ Given a list of dictionaries, dump values to yaml. Note that dumped output does 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ls_dict_selected }\OperatorTok{=}\NormalTok{ [dict_yml }\ControlFlowTok{for}\NormalTok{ dict_yml }\KeywordTok{in}\NormalTok{ ls_dict_yml }
-                    \ControlFlowTok{if}\NormalTok{ dict_yml[}\StringTok{'file'}\NormalTok{] }\KeywordTok{in}\NormalTok{ [}\StringTok{'matrix_two'}\NormalTok{,}\StringTok{'matrix_matlab'}\NormalTok{]]}
-\BuiltInTok{print}\NormalTok{(yaml.dump(ls_dict_selected))}
+\NormalTok{ls\_dict\_selected }\OperatorTok{=}\NormalTok{ [dict\_yml }\ControlFlowTok{for}\NormalTok{ dict\_yml }\KeywordTok{in}\NormalTok{ ls\_dict\_yml }
+                    \ControlFlowTok{if}\NormalTok{ dict\_yml[}\StringTok{\textquotesingle{}file\textquotesingle{}}\NormalTok{] }\KeywordTok{in}\NormalTok{ [}\StringTok{\textquotesingle{}matrix\_two\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}matrix\_matlab\textquotesingle{}}\NormalTok{]]}
+\BuiltInTok{print}\NormalTok{(yaml.dump(ls\_dict\_selected))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1520,6 +2290,87 @@ Given a list of dictionaries, dump values to yaml. Note that dumped output does 
 ##   title: Third file
 ##   titleshort: Third file
 \end{verbatim}
+
+\hypertarget{install-python}{%
+\section{Install Python}\label{install-python}}
+
+\hypertarget{core-installations}{%
+\subsection{Core Installations}\label{core-installations}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+Use the \href{https://pypi.org/project/PyYAML/}{PyYAML} to parse yaml.
+
+\hypertarget{git-bash}{%
+\subsubsection{Git Bash}\label{git-bash}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Download and install \href{https://git-scm.com/downloads}{git}
+\end{enumerate}
+
+\hypertarget{conda-install}{%
+\subsubsection{Conda Install}\label{conda-install}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Download \href{https://www.anaconda.com/products/individual}{Anaconda} for Python 3. For more involved conda instructions see \href{https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html}{here}
+\item
+  Get where you installed conda: open up \emph{anaconda prompt} with admin rights (press windows button, and search for anaconda prompt, right click on the resulting terminal icon, choose as admin, a terminal opens up).
+\end{enumerate}
+
+\begin{verbatim}
+where python
+where anaconda
+
+# C:/ProgramData/Anaconda3/Scripts/anaconda.exe
+# C:/ProgramData/Anaconda3/python.exe
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Add to Path: open up windows \emph{Path} and copy the paths found above inside.
+\end{enumerate}
+
+\hypertarget{add-to-path-details}{%
+\paragraph{Add To Path Details}\label{add-to-path-details}}
+
+To Add Anaconda to Path, In Windows
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Search for: Environment Variables
+\item
+  Edit Environment Variables
+\item
+  Add new to Path (lower half):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    C:/ProgramData/Anaconda3/Scripts/
+  \item
+    C:/ProgramData/Anaconda3/
+  \end{itemize}
+\item
+  Now open up regular windows command Prompt, Type in:
+  conda --version
+\item
+  Close and Open up Git Bash:
+  conda --version
+\end{enumerate}
+
+Alternatively, in windows, directly search for Path, and add the python and anaconda exe paths to paths.
 
 \hypertarget{appendix-appendix}{%
 \appendix}
@@ -1567,11 +2418,60 @@ Given a list of dictionaries, dump values to yaml. Note that dumped output does 
   \end{itemize}
 \end{enumerate}
 
+\hypertarget{get-data-links}{%
+\section{Get Data links}\label{get-data-links}}
+
+\hypertarget{section-2.1-environmental-dataenvironmental-data-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{environmental-data}{Section 2.1 Environmental Data} links}{Section 2.1 Environmental Data links}}\label{section-2.1-environmental-dataenvironmental-data-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html}{CDS ECMWF Global Enviornmental Data Download}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir//fs_ecmwf.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Using Python API get get ECMWF ERA5 data.
+  \end{itemize}
+\end{enumerate}
+
 \hypertarget{system-and-support-links}{%
 \section{System and Support links}\label{system-and-support-links}}
 
-\hypertarget{section-2.1-file-in-and-outfile-in-and-out-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 2.1 File In and Out} links}{Section 2.1 File In and Out links}}\label{section-2.1-file-in-and-outfile-in-and-out-links}}
+\hypertarget{section-3.1-command-linecommand-line-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{command-line}{Section 3.1 Command Line} links}{Section 3.1 Command Line links}}\label{section-3.1-command-linecommand-line-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{Run Python from Command Line Examples}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Run python functions from command line.
+  \end{itemize}
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_matlab.html}{Run Matlab Command Line Operations}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_matlab.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_matlab.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_matlab.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_matlab.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generate a matlab script and run the script with parameters.
+  \item
+    \textbf{subprocess}: \emph{cmd = Popen(ls\_str, stdin=PIPE, stdout=PIPE, stderr=PIPE) + cmd.communicate()}
+  \item
+    \textbf{decode}: \emph{decode(`utf-8')}
+  \item
+    \textbf{os}: \emph{chdir() + getcdw()}
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{section-3.2-file-in-and-outfile-in-and-out-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 3.2 File In and Out} links}{Section 3.2 File In and Out links}}\label{section-3.2-file-in-and-outfile-in-and-out-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1592,7 +2492,7 @@ Given a list of dictionaries, dump values to yaml. Note that dumped output does 
   \item
     \textbf{py}: \emph{open() + write() + replace() + {[}c for b in {[}{[}1,2{]},{[}2,3{]}{]} for c in b{]}}
   \item
-    \textbf{subprocess}: \emph{read()}
+    \textbf{subprocess}: \emph{call()}
   \item
     \textbf{pathlib}: \emph{Path().rglob() + Path().stem}
   \item
@@ -1633,6 +2533,24 @@ Given a list of dictionaries, dump values to yaml. Note that dumped output does 
     \textbf{yaml}: \emph{load(fl\_yaml, Loader=yaml.BaseLoader) + dump()}
   \item
     \textbf{pprint}: \emph{pprint.pprint(ls\_dict\_yml, width=1)}
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{section-3.3-install-pythoninstall-python-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{install-python}{Section 3.3 Install Python} links}{Section 3.3 Install Python links}}\label{section-3.3-install-pythoninstall-python-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html}{Basic Conda Setup Instructions}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install//fs_install_basics.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Conda and git installations
+  \item
+    \textbf{bash}: \emph{where}
   \end{itemize}
 \end{enumerate}
 

@@ -17,6 +17,7 @@ options(knitr.duplicate.label = "allow")
 knitr::opts_chunk$set(fig.width=7, fig.height=4, fig.align="center")
 # knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)
 knitr::opts_chunk$set(warning=FALSE, message=FALSE, cache=FALSE)
+opts_chunk$set(engine.path = "C:/ProgramData/Anaconda3/envs/wk_pyfan/python.exe")
 
 # Output HTML or Latex
 if (knitr::is_latex_output()) {
@@ -111,7 +112,9 @@ if(!is.null(spt_file_current)) {
 
   # Common Shared Text and Strings
   total_area <- (800 * 7) / 2
-  if (st_file_wno_suffix == 'Panel-Data-and-Optimization-with-R') {
+  bl_own_file <- TRUE
+  if (st_file_wno_suffix == 'A-Collection-of-Python-Examples') {
+    bl_own_file <- FALSE
     text_shared_preamble_one <- paste0("> Go back to [fan](http://fanwangecon.github.io/)'s [Python Code Examples](https://fanwangecon.github.io/pyfan/) Repository ([bookdown site](https://fanwangecon.github.io/pyfan/bookdown)).")
   } else {
     text_shared_preamble_one <- paste0(st_head_link, " Go back to [fan](http://fanwangecon.github.io/)'s [Python Code Examples](https://fanwangecon.github.io/pyfan/) Repository ([bookdown site](https://fanwangecon.github.io/pyfan/bookdown)).")

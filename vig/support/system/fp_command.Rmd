@@ -1,0 +1,43 @@
+---
+title: "Run Python from Command Line Examples"
+titleshort: "Run Python from Command Line Examples"
+description: |
+  Run python functions from command line.
+date: 2020-05-30
+date_start: 2020-05-30
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### Python Command Line
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+#### Execute Command Line Python Functions
+
+- run python from command line
+- run python function with parameters from command line
+
+Here run python from command line inside python itself.
+
+Run:
+- from py.fan.util.rmd.mattexmd import fp_mlxtex2md
+- fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)
+
+Run:
+- python -c "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"

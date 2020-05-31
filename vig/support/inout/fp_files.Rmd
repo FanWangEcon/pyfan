@@ -3,7 +3,7 @@ title: "Python Reading and Writing to File Examples"
 titleshort: "Python Reading and Writing to File Examples"
 description: |
   Reading from file and replace strings in file.
-  Convert text file to latex using pandoc and clean. 
+  Convert text file to latex using pandoc and clean.
   Search for files in several folders with file substring.
   Get path root, file name, file stem, etc from path.
 core:
@@ -15,7 +15,7 @@ core:
       [c for b in [[1,2],[2,3]] for c in b]
   - package: subprocess
     code: |
-      read()
+      call()
   - package: pathlib
     code: |
       Path().rglob()

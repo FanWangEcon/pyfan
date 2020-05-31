@@ -88,11 +88,22 @@ rmd_files:
   # - vig/tabgraph/inout/main.Rmd
   # - vig/tabgraph/inout/fs_img_io.Rmd
 
+  - vig/getdata/main.Rmd
+  - vig/getdata/envir/main.Rmd
+  - vig/getdata/envir/fs_ecmwf.Rmd
+
   - vig/support/main.Rmd
+  - vig/support/system/main.Rmd
+  - vig/support/system/fp_command.Rmd
+  - vig/support/system/fp_matlab.Rmd
+
   - vig/support/inout/main.Rmd
   - vig/support/inout/fp_files.Rmd
   - vig/support/inout/fp_folders.Rmd
   - vig/support/inout/fp_yaml.Rmd
+
+  - vig/support/install/main.Rmd
+  - vig/support/install/fs_install_basics.Rmd
 
   - README_appendix.md
 
