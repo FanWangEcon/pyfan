@@ -341,7 +341,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'pyfan', u'pyfan Documentation',
-     [u'Romain Tavenard'], 1)
+     [u'Fan Wang'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -355,7 +355,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'pyfan', u'pyfan Documentation',
-   u'Romain Tavenard', 'pyfan', 'One line description of project.',
+   u'Fan Wang', 'pyfan', 'One line description of project.',
    'Miscellaneous'),
 ]
 
