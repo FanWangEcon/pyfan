@@ -211,8 +211,8 @@ html_theme_options = {
 
 def setup(app):
     app.add_css_file("custom.css") # also can be a full URL
-    if rtd_version != 'stable':
-        app.add_javascript("custom.js")
+    # if rtd_version != 'stable':
+    #     app.add_javascript("custom.js")
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
