@@ -37,7 +37,7 @@ pip-log.txt
 
 /setup.cfg
 MANIFEST.in
-/setup.py
+#/setup.py
 /docs/site/*
 /tests/fixtures/simple_project/setup.py
 /tests/fixtures/project_with_extras/setup.py

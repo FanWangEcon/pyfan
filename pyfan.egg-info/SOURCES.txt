@@ -19,3 +19,5 @@ pyfan/util/rmd/__init__.py
 pyfan/util/rmd/bookdownparse.py
 pyfan/util/rmd/mattexmd.py
 pyfan/util/rmd/rmdparse.py
+tests/__init__.py
+tests/test_pyfan.py
