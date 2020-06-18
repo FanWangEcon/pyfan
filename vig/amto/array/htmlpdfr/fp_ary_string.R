@@ -54,3 +54,47 @@ try(source("../../../.Rprofile"))
 
 ## print(st_full)
 
+
+## import textwrap
+
+## 
+## # A long Path
+
+## st_path = """
+
+## C:/Users/fan/Documents/Dropbox (UH-ECON)/Project Emily Minority Survey/EthLang/reg_lang_abi_cls_mino/tab3_fm/attain_m_vs_f/tab3_mand_talk_m2c_hfracle02.tex
+
+## """
+
+## 
+## # Wrap text with tight width
+
+## st_wrapped = textwrap.fill(st_path, width = 20)
+
+## print(st_wrapped)
+
+
+## 
+## # Paths
+
+## st_path_a = "C:/Users/fan/Documents/Dropbox (UH-ECON)/Project Emily Minority Survey/EthLang/reg_lang_abi_cls_mino/tab3_fm/attain_m_vs_f/tab3_mand_talk_m2c_hfracle02.tex"
+
+## st_path_b = 'C:/Users/fan/R4Econ/support/development/fs_packaging.html'
+
+## 
+## # Combine Strings and Wrap
+
+## str_dc_records = 'First Path:'.upper() + '\n' + \
+
+##                  textwrap.fill(st_path_a, width=25) + '\n\n' + \
+
+##                  'Second Path:'.upper() + '\n' + \
+
+##                  textwrap.fill(st_path_b, width=25)
+
+## 
+
+## # Print
+
+## print(str_dc_records)
+

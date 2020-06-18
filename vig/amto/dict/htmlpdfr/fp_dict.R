@@ -43,6 +43,22 @@ try(source("../../../.Rprofile"))
 ## pprint.pprint(ls_dc_exa, width=1)
 
 
+## 
+## ls_snm_tex = ["file1.tex", "file2.tex", "file3.tex"]
+
+## ls_snm_pdf = ["file1.pdf", "file2.pdf", "file3.pdf"]
+
+## 
+## dc_tex_pdf = {}
+
+## for tex, pdf in zip(ls_snm_tex, ls_snm_pdf):
+
+##   dc_tex_pdf[tex] = pdf
+
+## 
+## pprint.pprint(dc_tex_pdf, width=1)
+
+
 ## # string to search through
 
 ## ls_str_file_ids = ['mat_matlab', 'mat_algebra_rules']

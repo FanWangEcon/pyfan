@@ -153,19 +153,19 @@ This creates the conda env that we are using here for python.
 
 Open up the *cdsapirc*, create new if does note exist. Below, open up the file and save the text. See [Python Reading and Writing to File Examples](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html).
 
-First, get the [text](4000fe9a-498f-4ce8-9caf-7796eb64fd9d) for the config file:
+First, get the text for the config file:
 
-```{python}
+```{python, include=TRUE, eval = FALSE, echo = TRUE}
 stf_cds_cdsapirc = """\
 url: https://cds.climate.copernicus.eu/api/v2
-key: 46756:4000fe9a-498f-4ce8-9caf-7796eb64fd9d\
+key: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX\
 """
 print(stf_cds_cdsapirc)
 ```
 
 Second save text to file:
 
-```{python}
+```{python, include=TRUE, eval = FALSE, echo = TRUE}
 # Relative file name
 spt_file_cds = "C:/Users/fan/"
 snm_file_cds = ".cdsapirc"
@@ -208,7 +208,7 @@ Select based on China's area, some testing data and download grib file. The data
 Open up Jupyter notebook: *jupyter notebook*
 
 
-```{python}
+```{python, include=TRUE, eval = FALSE, echo = TRUE}
 # import module in conda env wk_ecmwf
 import cdsapi 
 import urllib.request
@@ -245,6 +245,18 @@ print(type(res))
 # html = response.read()
 ```
 
+> 2020-06-17 23:51:35,107 INFO Welcome to the CDS
+> 2020-06-17 23:51:35,107 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels
+> 2020-06-17 23:51:36,441 INFO Request is queued
+> 2020-06-17 23:51:39,183 INFO Request is running
+> 2020-06-17 23:51:45,059 INFO Request is completed
+> 2020-06-17 23:51:45,060 INFO Downloading > http://136.156.133.25/cache-compute-0008/cache/data2/adaptor.mars.internal-1592455900.8655114-11162-11-68e1ea23-8985-4926-95e6-9f181cc7792> 7.grib to C:/Users/fan/pyfan/vig/getdata/envir/_data/test/test_china_temp.grib (6.3K)
+> 2020-06-17 23:51:45,441 INFO Download rate 16.6K/s
+> print results
+> Result(content_length=6480,content_type=application/x-grib,location=http://136.156.133.25/cache-compute-0008/cache/data2/adaptor.mars.inte> rnal-1592455900.8655114-11162-11-68e1ea23-8985-4926-95e6-9f181cc77927.grib)
+> <class 'cdsapi.api.Result'>
+
+
 Convert grib to raw csv, open up command line:
 
 ```{bash, include=TRUE, eval = FALSE, echo = TRUE}
@@ -255,7 +267,7 @@ grib_get_data test_china_temp.grib > test_china_temp_raw.csv
 
 Format the CSV file (is not comma separated)
 
-```{python}
+```{python, include=TRUE, eval = FALSE, echo = TRUE}
 spt_root = "C:/Users/fan/pyfan/vig/getdata/envir/_data/test/"
 spn_csv_raw = spt_root + "test_china_temp_raw.csv"
 spn_csv_edi = spt_root + "test_china_temp.csv"

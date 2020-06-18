@@ -1,0 +1,23 @@
+
+
+Examples using ``pyfan.gen.rand.randgrid.ar_draw_random_normal``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we draw shock grids.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_randgrid_thumb.svg
+     :alt: Draw Shock Grid
+
+     :ref:`sphx_glr_auto_examples_plot_randgrid.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plot_randgrid.py`

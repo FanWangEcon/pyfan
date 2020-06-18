@@ -134,8 +134,8 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
 
     Examples
     --------
-
-    >>> fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)
+    >>> fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/',
+    ...              ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)
 
     """
 
@@ -197,36 +197,36 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
             print(spn_md)
 
 
-if __name__ == '__main__':
-    # spt_root_u = "C:/Users/fan/Math4Econ/"
-    # ls_srt_subfolders_u = ['calconevar/', 'derivative/', 'derivative_application/',
-    #                        'matrix_basics/',
-    #                        'opti_firm_constrained/', 'opti_hh_constrained_brsv/',
-    #                        'opti_hh_constrained_brsv_inequality/']
-    # ls_srt_subfolders_u = ['matrix_basics/', 'matrix_application/']
-    # st_rglob_tex_u = '*.tex'
-    # st_rglob_md_u = '*.md'
-    # verbose_u = False
-    #
-    # fp_mlxtex2md(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
-    #              st_rglob_tex=st_rglob_tex_u, verbose=verbose_u)
-    #
-    # fp_md2rmd(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
-    #           st_rglob_md=st_rglob_md_u, verbose=verbose_u)
-    # from subprocess import Popen, PIPE
-    #
-    # # python -c "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
-    #
-    # spg_py_run = "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
-    # # spg_py_run = "1+1"
-    #
-    # cmd_popen = Popen(["python", "-c",
-    #                    "\"" + spg_py_run + "\""],
-    #                   stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    # print(cmd_popen)
-    # output, err = cmd_popen.communicate()
-    # print(output.decode('utf-8'))
-    # print(err.decode('utf-8'))
-
-    # fp_mlxtex2md()
-    fp_md2rmd()
+# if __name__ == '__main__':
+#     # spt_root_u = "C:/Users/fan/Math4Econ/"
+#     # ls_srt_subfolders_u = ['calconevar/', 'derivative/', 'derivative_application/',
+#     #                        'matrix_basics/',
+#     #                        'opti_firm_constrained/', 'opti_hh_constrained_brsv/',
+#     #                        'opti_hh_constrained_brsv_inequality/']
+#     # ls_srt_subfolders_u = ['matrix_basics/', 'matrix_application/']
+#     # st_rglob_tex_u = '*.tex'
+#     # st_rglob_md_u = '*.md'
+#     # verbose_u = False
+#     #
+#     # fp_mlxtex2md(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
+#     #              st_rglob_tex=st_rglob_tex_u, verbose=verbose_u)
+#     #
+#     # fp_md2rmd(spt_root=spt_root_u, ls_srt_subfolders=ls_srt_subfolders_u,
+#     #           st_rglob_md=st_rglob_md_u, verbose=verbose_u)
+#     # from subprocess import Popen, PIPE
+#     #
+#     # # python -c "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
+#     #
+#     # spg_py_run = "from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"
+#     # # spg_py_run = "1+1"
+#     #
+#     # cmd_popen = Popen(["python", "-c",
+#     #                    "\"" + spg_py_run + "\""],
+#     #                   stdin=PIPE, stdout=PIPE, stderr=PIPE)
+#     # print(cmd_popen)
+#     # output, err = cmd_popen.communicate()
+#     # print(output.decode('utf-8'))
+#     # print(err.decode('utf-8'))
+#
+#     # fp_mlxtex2md()
+#     fp_md2rmd()

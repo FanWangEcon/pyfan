@@ -118,7 +118,7 @@ try(source("../../../.Rprofile"))
 
 ## url: https://cds.climate.copernicus.eu/api/v2
 
-## key: 46756:4000fe9a-498f-4ce8-9caf-7796eb64fd9d\
+## key: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX\
 
 ## """
 

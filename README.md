@@ -1,6 +1,9 @@
 [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://github.com/FanWangEcon/pyfan)  [![Star](https://img.shields.io/github/stars/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/stargazers) [![Fork](https://img.shields.io/github/forks/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/network/members) [![Star](https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/watchers)
 
-This is a work-in-progress [website](https://fanwangecon.github.io/pyfan/) consisting of python tutorials and examples for various research tasks. Book version: [bookdown site](https://fanwangecon.github.io/pyfan/bookdown) and [bookdown pdf](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf). The associated python package's functions are not documented here, but shown here [docs](https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html#module-pyfan).
+The work-in-progress [pyfan](https://github.com/FanWangEcon/pyfan) repository contains:
+
+1. Tutorials and examples for various research tasks: [**bookdown site**](https://fanwangecon.github.io/pyfan/bookdown) and [**bookdown pdf**](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf).
+2. A package for basic data, graph and research tasks: [**readthedocs**](https://pyfan.readthedocs.io/en/latest/) and [**pypi**](https://pypi.org/project/pyfan/).
 
 Files are written with [RMD](https://rmarkdown.rstudio.com/). Materials are gathered from various [projects](https://fanwangecon.github.io/research) in which python code is used for research and paper-administrative tasks. Files are from [**Fan**](https://fanwangecon.github.io/)'s [pyfan](https://github.com/FanWangEcon/pyfan) repository which has an associated [package](https://pypi.org/project/pyfan/). The package functionalize various tasks tested out in the Rmd files. In addition, the [pyecon](https://github.com/FanWangEcon/pyecon) repository and the associated [package](https://pypi.org/project/pyecon/) contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.
 
@@ -15,8 +18,9 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 ## 1.1  Array
 
 1. [Python String Manipulation Examples](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html)
-	+ Various string manipulations
-	+ **py**: *zip()*
+	+ Search for substring, replace string, wrap string.
+	+ **py**: *zip() + upper()*
+	+ **textwrap**: *fill(st, width = 20)*
 
 ## 1.2  Dictionary
 
@@ -24,16 +28,31 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 	+ List comprehension with dictionary
 	+ **py**: *dc = {'key': "name", 'val': 1}*
 
-# 2  Get Data
+# 2  Tables and Graphs
 
-## 2.1  Environmental Data
+## 2.1  Matplotlib Base Plots
+
+1. [Mabplotlib Scatter and Line Plots](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_base.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html)
+	+ Plot several arrays of data, grid, figure title, and line and point patterns and colors.
+	+ Plot out random walk and white noise first-order autoregressive processes.
+	+ **matplotlib**: *subplots() + ax.plot() + ax.legend() + ylabel() + xlabel() + title() + grid() + show()*
+	+ **numpy**: *random.normal() + random.seed() + cumsum() + arange()*
+2. [Mabplotlib Text Plots](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_text.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html)
+	+ Print text as figure.
+	+ **matplotlib**: *ax.text()*
+	+ **textwrap**: *fill()*
+	+ **json**: *dump()*
+
+# 3  Get Data
+
+## 3.1  Environmental Data
 
 1. [CDS ECMWF Global Enviornmental Data Download](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir//fs_ecmwf.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html)
 	+ Using Python API get get ECMWF ERA5 data.
 
-# 3  System and Support
+# 4  System and Support
 
-## 3.1  Command Line
+## 4.1  Command Line
 
 1. [Run Python from Command Line Examples](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html)
 	+ Run python functions from command line.
@@ -43,7 +62,7 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 	+ **decode**: *decode('utf-8')*
 	+ **os**: *chdir() + getcdw()*
 
-## 3.2  File In and Out
+## 4.2  File In and Out
 
 1. [Python Reading and Writing to File Examples](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html)
 	+ Reading from file and replace strings in file.
@@ -69,7 +88,7 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 	+ **yaml**: *load(fl_yaml, Loader=yaml.BaseLoader)       + dump()*
 	+ **pprint**: *pprint.pprint(ls_dict_yml, width=1)*
 
-## 3.3  Install Python
+## 4.3  Install Python
 
 1. [Basic Conda Setup Instructions](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install//fs_install_basics.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html)
 	+ Conda and git installations

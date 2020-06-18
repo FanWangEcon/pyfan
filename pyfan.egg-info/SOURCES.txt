@@ -1,4 +1,4 @@
-README.rst
+README.md
 setup.py
 pyfan/__init__.py
 pyfan.egg-info/PKG-INFO
@@ -6,6 +6,9 @@ pyfan.egg-info/SOURCES.txt
 pyfan.egg-info/dependency_links.txt
 pyfan.egg-info/requires.txt
 pyfan.egg-info/top_level.txt
+pyfan/gen/__init__.py
+pyfan/gen/rand/__init__.py
+pyfan/gen/rand/randgrid.py
 pyfan/util/__init__.py
 pyfan/util/path/__init__.py
 pyfan/util/path/getfiles.py

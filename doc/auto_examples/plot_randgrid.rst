@@ -1,0 +1,222 @@
+.. only:: html
+
+    .. note::
+        :class: sphx-glr-download-link-note
+
+        Click :ref:`here <sphx_glr_download_auto_examples_plot_randgrid.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_auto_examples_plot_randgrid.py:
+
+
+Draw Shock Grid
+========================================================================
+
+In this example, we draw shock grids.
+
+
+.. code-block:: default
+
+
+    # Author: Fan Wang (fanwangecon.github.io)
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import pyfan.gen.rand.randgrid as pyfan_gen_rand
+
+
+
+
+
+
+
+
+Shared parameters
+------------------------
+
+
+.. code-block:: default
+
+    fl_mu = 0
+    fl_sd = 1
+    it_draws = 25
+    it_seed = 123
+    fl_lower_sd = -2
+    fl_higher_sd = 2
+
+
+
+
+
+
+
+
+Type 0 Shock draw
+------------------------
+
+
+.. code-block:: default
+
+    it_draw_type = 0
+    ar_shock_t0 = \
+        pyfan_gen_rand.ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+                                             it_seed, it_draw_type,
+                                             fl_lower_sd, fl_higher_sd)
+    print('it_draw_type=0')
+    print(ar_shock_t0)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    it_draw_type=0
+    [-1.0856306   0.99734545  0.2829785  -1.50629471 -0.57860025  1.65143654
+     -2.         -0.42891263  1.26593626 -0.8667404  -0.67888615 -0.09470897
+      1.49138963 -0.638902   -0.44398196 -0.43435128  2.          2.
+      1.0040539   0.3861864   0.73736858  1.49073203 -0.93583387  1.17582904
+     -1.25388067]
+
+
+
+
+Type 1 Shock draw
+------------------------
+
+
+.. code-block:: default
+
+    it_draw_type = 1
+    ar_shock_t1 = \
+        pyfan_gen_rand.ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+                                             it_seed, it_draw_type,
+                                             fl_lower_sd, fl_higher_sd)
+    print('it_draw_type=1')
+    print(ar_shock_t1)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    it_draw_type=1
+    [-2.         -1.53395018 -1.26860059 -1.07109838 -0.90840016 -0.76678646
+     -0.63911191 -0.52110766 -0.40996255 -0.30367558 -0.20072104 -0.09985637
+      0.          0.09985637  0.20072104  0.30367558  0.40996255  0.52110766
+      0.63911191  0.76678646  0.90840016  1.07109838  1.26860059  1.53395018
+      2.        ]
+
+
+
+
+Type 2 Shock draw
+------------------------
+
+
+.. code-block:: default
+
+    it_draw_type = 2
+    ar_shock_t2 = \
+        pyfan_gen_rand.ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+                                             it_seed, it_draw_type,
+                                             fl_lower_sd, fl_higher_sd)
+    print('it_draw_type=2')
+    print(ar_shock_t2)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    it_draw_type=2
+    [-2.         -1.50629471 -1.25388067 -1.0856306  -0.93583387 -0.8667404
+     -0.67888615 -0.638902   -0.57860025 -0.44398196 -0.43435128 -0.42891263
+     -0.09470897  0.2829785   0.3861864   0.73736858  0.99734545  1.0040539
+      1.17582904  1.26593626  1.49073203  1.49138963  1.65143654  2.
+      2.        ]
+
+
+
+
+Draw Shocks Jointly
+------------------------
+
+
+.. code-block:: default
+
+    fig, ax = plt.subplots()
+    # Graph
+    ar_it_x_grid = np.arange(1, it_draws + 1)
+    ax.plot(ar_it_x_grid, ar_shock_t0,
+                         color='blue', linestyle='dashed', marker='x',
+                         label='Type 0: Bounded Shock Draws')
+    ax.scatter(ar_it_x_grid, ar_shock_t1,
+                         color='red',
+                         label='Type 1: Quantile Points')
+    ax.plot(ar_it_x_grid, ar_shock_t2,
+                         color='black', marker='d',
+                         label='Type 3: Sorted Bounded Shock Draws')
+    # Labeling
+    ax.legend(loc='upper left')
+    plt.ylabel('Shock Values')
+    plt.xlabel('Shock Draw Points')
+    plt.title('Shock, Sorted and Bounded Shocks, Quantile Points')
+    plt.grid()
+    plt.show()
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_randgrid_001.svg
+    :alt: Shock, Sorted and Bounded Shocks, Quantile Points
+    :class: sphx-glr-single-img
+
+
+
+
+
+
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  0.168 seconds)
+
+
+.. _sphx_glr_download_auto_examples_plot_randgrid.py:
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-python
+
+     :download:`Download Python source code: plot_randgrid.py <plot_randgrid.py>`
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+     :download:`Download Jupyter notebook: plot_randgrid.ipynb <plot_randgrid.ipynb>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

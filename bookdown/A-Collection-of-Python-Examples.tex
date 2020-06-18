@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-05-31}
+\date{2020-06-18}
 
 \begin{document}
 \maketitle
@@ -158,7 +158,18 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-This is a work-in-progress \href{https://fanwangecon.github.io/pyfan/}{website} consisting of python tutorials and examples to accomplish. Files are written with \href{https://rmarkdown.rstudio.com/}{RMD} \citep{R-rmarkdown}. Materials are gathered from various \href{https://fanwangecon.github.io/research}{projects} in which python code is used for research and paper-administrative tasks. Files are from \href{https://fanwangecon.github.io/}{\textbf{Fan}}'s \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository which has an associated \href{https://pypi.org/project/pyfan/}{package}. The package functionalize various tasks tested out in the Rmd files. In addition, the \href{https://github.com/FanWangEcon/pyecon}{pyecon} repository and the associated \href{https://pypi.org/project/pyecon/}{package} (\href{https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html\#module-pyfan}{readthedocs}) contain functions and rmd files related explicitly to solving economic models.
+The work-in-progress \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository contains:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Tutorials and examples for various research tasks: \href{https://fanwangecon.github.io/pyfan/bookdown}{\textbf{bookdown site}} and \href{https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf}{\textbf{bookdown pdf}}.
+\item
+  A package for basic data, graph and research tasks: \href{https://pyfan.readthedocs.io/en/latest/}{\textbf{readthedocs}} and \href{https://pypi.org/project/pyfan/}{\textbf{pypi}}.
+\end{enumerate}
+
+Materials are gathered from various \href{https://fanwangecon.github.io/research}{projects} in which python code is used for research and paper-administrative tasks. Files are from \href{https://fanwangecon.github.io/}{\textbf{Fan}}'s \href{https://github.com/FanWangEcon/pyfan}{pyfan} repository which has an associated \href{https://pypi.org/project/pyfan/}{package}. The package functionalize various tasks tested out in the Rmd files. In addition, the \href{https://github.com/FanWangEcon/pyecon}{pyecon} repository and the associated \href{https://pypi.org/project/pyecon/}{package} (\href{https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html\#module-pyfan}{readthedocs}) contain functions and rmd files related explicitly to solving economic models.
 
 From \href{https://fanwangecon.github.io/}{Fan}'s other repositories: For dynamic borrowing and savings problems, see \href{https://fanwangecon.github.io/CodeDynaAsset/}{Dynamic Asset Repository (Matlab)}; For code examples, see also \href{https://fanwangecon.github.io/M4Econ/}{Matlab Example Code}, \href{https://fanwangecon.github.io/R4Econ/}{R Example Code}, and \href{https://fanwangecon.github.io/Stata4Econ/}{Stata Example Code}; For intro econ with Matlab, see \href{https://fanwangecon.github.io/Math4Econ/}{Intro Mathematics for Economists}, and for intro stat with R, see \href{https://fanwangecon.github.io/Stat4Econ/}{Intro Statistics for Undergraduates}. See \href{https://github.com/FanWangEcon}{here} for all of \href{https://fanwangecon.github.io/}{Fan}'s public repositories.
 
@@ -241,6 +252,73 @@ Replace terms in string
 ## A B C or 123 or ABC. Interesting 789.
 \end{verbatim}
 
+\hypertarget{wrap-string-with-fixed-width}{%
+\subsubsection{Wrap String with Fixed Width}\label{wrap-string-with-fixed-width}}
+
+Given a long string, wrap it into multiple lines with fixed width.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ textwrap}
+
+\CommentTok{\# A long Path}
+\NormalTok{st\_path }\OperatorTok{=} \StringTok{"""}
+\StringTok{C:/Users/fan/Documents/Dropbox (UH{-}ECON)/Project Emily Minority Survey/EthLang/reg\_lang\_abi\_cls\_mino/tab3\_fm/attain\_m\_vs\_f/tab3\_mand\_talk\_m2c\_hfracle02.tex}
+\StringTok{"""}
+
+\CommentTok{\# Wrap text with tight width}
+\NormalTok{st\_wrapped }\OperatorTok{=}\NormalTok{ textwrap.fill(st\_path, width }\OperatorTok{=} \DecValTok{20}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(st\_wrapped)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  C:/Users/fan/Docume
+## nts/Dropbox (UH-
+## ECON)/Project Emily
+## Minority Survey/EthL
+## ang/reg_lang_abi_cls
+## _mino/tab3_fm/attain
+## _m_vs_f/tab3_mand_ta
+## lk_m2c_hfracle02.tex
+\end{verbatim}
+
+Combine Strings that are wrapped and not Wrapped
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Paths}
+\NormalTok{st\_path\_a }\OperatorTok{=} \StringTok{"C:/Users/fan/Documents/Dropbox (UH{-}ECON)/Project Emily Minority Survey/EthLang/reg\_lang\_abi\_cls\_mino/tab3\_fm/attain\_m\_vs\_f/tab3\_mand\_talk\_m2c\_hfracle02.tex"}
+\NormalTok{st\_path\_b }\OperatorTok{=} \StringTok{\textquotesingle{}C:/Users/fan/R4Econ/support/development/fs\_packaging.html\textquotesingle{}}
+
+\CommentTok{\# Combine Strings and Wrap}
+\NormalTok{str\_dc\_records }\OperatorTok{=} \StringTok{\textquotesingle{}First Path:\textquotesingle{}}\NormalTok{.upper() }\OperatorTok{+} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}} \OperatorTok{+} \OperatorTok{\textbackslash{}}
+\NormalTok{                 textwrap.fill(st\_path\_a, width}\OperatorTok{=}\DecValTok{25}\NormalTok{) }\OperatorTok{+} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n\textbackslash{}n}\StringTok{\textquotesingle{}} \OperatorTok{+} \OperatorTok{\textbackslash{}}
+                 \CommentTok{\textquotesingle{}Second Path:\textquotesingle{}}\NormalTok{.upper() }\OperatorTok{+} \StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}} \OperatorTok{+} \OperatorTok{\textbackslash{}}
+\NormalTok{                 textwrap.fill(st\_path\_b, width}\OperatorTok{=}\DecValTok{25}\NormalTok{)}
+              
+\CommentTok{\# Print}
+\BuiltInTok{print}\NormalTok{(str\_dc\_records)                 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## FIRST PATH:
+## C:/Users/fan/Documents/Dr
+## opbox (UH-ECON)/Project
+## Emily Minority Survey/Eth
+## Lang/reg_lang_abi_cls_min
+## o/tab3_fm/attain_m_vs_f/t
+## ab3_mand_talk_m2c_hfracle
+## 02.tex
+## 
+## SECOND PATH:
+## C:/Users/fan/R4Econ/suppo
+## rt/development/fs_packagi
+## ng.html
+\end{verbatim}
+
 \hypertarget{dictionary}{%
 \section{Dictionary}\label{dictionary}}
 
@@ -312,6 +390,31 @@ Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon
 ##            'a '
 ##            'Dataset',
 ##   'val': 1.1}]
+\end{verbatim}
+
+\hypertarget{iteratively-add-to-a-dictionary}{%
+\subsubsection{Iteratively Add to A Dictionary}\label{iteratively-add-to-a-dictionary}}
+
+Iteratively add additional Key and Value pairs to a dictionary.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{ls\_snm\_tex }\OperatorTok{=}\NormalTok{ [}\StringTok{"file1.tex"}\NormalTok{, }\StringTok{"file2.tex"}\NormalTok{, }\StringTok{"file3.tex"}\NormalTok{]}
+\NormalTok{ls\_snm\_pdf }\OperatorTok{=}\NormalTok{ [}\StringTok{"file1.pdf"}\NormalTok{, }\StringTok{"file2.pdf"}\NormalTok{, }\StringTok{"file3.pdf"}\NormalTok{]}
+
+\NormalTok{dc\_tex\_pdf }\OperatorTok{=}\NormalTok{ \{\}}
+\ControlFlowTok{for}\NormalTok{ tex, pdf }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(ls\_snm\_tex, ls\_snm\_pdf):}
+\NormalTok{  dc\_tex\_pdf[tex] }\OperatorTok{=}\NormalTok{ pdf}
+
+\NormalTok{pprint.pprint(dc\_tex\_pdf, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## {'file1.tex': 'file1.pdf',
+##  'file2.tex': 'file2.pdf',
+##  'file3.tex': 'file3.pdf'}
 \end{verbatim}
 
 \hypertarget{select-by-keys-in-dictionary}{%
@@ -391,6 +494,168 @@ Search and Select by Multiple Keys in Dictionary. Using two keys below:
 ##            'Tables',
 ##   'val': 1}]
 \end{verbatim}
+
+\hypertarget{tables-and-graphs}{%
+\chapter{Tables and Graphs}\label{tables-and-graphs}}
+
+\hypertarget{matplotlib-base-plots}{%
+\section{Matplotlib Base Plots}\label{matplotlib-base-plots}}
+
+\hypertarget{line-and-scatter-plots}{%
+\subsection{Line and Scatter Plots}\label{line-and-scatter-plots}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{plot-random-walk-and-white-noise-jointly}{%
+\subsubsection{Plot Random Walk and White Noise Jointly}\label{plot-random-walk-and-white-noise-jointly}}
+
+Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html}{matplotlib.pyplot.plot}. Here we will plot out the extremes of AR(1), white noise (no persistence), and random walk (fully persistent shocks).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Import Packages}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+
+\CommentTok{\# Generate X and Y}
+\NormalTok{np.random.seed(}\DecValTok{123}\NormalTok{)}
+\NormalTok{ar\_fl\_y1\_rand }\OperatorTok{=}\NormalTok{ np.random.normal(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{100}\NormalTok{)}
+\NormalTok{ar\_fl\_y2\_rand }\OperatorTok{=}\NormalTok{ np.cumsum(np.random.normal(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{100}\NormalTok{))}
+\NormalTok{ar\_it\_x\_grid }\OperatorTok{=}\NormalTok{ np.arange(}\DecValTok{1}\NormalTok{,}\BuiltInTok{len}\NormalTok{(ar\_fl\_y1\_rand)}\OperatorTok{+}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# Start Figure}
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots()}
+
+\CommentTok{\# Graph}
+\NormalTok{ax.plot(ar\_it\_x\_grid, ar\_fl\_y1\_rand,}
+\NormalTok{                     color}\OperatorTok{=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}dashed\textquotesingle{}}\NormalTok{,}
+\NormalTok{                     label}\OperatorTok{=}\StringTok{\textquotesingle{}sd=2, 0 persistence\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [<matplotlib.lines.Line2D object at 0x000002A84F595E80>]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ax.plot(ar\_it\_x\_grid, ar\_fl\_y2\_rand,}
+\NormalTok{                     color}\OperatorTok{=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{\textquotesingle{}solid\textquotesingle{}}\NormalTok{,}
+\NormalTok{                     label}\OperatorTok{=}\StringTok{\textquotesingle{}sd=1, random walk\textquotesingle{}}\NormalTok{)}
+                     
+\CommentTok{\# Labeling}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [<matplotlib.lines.Line2D object at 0x000002A84EF23970>]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ax.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <matplotlib.legend.Legend object at 0x000002A84F3559D0>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Random Standard Normal Draws\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Text(0, 0.5, 'Random Standard Normal Draws')
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Time Periods\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Text(0.5, 0, 'Time Periods')
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.title(}\StringTok{\textquotesingle{}White Noise\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Text(0.5, 1.0, 'White Noise')
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.grid()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+\hypertarget{text-plot}{%
+\subsection{Text Plot}\label{text-plot}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{plot-text}{%
+\subsubsection{Plot Text}\label{plot-text}}
+
+Plot Text as Image. \href{https://matplotlib.org/3.1.1/gallery/pyplots/text_layout.html\#sphx-glr-gallery-pyplots-text-layout-py}{Create text with different alignment and rotation.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Import Packages}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ textwrap}
+\ImportTok{import}\NormalTok{ json}
+
+\CommentTok{\# Dict of String to String}
+\NormalTok{dc\_path }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}C:}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{fan}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Documents}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Dropbox (UH{-}ECON)}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{repos}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Tex4Econ}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{\textquotesingle{}}
+           \StringTok{\textquotesingle{}\_other}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{equation}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{cases.tex\textquotesingle{}}\NormalTok{:}
+               \StringTok{\textquotesingle{}C:/Users/fan/Documents/cases.pdf\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}C:}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{fan}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Documents}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Dropbox (UH{-}ECON)}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{repos}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Tex4Econ}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{\textquotesingle{}}
+           \StringTok{\textquotesingle{}\_other}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{symbols}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{fs\_symbols.tex\textquotesingle{}}\NormalTok{:}
+               \StringTok{\textquotesingle{}C:/Users/fan/Documents/fs\_symbols.pdf\textquotesingle{}}\NormalTok{\}}
+\NormalTok{st\_dc\_path }\OperatorTok{=}\NormalTok{ textwrap.fill(json.dumps(dc\_path), width }\OperatorTok{=} \DecValTok{70}\NormalTok{)}
+
+\CommentTok{\# Start Plot}
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots()}
+
+\CommentTok{\# Text Plot}
+\NormalTok{ax.text(}\FloatTok{0.5}\NormalTok{, }\FloatTok{0.5}\NormalTok{, st\_dc\_path,}
+\NormalTok{        horizontalalignment}\OperatorTok{=}\StringTok{\textquotesingle{}center\textquotesingle{}}\NormalTok{,}
+\NormalTok{        verticalalignment}\OperatorTok{=}\StringTok{\textquotesingle{}center\textquotesingle{}}\NormalTok{,}
+\NormalTok{        fontsize}\OperatorTok{=}\DecValTok{14}\NormalTok{, color}\OperatorTok{=}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{,}
+\NormalTok{        transform}\OperatorTok{=}\NormalTok{ax.transAxes)}
+
+\CommentTok{\# Labeling}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Text(0.5, 0.5, '{"C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\equation\\\\cases.tex":\n"C:/Users/fan/Documents/cases.pdf",\n"C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\symbols\\\\fs_symbols.tex":\n"C:/Users/fan/Documents/fs_symbols.pdf"}')
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ax.set\_axis\_off()}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 \hypertarget{get-data}{%
 \chapter{Get Data}\label{get-data}}
@@ -598,22 +863,17 @@ This creates the conda env that we are using here for python.
 
 Open up the \emph{cdsapirc}, create new if does note exist. Below, open up the file and save the text. See \href{https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html}{Python Reading and Writing to File Examples}.
 
-First, get the \href{4000fe9a-498f-4ce8-9caf-7796eb64fd9d}{text} for the config file:
+First, get the text for the config file:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{stf\_cds\_cdsapirc }\OperatorTok{=} \StringTok{"""\textbackslash{}}
 \StringTok{url: https://cds.climate.copernicus.eu/api/v2}
-\StringTok{key: 46756:4000fe9a{-}498f{-}4ce8{-}9caf{-}7796eb64fd9d\textbackslash{}}
+\StringTok{key: 4XXXX:4XXXfXXX{-}XXXf{-}4XXX{-}9XXX{-}7XXXebXXfdXX\textbackslash{}}
 \StringTok{"""}
 \BuiltInTok{print}\NormalTok{(stf\_cds\_cdsapirc)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## url: https://cds.climate.copernicus.eu/api/v2
-## key: 46756:4000fe9a-498f-4ce8-9caf-7796eb64fd9d
-\end{verbatim}
 
 Second save text to file:
 
@@ -628,15 +888,6 @@ Second save text to file:
 \CommentTok{\# Write to File}
 \NormalTok{fl\_cdsapirc\_contents.write(stf\_cds\_cdsapirc)}
 \CommentTok{\# Close}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 93
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \NormalTok{fl\_cdsapirc\_contents.close()}
 \end{Highlighting}
 \end{Shaded}
@@ -711,39 +962,8 @@ Open up Jupyter notebook: \emph{jupyter notebook}
 \NormalTok{  spn\_dl\_test\_grib}
 \NormalTok{)}
 \CommentTok{\# show results}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 2020-05-31 12:17:20,308 INFO Welcome to the CDS
-## 2020-05-31 12:17:20,308 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels
-## 2020-05-31 12:17:21,024 INFO Request is completed
-## 2020-05-31 12:17:21,025 INFO Downloading http://136.156.133.41/cache-compute-0013/cache/data8/adaptor.mars.internal-1590942354.413081-3635-7-1f784973-5a00-47b3-b6fb-fb1a77c8087f.grib to C:/Users/fan/pyfan/vig/getdata/envir/_data/test/test_china_temp.grib (6.3K)
-##   0%|          | 0.00/6.33k [00:00<?, ?B/s]                                           2020-05-31 12:17:21,260 INFO Download rate 26.8K/s
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}print results\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## print results
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \BuiltInTok{print}\NormalTok{(res)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Result(content_length=6480,content_type=application/x-grib,location=http://136.156.133.41/cache-compute-0013/cache/data8/adaptor.mars.internal-1590942354.413081-3635-7-1f784973-5a00-47b3-b6fb-fb1a77c8087f.grib)
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \BuiltInTok{print}\NormalTok{(}\BuiltInTok{type}\NormalTok{(res))}
 
 \CommentTok{\# download }
@@ -752,9 +972,18 @@ Open up Jupyter notebook: \emph{jupyter notebook}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## <class 'cdsapi.api.Result'>
-\end{verbatim}
+\begin{quote}
+2020-06-17 23:51:35,107 INFO Welcome to the CDS
+2020-06-17 23:51:35,107 INFO Sending request to \url{https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels}
+2020-06-17 23:51:36,441 INFO Request is queued
+2020-06-17 23:51:39,183 INFO Request is running
+2020-06-17 23:51:45,059 INFO Request is completed
+2020-06-17 23:51:45,060 INFO Downloading \textgreater{} \url{http://136.156.133.25/cache-compute-0008/cache/data2/adaptor.mars.internal-1592455900.8655114-11162-11-68e1ea23-8985-4926-95e6-9f181cc7792}\textgreater{} 7.grib to C:/Users/fan/pyfan/vig/getdata/envir/\_data/test/test\_china\_temp.grib (6.3K)
+2020-06-17 23:51:45,441 INFO Download rate 16.6K/s
+print results
+Result(content\_length=6480,content\_type=application/x-grib,location=\url{http://136.156.133.25/cache-compute-0008/cache/data2/adaptor.mars.inte}\textgreater{} rnal-1592455900.8655114-11162-11-68e1ea23-8985-4926-95e6-9f181cc77927.grib)
+\textless class `cdsapi.api.Result'\textgreater{}
+\end{quote}
 
 Convert grib to raw csv, open up command line:
 
@@ -780,11 +1009,6 @@ Format the CSV file (is not comma separated)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## 27
-## [31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31]
-\end{verbatim}
-
 Show CSV results:
 
 \begin{Shaded}
@@ -803,7 +1027,7 @@ Show CSV results:
 
 \begin{table}[!h]
 
-\caption{\label{tab:unnamed-chunk-22}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
+\caption{\label{tab:unnamed-chunk-29}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
 \centering
 \begin{tabular}[t]{r|r|r}
 \hline
@@ -2394,9 +2618,11 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \begin{itemize}
   \tightlist
   \item
-    Various string manipulations
+    Search for substring, replace string, wrap string.
   \item
-    \textbf{py}: \emph{zip()}
+    \textbf{py}: \emph{zip() + upper()}
+  \item
+    \textbf{textwrap}: \emph{fill(st, width = 20)}
   \end{itemize}
 \end{enumerate}
 
@@ -2418,11 +2644,50 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
+\hypertarget{tables-and-graphs-links}{%
+\section{Tables and Graphs links}\label{tables-and-graphs-links}}
+
+\hypertarget{section-2.1-matplotlib-base-plotsmatplotlib-base-plots-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{matplotlib-base-plots}{Section 2.1 Matplotlib Base Plots} links}{Section 2.1 Matplotlib Base Plots links}}\label{section-2.1-matplotlib-base-plotsmatplotlib-base-plots-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html}{Mabplotlib Scatter and Line Plots}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_base.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Plot several arrays of data, grid, figure title, and line and point patterns and colors.
+  \item
+    Plot out random walk and white noise first-order autoregressive processes.
+  \item
+    \textbf{matplotlib}: \emph{subplots() + ax.plot() + ax.legend() + ylabel() + xlabel() + title() + grid() + show()}
+  \item
+    \textbf{numpy}: \emph{random.normal() + random.seed() + cumsum() + arange()}
+  \end{itemize}
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html}{Mabplotlib Text Plots}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_text.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Print text as figure.
+  \item
+    \textbf{matplotlib}: \emph{ax.text()}
+  \item
+    \textbf{textwrap}: \emph{fill()}
+  \item
+    \textbf{json}: \emph{dump()}
+  \end{itemize}
+\end{enumerate}
+
 \hypertarget{get-data-links}{%
 \section{Get Data links}\label{get-data-links}}
 
-\hypertarget{section-2.1-environmental-dataenvironmental-data-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{environmental-data}{Section 2.1 Environmental Data} links}{Section 2.1 Environmental Data links}}\label{section-2.1-environmental-dataenvironmental-data-links}}
+\hypertarget{section-3.1-environmental-dataenvironmental-data-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{environmental-data}{Section 3.1 Environmental Data} links}{Section 3.1 Environmental Data links}}\label{section-3.1-environmental-dataenvironmental-data-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2440,8 +2705,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \hypertarget{system-and-support-links}{%
 \section{System and Support links}\label{system-and-support-links}}
 
-\hypertarget{section-3.1-command-linecommand-line-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{command-line}{Section 3.1 Command Line} links}{Section 3.1 Command Line links}}\label{section-3.1-command-linecommand-line-links}}
+\hypertarget{section-4.1-command-linecommand-line-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{command-line}{Section 4.1 Command Line} links}{Section 4.1 Command Line links}}\label{section-4.1-command-linecommand-line-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2470,8 +2735,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-3.2-file-in-and-outfile-in-and-out-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 3.2 File In and Out} links}{Section 3.2 File In and Out links}}\label{section-3.2-file-in-and-outfile-in-and-out-links}}
+\hypertarget{section-4.2-file-in-and-outfile-in-and-out-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 4.2 File In and Out} links}{Section 4.2 File In and Out links}}\label{section-4.2-file-in-and-outfile-in-and-out-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2536,8 +2801,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-3.3-install-pythoninstall-python-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{install-python}{Section 3.3 Install Python} links}{Section 3.3 Install Python links}}\label{section-3.3-install-pythoninstall-python-links}}
+\hypertarget{section-4.3-install-pythoninstall-python-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{install-python}{Section 4.3 Install Python} links}{Section 4.3 Install Python links}}\label{section-4.3-install-pythoninstall-python-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
