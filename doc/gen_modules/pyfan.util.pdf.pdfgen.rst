@@ -9,7 +9,7 @@ pyfan.gen.rand.gen_rgrid
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: generators
+      :toctree: gen.rand.gen_rgrid
       :template: function.rst
 
       ff_pdf_gen_clean

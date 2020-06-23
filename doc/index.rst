@@ -28,9 +28,14 @@
     <div style="clear: both"></div>
     <div class="container-fluid hidden-xs hidden-sm">
       <div class="row">
-        <a href="auto_examples/plot_ff_gen_rgrid.html">
+        <a href="auto_examples/plot_randgrid.html">
           <div class="col-md-2 thumbnail">
-            <img src="_static/img/sphx_glr_plot_ff_gen_rgrid_001.svg">
+            <img src="_static/img/sphx_glr_plot_randgrid_001.svg">
+          </div>
+        </a>
+        <a href="auto_examples/plot_graph_allpurpose.html">
+          <div class="col-md-2 thumbnail">
+            <img src="_static/img/sphx_glr_plot_graph_allpurpose_001.svg">
           </div>
         </a>
       </div>

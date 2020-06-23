@@ -10,7 +10,7 @@ pyfan.gen.rand.randgrid
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: generators
+      :toctree: gen.rand.randgrid
       :template: function.rst
 
       ar_draw_random_normal

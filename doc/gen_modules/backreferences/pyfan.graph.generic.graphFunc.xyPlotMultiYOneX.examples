@@ -1,0 +1,23 @@
+
+
+Examples using ``pyfan.graph.generic.graphFunc.xyPlotMultiYOneX``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we generate a line plot, a density plot and a scatter plot.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg
+     :alt: Generate Graphs using the Generic Graphing Tool
+
+     :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py`

@@ -18,6 +18,18 @@ Data structure generate modules.
 
    pyfan.gen.rand.randgrid
 
+Visualize
+---------
+
+Utility modules.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules/
+  :template: module.rst
+
+  pyfan.graph.generic.allpurpose
 
 Utility
 --------

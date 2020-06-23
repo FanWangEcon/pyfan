@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfan"
-version = "0.1.38"
+version = "0.1.39"
 description = ""
 authors = ["Fan Wang <wangfanbsg75@live.com>"]
 
@@ -12,6 +12,7 @@ numpy = "^1.18.5"
 scipy = "^1.4.1"
 matplotlib = "^3.2.1"
 cython = "^0.29.20"
+seaborn = "^0.10.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
