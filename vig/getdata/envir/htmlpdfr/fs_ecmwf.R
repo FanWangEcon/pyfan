@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-----------------------------------------------------------
+## ----global_options, include = FALSE-----------------------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -15,7 +15,13 @@ try(source("../../../.Rprofile"))
 
 ## conda config --add channels conda-forge
 
+## conda install -c anaconda pandas
+
 ## conda install -c conda-forge eccodes -y
+
+## conda install -c conda-forge cfgrib -y
+
+## conda install -c anaconda xarray
 
 
 ## url: https://cds.climate.copernicus.eu/api/v2
@@ -111,7 +117,13 @@ try(source("../../../.Rprofile"))
 
 ## conda install cdsapi -y
 
+## conda install -c anaconda pandas
+
 ## conda install -c conda-forge eccodes -y
+
+## conda install -c conda-forge cfgrib -y
+
+## conda install -c anaconda xarray
 
 
 ## stf_cds_cdsapirc = """\
@@ -238,7 +250,7 @@ try(source("../../../.Rprofile"))
 ##     [f_out.write(','.join(line.split()) + '\n') for line in f_in]
 
 
-## ----------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------------------------------------------------------
 # Path and Read
 spt_root = "C:/Users/fan/pyfan/vig/getdata/envir/"
 spn_dl_test_csv = paste0(spt_root, "_data/test/test_china_temp.csv")
@@ -250,7 +262,7 @@ kable(head(china_weather_data, 50),
   kable_styling_fc()
 
 
-## ---- include=TRUE, eval = FALSE, echo = TRUE--------------------------------------------------
+## ---- include=TRUE, eval = FALSE, echo = TRUE--------------------------------------------------------------------------------------------------
 ## #################################################
 ## # ------------ Parameters
 ## #################################################

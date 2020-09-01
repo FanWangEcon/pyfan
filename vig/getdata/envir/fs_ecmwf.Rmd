@@ -3,6 +3,7 @@ title: "Download CDS Climate, ECMWF Global Enviornmental Data via Python API"
 titleshort: "CDS ECMWF Global Enviornmental Data Download"
 description: |
   Using Python API get get ECMWF ERA5 data.
+  Dynamically modify a python API file, run python inside a Conda virtual environment with R-reticulate.
 core:
   - package: r
     code: |
@@ -60,7 +61,10 @@ try(source("../../../.Rprofile"))
 
     ```{bash, include=TRUE, eval = FALSE, echo = TRUE}
     conda config --add channels conda-forge
+    conda install -c anaconda pandas
     conda install -c conda-forge eccodes -y
+    conda install -c conda-forge cfgrib -y
+    conda install -c anaconda xarray
     ```
 
 #### Account Registration
@@ -156,7 +160,10 @@ conda config --get channels --env
 
 # Install
 conda install cdsapi -y
+conda install -c anaconda pandas
 conda install -c conda-forge eccodes -y
+conda install -c conda-forge cfgrib -y
+conda install -c anaconda xarray
 ```
 
 This creates the conda env that we are using here for python.
@@ -331,13 +338,13 @@ kable(head(china_weather_data, 50),
 
 [ER5 Data Download Instructions](https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5).
 
-#### Download, Unzip, Convert to combined CSV
+#### UTCI, NC Format Data, Download, Unzip, Convert to combined CSV
 
 The data downloaded from CDS climate could become very large in size. We want to process parts of the data one part at a time, summarize and aggregate over each part, and generate a file output file with aggregate statistics over the entire time period of interest.
 
 This code below accompalishes the following tasks:
 
-1. download data from derived-utci-historical as ZIP
+1. download data from derived-utci-historical as ZIP: [API request by itself](../ecmwf_scripts/ecmef_pressure_utci_historical.py)
 2. unzip
 3. convert *nc* files to *csv* files
 4. individual csv files are half year groups

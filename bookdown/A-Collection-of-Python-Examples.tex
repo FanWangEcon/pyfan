@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-06-23}
+\date{2020-09-01}
 
 \begin{document}
 \maketitle
@@ -536,7 +536,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001CA7ECC2D08>]
+## [<matplotlib.lines.Line2D object at 0x00000246ECC4C370>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -550,7 +550,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001CA7CAE9588>]
+## [<matplotlib.lines.Line2D object at 0x00000246EC9A61F0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -560,7 +560,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## <matplotlib.legend.Legend object at 0x000001CA7CAE9F88>
+## <matplotlib.legend.Legend object at 0x00000246ECC4C190>
 \end{verbatim}
 
 \begin{Shaded}
@@ -697,7 +697,10 @@ Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon
 \begin{Shaded}
 \begin{Highlighting}[]
 \ExtensionTok{conda}\NormalTok{ config --add channels conda-forge}
+\ExtensionTok{conda}\NormalTok{ install -c anaconda pandas}
 \ExtensionTok{conda}\NormalTok{ install -c conda-forge eccodes -y}
+\ExtensionTok{conda}\NormalTok{ install -c conda-forge cfgrib -y}
+\ExtensionTok{conda}\NormalTok{ install -c anaconda xarray}
 \end{Highlighting}
 \end{Shaded}
 \end{enumerate}
@@ -852,7 +855,10 @@ In conda, set up a conda environment for downloading ECMWF data using the ECMWF 
 
 \CommentTok{# Install}
 \ExtensionTok{conda}\NormalTok{ install cdsapi -y}
+\ExtensionTok{conda}\NormalTok{ install -c anaconda pandas}
 \ExtensionTok{conda}\NormalTok{ install -c conda-forge eccodes -y}
+\ExtensionTok{conda}\NormalTok{ install -c conda-forge cfgrib -y}
+\ExtensionTok{conda}\NormalTok{ install -c anaconda xarray}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1029,109 +1035,25 @@ Show CSV results:
 
 \caption{\label{tab:unnamed-chunk-29}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
 \centering
-\begin{tabular}[t]{r|r|r}
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
 \hline
-Latitude & Longitude & Value\\
+time & latitude & longitude & u10 & v10 & d2m & t2m & msl & sp\\
 \hline
-\rowcolor{gray!6}  53.15 & 73 & 260.6515\\
+\rowcolor{gray!6}  2008-01-01 02:00:00 & 23.25 & 113 & -2.6031342 & -4.829605 & 265.4314 & 284.8363 & 102918.8 & 102616.0\\
 \hline
-53.15 & 74 & 259.9796\\
+2008-01-01 02:00:00 & 23.25 & 114 & -2.7173920 & -3.808121 & 262.7693 & 284.2719 & 102862.1 & 101628.0\\
 \hline
-\rowcolor{gray!6}  53.15 & 75 & 259.2227\\
+\rowcolor{gray!6}  2008-01-01 02:00:00 & 22.25 & 113 & -2.6246185 & -6.311050 & 266.9294 & 284.2602 & 102796.6 & 102059.0\\
 \hline
-53.15 & 76 & 258.5929\\
+2008-01-01 02:00:00 & 22.25 & 114 & -2.6285248 & -6.152847 & 267.4978 & 285.3168 & 102710.1 & 102201.0\\
 \hline
-\rowcolor{gray!6}  53.15 & 77 & 258.2765\\
+\rowcolor{gray!6}  2008-01-01 12:00:00 & 23.25 & 113 & -1.1495056 & -2.728592 & 265.8091 & 286.1729 & 102588.9 & 102290.7\\
 \hline
-53.15 & 78 & 258.0636\\
+2008-01-01 12:00:00 & 23.25 & 114 & -1.4454040 & -2.477615 & 265.3033 & 285.0987 & 102591.6 & 101374.7\\
 \hline
-\rowcolor{gray!6}  53.15 & 79 & 258.0069\\
+\rowcolor{gray!6}  2008-01-01 12:00:00 & 22.25 & 113 & -0.6924744 & -4.270584 & 268.0396 & 286.5753 & 102482.9 & 101757.7\\
 \hline
-53.15 & 80 & 257.7267\\
-\hline
-\rowcolor{gray!6}  53.15 & 81 & 258.8370\\
-\hline
-53.15 & 82 & 260.9239\\
-\hline
-\rowcolor{gray!6}  53.15 & 83 & 262.5440\\
-\hline
-53.15 & 84 & 263.9083\\
-\hline
-\rowcolor{gray!6}  53.15 & 85 & 264.8976\\
-\hline
-53.15 & 86 & 264.6729\\
-\hline
-\rowcolor{gray!6}  53.15 & 87 & 264.1827\\
-\hline
-53.15 & 88 & 265.0587\\
-\hline
-\rowcolor{gray!6}  53.15 & 89 & 264.9425\\
-\hline
-53.15 & 90 & 266.2960\\
-\hline
-\rowcolor{gray!6}  53.15 & 91 & 269.0958\\
-\hline
-53.15 & 92 & 270.3165\\
-\hline
-\rowcolor{gray!6}  53.15 & 93 & 269.0030\\
-\hline
-53.15 & 94 & 268.4210\\
-\hline
-\rowcolor{gray!6}  53.15 & 95 & 264.9591\\
-\hline
-53.15 & 96 & 261.9249\\
-\hline
-\rowcolor{gray!6}  53.15 & 97 & 264.5304\\
-\hline
-53.15 & 98 & 265.3995\\
-\hline
-\rowcolor{gray!6}  53.15 & 99 & 268.2374\\
-\hline
-53.15 & 100 & 269.9444\\
-\hline
-\rowcolor{gray!6}  53.15 & 101 & 272.6202\\
-\hline
-53.15 & 102 & 270.6798\\
-\hline
-\rowcolor{gray!6}  53.15 & 103 & 270.0919\\
-\hline
-53.15 & 104 & 269.6876\\
-\hline
-\rowcolor{gray!6}  53.15 & 105 & 271.4718\\
-\hline
-53.15 & 106 & 271.2403\\
-\hline
-\rowcolor{gray!6}  53.15 & 107 & 271.1163\\
-\hline
-53.15 & 108 & 269.3849\\
-\hline
-\rowcolor{gray!6}  53.15 & 109 & 270.7247\\
-\hline
-53.15 & 110 & 269.6388\\
-\hline
-\rowcolor{gray!6}  53.15 & 111 & 268.6622\\
-\hline
-53.15 & 112 & 267.6036\\
-\hline
-\rowcolor{gray!6}  53.15 & 113 & 267.4796\\
-\hline
-53.15 & 114 & 266.6983\\
-\hline
-\rowcolor{gray!6}  53.15 & 115 & 266.2911\\
-\hline
-53.15 & 116 & 266.5880\\
-\hline
-\rowcolor{gray!6}  53.15 & 117 & 265.4513\\
-\hline
-53.15 & 118 & 264.4630\\
-\hline
-\rowcolor{gray!6}  53.15 & 119 & 260.6183\\
-\hline
-53.15 & 120 & 259.3018\\
-\hline
-\rowcolor{gray!6}  53.15 & 121 & 258.4161\\
-\hline
-53.15 & 122 & 258.8429\\
+2008-01-01 12:00:00 & 22.25 & 114 & -1.9668884 & -4.906326 & 266.7486 & 288.0030 & 102440.1 & 101940.7\\
 \hline
 \end{tabular}
 \end{table}
@@ -1191,8 +1113,8 @@ Latitude & Longitude & Value\\
 
 \href{https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5}{ER5 Data Download Instructions}.
 
-\hypertarget{download-unzip-convert-to-combined-csv}{%
-\subsubsection{Download, Unzip, Convert to combined CSV}\label{download-unzip-convert-to-combined-csv}}
+\hypertarget{utci-nc-format-data-download-unzip-convert-to-combined-csv}{%
+\subsubsection{UTCI, NC Format Data, Download, Unzip, Convert to combined CSV}\label{utci-nc-format-data-download-unzip-convert-to-combined-csv}}
 
 The data downloaded from CDS climate could become very large in size. We want to process parts of the data one part at a time, summarize and aggregate over each part, and generate a file output file with aggregate statistics over the entire time period of interest.
 
@@ -1202,7 +1124,7 @@ This code below accompalishes the following tasks:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  download data from derived-utci-historical as ZIP
+  download data from derived-utci-historical as ZIP: \href{../ecmwf_scripts/ecmef_pressure_utci_historical.py}{API request by itself}
 \item
   unzip
 \item
@@ -1465,6 +1387,114 @@ Parameter Control for the code below:
 Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
+\hypertarget{run-command-line-from-inside-python}{%
+\subsubsection{Run Command Line from Inside Python}\label{run-command-line-from-inside-python}}
+
+Use subprocess, where is python:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ subprocess}
+\NormalTok{cmd_popen }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"where"}\NormalTok{, }\StringTok{"python"}\NormalTok{],}
+\NormalTok{                             stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE,}
+\NormalTok{                             stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE)}
+\NormalTok{output, err }\OperatorTok{=}\NormalTok{ cmd_popen.communicate()}
+\BuiltInTok{print}\NormalTok{(output.decode(}\StringTok{'utf-8'}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## C:\ProgramData\Anaconda3\envs\wk_pyfan\python.exe
+## C:\ProgramData\Anaconda3\python.exe
+## C:\Users\fan\.windows-build-tools\python27\python.exe
+## C:\Users\fan\AppData\Local\Microsoft\WindowsApps\python.exe
+## C:\Program Files\Inkscape\python.exe
+\end{verbatim}
+
+Command line file redirection symbol,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The > command line sends current console output to file.txt}
+\CommentTok{# cd "C:\textbackslash{}users\textbackslash{}fan"}
+\CommentTok{# ls > ls_files.txt}
+\CommentTok{# rm ls_files.txt}
+\ImportTok{import}\NormalTok{ os }
+\ImportTok{import}\NormalTok{ subprocess }
+
+\CommentTok{# ls in current location}
+\NormalTok{cmd_ls }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"ls"}\NormalTok{], stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE, stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE, stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE)}\OperatorTok{;}
+\NormalTok{stf_out_cmd_ls, err }\OperatorTok{=}\NormalTok{ cmd_ls.communicate()}
+\NormalTok{stf_out_cmd_ls }\OperatorTok{=}\NormalTok{ stf_out_cmd_ls.decode(}\StringTok{'utf-8'}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(stf_out_cmd_ls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## A Collection of Python Examples.Rmd
+## A-Collection-of-Python-Examples.Rmd
+## A-Collection-of-Python-Examples_files
+## LICENSE
+## README.md
+## README_appendix.md
+## README_end.md
+## README_pre.md
+## README_toc.md
+## _bookdown.yml
+## _bookdown_files
+## _config.yml
+## _file
+## _folder
+## _log
+## _m
+## _output.yml
+## _output_kniti_html.yaml
+## _output_kniti_pdf.yaml
+## _templates
+## book.bib
+## bookdown
+## build
+## dist
+## doc
+## hdga.html
+## htmlpdfr
+## img
+## index.Rmd
+## packages.bib
+## poetry.lock
+## preamble.tex
+## preamble_book.tex
+## pyfan
+## pyfan.egg-info
+## pyproject.toml
+## setup.py
+## style.css
+## tests
+## title.Rmd
+## vig
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{srt_file_tex }\OperatorTok{=} \StringTok{"_file/"}
+\NormalTok{sna_file_tex }\OperatorTok{=} \StringTok{"test_ls_pyfanvig_stdout"}
+\NormalTok{srn_file_tex }\OperatorTok{=}\NormalTok{ srt_file_tex }\OperatorTok{+}\NormalTok{ sna_file_tex }\OperatorTok{+} \StringTok{".txt"}
+\NormalTok{fl_tex_contents }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_file_tex, }\StringTok{'w'}\NormalTok{)}
+\NormalTok{fl_tex_contents.write(stf_out_cmd_ls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 520
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fl_tex_contents.close()}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{execute-command-line-python-functions}{%
 \subsubsection{Execute Command Line Python Functions}\label{execute-command-line-python-functions}}
 
@@ -1478,12 +1508,20 @@ Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon
 
 Here run python from command line inside python itself.
 
-Run:
-- from py.fan.util.rmd.mattexmd import fp\_mlxtex2md
-- fp\_mlxtex2md(spt\_root=`C:/Users/fan/Math4Econ/matrix\_application/', ls\_srt\_subfolders=None, st\_rglob\_tex=`twogoods.tex', verbose=True)
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Run:}
+\ImportTok{from}\NormalTok{ py.fan.util.rmd.mattexmd }\ImportTok{import}\NormalTok{ fp_mlxtex2md}
+\NormalTok{fp_mlxtex2md(spt_root}\OperatorTok{=}\StringTok{'C:/Users/fan/Math4Econ/matrix_application/'}\NormalTok{, ls_srt_subfolders}\OperatorTok{=}\VariableTok{None}\NormalTok{, st_rglob_tex}\OperatorTok{=}\StringTok{'twogoods.tex'}\NormalTok{, verbose}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-Run:
-- python -c ``from pyfan.util.rmd.mattexmd import fp\_mlxtex2md; fp\_mlxtex2md(spt\_root=`C:/Users/fan/Math4Econ/matrix\_application/', ls\_srt\_subfolders=None, st\_rglob\_tex=`twogoods.tex', verbose=True)''
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Run:}
+\NormalTok{python }\OperatorTok{-}\NormalTok{c }\StringTok{"from pyfan.util.rmd.mattexmd import fp_mlxtex2md; fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/', ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)"}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{run-matlab-functions}{%
 \subsection{Run Matlab Functions}\label{run-matlab-functions}}
@@ -2962,6 +3000,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \item
     Using Python API get get ECMWF ERA5 data.
   \item
+    Dynamically modify a python API file, run python inside a Conda virtual environment with R-reticulate.
+  \item
     \textbf{r}: \emph{file() + writeLines() + unzip() + list.files() + unlink()}
   \item
     \textbf{r-reticulate}: \emph{use\_python() + Sys.setenv(RETICULATE\_PYTHON = spth\_conda\_env)}
@@ -2978,7 +3018,7 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{Run Python from Command Line Examples}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{\textbf{html}}
+  \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{Execute Python from Command Line and Run Command Line in Python}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html}{\textbf{html}}
 
   \begin{itemize}
   \tightlist

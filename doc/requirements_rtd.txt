@@ -10,9 +10,10 @@ sphinx-gallery
 pillow
 tensorflow>=2
 Pygments
-numba
 sphinx_bootstrap_theme
 sphinx-autoapi
 git+git://github.com/numpy/numpydoc@master
 matplotlib
 seaborn
+statsmodels
+pandas

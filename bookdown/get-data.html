@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Get Data | A Collection of Python Examples</title>
   <meta name="description" content="Python Implementation Examples for Research Tasks" />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Get Data | A Collection of Python Examples" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-06-23" />
+<meta name="date" content="2020-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92953468-11"></script>
@@ -238,7 +239,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Add to Path</p></li>
 <li><p>Install cdsapi and eccodes</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="get-data.html#cb34-1"></a><span class="ex">conda</span> config --add channels conda-forge</span>
-<span id="cb34-2"><a href="get-data.html#cb34-2"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span></code></pre></div></li>
+<span id="cb34-2"><a href="get-data.html#cb34-2"></a><span class="ex">conda</span> install -c anaconda pandas</span>
+<span id="cb34-3"><a href="get-data.html#cb34-3"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
+<span id="cb34-4"><a href="get-data.html#cb34-4"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
+<span id="cb34-5"><a href="get-data.html#cb34-5"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div></li>
 </ol>
 </div>
 <div id="account-registration" class="section level4">
@@ -337,7 +341,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb38-12"><a href="get-data.html#cb38-12"></a></span>
 <span id="cb38-13"><a href="get-data.html#cb38-13"></a><span class="co"># Install</span></span>
 <span id="cb38-14"><a href="get-data.html#cb38-14"></a><span class="ex">conda</span> install cdsapi -y</span>
-<span id="cb38-15"><a href="get-data.html#cb38-15"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span></code></pre></div>
+<span id="cb38-15"><a href="get-data.html#cb38-15"></a><span class="ex">conda</span> install -c anaconda pandas</span>
+<span id="cb38-16"><a href="get-data.html#cb38-16"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
+<span id="cb38-17"><a href="get-data.html#cb38-17"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
+<span id="cb38-18"><a href="get-data.html#cb38-18"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div>
 <p>This creates the conda env that we are using here for python.</p>
 </div>
 <div id="config-file-.cdsapirc" class="section level5">
@@ -456,566 +463,266 @@ Result(content_length=6480,content_type=application/x-grib,location=<a href="htt
 </caption>
 <thead>
 <tr>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-Latitude
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+time
 </th>
 <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-Longitude
+latitude
 </th>
 <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-Value
+longitude
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+u10
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+v10
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+d2m
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+t2m
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+msl
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+sp
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-73
-</td>
-<td style="text-align:right;">
-260.6515
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-74
-</td>
-<td style="text-align:right;">
-259.9796
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-75
-</td>
-<td style="text-align:right;">
-259.2227
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-76
-</td>
-<td style="text-align:right;">
-258.5929
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-77
-</td>
-<td style="text-align:right;">
-258.2765
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-78
-</td>
-<td style="text-align:right;">
-258.0636
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-79
-</td>
-<td style="text-align:right;">
-258.0069
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-80
-</td>
-<td style="text-align:right;">
-257.7267
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-81
-</td>
-<td style="text-align:right;">
-258.8370
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-82
-</td>
-<td style="text-align:right;">
-260.9239
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-83
-</td>
-<td style="text-align:right;">
-262.5440
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-84
-</td>
-<td style="text-align:right;">
-263.9083
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-85
-</td>
-<td style="text-align:right;">
-264.8976
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-86
-</td>
-<td style="text-align:right;">
-264.6729
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-87
-</td>
-<td style="text-align:right;">
-264.1827
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-88
-</td>
-<td style="text-align:right;">
-265.0587
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-89
-</td>
-<td style="text-align:right;">
-264.9425
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-90
-</td>
-<td style="text-align:right;">
-266.2960
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-91
-</td>
-<td style="text-align:right;">
-269.0958
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-92
-</td>
-<td style="text-align:right;">
-270.3165
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-93
-</td>
-<td style="text-align:right;">
-269.0030
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-94
-</td>
-<td style="text-align:right;">
-268.4210
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-95
-</td>
-<td style="text-align:right;">
-264.9591
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-96
-</td>
-<td style="text-align:right;">
-261.9249
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-97
-</td>
-<td style="text-align:right;">
-264.5304
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-98
-</td>
-<td style="text-align:right;">
-265.3995
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-99
-</td>
-<td style="text-align:right;">
-268.2374
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-100
-</td>
-<td style="text-align:right;">
-269.9444
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-101
-</td>
-<td style="text-align:right;">
-272.6202
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-102
-</td>
-<td style="text-align:right;">
-270.6798
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-103
-</td>
-<td style="text-align:right;">
-270.0919
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-104
-</td>
-<td style="text-align:right;">
-269.6876
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-105
-</td>
-<td style="text-align:right;">
-271.4718
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-106
-</td>
-<td style="text-align:right;">
-271.2403
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-107
-</td>
-<td style="text-align:right;">
-271.1163
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-108
-</td>
-<td style="text-align:right;">
-269.3849
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-109
-</td>
-<td style="text-align:right;">
-270.7247
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-110
-</td>
-<td style="text-align:right;">
-269.6388
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-111
-</td>
-<td style="text-align:right;">
-268.6622
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
-</td>
-<td style="text-align:right;">
-112
-</td>
-<td style="text-align:right;">
-267.6036
+<td style="text-align:left;">
+2008-01-01 02:00:00
 </td>
-</tr>
-<tr>
 <td style="text-align:right;">
-53.15
+23.25
 </td>
 <td style="text-align:right;">
 113
 </td>
 <td style="text-align:right;">
-267.4796
+-2.6031342
+</td>
+<td style="text-align:right;">
+-4.829605
+</td>
+<td style="text-align:right;">
+265.4314
+</td>
+<td style="text-align:right;">
+284.8363
+</td>
+<td style="text-align:right;">
+102918.8
+</td>
+<td style="text-align:right;">
+102616.0
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+2008-01-01 02:00:00
+</td>
 <td style="text-align:right;">
-53.15
+23.25
 </td>
 <td style="text-align:right;">
 114
 </td>
 <td style="text-align:right;">
-266.6983
+-2.7173920
+</td>
+<td style="text-align:right;">
+-3.808121
+</td>
+<td style="text-align:right;">
+262.7693
+</td>
+<td style="text-align:right;">
+284.2719
+</td>
+<td style="text-align:right;">
+102862.1
+</td>
+<td style="text-align:right;">
+101628.0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-53.15
+<td style="text-align:left;">
+2008-01-01 02:00:00
 </td>
 <td style="text-align:right;">
-115
+22.25
 </td>
 <td style="text-align:right;">
-266.2911
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
+113
 </td>
 <td style="text-align:right;">
-116
+-2.6246185
 </td>
 <td style="text-align:right;">
-266.5880
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
+-6.311050
 </td>
 <td style="text-align:right;">
-117
+266.9294
 </td>
 <td style="text-align:right;">
-265.4513
+284.2602
+</td>
+<td style="text-align:right;">
+102796.6
+</td>
+<td style="text-align:right;">
+102059.0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-53.15
+<td style="text-align:left;">
+2008-01-01 02:00:00
 </td>
 <td style="text-align:right;">
-118
+22.25
 </td>
 <td style="text-align:right;">
-264.4630
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
+114
 </td>
 <td style="text-align:right;">
-119
+-2.6285248
 </td>
 <td style="text-align:right;">
-260.6183
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-53.15
+-6.152847
 </td>
 <td style="text-align:right;">
-120
+267.4978
 </td>
 <td style="text-align:right;">
-259.3018
+285.3168
+</td>
+<td style="text-align:right;">
+102710.1
+</td>
+<td style="text-align:right;">
+102201.0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-53.15
+<td style="text-align:left;">
+2008-01-01 12:00:00
 </td>
 <td style="text-align:right;">
-121
+23.25
 </td>
 <td style="text-align:right;">
-258.4161
+113
+</td>
+<td style="text-align:right;">
+-1.1495056
+</td>
+<td style="text-align:right;">
+-2.728592
+</td>
+<td style="text-align:right;">
+265.8091
+</td>
+<td style="text-align:right;">
+286.1729
+</td>
+<td style="text-align:right;">
+102588.9
+</td>
+<td style="text-align:right;">
+102290.7
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-53.15
+<td style="text-align:left;">
+2008-01-01 12:00:00
 </td>
 <td style="text-align:right;">
-122
+23.25
 </td>
 <td style="text-align:right;">
-258.8429
+114
+</td>
+<td style="text-align:right;">
+-1.4454040
+</td>
+<td style="text-align:right;">
+-2.477615
+</td>
+<td style="text-align:right;">
+265.3033
+</td>
+<td style="text-align:right;">
+285.0987
+</td>
+<td style="text-align:right;">
+102591.6
+</td>
+<td style="text-align:right;">
+101374.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2008-01-01 12:00:00
+</td>
+<td style="text-align:right;">
+22.25
+</td>
+<td style="text-align:right;">
+113
+</td>
+<td style="text-align:right;">
+-0.6924744
+</td>
+<td style="text-align:right;">
+-4.270584
+</td>
+<td style="text-align:right;">
+268.0396
+</td>
+<td style="text-align:right;">
+286.5753
+</td>
+<td style="text-align:right;">
+102482.9
+</td>
+<td style="text-align:right;">
+101757.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2008-01-01 12:00:00
+</td>
+<td style="text-align:right;">
+22.25
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+-1.9668884
+</td>
+<td style="text-align:right;">
+-4.906326
+</td>
+<td style="text-align:right;">
+266.7486
+</td>
+<td style="text-align:right;">
+288.0030
+</td>
+<td style="text-align:right;">
+102440.1
+</td>
+<td style="text-align:right;">
+101940.7
 </td>
 </tr>
 </tbody>
@@ -1053,12 +760,12 @@ Value
 <p><a href="https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5">ER5 Data Download Instructions</a>.</p>
 </div>
 </div>
-<div id="download-unzip-convert-to-combined-csv" class="section level4">
-<h4><span class="header-section-number">3.1.1.9</span> Download, Unzip, Convert to combined CSV</h4>
+<div id="utci-nc-format-data-download-unzip-convert-to-combined-csv" class="section level4">
+<h4><span class="header-section-number">3.1.1.9</span> UTCI, NC Format Data, Download, Unzip, Convert to combined CSV</h4>
 <p>The data downloaded from CDS climate could become very large in size. We want to process parts of the data one part at a time, summarize and aggregate over each part, and generate a file output file with aggregate statistics over the entire time period of interest.</p>
 <p>This code below accompalishes the following tasks:</p>
 <ol style="list-style-type: decimal">
-<li>download data from derived-utci-historical as ZIP</li>
+<li>download data from derived-utci-historical as ZIP: <a href="../ecmwf_scripts/ecmef_pressure_utci_historical.py">API request by itself</a></li>
 <li>unzip</li>
 <li>convert <em>nc</em> files to <em>csv</em> files</li>
 <li>individual csv files are half year groups</li>

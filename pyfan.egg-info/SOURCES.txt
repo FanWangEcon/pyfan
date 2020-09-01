@@ -1,5 +1,6 @@
 LICENSE
 README.md
+pyproject.toml
 setup.py
 pyfan/__init__.py
 pyfan.egg-info/PKG-INFO
@@ -9,6 +10,9 @@ pyfan.egg-info/requires.txt
 pyfan.egg-info/top_level.txt
 pyfan/amto/__init__.py
 pyfan/amto/array/__init__.py
+pyfan/amto/array/geomspace.py
+pyfan/amto/array/gridminmax.py
+pyfan/amto/array/mesh.py
 pyfan/amto/array/scalararray.py
 pyfan/devel/__init__.py
 pyfan/devel/obj/__init__.py
