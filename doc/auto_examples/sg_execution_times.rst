@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:10.055** total execution time for **auto_examples** files:
+**00:04.402** total execution time for **auto_examples** files:
 
 +---------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_pdfgen.py` (``plot_pdfgen.py``)                     | 00:09.697 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_pdfgen.py` (``plot_pdfgen.py``)                     | 00:03.947 | 0.0 MB |
 +---------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py` (``plot_graph_allpurpose.py``) | 00:00.241 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py` (``plot_graph_allpurpose.py``) | 00:00.248 | 0.0 MB |
 +---------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_randgrid.py` (``plot_randgrid.py``)                 | 00:00.117 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_randgrid.py` (``plot_randgrid.py``)                 | 00:00.207 | 0.0 MB |
 +---------------------------------------------------------------------------------------+-----------+--------+
