@@ -18,6 +18,21 @@ rmd_files:
   - vig/tabgraph/baseplot/fp_plot_base.Rmd
   - vig/tabgraph/baseplot/fp_plot_text.Rmd
 
+  - vig/tabgraph/main.Rmd
+  - vig/tabgraph/baseplot/main.Rmd
+  - vig/tabgraph/baseplot/fp_plot_base.Rmd
+  - vig/tabgraph/baseplot/fp_plot_text.Rmd
+
+  - vig/aws/main.Rmd
+  - vig/aws/setup/main.Rmd
+  - vig/aws/setup/fs_aws_setup.Rmd
+  # - vig/aws/setup/fs_boto3.Rmd
+
+  - vig/docker/main.Rmd
+  - vig/docker/setup/main.Rmd
+  - vig/docker/setup/fs_docker_setup.Rmd
+  - vig/docker/setup/fs_docker_ecr.Rmd
+
   - vig/getdata/main.Rmd
   - vig/getdata/envir/main.Rmd
   - vig/getdata/envir/fs_ecmwf.Rmd

@@ -1,0 +1,48 @@
+---
+title: "Amazon Web Services (AWS) Boto3"
+titleshort: "AWS Account Set-up and Start Instance"
+description: |
+  Generate keypair on AWS, launch instance, launch security, ssh access, AWSCLI.
+core:
+  - package: py
+    code: |
+date: 2020-09-13
+date_start: 2020-09-13
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### AWS Boto3
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+#### Basics
+
+Create local .aws folder under user for example that has credential information
+
+```bash
+# IN C:\Users\fan\.aws
+# config file
+[default]
+region = us-east-1
+output = json
+# credentials file
+[default]
+aws_access_key_id = XKIXXXGSXXXBZXX43XXX
+aws_secret_access_key = xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11
+```

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Collection of Python Examples</title>
+  <title>Chapter 3 Amazon Web Services | A Collection of Python Examples</title>
   <meta name="description" content="Conda and git installations" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Collection of Python Examples" />
+  <meta property="og:title" content="Chapter 3 Amazon Web Services | A Collection of Python Examples" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Collection of Python Examples" />
+  <meta name="twitter:title" content="Chapter 3 Amazon Web Services | A Collection of Python Examples" />
   
   <meta name="twitter:description" content="Conda and git installations" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="array-matrix-dataframe.html"/>
+<link rel="prev" href="tables-and-graphs.html"/>
+<link rel="next" href="docker-container.html"/>
 <script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -258,30 +258,163 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A Collection of Python Examples</h1>
-<p class="author"><em>Fan Wang</em></p>
-<p class="date"><em>2020-10-09</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p><a href="https://github.com/FanWangEcon/pyfan"><img src="http://hits.dwyl.io/fanwangecon/pyfan.svg" alt="HitCount" /></a> <a href="https://github.com/FanWangEcon/pyfan/stargazers"><img src="https://img.shields.io/github/stars/fanwangecon/pyfan?style=social" alt="Star" /></a> <a href="https://github.com/FanWangEcon/pyfan/network/members"><img src="https://img.shields.io/github/forks/fanwangecon/pyfan?style=social" alt="Fork" /></a> <a href="https://github.com/FanWangEcon/pyfan/watchers"><img src="https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social" alt="Star" /></a></p>
-<p>The work-in-progress <a href="https://github.com/FanWangEcon/pyfan">pyfan</a> repository contains:</p>
+<div id="amazon-web-services" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Amazon Web Services</h1>
+
+<div id="aws-setup" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> AWS Setup</h2>
+
+<div id="aws-setup-1" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> AWS Setup</h3>
+<blockquote>
+<p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<div id="installation-on-local-machine" class="section level4" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Installation on Local Machine</h4>
+<p>First install <a href="https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html">anaconda, git, and associated programs</a>.</p>
 <ol style="list-style-type: decimal">
-<li>Tutorials and examples for various research tasks: <a href="https://fanwangecon.github.io/pyfan/bookdown"><strong>bookdown site</strong></a> and <a href="https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf"><strong>bookdown pdf</strong></a>.</li>
-<li>A package for basic data, graph and research tasks: <a href="https://pyfan.readthedocs.io/en/latest/"><strong>readthedocs</strong></a> and <a href="https://pypi.org/project/pyfan/"><strong>pypi</strong></a>.</li>
+<li>Putty</li>
+<li>access to .pem key</li>
+<li>conda aws environment below</li>
 </ol>
-<p>Materials are gathered from various <a href="https://fanwangecon.github.io/research">projects</a> in which python code is used for research and paper-administrative tasks. Files are from <a href="https://fanwangecon.github.io/"><strong>Fan</strong></a>’s <a href="https://github.com/FanWangEcon/pyfan">pyfan</a> repository which has an associated <a href="https://pypi.org/project/pyfan/">package</a>. The package functionalize various tasks tested out in the Rmd files. In addition, the <a href="https://github.com/FanWangEcon/pyecon">pyecon</a> repository and the associated <a href="https://pypi.org/project/pyecon/">package</a> (<a href="https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html#module-pyfan">readthedocs</a>) contain functions and rmd files related explicitly to solving economic models.</p>
-<p>From <a href="https://fanwangecon.github.io/">Fan</a>’s other repositories: For dynamic borrowing and savings problems, see <a href="https://fanwangecon.github.io/CodeDynaAsset/">Dynamic Asset Repository (Matlab)</a>; For code examples, see also <a href="https://fanwangecon.github.io/M4Econ/">Matlab Example Code</a>, <a href="https://fanwangecon.github.io/R4Econ/">R Example Code</a>, and <a href="https://fanwangecon.github.io/Stata4Econ/">Stata Example Code</a>; For intro econ with Matlab, see <a href="https://fanwangecon.github.io/Math4Econ/">Intro Mathematics for Economists</a>, and for intro stat with R, see <a href="https://fanwangecon.github.io/Stat4Econ/">Intro Statistics for Undergraduates</a>. See <a href="https://github.com/FanWangEcon">here</a> for all of <a href="https://fanwangecon.github.io/">Fan</a>’s public repositories.</p>
-<p>The site is built using <a href="https://bookdown.org/">Bookdown</a> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
-<p>Please contact <a href="https://fanwangecon.github.io/">FanWangEcon</a> for issues or problems.</p>
-<p><a href="https://github.com/FanWangEcon/pyfan/commits/master"><img src="https://img.shields.io/github/last-commit/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/graphs/commit-activity"><img src="https://img.shields.io/github/commit-activity/m/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/issues"><img src="https://img.shields.io/github/issues/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/pulls"><img src="https://img.shields.io/github/issues-pr/fanwangecon/pyfan" /></a></p>
+</div>
+<div id="conda-aws-environment" class="section level4" number="3.1.1.2">
+<h4><span class="header-section-number">3.1.1.2</span> Conda AWS Environment</h4>
+<p>Can Start and Stop instances from Conda Prompt after this.</p>
+<pre><code>conda deactivate
+conda list env
+conda env remove -n wk_aws
+conda create -n wk_aws -y
+conda activate wk_aws
+
+# Install External Tools
+conda install -c anaconda pip -y
+
+# Command line interface
+conda install -c conda-forge awscli -y
+# Programmatically send JSON instructions with boto3
+conda install -c anaconda boto3 -y</code></pre>
+</div>
+<div id="aws-account-set-up" class="section level4" number="3.1.1.3">
+<h4><span class="header-section-number">3.1.1.3</span> AWS Account set-up</h4>
+<ol style="list-style-type: decimal">
+<li>Sign-up for AWS web services account (can be the same as your Amazon shopping account)</li>
+<li>Register for <a href="https://aws.amazon.com/education/awseducate/">AWS Educate</a> to get student or faculty voucher.</li>
+</ol>
+<ul>
+<li>The University of Houston is a part of AWS Educate, choose educator or student, should hear back within 24 hours with coupon code.</li>
+<li>UH students can get $100, faculty can get $200.</li>
+</ul>
+</div>
+<div id="start-a-aws-instance-and-link-local-to-remote" class="section level4" number="3.1.1.4">
+<h4><span class="header-section-number">3.1.1.4</span> Start a AWS Instance and Link Local to Remote</h4>
+<p>Amazon has a lot of tutorials. Here is an outline.</p>
+<ol style="list-style-type: decimal">
+<li>Generate keypair on AWS, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair">aws guide</a>
+<ul>
+<li>this gives you a .pem file which you download and Amazon also remembers</li>
+<li>local computers with the right .pem file can talk to your AWS instances</li>
+<li>You might need to invoke the chmod command below to set permission:</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="amazon-web-services.html#cb34-1" aria-hidden="true"></a><span class="fu">chmod</span> 400 <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div></li>
+<li><em>Launching Instance</em>: Go to your console, choose EC2, choose launch instance, select Amazon Linux Instance (review and launch)</li>
+<li><em>Instance security</em>: select VPC security group: I have for example: fan_wang_SG_us_east_nv_VPC (edit security group and submit)
+<ul>
+<li>Security group can allow any IP address to access your instance or just specific ones.</li>
+<li>AWS has a tool here that just allows your current IP to access the EC2 instance</li>
+</ul></li>
+<li><em>Instance access key</em>: Select right keypair (your .pem key), fan_wang-key-pair-us_east_nv (prompted after submitting)</li>
+<li>For SSH in, you can use Putty. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">aws guide</a>
+<ul>
+<li>tell Putty your AWS instance DNS address and where your pem key is</li>
+<li>Can use a Putty client to enter an EC2 instance</li>
+</ul></li>
+<li>For SSH, can also do the process below:
+<ul>
+<li><a href="https://stackoverflow.com/questions/18683092/how-to-run-ssh-add-on-windows">open git bash</a> (install putty before)</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="amazon-web-services.html#cb35-1" aria-hidden="true"></a><span class="fu">ssh-agent</span> -s</span>
+<span id="cb35-2"><a href="amazon-web-services.html#cb35-2" aria-hidden="true"></a><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></span></code></pre></div>
+<ul>
+<li>Tell SSH where pem key is:</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="amazon-web-services.html#cb36-1" aria-hidden="true"></a><span class="fu">ssh-add</span> <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div>
+<ul>
+<li>You will find a public DNS address for your aws instance on the AWS user interface page</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="amazon-web-services.html#cb37-1" aria-hidden="true"></a><span class="co"># ssh git bash command line</span></span>
+<span id="cb37-2"><a href="amazon-web-services.html#cb37-2" aria-hidden="true"></a><span class="co"># for ubuntu machine</span></span>
+<span id="cb37-3"><a href="amazon-web-services.html#cb37-3" aria-hidden="true"></a><span class="fu">ssh</span> ubuntu@ec2-54-197-6-153.compute-1.amazonaws.com</span>
+<span id="cb37-4"><a href="amazon-web-services.html#cb37-4" aria-hidden="true"></a><span class="co"># for aws linux</span></span>
+<span id="cb37-5"><a href="amazon-web-services.html#cb37-5" aria-hidden="true"></a><span class="fu">ssh</span> ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com</span>
+<span id="cb37-6"><a href="amazon-web-services.html#cb37-6" aria-hidden="true"></a><span class="co"># quit aws instance</span></span>
+<span id="cb37-7"><a href="amazon-web-services.html#cb37-7" aria-hidden="true"></a><span class="co"># ctrl + D</span></span></code></pre></div>
+<ul>
+<li>if get: Permission denied (publickey), see:
+<ol style="list-style-type: decimal">
+<li>Trying to connect with the wrong key. Are you sure this instance is using this keypair?</li>
+<li>Trying to connect with the wrong username. ubuntu is the username for the ubuntu based AWS distribution, but on some others it’s ec2-user (or admin on some Debians, according to Bogdan Kulbida’s answer)(can also be root, fedora, see below)</li>
+<li>Trying to connect the wrong host. Is that the right host you are trying to log in to?</li>
+</ol></li>
+<li>You can log in generally like this, note the instance gets new public DNS IP address every time you restart it:</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="amazon-web-services.html#cb38-1" aria-hidden="true"></a><span class="va">LOCALPEM=</span><span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span>
+<span id="cb38-2"><a href="amazon-web-services.html#cb38-2" aria-hidden="true"></a><span class="va">IPADD=</span>34.207.250.160</span>
+<span id="cb38-3"><a href="amazon-web-services.html#cb38-3" aria-hidden="true"></a><span class="va">REMOTEIP=</span>ec2-user<span class="ex">@</span><span class="va">$IPADD</span></span>
+<span id="cb38-4"><a href="amazon-web-services.html#cb38-4" aria-hidden="true"></a><span class="fu">ssh-keygen</span> -R <span class="va">$IPADD</span></span>
+<span id="cb38-5"><a href="amazon-web-services.html#cb38-5" aria-hidden="true"></a><span class="fu">ssh</span> -i <span class="st">&quot;</span><span class="va">$LOCALPEM</span><span class="st">&quot;</span> <span class="va">$REMOTEIP</span></span></code></pre></div></li>
+</ol>
+</div>
+<div id="use-awscli-to-start-and-stop-an-instance" class="section level4" number="3.1.1.5">
+<h4><span class="header-section-number">3.1.1.5</span> Use AWSCLI to Start and Stop an Instance</h4>
+<ol style="list-style-type: decimal">
+<li>Install AWS CLI</li>
+<li>Create individual IAM users</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">Configure your awscli</a>
+<code>bash     $ aws configure     AWS Access Key ID [None]: XXXXIOSFODNN7EXAMPLE     AWS Secret Access Key [None]: wXalrXXtnXXXX/X7XXXXX/bXxXfiCXXXXXXXXXXX     Default region name [None]: us-west-1     Default output format [None]: json</code></li>
+</ol>
+<ul>
+<li>do not copy and paste the Key ID and Access Key. They are example
+<ul>
+<li>this creates under a folder like this: C:/Users/fan/.aws, inside the folder these info will be stored in a configuration file.</li>
+<li>then when you use aws cli, you will automatically be authenticated</li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Start an instance in console first (or directly in command line). Stop it. do not terminate. Now this instance will have a fixed instance ID. Its DNS IP address will change every time you restart it, but its instance ID is fixed. Instance ID is found easily in the EC2 Console.
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html">Launch an instance</a></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="amazon-web-services.html#cb39-1" aria-hidden="true"></a><span class="ex">aws</span> ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx</span></code></pre></div>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/start-instances.html">Start</a> an instance</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="amazon-web-services.html#cb40-1" aria-hidden="true"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-XXXXXXXX</span>
+<span id="cb40-2"><a href="amazon-web-services.html#cb40-2" aria-hidden="true"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-040c856530b2619bc</span></code></pre></div>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html">Stop</a> an instance</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="amazon-web-services.html#cb41-1" aria-hidden="true"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-XXXXXXXX</span>
+<span id="cb41-2"><a href="amazon-web-services.html#cb41-2" aria-hidden="true"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-040c856530b2619bc</span></code></pre></div></li>
+</ol>
+</div>
+<div id="set-up-ssm-on-ec2-instance" class="section level4" number="3.1.1.6">
+<h4><span class="header-section-number">3.1.1.6</span> Set-up SSM on EC2 Instance</h4>
+<p>To execute commandlines etc remote on EC2, need to set up SSM: AWS Systems Manager Agent (<a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html">SSM Agent</a>)</p>
+<p>SSM-agent is already installed in Amazon Linux.</p>
+<p><a href="https://stackoverflow.com/questions/47034797/invalidinstanceid-an-error-occurred-invalidinstanceid-when-calling-the-sendco">Error Message regarding InvalidInstanceId</a>. The following scenarios can result in this error message:</p>
+<ul>
+<li>Instance id is invalid (in the comments you have verified it isn’t)</li>
+<li>Instance is in a different region (in the comments you have verified it isn’t)</li>
+<li>Instance is not currently in the Running state</li>
+<li>Instance does not have the AWS SSM agent installed and running.</li>
+</ul>
+<p>“You have to create and attach the policy AmazonSSMFullAccess to the machine (thats maybe more broad than you need) but that was why it wasn’t working for me… You do that by clicking on (when selected on the ec2 instance) Action &gt; Instance Settings &gt; Attach/Replace IAM Role then create a role for ec2 that has that permission then attach, should take like 5-10 mins to pop up in SYSTEMS MANAGER SHARED RESOURCES - Managed Instances as mark mentions. – Glen Thompson Sep 20 ’18 at 16:31”</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="amazon-web-services.html#cb42-1" aria-hidden="true"></a><span class="co"># Start SSM Agent with</span></span>
+<span id="cb42-2"><a href="amazon-web-services.html#cb42-2" aria-hidden="true"></a><span class="fu">sudo</span> systemctl start amazon-ssm-agent</span></code></pre></div>
 
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
 </div>
 </div>
             </section>
@@ -289,8 +422,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="array-matrix-dataframe.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tables-and-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="docker-container.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
