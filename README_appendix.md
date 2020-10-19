@@ -2,7 +2,7 @@
 
 # Index and Code Links
 
-## Array, Matrix, Dataframe links
+## Data Structures links
 
 ### [Section 1.1 Array][Array] links
 
@@ -17,20 +17,19 @@
 	+ List comprehension with dictionary
 	+ **py**: *dc = {'key': "name", 'val': 1}*
 
-## Tables and Graphs links
+### [Section 1.3 Matrix][Matrix] links
 
-### [Section 2.1 Matplotlib Base Plots][Matplotlib Base Plots] links
+1. [Numpy Combine Arrays to Matrix](https://fanwangecon.github.io/pyfan/vig/amto/matrix/htmlpdfr/fs_array2mat.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix//fs_array2mat.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix/htmlpdfr/fs_array2mat.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix/htmlpdfr/fs_array2mat.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/matrix/htmlpdfr/fs_array2mat.html)
+	+ Arrays to matrix.
+	+ **numpy**: *column_stack() + random.choice() + reshape()*
 
-1. [Mabplotlib Scatter and Line Plots](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_base.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html)
-	+ Plot several arrays of data, grid, figure title, and line and point patterns and colors.
-	+ Plot out random walk and white noise first-order autoregressive processes.
-	+ **matplotlib**: *subplots() + ax.plot() + ax.legend() + ylabel() + xlabel() + title() + grid() + show()*
-	+ **numpy**: *random.normal() + random.seed() + cumsum() + arange()*
-2. [Mabplotlib Text Plots](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_text.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_text.html)
-	+ Print text as figure.
-	+ **matplotlib**: *ax.text()*
-	+ **textwrap**: *fill()*
-	+ **json**: *dump()*
+## Pandas links
+
+### [Section 2.1 Panda Basics][Panda Basics] links
+
+1. [Pandas Matrix to Dataframes](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics//fs_matrix2dataframe.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html)
+	+ Arrays to matrix.
+	+ **pandas**: *pd.DataFrame()*
 
 ## Tables and Graphs links
 
@@ -55,6 +54,22 @@
 	+ Generate keypair on AWS, launch instance, launch security, ssh access, and AWSCLI.
 	+ **ssh**: *ssh-agent + ssh-keygen + ssh ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com*
 	+ **aws**: *aws ec2 start-instances + aws ec2 stop-instances + systemctl start amazon-ssm-agent*
+2. [Boto3 Client Service Communications](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_boto3.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup//fs_boto3.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_boto3.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_boto3.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_boto3.html)
+	+ Start AWS services, send requests etc via boto3. 
+	+ **boto3**: *boto3.client(service, aws_access_key_id, aws_secret_access_key, region_name)*
+
+### [Section 4.2 S3][S3] links
+
+1. [AWS S3 Uploading Downloading and Syncing](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3//fs_aws_s3.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html)
+	+ From EC2 or local computer upload files to S3 folders.
+	+ Download sync folders with exclusions between local and S3 folders.
+	+ **py**: *platform.release()*
+	+ **boto3**: *boto3.client('s3') + s3.upload_file*
+
+### [Section 4.3 Batch][Batch] links
+
+1. [AWS Batch](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html)
+	+ Create batch task and run batch tasks using ECR image, and save results to S3.
 
 ## Docker Container links
 
@@ -65,8 +80,9 @@
 	+ Start docker container and run programs inside Docker.
 	+ **aws**: *ssh + yum update -y + amazon-linux-extras install docker -y*
 	+ **docker**: *service docker start + service docker status + docker build + docker images + docker image prune + docker run -t -i fanconda /bin/bash + python /fanProg/invoke/run.py + docker ps -a + docker system df + docker container ls -a*
-2. [AWS Account Set-up and Start Instance](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup//fs_docker_ecr.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html)
-	+ Generate keypair on AWS, launch instance, launch security, ssh access, AWSCLI.
+2. [AWS Docker Elastic Container Registery (ECR) Update and Push](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup//fs_docker_ecr.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html)
+	+ Update and push to Elastic Container Registry (ECR) with newly built Docker image.
+	+ Pull from Elastic Container Registry docker image.
 	+ **scp**: *scp -o StrictHostKeyChecking=accept-new -i*
 	+ **aws**: *aws ecr get-login*
 	+ **docker**: *docker login + docker build + docker tag + docker push + docker pull*

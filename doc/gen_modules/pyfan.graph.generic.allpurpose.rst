@@ -23,4 +23,4 @@ pyfan.graph.generic.allpurpose
       :toctree: graph.generic.allpurpose
       :template: function.rst
 
-      xyPlotMultiYOneX
+      graphFunc.xyPlotMultiYOneX

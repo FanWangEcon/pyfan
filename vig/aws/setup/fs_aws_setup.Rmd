@@ -79,83 +79,89 @@ conda install -c anaconda boto3 -y
 Amazon has a lot of tutorials. Here is an outline.
 
 1. Generate keypair on AWS, [aws guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
-	- this gives you a .pem file which you download and Amazon also remembers
-	- local computers with the right .pem file can talk to your AWS instances
-	- You might need to invoke the chmod command below to set permission:
-	```bash
-	chmod 400 "C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
-	```
+  	- this gives you a .pem file which you download and Amazon also remembers
+  	- local computers with the right .pem file can talk to your AWS instances
+  	- You might need to invoke the chmod command below to set permission:
+  	```bash
+  	chmod 400 "C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
+  	```
 2. *Launching Instance*:  Go to your console, choose EC2, choose launch instance, select Amazon Linux Instance (review and launch)
 3. *Instance security*: select VPC security group: I have for example: fan_wang_SG_us_east_nv_VPC (edit security group and submit)
-	- Security group can allow any IP address to access your instance or just specific ones.
-	- AWS has a tool here that just allows your current IP to access the EC2 instance
+  	- Security group can allow any IP address to access your instance or just specific ones.
+  	- AWS has a tool here that just allows your current IP to access the EC2 instance
 4. *Instance access key*: Select right keypair (your .pem key), fan_wang-key-pair-us_east_nv (prompted after submitting)
 5. For SSH in, you can use Putty. [aws guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
-	- tell Putty your AWS instance DNS address and where your pem key is
-	- Can use a Putty client to enter an EC2 instance
+  	- tell Putty your AWS instance DNS address and where your pem key is
+  	- Can use a Putty client to enter an EC2 instance
 6. For SSH, can also do the process below:
-	- [open git bash](https://stackoverflow.com/questions/18683092/how-to-run-ssh-add-on-windows) (install putty before)
-	```bash
-	ssh-agent -s
-	eval $(ssh-agent -s)
-	```
-	- Tell SSH where pem key is:
-	```bash
-	ssh-add "C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
-	```
-	- You will find a public DNS address for your aws instance on the AWS user interface page
-	```bash
-	# ssh git bash command line
-	# for ubuntu machine
-	ssh ubuntu@ec2-54-197-6-153.compute-1.amazonaws.com
-	# for aws linux
-	ssh ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com
-	# quit aws instance
-	# ctrl + D
-	```
-	- if get: Permission denied (publickey), see:
-		1. Trying to connect with the wrong key. Are you sure this instance is using this keypair?
-		2. Trying to connect with the wrong username. ubuntu is the username for the ubuntu based AWS distribution, but on some others it's ec2-user (or admin on some Debians, according to Bogdan Kulbida's answer)(can also be root, fedora, see below)
-		3. Trying to connect the wrong host. Is that the right host you are trying to log in to?
-	- You can log in generally like this, note the instance gets new public DNS IP address every time you restart it:
-	```bash
-	LOCALPEM="C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
-	IPADD=34.207.250.160
-	REMOTEIP=ec2-user@$IPADD
-	ssh-keygen -R $IPADD
-	ssh -i "$LOCALPEM" $REMOTEIP
-	```
+  	- [open git bash](https://stackoverflow.com/questions/18683092/how-to-run-ssh-add-on-windows) (install putty before)
+  	```bash
+  	ssh-agent -s
+  	eval $(ssh-agent -s)
+  	```
+  	- Tell SSH where pem key is:
+  	```bash
+  	ssh-add "C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
+  	```
+  	- You will find a public DNS address for your aws instance on the AWS user interface page
+  	```bash
+  	# ssh git bash command line
+  	# for ubuntu machine
+  	ssh ubuntu@ec2-54-197-6-153.compute-1.amazonaws.com
+  	# for aws linux
+  	ssh ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com
+  	# quit aws instance
+  	# ctrl + D
+  	```
+  	- if get: Permission denied (publickey), see:
+  		1. Trying to connect with the wrong key. Are you sure this instance is using this keypair?
+  		2. Trying to connect with the wrong username. ubuntu is the username for the ubuntu based AWS distribution, but on some others it's ec2-user (or admin on some Debians, according to Bogdan Kulbida's answer)(can also be root, fedora, see below)
+  		3. Trying to connect the wrong host. Is that the right host you are trying to log in to?
+  	- You can log in generally like this, note the instance gets new public DNS IP address every time you restart it:
+  	```bash
+  	LOCALPEM="C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem"
+  	IPADD=34.207.250.160
+  	REMOTEIP=ec2-user@$IPADD
+  	ssh-keygen -R $IPADD
+  	ssh -i "$LOCALPEM" $REMOTEIP
+  	```
 
 #### Use AWSCLI to Start and Stop an Instance
 
 1. Install AWS CLI
 2. Create individual IAM users
-3. [Configure your awscli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
-	```bash
-	$ aws configure
-	AWS Access Key ID [None]: XXXXIOSFODNN7EXAMPLE
-	AWS Secret Access Key [None]: wXalrXXtnXXXX/X7XXXXX/bXxXfiCXXXXXXXXXXX
-	Default region name [None]: us-west-1
-	Default output format [None]: json
-	```
-  - do not copy and paste the Key ID and Access Key. They are example
-	- this creates under a folder like this: C:/Users/fan/.aws, inside the folder these info will be stored in a configuration file.
-	- then when you use aws cli, you will automatically be authenticated
+3. Follow instructions to [Configure your awscli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), and profit access key id and secrete access key when prompted.
+    - do not copy and paste the Key ID and Access Key. They are example, type these in as answers given config prompt:
+    ```bash
+    # aws configure
+    AWS Access Key ID [None]: XXXXIOSFODNN7EXAMPLE
+    AWS Secret Access Key [None]: wXalrXXtnXXXX/X7XXXXX/bXxXfiCXXXXXXXXXXX
+    Default region name [None]: us-west-1
+    Default output format [None]: json
+    ```
+    - this creates under a folder like this: C:/Users/fan/.aws, inside the folder these info will be stored in a configuration file.
+    ```bash
+    # the credentials file
+    [default]
+    aws_access_key_id = XXXXIOSFODNN7EXAMPLE
+    aws_secret_access_key = wXalrXXtnXXXXX7XXXXXbXxXfiCXXXXXXXXXXX
+    ```
+    - then when you use aws cli, you will automatically be authenticated
 3. Start an instance in console first (or directly in command line). Stop it. do not terminate. Now this instance will have a fixed instance ID. Its DNS IP address will change every time you restart it, but its instance ID is fixed. Instance ID is found easily in the EC2 Console.
-	- [Launch an instance](https://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html)
-	```bash
-	aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx
-	```
-	- [Start](https://docs.aws.amazon.com/cli/latest/reference/ec2/start-instances.html) an instance
-	```bash
-	aws ec2 start-instances --instance-ids i-XXXXXXXX
-	aws ec2 start-instances --instance-ids i-040c856530b2619bc
-	```
-	- [Stop](https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html) an instance
-	```bash
-	aws ec2 stop-instances --instance-ids i-XXXXXXXX
-	aws ec2 stop-instances --instance-ids i-040c856530b2619bc
-	```
+  	- [Launch an instance](https://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html)
+  	```bash
+  	aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx
+  	```
+  	- [Start](https://docs.aws.amazon.com/cli/latest/reference/ec2/start-instances.html) an instance
+  	```bash
+  	aws ec2 start-instances --instance-ids i-XXXXXXXX
+  	aws ec2 start-instances --instance-ids i-040c856530b2619bc
+  	```
+  	- [Stop](https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html) an instance
+  	```bash
+  	aws ec2 stop-instances --instance-ids i-XXXXXXXX
+  	aws ec2 stop-instances --instance-ids i-040c856530b2619bc
+  	```
 
 #### Set-up SSM on EC2 Instance
 

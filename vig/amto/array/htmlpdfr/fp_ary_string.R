@@ -1,5 +1,13 @@
-## ----global_options, include = FALSE------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE----------------------------------------------------------
 try(source("../../../.Rprofile"))
+
+
+## import numpy as np
+
+
+## ar_st_colnames = [ 's' + str(it_col) for it_col in np.array(range(1, 3))]
+
+## print(ar_st_colnames)
 
 
 ## # define string

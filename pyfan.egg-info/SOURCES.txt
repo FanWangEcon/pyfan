@@ -14,6 +14,12 @@ pyfan/amto/array/geomspace.py
 pyfan/amto/array/gridminmax.py
 pyfan/amto/array/mesh.py
 pyfan/amto/array/scalararray.py
+pyfan/aws/__init__.py
+pyfan/aws/general/__init__.py
+pyfan/aws/general/credentials.py
+pyfan/aws/general/path.py
+pyfan/aws/s3/__init__.py
+pyfan/aws/s3/pushsync.py
 pyfan/devel/__init__.py
 pyfan/devel/obj/__init__.py
 pyfan/devel/obj/classobjsupport.py
@@ -21,8 +27,12 @@ pyfan/gen/__init__.py
 pyfan/gen/rand/__init__.py
 pyfan/gen/rand/randgrid.py
 pyfan/graph/__init__.py
+pyfan/graph/exa/__init__.py
+pyfan/graph/exa/scatterline3.py
 pyfan/graph/generic/__init__.py
 pyfan/graph/generic/allpurpose.py
+pyfan/graph/tools/__init__.py
+pyfan/graph/tools/subplot.py
 pyfan/util/__init__.py
 pyfan/util/path/__init__.py
 pyfan/util/path/getfiles.py

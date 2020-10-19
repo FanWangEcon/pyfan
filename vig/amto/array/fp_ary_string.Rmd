@@ -36,6 +36,19 @@ try(source("../../../.Rprofile"))
 `r text_shared_preamble_two`
 `r text_shared_preamble_thr`
 
+```{python}
+import numpy as np
+```
+
+#### Add String Suffix to Numeric Array 
+
+Given an numeric array, add string, for example to generate sequencial column names with suffix c:
+
+```{python}
+ar_st_colnames = [ 's' + str(it_col) for it_col in np.array(range(1, 3))]
+print(ar_st_colnames)
+```
+
 #### Search if Names Include Strings
 
 Given a list of strings, loop but skip if string contains elements string list. 

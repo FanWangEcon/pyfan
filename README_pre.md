@@ -1,4 +1,4 @@
-[![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://github.com/FanWangEcon/pyfan)  [![Star](https://img.shields.io/github/stars/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/stargazers) [![Fork](https://img.shields.io/github/forks/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/network/members) [![Star](https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/watchers)
+[![HitCount](http://hits.dwyl.com/fanwangecon/pyfan.svg)](https://github.com/FanWangEcon/pyfan)  [![Star](https://img.shields.io/github/stars/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/stargazers) [![Fork](https://img.shields.io/github/forks/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/network/members) [![Star](https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social)](https://github.com/FanWangEcon/pyfan/watchers)
 
 The work-in-progress [pyfan](https://github.com/FanWangEcon/pyfan) repository contains:
 

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pyfan
-Version: 0.1.42
+Version: 0.1.43
 Summary: A Collection of Python Tools
 Home-page: http://pyfan.readthedocs.io/
 Author: Fan Wang
@@ -51,9 +51,52 @@ Description: [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://gi
         	+ **textwrap**: *fill()*
         	+ **json**: *dump()*
         
-        # 3  Get Data
+        # 3  Amazon Web Services
         
-        ## 3.1  Environmental Data
+        ## 3.1  AWS Setup
+        
+        1. [AWS Account Set-up and Start Instance](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_aws_setup.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup//fs_aws_setup.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_aws_setup.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_aws_setup.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_aws_setup.html)
+        	+ Generate keypair on AWS, launch instance, launch security, ssh access, and AWSCLI.
+        	+ **ssh**: *ssh-agent + ssh-keygen + ssh ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com*
+        	+ **aws**: *aws ec2 start-instances + aws ec2 stop-instances + systemctl start amazon-ssm-agent*
+        2. [AWS Account Set-up and Start Instance](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_boto3.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup//fs_boto3.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_boto3.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_boto3.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_boto3.html)
+        	+ Generate keypair on AWS, launch instance, launch security, ssh access, AWSCLI.
+        	+ **py**: **
+        
+        ## 3.2  S3
+        
+        1. [AWS S3 Uploading Downloading and Syncing](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3//fs_aws_s3.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html)
+        	+ From EC2 or local computer upload files to S3 folders.
+        	+ Download sync folders with exclusions between local and S3 folders.
+        	+ **py**: *platform.release()*
+        	+ **boto3**: *boto3.client('s3') + s3.upload_file*
+        
+        ## 3.3  Batch
+        
+        1. [AWS Batch](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html)
+        	+ Batch create
+        	+ **py**: *platform.release()*
+        	+ **boto3**: *boto3.client('s3') + s3.upload_file*
+        
+        # 4  Docker Container
+        
+        ## 4.1  Docker Setup
+        
+        1. [Docker Container Set-Up and Run on AWS](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_setup.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup//fs_docker_setup.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_setup.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_setup.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_setup.html)
+        	+ Install Docker on AWS and build Docker image.
+        	+ Start docker container and run programs inside Docker.
+        	+ **aws**: *ssh + yum update -y + amazon-linux-extras install docker -y*
+        	+ **docker**: *service docker start + service docker status + docker build + docker images + docker image prune + docker run -t -i fanconda /bin/bash + python /fanProg/invoke/run.py + docker ps -a + docker system df + docker container ls -a*
+        2. [AWS Docker Elastic Container Registery (ECR) Update and Push](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup//fs_docker_ecr.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_ecr.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html)
+        	+ Update and push to Elastic Container Registry (ECR) with newly built Docker image.
+        	+ Pull from Elastic Container Registry docker image.
+        	+ **scp**: *scp -o StrictHostKeyChecking=accept-new -i*
+        	+ **aws**: *aws ecr get-login*
+        	+ **docker**: *docker login + docker build + docker tag + docker push + docker pull*
+        
+        # 5  Get Data
+        
+        ## 5.1  Environmental Data
         
         1. [CDS ECMWF Global Enviornmental Data Download](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir//fs_ecmwf.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html)
         	+ Using Python API get get ECMWF ERA5 data.
@@ -61,9 +104,9 @@ Description: [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://gi
         	+ **r**: *file() + writeLines() + unzip() + list.files() + unlink()*
         	+ **r-reticulate**: *use_python() + Sys.setenv(RETICULATE_PYTHON = spth_conda_env)*
         
-        # 4  System and Support
+        # 6  System and Support
         
-        ## 4.1  Command Line
+        ## 6.1  Command Line
         
         1. [Execute Python from Command Line and Run Command Line in Python](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html)
         	+ Run python functions from command line.
@@ -73,7 +116,7 @@ Description: [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://gi
         	+ **decode**: *decode('utf-8')*
         	+ **os**: *chdir() + getcdw()*
         
-        ## 4.2  File In and Out
+        ## 6.2  File In and Out
         
         1. [Python Reading and Writing to File Examples](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html)
         	+ Reading from file and replace strings in file.
@@ -99,7 +142,7 @@ Description: [![HitCount](http://hits.dwyl.io/fanwangecon/pyfan.svg)](https://gi
         	+ **yaml**: *load(fl_yaml, Loader=yaml.BaseLoader)       + dump()*
         	+ **pprint**: *pprint.pprint(ls_dict_yml, width=1)*
         
-        ## 4.3  Install Python
+        ## 6.3  Install Python
         
         1. [Basic Conda Setup Instructions](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install//fs_install_basics.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html)
         	+ Conda and git installations

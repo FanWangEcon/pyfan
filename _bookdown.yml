@@ -12,11 +12,12 @@ rmd_files:
   - vig/amto/array/fp_ary_string.Rmd
   - vig/amto/dict/main.Rmd
   - vig/amto/dict/fp_dict.Rmd
+  - vig/amto/matrix/main.Rmd
+  - vig/amto/matrix/fs_array2mat.Rmd
 
-  - vig/tabgraph/main.Rmd
-  - vig/tabgraph/baseplot/main.Rmd
-  - vig/tabgraph/baseplot/fp_plot_base.Rmd
-  - vig/tabgraph/baseplot/fp_plot_text.Rmd
+  - vig/panda/main.Rmd
+  - vig/panda/basics/main.Rmd
+  - vig/panda/basics/fs_matrix2dataframe.Rmd
 
   - vig/tabgraph/main.Rmd
   - vig/tabgraph/baseplot/main.Rmd
@@ -26,7 +27,12 @@ rmd_files:
   - vig/aws/main.Rmd
   - vig/aws/setup/main.Rmd
   - vig/aws/setup/fs_aws_setup.Rmd
-  # - vig/aws/setup/fs_boto3.Rmd
+  - vig/aws/setup/fs_boto3.Rmd
+  - vig/aws/s3/main.Rmd
+  - vig/aws/s3/fs_aws_s3.Rmd
+  - vig/aws/batch/main.Rmd
+  - vig/aws/batch/fs_aws_batch.Rmd
+
 
   - vig/docker/main.Rmd
   - vig/docker/setup/main.Rmd

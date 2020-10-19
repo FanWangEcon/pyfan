@@ -1,0 +1,53 @@
+---
+title: "Python Pandas Matrix to Dataframes"
+titleshort: "Pandas Matrix to Dataframes"
+description: |
+  Arrays to matrix.
+core:
+  - package: pandas
+    code: |
+      pd.DataFrame()
+date: 2020-10-18
+date_start: 2020-10-18
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### Generate Matrix from Arrays
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+```{python}
+import numpy as np
+import pandas as pd
+```
+
+#### Single Arrays to Matrix
+
+Given various arrays, generate a matrix
+
+```{python}
+# Concatenate to matrix
+mt_abc = np.column_stack(np.random.randint(10, size=(5, 3)))
+# Matrix to data frame with columns and row names
+df_abc = pd.DataFrame(data=mt_abc,
+            index=[ 'r' + str(it_col) for it_col in np.array(range(1, mt_abc.shape[0]+1))],
+            columns=[ 'c' + str(it_col) for it_col in np.array(range(1, mt_abc.shape[1]+1))])
+# Print
+print(df_abc)
+```

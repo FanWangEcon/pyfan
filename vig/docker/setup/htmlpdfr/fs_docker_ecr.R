@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE----------------------------------------------------------------------
+## ----global_options, include = FALSE----------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -86,6 +86,63 @@ try(source("../../../.Rprofile"))
 ## # ECR Docker Push to ECR
 
 ## docker push XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fancondaxxx
+
+
+## FROM continuumio/anaconda3
+
+## 
+## VOLUME /data
+
+## 
+## # Conda update
+
+## RUN conda update conda
+
+## 
+## # https://github.com/ContinuumIO/docker-images/issues/49#issuecomment-311556456
+
+## RUN apt-get update && \
+
+##     apt-get install libgl1-mesa-glx -y
+
+## 
+## # Install Conda additional packages that i use
+
+## RUN conda install -c conda-forge interpolation
+
+## RUN conda install -c conda-forge boto3
+
+## 
+## # see https://github.com/moby/moby/issues/22832, this allows for code below to run without --no-cache
+
+## ARG CACHE_DATE=2000-01-01
+
+## 
+## # Clone our private GitHub Repository: PyFan
+
+## RUN git clone https://b123451234dfc025a836927PRIVATETOKEND1239@github.com/FanWangEcon/pyfan.git /pyfan/
+
+## 
+## # Make port 80 available to the world outside this container
+
+## EXPOSE 80
+
+## 
+## # Install software
+
+## ENV PYTHONPATH /pyfan/
+
+## 
+## ENV AWS_BUCKET_NAME=BucketName
+
+## ENV AWS_ACCESS_KEY_ID=XKIXXXGSXXXBZXX43XXX
+
+## ENV AWS_SECRET_ACCESS_KEY=xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11
+
+## 
+## # Run
+
+## CMD ["python", "/FanProg/run.py"]
 
 
 ## # aws_keys stores keys
@@ -248,7 +305,7 @@ try(source("../../../.Rprofile"))
 
 ## :[
 
-##     "The push refers to repository [710673677961.dkr.ecr.us-east-1.amazonaws.com/fanconda]",
+##     "The push refers to repository [XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda]",
 
 ##     "63cc929545c3: Preparing",
 
@@ -299,4 +356,24 @@ try(source("../../../.Rprofile"))
 ##     ""
 
 ## ]
+
+
+## # Retrieve an authentication token and authenticate your Docker client to your registry.
+
+## # Use the AWS CLI:
+
+## 
+## aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com
+
+## 
+## # Note: If you receive an error using the AWS CLI, make sure that you have the latest version of the AWS CLI and Docker installed.
+
+## # Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here . You can skip this step if your image is already built:
+
+## docker build -t fanconda .
+
+## 
+## # After the build completes, tag your image so you can push the image to this repository:
+
+## docker tag fanconda:latest XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda:latest
 

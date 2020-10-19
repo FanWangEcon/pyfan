@@ -72,7 +72,7 @@ def grid_to_geom(choice_grid, choice_grid_max, choice_grid_min,
     '''
     A. Reverse engineer from vector to geom scale
     '''
-    #     startTime = time.time()
+    startTime = time.time()
     __, displacement, multiplier, a, b = gen_geom_grid(start, stop, num, geom_ratio, a)
     #     logger.debug('displacement:%s', displacement)
     #     logger.debug('multiplier:%s', multiplier)
@@ -229,7 +229,7 @@ def tester_plus1(a=0, b=50, max_power=49, adjust=1):
 
 if __name__ == "__main__":
     FORMAT = '%(filename)s - %(funcName)s - %(lineno)d -  %(asctime)s - %(levelname)s %(message)s'
-    np.set_printoptions(precision=4, linewidth=100, suppress=True, threshold=np.nan)
+    # np.set_printoptions(precision=4, linewidth=100, suppress=True, threshold=np.nan)
     np.set_printoptions(precision=3, linewidth=100, suppress=True, threshold=3000)
     logging.basicConfig(level=logging.DEBUG, format=FORMAT)
 
