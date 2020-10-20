@@ -12,6 +12,8 @@ import pyfan.gen.rand.randgrid as pyfan_gen_rand
 import pyfan.aws.general.path as pyfan_path
 import argparse
 import sys
+import os
+
 
 # Parse Inputs to be used commandline
 parser = argparse.ArgumentParser()
@@ -157,9 +159,21 @@ if __name__ == "__main__":
     # cd "C:/Users/fan/pyfan/"
     # python setup.py install --user
     # python C:/Users/fan/pyfan/pyfan/graph/exa/scatterline3.py -A fans3testbucket -B 1
+    # python /pyfan/pyfan/graph/exa/scatterline3.py -A fans3testbucket -B 1
+
+    # This is an AWS Batch run with Job Array Index for Parallel processing
+    # With this, only one job needs to be specified
+    if "AWS_BATCH_JOB_ARRAY_INDEX" in os.environ:
+        print('AWS_BATCH_JOB_ARRAY_INDEX')
+        it_seed_arg = os.environ['AWS_BATCH_JOB_ARRAY_INDEX']
+        it_seed_arg = int(it_seed_arg)
+    else:
+        it_seed_arg = args.it_seed
+
+    print(it_seed_arg)
 
     gph_scatter_line_rand(fl_mu=0, fl_sd=1,
-                          it_draws=25, it_seed=args.it_seed,
+                          it_draws=25, it_seed=it_seed_arg,
                           fl_lower_sd=-2, fl_higher_sd=2,
                           bl_show_fig=False, bl_save_fig=True,
                           st_s3_bucket=args.st_s3_bucket)
