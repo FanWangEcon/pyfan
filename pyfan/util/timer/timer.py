@@ -34,6 +34,18 @@ def getDateTime(timeType=6):
     if (timeType == 6):
         date_time = date.datetime.now().strftime('%Y%m_%d')
 
+    if (timeType == 7):
+        date_time = "{:%Y%m%d-%H%M%S-%f}".format(date.datetime.now())
+
+    if (timeType == 8):
+        date_time = "{:%Y%m%d}".format(date.datetime.now())
+
+    if (timeType == 9):
+        date_time = "{:%Y%m%d%H%M%S%f}".format(date.datetime.now())
+
+    if (timeType == 10):
+        date_time = time.time()
+
     return date_time
 
 

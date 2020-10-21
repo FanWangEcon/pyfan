@@ -10,6 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pyfan.gen.rand.randgrid as pyfan_gen_rand
 import pyfan.aws.general.path as pyfan_path
+import pyfan.util.timer.timer as pyfan_timer
 import argparse
 import sys
 import os
@@ -134,7 +135,8 @@ def gph_scatter_line_rand(fl_mu=0, fl_sd=1,
     if bl_show_fig:
         plt.show()
     if bl_save_fig:
-        sna_image_name = 'seed_' + str(it_seed)
+        sna_image_name = 'f_' + pyfan_timer.getDateTime(8) +'_s' + str(it_seed)
+
         srt_s3_bucket_folder = 'pyfan_gph_scatter_line_rand'
         pyfan_path.save_img(plt, sna_image_name,
                             dpi=300, papertype='a4',
