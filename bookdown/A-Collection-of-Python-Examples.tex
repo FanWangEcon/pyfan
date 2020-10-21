@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-10-19}
+\date{2020-10-20}
 
 \begin{document}
 \maketitle
@@ -754,7 +754,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x0000023BAF251E80>]
+## [<matplotlib.lines.Line2D object at 0x000001C86CDD1940>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -768,7 +768,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x0000023BAF251CD0>]
+## [<matplotlib.lines.Line2D object at 0x000001C86CDD1DC0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -778,7 +778,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## <matplotlib.legend.Legend object at 0x0000023BAEF710A0>
+## <matplotlib.legend.Legend object at 0x000001C86B773700>
 \end{verbatim}
 
 \begin{Shaded}
@@ -1280,7 +1280,7 @@ We load AWS access key and secret acess key etc in from a \href{https://fanwange
 ## {'ResponseMetadata': '',
 ##  'computeEnvironments': [{'computeEnvironmentArn': 'arn:aws:batch:us-east-1:710673677961:compute-environment/SpotEnv2560',
 ##                           'computeEnvironmentName': 'SpotEnv2560',
-##                           'computeResources': {'desiredvCpus': 0,
+##                           'computeResources': {'desiredvCpus': 8,
 ##                                                'ec2KeyPair': 'fan_wang-key-pair-us_east_nv',
 ##                                                'instanceRole': '',
 ##                                                'instanceTypes': ['optimal'],
@@ -1367,10 +1367,25 @@ Second, on s3, create a bucket, \emph{fans3testbucket} for example (no underscor
 Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
 
-\hypertarget{create-a-batch-job-definition}{%
-\subsubsection{Create A Batch Job Definition}\label{create-a-batch-job-definition}}
+\hypertarget{preparing-a-docker-image-and-a-python-function-for-batch-array-job}{%
+\subsubsection{Preparing a Docker Image and a Python Function for Batch Array Job}\label{preparing-a-docker-image-and-a-python-function-for-batch-array-job}}
 
-Before running batch jobs across EC2 Instances, need to create jobs first. These jobs need to specify:
+We want to set-up a function that can be used jointly with \href{https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html}{AWS Batch Array}. With Batch Array, can run many simulations concurrently. All simulations might only differ in random seed for drawing shocks. This requires setting up the proper dockerfile as well as modifying the python function that we want to invoke slightly.
+
+First, create and push a docker image, see this \href{https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html\#141_Example_Docker_File_for_AWS}{dockerfile}. Following the AWS ECR instructions, this registers a docker image in AWS ECR with a URI: \emph{XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda}
+
+The \href{https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html\#141_Example_Docker_File_for_AWS}{dockerfile} has for CMD: \emph{CMD {[}``python'', ``/pyfan/pyfan/graph/exa/scatterline3.py''{]}}. This runs the function \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py}{scatterline3}.
+
+Second, the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py}{scatterline3} function checks if \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py\#L167}{\emph{AWS\_BATCH\_JOB\_ARRAY\_INDEX} is in the \emph{os.environ}}. \emph{AWS\_BATCH\_JOB\_ARRAY\_INDEX}, if exists, is used as a random seed to generate data for the graph. When the function is run in a docker container via batch, the function saves the graph output to a bucket in AWS s3. The pushing the s3 is achieved by \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/aws/general/path.py}{pyfan.aws.general.path.py}.
+
+In the batch job, when \emph{arrayProperties = \{`size': 10\}}, this will generate \emph{AWS\_BATCH\_JOB\_ARRAY\_INDEX} from 1 through 10 in 10 sub-tasks of a single batch task. These \emph{AWS\_BATCH\_JOB\_ARRAY\_INDEX} could be used as different random seeds, and could be used as folder suffixes.
+
+Here, the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py}{scatterline3} function generates a graph, that will be stored for testing purpose in \href{https://s3.console.aws.amazon.com/s3/buckets/fans3testbucket/pyfan_gph_scatter_line_rand/?region=us-east-1\&tab=overview}{pyfan\_gph\_scatter\_line\_rand folder of fans3testbucket bucket}, the images saved has \emph{seed\_0.png}, \emph{seed\_1.png}, \ldots, \emph{seed\_10.png} as names when \emph{arrayProperties = \{`size': 10\}}.
+
+\hypertarget{register-a-batch-job-definition}{%
+\subsubsection{Register A Batch Job Definition}\label{register-a-batch-job-definition}}
+
+Given the docker image we created: \emph{XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda}, we can use this to register a batch job.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1380,12 +1395,14 @@ Before running batch jobs across EC2 Instances, need to create jobs first. These
 \item
   which container to pull from (ECR): List the image name: \emph{XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda} for example
 \item
-  job role ARN: \emph{arn:aws:iam::710673677961:role/ecsExecutionRole} to allow for proper in and out from and to the container.
+  job role ARN: \emph{arn:aws:iam::XXXX7367XXXX:role/ecsExecutionRole} to allow for proper in and out from and to the container.
 \end{enumerate}
 
 These can be registered programmatically by using boto3: \href{https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html}{Boto3 Batch Documentation}
 
-In the example below, will register a new job definition:
+In the example below, will register a new job definition, this will add \emph{pyfan-scatterline3-test-rmd} to \href{https://console.aws.amazon.com/batch/v2/home?region=us-east-1\#job-definition}{job definition} as an additional job definition.
+
+Everytime, when the code below is re-run, a new batch revision number is generated. AWS allows per batch job to have potential hundreds of thousands of revisions.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1393,20 +1410,148 @@ In the example below, will register a new job definition:
 \ImportTok{import}\NormalTok{ yaml}
 \ImportTok{import}\NormalTok{ pprint}
 
-\CommentTok{# Load YAML file}
-\NormalTok{son_aws_yml }\OperatorTok{=} \StringTok{"C:/Users/fan/fanwangecon.github.io/_data/aws.yml"}
-\NormalTok{fl_yaml }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(son_aws_yml)}
+\CommentTok{# Load YAML file with security info}
+\NormalTok{srn_aws_yml }\OperatorTok{=} \StringTok{"C:/Users/fan/fanwangecon.github.io/_data/aws.yml"}
+\NormalTok{fl_yaml }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_aws_yml)}
 \NormalTok{ls_dict_yml }\OperatorTok{=}\NormalTok{ yaml.load(fl_yaml, Loader}\OperatorTok{=}\NormalTok{yaml.BaseLoader)}
-\CommentTok{# Get the first element of the yml list of dicts}
 \NormalTok{aws_yml_dict_yml }\OperatorTok{=}\NormalTok{ ls_dict_yml[}\DecValTok{0}\NormalTok{]}
+
+\CommentTok{# Dictionary storing job definition related information}
+\NormalTok{job_dict }\OperatorTok{=}\NormalTok{ \{}\StringTok{"jobDefinitionName"}\NormalTok{: }\StringTok{'pyfan-scatterline3-test-rmd'}\NormalTok{,}
+            \StringTok{"type"}\NormalTok{: }\StringTok{"container"}\NormalTok{,}
+            \StringTok{"containerProperties"}\NormalTok{: \{}
+                \StringTok{"image"}\NormalTok{: aws_yml_dict_yml[}\StringTok{'main_aws_id'}\NormalTok{] }\OperatorTok{+} \StringTok{".dkr.ecr."} \OperatorTok{+}
+\NormalTok{                         aws_yml_dict_yml[}\StringTok{'region'}\NormalTok{] }\OperatorTok{+} \StringTok{".amazonaws.com/fanconda"}\NormalTok{,}
+                \StringTok{"vcpus"}\NormalTok{: }\BuiltInTok{int}\NormalTok{(}\DecValTok{1}\NormalTok{),}
+                \StringTok{"memory"}\NormalTok{: }\BuiltInTok{int}\NormalTok{(}\DecValTok{1024}\NormalTok{),}
+                \StringTok{"command"}\NormalTok{: [}\StringTok{"python"}\NormalTok{,}
+                            \StringTok{"/pyfan/pyfan/graph/exa/scatterline3.py"}\NormalTok{,}
+                            \StringTok{"-A"}\NormalTok{, }\StringTok{"fans3testbucket"}\NormalTok{,}
+                            \StringTok{"-B"}\NormalTok{, }\StringTok{"111"}\NormalTok{],}
+                \StringTok{"jobRoleArn"}\NormalTok{: }\StringTok{"arn:aws:iam::"} \OperatorTok{+}\NormalTok{ aws_yml_dict_yml[}\StringTok{'main_aws_id'}\NormalTok{] }\OperatorTok{+}
+                              \StringTok{":role/"} \OperatorTok{+}\NormalTok{ aws_yml_dict_yml[}\StringTok{'batch_task_executionRoleArn'}\NormalTok{]}
+\NormalTok{            \},}
+            \StringTok{"retryStrategy"}\NormalTok{: \{}
+                \StringTok{"attempts"}\NormalTok{: }\DecValTok{1}
+\NormalTok{            \}\}}
 
 \CommentTok{# Use AWS Personal Access Keys etc to start boto3 client}
 \NormalTok{aws_batch }\OperatorTok{=}\NormalTok{ boto3.client(}\StringTok{'batch'}\NormalTok{,}
 \NormalTok{  aws_access_key_id}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'aws_access_key_id'}\NormalTok{],}
 \NormalTok{  aws_secret_access_key}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'aws_secret_access_key'}\NormalTok{],}
 \NormalTok{  region_name}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'region'}\NormalTok{])}
+
+\CommentTok{# Register a job definition}
+\NormalTok{response }\OperatorTok{=}\NormalTok{ aws_batch.register_job_definition(}
+\NormalTok{        jobDefinitionName }\OperatorTok{=}\NormalTok{ job_dict[}\StringTok{'jobDefinitionName'}\NormalTok{],}
+        \BuiltInTok{type} \OperatorTok{=}\NormalTok{ job_dict[}\StringTok{'type'}\NormalTok{],}
+\NormalTok{        containerProperties }\OperatorTok{=}\NormalTok{ job_dict[}\StringTok{'containerProperties'}\NormalTok{],}
+\NormalTok{        retryStrategy }\OperatorTok{=}\NormalTok{ job_dict[}\StringTok{'retryStrategy'}\NormalTok{])}
+
+\CommentTok{# Print response}
+\NormalTok{pprint.pprint(response, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
+##                                       'content-length': '167',
+##                                       'content-type': 'application/json',
+##                                       'date': 'Wed, '
+##                                               '21 '
+##                                               'Oct '
+##                                               '2020 '
+##                                               '02:43:56 '
+##                                               'GMT',
+##                                       'x-amz-apigw-id': 'UvYBBFX2IAMFWeA=',
+##                                       'x-amzn-requestid': '53ce17bf-408e-4205-9c42-93114ba0437c',
+##                                       'x-amzn-trace-id': 'Root=1-5f8fa06c-4c8ef9f564dbf8d32d26b749;Sampled=0'},
+##                       'HTTPStatusCode': 200,
+##                       'RequestId': '53ce17bf-408e-4205-9c42-93114ba0437c',
+##                       'RetryAttempts': 0},
+##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:8',
+##  'jobDefinitionName': 'pyfan-scatterline3-test-rmd',
+##  'revision': 8}
+\end{verbatim}
+
+\hypertarget{submit-a-batch-array}{%
+\subsubsection{Submit a Batch Array}\label{submit-a-batch-array}}
+
+Given the batch job definition that has been created. Create also Job Queues and related compute environments. Then we can run Batch Array. Upon submitting the batch array, you can monitor AWS EC2 instances, should notice potentially many instances of EC2 starting up. AWS is starting EC2 instances to complete the batch array jobs.
+
+create a \href{https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html}{batch compute environment} that uses \href{https://aws.amazon.com/ec2/pricing/}{spot price instances}, which will be much cheaper than on demand costs. Will need to set proper AMI roles, \emph{arn:aws:iam::XXXX7367XXXX:role/AmazonEC2SpotFleetRole} for \emph{Spot fleet role}, and also proper securities.
+
+When the \emph{array\_size} parameter is equal to 100, that starts 100 child processes, with 1 through 100 for \emph{AWS\_BATCH\_JOB\_ARRAY\_INDEX}, which, could be used directly by the python function by taking in the parameter from the os environment as shown earlier. For demonstration purposes, will only set \emph{array\_size=3} in the example below.
+
+Outputs from the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py\#L138}{scatterline3} has a timestamp, so each time the code below is run, will generate several new images, with the same set of random seeds, but different date prefix. The output \href{https://s3.console.aws.amazon.com/s3/buckets/fans3testbucket/pyfan_gph_scatter_line_rand/?region=us-east-1\&tab=overview}{s3 folder is public}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ boto3}
+\ImportTok{import}\NormalTok{ yaml}
+\ImportTok{import}\NormalTok{ pprint}
+
+\ImportTok{import}\NormalTok{ datetime }\ImportTok{as}\NormalTok{ datetime}
+
+\CommentTok{# Using the "jobDefinitionName": 'pyfan-scatterline3-test-rmd' from registering}
+\NormalTok{jobDefinitionName }\OperatorTok{=} \StringTok{'pyfan-scatterline3-test-rmd'}
+
+\CommentTok{# How many child batch processes to start}
+\CommentTok{# child process differ in: AWS_BATCH_JOB_ARRAY_INDEX}
+\NormalTok{array_size }\OperatorTok{=} \DecValTok{3}
+
+\CommentTok{# job name}
+\NormalTok{timestr }\OperatorTok{=} \StringTok{"\{:%Y%m}\SpecialCharTok{%d}\StringTok{%H%M%S}\SpecialCharTok{%f}\StringTok{\}"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(datetime.datetime.now())}
+\NormalTok{timesufx }\OperatorTok{=} \StringTok{'_'} \OperatorTok{+}\NormalTok{ timestr}
+\NormalTok{st_jobName }\OperatorTok{=}\NormalTok{ jobDefinitionName }\OperatorTok{+}\NormalTok{ timesufx}
+
+\CommentTok{# job queue (needs to design own queue in batch)}
+\NormalTok{st_jobQueue }\OperatorTok{=} \StringTok{'Spot'}
+
+\CommentTok{# start batch service}
+\CommentTok{# Load YAML file with security info}
+\NormalTok{srn_aws_yml }\OperatorTok{=} \StringTok{"C:/Users/fan/fanwangecon.github.io/_data/aws.yml"}
+\NormalTok{fl_yaml }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(srn_aws_yml)}
+\NormalTok{ls_dict_yml }\OperatorTok{=}\NormalTok{ yaml.load(fl_yaml, Loader}\OperatorTok{=}\NormalTok{yaml.BaseLoader)}
+\NormalTok{aws_yml_dict_yml }\OperatorTok{=}\NormalTok{ ls_dict_yml[}\DecValTok{0}\NormalTok{]}
+\CommentTok{# Use AWS Personal Access Keys etc to start boto3 client}
+\NormalTok{aws_batch }\OperatorTok{=}\NormalTok{ boto3.client(}\StringTok{'batch'}\NormalTok{,}
+\NormalTok{                         aws_access_key_id}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'aws_access_key_id'}\NormalTok{],}
+\NormalTok{                         aws_secret_access_key}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'aws_secret_access_key'}\NormalTok{],}
+\NormalTok{                         region_name}\OperatorTok{=}\NormalTok{aws_yml_dict_yml[}\StringTok{'region'}\NormalTok{])}
+
+\CommentTok{# aws batch submit job}
+\NormalTok{response }\OperatorTok{=}\NormalTok{ aws_batch.submit_job(}
+\NormalTok{    jobName}\OperatorTok{=}\NormalTok{st_jobName,}
+\NormalTok{    jobQueue}\OperatorTok{=}\NormalTok{st_jobQueue,}
+\NormalTok{    arrayProperties}\OperatorTok{=}\NormalTok{\{}\StringTok{'size'}\NormalTok{: array_size\},}
+\NormalTok{    jobDefinition}\OperatorTok{=}\NormalTok{jobDefinitionName)}
+    
+\CommentTok{# Print response}
+\NormalTok{pprint.pprint(response, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
+##                                       'content-length': '198',
+##                                       'content-type': 'application/json',
+##                                       'date': 'Wed, '
+##                                               '21 '
+##                                               'Oct '
+##                                               '2020 '
+##                                               '02:43:57 '
+##                                               'GMT',
+##                                       'x-amz-apigw-id': 'UvYBFHvaoAMFedA=',
+##                                       'x-amzn-requestid': '6082c4d8-85e3-4baf-9817-54b85fd440e1',
+##                                       'x-amzn-trace-id': 'Root=1-5f8fa06d-01869c5c2f8fe52f1cee1778;Sampled=0'},
+##                       'HTTPStatusCode': 200,
+##                       'RequestId': '6082c4d8-85e3-4baf-9817-54b85fd440e1',
+##                       'RetryAttempts': 0},
+##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/9b99892c-1fed-46aa-a0bb-2f800f927ae2',
+##  'jobId': '9b99892c-1fed-46aa-a0bb-2f800f927ae2',
+##  'jobName': 'pyfan-scatterline3-test-rmd_20201020214356222579'}
+\end{verbatim}
 
 \hypertarget{docker-container}{%
 \chapter{Docker Container}\label{docker-container}}
@@ -1787,7 +1932,7 @@ Note that that private git repos are pulled in. Note also that AWS keys are set 
 \ExtensionTok{ENV}\NormalTok{ AWS_SECRET_ACCESS_KEY=xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11}
 
 \CommentTok{# Run}
-\ExtensionTok{CMD}\NormalTok{ [}\StringTok{"python"}\NormalTok{, }\StringTok{"/FanProg/run.py"}\NormalTok{]}
+\ExtensionTok{CMD}\NormalTok{ [}\StringTok{"python"}\NormalTok{, }\StringTok{"/pyfan/pyfan/graph/exa/scatterline3.py"}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2319,7 +2464,7 @@ Show CSV results:
 
 \begin{table}[!h]
 
-\caption{\label{tab:unnamed-chunk-73}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
+\caption{\label{tab:unnamed-chunk-74}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
 \hline
@@ -4371,12 +4516,18 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \href{https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html}{AWS Batch}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html}{\textbf{html}}
+  \href{https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html}{AWS Batch, Batch Array}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html}{\textbf{html}}
 
   \begin{itemize}
   \tightlist
   \item
-    Create batch task and run batch tasks using ECR image, and save results to S3.
+    Set up python function that uses AWS\_BATCH\_JOB\_ARRAY\_INDEX.
+  \item
+    Register batch task and submit batch array tasks using ECR image, and save results to S3.
+  \item
+    \textbf{yaml}: \emph{load()}
+  \item
+    \textbf{boto3}: \emph{client() + register\_job\_definition(jobDefinitionName, type, containerProperties, retryStrategy) + aws\_batch.submit\_job(jobName, jobQueue, arrayProperties=\{`size':10\}, jobDefinition)}
   \end{itemize}
 \end{enumerate}
 

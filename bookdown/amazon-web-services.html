@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-10-19" />
+<meta name="date" content="2020-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,32 +548,155 @@ conda install -c anaconda boto3 -y</code></pre>
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div id="create-a-batch-job-definition" class="section level4">
-<h4><span class="header-section-number">4.3.1.1</span> Create A Batch Job Definition</h4>
-<p>Before running batch jobs across EC2 Instances, need to create jobs first. These jobs need to specify:</p>
+<div id="preparing-a-docker-image-and-a-python-function-for-batch-array-job" class="section level4">
+<h4><span class="header-section-number">4.3.1.1</span> Preparing a Docker Image and a Python Function for Batch Array Job</h4>
+<p>We want to set-up a function that can be used jointly with <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">AWS Batch Array</a>. With Batch Array, can run many simulations concurrently. All simulations might only differ in random seed for drawing shocks. This requires setting up the proper dockerfile as well as modifying the python function that we want to invoke slightly.</p>
+<p>First, create and push a docker image, see this <a href="https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html#141_Example_Docker_File_for_AWS">dockerfile</a>. Following the AWS ECR instructions, this registers a docker image in AWS ECR with a URI: <em>XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda</em></p>
+<p>The <a href="https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_ecr.html#141_Example_Docker_File_for_AWS">dockerfile</a> has for CMD: <em>CMD [“python”, “/pyfan/pyfan/graph/exa/scatterline3.py”]</em>. This runs the function <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py">scatterline3</a>.</p>
+<p>Second, the <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py">scatterline3</a> function checks if <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py#L167"><em>AWS_BATCH_JOB_ARRAY_INDEX</em> is in the <em>os.environ</em></a>. <em>AWS_BATCH_JOB_ARRAY_INDEX</em>, if exists, is used as a random seed to generate data for the graph. When the function is run in a docker container via batch, the function saves the graph output to a bucket in AWS s3. The pushing the s3 is achieved by <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/aws/general/path.py">pyfan.aws.general.path.py</a>.</p>
+<p>In the batch job, when <em>arrayProperties = {‘size’: 10}</em>, this will generate <em>AWS_BATCH_JOB_ARRAY_INDEX</em> from 1 through 10 in 10 sub-tasks of a single batch task. These <em>AWS_BATCH_JOB_ARRAY_INDEX</em> could be used as different random seeds, and could be used as folder suffixes.</p>
+<p>Here, the <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py">scatterline3</a> function generates a graph, that will be stored for testing purpose in <a href="https://s3.console.aws.amazon.com/s3/buckets/fans3testbucket/pyfan_gph_scatter_line_rand/?region=us-east-1&amp;tab=overview">pyfan_gph_scatter_line_rand folder of fans3testbucket bucket</a>, the images saved has <em>seed_0.png</em>, <em>seed_1.png</em>, …, <em>seed_10.png</em> as names when <em>arrayProperties = {‘size’: 10}</em>.</p>
+</div>
+<div id="register-a-batch-job-definition" class="section level4">
+<h4><span class="header-section-number">4.3.1.2</span> Register A Batch Job Definition</h4>
+<p>Given the docker image we created: <em>XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda</em>, we can use this to register a batch job.</p>
 <ol style="list-style-type: decimal">
 <li>computing requirements: memory and cpu: <em>vCpus = 1</em> and <em>Memory=7168</em> for example</li>
 <li>which container to pull from (ECR): List the image name: <em>XXXX7367XXXX.dkr.ecr.us-east-1.amazonaws.com/fanconda</em> for example</li>
-<li>job role ARN: <em>arn:aws:iam::710673677961:role/ecsExecutionRole</em> to allow for proper in and out from and to the container.</li>
+<li>job role ARN: <em>arn:aws:iam::XXXX7367XXXX:role/ecsExecutionRole</em> to allow for proper in and out from and to the container.</li>
 </ol>
 <p>These can be registered programmatically by using boto3: <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html">Boto3 Batch Documentation</a></p>
-<p>In the example below, will register a new job definition:</p>
+<p>In the example below, will register a new job definition, this will add <em>pyfan-scatterline3-test-rmd</em> to <a href="https://console.aws.amazon.com/batch/v2/home?region=us-east-1#job-definition">job definition</a> as an additional job definition.</p>
+<p>Everytime, when the code below is re-run, a new batch revision number is generated. AWS allows per batch job to have potential hundreds of thousands of revisions.</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="amazon-web-services.html#cb74-1"></a><span class="im">import</span> boto3</span>
 <span id="cb74-2"><a href="amazon-web-services.html#cb74-2"></a><span class="im">import</span> yaml</span>
 <span id="cb74-3"><a href="amazon-web-services.html#cb74-3"></a><span class="im">import</span> pprint</span>
 <span id="cb74-4"><a href="amazon-web-services.html#cb74-4"></a></span>
-<span id="cb74-5"><a href="amazon-web-services.html#cb74-5"></a><span class="co"># Load YAML file</span></span>
-<span id="cb74-6"><a href="amazon-web-services.html#cb74-6"></a>son_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
-<span id="cb74-7"><a href="amazon-web-services.html#cb74-7"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(son_aws_yml)</span>
+<span id="cb74-5"><a href="amazon-web-services.html#cb74-5"></a><span class="co"># Load YAML file with security info</span></span>
+<span id="cb74-6"><a href="amazon-web-services.html#cb74-6"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
+<span id="cb74-7"><a href="amazon-web-services.html#cb74-7"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
 <span id="cb74-8"><a href="amazon-web-services.html#cb74-8"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
-<span id="cb74-9"><a href="amazon-web-services.html#cb74-9"></a><span class="co"># Get the first element of the yml list of dicts</span></span>
-<span id="cb74-10"><a href="amazon-web-services.html#cb74-10"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
-<span id="cb74-11"><a href="amazon-web-services.html#cb74-11"></a></span>
-<span id="cb74-12"><a href="amazon-web-services.html#cb74-12"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
-<span id="cb74-13"><a href="amazon-web-services.html#cb74-13"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
-<span id="cb74-14"><a href="amazon-web-services.html#cb74-14"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
-<span id="cb74-15"><a href="amazon-web-services.html#cb74-15"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
-<span id="cb74-16"><a href="amazon-web-services.html#cb74-16"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span></code></pre></div>
+<span id="cb74-9"><a href="amazon-web-services.html#cb74-9"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
+<span id="cb74-10"><a href="amazon-web-services.html#cb74-10"></a></span>
+<span id="cb74-11"><a href="amazon-web-services.html#cb74-11"></a><span class="co"># Dictionary storing job definition related information</span></span>
+<span id="cb74-12"><a href="amazon-web-services.html#cb74-12"></a>job_dict <span class="op">=</span> {<span class="st">&quot;jobDefinitionName&quot;</span>: <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span>,</span>
+<span id="cb74-13"><a href="amazon-web-services.html#cb74-13"></a>            <span class="st">&quot;type&quot;</span>: <span class="st">&quot;container&quot;</span>,</span>
+<span id="cb74-14"><a href="amazon-web-services.html#cb74-14"></a>            <span class="st">&quot;containerProperties&quot;</span>: {</span>
+<span id="cb74-15"><a href="amazon-web-services.html#cb74-15"></a>                <span class="st">&quot;image&quot;</span>: aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span> <span class="st">&quot;.dkr.ecr.&quot;</span> <span class="op">+</span></span>
+<span id="cb74-16"><a href="amazon-web-services.html#cb74-16"></a>                         aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>] <span class="op">+</span> <span class="st">&quot;.amazonaws.com/fanconda&quot;</span>,</span>
+<span id="cb74-17"><a href="amazon-web-services.html#cb74-17"></a>                <span class="st">&quot;vcpus&quot;</span>: <span class="bu">int</span>(<span class="dv">1</span>),</span>
+<span id="cb74-18"><a href="amazon-web-services.html#cb74-18"></a>                <span class="st">&quot;memory&quot;</span>: <span class="bu">int</span>(<span class="dv">1024</span>),</span>
+<span id="cb74-19"><a href="amazon-web-services.html#cb74-19"></a>                <span class="st">&quot;command&quot;</span>: [<span class="st">&quot;python&quot;</span>,</span>
+<span id="cb74-20"><a href="amazon-web-services.html#cb74-20"></a>                            <span class="st">&quot;/pyfan/pyfan/graph/exa/scatterline3.py&quot;</span>,</span>
+<span id="cb74-21"><a href="amazon-web-services.html#cb74-21"></a>                            <span class="st">&quot;-A&quot;</span>, <span class="st">&quot;fans3testbucket&quot;</span>,</span>
+<span id="cb74-22"><a href="amazon-web-services.html#cb74-22"></a>                            <span class="st">&quot;-B&quot;</span>, <span class="st">&quot;111&quot;</span>],</span>
+<span id="cb74-23"><a href="amazon-web-services.html#cb74-23"></a>                <span class="st">&quot;jobRoleArn&quot;</span>: <span class="st">&quot;arn:aws:iam::&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span></span>
+<span id="cb74-24"><a href="amazon-web-services.html#cb74-24"></a>                              <span class="st">&quot;:role/&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;batch_task_executionRoleArn&#39;</span>]</span>
+<span id="cb74-25"><a href="amazon-web-services.html#cb74-25"></a>            },</span>
+<span id="cb74-26"><a href="amazon-web-services.html#cb74-26"></a>            <span class="st">&quot;retryStrategy&quot;</span>: {</span>
+<span id="cb74-27"><a href="amazon-web-services.html#cb74-27"></a>                <span class="st">&quot;attempts&quot;</span>: <span class="dv">1</span></span>
+<span id="cb74-28"><a href="amazon-web-services.html#cb74-28"></a>            }}</span>
+<span id="cb74-29"><a href="amazon-web-services.html#cb74-29"></a></span>
+<span id="cb74-30"><a href="amazon-web-services.html#cb74-30"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
+<span id="cb74-31"><a href="amazon-web-services.html#cb74-31"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
+<span id="cb74-32"><a href="amazon-web-services.html#cb74-32"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
+<span id="cb74-33"><a href="amazon-web-services.html#cb74-33"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
+<span id="cb74-34"><a href="amazon-web-services.html#cb74-34"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
+<span id="cb74-35"><a href="amazon-web-services.html#cb74-35"></a></span>
+<span id="cb74-36"><a href="amazon-web-services.html#cb74-36"></a><span class="co"># Register a job definition</span></span>
+<span id="cb74-37"><a href="amazon-web-services.html#cb74-37"></a>response <span class="op">=</span> aws_batch.register_job_definition(</span>
+<span id="cb74-38"><a href="amazon-web-services.html#cb74-38"></a>        jobDefinitionName <span class="op">=</span> job_dict[<span class="st">&#39;jobDefinitionName&#39;</span>],</span>
+<span id="cb74-39"><a href="amazon-web-services.html#cb74-39"></a>        <span class="bu">type</span> <span class="op">=</span> job_dict[<span class="st">&#39;type&#39;</span>],</span>
+<span id="cb74-40"><a href="amazon-web-services.html#cb74-40"></a>        containerProperties <span class="op">=</span> job_dict[<span class="st">&#39;containerProperties&#39;</span>],</span>
+<span id="cb74-41"><a href="amazon-web-services.html#cb74-41"></a>        retryStrategy <span class="op">=</span> job_dict[<span class="st">&#39;retryStrategy&#39;</span>])</span>
+<span id="cb74-42"><a href="amazon-web-services.html#cb74-42"></a></span>
+<span id="cb74-43"><a href="amazon-web-services.html#cb74-43"></a><span class="co"># Print response</span></span>
+<span id="cb74-44"><a href="amazon-web-services.html#cb74-44"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## {&#39;ResponseMetadata&#39;: {&#39;HTTPHeaders&#39;: {&#39;connection&#39;: &#39;keep-alive&#39;,
+##                                       &#39;content-length&#39;: &#39;167&#39;,
+##                                       &#39;content-type&#39;: &#39;application/json&#39;,
+##                                       &#39;date&#39;: &#39;Wed, &#39;
+##                                               &#39;21 &#39;
+##                                               &#39;Oct &#39;
+##                                               &#39;2020 &#39;
+##                                               &#39;02:42:54 &#39;
+##                                               &#39;GMT&#39;,
+##                                       &#39;x-amz-apigw-id&#39;: &#39;UvX3OF4ioAMFv4A=&#39;,
+##                                       &#39;x-amzn-requestid&#39;: &#39;a2320cea-c029-410d-82ad-40641503ee72&#39;,
+##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5f8fa02e-6347f99778690e1843105c9d;Sampled=0&#39;},
+##                       &#39;HTTPStatusCode&#39;: 200,
+##                       &#39;RequestId&#39;: &#39;a2320cea-c029-410d-82ad-40641503ee72&#39;,
+##                       &#39;RetryAttempts&#39;: 0},
+##  &#39;jobDefinitionArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:7&#39;,
+##  &#39;jobDefinitionName&#39;: &#39;pyfan-scatterline3-test-rmd&#39;,
+##  &#39;revision&#39;: 7}</code></pre>
+</div>
+<div id="submit-a-batch-array" class="section level4">
+<h4><span class="header-section-number">4.3.1.3</span> Submit a Batch Array</h4>
+<p>Given the batch job definition that has been created. Create also Job Queues and related compute environments. Then we can run Batch Array. Upon submitting the batch array, you can monitor AWS EC2 instances, should notice potentially many instances of EC2 starting up. AWS is starting EC2 instances to complete the batch array jobs.</p>
+<p>create a <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">batch compute environment</a> that uses <a href="https://aws.amazon.com/ec2/pricing/">spot price instances</a>, which will be much cheaper than on demand costs. Will need to set proper AMI roles, <em>arn:aws:iam::XXXX7367XXXX:role/AmazonEC2SpotFleetRole</em> for <em>Spot fleet role</em>, and also proper securities.</p>
+<p>When the <em>array_size</em> parameter is equal to 100, that starts 100 child processes, with 1 through 100 for <em>AWS_BATCH_JOB_ARRAY_INDEX</em>, which, could be used directly by the python function by taking in the parameter from the os environment as shown earlier. For demonstration purposes, will only set <em>array_size=3</em> in the example below.</p>
+<p>Outputs from the <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py#L138">scatterline3</a> has a timestamp, so each time the code below is run, will generate several new images, with the same set of random seeds, but different date prefix. The output <a href="https://s3.console.aws.amazon.com/s3/buckets/fans3testbucket/pyfan_gph_scatter_line_rand/?region=us-east-1&amp;tab=overview">s3 folder is public</a>.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="amazon-web-services.html#cb76-1"></a><span class="im">import</span> boto3</span>
+<span id="cb76-2"><a href="amazon-web-services.html#cb76-2"></a><span class="im">import</span> yaml</span>
+<span id="cb76-3"><a href="amazon-web-services.html#cb76-3"></a><span class="im">import</span> pprint</span>
+<span id="cb76-4"><a href="amazon-web-services.html#cb76-4"></a></span>
+<span id="cb76-5"><a href="amazon-web-services.html#cb76-5"></a><span class="im">import</span> datetime <span class="im">as</span> datetime</span>
+<span id="cb76-6"><a href="amazon-web-services.html#cb76-6"></a></span>
+<span id="cb76-7"><a href="amazon-web-services.html#cb76-7"></a><span class="co"># Using the &quot;jobDefinitionName&quot;: &#39;pyfan-scatterline3-test-rmd&#39; from registering</span></span>
+<span id="cb76-8"><a href="amazon-web-services.html#cb76-8"></a>jobDefinitionName <span class="op">=</span> <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span></span>
+<span id="cb76-9"><a href="amazon-web-services.html#cb76-9"></a></span>
+<span id="cb76-10"><a href="amazon-web-services.html#cb76-10"></a><span class="co"># How many child batch processes to start</span></span>
+<span id="cb76-11"><a href="amazon-web-services.html#cb76-11"></a><span class="co"># child process differ in: AWS_BATCH_JOB_ARRAY_INDEX</span></span>
+<span id="cb76-12"><a href="amazon-web-services.html#cb76-12"></a>array_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb76-13"><a href="amazon-web-services.html#cb76-13"></a></span>
+<span id="cb76-14"><a href="amazon-web-services.html#cb76-14"></a><span class="co"># job name</span></span>
+<span id="cb76-15"><a href="amazon-web-services.html#cb76-15"></a>timestr <span class="op">=</span> <span class="st">&quot;{:%Y%m</span><span class="sc">%d</span><span class="st">%H%M%S</span><span class="sc">%f</span><span class="st">}&quot;</span>.<span class="bu">format</span>(datetime.datetime.now())</span>
+<span id="cb76-16"><a href="amazon-web-services.html#cb76-16"></a>timesufx <span class="op">=</span> <span class="st">&#39;_&#39;</span> <span class="op">+</span> timestr</span>
+<span id="cb76-17"><a href="amazon-web-services.html#cb76-17"></a>st_jobName <span class="op">=</span> jobDefinitionName <span class="op">+</span> timesufx</span>
+<span id="cb76-18"><a href="amazon-web-services.html#cb76-18"></a></span>
+<span id="cb76-19"><a href="amazon-web-services.html#cb76-19"></a><span class="co"># job queue (needs to design own queue in batch)</span></span>
+<span id="cb76-20"><a href="amazon-web-services.html#cb76-20"></a>st_jobQueue <span class="op">=</span> <span class="st">&#39;Spot&#39;</span></span>
+<span id="cb76-21"><a href="amazon-web-services.html#cb76-21"></a></span>
+<span id="cb76-22"><a href="amazon-web-services.html#cb76-22"></a><span class="co"># start batch service</span></span>
+<span id="cb76-23"><a href="amazon-web-services.html#cb76-23"></a><span class="co"># Load YAML file with security info</span></span>
+<span id="cb76-24"><a href="amazon-web-services.html#cb76-24"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
+<span id="cb76-25"><a href="amazon-web-services.html#cb76-25"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
+<span id="cb76-26"><a href="amazon-web-services.html#cb76-26"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
+<span id="cb76-27"><a href="amazon-web-services.html#cb76-27"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
+<span id="cb76-28"><a href="amazon-web-services.html#cb76-28"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
+<span id="cb76-29"><a href="amazon-web-services.html#cb76-29"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
+<span id="cb76-30"><a href="amazon-web-services.html#cb76-30"></a>                         aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
+<span id="cb76-31"><a href="amazon-web-services.html#cb76-31"></a>                         aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
+<span id="cb76-32"><a href="amazon-web-services.html#cb76-32"></a>                         region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
+<span id="cb76-33"><a href="amazon-web-services.html#cb76-33"></a></span>
+<span id="cb76-34"><a href="amazon-web-services.html#cb76-34"></a><span class="co"># aws batch submit job</span></span>
+<span id="cb76-35"><a href="amazon-web-services.html#cb76-35"></a>response <span class="op">=</span> aws_batch.submit_job(</span>
+<span id="cb76-36"><a href="amazon-web-services.html#cb76-36"></a>    jobName<span class="op">=</span>st_jobName,</span>
+<span id="cb76-37"><a href="amazon-web-services.html#cb76-37"></a>    jobQueue<span class="op">=</span>st_jobQueue,</span>
+<span id="cb76-38"><a href="amazon-web-services.html#cb76-38"></a>    arrayProperties<span class="op">=</span>{<span class="st">&#39;size&#39;</span>: array_size},</span>
+<span id="cb76-39"><a href="amazon-web-services.html#cb76-39"></a>    jobDefinition<span class="op">=</span>jobDefinitionName)</span>
+<span id="cb76-40"><a href="amazon-web-services.html#cb76-40"></a>    </span>
+<span id="cb76-41"><a href="amazon-web-services.html#cb76-41"></a><span class="co"># Print response</span></span>
+<span id="cb76-42"><a href="amazon-web-services.html#cb76-42"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## {&#39;ResponseMetadata&#39;: {&#39;HTTPHeaders&#39;: {&#39;connection&#39;: &#39;keep-alive&#39;,
+##                                       &#39;content-length&#39;: &#39;198&#39;,
+##                                       &#39;content-type&#39;: &#39;application/json&#39;,
+##                                       &#39;date&#39;: &#39;Wed, &#39;
+##                                               &#39;21 &#39;
+##                                               &#39;Oct &#39;
+##                                               &#39;2020 &#39;
+##                                               &#39;02:42:54 &#39;
+##                                               &#39;GMT&#39;,
+##                                       &#39;x-amz-apigw-id&#39;: &#39;UvX3TGC6IAMFnyQ=&#39;,
+##                                       &#39;x-amzn-requestid&#39;: &#39;53b79b4c-3be0-4603-9bc6-4109877abf56&#39;,
+##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5f8fa02e-5940e6e339d5e18a282c596b;Sampled=0&#39;},
+##                       &#39;HTTPStatusCode&#39;: 200,
+##                       &#39;RequestId&#39;: &#39;53b79b4c-3be0-4603-9bc6-4109877abf56&#39;,
+##                       &#39;RetryAttempts&#39;: 0},
+##  &#39;jobArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job/9e1c20c4-d549-4b7a-9227-4100397d6972&#39;,
+##  &#39;jobId&#39;: &#39;9e1c20c4-d549-4b7a-9227-4100397d6972&#39;,
+##  &#39;jobName&#39;: &#39;pyfan-scatterline3-test-rmd_20201020214253576276&#39;}</code></pre>
 
 </div>
 </div>

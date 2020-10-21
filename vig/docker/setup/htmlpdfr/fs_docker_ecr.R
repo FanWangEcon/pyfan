@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE----------------------------------------------------------
+## ----global_options, include = FALSE-------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -142,7 +142,7 @@ try(source("../../../.Rprofile"))
 ## 
 ## # Run
 
-## CMD ["python", "/FanProg/run.py"]
+## CMD ["python", "/pyfan/pyfan/graph/exa/scatterline3.py"]
 
 
 ## # aws_keys stores keys

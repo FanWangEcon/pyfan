@@ -167,7 +167,7 @@ ENV AWS_ACCESS_KEY_ID=XKIXXXGSXXXBZXX43XXX
 ENV AWS_SECRET_ACCESS_KEY=xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11
 
 # Run
-CMD ["python", "/FanProg/run.py"]
+CMD ["python", "/pyfan/pyfan/graph/exa/scatterline3.py"]
 ```
 
 ##### Example SSM communication

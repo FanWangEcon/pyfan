@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-10-19" />
+<meta name="date" content="2020-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -358,9 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-4.3-batchbatch-links" class="section level3">
 <h3><span class="header-section-number">A.4.3</span> <a href="amazon-web-services.html#batch">Section 4.3 Batch</a> links</h3>
 <ol style="list-style-type: decimal">
-<li><a href="https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html">AWS Batch</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html"><strong>html</strong></a>
+<li><a href="https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html">AWS Batch, Batch Array</a>: <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd"><strong>rmd</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R"><strong>r</strong></a> | <a href="https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf"><strong>pdf</strong></a> | <a href="https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html"><strong>html</strong></a>
 <ul>
-<li>Create batch task and run batch tasks using ECR image, and save results to S3.</li>
+<li>Set up python function that uses AWS_BATCH_JOB_ARRAY_INDEX.</li>
+<li>Register batch task and submit batch array tasks using ECR image, and save results to S3.</li>
+<li><strong>yaml</strong>: <em>load()</em></li>
+<li><strong>boto3</strong>: <em>client() + register_job_definition(jobDefinitionName, type, containerProperties, retryStrategy) + aws_batch.submit_job(jobName, jobQueue, arrayProperties={‘size’:10}, jobDefinition)</em></li>
 </ul></li>
 </ol>
 </div>
