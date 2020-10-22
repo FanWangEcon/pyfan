@@ -144,7 +144,7 @@
 
 \title{A Collection of Python Examples}
 \author{Fan Wang}
-\date{2020-10-20}
+\date{2020-10-21}
 
 \begin{document}
 \maketitle
@@ -713,6 +713,140 @@ Given various arrays, generate a matrix
 ## r3   9   6   6   8   0
 \end{verbatim}
 
+\hypertarget{functions}{%
+\chapter{Functions}\label{functions}}
+
+\hypertarget{function-arguments}{%
+\section{Function Arguments}\label{function-arguments}}
+
+\hypertarget{function-arguments-1}{%
+\subsection{Function Arguments}\label{function-arguments-1}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pprint}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{python-dictionary-as-argument-via-kwargs}{%
+\subsubsection{Python Dictionary As Argument via kwargs}\label{python-dictionary-as-argument-via-kwargs}}
+
+There is a python function that outputs a dictionary with key and value pairs that specify key aspects of how a model should be solved. For example, one of the parameters could specify the \emph{vcpu} requirement. This \emph{vcpu} requirement might change, and so it should be easy to update this key with alternative values.
+
+These are accomplished in the following manner. Define the full key-value pair list, with default values for several dictionaries, with model simulation, support, and compute parameters for example. These lists could be updated with some default alternative combinations, or alternatively, it could be updated with externally provided dictionary with both updated values for existing keys, or even additional key value pairs.
+
+First, we create a function that processes and outputs default parameters, it has two inputs, \emph{it\_default\_group} to specify pre-fixed adjustments from defaults, and \emph{kwargs} that allows for arbitrarily modifications and additions to parameter dictionary.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ gen_compesti_spec(it_default_group}\OperatorTok{=}\VariableTok{None}\NormalTok{, }\OperatorTok{**}\NormalTok{kwargs):}
+    \CommentTok{# A. Define the default parameter keys and values}
+\NormalTok{    esti_specs }\OperatorTok{=}\NormalTok{ \{}\StringTok{'esti_method'}\NormalTok{: }\StringTok{'MomentsSimuStates'}\NormalTok{,}
+                  \StringTok{'momsets_type'}\NormalTok{: [}\StringTok{'a'}\NormalTok{, }\StringTok{'20180805a'}\NormalTok{],}
+                  \StringTok{'esti_param_vec_count'}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+                  \StringTok{'esti_max_func_eval'}\NormalTok{: }\DecValTok{10}\NormalTok{,}
+                  \StringTok{'graph_frequncy'}\NormalTok{: }\DecValTok{20}\NormalTok{\}}
+\NormalTok{    compute_specs }\OperatorTok{=}\NormalTok{ \{}\StringTok{'cpu'}\NormalTok{: }\BuiltInTok{str}\NormalTok{(}\DecValTok{1024} \OperatorTok{*} \DecValTok{1}\NormalTok{),}
+                     \StringTok{'memory'}\NormalTok{: }\BuiltInTok{str}\NormalTok{(}\DecValTok{517}\NormalTok{),  }\CommentTok{# only need about 160 mb in reality}
+                     \StringTok{'workers'}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+                     \StringTok{'aws_fargate'}\NormalTok{: }\VariableTok{False}\NormalTok{\}}
+
+    \CommentTok{# B. For different}
+\NormalTok{    compesti_specs }\OperatorTok{=}\NormalTok{ \{}\OperatorTok{**}\NormalTok{compute_specs, }\OperatorTok{**}\NormalTok{esti_specs\}}
+
+    \CommentTok{# C. Update dictionaries with parameter group values}
+    \ControlFlowTok{if}\NormalTok{ it_default_group }\OperatorTok{==} \DecValTok{1}\NormalTok{:}
+\NormalTok{        compesti_specs_updates }\OperatorTok{=}\NormalTok{ \{}\StringTok{'memory'}\NormalTok{: }\BuiltInTok{str}\NormalTok{(}\DecValTok{1024} \OperatorTok{*} \DecValTok{55}\NormalTok{),}
+                                  \StringTok{'compute_param_vec_count'}\NormalTok{: }\DecValTok{6}\NormalTok{,}
+                                  \StringTok{'esti_param_vec_count'}\NormalTok{: }\DecValTok{640}\NormalTok{\}}
+\NormalTok{        compesti_specs.update(compesti_specs_updates)}
+
+    \CommentTok{# D. Update with kward, could append new}
+\NormalTok{    compesti_specs.update(kwargs)}
+
+    \ControlFlowTok{return}\NormalTok{ compesti_specs}
+\end{Highlighting}
+\end{Shaded}
+
+Second, we test the defaults:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{compesti_specs }\OperatorTok{=}\NormalTok{ gen_compesti_spec()}
+\NormalTok{pprint.pprint(compesti_specs, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## {'aws_fargate': False,
+##  'cpu': '1024',
+##  'esti_max_func_eval': 10,
+##  'esti_method': 'MomentsSimuStates',
+##  'esti_param_vec_count': 1,
+##  'graph_frequncy': 20,
+##  'memory': '517',
+##  'momsets_type': ['a',
+##                   '20180805a'],
+##  'workers': 1}
+\end{verbatim}
+
+Third, we test using default group 1, pre-fixed changes to defaults:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{compesti_specs }\OperatorTok{=}\NormalTok{ gen_compesti_spec(it_default_group}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{pprint.pprint(compesti_specs, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## {'aws_fargate': False,
+##  'compute_param_vec_count': 6,
+##  'cpu': '1024',
+##  'esti_max_func_eval': 10,
+##  'esti_method': 'MomentsSimuStates',
+##  'esti_param_vec_count': 640,
+##  'graph_frequncy': 20,
+##  'memory': '56320',
+##  'momsets_type': ['a',
+##                   '20180805a'],
+##  'workers': 1}
+\end{verbatim}
+
+Fourth, we use kwargs to feed in arbitrary dictionary to update and append to existing parameter dictionary:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{compesti_specs_updates }\OperatorTok{=}\NormalTok{ \{}\StringTok{'esti_method'}\NormalTok{: }\StringTok{'MomentsSimuStateszzz'}\NormalTok{,}
+                          \StringTok{'moments_type'}\NormalTok{: [}\StringTok{'a'}\NormalTok{, }\StringTok{'20180805azzz'}\NormalTok{],}
+                          \StringTok{'momsets_type'}\NormalTok{: [}\StringTok{'a'}\NormalTok{, }\StringTok{'20180805azzz'}\NormalTok{],}
+                          \StringTok{'momsets_type_uuu'}\NormalTok{: [}\StringTok{'a'}\NormalTok{, }\StringTok{'20180805azzz'}\NormalTok{]\}}
+\NormalTok{compesti_specs }\OperatorTok{=}\NormalTok{ gen_compesti_spec(it_default_group}\OperatorTok{=}\VariableTok{None}\NormalTok{, }\OperatorTok{**}\NormalTok{compesti_specs_updates)}
+\NormalTok{pprint.pprint(compesti_specs, width}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## {'aws_fargate': False,
+##  'cpu': '1024',
+##  'esti_max_func_eval': 10,
+##  'esti_method': 'MomentsSimuStateszzz',
+##  'esti_param_vec_count': 1,
+##  'graph_frequncy': 20,
+##  'memory': '517',
+##  'moments_type': ['a',
+##                   '20180805azzz'],
+##  'momsets_type': ['a',
+##                   '20180805azzz'],
+##  'momsets_type_uuu': ['a',
+##                       '20180805azzz'],
+##  'workers': 1}
+\end{verbatim}
+
 \hypertarget{tables-and-graphs}{%
 \chapter{Tables and Graphs}\label{tables-and-graphs}}
 
@@ -754,7 +888,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001C86CDD1940>]
+## [<matplotlib.lines.Line2D object at 0x000002EA9915CBE0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -768,7 +902,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001C86CDD1DC0>]
+## [<matplotlib.lines.Line2D object at 0x000002EA9915CEB0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -778,7 +912,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## <matplotlib.legend.Legend object at 0x000001C86B773700>
+## <matplotlib.legend.Legend object at 0x000002EA96DD52E0>
 \end{verbatim}
 
 \begin{Shaded}
@@ -818,7 +952,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-26-1} \end{center}
+\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-32-1} \end{center}
 
 \hypertarget{text-plot}{%
 \subsection{Text Plot}\label{text-plot}}
@@ -873,7 +1007,7 @@ Plot Text as Image. \href{https://matplotlib.org/3.1.1/gallery/pyplots/text_layo
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-28-1} \end{center}
+\begin{center}\includegraphics{A-Collection-of-Python-Examples_files/figure-latex/unnamed-chunk-34-1} \end{center}
 
 \hypertarget{amazon-web-services}{%
 \chapter{Amazon Web Services}\label{amazon-web-services}}
@@ -1280,7 +1414,7 @@ We load AWS access key and secret acess key etc in from a \href{https://fanwange
 ## {'ResponseMetadata': '',
 ##  'computeEnvironments': [{'computeEnvironmentArn': 'arn:aws:batch:us-east-1:710673677961:compute-environment/SpotEnv2560',
 ##                           'computeEnvironmentName': 'SpotEnv2560',
-##                           'computeResources': {'desiredvCpus': 8,
+##                           'computeResources': {'desiredvCpus': 4,
 ##                                                'ec2KeyPair': 'fan_wang-key-pair-us_east_nv',
 ##                                                'instanceRole': '',
 ##                                                'instanceTypes': ['optimal'],
@@ -1455,23 +1589,23 @@ Everytime, when the code below is re-run, a new batch revision number is generat
 
 \begin{verbatim}
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
-##                                       'content-length': '167',
+##                                       'content-length': '169',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Wed, '
-##                                               '21 '
+##                                       'date': 'Thu, '
+##                                               '22 '
 ##                                               'Oct '
 ##                                               '2020 '
-##                                               '02:43:56 '
+##                                               '00:34:43 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'UvYBBFX2IAMFWeA=',
-##                                       'x-amzn-requestid': '53ce17bf-408e-4205-9c42-93114ba0437c',
-##                                       'x-amzn-trace-id': 'Root=1-5f8fa06c-4c8ef9f564dbf8d32d26b749;Sampled=0'},
+##                                       'x-amz-apigw-id': 'UyYBjGmOIAMF9Eg=',
+##                                       'x-amzn-requestid': '400a89fd-bf46-4b1b-a2d1-007867099b0b',
+##                                       'x-amzn-trace-id': 'Root=1-5f90d3a3-6d170b274aa5000c3ce61473;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': '53ce17bf-408e-4205-9c42-93114ba0437c',
+##                       'RequestId': '400a89fd-bf46-4b1b-a2d1-007867099b0b',
 ##                       'RetryAttempts': 0},
-##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:8',
+##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:10',
 ##  'jobDefinitionName': 'pyfan-scatterline3-test-rmd',
-##  'revision': 8}
+##  'revision': 10}
 \end{verbatim}
 
 \hypertarget{submit-a-batch-array}{%
@@ -1536,21 +1670,21 @@ Outputs from the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/gr
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
 ##                                       'content-length': '198',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Wed, '
-##                                               '21 '
+##                                       'date': 'Thu, '
+##                                               '22 '
 ##                                               'Oct '
 ##                                               '2020 '
-##                                               '02:43:57 '
+##                                               '00:34:44 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'UvYBFHvaoAMFedA=',
-##                                       'x-amzn-requestid': '6082c4d8-85e3-4baf-9817-54b85fd440e1',
-##                                       'x-amzn-trace-id': 'Root=1-5f8fa06d-01869c5c2f8fe52f1cee1778;Sampled=0'},
+##                                       'x-amz-apigw-id': 'UyYBoE4AoAMFxYg=',
+##                                       'x-amzn-requestid': 'e2fa407d-55fc-42ac-9c6d-0c1e5f0f4275',
+##                                       'x-amzn-trace-id': 'Root=1-5f90d3a3-4c22533b15f3a54555d05241;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': '6082c4d8-85e3-4baf-9817-54b85fd440e1',
+##                       'RequestId': 'e2fa407d-55fc-42ac-9c6d-0c1e5f0f4275',
 ##                       'RetryAttempts': 0},
-##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/9b99892c-1fed-46aa-a0bb-2f800f927ae2',
-##  'jobId': '9b99892c-1fed-46aa-a0bb-2f800f927ae2',
-##  'jobName': 'pyfan-scatterline3-test-rmd_20201020214356222579'}
+##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/bae989b5-a9bc-432c-8204-7c15e844dec7',
+##  'jobId': 'bae989b5-a9bc-432c-8204-7c15e844dec7',
+##  'jobName': 'pyfan-scatterline3-test-rmd_20201021193441939530'}
 \end{verbatim}
 
 \hypertarget{docker-container}{%
@@ -2464,7 +2598,7 @@ Show CSV results:
 
 \begin{table}[!h]
 
-\caption{\label{tab:unnamed-chunk-74}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
+\caption{\label{tab:unnamed-chunk-80}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
 \hline
@@ -4328,6 +4462,125 @@ To Add Anaconda to Path, In Windows
 
 Alternatively, in windows, directly search for Path, and add the python and anaconda exe paths to paths.
 
+\hypertarget{documentation}{%
+\section{Documentation}\label{documentation}}
+
+\hypertarget{numpy-doc-documentation-guide}{%
+\subsection{Numpy Doc Documentation Guide}\label{numpy-doc-documentation-guide}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html}{sphinxcontrib-napoleon} examples.
+\item
+  \href{https://numpydoc.readthedocs.io/en/latest/format.html}{numpydoc} examples.
+\end{itemize}
+
+\hypertarget{parameters}{%
+\subsubsection{Parameters}\label{parameters}}
+
+Style 1:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Parameters}
+\ExtensionTok{----------}
+\ExtensionTok{n}\NormalTok{ : int}
+    \ExtensionTok{The}\NormalTok{ upper limit of the range to generate, from 0 to }\KeywordTok{`}\ExtensionTok{n}\KeywordTok{`}\NormalTok{ - 1.}
+\ExtensionTok{param1}\NormalTok{ : int}
+    \ExtensionTok{The}\NormalTok{ first parameter.}
+\ExtensionTok{param1}\NormalTok{ : str}
+    \ExtensionTok{Description}\NormalTok{ of }\KeywordTok{`}\ExtensionTok{param1}\KeywordTok{`}\NormalTok{.}
+\ExtensionTok{msg}\NormalTok{ : str}
+    \ExtensionTok{Human}\NormalTok{ readable string describing the exception.}
+\ExtensionTok{param1}\NormalTok{ : int}
+    \ExtensionTok{The}\NormalTok{ first parameter.}
+\ExtensionTok{param2}\NormalTok{ : str}
+    \ExtensionTok{The}\NormalTok{ second parameter.}
+\ExtensionTok{param3}\NormalTok{ : str, optional}
+    \ExtensionTok{The}\NormalTok{ second parameter.}
+\end{Highlighting}
+\end{Shaded}
+
+Style 2:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Parameters}
+\ExtensionTok{----------}
+\ExtensionTok{param2}\NormalTok{ : :obj:}\KeywordTok{`}\ExtensionTok{str}\KeywordTok{`}\NormalTok{, optional}
+    \ExtensionTok{The}\NormalTok{ second parameter.}
+\ExtensionTok{code}\NormalTok{ : :obj:}\KeywordTok{`}\ExtensionTok{int}\KeywordTok{`}\NormalTok{, optional}
+    \ExtensionTok{Numeric}\NormalTok{ error code.}
+\ExtensionTok{param3}\NormalTok{ : :obj:}\KeywordTok{`}\ExtensionTok{int}\KeywordTok{`}\NormalTok{, optional}
+    \ExtensionTok{Description}\NormalTok{ of }\KeywordTok{`}\ExtensionTok{param3}\KeywordTok{`}\NormalTok{.}
+\ExtensionTok{param4}\NormalTok{ : :obj:}\KeywordTok{`}\ExtensionTok{list}\KeywordTok{`}\NormalTok{ of :obj:}\KeywordTok{`}\ExtensionTok{str}\KeywordTok{`}
+    \ExtensionTok{Description}\NormalTok{ of }\KeywordTok{`}\ExtensionTok{param2}\KeywordTok{`}\NormalTok{. Multiple}
+    \ExtensionTok{lines}\NormalTok{ are supported.}
+\end{Highlighting}
+\end{Shaded}
+
+For args and kwargs:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Parameters}
+\ExtensionTok{----------}
+\ExtensionTok{*args}
+    \ExtensionTok{Variable}\NormalTok{ length argument list.}
+\ExtensionTok{**kwargs}
+    \ExtensionTok{Arbitrary}\NormalTok{ keyword arguments.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{returns}{%
+\subsubsection{Returns}\label{returns}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Returns}
+\ExtensionTok{-------}
+\ExtensionTok{numpy.array}\NormalTok{ of shape (1, it_draws)}
+    \ExtensionTok{A}\NormalTok{ vector of sorted or unsorted random grid points, or equi-quantile}
+    \ExtensionTok{points.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{examples}{%
+\subsubsection{Examples}\label{examples}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Examples}
+\ExtensionTok{--------}
+\OperatorTok{>>>} \ExtensionTok{fl_mu}\NormalTok{ = 0}
+\OperatorTok{>>>} \ExtensionTok{fl_sd}\NormalTok{ = 1}
+\OperatorTok{>>>} \ExtensionTok{it_draws}\NormalTok{ = 5}
+\OperatorTok{>>>} \ExtensionTok{it_seed}\NormalTok{ = 123}
+\OperatorTok{>>>} \ExtensionTok{fl_lower_sd}\NormalTok{ = -1}
+\OperatorTok{>>>} \ExtensionTok{fl_higher_sd}\NormalTok{ = 0.8}
+\OperatorTok{>>>} \ExtensionTok{it_draw_type}\NormalTok{ = 0}
+\OperatorTok{>>>} \ExtensionTok{ar_draw_random_normal}\NormalTok{(fl_mu, fl_sd, it_draws,}
+\ExtensionTok{...}\NormalTok{                       it_seed, it_draw_type,}
+\ExtensionTok{...}\NormalTok{                       fl_lower_sd, fl_higher_sd)}
+\NormalTok{[}\ExtensionTok{-1.}\NormalTok{          0.8         0.2829785 - 1. - 0.57860025]}
+\OperatorTok{>>>} \ExtensionTok{it_draw_type}\NormalTok{ = 1}
+\OperatorTok{>>>} \ExtensionTok{ar_draw_random_normal}\NormalTok{(fl_mu, fl_sd, it_draws,}
+\ExtensionTok{...}\NormalTok{                       it_seed, it_draw_type,}
+\ExtensionTok{...}\NormalTok{                       fl_lower_sd, fl_higher_sd)}
+\NormalTok{[}\ExtensionTok{-1.}\NormalTok{ - 0.47883617 - 0.06672597  0.3338994   0.8]}
+\OperatorTok{>>>} \ExtensionTok{it_draw_type}\NormalTok{ = 2}
+\OperatorTok{>>>} \ExtensionTok{ar_draw_random_normal}\NormalTok{(fl_mu, fl_sd, it_draws,}
+\ExtensionTok{...}\NormalTok{                       it_seed, it_draw_type,}
+\ExtensionTok{...}\NormalTok{                       fl_lower_sd, fl_higher_sd)}
+\NormalTok{[}\ExtensionTok{-1.}\NormalTok{ - 1. - 0.57860025  0.2829785   0.8]}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{appendix-appendix}{%
 \appendix}
 
@@ -4415,11 +4668,32 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
+\hypertarget{functions-links}{%
+\section{Functions links}\label{functions-links}}
+
+\hypertarget{section-3.1-function-argumentsfunction-arguments-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{function-arguments-1}{Section 3.1 Function Arguments} links}{Section 3.1 Function Arguments links}}\label{section-3.1-function-argumentsfunction-arguments-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html}{Tuple and Dictionary as Arguments with *args and **kwargs}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
+  \item
+    \textbf{python}: \emph{dict3 = \{dict1, dict2\} + dict1.update(dict2) + func(par1=`val1', kwargs)}
+  \end{itemize}
+\end{enumerate}
+
 \hypertarget{tables-and-graphs-links}{%
 \section{Tables and Graphs links}\label{tables-and-graphs-links}}
 
-\hypertarget{section-3.1-matplotlib-base-plotsmatplotlib-base-plots-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{matplotlib-base-plots}{Section 3.1 Matplotlib Base Plots} links}{Section 3.1 Matplotlib Base Plots links}}\label{section-3.1-matplotlib-base-plotsmatplotlib-base-plots-links}}
+\hypertarget{section-4.1-matplotlib-base-plotsmatplotlib-base-plots-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{matplotlib-base-plots}{Section 4.1 Matplotlib Base Plots} links}{Section 4.1 Matplotlib Base Plots links}}\label{section-4.1-matplotlib-base-plotsmatplotlib-base-plots-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4457,8 +4731,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \hypertarget{amazon-web-services-links}{%
 \section{Amazon Web Services links}\label{amazon-web-services-links}}
 
-\hypertarget{section-4.1-aws-setupaws-setup-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{aws-setup-1}{Section 4.1 AWS Setup} links}{Section 4.1 AWS Setup links}}\label{section-4.1-aws-setupaws-setup-links}}
+\hypertarget{section-5.1-aws-setupaws-setup-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{aws-setup-1}{Section 5.1 AWS Setup} links}{Section 5.1 AWS Setup links}}\label{section-5.1-aws-setupaws-setup-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4487,8 +4761,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-4.2-s3s3-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{s3}{Section 4.2 S3} links}{Section 4.2 S3 links}}\label{section-4.2-s3s3-links}}
+\hypertarget{section-5.2-s3s3-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{s3}{Section 5.2 S3} links}{Section 5.2 S3 links}}\label{section-5.2-s3s3-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4509,8 +4783,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-4.3-batchbatch-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{batch}{Section 4.3 Batch} links}{Section 4.3 Batch links}}\label{section-4.3-batchbatch-links}}
+\hypertarget{section-5.3-batchbatch-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{batch}{Section 5.3 Batch} links}{Section 5.3 Batch links}}\label{section-5.3-batchbatch-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4534,8 +4808,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \hypertarget{docker-container-links}{%
 \section{Docker Container links}\label{docker-container-links}}
 
-\hypertarget{section-5.1-docker-setupdocker-setup-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{docker-setup-1}{Section 5.1 Docker Setup} links}{Section 5.1 Docker Setup links}}\label{section-5.1-docker-setupdocker-setup-links}}
+\hypertarget{section-6.1-docker-setupdocker-setup-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{docker-setup-1}{Section 6.1 Docker Setup} links}{Section 6.1 Docker Setup links}}\label{section-6.1-docker-setupdocker-setup-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4575,8 +4849,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \hypertarget{get-data-links}{%
 \section{Get Data links}\label{get-data-links}}
 
-\hypertarget{section-6.1-environmental-dataenvironmental-data-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{environmental-data}{Section 6.1 Environmental Data} links}{Section 6.1 Environmental Data links}}\label{section-6.1-environmental-dataenvironmental-data-links}}
+\hypertarget{section-7.1-environmental-dataenvironmental-data-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{environmental-data}{Section 7.1 Environmental Data} links}{Section 7.1 Environmental Data links}}\label{section-7.1-environmental-dataenvironmental-data-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4600,8 +4874,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
 \hypertarget{system-and-support-links}{%
 \section{System and Support links}\label{system-and-support-links}}
 
-\hypertarget{section-7.1-command-linecommand-line-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{command-line}{Section 7.1 Command Line} links}{Section 7.1 Command Line links}}\label{section-7.1-command-linecommand-line-links}}
+\hypertarget{section-8.1-command-linecommand-line-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{command-line}{Section 8.1 Command Line} links}{Section 8.1 Command Line links}}\label{section-8.1-command-linecommand-line-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4630,8 +4904,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-7.2-file-in-and-outfile-in-and-out-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 7.2 File In and Out} links}{Section 7.2 File In and Out links}}\label{section-7.2-file-in-and-outfile-in-and-out-links}}
+\hypertarget{section-8.2-file-in-and-outfile-in-and-out-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{file-in-and-out}{Section 8.2 File In and Out} links}{Section 8.2 File In and Out links}}\label{section-8.2-file-in-and-outfile-in-and-out-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4696,8 +4970,8 @@ Alternatively, in windows, directly search for Path, and add the python and anac
   \end{itemize}
 \end{enumerate}
 
-\hypertarget{section-7.3-install-pythoninstall-python-links}{%
-\subsection{\texorpdfstring{\protect\hyperlink{install-python}{Section 7.3 Install Python} links}{Section 7.3 Install Python links}}\label{section-7.3-install-pythoninstall-python-links}}
+\hypertarget{section-8.3-install-pythoninstall-python-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{install-python}{Section 8.3 Install Python} links}{Section 8.3 Install Python links}}\label{section-8.3-install-pythoninstall-python-links}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4711,6 +4985,22 @@ Alternatively, in windows, directly search for Path, and add the python and anac
     Conda and git installations
   \item
     \textbf{bash}: \emph{where}
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{section-8.4-documentationdocumentation-links}{%
+\subsection{\texorpdfstring{\protect\hyperlink{documentation}{Section 8.4 Documentation} links}{Section 8.4 Documentation links}}\label{section-8.4-documentationdocumentation-links}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/support/documentation/htmlpdfr/fs_numpy_doc.html}{Python Documentation Numpy Doc}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation//fs_numpy_doc.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation/htmlpdfr/fs_numpy_doc.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation/htmlpdfr/fs_numpy_doc.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/support/documentation/htmlpdfr/fs_numpy_doc.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Numpy documentation examples.
   \end{itemize}
 \end{enumerate}
 

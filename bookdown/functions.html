@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Collection of Python Examples</title>
+  <title>Chapter 3 Functions | A Collection of Python Examples</title>
   <meta name="description" content="Python Implementation Examples for Research Tasks" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Collection of Python Examples" />
+  <meta property="og:title" content="Chapter 3 Functions | A Collection of Python Examples" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Collection of Python Examples" />
+  <meta name="twitter:title" content="Chapter 3 Functions | A Collection of Python Examples" />
   
   <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="data-structures.html"/>
+<link rel="prev" href="pandas.html"/>
+<link rel="next" href="tables-and-graphs.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -266,30 +266,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A Collection of Python Examples</h1>
-<p class="author"><em>Fan Wang</em></p>
-<p class="date"><em>2020-10-21</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p><a href="https://github.com/FanWangEcon/pyfan"><img src="http://hits.dwyl.com/fanwangecon/pyfan.svg" alt="HitCount" /></a> <a href="https://github.com/FanWangEcon/pyfan/stargazers"><img src="https://img.shields.io/github/stars/fanwangecon/pyfan?style=social" alt="Star" /></a> <a href="https://github.com/FanWangEcon/pyfan/network/members"><img src="https://img.shields.io/github/forks/fanwangecon/pyfan?style=social" alt="Fork" /></a> <a href="https://github.com/FanWangEcon/pyfan/watchers"><img src="https://img.shields.io/github/watchers/fanwangecon/pyfan?style=social" alt="Star" /></a> <a href="https://zenodo.org/badge/latestdoi/257089896"><img src="https://zenodo.org/badge/257089896.svg" alt="DOI" /></a></p>
-<p>The work-in-progress <a href="https://github.com/FanWangEcon/pyfan">pyfan</a> repository contains:</p>
-<ol style="list-style-type: decimal">
-<li>Tutorials and examples for various research tasks: <a href="https://fanwangecon.github.io/pyfan/bookdown"><strong>bookdown site</strong></a> and <a href="https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf"><strong>bookdown pdf</strong></a>.</li>
-<li>A package for basic data, graph and research tasks: <a href="https://pyfan.readthedocs.io/en/latest/"><strong>readthedocs</strong></a> and <a href="https://pypi.org/project/pyfan/"><strong>pypi</strong></a>.</li>
-</ol>
-<p>Materials are gathered from various <a href="https://fanwangecon.github.io/research">projects</a> in which python code is used for research and paper-administrative tasks. Files are from <a href="https://fanwangecon.github.io/"><strong>Fan</strong></a>’s <a href="https://github.com/FanWangEcon/pyfan">pyfan</a> repository which has an associated <a href="https://pypi.org/project/pyfan/">package</a>. The package functionalize various tasks tested out in the Rmd files. In addition, the <a href="https://github.com/FanWangEcon/pyecon">pyecon</a> repository and the associated <a href="https://pypi.org/project/pyecon/">package</a> (<a href="https://pyfan.readthedocs.io/en/latest/autoapi/pyfan/index.html#module-pyfan">readthedocs</a>) contain functions and rmd files related explicitly to solving economic models.</p>
-<p>From <a href="https://fanwangecon.github.io/">Fan</a>’s other repositories: For dynamic borrowing and savings problems, see <a href="https://fanwangecon.github.io/CodeDynaAsset/">Dynamic Asset Repository (Matlab)</a>; For code examples, see also <a href="https://fanwangecon.github.io/M4Econ/">Matlab Example Code</a>, <a href="https://fanwangecon.github.io/R4Econ/">R Example Code</a>, and <a href="https://fanwangecon.github.io/Stata4Econ/">Stata Example Code</a>; For intro econ with Matlab, see <a href="https://fanwangecon.github.io/Math4Econ/">Intro Mathematics for Economists</a>, and for intro stat with R, see <a href="https://fanwangecon.github.io/Stat4Econ/">Intro Statistics for Undergraduates</a>. See <a href="https://github.com/FanWangEcon">here</a> for all of <a href="https://fanwangecon.github.io/">Fan</a>’s public repositories.</p>
-<p>The site is built using <a href="https://bookdown.org/">Bookdown</a> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
-<p>Please contact <a href="https://fanwangecon.github.io/">FanWangEcon</a> for issues or problems.</p>
-<p><a href="https://github.com/FanWangEcon/pyfan/commits/master"><img src="https://img.shields.io/github/last-commit/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/graphs/commit-activity"><img src="https://img.shields.io/github/commit-activity/m/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/issues"><img src="https://img.shields.io/github/issues/fanwangecon/pyfan" /></a> <a href="https://github.com/FanWangEcon/pyfan/pulls"><img src="https://img.shields.io/github/issues-pr/fanwangecon/pyfan" /></a></p>
+<div id="functions" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Functions</h1>
+
+<div id="function-arguments" class="section level2">
+<h2><span class="header-section-number">3.1</span> Function Arguments</h2>
+
+<div id="function-arguments-1" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Function Arguments</h3>
+<blockquote>
+<p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="functions.html#cb37-1"></a><span class="im">import</span> pprint</span></code></pre></div>
+<div id="python-dictionary-as-argument-via-kwargs" class="section level4">
+<h4><span class="header-section-number">3.1.1.1</span> Python Dictionary As Argument via kwargs</h4>
+<p>There is a python function that outputs a dictionary with key and value pairs that specify key aspects of how a model should be solved. For example, one of the parameters could specify the <em>vcpu</em> requirement. This <em>vcpu</em> requirement might change, and so it should be easy to update this key with alternative values.</p>
+<p>These are accomplished in the following manner. Define the full key-value pair list, with default values for several dictionaries, with model simulation, support, and compute parameters for example. These lists could be updated with some default alternative combinations, or alternatively, it could be updated with externally provided dictionary with both updated values for existing keys, or even additional key value pairs.</p>
+<p>First, we create a function that processes and outputs default parameters, it has two inputs, <em>it_default_group</em> to specify pre-fixed adjustments from defaults, and <em>kwargs</em> that allows for arbitrarily modifications and additions to parameter dictionary.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="functions.html#cb38-1"></a><span class="kw">def</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb38-2"><a href="functions.html#cb38-2"></a>    <span class="co"># A. Define the default parameter keys and values</span></span>
+<span id="cb38-3"><a href="functions.html#cb38-3"></a>    esti_specs <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStates&#39;</span>,</span>
+<span id="cb38-4"><a href="functions.html#cb38-4"></a>                  <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805a&#39;</span>],</span>
+<span id="cb38-5"><a href="functions.html#cb38-5"></a>                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb38-6"><a href="functions.html#cb38-6"></a>                  <span class="st">&#39;esti_max_func_eval&#39;</span>: <span class="dv">10</span>,</span>
+<span id="cb38-7"><a href="functions.html#cb38-7"></a>                  <span class="st">&#39;graph_frequncy&#39;</span>: <span class="dv">20</span>}</span>
+<span id="cb38-8"><a href="functions.html#cb38-8"></a>    compute_specs <span class="op">=</span> {<span class="st">&#39;cpu&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">1</span>),</span>
+<span id="cb38-9"><a href="functions.html#cb38-9"></a>                     <span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">517</span>),  <span class="co"># only need about 160 mb in reality</span></span>
+<span id="cb38-10"><a href="functions.html#cb38-10"></a>                     <span class="st">&#39;workers&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb38-11"><a href="functions.html#cb38-11"></a>                     <span class="st">&#39;aws_fargate&#39;</span>: <span class="va">False</span>}</span>
+<span id="cb38-12"><a href="functions.html#cb38-12"></a></span>
+<span id="cb38-13"><a href="functions.html#cb38-13"></a>    <span class="co"># B. For different</span></span>
+<span id="cb38-14"><a href="functions.html#cb38-14"></a>    compesti_specs <span class="op">=</span> {<span class="op">**</span>compute_specs, <span class="op">**</span>esti_specs}</span>
+<span id="cb38-15"><a href="functions.html#cb38-15"></a></span>
+<span id="cb38-16"><a href="functions.html#cb38-16"></a>    <span class="co"># C. Update dictionaries with parameter group values</span></span>
+<span id="cb38-17"><a href="functions.html#cb38-17"></a>    <span class="cf">if</span> it_default_group <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb38-18"><a href="functions.html#cb38-18"></a>        compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">55</span>),</span>
+<span id="cb38-19"><a href="functions.html#cb38-19"></a>                                  <span class="st">&#39;compute_param_vec_count&#39;</span>: <span class="dv">6</span>,</span>
+<span id="cb38-20"><a href="functions.html#cb38-20"></a>                                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">640</span>}</span>
+<span id="cb38-21"><a href="functions.html#cb38-21"></a>        compesti_specs.update(compesti_specs_updates)</span>
+<span id="cb38-22"><a href="functions.html#cb38-22"></a></span>
+<span id="cb38-23"><a href="functions.html#cb38-23"></a>    <span class="co"># D. Update with kward, could append new</span></span>
+<span id="cb38-24"><a href="functions.html#cb38-24"></a>    compesti_specs.update(kwargs)</span>
+<span id="cb38-25"><a href="functions.html#cb38-25"></a></span>
+<span id="cb38-26"><a href="functions.html#cb38-26"></a>    <span class="cf">return</span> compesti_specs</span></code></pre></div>
+<p>Second, we test the defaults:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="functions.html#cb39-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec()</span>
+<span id="cb39-2"><a href="functions.html#cb39-2"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## {&#39;aws_fargate&#39;: False,
+##  &#39;cpu&#39;: &#39;1024&#39;,
+##  &#39;esti_max_func_eval&#39;: 10,
+##  &#39;esti_method&#39;: &#39;MomentsSimuStates&#39;,
+##  &#39;esti_param_vec_count&#39;: 1,
+##  &#39;graph_frequncy&#39;: 20,
+##  &#39;memory&#39;: &#39;517&#39;,
+##  &#39;momsets_type&#39;: [&#39;a&#39;,
+##                   &#39;20180805a&#39;],
+##  &#39;workers&#39;: 1}</code></pre>
+<p>Third, we test using default group 1, pre-fixed changes to defaults:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="functions.html#cb41-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb41-2"><a href="functions.html#cb41-2"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## {&#39;aws_fargate&#39;: False,
+##  &#39;compute_param_vec_count&#39;: 6,
+##  &#39;cpu&#39;: &#39;1024&#39;,
+##  &#39;esti_max_func_eval&#39;: 10,
+##  &#39;esti_method&#39;: &#39;MomentsSimuStates&#39;,
+##  &#39;esti_param_vec_count&#39;: 640,
+##  &#39;graph_frequncy&#39;: 20,
+##  &#39;memory&#39;: &#39;56320&#39;,
+##  &#39;momsets_type&#39;: [&#39;a&#39;,
+##                   &#39;20180805a&#39;],
+##  &#39;workers&#39;: 1}</code></pre>
+<p>Fourth, we use kwargs to feed in arbitrary dictionary to update and append to existing parameter dictionary:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="functions.html#cb43-1"></a>compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStateszzz&#39;</span>,</span>
+<span id="cb43-2"><a href="functions.html#cb43-2"></a>                          <span class="st">&#39;moments_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
+<span id="cb43-3"><a href="functions.html#cb43-3"></a>                          <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
+<span id="cb43-4"><a href="functions.html#cb43-4"></a>                          <span class="st">&#39;momsets_type_uuu&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>]}</span>
+<span id="cb43-5"><a href="functions.html#cb43-5"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>compesti_specs_updates)</span>
+<span id="cb43-6"><a href="functions.html#cb43-6"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## {&#39;aws_fargate&#39;: False,
+##  &#39;cpu&#39;: &#39;1024&#39;,
+##  &#39;esti_max_func_eval&#39;: 10,
+##  &#39;esti_method&#39;: &#39;MomentsSimuStateszzz&#39;,
+##  &#39;esti_param_vec_count&#39;: 1,
+##  &#39;graph_frequncy&#39;: 20,
+##  &#39;memory&#39;: &#39;517&#39;,
+##  &#39;moments_type&#39;: [&#39;a&#39;,
+##                   &#39;20180805azzz&#39;],
+##  &#39;momsets_type&#39;: [&#39;a&#39;,
+##                   &#39;20180805azzz&#39;],
+##  &#39;momsets_type_uuu&#39;: [&#39;a&#39;,
+##                       &#39;20180805azzz&#39;],
+##  &#39;workers&#39;: 1}</code></pre>
 
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
 </div>
 </div>
             </section>
@@ -297,8 +367,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="data-structures.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tables-and-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

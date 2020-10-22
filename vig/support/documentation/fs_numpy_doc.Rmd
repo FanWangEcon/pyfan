@@ -1,0 +1,120 @@
+---
+title: "Python Documentation Numpy Doc"
+titleshort: "Python Documentation Numpy Doc"
+description: |
+  Numpy documentation examples.
+date: 2020-10-21
+date_start: 2020-10-21
+output:
+  pdf_document:
+    pandoc_args: '../../../_output_kniti_pdf.yaml'
+    includes:
+      in_header: '../../../preamble.tex'
+  html_document:
+    pandoc_args: '../../../_output_kniti_html.yaml'
+    includes:
+      in_header: "../../../hdga.html"
+always_allow_html: true
+urlcolor: blue
+---
+
+### Numpy Doc Documentation Guide
+
+```{r global_options, include = FALSE}
+try(source("../../../.Rprofile"))
+```
+
+`r text_shared_preamble_one`
+`r text_shared_preamble_two`
+`r text_shared_preamble_thr`
+
+- [sphinxcontrib-napoleon](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html) examples.
+- [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html) examples.
+
+#### Parameters
+
+Style 1:
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Parameters
+----------
+n : int
+    The upper limit of the range to generate, from 0 to `n` - 1.
+param1 : int
+    The first parameter.
+param1 : str
+    Description of `param1`.
+msg : str
+    Human readable string describing the exception.
+param1 : int
+    The first parameter.
+param2 : str
+    The second parameter.
+param3 : str, optional
+    The second parameter.
+```
+
+Style 2:
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Parameters
+----------
+param2 : :obj:`str`, optional
+    The second parameter.
+code : :obj:`int`, optional
+    Numeric error code.
+param3 : :obj:`int`, optional
+    Description of `param3`.
+param4 : :obj:`list` of :obj:`str`
+    Description of `param2`. Multiple
+    lines are supported.
+```
+
+For args and kwargs:
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Parameters
+----------
+*args
+    Variable length argument list.
+**kwargs
+    Arbitrary keyword arguments.
+```
+
+#### Returns
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Returns
+-------
+numpy.array of shape (1, it_draws)
+    A vector of sorted or unsorted random grid points, or equi-quantile
+    points.
+```
+
+#### Examples
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Examples
+--------
+>>> fl_mu = 0
+>>> fl_sd = 1
+>>> it_draws = 5
+>>> it_seed = 123
+>>> fl_lower_sd = -1
+>>> fl_higher_sd = 0.8
+>>> it_draw_type = 0
+>>> ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+...                       it_seed, it_draw_type,
+...                       fl_lower_sd, fl_higher_sd)
+[-1.          0.8         0.2829785 - 1. - 0.57860025]
+>>> it_draw_type = 1
+>>> ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+...                       it_seed, it_draw_type,
+...                       fl_lower_sd, fl_higher_sd)
+[-1. - 0.47883617 - 0.06672597  0.3338994   0.8]
+>>> it_draw_type = 2
+>>> ar_draw_random_normal(fl_mu, fl_sd, it_draws,
+...                       it_seed, it_draw_type,
+...                       fl_lower_sd, fl_higher_sd)
+[-1. - 1. - 0.57860025  0.2829785   0.8]
+```

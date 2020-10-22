@@ -19,6 +19,10 @@ rmd_files:
   - vig/panda/basics/main.Rmd
   - vig/panda/basics/fs_matrix2dataframe.Rmd
 
+  - vig/function/main.Rmd
+  - vig/function/args/main.Rmd
+  - vig/function/args/fs_func_args.Rmd
+
   - vig/tabgraph/main.Rmd
   - vig/tabgraph/baseplot/main.Rmd
   - vig/tabgraph/baseplot/fp_plot_base.Rmd
@@ -55,6 +59,9 @@ rmd_files:
 
   - vig/support/install/main.Rmd
   - vig/support/install/fs_install_basics.Rmd
+
+  - vig/support/documentation/main.Rmd
+  - vig/support/documentation/fs_numpy_doc.Rmd
 
   - README_appendix.md
 
