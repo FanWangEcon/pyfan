@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE-----------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -33,6 +33,10 @@ try(source("../../../.Rprofile"))
 ## param3 : str, optional
 
 ##     The second parameter.
+
+## param5: dict
+
+##     A dictionary
 
 
 ## Parameters
@@ -82,6 +86,13 @@ try(source("../../../.Rprofile"))
 ##     points.
 
 
+## Returns
+
+## -------
+
+## None
+
+
 ## Examples
 
 ## --------
@@ -127,4 +138,21 @@ try(source("../../../.Rprofile"))
 ## ...                       fl_lower_sd, fl_higher_sd)
 
 ## [-1. - 1. - 0.57860025  0.2829785   0.8]
+
+
+## Examples
+
+## --------
+
+## >>> log_vig_start(spt_root = proj_sys_sup.main_directory(),
+
+## ...               main_folder_name='logvig', sub_folder_name='parameters',
+
+## ...               subsub_folder_name='combo_type',
+
+## ...               file_name='fs_gen_combo_type',
+
+## ...               it_time_format=8, log_level=logging.INFO)
+
+## C:\\Users\\fan\\logvig\\parameters\\combo_type\\fs_gen_combo_type_20201030.log.py
 

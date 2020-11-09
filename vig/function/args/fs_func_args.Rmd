@@ -1,8 +1,9 @@
 ---
 title: "Python Function Tuple and Dictionary as Arguments with *args and **kwargs"
-titleshort: "Tuple and Dictionary as Arguments with *args and **kwargs"
+titleshort: "Tuple and Dictionary as Arguments with args and kwargs"
 description: |
   Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
+  Pass a dictionary for named arguments to a function.
 core:
   - package: python
     code: |
@@ -99,3 +100,36 @@ compesti_specs_updates = {'esti_method': 'MomentsSimuStateszzz',
 compesti_specs = gen_compesti_spec(it_default_group=None, **compesti_specs_updates)
 pprint.pprint(compesti_specs, width=1)
 ```
+
+#### Named Argument List and Dictionary 
+
+Define a function with named and unnamed arguments:
+
+```{python}
+def gen_compesti_spec_named(it_default_group, esti_method, memory=123, graph_frequncy=10):
+    # A. Define the default parameter keys and values
+    esti_specs = {'esti_method': 'MomentsSimuStates',
+                  'momsets_type': ['a', '20180805a'],
+                  'it_default_group': it_default_group,
+                  'esti_param_vec_count': 1,
+                  'esti_max_func_eval': 10,
+                  'graph_frequncy': graph_frequncy}
+    compute_specs = {'cpu': str(1024 * 1),
+                     'memory': str(memory),  # only need about 160 mb in reality
+                     'workers': 1,
+                     'aws_fargate': False}
+
+    # B. For different
+    compesti_specs = {**compute_specs, **esti_specs}
+
+    return compesti_specs
+```
+
+Provide inputs for the first two unnamed parameters explicitly. Then provided the two named parameters via a dictionary:
+
+```{python}
+dc_inputs = {'memory':12345, 'graph_frequncy':2}
+compesti_specs = gen_compesti_spec_named(None, 'MomentsSimuStates', **dc_inputs)
+pprint.pprint(compesti_specs, width=1)
+```
+

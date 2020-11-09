@@ -116,7 +116,7 @@ if(!is.null(spt_file_current)) {
   # Common Shared Text and Strings
   total_area <- (800 * 7) / 2
   bl_own_file <- TRUE
-  if (st_file_wno_suffix == 'A-Collection-of-Python-Examples') {
+  if (st_file_wno_suffix == 'Data-Structures-and-Cloud-Services-with-Python') {
     bl_own_file <- FALSE
     text_shared_preamble_one <- paste0("> Go back to [fan](http://fanwangecon.github.io/)'s [Python Code Examples](https://fanwangecon.github.io/pyfan/) Repository ([bookdown site](https://fanwangecon.github.io/pyfan/bookdown)).")
   } else {

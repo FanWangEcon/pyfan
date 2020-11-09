@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Get Data | A Collection of Python Examples</title>
+  <title>Chapter 7 Get Data | Data Structures and Cloud Services with Python</title>
   <meta name="description" content="Python Implementation Examples for Research Tasks" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Get Data | A Collection of Python Examples" />
+  <meta property="og:title" content="Chapter 7 Get Data | Data Structures and Cloud Services with Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Get Data | A Collection of Python Examples" />
+  <meta name="twitter:title" content="Chapter 7 Get Data | Data Structures and Cloud Services with Python" />
   
   <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-10-21" />
+<meta name="date" content="2020-11-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,13 +141,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Collection of Python Examples</a></li>
+<li><a href="./">Data Structures and Cloud Services with Python</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a><ul>
 <li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="data-structures.html"><a href="data-structures.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
+<li class="chapter" data-level="1.1.2" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>1.1.2</b> List</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="data-structures.html"><a href="data-structures.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
@@ -258,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of Python Examples</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Structures and Cloud Services with Python</a>
           </h1>
         </div>
 
@@ -282,18 +283,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>Download <a href="https://www.anaconda.com/products/individual">Anaconda</a> for Python 3. For more involved conda instructions see <a href="https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html">here</a></p></li>
 <li><p>Open up <em>anaconda prompt</em> with admin rights (right click choose as admin).</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="get-data.html#cb107-1"></a><span class="co"># Inside anaconda prompt</span></span>
-<span id="cb107-2"><a href="get-data.html#cb107-2"></a><span class="ex">where</span> python</span>
-<span id="cb107-3"><a href="get-data.html#cb107-3"></a><span class="ex">where</span> anaconda</span>
-<span id="cb107-4"><a href="get-data.html#cb107-4"></a><span class="co"># C:/ProgramData/Anaconda3/Scripts/anaconda.exe</span></span>
-<span id="cb107-5"><a href="get-data.html#cb107-5"></a><span class="co"># C:/ProgramData/Anaconda3/python.exe</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb150"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb150-1"><a href="get-data.html#cb150-1"></a><span class="co"># Inside anaconda prompt</span></span>
+<span id="cb150-2"><a href="get-data.html#cb150-2"></a><span class="ex">where</span> python</span>
+<span id="cb150-3"><a href="get-data.html#cb150-3"></a><span class="ex">where</span> anaconda</span>
+<span id="cb150-4"><a href="get-data.html#cb150-4"></a><span class="co"># C:/ProgramData/Anaconda3/Scripts/anaconda.exe</span></span>
+<span id="cb150-5"><a href="get-data.html#cb150-5"></a><span class="co"># C:/ProgramData/Anaconda3/python.exe</span></span></code></pre></div></li>
 <li><p>Add to Path</p></li>
 <li><p>Install cdsapi and eccodes</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="get-data.html#cb108-1"></a><span class="ex">conda</span> config --add channels conda-forge</span>
-<span id="cb108-2"><a href="get-data.html#cb108-2"></a><span class="ex">conda</span> install -c anaconda pandas</span>
-<span id="cb108-3"><a href="get-data.html#cb108-3"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
-<span id="cb108-4"><a href="get-data.html#cb108-4"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
-<span id="cb108-5"><a href="get-data.html#cb108-5"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div></li>
+<div class="sourceCode" id="cb151"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb151-1"><a href="get-data.html#cb151-1"></a><span class="ex">conda</span> config --add channels conda-forge</span>
+<span id="cb151-2"><a href="get-data.html#cb151-2"></a><span class="ex">conda</span> install -c anaconda pandas</span>
+<span id="cb151-3"><a href="get-data.html#cb151-3"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
+<span id="cb151-4"><a href="get-data.html#cb151-4"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
+<span id="cb151-5"><a href="get-data.html#cb151-5"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div></li>
 </ol>
 </div>
 <div id="account-registration" class="section level4">
@@ -307,8 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>together they should look like: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX</li>
 </ul></li>
 <li><p>Open up an editor (notepad++ for example), create an empty file, paste the url and your UID:APIKEY into the file as below. Save file as: <em>C:/Users/fan/.cdsapirc</em>. Under user root, as <em>.cdsapirc</em> file. Note <em>.cdsapirc</em> is the file name, you are saving that under the directory <em>C:/Users/fan/</em>.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="get-data.html#cb109-1"></a><span class="ex">url</span>: https://cds.climate.copernicus.eu/api/v2</span>
-<span id="cb109-2"><a href="get-data.html#cb109-2"></a><span class="ex">key</span>: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX</span></code></pre></div></li>
+<div class="sourceCode" id="cb152"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb152-1"><a href="get-data.html#cb152-1"></a><span class="ex">url</span>: https://cds.climate.copernicus.eu/api/v2</span>
+<span id="cb152-2"><a href="get-data.html#cb152-2"></a><span class="ex">key</span>: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX</span></code></pre></div></li>
 </ol>
 </div>
 <div id="run-api-request-via-jupyter-notebook" class="section level4">
@@ -322,33 +323,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>create a new <em>python3</em> file somewhere you like</p></li>
 <li><p>name the file <em>cdstest</em> (saved as ipynb file)</p></li>
 <li><p>paste the code below inside the <em>ipynb</em> file you opened (modify <em>spt_root</em>):</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="get-data.html#cb110-1"></a><span class="im">import</span> cdsapi</span>
-<span id="cb110-2"><a href="get-data.html#cb110-2"></a><span class="im">import</span> urllib.request</span>
-<span id="cb110-3"><a href="get-data.html#cb110-3"></a><span class="co"># download folder</span></span>
-<span id="cb110-4"><a href="get-data.html#cb110-4"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/downloads/_data/&quot;</span></span>
-<span id="cb110-5"><a href="get-data.html#cb110-5"></a>spn_dl_test_grib <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp.grib&quot;</span></span>
-<span id="cb110-6"><a href="get-data.html#cb110-6"></a><span class="co"># request</span></span>
-<span id="cb110-7"><a href="get-data.html#cb110-7"></a>c <span class="op">=</span> cdsapi.Client()</span>
-<span id="cb110-8"><a href="get-data.html#cb110-8"></a>res <span class="op">=</span> c.retrieve(<span class="st">&quot;reanalysis-era5-pressure-levels&quot;</span>,</span>
-<span id="cb110-9"><a href="get-data.html#cb110-9"></a>  {</span>
-<span id="cb110-10"><a href="get-data.html#cb110-10"></a>    <span class="st">&#39;product_type&#39;</span>: <span class="st">&#39;reanalysis&#39;</span>,</span>
-<span id="cb110-11"><a href="get-data.html#cb110-11"></a>    <span class="st">&#39;variable&#39;</span>: <span class="st">&#39;temperature&#39;</span>,</span>
-<span id="cb110-12"><a href="get-data.html#cb110-12"></a>    <span class="st">&#39;pressure_level&#39;</span>: <span class="st">&#39;1000&#39;</span>,</span>
-<span id="cb110-13"><a href="get-data.html#cb110-13"></a>    <span class="st">&#39;year&#39;</span>: <span class="st">&#39;2008&#39;</span>,</span>
-<span id="cb110-14"><a href="get-data.html#cb110-14"></a>    <span class="st">&#39;month&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
-<span id="cb110-15"><a href="get-data.html#cb110-15"></a>    <span class="st">&#39;day&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
-<span id="cb110-16"><a href="get-data.html#cb110-16"></a>    <span class="st">&#39;time&#39;</span>: <span class="st">&#39;12:00&#39;</span>,</span>
-<span id="cb110-17"><a href="get-data.html#cb110-17"></a>    <span class="st">&#39;format&#39;</span>: <span class="st">&#39;netcdf&#39;</span>,</span>
-<span id="cb110-18"><a href="get-data.html#cb110-18"></a>    <span class="st">&#39;area&#39;</span>          : [<span class="fl">53.31</span>, <span class="dv">73</span>, <span class="fl">4.15</span>, <span class="dv">135</span>],</span>
-<span id="cb110-19"><a href="get-data.html#cb110-19"></a>    <span class="st">&#39;grid&#39;</span>          : [<span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
-<span id="cb110-20"><a href="get-data.html#cb110-20"></a>    <span class="st">&quot;format&quot;</span>: <span class="st">&quot;grib&quot;</span></span>
-<span id="cb110-21"><a href="get-data.html#cb110-21"></a>  },</span>
-<span id="cb110-22"><a href="get-data.html#cb110-22"></a>  spn_dl_test_grib</span>
-<span id="cb110-23"><a href="get-data.html#cb110-23"></a>)</span>
-<span id="cb110-24"><a href="get-data.html#cb110-24"></a><span class="co"># show results</span></span>
-<span id="cb110-25"><a href="get-data.html#cb110-25"></a><span class="bu">print</span>(<span class="st">&#39;print results&#39;</span>)</span>
-<span id="cb110-26"><a href="get-data.html#cb110-26"></a><span class="bu">print</span>(res)</span>
-<span id="cb110-27"><a href="get-data.html#cb110-27"></a><span class="bu">print</span>(<span class="bu">type</span>(res))</span></code></pre></div></li>
+<div class="sourceCode" id="cb153"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb153-1"><a href="get-data.html#cb153-1"></a><span class="im">import</span> cdsapi</span>
+<span id="cb153-2"><a href="get-data.html#cb153-2"></a><span class="im">import</span> urllib.request</span>
+<span id="cb153-3"><a href="get-data.html#cb153-3"></a><span class="co"># download folder</span></span>
+<span id="cb153-4"><a href="get-data.html#cb153-4"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/downloads/_data/&quot;</span></span>
+<span id="cb153-5"><a href="get-data.html#cb153-5"></a>spn_dl_test_grib <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp.grib&quot;</span></span>
+<span id="cb153-6"><a href="get-data.html#cb153-6"></a><span class="co"># request</span></span>
+<span id="cb153-7"><a href="get-data.html#cb153-7"></a>c <span class="op">=</span> cdsapi.Client()</span>
+<span id="cb153-8"><a href="get-data.html#cb153-8"></a>res <span class="op">=</span> c.retrieve(<span class="st">&quot;reanalysis-era5-pressure-levels&quot;</span>,</span>
+<span id="cb153-9"><a href="get-data.html#cb153-9"></a>  {</span>
+<span id="cb153-10"><a href="get-data.html#cb153-10"></a>    <span class="st">&#39;product_type&#39;</span>: <span class="st">&#39;reanalysis&#39;</span>,</span>
+<span id="cb153-11"><a href="get-data.html#cb153-11"></a>    <span class="st">&#39;variable&#39;</span>: <span class="st">&#39;temperature&#39;</span>,</span>
+<span id="cb153-12"><a href="get-data.html#cb153-12"></a>    <span class="st">&#39;pressure_level&#39;</span>: <span class="st">&#39;1000&#39;</span>,</span>
+<span id="cb153-13"><a href="get-data.html#cb153-13"></a>    <span class="st">&#39;year&#39;</span>: <span class="st">&#39;2008&#39;</span>,</span>
+<span id="cb153-14"><a href="get-data.html#cb153-14"></a>    <span class="st">&#39;month&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
+<span id="cb153-15"><a href="get-data.html#cb153-15"></a>    <span class="st">&#39;day&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
+<span id="cb153-16"><a href="get-data.html#cb153-16"></a>    <span class="st">&#39;time&#39;</span>: <span class="st">&#39;12:00&#39;</span>,</span>
+<span id="cb153-17"><a href="get-data.html#cb153-17"></a>    <span class="st">&#39;format&#39;</span>: <span class="st">&#39;netcdf&#39;</span>,</span>
+<span id="cb153-18"><a href="get-data.html#cb153-18"></a>    <span class="st">&#39;area&#39;</span>          : [<span class="fl">53.31</span>, <span class="dv">73</span>, <span class="fl">4.15</span>, <span class="dv">135</span>],</span>
+<span id="cb153-19"><a href="get-data.html#cb153-19"></a>    <span class="st">&#39;grid&#39;</span>          : [<span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
+<span id="cb153-20"><a href="get-data.html#cb153-20"></a>    <span class="st">&quot;format&quot;</span>: <span class="st">&quot;grib&quot;</span></span>
+<span id="cb153-21"><a href="get-data.html#cb153-21"></a>  },</span>
+<span id="cb153-22"><a href="get-data.html#cb153-22"></a>  spn_dl_test_grib</span>
+<span id="cb153-23"><a href="get-data.html#cb153-23"></a>)</span>
+<span id="cb153-24"><a href="get-data.html#cb153-24"></a><span class="co"># show results</span></span>
+<span id="cb153-25"><a href="get-data.html#cb153-25"></a><span class="bu">print</span>(<span class="st">&#39;print results&#39;</span>)</span>
+<span id="cb153-26"><a href="get-data.html#cb153-26"></a><span class="bu">print</span>(res)</span>
+<span id="cb153-27"><a href="get-data.html#cb153-27"></a><span class="bu">print</span>(<span class="bu">type</span>(res))</span></code></pre></div></li>
 <li><p>click run</p></li>
 </ol>
 </div>
@@ -368,9 +369,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>inside conda prompt cd into the folder where you downloaded the grib file</p></li>
 <li><p><em>grib_ls</em> shows what is in the grib file</p></li>
 <li><p><em>grib_get_data</em> translates grib to csv</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="get-data.html#cb111-1"></a><span class="bu">cd</span> <span class="st">&quot;C:/Users/fan/downloads/_data/&quot;</span></span>
-<span id="cb111-2"><a href="get-data.html#cb111-2"></a><span class="ex">grib_ls</span> test_china_temp.grib</span>
-<span id="cb111-3"><a href="get-data.html#cb111-3"></a><span class="ex">grib_get_data</span> test_china_temp.grib <span class="op">&gt;</span> test_china_temp_raw.csv</span></code></pre></div></li>
+<div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb154-1"><a href="get-data.html#cb154-1"></a><span class="bu">cd</span> <span class="st">&quot;C:/Users/fan/downloads/_data/&quot;</span></span>
+<span id="cb154-2"><a href="get-data.html#cb154-2"></a><span class="ex">grib_ls</span> test_china_temp.grib</span>
+<span id="cb154-3"><a href="get-data.html#cb154-3"></a><span class="ex">grib_get_data</span> test_china_temp.grib <span class="op">&gt;</span> test_china_temp_raw.csv</span></code></pre></div></li>
 </ol>
 </div>
 <div id="more-advanced-download-setup-and-instructions" class="section level4">
@@ -378,48 +379,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="conda-enviornment-and-installation" class="section level5">
 <h5><span class="header-section-number">7.1.1.6.1</span> Conda Enviornment and Installation</h5>
 <p>In conda, set up a conda environment for downloading ECMWF data using the ECMWF API. (<a href="https://fanwangecon.github.io/Tex4Econ/nontex/install/windows/fn_installations.html">Conda Set-up</a>)</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="get-data.html#cb112-1"></a><span class="co"># Set up</span></span>
-<span id="cb112-2"><a href="get-data.html#cb112-2"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-3"><a href="get-data.html#cb112-3"></a><span class="ex">conda</span> list env</span>
-<span id="cb112-4"><a href="get-data.html#cb112-4"></a><span class="ex">conda</span> env remove -n wk_ecmwf</span>
-<span id="cb112-5"><a href="get-data.html#cb112-5"></a><span class="ex">conda</span> create -n wk_ecmwf -y</span>
-<span id="cb112-6"><a href="get-data.html#cb112-6"></a><span class="ex">conda</span> activate wk_ecmwf</span>
-<span id="cb112-7"><a href="get-data.html#cb112-7"></a></span>
-<span id="cb112-8"><a href="get-data.html#cb112-8"></a><span class="co"># Add conda-forge to channel in env</span></span>
-<span id="cb112-9"><a href="get-data.html#cb112-9"></a><span class="ex">conda</span> config --env --add channels conda-forge</span>
-<span id="cb112-10"><a href="get-data.html#cb112-10"></a><span class="ex">conda</span> config --get channels</span>
-<span id="cb112-11"><a href="get-data.html#cb112-11"></a><span class="ex">conda</span> config --get channels --env</span>
-<span id="cb112-12"><a href="get-data.html#cb112-12"></a></span>
-<span id="cb112-13"><a href="get-data.html#cb112-13"></a><span class="co"># Install</span></span>
-<span id="cb112-14"><a href="get-data.html#cb112-14"></a><span class="ex">conda</span> install cdsapi -y</span>
-<span id="cb112-15"><a href="get-data.html#cb112-15"></a><span class="ex">conda</span> install -c anaconda pandas</span>
-<span id="cb112-16"><a href="get-data.html#cb112-16"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
-<span id="cb112-17"><a href="get-data.html#cb112-17"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
-<span id="cb112-18"><a href="get-data.html#cb112-18"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb155-1"><a href="get-data.html#cb155-1"></a><span class="co"># Set up</span></span>
+<span id="cb155-2"><a href="get-data.html#cb155-2"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb155-3"><a href="get-data.html#cb155-3"></a><span class="ex">conda</span> list env</span>
+<span id="cb155-4"><a href="get-data.html#cb155-4"></a><span class="ex">conda</span> env remove -n wk_ecmwf</span>
+<span id="cb155-5"><a href="get-data.html#cb155-5"></a><span class="ex">conda</span> create -n wk_ecmwf -y</span>
+<span id="cb155-6"><a href="get-data.html#cb155-6"></a><span class="ex">conda</span> activate wk_ecmwf</span>
+<span id="cb155-7"><a href="get-data.html#cb155-7"></a></span>
+<span id="cb155-8"><a href="get-data.html#cb155-8"></a><span class="co"># Add conda-forge to channel in env</span></span>
+<span id="cb155-9"><a href="get-data.html#cb155-9"></a><span class="ex">conda</span> config --env --add channels conda-forge</span>
+<span id="cb155-10"><a href="get-data.html#cb155-10"></a><span class="ex">conda</span> config --get channels</span>
+<span id="cb155-11"><a href="get-data.html#cb155-11"></a><span class="ex">conda</span> config --get channels --env</span>
+<span id="cb155-12"><a href="get-data.html#cb155-12"></a></span>
+<span id="cb155-13"><a href="get-data.html#cb155-13"></a><span class="co"># Install</span></span>
+<span id="cb155-14"><a href="get-data.html#cb155-14"></a><span class="ex">conda</span> install cdsapi -y</span>
+<span id="cb155-15"><a href="get-data.html#cb155-15"></a><span class="ex">conda</span> install -c anaconda pandas</span>
+<span id="cb155-16"><a href="get-data.html#cb155-16"></a><span class="ex">conda</span> install -c conda-forge eccodes -y</span>
+<span id="cb155-17"><a href="get-data.html#cb155-17"></a><span class="ex">conda</span> install -c conda-forge cfgrib -y</span>
+<span id="cb155-18"><a href="get-data.html#cb155-18"></a><span class="ex">conda</span> install -c anaconda xarray</span></code></pre></div>
 <p>This creates the conda env that we are using here for python.</p>
 </div>
 <div id="config-file-.cdsapirc" class="section level5">
 <h5><span class="header-section-number">7.1.1.6.2</span> Config File .cdsapirc</h5>
 <p>Open up the <em>cdsapirc</em>, create new if does note exist. Below, open up the file and save the text. See <a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html">Python Reading and Writing to File Examples</a>.</p>
 <p>First, get the text for the config file:</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="get-data.html#cb113-1"></a>stf_cds_cdsapirc <span class="op">=</span> <span class="st">&quot;&quot;&quot;\</span></span>
-<span id="cb113-2"><a href="get-data.html#cb113-2"></a><span class="st">url: https://cds.climate.copernicus.eu/api/v2</span></span>
-<span id="cb113-3"><a href="get-data.html#cb113-3"></a><span class="st">key: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX\</span></span>
-<span id="cb113-4"><a href="get-data.html#cb113-4"></a><span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb113-5"><a href="get-data.html#cb113-5"></a><span class="bu">print</span>(stf_cds_cdsapirc)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb156-1"><a href="get-data.html#cb156-1"></a>stf_cds_cdsapirc <span class="op">=</span> <span class="st">&quot;&quot;&quot;\</span></span>
+<span id="cb156-2"><a href="get-data.html#cb156-2"></a><span class="st">url: https://cds.climate.copernicus.eu/api/v2</span></span>
+<span id="cb156-3"><a href="get-data.html#cb156-3"></a><span class="st">key: 4XXXX:4XXXfXXX-XXXf-4XXX-9XXX-7XXXebXXfdXX\</span></span>
+<span id="cb156-4"><a href="get-data.html#cb156-4"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb156-5"><a href="get-data.html#cb156-5"></a><span class="bu">print</span>(stf_cds_cdsapirc)</span></code></pre></div>
 <p>Second save text to file:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="get-data.html#cb114-1"></a><span class="co"># Relative file name</span></span>
-<span id="cb114-2"><a href="get-data.html#cb114-2"></a>spt_file_cds <span class="op">=</span> <span class="st">&quot;C:/Users/fan/&quot;</span></span>
-<span id="cb114-3"><a href="get-data.html#cb114-3"></a>snm_file_cds <span class="op">=</span> <span class="st">&quot;.cdsapirc&quot;</span></span>
-<span id="cb114-4"><a href="get-data.html#cb114-4"></a>spn_file_cds <span class="op">=</span> spt_file_cds <span class="op">+</span> snm_file_cds</span>
-<span id="cb114-5"><a href="get-data.html#cb114-5"></a><span class="co"># Open new file</span></span>
-<span id="cb114-6"><a href="get-data.html#cb114-6"></a>fl_cdsapirc_contents <span class="op">=</span> <span class="bu">open</span>(spn_file_cds, <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb114-7"><a href="get-data.html#cb114-7"></a><span class="co"># Write to File</span></span>
-<span id="cb114-8"><a href="get-data.html#cb114-8"></a>fl_cdsapirc_contents.write(stf_cds_cdsapirc)</span>
-<span id="cb114-9"><a href="get-data.html#cb114-9"></a><span class="co"># Close</span></span>
-<span id="cb114-10"><a href="get-data.html#cb114-10"></a>fl_cdsapirc_contents.close()</span></code></pre></div>
-<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="get-data.html#cb115-1"></a><span class="co"># Open the config file to check</span></span>
-<span id="cb115-2"><a href="get-data.html#cb115-2"></a><span class="ex">code</span> <span class="st">&quot;C:/Users/fan/.cdsapirc&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="get-data.html#cb157-1"></a><span class="co"># Relative file name</span></span>
+<span id="cb157-2"><a href="get-data.html#cb157-2"></a>spt_file_cds <span class="op">=</span> <span class="st">&quot;C:/Users/fan/&quot;</span></span>
+<span id="cb157-3"><a href="get-data.html#cb157-3"></a>snm_file_cds <span class="op">=</span> <span class="st">&quot;.cdsapirc&quot;</span></span>
+<span id="cb157-4"><a href="get-data.html#cb157-4"></a>spn_file_cds <span class="op">=</span> spt_file_cds <span class="op">+</span> snm_file_cds</span>
+<span id="cb157-5"><a href="get-data.html#cb157-5"></a><span class="co"># Open new file</span></span>
+<span id="cb157-6"><a href="get-data.html#cb157-6"></a>fl_cdsapirc_contents <span class="op">=</span> <span class="bu">open</span>(spn_file_cds, <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb157-7"><a href="get-data.html#cb157-7"></a><span class="co"># Write to File</span></span>
+<span id="cb157-8"><a href="get-data.html#cb157-8"></a>fl_cdsapirc_contents.write(stf_cds_cdsapirc)</span>
+<span id="cb157-9"><a href="get-data.html#cb157-9"></a><span class="co"># Close</span></span>
+<span id="cb157-10"><a href="get-data.html#cb157-10"></a>fl_cdsapirc_contents.close()</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb158-1"><a href="get-data.html#cb158-1"></a><span class="co"># Open the config file to check</span></span>
+<span id="cb158-2"><a href="get-data.html#cb158-2"></a><span class="ex">code</span> <span class="st">&quot;C:/Users/fan/.cdsapirc&quot;</span></span></code></pre></div>
 </div>
 </div>
 <div id="generate-api-requests" class="section level4">
@@ -440,40 +441,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>API function is <a href="https://github.com/ecmwf/cdsapi/blob/master/cdsapi/api.py">here</a>.</p>
 <p>Select based on China’s area, some testing data and download grib file. The data is from 2008, Jan 1st, at 12 noon?</p>
 <p>Open up Jupyter notebook: <em>jupyter notebook</em></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="get-data.html#cb116-1"></a><span class="co"># import module in conda env wk_ecmwf</span></span>
-<span id="cb116-2"><a href="get-data.html#cb116-2"></a><span class="im">import</span> cdsapi</span>
-<span id="cb116-3"><a href="get-data.html#cb116-3"></a><span class="im">import</span> urllib.request</span>
-<span id="cb116-4"><a href="get-data.html#cb116-4"></a></span>
-<span id="cb116-5"><a href="get-data.html#cb116-5"></a><span class="co"># download folder</span></span>
-<span id="cb116-6"><a href="get-data.html#cb116-6"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/&quot;</span></span>
-<span id="cb116-7"><a href="get-data.html#cb116-7"></a>spn_dl_test_grib <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;_data/test/test_china_temp.grib&quot;</span></span>
-<span id="cb116-8"><a href="get-data.html#cb116-8"></a></span>
-<span id="cb116-9"><a href="get-data.html#cb116-9"></a><span class="co"># request</span></span>
-<span id="cb116-10"><a href="get-data.html#cb116-10"></a>c <span class="op">=</span> cdsapi.Client()</span>
-<span id="cb116-11"><a href="get-data.html#cb116-11"></a>res <span class="op">=</span> c.retrieve(<span class="st">&quot;reanalysis-era5-pressure-levels&quot;</span>,</span>
-<span id="cb116-12"><a href="get-data.html#cb116-12"></a>  {</span>
-<span id="cb116-13"><a href="get-data.html#cb116-13"></a>    <span class="st">&#39;product_type&#39;</span>: <span class="st">&#39;reanalysis&#39;</span>,</span>
-<span id="cb116-14"><a href="get-data.html#cb116-14"></a>    <span class="st">&#39;variable&#39;</span>: <span class="st">&#39;temperature&#39;</span>,</span>
-<span id="cb116-15"><a href="get-data.html#cb116-15"></a>    <span class="st">&#39;pressure_level&#39;</span>: <span class="st">&#39;1000&#39;</span>,</span>
-<span id="cb116-16"><a href="get-data.html#cb116-16"></a>    <span class="st">&#39;year&#39;</span>: <span class="st">&#39;2008&#39;</span>,</span>
-<span id="cb116-17"><a href="get-data.html#cb116-17"></a>    <span class="st">&#39;month&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
-<span id="cb116-18"><a href="get-data.html#cb116-18"></a>    <span class="st">&#39;day&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
-<span id="cb116-19"><a href="get-data.html#cb116-19"></a>    <span class="st">&#39;time&#39;</span>: <span class="st">&#39;12:00&#39;</span>,</span>
-<span id="cb116-20"><a href="get-data.html#cb116-20"></a>    <span class="st">&#39;format&#39;</span>: <span class="st">&#39;netcdf&#39;</span>,</span>
-<span id="cb116-21"><a href="get-data.html#cb116-21"></a>    <span class="st">&#39;area&#39;</span>          : [<span class="fl">53.31</span>, <span class="dv">73</span>, <span class="fl">4.15</span>, <span class="dv">135</span>],</span>
-<span id="cb116-22"><a href="get-data.html#cb116-22"></a>    <span class="st">&#39;grid&#39;</span>          : [<span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
-<span id="cb116-23"><a href="get-data.html#cb116-23"></a>    <span class="st">&quot;format&quot;</span>: <span class="st">&quot;grib&quot;</span></span>
-<span id="cb116-24"><a href="get-data.html#cb116-24"></a>  },</span>
-<span id="cb116-25"><a href="get-data.html#cb116-25"></a>  spn_dl_test_grib</span>
-<span id="cb116-26"><a href="get-data.html#cb116-26"></a>)</span>
-<span id="cb116-27"><a href="get-data.html#cb116-27"></a><span class="co"># show results</span></span>
-<span id="cb116-28"><a href="get-data.html#cb116-28"></a><span class="bu">print</span>(<span class="st">&#39;print results&#39;</span>)</span>
-<span id="cb116-29"><a href="get-data.html#cb116-29"></a><span class="bu">print</span>(res)</span>
-<span id="cb116-30"><a href="get-data.html#cb116-30"></a><span class="bu">print</span>(<span class="bu">type</span>(res))</span>
-<span id="cb116-31"><a href="get-data.html#cb116-31"></a></span>
-<span id="cb116-32"><a href="get-data.html#cb116-32"></a><span class="co"># download</span></span>
-<span id="cb116-33"><a href="get-data.html#cb116-33"></a><span class="co"># response = urllib.request.urlopen(&#39;http://www.example.com/&#39;)</span></span>
-<span id="cb116-34"><a href="get-data.html#cb116-34"></a><span class="co"># html = response.read()</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="get-data.html#cb159-1"></a><span class="co"># import module in conda env wk_ecmwf</span></span>
+<span id="cb159-2"><a href="get-data.html#cb159-2"></a><span class="im">import</span> cdsapi</span>
+<span id="cb159-3"><a href="get-data.html#cb159-3"></a><span class="im">import</span> urllib.request</span>
+<span id="cb159-4"><a href="get-data.html#cb159-4"></a></span>
+<span id="cb159-5"><a href="get-data.html#cb159-5"></a><span class="co"># download folder</span></span>
+<span id="cb159-6"><a href="get-data.html#cb159-6"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/&quot;</span></span>
+<span id="cb159-7"><a href="get-data.html#cb159-7"></a>spn_dl_test_grib <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;_data/test/test_china_temp.grib&quot;</span></span>
+<span id="cb159-8"><a href="get-data.html#cb159-8"></a></span>
+<span id="cb159-9"><a href="get-data.html#cb159-9"></a><span class="co"># request</span></span>
+<span id="cb159-10"><a href="get-data.html#cb159-10"></a>c <span class="op">=</span> cdsapi.Client()</span>
+<span id="cb159-11"><a href="get-data.html#cb159-11"></a>res <span class="op">=</span> c.retrieve(<span class="st">&quot;reanalysis-era5-pressure-levels&quot;</span>,</span>
+<span id="cb159-12"><a href="get-data.html#cb159-12"></a>  {</span>
+<span id="cb159-13"><a href="get-data.html#cb159-13"></a>    <span class="st">&#39;product_type&#39;</span>: <span class="st">&#39;reanalysis&#39;</span>,</span>
+<span id="cb159-14"><a href="get-data.html#cb159-14"></a>    <span class="st">&#39;variable&#39;</span>: <span class="st">&#39;temperature&#39;</span>,</span>
+<span id="cb159-15"><a href="get-data.html#cb159-15"></a>    <span class="st">&#39;pressure_level&#39;</span>: <span class="st">&#39;1000&#39;</span>,</span>
+<span id="cb159-16"><a href="get-data.html#cb159-16"></a>    <span class="st">&#39;year&#39;</span>: <span class="st">&#39;2008&#39;</span>,</span>
+<span id="cb159-17"><a href="get-data.html#cb159-17"></a>    <span class="st">&#39;month&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
+<span id="cb159-18"><a href="get-data.html#cb159-18"></a>    <span class="st">&#39;day&#39;</span>: <span class="st">&#39;01&#39;</span>,</span>
+<span id="cb159-19"><a href="get-data.html#cb159-19"></a>    <span class="st">&#39;time&#39;</span>: <span class="st">&#39;12:00&#39;</span>,</span>
+<span id="cb159-20"><a href="get-data.html#cb159-20"></a>    <span class="st">&#39;format&#39;</span>: <span class="st">&#39;netcdf&#39;</span>,</span>
+<span id="cb159-21"><a href="get-data.html#cb159-21"></a>    <span class="st">&#39;area&#39;</span>          : [<span class="fl">53.31</span>, <span class="dv">73</span>, <span class="fl">4.15</span>, <span class="dv">135</span>],</span>
+<span id="cb159-22"><a href="get-data.html#cb159-22"></a>    <span class="st">&#39;grid&#39;</span>          : [<span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
+<span id="cb159-23"><a href="get-data.html#cb159-23"></a>    <span class="st">&quot;format&quot;</span>: <span class="st">&quot;grib&quot;</span></span>
+<span id="cb159-24"><a href="get-data.html#cb159-24"></a>  },</span>
+<span id="cb159-25"><a href="get-data.html#cb159-25"></a>  spn_dl_test_grib</span>
+<span id="cb159-26"><a href="get-data.html#cb159-26"></a>)</span>
+<span id="cb159-27"><a href="get-data.html#cb159-27"></a><span class="co"># show results</span></span>
+<span id="cb159-28"><a href="get-data.html#cb159-28"></a><span class="bu">print</span>(<span class="st">&#39;print results&#39;</span>)</span>
+<span id="cb159-29"><a href="get-data.html#cb159-29"></a><span class="bu">print</span>(res)</span>
+<span id="cb159-30"><a href="get-data.html#cb159-30"></a><span class="bu">print</span>(<span class="bu">type</span>(res))</span>
+<span id="cb159-31"><a href="get-data.html#cb159-31"></a></span>
+<span id="cb159-32"><a href="get-data.html#cb159-32"></a><span class="co"># download</span></span>
+<span id="cb159-33"><a href="get-data.html#cb159-33"></a><span class="co"># response = urllib.request.urlopen(&#39;http://www.example.com/&#39;)</span></span>
+<span id="cb159-34"><a href="get-data.html#cb159-34"></a><span class="co"># html = response.read()</span></span></code></pre></div>
 <blockquote>
 <p>2020-06-17 23:51:35,107 INFO Welcome to the CDS
 2020-06-17 23:51:35,107 INFO Sending request to <a href="https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels" class="uri">https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-pressure-levels</a>
@@ -487,30 +488,30 @@ Result(content_length=6480,content_type=application/x-grib,location=<a href="htt
 &lt;class ‘cdsapi.api.Result’&gt;</p>
 </blockquote>
 <p>Convert grib to raw csv, open up command line:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="get-data.html#cb117-1"></a><span class="bu">cd</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/_data/test/&quot;</span></span>
-<span id="cb117-2"><a href="get-data.html#cb117-2"></a><span class="ex">grib_ls</span> test_china_temp.grib</span>
-<span id="cb117-3"><a href="get-data.html#cb117-3"></a><span class="ex">grib_get_data</span> test_china_temp.grib <span class="op">&gt;</span> test_china_temp_raw.csv</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb160-1"><a href="get-data.html#cb160-1"></a><span class="bu">cd</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/_data/test/&quot;</span></span>
+<span id="cb160-2"><a href="get-data.html#cb160-2"></a><span class="ex">grib_ls</span> test_china_temp.grib</span>
+<span id="cb160-3"><a href="get-data.html#cb160-3"></a><span class="ex">grib_get_data</span> test_china_temp.grib <span class="op">&gt;</span> test_china_temp_raw.csv</span></code></pre></div>
 <p>Format the CSV file (is not comma separated)</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="get-data.html#cb118-1"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/_data/test/&quot;</span></span>
-<span id="cb118-2"><a href="get-data.html#cb118-2"></a>spn_csv_raw <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp_raw.csv&quot;</span></span>
-<span id="cb118-3"><a href="get-data.html#cb118-3"></a>spn_csv_edi <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp.csv&quot;</span></span>
-<span id="cb118-4"><a href="get-data.html#cb118-4"></a></span>
-<span id="cb118-5"><a href="get-data.html#cb118-5"></a><span class="cf">with</span> <span class="bu">open</span>(spn_csv_raw, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f_in, <span class="bu">open</span>(spn_csv_edi, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f_out:</span>
-<span id="cb118-6"><a href="get-data.html#cb118-6"></a>    f_out.write(<span class="bu">next</span>(f_in))</span>
-<span id="cb118-7"><a href="get-data.html#cb118-7"></a>    [f_out.write(<span class="st">&#39;,&#39;</span>.join(line.split()) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>) <span class="cf">for</span> line <span class="kw">in</span> f_in]</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="get-data.html#cb161-1"></a>spt_root <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/getdata/envir/_data/test/&quot;</span></span>
+<span id="cb161-2"><a href="get-data.html#cb161-2"></a>spn_csv_raw <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp_raw.csv&quot;</span></span>
+<span id="cb161-3"><a href="get-data.html#cb161-3"></a>spn_csv_edi <span class="op">=</span> spt_root <span class="op">+</span> <span class="st">&quot;test_china_temp.csv&quot;</span></span>
+<span id="cb161-4"><a href="get-data.html#cb161-4"></a></span>
+<span id="cb161-5"><a href="get-data.html#cb161-5"></a><span class="cf">with</span> <span class="bu">open</span>(spn_csv_raw, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f_in, <span class="bu">open</span>(spn_csv_edi, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f_out:</span>
+<span id="cb161-6"><a href="get-data.html#cb161-6"></a>    f_out.write(<span class="bu">next</span>(f_in))</span>
+<span id="cb161-7"><a href="get-data.html#cb161-7"></a>    [f_out.write(<span class="st">&#39;,&#39;</span>.join(line.split()) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>) <span class="cf">for</span> line <span class="kw">in</span> f_in]</span></code></pre></div>
 <p>Show CSV results:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="get-data.html#cb119-1"></a><span class="co"># Path and Read</span></span>
-<span id="cb119-2"><a href="get-data.html#cb119-2"></a>spt_root =<span class="st"> &quot;C:/Users/fan/pyfan/vig/getdata/envir/&quot;</span></span>
-<span id="cb119-3"><a href="get-data.html#cb119-3"></a>spn_dl_test_csv =<span class="st"> </span><span class="kw">paste0</span>(spt_root, <span class="st">&quot;_data/test/test_china_temp.csv&quot;</span>)</span>
-<span id="cb119-4"><a href="get-data.html#cb119-4"></a>china_weather_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(spn_dl_test_csv)</span>
-<span id="cb119-5"><a href="get-data.html#cb119-5"></a></span>
-<span id="cb119-6"><a href="get-data.html#cb119-6"></a><span class="co"># Top 50 rows</span></span>
-<span id="cb119-7"><a href="get-data.html#cb119-7"></a><span class="kw">kable</span>(<span class="kw">head</span>(china_weather_data, <span class="dv">50</span>),</span>
-<span id="cb119-8"><a href="get-data.html#cb119-8"></a>      <span class="dt">caption=</span><span class="st">&quot;Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb119-9"><a href="get-data.html#cb119-9"></a><span class="st">  </span><span class="kw">kable_styling_fc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="get-data.html#cb162-1"></a><span class="co"># Path and Read</span></span>
+<span id="cb162-2"><a href="get-data.html#cb162-2"></a>spt_root =<span class="st"> &quot;C:/Users/fan/pyfan/vig/getdata/envir/&quot;</span></span>
+<span id="cb162-3"><a href="get-data.html#cb162-3"></a>spn_dl_test_csv =<span class="st"> </span><span class="kw">paste0</span>(spt_root, <span class="st">&quot;_data/test/test_china_temp.csv&quot;</span>)</span>
+<span id="cb162-4"><a href="get-data.html#cb162-4"></a>china_weather_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(spn_dl_test_csv)</span>
+<span id="cb162-5"><a href="get-data.html#cb162-5"></a></span>
+<span id="cb162-6"><a href="get-data.html#cb162-6"></a><span class="co"># Top 50 rows</span></span>
+<span id="cb162-7"><a href="get-data.html#cb162-7"></a><span class="kw">kable</span>(<span class="kw">head</span>(china_weather_data, <span class="dv">50</span>),</span>
+<span id="cb162-8"><a href="get-data.html#cb162-8"></a>      <span class="dt">caption=</span><span class="st">&quot;Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb162-9"><a href="get-data.html#cb162-9"></a><span class="st">  </span><span class="kw">kable_styling_fc</span>()</span></code></pre></div>
 <table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-82">Table 7.1: </span>Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?
+<span id="tab:unnamed-chunk-101">Table 7.1: </span>Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?
 </caption>
 <thead>
 <tr>
@@ -831,221 +832,221 @@ sp
 <li><em>ar_months_g1</em>: months to download in first half year</li>
 <li><em>ar_months_g2</em>: months to download in second half year</li>
 </ol>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="get-data.html#cb120-1"></a><span class="co">#################################################</span></span>
-<span id="cb120-2"><a href="get-data.html#cb120-2"></a><span class="co"># ------------ Parameters</span></span>
-<span id="cb120-3"><a href="get-data.html#cb120-3"></a><span class="co">#################################################</span></span>
-<span id="cb120-4"><a href="get-data.html#cb120-4"></a></span>
-<span id="cb120-5"><a href="get-data.html#cb120-5"></a><span class="co"># Where to store everything</span></span>
-<span id="cb120-6"><a href="get-data.html#cb120-6"></a>spt_root &lt;-<span class="st"> &quot;C:/Users/fan/Downloads/_data/&quot;</span></span>
-<span id="cb120-7"><a href="get-data.html#cb120-7"></a>spth_conda_env &lt;-<span class="st"> &quot;C:/ProgramData/Anaconda3/envs/wk_ecmwf/python.exe&quot;</span></span>
-<span id="cb120-8"><a href="get-data.html#cb120-8"></a><span class="co"># nc name prefix</span></span>
-<span id="cb120-9"><a href="get-data.html#cb120-9"></a>st_nc_prefix &lt;-<span class="st"> &quot;ECMWF_utci_&quot;</span></span>
-<span id="cb120-10"><a href="get-data.html#cb120-10"></a>st_nc_suffix &lt;-<span class="st"> &quot;_v1.0_con.nc&quot;</span></span>
-<span id="cb120-11"><a href="get-data.html#cb120-11"></a><span class="co"># Years list</span></span>
-<span id="cb120-12"><a href="get-data.html#cb120-12"></a><span class="co"># ar_years &lt;- 2001:2019</span></span>
-<span id="cb120-13"><a href="get-data.html#cb120-13"></a>ar_years &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2005</span>, <span class="dv">2015</span>)</span>
-<span id="cb120-14"><a href="get-data.html#cb120-14"></a><span class="co"># ar_months_g1 &lt;- c(&#39;01&#39;,&#39;02&#39;,&#39;03&#39;,&#39;04&#39;,&#39;05&#39;,&#39;06&#39;)</span></span>
-<span id="cb120-15"><a href="get-data.html#cb120-15"></a>ar_months_g1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;01&#39;</span>, <span class="st">&#39;03&#39;</span>)</span>
-<span id="cb120-16"><a href="get-data.html#cb120-16"></a><span class="co"># ar_months_g2 &lt;- c(&#39;07&#39;,&#39;08&#39;,&#39;09&#39;,&#39;10&#39;,&#39;11&#39;,&#39;12&#39;)</span></span>
-<span id="cb120-17"><a href="get-data.html#cb120-17"></a>ar_months_g2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;07&#39;</span>, <span class="st">&#39;09&#39;</span>)</span>
-<span id="cb120-18"><a href="get-data.html#cb120-18"></a></span>
-<span id="cb120-19"><a href="get-data.html#cb120-19"></a></span>
-<span id="cb120-20"><a href="get-data.html#cb120-20"></a><span class="co"># folder to download any nc zips to</span></span>
-<span id="cb120-21"><a href="get-data.html#cb120-21"></a>nczippath &lt;-<span class="st"> </span>spt_root</span>
-<span id="cb120-22"><a href="get-data.html#cb120-22"></a><span class="co"># we are changing the python api file with different requests stirngs and storing it here</span></span>
-<span id="cb120-23"><a href="get-data.html#cb120-23"></a>pyapipath &lt;-<span class="st"> </span>spt_root</span>
-<span id="cb120-24"><a href="get-data.html#cb120-24"></a><span class="co"># output directory for AGGREGATE CSV with all DATES from this search</span></span>
-<span id="cb120-25"><a href="get-data.html#cb120-25"></a>csvpath &lt;-<span class="st"> </span>spt_root</span>
-<span id="cb120-26"><a href="get-data.html#cb120-26"></a></span>
-<span id="cb120-27"><a href="get-data.html#cb120-27"></a><span class="co">#################################################</span></span>
-<span id="cb120-28"><a href="get-data.html#cb120-28"></a><span class="co"># ------------ Packages</span></span>
-<span id="cb120-29"><a href="get-data.html#cb120-29"></a><span class="co">#################################################</span></span>
-<span id="cb120-30"><a href="get-data.html#cb120-30"></a></span>
-<span id="cb120-31"><a href="get-data.html#cb120-31"></a><span class="kw">library</span>(<span class="st">&quot;ncdf4&quot;</span>)</span>
-<span id="cb120-32"><a href="get-data.html#cb120-32"></a><span class="kw">library</span>(<span class="st">&quot;chron&quot;</span>)</span>
-<span id="cb120-33"><a href="get-data.html#cb120-33"></a><span class="kw">library</span>(<span class="st">&quot;lattice&quot;</span>)</span>
-<span id="cb120-34"><a href="get-data.html#cb120-34"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span>
-<span id="cb120-35"><a href="get-data.html#cb120-35"></a><span class="kw">library</span>(<span class="st">&quot;stringr&quot;</span>)</span>
-<span id="cb120-36"><a href="get-data.html#cb120-36"></a><span class="kw">library</span>(<span class="st">&quot;tibble&quot;</span>)</span>
-<span id="cb120-37"><a href="get-data.html#cb120-37"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb120-38"><a href="get-data.html#cb120-38"></a><span class="kw">Sys.setenv</span>(<span class="dt">RETICULATE_PYTHON =</span> spth_conda_env)</span>
-<span id="cb120-39"><a href="get-data.html#cb120-39"></a><span class="kw">library</span>(<span class="st">&quot;reticulate&quot;</span>)</span>
-<span id="cb120-40"><a href="get-data.html#cb120-40"></a></span>
-<span id="cb120-41"><a href="get-data.html#cb120-41"></a><span class="co">#################################################</span></span>
-<span id="cb120-42"><a href="get-data.html#cb120-42"></a><span class="co"># ------------ Define Loops</span></span>
-<span id="cb120-43"><a href="get-data.html#cb120-43"></a><span class="co">#################################################</span></span>
-<span id="cb120-44"><a href="get-data.html#cb120-44"></a><span class="cf">for</span> (it_yr <span class="cf">in</span> ar_years) {</span>
-<span id="cb120-45"><a href="get-data.html#cb120-45"></a>  <span class="cf">for</span> (it_mth_group <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) {</span>
-<span id="cb120-46"><a href="get-data.html#cb120-46"></a>    <span class="cf">if</span>(it_mth_group <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
-<span id="cb120-47"><a href="get-data.html#cb120-47"></a>      ar_months =<span class="st"> </span>ar_months_g1</span>
-<span id="cb120-48"><a href="get-data.html#cb120-48"></a>    }</span>
-<span id="cb120-49"><a href="get-data.html#cb120-49"></a>    <span class="cf">if</span>(it_mth_group <span class="op">==</span><span class="st"> </span><span class="dv">2</span>) {</span>
-<span id="cb120-50"><a href="get-data.html#cb120-50"></a>      ar_months =<span class="st"> </span>ar_months_g2</span>
-<span id="cb120-51"><a href="get-data.html#cb120-51"></a>    }</span>
-<span id="cb120-52"><a href="get-data.html#cb120-52"></a></span>
-<span id="cb120-53"><a href="get-data.html#cb120-53"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-54"><a href="get-data.html#cb120-54"></a>    <span class="co"># ------------ Define Python API Call</span></span>
-<span id="cb120-55"><a href="get-data.html#cb120-55"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-56"><a href="get-data.html#cb120-56"></a></span>
-<span id="cb120-57"><a href="get-data.html#cb120-57"></a>    <span class="co"># name of zip file</span></span>
-<span id="cb120-58"><a href="get-data.html#cb120-58"></a>    nczipname &lt;-<span class="st"> &quot;derived_utci_2010_2.zip&quot;</span></span>
-<span id="cb120-59"><a href="get-data.html#cb120-59"></a>    unzipfolder &lt;-<span class="st"> &quot;derived_utci_2010_2&quot;</span></span>
-<span id="cb120-60"><a href="get-data.html#cb120-60"></a></span>
-<span id="cb120-61"><a href="get-data.html#cb120-61"></a>    st_file &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;import cdsapi</span></span>
-<span id="cb120-62"><a href="get-data.html#cb120-62"></a><span class="st">import urllib.request</span></span>
-<span id="cb120-63"><a href="get-data.html#cb120-63"></a><span class="st"># download folder</span></span>
-<span id="cb120-64"><a href="get-data.html#cb120-64"></a><span class="st">spt_root = &#39;&quot;</span>, nczippath, <span class="st">&quot;&#39;</span></span>
-<span id="cb120-65"><a href="get-data.html#cb120-65"></a><span class="st">spn_dl_test_grib = spt_root + &#39;&quot;</span>, nczipname, <span class="st">&quot;&#39;</span></span>
-<span id="cb120-66"><a href="get-data.html#cb120-66"></a><span class="st"># request</span></span>
-<span id="cb120-67"><a href="get-data.html#cb120-67"></a><span class="st">c = cdsapi.Client()</span></span>
-<span id="cb120-68"><a href="get-data.html#cb120-68"></a><span class="st">res = c.retrieve(</span></span>
-<span id="cb120-69"><a href="get-data.html#cb120-69"></a><span class="st">    &#39;derived-utci-historical&#39;,</span></span>
-<span id="cb120-70"><a href="get-data.html#cb120-70"></a><span class="st">    {</span></span>
-<span id="cb120-71"><a href="get-data.html#cb120-71"></a><span class="st">        &#39;format&#39;: &#39;zip&#39;,</span></span>
-<span id="cb120-72"><a href="get-data.html#cb120-72"></a><span class="st">        &#39;variable&#39;: &#39;Universal thermal climate index&#39;,</span></span>
-<span id="cb120-73"><a href="get-data.html#cb120-73"></a><span class="st">        &#39;product_type&#39;: &#39;Consolidated dataset&#39;,</span></span>
-<span id="cb120-74"><a href="get-data.html#cb120-74"></a><span class="st">        &#39;year&#39;: &#39;&quot;</span>,it_yr, <span class="st">&quot;&#39;,</span></span>
-<span id="cb120-75"><a href="get-data.html#cb120-75"></a><span class="st">        &#39;month&#39;: [</span></span>
-<span id="cb120-76"><a href="get-data.html#cb120-76"></a><span class="st">            &quot;</span>, <span class="kw">paste</span>(<span class="st">&quot;&#39;&quot;</span>, ar_months, <span class="st">&quot;&#39;&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>, <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>), <span class="st">&quot;</span></span>
-<span id="cb120-77"><a href="get-data.html#cb120-77"></a><span class="st">        ],</span></span>
-<span id="cb120-78"><a href="get-data.html#cb120-78"></a><span class="st">        &#39;day&#39;: [</span></span>
-<span id="cb120-79"><a href="get-data.html#cb120-79"></a><span class="st">            &#39;01&#39;,&#39;03&#39;</span></span>
-<span id="cb120-80"><a href="get-data.html#cb120-80"></a><span class="st">        ],</span></span>
-<span id="cb120-81"><a href="get-data.html#cb120-81"></a><span class="st">        &#39;area&#39;  : [53.31, 73, 4.15, 135],</span></span>
-<span id="cb120-82"><a href="get-data.html#cb120-82"></a><span class="st">        &#39;grid&#39;  : [0.25, 0.25],</span></span>
-<span id="cb120-83"><a href="get-data.html#cb120-83"></a><span class="st">    },</span></span>
-<span id="cb120-84"><a href="get-data.html#cb120-84"></a><span class="st">    spn_dl_test_grib)</span></span>
-<span id="cb120-85"><a href="get-data.html#cb120-85"></a><span class="st"># show results</span></span>
-<span id="cb120-86"><a href="get-data.html#cb120-86"></a><span class="st">print(&#39;print results&#39;)</span></span>
-<span id="cb120-87"><a href="get-data.html#cb120-87"></a><span class="st">print(res)</span></span>
-<span id="cb120-88"><a href="get-data.html#cb120-88"></a><span class="st">print(type(res))&quot;</span>)</span>
-<span id="cb120-89"><a href="get-data.html#cb120-89"></a></span>
-<span id="cb120-90"><a href="get-data.html#cb120-90"></a>    <span class="co"># st_file = &quot;print(1+1)&quot;</span></span>
-<span id="cb120-91"><a href="get-data.html#cb120-91"></a></span>
-<span id="cb120-92"><a href="get-data.html#cb120-92"></a>    <span class="co"># Store Python Api File</span></span>
-<span id="cb120-93"><a href="get-data.html#cb120-93"></a>    fl_test_tex &lt;-<span class="st"> </span><span class="kw">paste0</span>(pyapipath, <span class="st">&quot;api.py&quot;</span>)</span>
-<span id="cb120-94"><a href="get-data.html#cb120-94"></a>    fileConn &lt;-<span class="st"> </span><span class="kw">file</span>(fl_test_tex)</span>
-<span id="cb120-95"><a href="get-data.html#cb120-95"></a>    <span class="kw">writeLines</span>(st_file, fileConn)</span>
-<span id="cb120-96"><a href="get-data.html#cb120-96"></a>    <span class="kw">close</span>(fileConn)</span>
-<span id="cb120-97"><a href="get-data.html#cb120-97"></a></span>
-<span id="cb120-98"><a href="get-data.html#cb120-98"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-99"><a href="get-data.html#cb120-99"></a>    <span class="co"># ------------ Run Python File</span></span>
-<span id="cb120-100"><a href="get-data.html#cb120-100"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-101"><a href="get-data.html#cb120-101"></a>    <span class="co"># Set Path</span></span>
-<span id="cb120-102"><a href="get-data.html#cb120-102"></a>    <span class="kw">setwd</span>(pyapipath)</span>
-<span id="cb120-103"><a href="get-data.html#cb120-103"></a>    <span class="co"># Run py file, api.py name just defined</span></span>
-<span id="cb120-104"><a href="get-data.html#cb120-104"></a>    <span class="kw">use_python</span>(spth_conda_env)</span>
-<span id="cb120-105"><a href="get-data.html#cb120-105"></a>    <span class="kw">source_python</span>(<span class="st">&#39;api.py&#39;</span>)</span>
-<span id="cb120-106"><a href="get-data.html#cb120-106"></a></span>
-<span id="cb120-107"><a href="get-data.html#cb120-107"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-108"><a href="get-data.html#cb120-108"></a>    <span class="co"># ------------ uNZIP</span></span>
-<span id="cb120-109"><a href="get-data.html#cb120-109"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-110"><a href="get-data.html#cb120-110"></a>    spn_zip &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, nczipname)</span>
-<span id="cb120-111"><a href="get-data.html#cb120-111"></a>    spn_unzip_folder &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, unzipfolder)</span>
-<span id="cb120-112"><a href="get-data.html#cb120-112"></a>    <span class="kw">unzip</span>(spn_zip, <span class="dt">exdir=</span>spn_unzip_folder)</span>
-<span id="cb120-113"><a href="get-data.html#cb120-113"></a></span>
-<span id="cb120-114"><a href="get-data.html#cb120-114"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-115"><a href="get-data.html#cb120-115"></a>    <span class="co"># ------------ Find All files</span></span>
-<span id="cb120-116"><a href="get-data.html#cb120-116"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-117"><a href="get-data.html#cb120-117"></a>    <span class="co"># Get all files with nc suffix in folder</span></span>
-<span id="cb120-118"><a href="get-data.html#cb120-118"></a>    ncpath &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, unzipfolder)</span>
-<span id="cb120-119"><a href="get-data.html#cb120-119"></a>    ls_sfls &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path=</span>ncpath, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">pattern=</span><span class="st">&quot;.nc&quot;</span>, <span class="dt">full.names=</span>T)</span>
-<span id="cb120-120"><a href="get-data.html#cb120-120"></a></span>
-<span id="cb120-121"><a href="get-data.html#cb120-121"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-122"><a href="get-data.html#cb120-122"></a>    <span class="co"># ------------ Combine individual NC files to JOINT Dataframe</span></span>
-<span id="cb120-123"><a href="get-data.html#cb120-123"></a>    <span class="co">#################################################</span></span>
-<span id="cb120-124"><a href="get-data.html#cb120-124"></a>    <span class="co"># List to gather dataframes</span></span>
-<span id="cb120-125"><a href="get-data.html#cb120-125"></a>    ls_df &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(ls_sfls))</span>
-<span id="cb120-126"><a href="get-data.html#cb120-126"></a>    <span class="co"># Loop over files and convert nc to csv</span></span>
-<span id="cb120-127"><a href="get-data.html#cb120-127"></a>    it_df_ctr &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb120-128"><a href="get-data.html#cb120-128"></a>    <span class="cf">for</span> (spt_file <span class="cf">in</span> ls_sfls) {</span>
-<span id="cb120-129"><a href="get-data.html#cb120-129"></a>      it_df_ctr &lt;-<span class="st"> </span>it_df_ctr <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb120-130"><a href="get-data.html#cb120-130"></a></span>
-<span id="cb120-131"><a href="get-data.html#cb120-131"></a>      <span class="co"># Get file name without Path</span></span>
-<span id="cb120-132"><a href="get-data.html#cb120-132"></a>      snm_file_date &lt;-<span class="st"> </span><span class="kw">sub</span>(<span class="kw">paste0</span>(<span class="st">&#39;</span><span class="ch">\\</span><span class="st">&#39;</span>,st_nc_suffix,<span class="st">&#39;$&#39;</span>), <span class="st">&#39;&#39;</span>, <span class="kw">basename</span>(spt_file))</span>
-<span id="cb120-133"><a href="get-data.html#cb120-133"></a>      snm_file_date &lt;-<span class="st"> </span><span class="kw">sub</span>(st_nc_prefix, <span class="st">&#39;&#39;</span>, <span class="kw">basename</span>(snm_file_date))</span>
-<span id="cb120-134"><a href="get-data.html#cb120-134"></a></span>
-<span id="cb120-135"><a href="get-data.html#cb120-135"></a>      <span class="co"># Dates Start and End: list.files is auto sorted in ascending order</span></span>
-<span id="cb120-136"><a href="get-data.html#cb120-136"></a>      <span class="cf">if</span> (it_df_ctr <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
-<span id="cb120-137"><a href="get-data.html#cb120-137"></a>        snm_start_date &lt;-<span class="st"> </span>snm_file_date</span>
-<span id="cb120-138"><a href="get-data.html#cb120-138"></a>      }</span>
-<span id="cb120-139"><a href="get-data.html#cb120-139"></a>      <span class="cf">else</span> {</span>
-<span id="cb120-140"><a href="get-data.html#cb120-140"></a>        <span class="co"># this will give the final date</span></span>
-<span id="cb120-141"><a href="get-data.html#cb120-141"></a>        snm_end_date &lt;-<span class="st"> </span>snm_file_date</span>
-<span id="cb120-142"><a href="get-data.html#cb120-142"></a>      }</span>
-<span id="cb120-143"><a href="get-data.html#cb120-143"></a></span>
-<span id="cb120-144"><a href="get-data.html#cb120-144"></a>      <span class="co"># Given this structure: ECMWF_utci_20100702_v1.0_con, sub out prefix and suffix</span></span>
-<span id="cb120-145"><a href="get-data.html#cb120-145"></a>      <span class="kw">print</span>(spt_file)</span>
-<span id="cb120-146"><a href="get-data.html#cb120-146"></a>      ncin &lt;-<span class="st"> </span><span class="kw">nc_open</span>(spt_file)</span>
-<span id="cb120-147"><a href="get-data.html#cb120-147"></a></span>
-<span id="cb120-148"><a href="get-data.html#cb120-148"></a>      nchist &lt;-<span class="st"> </span><span class="kw">ncatt_get</span>(ncin, <span class="dv">0</span>, <span class="st">&quot;history&quot;</span>)</span>
-<span id="cb120-149"><a href="get-data.html#cb120-149"></a></span>
-<span id="cb120-150"><a href="get-data.html#cb120-150"></a>      <span class="co"># not using this missing value flag at the moment</span></span>
-<span id="cb120-151"><a href="get-data.html#cb120-151"></a>      missingval &lt;-<span class="st"> </span><span class="kw">str_match</span>(nchist<span class="op">$</span>value, <span class="st">&quot;setmisstoc,</span><span class="ch">\\</span><span class="st">s*(.*?)</span><span class="ch">\\</span><span class="st">s* &quot;</span>)[,<span class="dv">2</span>]</span>
-<span id="cb120-152"><a href="get-data.html#cb120-152"></a>      missingval &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(missingval)</span>
-<span id="cb120-153"><a href="get-data.html#cb120-153"></a></span>
-<span id="cb120-154"><a href="get-data.html#cb120-154"></a>      lon &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;lon&quot;</span>)</span>
-<span id="cb120-155"><a href="get-data.html#cb120-155"></a>      lat &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;lat&quot;</span>)</span>
-<span id="cb120-156"><a href="get-data.html#cb120-156"></a>      tim &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;time&quot;</span>)</span>
-<span id="cb120-157"><a href="get-data.html#cb120-157"></a>      tunits &lt;-<span class="st"> </span><span class="kw">ncatt_get</span>(ncin, <span class="st">&quot;time&quot;</span>, <span class="st">&quot;units&quot;</span>)</span>
-<span id="cb120-158"><a href="get-data.html#cb120-158"></a></span>
-<span id="cb120-159"><a href="get-data.html#cb120-159"></a>      nlon &lt;-<span class="st"> </span><span class="kw">dim</span>(lon)</span>
-<span id="cb120-160"><a href="get-data.html#cb120-160"></a>      nlat &lt;-<span class="st"> </span><span class="kw">dim</span>(lat)</span>
-<span id="cb120-161"><a href="get-data.html#cb120-161"></a>      ntim &lt;-<span class="st"> </span><span class="kw">dim</span>(tim)</span>
-<span id="cb120-162"><a href="get-data.html#cb120-162"></a></span>
-<span id="cb120-163"><a href="get-data.html#cb120-163"></a>      <span class="co"># convert time -- split the time units string into fields</span></span>
-<span id="cb120-164"><a href="get-data.html#cb120-164"></a>      <span class="co"># tustr &lt;- strsplit(tunits$value, &quot; &quot;)</span></span>
-<span id="cb120-165"><a href="get-data.html#cb120-165"></a>      <span class="co"># tdstr &lt;- strsplit(unlist(tustr)[3], &quot;-&quot;)</span></span>
-<span id="cb120-166"><a href="get-data.html#cb120-166"></a>      <span class="co"># tmonth &lt;- as.integer(unlist(tdstr)[2])</span></span>
-<span id="cb120-167"><a href="get-data.html#cb120-167"></a>      <span class="co"># tday &lt;- as.integer(unlist(tdstr)[3])</span></span>
-<span id="cb120-168"><a href="get-data.html#cb120-168"></a>      <span class="co"># tyear &lt;- as.integer(unlist(tdstr)[1])</span></span>
-<span id="cb120-169"><a href="get-data.html#cb120-169"></a>      <span class="co"># mytim &lt;- chron(tim, origin = c(tmonth, tday, tyear))</span></span>
-<span id="cb120-170"><a href="get-data.html#cb120-170"></a></span>
-<span id="cb120-171"><a href="get-data.html#cb120-171"></a>      tmp_array &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;utci&quot;</span>)</span>
-<span id="cb120-172"><a href="get-data.html#cb120-172"></a>      tmp_array &lt;-<span class="st"> </span>tmp_array <span class="op">-</span><span class="st"> </span><span class="fl">273.15</span></span>
-<span id="cb120-173"><a href="get-data.html#cb120-173"></a></span>
-<span id="cb120-174"><a href="get-data.html#cb120-174"></a>      lonlat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">expand.grid</span>(<span class="dt">lon =</span> lon, <span class="dt">lat =</span> lat, <span class="dt">hours =</span> tim))</span>
-<span id="cb120-175"><a href="get-data.html#cb120-175"></a>      temperature &lt;-<span class="st"> </span><span class="kw">as.vector</span>(tmp_array)</span>
-<span id="cb120-176"><a href="get-data.html#cb120-176"></a>      tmp_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(lonlat, temperature))</span>
-<span id="cb120-177"><a href="get-data.html#cb120-177"></a></span>
-<span id="cb120-178"><a href="get-data.html#cb120-178"></a>      <span class="co"># extract a rectangle</span></span>
-<span id="cb120-179"><a href="get-data.html#cb120-179"></a>      eps &lt;-<span class="st"> </span><span class="fl">1e-8</span></span>
-<span id="cb120-180"><a href="get-data.html#cb120-180"></a>      minlat &lt;-<span class="st"> </span><span class="fl">22.25</span> <span class="op">-</span><span class="st"> </span>eps</span>
-<span id="cb120-181"><a href="get-data.html#cb120-181"></a>      maxlat &lt;-<span class="st"> </span><span class="fl">23.50</span> <span class="op">+</span><span class="st"> </span>eps</span>
-<span id="cb120-182"><a href="get-data.html#cb120-182"></a>      minlon &lt;-<span class="st"> </span><span class="fl">113.00</span> <span class="op">-</span><span class="st"> </span>eps</span>
-<span id="cb120-183"><a href="get-data.html#cb120-183"></a>      maxlon &lt;-<span class="st"> </span><span class="fl">114.50</span> <span class="op">+</span><span class="st"> </span>eps</span>
-<span id="cb120-184"><a href="get-data.html#cb120-184"></a>      <span class="co"># subset data</span></span>
-<span id="cb120-185"><a href="get-data.html#cb120-185"></a>      subset_df &lt;-<span class="st"> </span>tmp_df[tmp_df<span class="op">$</span>lat <span class="op">&gt;=</span><span class="st"> </span>minlat <span class="op">&amp;</span><span class="st"> </span>tmp_df<span class="op">$</span>lat <span class="op">&lt;=</span><span class="st"> </span>maxlat <span class="op">&amp;</span></span>
-<span id="cb120-186"><a href="get-data.html#cb120-186"></a><span class="st">                            </span>tmp_df<span class="op">$</span>lon <span class="op">&gt;=</span><span class="st"> </span>minlon <span class="op">&amp;</span><span class="st"> </span>tmp_df<span class="op">$</span>lon <span class="op">&lt;=</span><span class="st"> </span>maxlon, ]</span>
-<span id="cb120-187"><a href="get-data.html#cb120-187"></a></span>
-<span id="cb120-188"><a href="get-data.html#cb120-188"></a>      <span class="co"># add Date</span></span>
-<span id="cb120-189"><a href="get-data.html#cb120-189"></a>      subset_df_date &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(subset_df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">date =</span> snm_file_date)</span>
-<span id="cb120-190"><a href="get-data.html#cb120-190"></a></span>
-<span id="cb120-191"><a href="get-data.html#cb120-191"></a>      <span class="co"># Add to list</span></span>
-<span id="cb120-192"><a href="get-data.html#cb120-192"></a>      ls_df[[it_df_ctr]] &lt;-<span class="st"> </span>subset_df_date</span>
-<span id="cb120-193"><a href="get-data.html#cb120-193"></a></span>
-<span id="cb120-194"><a href="get-data.html#cb120-194"></a>      <span class="co"># Close NC</span></span>
-<span id="cb120-195"><a href="get-data.html#cb120-195"></a>      <span class="kw">nc_close</span>(ncin)</span>
-<span id="cb120-196"><a href="get-data.html#cb120-196"></a>    }</span>
-<span id="cb120-197"><a href="get-data.html#cb120-197"></a></span>
-<span id="cb120-198"><a href="get-data.html#cb120-198"></a>    <span class="co"># List of DF to one DF</span></span>
-<span id="cb120-199"><a href="get-data.html#cb120-199"></a>    df_all_nc &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind, ls_df)</span>
-<span id="cb120-200"><a href="get-data.html#cb120-200"></a></span>
-<span id="cb120-201"><a href="get-data.html#cb120-201"></a>    <span class="co"># Save File</span></span>
-<span id="cb120-202"><a href="get-data.html#cb120-202"></a>    fname &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">paste0</span>(st_nc_prefix,</span>
-<span id="cb120-203"><a href="get-data.html#cb120-203"></a>                           snm_start_date, <span class="st">&quot;_to_&quot;</span>, snm_end_date,</span>
-<span id="cb120-204"><a href="get-data.html#cb120-204"></a>                           <span class="st">&quot;.csv&quot;</span>))</span>
-<span id="cb120-205"><a href="get-data.html#cb120-205"></a>    csvfile &lt;-<span class="st"> </span><span class="kw">paste0</span>(csvpath, fname)</span>
-<span id="cb120-206"><a href="get-data.html#cb120-206"></a>    <span class="kw">write.table</span>(<span class="kw">na.omit</span>(df_all_nc), csvfile, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb120-207"><a href="get-data.html#cb120-207"></a></span>
-<span id="cb120-208"><a href="get-data.html#cb120-208"></a>    <span class="co"># Delete folders</span></span>
-<span id="cb120-209"><a href="get-data.html#cb120-209"></a>    <span class="kw">unlink</span>(spn_zip, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">force=</span><span class="ot">TRUE</span>)</span>
-<span id="cb120-210"><a href="get-data.html#cb120-210"></a>    <span class="kw">unlink</span>(spn_unzip_folder, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">force=</span><span class="ot">TRUE</span>)</span>
-<span id="cb120-211"><a href="get-data.html#cb120-211"></a></span>
-<span id="cb120-212"><a href="get-data.html#cb120-212"></a>  <span class="co"># end loop months groups</span></span>
-<span id="cb120-213"><a href="get-data.html#cb120-213"></a>  }</span>
-<span id="cb120-214"><a href="get-data.html#cb120-214"></a><span class="co"># end loop year</span></span>
-<span id="cb120-215"><a href="get-data.html#cb120-215"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="get-data.html#cb163-1"></a><span class="co">#################################################</span></span>
+<span id="cb163-2"><a href="get-data.html#cb163-2"></a><span class="co"># ------------ Parameters</span></span>
+<span id="cb163-3"><a href="get-data.html#cb163-3"></a><span class="co">#################################################</span></span>
+<span id="cb163-4"><a href="get-data.html#cb163-4"></a></span>
+<span id="cb163-5"><a href="get-data.html#cb163-5"></a><span class="co"># Where to store everything</span></span>
+<span id="cb163-6"><a href="get-data.html#cb163-6"></a>spt_root &lt;-<span class="st"> &quot;C:/Users/fan/Downloads/_data/&quot;</span></span>
+<span id="cb163-7"><a href="get-data.html#cb163-7"></a>spth_conda_env &lt;-<span class="st"> &quot;C:/ProgramData/Anaconda3/envs/wk_ecmwf/python.exe&quot;</span></span>
+<span id="cb163-8"><a href="get-data.html#cb163-8"></a><span class="co"># nc name prefix</span></span>
+<span id="cb163-9"><a href="get-data.html#cb163-9"></a>st_nc_prefix &lt;-<span class="st"> &quot;ECMWF_utci_&quot;</span></span>
+<span id="cb163-10"><a href="get-data.html#cb163-10"></a>st_nc_suffix &lt;-<span class="st"> &quot;_v1.0_con.nc&quot;</span></span>
+<span id="cb163-11"><a href="get-data.html#cb163-11"></a><span class="co"># Years list</span></span>
+<span id="cb163-12"><a href="get-data.html#cb163-12"></a><span class="co"># ar_years &lt;- 2001:2019</span></span>
+<span id="cb163-13"><a href="get-data.html#cb163-13"></a>ar_years &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2005</span>, <span class="dv">2015</span>)</span>
+<span id="cb163-14"><a href="get-data.html#cb163-14"></a><span class="co"># ar_months_g1 &lt;- c(&#39;01&#39;,&#39;02&#39;,&#39;03&#39;,&#39;04&#39;,&#39;05&#39;,&#39;06&#39;)</span></span>
+<span id="cb163-15"><a href="get-data.html#cb163-15"></a>ar_months_g1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;01&#39;</span>, <span class="st">&#39;03&#39;</span>)</span>
+<span id="cb163-16"><a href="get-data.html#cb163-16"></a><span class="co"># ar_months_g2 &lt;- c(&#39;07&#39;,&#39;08&#39;,&#39;09&#39;,&#39;10&#39;,&#39;11&#39;,&#39;12&#39;)</span></span>
+<span id="cb163-17"><a href="get-data.html#cb163-17"></a>ar_months_g2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;07&#39;</span>, <span class="st">&#39;09&#39;</span>)</span>
+<span id="cb163-18"><a href="get-data.html#cb163-18"></a></span>
+<span id="cb163-19"><a href="get-data.html#cb163-19"></a></span>
+<span id="cb163-20"><a href="get-data.html#cb163-20"></a><span class="co"># folder to download any nc zips to</span></span>
+<span id="cb163-21"><a href="get-data.html#cb163-21"></a>nczippath &lt;-<span class="st"> </span>spt_root</span>
+<span id="cb163-22"><a href="get-data.html#cb163-22"></a><span class="co"># we are changing the python api file with different requests stirngs and storing it here</span></span>
+<span id="cb163-23"><a href="get-data.html#cb163-23"></a>pyapipath &lt;-<span class="st"> </span>spt_root</span>
+<span id="cb163-24"><a href="get-data.html#cb163-24"></a><span class="co"># output directory for AGGREGATE CSV with all DATES from this search</span></span>
+<span id="cb163-25"><a href="get-data.html#cb163-25"></a>csvpath &lt;-<span class="st"> </span>spt_root</span>
+<span id="cb163-26"><a href="get-data.html#cb163-26"></a></span>
+<span id="cb163-27"><a href="get-data.html#cb163-27"></a><span class="co">#################################################</span></span>
+<span id="cb163-28"><a href="get-data.html#cb163-28"></a><span class="co"># ------------ Packages</span></span>
+<span id="cb163-29"><a href="get-data.html#cb163-29"></a><span class="co">#################################################</span></span>
+<span id="cb163-30"><a href="get-data.html#cb163-30"></a></span>
+<span id="cb163-31"><a href="get-data.html#cb163-31"></a><span class="kw">library</span>(<span class="st">&quot;ncdf4&quot;</span>)</span>
+<span id="cb163-32"><a href="get-data.html#cb163-32"></a><span class="kw">library</span>(<span class="st">&quot;chron&quot;</span>)</span>
+<span id="cb163-33"><a href="get-data.html#cb163-33"></a><span class="kw">library</span>(<span class="st">&quot;lattice&quot;</span>)</span>
+<span id="cb163-34"><a href="get-data.html#cb163-34"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</span>
+<span id="cb163-35"><a href="get-data.html#cb163-35"></a><span class="kw">library</span>(<span class="st">&quot;stringr&quot;</span>)</span>
+<span id="cb163-36"><a href="get-data.html#cb163-36"></a><span class="kw">library</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb163-37"><a href="get-data.html#cb163-37"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb163-38"><a href="get-data.html#cb163-38"></a><span class="kw">Sys.setenv</span>(<span class="dt">RETICULATE_PYTHON =</span> spth_conda_env)</span>
+<span id="cb163-39"><a href="get-data.html#cb163-39"></a><span class="kw">library</span>(<span class="st">&quot;reticulate&quot;</span>)</span>
+<span id="cb163-40"><a href="get-data.html#cb163-40"></a></span>
+<span id="cb163-41"><a href="get-data.html#cb163-41"></a><span class="co">#################################################</span></span>
+<span id="cb163-42"><a href="get-data.html#cb163-42"></a><span class="co"># ------------ Define Loops</span></span>
+<span id="cb163-43"><a href="get-data.html#cb163-43"></a><span class="co">#################################################</span></span>
+<span id="cb163-44"><a href="get-data.html#cb163-44"></a><span class="cf">for</span> (it_yr <span class="cf">in</span> ar_years) {</span>
+<span id="cb163-45"><a href="get-data.html#cb163-45"></a>  <span class="cf">for</span> (it_mth_group <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) {</span>
+<span id="cb163-46"><a href="get-data.html#cb163-46"></a>    <span class="cf">if</span>(it_mth_group <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
+<span id="cb163-47"><a href="get-data.html#cb163-47"></a>      ar_months =<span class="st"> </span>ar_months_g1</span>
+<span id="cb163-48"><a href="get-data.html#cb163-48"></a>    }</span>
+<span id="cb163-49"><a href="get-data.html#cb163-49"></a>    <span class="cf">if</span>(it_mth_group <span class="op">==</span><span class="st"> </span><span class="dv">2</span>) {</span>
+<span id="cb163-50"><a href="get-data.html#cb163-50"></a>      ar_months =<span class="st"> </span>ar_months_g2</span>
+<span id="cb163-51"><a href="get-data.html#cb163-51"></a>    }</span>
+<span id="cb163-52"><a href="get-data.html#cb163-52"></a></span>
+<span id="cb163-53"><a href="get-data.html#cb163-53"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-54"><a href="get-data.html#cb163-54"></a>    <span class="co"># ------------ Define Python API Call</span></span>
+<span id="cb163-55"><a href="get-data.html#cb163-55"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-56"><a href="get-data.html#cb163-56"></a></span>
+<span id="cb163-57"><a href="get-data.html#cb163-57"></a>    <span class="co"># name of zip file</span></span>
+<span id="cb163-58"><a href="get-data.html#cb163-58"></a>    nczipname &lt;-<span class="st"> &quot;derived_utci_2010_2.zip&quot;</span></span>
+<span id="cb163-59"><a href="get-data.html#cb163-59"></a>    unzipfolder &lt;-<span class="st"> &quot;derived_utci_2010_2&quot;</span></span>
+<span id="cb163-60"><a href="get-data.html#cb163-60"></a></span>
+<span id="cb163-61"><a href="get-data.html#cb163-61"></a>    st_file &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;import cdsapi</span></span>
+<span id="cb163-62"><a href="get-data.html#cb163-62"></a><span class="st">import urllib.request</span></span>
+<span id="cb163-63"><a href="get-data.html#cb163-63"></a><span class="st"># download folder</span></span>
+<span id="cb163-64"><a href="get-data.html#cb163-64"></a><span class="st">spt_root = &#39;&quot;</span>, nczippath, <span class="st">&quot;&#39;</span></span>
+<span id="cb163-65"><a href="get-data.html#cb163-65"></a><span class="st">spn_dl_test_grib = spt_root + &#39;&quot;</span>, nczipname, <span class="st">&quot;&#39;</span></span>
+<span id="cb163-66"><a href="get-data.html#cb163-66"></a><span class="st"># request</span></span>
+<span id="cb163-67"><a href="get-data.html#cb163-67"></a><span class="st">c = cdsapi.Client()</span></span>
+<span id="cb163-68"><a href="get-data.html#cb163-68"></a><span class="st">res = c.retrieve(</span></span>
+<span id="cb163-69"><a href="get-data.html#cb163-69"></a><span class="st">    &#39;derived-utci-historical&#39;,</span></span>
+<span id="cb163-70"><a href="get-data.html#cb163-70"></a><span class="st">    {</span></span>
+<span id="cb163-71"><a href="get-data.html#cb163-71"></a><span class="st">        &#39;format&#39;: &#39;zip&#39;,</span></span>
+<span id="cb163-72"><a href="get-data.html#cb163-72"></a><span class="st">        &#39;variable&#39;: &#39;Universal thermal climate index&#39;,</span></span>
+<span id="cb163-73"><a href="get-data.html#cb163-73"></a><span class="st">        &#39;product_type&#39;: &#39;Consolidated dataset&#39;,</span></span>
+<span id="cb163-74"><a href="get-data.html#cb163-74"></a><span class="st">        &#39;year&#39;: &#39;&quot;</span>,it_yr, <span class="st">&quot;&#39;,</span></span>
+<span id="cb163-75"><a href="get-data.html#cb163-75"></a><span class="st">        &#39;month&#39;: [</span></span>
+<span id="cb163-76"><a href="get-data.html#cb163-76"></a><span class="st">            &quot;</span>, <span class="kw">paste</span>(<span class="st">&quot;&#39;&quot;</span>, ar_months, <span class="st">&quot;&#39;&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>, <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>), <span class="st">&quot;</span></span>
+<span id="cb163-77"><a href="get-data.html#cb163-77"></a><span class="st">        ],</span></span>
+<span id="cb163-78"><a href="get-data.html#cb163-78"></a><span class="st">        &#39;day&#39;: [</span></span>
+<span id="cb163-79"><a href="get-data.html#cb163-79"></a><span class="st">            &#39;01&#39;,&#39;03&#39;</span></span>
+<span id="cb163-80"><a href="get-data.html#cb163-80"></a><span class="st">        ],</span></span>
+<span id="cb163-81"><a href="get-data.html#cb163-81"></a><span class="st">        &#39;area&#39;  : [53.31, 73, 4.15, 135],</span></span>
+<span id="cb163-82"><a href="get-data.html#cb163-82"></a><span class="st">        &#39;grid&#39;  : [0.25, 0.25],</span></span>
+<span id="cb163-83"><a href="get-data.html#cb163-83"></a><span class="st">    },</span></span>
+<span id="cb163-84"><a href="get-data.html#cb163-84"></a><span class="st">    spn_dl_test_grib)</span></span>
+<span id="cb163-85"><a href="get-data.html#cb163-85"></a><span class="st"># show results</span></span>
+<span id="cb163-86"><a href="get-data.html#cb163-86"></a><span class="st">print(&#39;print results&#39;)</span></span>
+<span id="cb163-87"><a href="get-data.html#cb163-87"></a><span class="st">print(res)</span></span>
+<span id="cb163-88"><a href="get-data.html#cb163-88"></a><span class="st">print(type(res))&quot;</span>)</span>
+<span id="cb163-89"><a href="get-data.html#cb163-89"></a></span>
+<span id="cb163-90"><a href="get-data.html#cb163-90"></a>    <span class="co"># st_file = &quot;print(1+1)&quot;</span></span>
+<span id="cb163-91"><a href="get-data.html#cb163-91"></a></span>
+<span id="cb163-92"><a href="get-data.html#cb163-92"></a>    <span class="co"># Store Python Api File</span></span>
+<span id="cb163-93"><a href="get-data.html#cb163-93"></a>    fl_test_tex &lt;-<span class="st"> </span><span class="kw">paste0</span>(pyapipath, <span class="st">&quot;api.py&quot;</span>)</span>
+<span id="cb163-94"><a href="get-data.html#cb163-94"></a>    fileConn &lt;-<span class="st"> </span><span class="kw">file</span>(fl_test_tex)</span>
+<span id="cb163-95"><a href="get-data.html#cb163-95"></a>    <span class="kw">writeLines</span>(st_file, fileConn)</span>
+<span id="cb163-96"><a href="get-data.html#cb163-96"></a>    <span class="kw">close</span>(fileConn)</span>
+<span id="cb163-97"><a href="get-data.html#cb163-97"></a></span>
+<span id="cb163-98"><a href="get-data.html#cb163-98"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-99"><a href="get-data.html#cb163-99"></a>    <span class="co"># ------------ Run Python File</span></span>
+<span id="cb163-100"><a href="get-data.html#cb163-100"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-101"><a href="get-data.html#cb163-101"></a>    <span class="co"># Set Path</span></span>
+<span id="cb163-102"><a href="get-data.html#cb163-102"></a>    <span class="kw">setwd</span>(pyapipath)</span>
+<span id="cb163-103"><a href="get-data.html#cb163-103"></a>    <span class="co"># Run py file, api.py name just defined</span></span>
+<span id="cb163-104"><a href="get-data.html#cb163-104"></a>    <span class="kw">use_python</span>(spth_conda_env)</span>
+<span id="cb163-105"><a href="get-data.html#cb163-105"></a>    <span class="kw">source_python</span>(<span class="st">&#39;api.py&#39;</span>)</span>
+<span id="cb163-106"><a href="get-data.html#cb163-106"></a></span>
+<span id="cb163-107"><a href="get-data.html#cb163-107"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-108"><a href="get-data.html#cb163-108"></a>    <span class="co"># ------------ uNZIP</span></span>
+<span id="cb163-109"><a href="get-data.html#cb163-109"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-110"><a href="get-data.html#cb163-110"></a>    spn_zip &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, nczipname)</span>
+<span id="cb163-111"><a href="get-data.html#cb163-111"></a>    spn_unzip_folder &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, unzipfolder)</span>
+<span id="cb163-112"><a href="get-data.html#cb163-112"></a>    <span class="kw">unzip</span>(spn_zip, <span class="dt">exdir=</span>spn_unzip_folder)</span>
+<span id="cb163-113"><a href="get-data.html#cb163-113"></a></span>
+<span id="cb163-114"><a href="get-data.html#cb163-114"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-115"><a href="get-data.html#cb163-115"></a>    <span class="co"># ------------ Find All files</span></span>
+<span id="cb163-116"><a href="get-data.html#cb163-116"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-117"><a href="get-data.html#cb163-117"></a>    <span class="co"># Get all files with nc suffix in folder</span></span>
+<span id="cb163-118"><a href="get-data.html#cb163-118"></a>    ncpath &lt;-<span class="st"> </span><span class="kw">paste0</span>(nczippath, unzipfolder)</span>
+<span id="cb163-119"><a href="get-data.html#cb163-119"></a>    ls_sfls &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path=</span>ncpath, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">pattern=</span><span class="st">&quot;.nc&quot;</span>, <span class="dt">full.names=</span>T)</span>
+<span id="cb163-120"><a href="get-data.html#cb163-120"></a></span>
+<span id="cb163-121"><a href="get-data.html#cb163-121"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-122"><a href="get-data.html#cb163-122"></a>    <span class="co"># ------------ Combine individual NC files to JOINT Dataframe</span></span>
+<span id="cb163-123"><a href="get-data.html#cb163-123"></a>    <span class="co">#################################################</span></span>
+<span id="cb163-124"><a href="get-data.html#cb163-124"></a>    <span class="co"># List to gather dataframes</span></span>
+<span id="cb163-125"><a href="get-data.html#cb163-125"></a>    ls_df &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(ls_sfls))</span>
+<span id="cb163-126"><a href="get-data.html#cb163-126"></a>    <span class="co"># Loop over files and convert nc to csv</span></span>
+<span id="cb163-127"><a href="get-data.html#cb163-127"></a>    it_df_ctr &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb163-128"><a href="get-data.html#cb163-128"></a>    <span class="cf">for</span> (spt_file <span class="cf">in</span> ls_sfls) {</span>
+<span id="cb163-129"><a href="get-data.html#cb163-129"></a>      it_df_ctr &lt;-<span class="st"> </span>it_df_ctr <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb163-130"><a href="get-data.html#cb163-130"></a></span>
+<span id="cb163-131"><a href="get-data.html#cb163-131"></a>      <span class="co"># Get file name without Path</span></span>
+<span id="cb163-132"><a href="get-data.html#cb163-132"></a>      snm_file_date &lt;-<span class="st"> </span><span class="kw">sub</span>(<span class="kw">paste0</span>(<span class="st">&#39;</span><span class="ch">\\</span><span class="st">&#39;</span>,st_nc_suffix,<span class="st">&#39;$&#39;</span>), <span class="st">&#39;&#39;</span>, <span class="kw">basename</span>(spt_file))</span>
+<span id="cb163-133"><a href="get-data.html#cb163-133"></a>      snm_file_date &lt;-<span class="st"> </span><span class="kw">sub</span>(st_nc_prefix, <span class="st">&#39;&#39;</span>, <span class="kw">basename</span>(snm_file_date))</span>
+<span id="cb163-134"><a href="get-data.html#cb163-134"></a></span>
+<span id="cb163-135"><a href="get-data.html#cb163-135"></a>      <span class="co"># Dates Start and End: list.files is auto sorted in ascending order</span></span>
+<span id="cb163-136"><a href="get-data.html#cb163-136"></a>      <span class="cf">if</span> (it_df_ctr <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
+<span id="cb163-137"><a href="get-data.html#cb163-137"></a>        snm_start_date &lt;-<span class="st"> </span>snm_file_date</span>
+<span id="cb163-138"><a href="get-data.html#cb163-138"></a>      }</span>
+<span id="cb163-139"><a href="get-data.html#cb163-139"></a>      <span class="cf">else</span> {</span>
+<span id="cb163-140"><a href="get-data.html#cb163-140"></a>        <span class="co"># this will give the final date</span></span>
+<span id="cb163-141"><a href="get-data.html#cb163-141"></a>        snm_end_date &lt;-<span class="st"> </span>snm_file_date</span>
+<span id="cb163-142"><a href="get-data.html#cb163-142"></a>      }</span>
+<span id="cb163-143"><a href="get-data.html#cb163-143"></a></span>
+<span id="cb163-144"><a href="get-data.html#cb163-144"></a>      <span class="co"># Given this structure: ECMWF_utci_20100702_v1.0_con, sub out prefix and suffix</span></span>
+<span id="cb163-145"><a href="get-data.html#cb163-145"></a>      <span class="kw">print</span>(spt_file)</span>
+<span id="cb163-146"><a href="get-data.html#cb163-146"></a>      ncin &lt;-<span class="st"> </span><span class="kw">nc_open</span>(spt_file)</span>
+<span id="cb163-147"><a href="get-data.html#cb163-147"></a></span>
+<span id="cb163-148"><a href="get-data.html#cb163-148"></a>      nchist &lt;-<span class="st"> </span><span class="kw">ncatt_get</span>(ncin, <span class="dv">0</span>, <span class="st">&quot;history&quot;</span>)</span>
+<span id="cb163-149"><a href="get-data.html#cb163-149"></a></span>
+<span id="cb163-150"><a href="get-data.html#cb163-150"></a>      <span class="co"># not using this missing value flag at the moment</span></span>
+<span id="cb163-151"><a href="get-data.html#cb163-151"></a>      missingval &lt;-<span class="st"> </span><span class="kw">str_match</span>(nchist<span class="op">$</span>value, <span class="st">&quot;setmisstoc,</span><span class="ch">\\</span><span class="st">s*(.*?)</span><span class="ch">\\</span><span class="st">s* &quot;</span>)[,<span class="dv">2</span>]</span>
+<span id="cb163-152"><a href="get-data.html#cb163-152"></a>      missingval &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(missingval)</span>
+<span id="cb163-153"><a href="get-data.html#cb163-153"></a></span>
+<span id="cb163-154"><a href="get-data.html#cb163-154"></a>      lon &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;lon&quot;</span>)</span>
+<span id="cb163-155"><a href="get-data.html#cb163-155"></a>      lat &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;lat&quot;</span>)</span>
+<span id="cb163-156"><a href="get-data.html#cb163-156"></a>      tim &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;time&quot;</span>)</span>
+<span id="cb163-157"><a href="get-data.html#cb163-157"></a>      tunits &lt;-<span class="st"> </span><span class="kw">ncatt_get</span>(ncin, <span class="st">&quot;time&quot;</span>, <span class="st">&quot;units&quot;</span>)</span>
+<span id="cb163-158"><a href="get-data.html#cb163-158"></a></span>
+<span id="cb163-159"><a href="get-data.html#cb163-159"></a>      nlon &lt;-<span class="st"> </span><span class="kw">dim</span>(lon)</span>
+<span id="cb163-160"><a href="get-data.html#cb163-160"></a>      nlat &lt;-<span class="st"> </span><span class="kw">dim</span>(lat)</span>
+<span id="cb163-161"><a href="get-data.html#cb163-161"></a>      ntim &lt;-<span class="st"> </span><span class="kw">dim</span>(tim)</span>
+<span id="cb163-162"><a href="get-data.html#cb163-162"></a></span>
+<span id="cb163-163"><a href="get-data.html#cb163-163"></a>      <span class="co"># convert time -- split the time units string into fields</span></span>
+<span id="cb163-164"><a href="get-data.html#cb163-164"></a>      <span class="co"># tustr &lt;- strsplit(tunits$value, &quot; &quot;)</span></span>
+<span id="cb163-165"><a href="get-data.html#cb163-165"></a>      <span class="co"># tdstr &lt;- strsplit(unlist(tustr)[3], &quot;-&quot;)</span></span>
+<span id="cb163-166"><a href="get-data.html#cb163-166"></a>      <span class="co"># tmonth &lt;- as.integer(unlist(tdstr)[2])</span></span>
+<span id="cb163-167"><a href="get-data.html#cb163-167"></a>      <span class="co"># tday &lt;- as.integer(unlist(tdstr)[3])</span></span>
+<span id="cb163-168"><a href="get-data.html#cb163-168"></a>      <span class="co"># tyear &lt;- as.integer(unlist(tdstr)[1])</span></span>
+<span id="cb163-169"><a href="get-data.html#cb163-169"></a>      <span class="co"># mytim &lt;- chron(tim, origin = c(tmonth, tday, tyear))</span></span>
+<span id="cb163-170"><a href="get-data.html#cb163-170"></a></span>
+<span id="cb163-171"><a href="get-data.html#cb163-171"></a>      tmp_array &lt;-<span class="st"> </span><span class="kw">ncvar_get</span>(ncin, <span class="st">&quot;utci&quot;</span>)</span>
+<span id="cb163-172"><a href="get-data.html#cb163-172"></a>      tmp_array &lt;-<span class="st"> </span>tmp_array <span class="op">-</span><span class="st"> </span><span class="fl">273.15</span></span>
+<span id="cb163-173"><a href="get-data.html#cb163-173"></a></span>
+<span id="cb163-174"><a href="get-data.html#cb163-174"></a>      lonlat &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">expand.grid</span>(<span class="dt">lon =</span> lon, <span class="dt">lat =</span> lat, <span class="dt">hours =</span> tim))</span>
+<span id="cb163-175"><a href="get-data.html#cb163-175"></a>      temperature &lt;-<span class="st"> </span><span class="kw">as.vector</span>(tmp_array)</span>
+<span id="cb163-176"><a href="get-data.html#cb163-176"></a>      tmp_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(lonlat, temperature))</span>
+<span id="cb163-177"><a href="get-data.html#cb163-177"></a></span>
+<span id="cb163-178"><a href="get-data.html#cb163-178"></a>      <span class="co"># extract a rectangle</span></span>
+<span id="cb163-179"><a href="get-data.html#cb163-179"></a>      eps &lt;-<span class="st"> </span><span class="fl">1e-8</span></span>
+<span id="cb163-180"><a href="get-data.html#cb163-180"></a>      minlat &lt;-<span class="st"> </span><span class="fl">22.25</span> <span class="op">-</span><span class="st"> </span>eps</span>
+<span id="cb163-181"><a href="get-data.html#cb163-181"></a>      maxlat &lt;-<span class="st"> </span><span class="fl">23.50</span> <span class="op">+</span><span class="st"> </span>eps</span>
+<span id="cb163-182"><a href="get-data.html#cb163-182"></a>      minlon &lt;-<span class="st"> </span><span class="fl">113.00</span> <span class="op">-</span><span class="st"> </span>eps</span>
+<span id="cb163-183"><a href="get-data.html#cb163-183"></a>      maxlon &lt;-<span class="st"> </span><span class="fl">114.50</span> <span class="op">+</span><span class="st"> </span>eps</span>
+<span id="cb163-184"><a href="get-data.html#cb163-184"></a>      <span class="co"># subset data</span></span>
+<span id="cb163-185"><a href="get-data.html#cb163-185"></a>      subset_df &lt;-<span class="st"> </span>tmp_df[tmp_df<span class="op">$</span>lat <span class="op">&gt;=</span><span class="st"> </span>minlat <span class="op">&amp;</span><span class="st"> </span>tmp_df<span class="op">$</span>lat <span class="op">&lt;=</span><span class="st"> </span>maxlat <span class="op">&amp;</span></span>
+<span id="cb163-186"><a href="get-data.html#cb163-186"></a><span class="st">                            </span>tmp_df<span class="op">$</span>lon <span class="op">&gt;=</span><span class="st"> </span>minlon <span class="op">&amp;</span><span class="st"> </span>tmp_df<span class="op">$</span>lon <span class="op">&lt;=</span><span class="st"> </span>maxlon, ]</span>
+<span id="cb163-187"><a href="get-data.html#cb163-187"></a></span>
+<span id="cb163-188"><a href="get-data.html#cb163-188"></a>      <span class="co"># add Date</span></span>
+<span id="cb163-189"><a href="get-data.html#cb163-189"></a>      subset_df_date &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(subset_df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">date =</span> snm_file_date)</span>
+<span id="cb163-190"><a href="get-data.html#cb163-190"></a></span>
+<span id="cb163-191"><a href="get-data.html#cb163-191"></a>      <span class="co"># Add to list</span></span>
+<span id="cb163-192"><a href="get-data.html#cb163-192"></a>      ls_df[[it_df_ctr]] &lt;-<span class="st"> </span>subset_df_date</span>
+<span id="cb163-193"><a href="get-data.html#cb163-193"></a></span>
+<span id="cb163-194"><a href="get-data.html#cb163-194"></a>      <span class="co"># Close NC</span></span>
+<span id="cb163-195"><a href="get-data.html#cb163-195"></a>      <span class="kw">nc_close</span>(ncin)</span>
+<span id="cb163-196"><a href="get-data.html#cb163-196"></a>    }</span>
+<span id="cb163-197"><a href="get-data.html#cb163-197"></a></span>
+<span id="cb163-198"><a href="get-data.html#cb163-198"></a>    <span class="co"># List of DF to one DF</span></span>
+<span id="cb163-199"><a href="get-data.html#cb163-199"></a>    df_all_nc &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind, ls_df)</span>
+<span id="cb163-200"><a href="get-data.html#cb163-200"></a></span>
+<span id="cb163-201"><a href="get-data.html#cb163-201"></a>    <span class="co"># Save File</span></span>
+<span id="cb163-202"><a href="get-data.html#cb163-202"></a>    fname &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">paste0</span>(st_nc_prefix,</span>
+<span id="cb163-203"><a href="get-data.html#cb163-203"></a>                           snm_start_date, <span class="st">&quot;_to_&quot;</span>, snm_end_date,</span>
+<span id="cb163-204"><a href="get-data.html#cb163-204"></a>                           <span class="st">&quot;.csv&quot;</span>))</span>
+<span id="cb163-205"><a href="get-data.html#cb163-205"></a>    csvfile &lt;-<span class="st"> </span><span class="kw">paste0</span>(csvpath, fname)</span>
+<span id="cb163-206"><a href="get-data.html#cb163-206"></a>    <span class="kw">write.table</span>(<span class="kw">na.omit</span>(df_all_nc), csvfile, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb163-207"><a href="get-data.html#cb163-207"></a></span>
+<span id="cb163-208"><a href="get-data.html#cb163-208"></a>    <span class="co"># Delete folders</span></span>
+<span id="cb163-209"><a href="get-data.html#cb163-209"></a>    <span class="kw">unlink</span>(spn_zip, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">force=</span><span class="ot">TRUE</span>)</span>
+<span id="cb163-210"><a href="get-data.html#cb163-210"></a>    <span class="kw">unlink</span>(spn_unzip_folder, <span class="dt">recursive=</span><span class="ot">TRUE</span>, <span class="dt">force=</span><span class="ot">TRUE</span>)</span>
+<span id="cb163-211"><a href="get-data.html#cb163-211"></a></span>
+<span id="cb163-212"><a href="get-data.html#cb163-212"></a>  <span class="co"># end loop months groups</span></span>
+<span id="cb163-213"><a href="get-data.html#cb163-213"></a>  }</span>
+<span id="cb163-214"><a href="get-data.html#cb163-214"></a><span class="co"># end loop year</span></span>
+<span id="cb163-215"><a href="get-data.html#cb163-215"></a>}</span></code></pre></div>
 
 </div>
 </div>
@@ -1099,7 +1100,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["A-Collection-of-Python-Examples.pdf", "PDF"]],
+"download": [["Data-Structures-and-Cloud-Services-with-Python.pdf", "PDF"]],
 "toc": {
 "collapse": "subsection"
 }

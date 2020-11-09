@@ -1,8 +1,9 @@
-'''
-Created on Sep 29, 2013
+"""
+The :mod:`pyfan.util.timer.timer` generates various timer related strings.
 
-@author: fan
-'''
+Includes method :func:`getDateTime`.
+"""
+
 # import ProjectDisertCredit.Support.Timer import Timer
 import time
 import datetime as date
@@ -16,35 +17,29 @@ def curTimeDiff(startTime=None):
 
 
 def getDateTime(timeType=6):
+
     if (timeType == 1):
         date_time = date.datetime.now().time()
-
-    if (timeType == 2):
+    elif (timeType == 2):
         date_time = date.datetime.now()
-
-    if (timeType == 3):
+    elif (timeType == 3):
         date_time = date.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    if (timeType == 4):
+    elif (timeType == 4):
         date_time = date.datetime.now().strftime('%Y-%m-%d %H:%M')
-
-    if (timeType == 5):
+    elif (timeType == 5):
         date_time = date.datetime.now().strftime('%Y%m_%d_%H%M')
-
-    if (timeType == 6):
+    elif (timeType == 6):
         date_time = date.datetime.now().strftime('%Y%m_%d')
-
-    if (timeType == 7):
+    elif (timeType == 7):
         date_time = "{:%Y%m%d-%H%M%S-%f}".format(date.datetime.now())
-
-    if (timeType == 8):
+    elif (timeType == 8):
         date_time = "{:%Y%m%d}".format(date.datetime.now())
-
-    if (timeType == 9):
+    elif (timeType == 9):
         date_time = "{:%Y%m%d%H%M%S%f}".format(date.datetime.now())
-
-    if (timeType == 10):
+    elif (timeType == 10):
         date_time = time.time()
+    else:
+        date_time = ''
 
     return date_time
 

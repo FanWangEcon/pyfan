@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Pandas | A Collection of Python Examples</title>
+  <title>Chapter 2 Pandas | Data Structures and Cloud Services with Python</title>
   <meta name="description" content="Python Implementation Examples for Research Tasks" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Pandas | A Collection of Python Examples" />
+  <meta property="og:title" content="Chapter 2 Pandas | Data Structures and Cloud Services with Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Pandas | A Collection of Python Examples" />
+  <meta name="twitter:title" content="Chapter 2 Pandas | Data Structures and Cloud Services with Python" />
   
   <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-10-21" />
+<meta name="date" content="2020-11-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,13 +141,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Collection of Python Examples</a></li>
+<li><a href="./">Data Structures and Cloud Services with Python</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a><ul>
 <li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="data-structures.html"><a href="data-structures.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
+<li class="chapter" data-level="1.1.2" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>1.1.2</b> List</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="data-structures.html"><a href="data-structures.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
@@ -258,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Collection of Python Examples</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Structures and Cloud Services with Python</a>
           </h1>
         </div>
 
@@ -277,19 +278,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="pandas.html#cb34-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb34-2"><a href="pandas.html#cb34-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pandas.html#cb74-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb74-2"><a href="pandas.html#cb74-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
 <div id="single-arrays-to-matrix" class="section level4">
 <h4><span class="header-section-number">2.1.1.1</span> Single Arrays to Matrix</h4>
 <p>Given various arrays, generate a matrix</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="pandas.html#cb35-1"></a><span class="co"># Concatenate to matrix</span></span>
-<span id="cb35-2"><a href="pandas.html#cb35-2"></a>mt_abc <span class="op">=</span> np.column_stack(np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>)))</span>
-<span id="cb35-3"><a href="pandas.html#cb35-3"></a><span class="co"># Matrix to data frame with columns and row names</span></span>
-<span id="cb35-4"><a href="pandas.html#cb35-4"></a>df_abc <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_abc,</span>
-<span id="cb35-5"><a href="pandas.html#cb35-5"></a>            index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
-<span id="cb35-6"><a href="pandas.html#cb35-6"></a>            columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
-<span id="cb35-7"><a href="pandas.html#cb35-7"></a><span class="co"># Print</span></span>
-<span id="cb35-8"><a href="pandas.html#cb35-8"></a><span class="bu">print</span>(df_abc)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="pandas.html#cb75-1"></a><span class="co"># Concatenate to matrix</span></span>
+<span id="cb75-2"><a href="pandas.html#cb75-2"></a>mt_abc <span class="op">=</span> np.column_stack(np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>)))</span>
+<span id="cb75-3"><a href="pandas.html#cb75-3"></a><span class="co"># Matrix to data frame with columns and row names</span></span>
+<span id="cb75-4"><a href="pandas.html#cb75-4"></a>df_abc <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_abc,</span>
+<span id="cb75-5"><a href="pandas.html#cb75-5"></a>            index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
+<span id="cb75-6"><a href="pandas.html#cb75-6"></a>            columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
+<span id="cb75-7"><a href="pandas.html#cb75-7"></a><span class="co"># Print</span></span>
+<span id="cb75-8"><a href="pandas.html#cb75-8"></a><span class="bu">print</span>(df_abc)</span></code></pre></div>
 <pre><code>##     c1  c2  c3  c4  c5
 ## r1   0   3   1   2   3
 ## r2   7   4   5   1   5
@@ -347,7 +348,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["A-Collection-of-Python-Examples.pdf", "PDF"]],
+"download": [["Data-Structures-and-Cloud-Services-with-Python.pdf", "PDF"]],
 "toc": {
 "collapse": "subsection"
 }

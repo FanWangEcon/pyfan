@@ -8,14 +8,21 @@
 
 1. [Python String Manipulation Examples](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html)
 	+ Search for substring, replace string, wrap string.
-	+ **py**: *zip() + upper()*
+	+ **py**: *zip() + upper() + fstring*
 	+ **textwrap**: *fill(st, width = 20)*
+	+ **fstring**: *f*
+2. [List Manipulations and Defaults](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_list.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html)
+	+ Conditional statements based on list length and element value.
+	+ Provide default for element of a list when list does not have that element.
+	+ **py**: *lambda + join + append() + if len(X) >= 3 and X[2] is not None + if elif else*
 
 ### [Section 1.2 Dictionary][Dictionary] links
 
-1. [Python Dictionary Exampls and Usages](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html)
-	+ List comprehension with dictionary
+1. [Python Dictionary Examples and Usages](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html)
+	+ Generate a dictionary, loop through a dictionary. 
+	+ List comprehension with dictionary. 
 	+ **py**: *dc = {'key': "name", 'val': 1}*
+	+ **copy**: *deepcopy*
 
 ### [Section 1.3 Matrix][Matrix] links
 
@@ -35,8 +42,9 @@
 
 ### [Section 3.1 Function Arguments][Function Arguments] links
 
-1. [Tuple and Dictionary as Arguments with *args and **kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
+1. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
 	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
+	+ Pass a dictionary for named arguments to a function.
 	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
 
 ## Tables and Graphs links

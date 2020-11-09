@@ -30,8 +30,18 @@ try(source("../../../.Rprofile"))
 
 - [sphinxcontrib-napoleon](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html) examples.
 - [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html) examples.
-
+- [Documenting Python APIs with docstrings](https://developer.lsst.io/python/numpydoc.html#py-docstring-parameter-types)
+-
 #### Parameters
+
+Check types:
+```python
+print(type(111))
+print(type('111'))
+import logging
+print(type(logging.WARNING))
+```
+
 
 Style 1:
 
@@ -52,9 +62,11 @@ param2 : str
     The second parameter.
 param3 : str, optional
     The second parameter.
+param5: dict
+    A dictionary
 ```
 
-Style 2:
+Style 2, this will add a [link](https://stackoverflow.com/questions/38968999/python-documentation-objstr-vs-str) to the types in python doc:
 
 ```{bash, include=TRUE, eval = FALSE, echo = TRUE}
 Parameters
@@ -91,7 +103,16 @@ numpy.array of shape (1, it_draws)
     points.
 ```
 
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Returns
+-------
+None
+```
+
 #### Examples
+
+Array outputs.
 
 ```{bash, include=TRUE, eval = FALSE, echo = TRUE}
 Examples
@@ -117,4 +138,17 @@ Examples
 ...                       it_seed, it_draw_type,
 ...                       fl_lower_sd, fl_higher_sd)
 [-1. - 1. - 0.57860025  0.2829785   0.8]
+```
+
+String outputs.
+
+```{bash, include=TRUE, eval = FALSE, echo = TRUE}
+Examples
+--------
+>>> log_vig_start(spt_root = proj_sys_sup.main_directory(),
+...               main_folder_name='logvig', sub_folder_name='parameters',
+...               subsub_folder_name='combo_type',
+...               file_name='fs_gen_combo_type',
+...               it_time_format=8, log_level=logging.INFO)
+C:\\Users\\fan\\logvig\\parameters\\combo_type\\fs_gen_combo_type_20201030.log.py
 ```

@@ -42,4 +42,34 @@ Utility modules.
    :toctree: gen_modules/
    :template: module.rst
 
-   pyfan.util.pdf.pdfgen
+   pyfan.util.path.getfiles
+
+Development
+-----------
+
+Development modules.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules/
+  :template: module.rst
+
+  pyfan.devel.flog.logsupport
+
+
+Document
+--------
+
+Documentaion generation support modules.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules/
+  :template: module.rst
+
+  pyfan.util.path.getfiles
+  pyfan.util.rmd.bookdownparse
+  pyfan.util.rmd.mattexmd
+  pyfan.util.rmd.rmdparse

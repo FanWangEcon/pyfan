@@ -1,8 +1,25 @@
-## ----global_options, include = FALSE----------------------------------------------------------
+## ----global_options, include = FALSE-----------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
 ## import numpy as np
+
+
+## dc_invoke_main_args = {'speckey': 'ng_s_t',
+
+##                        'numeric': 1.46,
+
+##                        'ge': False,
+
+##                        'multiprocess': False}
+
+## 
+
+## print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args["speckey"]}.')
+
+## print(f'numeric in dc_invoke_main_args is {dc_invoke_main_args["numeric"]}.')
+
+## print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args}.')
 
 
 ## ar_st_colnames = [ 's' + str(it_col) for it_col in np.array(range(1, 3))]

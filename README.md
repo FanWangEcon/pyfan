@@ -3,7 +3,7 @@
 
 The work-in-progress [pyfan](https://github.com/FanWangEcon/pyfan) repository contains:
 
-1. Tutorials and examples for various research tasks: [**bookdown site**](https://fanwangecon.github.io/pyfan/bookdown) and [**bookdown pdf**](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf).
+1. Tutorials and examples for various research tasks: [**bookdown site**](https://fanwangecon.github.io/pyfan/bookdown) and [**bookdown pdf**](https://fanwangecon.github.io/pyfan/bookdown/Data-Structures-and-Cloud-Services-with-Python.pdf).
 2. A package for basic data, graph and research tasks: [**readthedocs**](https://pyfan.readthedocs.io/en/latest/) and [**pypi**](https://pypi.org/project/pyfan/).
 
 Files are written with [RMD](https://rmarkdown.rstudio.com/). Materials are gathered from various [projects](https://fanwangecon.github.io/research) in which python code is used for research and paper-administrative tasks. Files are from [**Fan**](https://fanwangecon.github.io/)'s [pyfan](https://github.com/FanWangEcon/pyfan) repository which has an associated [package](https://pypi.org/project/pyfan/). The package functionalize various tasks tested out in the Rmd files. In addition, the [pyecon](https://github.com/FanWangEcon/pyecon) repository and the associated [package](https://pypi.org/project/pyecon/) contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.
@@ -20,14 +20,21 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 
 1. [Python String Manipulation Examples](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html)
 	+ Search for substring, replace string, wrap string.
-	+ **py**: *zip() + upper()*
+	+ **py**: *zip() + upper() + fstring*
 	+ **textwrap**: *fill(st, width = 20)*
+	+ **fstring**: *f*
+2. [List Manipulations and Defaults](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_list.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html)
+	+ Conditional statements based on list length and element value.
+	+ Provide default for element of a list when list does not have that element.
+	+ **py**: *lambda + join + append() + if len(X) >= 3 and X[2] is not None + if elif else*
 
 ## 1.2  Dictionary
 
-1. [Python Dictionary Exampls and Usages](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html)
-	+ List comprehension with dictionary
+1. [Python Dictionary Examples and Usages](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict//fp_dict.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/dict/htmlpdfr/fp_dict.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/dict/htmlpdfr/fp_dict.html)
+	+ Generate a dictionary, loop through a dictionary. 
+	+ List comprehension with dictionary. 
 	+ **py**: *dc = {'key': "name", 'val': 1}*
+	+ **copy**: *deepcopy*
 
 ## 1.3  Matrix
 
@@ -47,8 +54,9 @@ Please contact [FanWangEcon](https://fanwangecon.github.io/) for issues or probl
 
 ## 3.1  Function Arguments
 
-1. [Tuple and Dictionary as Arguments with *args and **kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
+1. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
 	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
+	+ Pass a dictionary for named arguments to a function.
 	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
 
 # 4  Tables and Graphs

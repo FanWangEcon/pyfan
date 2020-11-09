@@ -3,7 +3,7 @@
 
 The work-in-progress [pyfan](https://github.com/FanWangEcon/pyfan) repository contains:
 
-1. Tutorials and examples for various research tasks: [**bookdown site**](https://fanwangecon.github.io/pyfan/bookdown) and [**bookdown pdf**](https://fanwangecon.github.io/pyfan/bookdown/A-Collection-of-Python-Examples.pdf).
+1. Tutorials and examples for various research tasks: [**bookdown site**](https://fanwangecon.github.io/pyfan/bookdown) and [**bookdown pdf**](https://fanwangecon.github.io/pyfan/bookdown/Data-Structures-and-Cloud-Services-with-Python.pdf).
 2. A package for basic data, graph and research tasks: [**readthedocs**](https://pyfan.readthedocs.io/en/latest/) and [**pypi**](https://pypi.org/project/pyfan/).
 
 Files are written with [RMD](https://rmarkdown.rstudio.com/). Materials are gathered from various [projects](https://fanwangecon.github.io/research) in which python code is used for research and paper-administrative tasks. Files are from [**Fan**](https://fanwangecon.github.io/)'s [pyfan](https://github.com/FanWangEcon/pyfan) repository which has an associated [package](https://pypi.org/project/pyfan/). The package functionalize various tasks tested out in the Rmd files. In addition, the [pyecon](https://github.com/FanWangEcon/pyecon) repository and the associated [package](https://pypi.org/project/pyecon/) contain functions and rmd files related explicitly to solving economic models. Bullet points show which python packages/functions are used to achieve various objectives.

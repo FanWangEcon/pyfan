@@ -1,4 +1,4 @@
-book_filename: "A Collection of Python Examples"
+book_filename: "Data Structures and Cloud Services with Python"
 output_dir: "bookdown"
 language:
   ui:
@@ -10,6 +10,7 @@ rmd_files:
   - vig/amto/main.Rmd
   - vig/amto/array/main.Rmd
   - vig/amto/array/fp_ary_string.Rmd
+  - vig/amto/array/fs_list.Rmd
   - vig/amto/dict/main.Rmd
   - vig/amto/dict/fp_dict.Rmd
   - vig/amto/matrix/main.Rmd

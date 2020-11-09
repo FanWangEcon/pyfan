@@ -153,7 +153,8 @@ class csvIO():
     #             print 'failed to print ', numpy_matrix_name
 
     def saveText(self, saveFileDirectory, dataToSave, type='w',
-                 addTimer=False, lineBreak=True, doubleBreak=False, printConsole=True, precision=None, linewidth=200):
+                 addTimer=False, lineBreak=True, doubleBreak=False, printConsole=True, precision=None,
+                 linewidth=200):
 
         # ===========================================================================
         # The first argument is a string containing the filename.

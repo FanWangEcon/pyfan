@@ -1,10 +1,18 @@
+"""Convert matlab MLX files to MD and RMD files
+The :mod:`pyfan.util.rmd.mattexmd` generates md and rmd file from tex file converted from matlab mlx.
+
+Use matlab's own functions to export a MLX file to tex. Clean some elements of this text file, use
+pandoc to convert to MD. Then resave the md file as a RMD file by combining yml info from a preamble.yml file
+that is in the folder.
+
+Includes method :func:`fp_md2rmd`, :func:`fp_mlxtex2md`
+"""
+
 from pathlib import Path
 import subprocess
 import os
 import yaml
 import pyfan.util.path.getfiles as getfiles
-import time
-
 
 def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
               ls_srt_subfolders=['calconevar/'],
@@ -38,6 +46,13 @@ def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
     None
         nothing is returned, mlx generated tex files updates, and pandoc md generated
 
+    Examples
+    --------
+    >>> fp_md2rmd(spt_root="C:/Users/fan/M4Econ/amto/",
+    ...          ls_srt_subfolders=['array/'],
+    ...          snm_folder_yml='preamble.yml',
+    ...          st_yml_file_key='file',
+    ...          st_rglob_md='fs_slicing.md', verbose=False)
     """
 
     ls_spn_found_md = \
@@ -60,16 +75,18 @@ def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
         # Link String
         st_link_line_1 = "**back to** [**Fan**](https://fanwangecon.github.io)**'s** [**Intro Math\n"
         st_link_line_2 = "for Econ**](https://fanwangecon.github.io/Math4Econ/)**,** [**Matlab\n"
-        st_link_line_3 = "Examples**](https://fanwangecon.github.io/M4Econ/)**, or** [**Dynamic\n"
-        st_link_line_4 = "Asset**](https://fanwangecon.github.io/CodeDynaAsset/) **Repositories**\n"
-        st_link_lines = st_link_line_1 + st_link_line_2 + st_link_line_3 + st_link_line_4
+        st_link_line_3 = "Examples**](https://fanwangecon.github.io/M4Econ/)**, or**\n"
+        st_link_line_4 = "[**MEconTools**](https://fanwangecon.github.io/MEconTools/)\n"
+        st_link_line_5 = "**Repositories**\n"
+        st_link_lines = st_link_line_1 + st_link_line_2 + st_link_line_3 + st_link_line_4 + st_link_line_5
 
         st_link_rep_1 = "```{r global_options, include = FALSE}\ntry(source('../.Rprofile'))\n```\n"
         st_link_rep_2 = "\n`r text_shared_preamble_one`\n`r text_shared_preamble_two`\n`r text_shared_preamble_thr`\n"
 
         # replace md elements
-        ls_st_old = ['![image]', '.png)', st_link_line_1, st_link_line_2, st_link_line_3, st_link_line_4]
-        ls_st_new = ['![]', '.png){width=500px}', st_link_rep_1, st_link_rep_2, '', '']
+        ls_st_old = ['![image]', '.png)', st_link_line_1, st_link_line_2, st_link_line_3, st_link_line_4,
+                     st_link_line_5]
+        ls_st_new = ['![]', '.png){width=500px}', st_link_rep_1, st_link_rep_2, '', '', '']
 
         # zip and loop and replace
         for old, new in zip(ls_st_old, ls_st_new):
@@ -120,7 +137,7 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
     ----------
     spt_root : string
         The root folder
-    ls_srt_subfolders : :obj:`list` of :obj:`str'
+    ls_srt_subfolders : :obj:`list` of :obj:`str`
         List of subfolders to search in
     st_rglob_tex : string
         tex files search string rglob
@@ -136,7 +153,8 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
     --------
     >>> fp_mlxtex2md(spt_root='C:/Users/fan/Math4Econ/matrix_application/',
     ...              ls_srt_subfolders=None, st_rglob_tex='twogoods.tex', verbose=True)
-
+    >>> fp_mlxtex2md(spt_root='C:/Users/fan/M4Econ/amto/array/',
+    ...              ls_srt_subfolders=None, st_rglob_tex='fs_slicing.tex', verbose=True)
     """
 
     # spt_root = "C:/Users/fan/Math4Econ/"
@@ -228,5 +246,13 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
 #     # print(output.decode('utf-8'))
 #     # print(err.decode('utf-8'))
 #
-#     # fp_mlxtex2md()
-#     fp_md2rmd()
+#     # fp_mlxtex2md(spt_root='C:/Users/fan/M4Econ/amto/array/',
+#     #              ls_srt_subfolders=None,
+#     #              st_rglob_tex='fs_slicing.tex',
+#     #              verbose=True)
+#
+#     fp_md2rmd(spt_root="C:/Users/fan/M4Econ/amto/",
+#               ls_srt_subfolders=['array/'],
+#               snm_folder_yml='preamble.yml',
+#               st_yml_file_key='file',
+#               st_rglob_md='fs_slicing.md', verbose=False)

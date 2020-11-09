@@ -1,6 +1,6 @@
-A Collection of Python Examples.Rmd
-A-Collection-of-Python-Examples.Rmd
-A-Collection-of-Python-Examples_files
+Data Structures and Cloud Services with Python.Rmd
+Data-Structures-and-Cloud-Services-with-Python.Rmd
+Data-Structures-and-Cloud-Services-with-Python_files
 LICENSE
 README.md
 README_appendix.md

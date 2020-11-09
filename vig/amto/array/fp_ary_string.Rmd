@@ -8,11 +8,15 @@ core:
     code: |
       zip()
       upper()
+      fstring
   - package: textwrap
     code: |
       fill(st, width = 20)
+  - package: fstring
+    code: |
+      f
 date: 2020-06-17
-date_start: 2020-05-09
+date_start: 2020-11-06
 output:
   pdf_document:
     pandoc_args: '../../../_output_kniti_pdf.yaml'
@@ -38,6 +42,21 @@ try(source("../../../.Rprofile"))
 
 ```{python}
 import numpy as np
+```
+
+#### Print Strings with Numeric Values and Other Strings
+
+After some code segment, print some outputs declaring the end of operation and print results.
+
+```{python}
+dc_invoke_main_args = {'speckey': 'ng_s_t',
+                       'numeric': 1.46,
+                       'ge': False,
+                       'multiprocess': False}
+                       
+print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args["speckey"]}.')
+print(f'numeric in dc_invoke_main_args is {dc_invoke_main_args["numeric"]}.')
+print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args}.')
 ```
 
 #### Add String Suffix to Numeric Array 

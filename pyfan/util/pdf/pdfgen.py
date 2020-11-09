@@ -1,5 +1,5 @@
 """pyfan generate and clean pdf files from folder
-The :mod:`pyfan.util.pdf_pdfgen` generates pdf files from tex files.
+The :mod:`pyfan.util.pdf.pdfgen` generates pdf files from tex files.
 
 Gather all tex files from a folder, allow for exclusion strings. Generate PDFs
 from the tex files. And then clean up extraneous PDF outputs.
