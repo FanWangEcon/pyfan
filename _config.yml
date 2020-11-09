@@ -1,5 +1,5 @@
 theme: jekyll-theme-slate
-title: Data Structures and Cloud Services with Python
+title: A Collection of Python Examples
 google_analytics: UA-92953468-11
 plugins:
   - jekyll-sitemap
