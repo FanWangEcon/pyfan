@@ -42,6 +42,28 @@ import numpy as np
 ```
 
 
+#### Check if Any Element of a List is another List
+
+There is a list with two elements, there is another list with say four elements. Check if any of the two element is in the list with four elements. 
+
+```{python}
+ar_int_list_a1 = [1,2]
+ar_int_list_a2 = [2,1111]
+ar_int_list_a3 = [2111,1111]
+ar_int_list_b = [1,2,3,11,999]
+ar_int_list_c = [2]
+
+check_any_a1_in_b =  any(item in ar_int_list_a1 for item in ar_int_list_b)
+check_any_a2_in_b =  any(item in ar_int_list_a2 for item in ar_int_list_b)
+check_any_a3_in_b =  any(item in ar_int_list_a3 for item in ar_int_list_b)
+check_any_a1_in_c =  any(item in ar_int_list_a1 for item in ar_int_list_c)
+
+print(f'{check_any_a1_in_b=}')
+print(f'{check_any_a2_in_b=}')
+print(f'{check_any_a3_in_b=}')
+print(f'{check_any_a1_in_c=}')
+```
+
 #### Convert a List to a String List
 
 Given a list of string and numeric values, convert to a list of string values. The MAP function is like [apply](https://fanwangecon.github.io/R4Econ/function/noloop/htmlpdfr/fs_apply.html) in R.

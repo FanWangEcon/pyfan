@@ -2,7 +2,8 @@
 title: "Python Directory and Folder Operations"
 titleshort: "Python Directory and Folder Operations"
 description: |
-  Generate new folders and files.
+  Join folder names to form absolute path.
+  Generate new folders and files, with existing folder substrings.
   Generate subfolder recursively.
   Copying and moving files across folders. 
   Aggregate subfolders into a folder and move. 
@@ -14,7 +15,10 @@ core:
       close()
   - package: os
     code: |
-      os.listdir()      
+      os.sep
+      os.listdir()
+      os.path.abspath()
+      os.path.abspath(os.path.join(os.sep, 'users', 'fan'))
       os.path.join('/', 'c:', 'fa', 'fb')
   - package: pathlib
     code: |
@@ -29,7 +33,7 @@ core:
     code: |
       dir_util.copy_tree('/fa', '/fb')
 date: 2020-05-24
-date_start: 2020-05-24
+date_start: 2020-11-16
 output:
   pdf_document:
     pandoc_args: '../../../_output_kniti_pdf.yaml'
@@ -52,6 +56,57 @@ try(source("../../../.Rprofile"))
 `r text_shared_preamble_one`
 `r text_shared_preamble_two`
 `r text_shared_preamble_thr`
+
+#### Create an Absolute Folder with Path join
+
+Create a platform free full absolute path to a particular folder 
+
+```{python}
+import os 
+import pathlib
+
+# suffix
+st_suffix = "_mlt_region_ne"
+srt_folder = "testfolder" + st_suffix + '_other_stuff'
+# path join with os.sep
+srt_path = os.path.join(os.sep, "users", "fan", "pyfan", "vig", "support", "inout", "_folder", "testfolder" + st_suffix, 'subfolder')
+# Path Name
+spn_path = os.path.abspath(srt_path)
+# Create the folder
+pathlib.Path(spn_path).mkdir(parents=True, exist_ok=True)
+# Print
+print(f'{srt_folder=}')
+print(f'{srt_path=}')
+print(f'{spn_path=}')
+```
+
+see: [constructing absolute path with os.path.join()](https://stackoverflow.com/a/28080468/8280804).
+
+
+#### Get the Last Directory in a Path without Some Suffix
+
+Suppose there is a directory with 'abc_suffix_other/subfolder' as the name, generate a new folder that has 'abc' as the folder name without '_suffix'. Generate this folder in the same root folder that the abc_suffix folder resides in. 
+
+```{python}
+# Absolute path just created:
+print(f'{spn_path=}')
+# the suffix used
+print(f'{st_suffix=}')
+# get path without what comes after suffix
+spn_path_no_suffix = spn_path[:spn_path.index(st_suffix)]
+# Create the folder
+pathlib.Path(spn_path_no_suffix).mkdir(parents=True, exist_ok=True)
+# Get the new folder name create
+spt_root_main, srt_new_subfolder = os.path.split(spn_path_no_suffix)
+# Add Slash to new subfolder
+spn_path_no_suffix = spn_path_no_suffix + os.sep
+# Print
+print(f'{spn_path_no_suffix=}')
+print(f'{spt_root_main=}')
+print(f'{srt_new_subfolder=}')
+```
+
+
 
 #### New Folder and Files
 
@@ -161,7 +216,8 @@ pathlib.Path('_folder/fd/faa/fe_images').mkdir(parents=True, exist_ok=True)
 Find the total number of files in a folder. 
 
 ```{python}
-import pathlib
+from pathlib import Path
+
 # the number of files in folder found with search critiera
 st_fle_search = '*.txt'
 ls_spn = [Path(spn).stem for spn in Path('_folder/fd/faa/fa_images').rglob(st_fle_search)]

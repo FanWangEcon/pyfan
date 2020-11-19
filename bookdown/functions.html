@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Functions | Data Structures and Cloud Services with Python</title>
-  <meta name="description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="description" content="Numpy documentation examples." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Functions | Data Structures and Cloud Services with Python" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Python Implementation Examples for Research Tasks" />
+  <meta property="og:description" content="Numpy documentation examples." />
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 3 Functions | Data Structures and Cloud Services with Python" />
   
-  <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="twitter:description" content="Numpy documentation examples." />
   
 
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-11-08" />
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="pandas.html"/>
 <link rel="next" href="tables-and-graphs.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -64,18 +66,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -95,7 +96,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,102 +146,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a><ul>
-<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
+<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="data-structures.html"><a href="data-structures.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
 <li class="chapter" data-level="1.1.2" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>1.1.2</b> List</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
+<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="data-structures.html"><a href="data-structures.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a><ul>
+<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="data-structures.html"><a href="data-structures.html#generate-matrix-from-arrays"><i class="fa fa-check"></i><b>1.3.1</b> Generate Matrix from Arrays</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a><ul>
-<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a><ul>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="pandas.html"><a href="pandas.html#generate-matrix-from-arrays-1"><i class="fa fa-check"></i><b>2.1.1</b> Generate Matrix from Arrays</a></li>
+<li class="chapter" data-level="2.1.2" data-path="pandas.html"><a href="pandas.html#select-rows-and-columns-from-dataframe"><i class="fa fa-check"></i><b>2.1.2</b> Select Rows and Columns from Dataframe</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a><ul>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#function-arguments-1"><i class="fa fa-check"></i><b>3.1.1</b> Function Arguments</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#exceptions"><i class="fa fa-check"></i><b>3.2</b> Exceptions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>3.2.1</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a><ul>
-<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a><ul>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#line-and-scatter-plots"><i class="fa fa-check"></i><b>4.1.1</b> Line and Scatter Plots</a></li>
 <li class="chapter" data-level="4.1.2" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#text-plot"><i class="fa fa-check"></i><b>4.1.2</b> Text Plot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a><ul>
-<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a><ul>
+<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup-1"><i class="fa fa-check"></i><b>5.1.1</b> AWS Setup</a></li>
 <li class="chapter" data-level="5.1.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-boto3"><i class="fa fa-check"></i><b>5.1.2</b> AWS Boto3</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a><ul>
+<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3-usages"><i class="fa fa-check"></i><b>5.2.1</b> S3 Usages</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a><ul>
+<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-batch-run"><i class="fa fa-check"></i><b>5.3.1</b> AWS Batch Run</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a><ul>
-<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a><ul>
+<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup-1"><i class="fa fa-check"></i><b>6.1.1</b> Docker Setup</a></li>
 <li class="chapter" data-level="6.1.2" data-path="docker-container.html"><a href="docker-container.html#ecr-setup"><i class="fa fa-check"></i><b>6.1.2</b> ECR Setup</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a><ul>
-<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a><ul>
+<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="get-data.html"><a href="get-data.html#ecmwf-era5-data"><i class="fa fa-check"></i><b>7.1.1</b> ECMWF ERA5 Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a><ul>
-<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a><ul>
+<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="system-and-support.html"><a href="system-and-support.html#python-command-line"><i class="fa fa-check"></i><b>8.1.1</b> Python Command Line</a></li>
 <li class="chapter" data-level="8.1.2" data-path="system-and-support.html"><a href="system-and-support.html#run-matlab-functions"><i class="fa fa-check"></i><b>8.1.2</b> Run Matlab Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a><ul>
+<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="system-and-support.html"><a href="system-and-support.html#read-and-write-and-convert"><i class="fa fa-check"></i><b>8.2.1</b> Read and Write and Convert</a></li>
 <li class="chapter" data-level="8.2.2" data-path="system-and-support.html"><a href="system-and-support.html#folder-operations"><i class="fa fa-check"></i><b>8.2.2</b> Folder Operations</a></li>
 <li class="chapter" data-level="8.2.3" data-path="system-and-support.html"><a href="system-and-support.html#parse-yaml"><i class="fa fa-check"></i><b>8.2.3</b> Parse Yaml</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a><ul>
+<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="system-and-support.html"><a href="system-and-support.html#core-installations"><i class="fa fa-check"></i><b>8.3.1</b> Core Installations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a><ul>
+<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="system-and-support.html"><a href="system-and-support.html#numpy-doc-documentation-guide"><i class="fa fa-check"></i><b>8.4.1</b> Numpy Doc Documentation Guide</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a><ul>
-<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a><ul>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a>
+<ul>
 <li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
 <li class="chapter" data-level="A.1.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.2-dictionarydictionary-links"><i class="fa fa-check"></i><b>A.1.2</b> <span>Section 1.2 Dictionary</span> links</a></li>
 <li class="chapter" data-level="A.1.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.3-matrixmatrix-links"><i class="fa fa-check"></i><b>A.1.3</b> <span>Section 1.3 Matrix</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a><ul>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a>
+<ul>
 <li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-panda-basicspanda-basics-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 Panda Basics</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a><ul>
+<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a>
+<ul>
 <li class="chapter" data-level="A.3.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.1-function-argumentsfunction-arguments-links"><i class="fa fa-check"></i><b>A.3.1</b> <span>Section 3.1 Function Arguments</span> links</a></li>
+<li class="chapter" data-level="A.3.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.2-exceptionsexceptions-links"><i class="fa fa-check"></i><b>A.3.2</b> <span>Section 3.2 Exceptions</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a><ul>
+<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a>
+<ul>
 <li class="chapter" data-level="A.4.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-4.1-matplotlib-base-plotsmatplotlib-base-plots-links"><i class="fa fa-check"></i><b>A.4.1</b> <span>Section 4.1 Matplotlib Base Plots</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a><ul>
+<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a>
+<ul>
 <li class="chapter" data-level="A.5.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.1-aws-setupaws-setup-links"><i class="fa fa-check"></i><b>A.5.1</b> <span>Section 5.1 AWS Setup</span> links</a></li>
 <li class="chapter" data-level="A.5.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.2-s3s3-links"><i class="fa fa-check"></i><b>A.5.2</b> <span>Section 5.2 S3</span> links</a></li>
 <li class="chapter" data-level="A.5.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.3-batchbatch-links"><i class="fa fa-check"></i><b>A.5.3</b> <span>Section 5.3 Batch</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a><ul>
+<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a>
+<ul>
 <li class="chapter" data-level="A.6.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-6.1-docker-setupdocker-setup-links"><i class="fa fa-check"></i><b>A.6.1</b> <span>Section 6.1 Docker Setup</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a><ul>
+<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a>
+<ul>
 <li class="chapter" data-level="A.7.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-7.1-environmental-dataenvironmental-data-links"><i class="fa fa-check"></i><b>A.7.1</b> <span>Section 7.1 Environmental Data</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a><ul>
+<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a>
+<ul>
 <li class="chapter" data-level="A.8.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.1-command-linecommand-line-links"><i class="fa fa-check"></i><b>A.8.1</b> <span>Section 8.1 Command Line</span> links</a></li>
 <li class="chapter" data-level="A.8.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.2-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.8.2</b> <span>Section 8.2 File In and Out</span> links</a></li>
 <li class="chapter" data-level="A.8.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.3-install-pythoninstall-python-links"><i class="fa fa-check"></i><b>A.8.3</b> <span>Section 8.3 Install Python</span> links</a></li>
@@ -267,52 +306,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="functions" class="section level1">
+<div id="functions" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Functions</h1>
 
-<div id="function-arguments" class="section level2">
+<div id="function-arguments" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Function Arguments</h2>
 
-<div id="function-arguments-1" class="section level3">
+<div id="function-arguments-1" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Function Arguments</h3>
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="functions.html#cb77-1"></a><span class="im">import</span> pprint</span></code></pre></div>
-<div id="python-dictionary-as-argument-via-kwargs" class="section level4">
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="functions.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span></code></pre></div>
+<div id="python-dictionary-as-argument-via-kwargs" class="section level4" number="3.1.1.1">
 <h4><span class="header-section-number">3.1.1.1</span> Python Dictionary As Argument via kwargs</h4>
 <p>There is a python function that outputs a dictionary with key and value pairs that specify key aspects of how a model should be solved. For example, one of the parameters could specify the <em>vcpu</em> requirement. This <em>vcpu</em> requirement might change, and so it should be easy to update this key with alternative values.</p>
 <p>These are accomplished in the following manner. Define the full key-value pair list, with default values for several dictionaries, with model simulation, support, and compute parameters for example. These lists could be updated with some default alternative combinations, or alternatively, it could be updated with externally provided dictionary with both updated values for existing keys, or even additional key value pairs.</p>
 <p>First, we create a function that processes and outputs default parameters, it has two inputs, <em>it_default_group</em> to specify pre-fixed adjustments from defaults, and <em>kwargs</em> that allows for arbitrarily modifications and additions to parameter dictionary.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="functions.html#cb78-1"></a><span class="kw">def</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>kwargs):</span>
-<span id="cb78-2"><a href="functions.html#cb78-2"></a>    <span class="co"># A. Define the default parameter keys and values</span></span>
-<span id="cb78-3"><a href="functions.html#cb78-3"></a>    esti_specs <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStates&#39;</span>,</span>
-<span id="cb78-4"><a href="functions.html#cb78-4"></a>                  <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805a&#39;</span>],</span>
-<span id="cb78-5"><a href="functions.html#cb78-5"></a>                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">1</span>,</span>
-<span id="cb78-6"><a href="functions.html#cb78-6"></a>                  <span class="st">&#39;esti_max_func_eval&#39;</span>: <span class="dv">10</span>,</span>
-<span id="cb78-7"><a href="functions.html#cb78-7"></a>                  <span class="st">&#39;graph_frequncy&#39;</span>: <span class="dv">20</span>}</span>
-<span id="cb78-8"><a href="functions.html#cb78-8"></a>    compute_specs <span class="op">=</span> {<span class="st">&#39;cpu&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">1</span>),</span>
-<span id="cb78-9"><a href="functions.html#cb78-9"></a>                     <span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">517</span>),  <span class="co"># only need about 160 mb in reality</span></span>
-<span id="cb78-10"><a href="functions.html#cb78-10"></a>                     <span class="st">&#39;workers&#39;</span>: <span class="dv">1</span>,</span>
-<span id="cb78-11"><a href="functions.html#cb78-11"></a>                     <span class="st">&#39;aws_fargate&#39;</span>: <span class="va">False</span>}</span>
-<span id="cb78-12"><a href="functions.html#cb78-12"></a></span>
-<span id="cb78-13"><a href="functions.html#cb78-13"></a>    <span class="co"># B. For different</span></span>
-<span id="cb78-14"><a href="functions.html#cb78-14"></a>    compesti_specs <span class="op">=</span> {<span class="op">**</span>compute_specs, <span class="op">**</span>esti_specs}</span>
-<span id="cb78-15"><a href="functions.html#cb78-15"></a></span>
-<span id="cb78-16"><a href="functions.html#cb78-16"></a>    <span class="co"># C. Update dictionaries with parameter group values</span></span>
-<span id="cb78-17"><a href="functions.html#cb78-17"></a>    <span class="cf">if</span> it_default_group <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb78-18"><a href="functions.html#cb78-18"></a>        compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">55</span>),</span>
-<span id="cb78-19"><a href="functions.html#cb78-19"></a>                                  <span class="st">&#39;compute_param_vec_count&#39;</span>: <span class="dv">6</span>,</span>
-<span id="cb78-20"><a href="functions.html#cb78-20"></a>                                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">640</span>}</span>
-<span id="cb78-21"><a href="functions.html#cb78-21"></a>        compesti_specs.update(compesti_specs_updates)</span>
-<span id="cb78-22"><a href="functions.html#cb78-22"></a></span>
-<span id="cb78-23"><a href="functions.html#cb78-23"></a>    <span class="co"># D. Update with kward, could append new</span></span>
-<span id="cb78-24"><a href="functions.html#cb78-24"></a>    compesti_specs.update(kwargs)</span>
-<span id="cb78-25"><a href="functions.html#cb78-25"></a></span>
-<span id="cb78-26"><a href="functions.html#cb78-26"></a>    <span class="cf">return</span> compesti_specs</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="functions.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb103-2"><a href="functions.html#cb103-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A. Define the default parameter keys and values</span></span>
+<span id="cb103-3"><a href="functions.html#cb103-3" aria-hidden="true" tabindex="-1"></a>    esti_specs <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStates&#39;</span>,</span>
+<span id="cb103-4"><a href="functions.html#cb103-4" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805a&#39;</span>],</span>
+<span id="cb103-5"><a href="functions.html#cb103-5" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb103-6"><a href="functions.html#cb103-6" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;esti_max_func_eval&#39;</span>: <span class="dv">10</span>,</span>
+<span id="cb103-7"><a href="functions.html#cb103-7" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;graph_frequncy&#39;</span>: <span class="dv">20</span>}</span>
+<span id="cb103-8"><a href="functions.html#cb103-8" aria-hidden="true" tabindex="-1"></a>    compute_specs <span class="op">=</span> {<span class="st">&#39;cpu&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">1</span>),</span>
+<span id="cb103-9"><a href="functions.html#cb103-9" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">517</span>),  <span class="co"># only need about 160 mb in reality</span></span>
+<span id="cb103-10"><a href="functions.html#cb103-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;workers&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb103-11"><a href="functions.html#cb103-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;aws_fargate&#39;</span>: <span class="va">False</span>}</span>
+<span id="cb103-12"><a href="functions.html#cb103-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-13"><a href="functions.html#cb103-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># B. For different</span></span>
+<span id="cb103-14"><a href="functions.html#cb103-14" aria-hidden="true" tabindex="-1"></a>    compesti_specs <span class="op">=</span> {<span class="op">**</span>compute_specs, <span class="op">**</span>esti_specs}</span>
+<span id="cb103-15"><a href="functions.html#cb103-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-16"><a href="functions.html#cb103-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># C. Update dictionaries with parameter group values</span></span>
+<span id="cb103-17"><a href="functions.html#cb103-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> it_default_group <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb103-18"><a href="functions.html#cb103-18" aria-hidden="true" tabindex="-1"></a>        compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">55</span>),</span>
+<span id="cb103-19"><a href="functions.html#cb103-19" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">&#39;compute_param_vec_count&#39;</span>: <span class="dv">6</span>,</span>
+<span id="cb103-20"><a href="functions.html#cb103-20" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">640</span>}</span>
+<span id="cb103-21"><a href="functions.html#cb103-21" aria-hidden="true" tabindex="-1"></a>        compesti_specs.update(compesti_specs_updates)</span>
+<span id="cb103-22"><a href="functions.html#cb103-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-23"><a href="functions.html#cb103-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># D. Update with kward, could append new</span></span>
+<span id="cb103-24"><a href="functions.html#cb103-24" aria-hidden="true" tabindex="-1"></a>    compesti_specs.update(kwargs)</span>
+<span id="cb103-25"><a href="functions.html#cb103-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-26"><a href="functions.html#cb103-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> compesti_specs</span></code></pre></div>
 <p>Second, we test the defaults:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="functions.html#cb79-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec()</span>
-<span id="cb79-2"><a href="functions.html#cb79-2"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="functions.html#cb104-1" aria-hidden="true" tabindex="-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec()</span>
+<span id="cb104-2"><a href="functions.html#cb104-2" aria-hidden="true" tabindex="-1"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;aws_fargate&#39;: False,
 ##  &#39;cpu&#39;: &#39;1024&#39;,
 ##  &#39;esti_max_func_eval&#39;: 10,
@@ -324,8 +363,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                   &#39;20180805a&#39;],
 ##  &#39;workers&#39;: 1}</code></pre>
 <p>Third, we test using default group 1, pre-fixed changes to defaults:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="functions.html#cb81-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb81-2"><a href="functions.html#cb81-2"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="functions.html#cb106-1" aria-hidden="true" tabindex="-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb106-2"><a href="functions.html#cb106-2" aria-hidden="true" tabindex="-1"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;aws_fargate&#39;: False,
 ##  &#39;compute_param_vec_count&#39;: 6,
 ##  &#39;cpu&#39;: &#39;1024&#39;,
@@ -338,12 +377,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                   &#39;20180805a&#39;],
 ##  &#39;workers&#39;: 1}</code></pre>
 <p>Fourth, we use kwargs to feed in arbitrary dictionary to update and append to existing parameter dictionary:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="functions.html#cb83-1"></a>compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStateszzz&#39;</span>,</span>
-<span id="cb83-2"><a href="functions.html#cb83-2"></a>                          <span class="st">&#39;moments_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
-<span id="cb83-3"><a href="functions.html#cb83-3"></a>                          <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
-<span id="cb83-4"><a href="functions.html#cb83-4"></a>                          <span class="st">&#39;momsets_type_uuu&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>]}</span>
-<span id="cb83-5"><a href="functions.html#cb83-5"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>compesti_specs_updates)</span>
-<span id="cb83-6"><a href="functions.html#cb83-6"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="functions.html#cb108-1" aria-hidden="true" tabindex="-1"></a>compesti_specs_updates <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStateszzz&#39;</span>,</span>
+<span id="cb108-2"><a href="functions.html#cb108-2" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;moments_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
+<span id="cb108-3"><a href="functions.html#cb108-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>],</span>
+<span id="cb108-4"><a href="functions.html#cb108-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;momsets_type_uuu&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805azzz&#39;</span>]}</span>
+<span id="cb108-5"><a href="functions.html#cb108-5" aria-hidden="true" tabindex="-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec(it_default_group<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>compesti_specs_updates)</span>
+<span id="cb108-6"><a href="functions.html#cb108-6" aria-hidden="true" tabindex="-1"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;aws_fargate&#39;: False,
 ##  &#39;cpu&#39;: &#39;1024&#39;,
 ##  &#39;esti_max_func_eval&#39;: 10,
@@ -359,30 +398,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                       &#39;20180805azzz&#39;],
 ##  &#39;workers&#39;: 1}</code></pre>
 </div>
-<div id="named-argument-list-and-dictionary" class="section level4">
+<div id="named-argument-list-and-dictionary" class="section level4" number="3.1.1.2">
 <h4><span class="header-section-number">3.1.1.2</span> Named Argument List and Dictionary</h4>
 <p>Define a function with named and unnamed arguments:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="functions.html#cb85-1"></a><span class="kw">def</span> gen_compesti_spec_named(it_default_group, esti_method, memory<span class="op">=</span><span class="dv">123</span>, graph_frequncy<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb85-2"><a href="functions.html#cb85-2"></a>    <span class="co"># A. Define the default parameter keys and values</span></span>
-<span id="cb85-3"><a href="functions.html#cb85-3"></a>    esti_specs <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStates&#39;</span>,</span>
-<span id="cb85-4"><a href="functions.html#cb85-4"></a>                  <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805a&#39;</span>],</span>
-<span id="cb85-5"><a href="functions.html#cb85-5"></a>                  <span class="st">&#39;it_default_group&#39;</span>: it_default_group,</span>
-<span id="cb85-6"><a href="functions.html#cb85-6"></a>                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">1</span>,</span>
-<span id="cb85-7"><a href="functions.html#cb85-7"></a>                  <span class="st">&#39;esti_max_func_eval&#39;</span>: <span class="dv">10</span>,</span>
-<span id="cb85-8"><a href="functions.html#cb85-8"></a>                  <span class="st">&#39;graph_frequncy&#39;</span>: graph_frequncy}</span>
-<span id="cb85-9"><a href="functions.html#cb85-9"></a>    compute_specs <span class="op">=</span> {<span class="st">&#39;cpu&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">1</span>),</span>
-<span id="cb85-10"><a href="functions.html#cb85-10"></a>                     <span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(memory),  <span class="co"># only need about 160 mb in reality</span></span>
-<span id="cb85-11"><a href="functions.html#cb85-11"></a>                     <span class="st">&#39;workers&#39;</span>: <span class="dv">1</span>,</span>
-<span id="cb85-12"><a href="functions.html#cb85-12"></a>                     <span class="st">&#39;aws_fargate&#39;</span>: <span class="va">False</span>}</span>
-<span id="cb85-13"><a href="functions.html#cb85-13"></a></span>
-<span id="cb85-14"><a href="functions.html#cb85-14"></a>    <span class="co"># B. For different</span></span>
-<span id="cb85-15"><a href="functions.html#cb85-15"></a>    compesti_specs <span class="op">=</span> {<span class="op">**</span>compute_specs, <span class="op">**</span>esti_specs}</span>
-<span id="cb85-16"><a href="functions.html#cb85-16"></a></span>
-<span id="cb85-17"><a href="functions.html#cb85-17"></a>    <span class="cf">return</span> compesti_specs</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="functions.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gen_compesti_spec_named(it_default_group, esti_method, memory<span class="op">=</span><span class="dv">123</span>, graph_frequncy<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb110-2"><a href="functions.html#cb110-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A. Define the default parameter keys and values</span></span>
+<span id="cb110-3"><a href="functions.html#cb110-3" aria-hidden="true" tabindex="-1"></a>    esti_specs <span class="op">=</span> {<span class="st">&#39;esti_method&#39;</span>: <span class="st">&#39;MomentsSimuStates&#39;</span>,</span>
+<span id="cb110-4"><a href="functions.html#cb110-4" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;momsets_type&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;20180805a&#39;</span>],</span>
+<span id="cb110-5"><a href="functions.html#cb110-5" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;it_default_group&#39;</span>: it_default_group,</span>
+<span id="cb110-6"><a href="functions.html#cb110-6" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;esti_param_vec_count&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb110-7"><a href="functions.html#cb110-7" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;esti_max_func_eval&#39;</span>: <span class="dv">10</span>,</span>
+<span id="cb110-8"><a href="functions.html#cb110-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&#39;graph_frequncy&#39;</span>: graph_frequncy}</span>
+<span id="cb110-9"><a href="functions.html#cb110-9" aria-hidden="true" tabindex="-1"></a>    compute_specs <span class="op">=</span> {<span class="st">&#39;cpu&#39;</span>: <span class="bu">str</span>(<span class="dv">1024</span> <span class="op">*</span> <span class="dv">1</span>),</span>
+<span id="cb110-10"><a href="functions.html#cb110-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;memory&#39;</span>: <span class="bu">str</span>(memory),  <span class="co"># only need about 160 mb in reality</span></span>
+<span id="cb110-11"><a href="functions.html#cb110-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;workers&#39;</span>: <span class="dv">1</span>,</span>
+<span id="cb110-12"><a href="functions.html#cb110-12" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&#39;aws_fargate&#39;</span>: <span class="va">False</span>}</span>
+<span id="cb110-13"><a href="functions.html#cb110-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-14"><a href="functions.html#cb110-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># B. For different</span></span>
+<span id="cb110-15"><a href="functions.html#cb110-15" aria-hidden="true" tabindex="-1"></a>    compesti_specs <span class="op">=</span> {<span class="op">**</span>compute_specs, <span class="op">**</span>esti_specs}</span>
+<span id="cb110-16"><a href="functions.html#cb110-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-17"><a href="functions.html#cb110-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> compesti_specs</span></code></pre></div>
 <p>Provide inputs for the first two unnamed parameters explicitly. Then provided the two named parameters via a dictionary:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="functions.html#cb86-1"></a>dc_inputs <span class="op">=</span> {<span class="st">&#39;memory&#39;</span>:<span class="dv">12345</span>, <span class="st">&#39;graph_frequncy&#39;</span>:<span class="dv">2</span>}</span>
-<span id="cb86-2"><a href="functions.html#cb86-2"></a>compesti_specs <span class="op">=</span> gen_compesti_spec_named(<span class="va">None</span>, <span class="st">&#39;MomentsSimuStates&#39;</span>, <span class="op">**</span>dc_inputs)</span>
-<span id="cb86-3"><a href="functions.html#cb86-3"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="functions.html#cb111-1" aria-hidden="true" tabindex="-1"></a>dc_inputs <span class="op">=</span> {<span class="st">&#39;memory&#39;</span>:<span class="dv">12345</span>, <span class="st">&#39;graph_frequncy&#39;</span>:<span class="dv">2</span>}</span>
+<span id="cb111-2"><a href="functions.html#cb111-2" aria-hidden="true" tabindex="-1"></a>compesti_specs <span class="op">=</span> gen_compesti_spec_named(<span class="va">None</span>, <span class="st">&#39;MomentsSimuStates&#39;</span>, <span class="op">**</span>dc_inputs)</span>
+<span id="cb111-3"><a href="functions.html#cb111-3" aria-hidden="true" tabindex="-1"></a>pprint.pprint(compesti_specs, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;aws_fargate&#39;: False,
 ##  &#39;cpu&#39;: &#39;1024&#39;,
 ##  &#39;esti_max_func_eval&#39;: 10,
@@ -394,6 +433,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  &#39;momsets_type&#39;: [&#39;a&#39;,
 ##                   &#39;20180805a&#39;],
 ##  &#39;workers&#39;: 1}</code></pre>
+
+</div>
+</div>
+</div>
+<div id="exceptions" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Exceptions</h2>
+
+<div id="exception-handling" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Exception Handling</h3>
+<blockquote>
+<p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<div id="handle-parameters-when-conditions-not-satisfied" class="section level4" number="3.2.1.1">
+<h4><span class="header-section-number">3.2.1.1</span> Handle Parameters When Conditions Not Satisfied</h4>
+<p>There is a function, that can estimate or simulate, under both functionalities, there is a common string parameter, that requires specifying estimation or simulation conditions. The common string parameter should be a simple string without special separators in the case of simulation, and should be four strings concatenated together with equal sign for estimation. Generate an exception if the function is called for estimation but the string parameter does not have the required structure.</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/exceptions.html#TypeError">Python 3 TypeError</a></li>
+<li><a href="https://stackoverflow.com/a/30317038/8280804">Manually raising (throwing) an exception in Python</a></li>
+</ul>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="functions.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ls_st_spec_key_dict = [&#39;NG_S_D&#39;, &#39;NG_S_D=KAP_M0_NLD_M_SIMU=2=3&#39;]</span></span>
+<span id="cb113-2"><a href="functions.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="co"># st_connector = &#39;=&#39;</span></span>
+<span id="cb113-3"><a href="functions.html#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ls_st_esti_simu = [&#39;esti&#39;, &#39;simu&#39;]</span></span>
+<span id="cb113-4"><a href="functions.html#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for st_spec_key_dict in ls_st_spec_key_dict:</span></span>
+<span id="cb113-5"><a href="functions.html#cb113-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   for st_esti_simu in ls_st_esti_simu:</span></span>
+<span id="cb113-6"><a href="functions.html#cb113-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     if st_esti_simu == &#39;simu&#39;:</span></span>
+<span id="cb113-7"><a href="functions.html#cb113-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       if len(st_spec_key_dict.split(st_connector)) and</span></span>
+<span id="cb113-8"><a href="functions.html#cb113-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         print(&#39;simulate with &#39; + st_spec_key_dict)</span></span>
+<span id="cb113-9"><a href="functions.html#cb113-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-10"><a href="functions.html#cb113-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> estimate <span class="kw">and</span> <span class="kw">not</span> <span class="bu">isinstance</span>(spec_key_dict, <span class="bu">str</span>):</span>
+<span id="cb113-11"><a href="functions.html#cb113-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-12"><a href="functions.html#cb113-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (estimate <span class="kw">is</span> <span class="va">False</span> <span class="kw">and</span> <span class="bu">isinstance</span>(spec_key_dict, <span class="bu">str</span>)) <span class="kw">or</span> (estimate <span class="kw">is</span> <span class="va">False</span> <span class="kw">and</span> <span class="bu">isinstance</span>(spec_key_dict, <span class="bu">dict</span>)):</span>
+<span id="cb113-13"><a href="functions.html#cb113-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-14"><a href="functions.html#cb113-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb113-15"><a href="functions.html#cb113-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-16"><a href="functions.html#cb113-16" aria-hidden="true" tabindex="-1"></a>    st_error <span class="op">=</span> <span class="st">&#39;speckey=&#39;</span> <span class="op">+</span> speckey <span class="op">+</span> <span class="st">&#39; and estimate=&#39;</span> <span class="op">+</span> <span class="bu">str</span>(estimate)</span>
+<span id="cb113-17"><a href="functions.html#cb113-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(st_error)</span></code></pre></div>
+</div>
+<div id="proceed-despite-error" class="section level4" number="3.2.1.2">
+<h4><span class="header-section-number">3.2.1.2</span> Proceed Despite Error</h4>
+<p>Sometimes, code should proceed despite error, to finish a loop for example:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="functions.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimate at each initial random points</span></span>
+<span id="cb114-2"><a href="functions.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> it_esti_ctr <span class="kw">in</span> <span class="bu">range</span>(esti_param_vec_count):</span>
+<span id="cb114-3"><a href="functions.html#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update the 3rd element of combo_type, which determines which draw index to use</span></span>
+<span id="cb114-4"><a href="functions.html#cb114-4" aria-hidden="true" tabindex="-1"></a>    combo_type[<span class="dv">3</span>] <span class="op">=</span> it_esti_ctr</span>
+<span id="cb114-5"><a href="functions.html#cb114-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb114-6"><a href="functions.html#cb114-6" aria-hidden="true" tabindex="-1"></a>        invoke_run_main.invoke_main(combo_type, <span class="op">**</span>dc_invoke_main_args)</span>
+<span id="cb114-7"><a href="functions.html#cb114-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb114-8"><a href="functions.html#cb114-8" aria-hidden="true" tabindex="-1"></a>        logging.critical(<span class="ss">f&#39;Finished this </span><span class="sc">{</span>it_esti_ctr<span class="op">=</span><span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="bu">range</span>(esti_param_vec_count)<span class="op">=</span><span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
 
 </div>
 </div>

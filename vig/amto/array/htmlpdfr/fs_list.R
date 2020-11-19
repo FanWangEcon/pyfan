@@ -1,8 +1,37 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
 ## import numpy as np
+
+
+## ar_int_list_a1 = [1,2]
+
+## ar_int_list_a2 = [2,1111]
+
+## ar_int_list_a3 = [2111,1111]
+
+## ar_int_list_b = [1,2,3,11,999]
+
+## ar_int_list_c = [2]
+
+## 
+## check_any_a1_in_b =  any(item in ar_int_list_a1 for item in ar_int_list_b)
+
+## check_any_a2_in_b =  any(item in ar_int_list_a2 for item in ar_int_list_b)
+
+## check_any_a3_in_b =  any(item in ar_int_list_a3 for item in ar_int_list_b)
+
+## check_any_a1_in_c =  any(item in ar_int_list_a1 for item in ar_int_list_c)
+
+## 
+## print(f'{check_any_a1_in_b=}')
+
+## print(f'{check_any_a2_in_b=}')
+
+## print(f'{check_any_a3_in_b=}')
+
+## print(f'{check_any_a1_in_c=}')
 
 
 ## ls_spec_key = ['ng_s_d', 'esti_test_11_simu', 2, 3]

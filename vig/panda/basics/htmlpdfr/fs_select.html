@@ -11,9 +11,9 @@
 
 <meta name="author" content="Fan Wang" />
 
-<meta name="date" content="2020-10-18" />
+<meta name="date" content="2020-11-18" />
 
-<title>Python Pandas Generate Dataframes with Random Numeric and String Data</title>
+<title>Python Pandas Conditional Selection of Rows and Columns</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1874,68 +1874,63 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Pandas Generate Dataframes with Random Numeric and String Data</h1>
+<h1 class="title toc-ignore">Python Pandas Conditional Selection of Rows and Columns</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
-<h4 class="date">2020-10-18</h4>
+<h4 class="date">2020-11-18</h4>
 
 </div>
 
 
-<div id="generate-matrix-from-arrays" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Generate Matrix from Arrays</h1>
+<div id="select-rows-and-columns-from-dataframe" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Select Rows and Columns from Dataframe</h1>
 <blockquote>
-<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//fs_matrix2dataframe.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//htmlpdfr/fs_matrix2dataframe.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/panda/basics//htmlpdfr/fs_matrix2dataframe.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//fs_select.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//htmlpdfr/fs_select.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/panda/basics//htmlpdfr/fs_select.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
 <pre class="python"><code>import numpy as np
 import pandas as pd
 import random as random
 import string as string</code></pre>
-<div id="single-arrays-to-matrix" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Single Arrays to Matrix</h2>
-<p>Given various arrays, generate a matrix</p>
-<pre class="python"><code>np.random.seed(123)
-# Concatenate to matrix
-mt_abc = np.column_stack(np.random.randint(10, size=(5, 3)))
-# Matrix to data frame with columns and row names
-df_abc = pd.DataFrame(data=mt_abc,
-            index=[ &#39;r&#39; + str(it_col) for it_col in np.array(range(1, mt_abc.shape[0]+1))],
-            columns=[ &#39;c&#39; + str(it_col) for it_col in np.array(range(1, mt_abc.shape[1]+1))])
-# Print
-print(df_abc)</code></pre>
-<pre><code>##     c1  c2  c3  c4  c5
-## r1   2   1   6   1   0
-## r2   2   3   1   9   9
-## r3   6   9   0   0   3</code></pre>
-</div>
-<div id="generate-a-testing-dataframe-with-string-and-numeric-values" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Generate a Testing Dataframe with String and Numeric Values</h2>
-<p>Generate a test dataframe with string and numeric variables. For testing purposes.</p>
+<div id="generate-a-testing-dataframe" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Generate a Testing Dataframe</h2>
+<p>Generate a testing dataframe for selection and other tests.</p>
 <pre class="python"><code># Seed
-np.random.seed(456)
-random.seed(456)
-
+np.random.seed(999)
+random.seed(999)
 # Numeric matrix 3 rows 4 columns
-mt_numeric = np.random.randint(10, size=(3, 4))
-
-# String block 5 letters per word, 3 rows and 3 columns of words
-st_rand_word_block = &#39;&#39;.join(random.choice(string.ascii_lowercase) for ctr in range(5*3*3))
-ls_st_rand_word = [st_rand_word_block[ctr: ctr + 5].capitalize() for ctr in range(0, len(st_rand_word_block), 5)]
-mt_string = np.reshape(ls_st_rand_word, [3,3])
-
-# Combine string and numeric matrix
+mt_numeric = np.random.randint(10, size=(5, 4))
+st_rand_word_block = &#39;&#39;.join(random.choice(string.ascii_lowercase) for ctr in range(5*5*3))
+mt_string = np.reshape([st_rand_word_block[ctr: ctr + 5].capitalize() for ctr in range(0, len(st_rand_word_block), 5)], [5,3])
 mt_data = np.column_stack([mt_numeric, mt_string])
 
 # Matrix to dataframe
 df_data = pd.DataFrame(data=mt_data,
                        index=[ &#39;r&#39; + str(it_col) for it_col in np.array(range(1, mt_data.shape[0]+1))],
                        columns=[ &#39;c&#39; + str(it_col) for it_col in np.array(range(1, mt_data.shape[1]+1))])
-            
+
+# Replace values
+df_data = df_data.replace([&#39;Zvcss&#39;, &#39;Dugei&#39;, &#39;Ciagu&#39;], &#39;Zqovt&#39;)
+
 # Print table
 print(df_data)</code></pre>
 <pre><code>##    c1 c2 c3 c4     c5     c6     c7
-## r1  5  9  4  5  Xoonm  Zubtx  Zqdkp
-## r2  7  1  8  3  Ydcpw  Obiee  Gfxmq
-## r3  5  2  4  2  Tzrwu  Srwvp  Kcsrb</code></pre>
+## r1  0  5  1  8  Zqovt  Rppez  Ukuzu
+## r2  1  9  3  0  Zqovt  Sbwyi  Mzhum
+## r3  5  8  8  0  Zqovt  Qgfvk  Fcrto
+## r4  5  2  5  7  Wxlev  Upoax  Bhdxu
+## r5  4  6  2  7  Hmziq  Lbyfo  Dntrz</code></pre>
+</div>
+<div id="select-rows-based-on-columnvariable-values" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Select Rows Based on Column/Variable Values</h2>
+<p>There is a dataframe with many rows, select a subset of rows where a particular column/variable’s value is equal to some value.</p>
+<pre class="python"><code># Concatenate to matrix
+df_data_subset = df_data.loc[df_data[&#39;c5&#39;] == &#39;Zqovt&#39;]
+# Print
+print(df_data_subset)</code></pre>
+<pre><code>##    c1 c2 c3 c4     c5     c6     c7
+## r1  0  5  1  8  Zqovt  Rppez  Ukuzu
+## r2  1  9  3  0  Zqovt  Sbwyi  Mzhum
+## r3  5  8  8  0  Zqovt  Qgfvk  Fcrto</code></pre>
+<p>See <a href="https://stackoverflow.com/a/17071908/8280804">How to select rows from a DataFrame based on column values</a>.</p>
 </div>
 </div>
 

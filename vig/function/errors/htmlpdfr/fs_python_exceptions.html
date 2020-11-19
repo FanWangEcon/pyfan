@@ -11,9 +11,9 @@
 
 <meta name="author" content="Fan Wang" />
 
-<meta name="date" content="2020-10-18" />
+<meta name="date" content="2020-11-04" />
 
-<title>Python Pandas Generate Dataframes with Random Numeric and String Data</title>
+<title>Python Handle Exceptions</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1874,68 +1874,54 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Pandas Generate Dataframes with Random Numeric and String Data</h1>
+<h1 class="title toc-ignore">Python Handle Exceptions</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
-<h4 class="date">2020-10-18</h4>
+<h4 class="date">2020-11-04</h4>
 
 </div>
 
 
-<div id="generate-matrix-from-arrays" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Generate Matrix from Arrays</h1>
+<div id="exception-handling" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Exception Handling</h1>
 <blockquote>
-<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//fs_matrix2dataframe.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/panda/basics//htmlpdfr/fs_matrix2dataframe.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/panda/basics//htmlpdfr/fs_matrix2dataframe.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/errors//htmlpdfr/fs_python_exceptions.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/function/errors//htmlpdfr/fs_python_exceptions.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<pre class="python"><code>import numpy as np
-import pandas as pd
-import random as random
-import string as string</code></pre>
-<div id="single-arrays-to-matrix" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Single Arrays to Matrix</h2>
-<p>Given various arrays, generate a matrix</p>
-<pre class="python"><code>np.random.seed(123)
-# Concatenate to matrix
-mt_abc = np.column_stack(np.random.randint(10, size=(5, 3)))
-# Matrix to data frame with columns and row names
-df_abc = pd.DataFrame(data=mt_abc,
-            index=[ &#39;r&#39; + str(it_col) for it_col in np.array(range(1, mt_abc.shape[0]+1))],
-            columns=[ &#39;c&#39; + str(it_col) for it_col in np.array(range(1, mt_abc.shape[1]+1))])
-# Print
-print(df_abc)</code></pre>
-<pre><code>##     c1  c2  c3  c4  c5
-## r1   2   1   6   1   0
-## r2   2   3   1   9   9
-## r3   6   9   0   0   3</code></pre>
+<div id="handle-parameters-when-conditions-not-satisfied" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Handle Parameters When Conditions Not Satisfied</h2>
+<p>There is a function, that can estimate or simulate, under both functionalities, there is a common string parameter, that requires specifying estimation or simulation conditions. The common string parameter should be a simple string without special separators in the case of simulation, and should be four strings concatenated together with equal sign for estimation. Generate an exception if the function is called for estimation but the string parameter does not have the required structure.</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/exceptions.html#TypeError">Python 3 TypeError</a></li>
+<li><a href="https://stackoverflow.com/a/30317038/8280804">Manually raising (throwing) an exception in Python</a></li>
+</ul>
+<pre class="python"><code># ls_st_spec_key_dict = [&#39;NG_S_D&#39;, &#39;NG_S_D=KAP_M0_NLD_M_SIMU=2=3&#39;]
+# st_connector = &#39;=&#39;
+# ls_st_esti_simu = [&#39;esti&#39;, &#39;simu&#39;]
+# for st_spec_key_dict in ls_st_spec_key_dict:
+#   for st_esti_simu in ls_st_esti_simu:
+#     if st_esti_simu == &#39;simu&#39;:
+#       if len(st_spec_key_dict.split(st_connector)) and
+#         print(&#39;simulate with &#39; + st_spec_key_dict)
+
+if estimate and not isinstance(spec_key_dict, str):
+
+elif (estimate is False and isinstance(spec_key_dict, str)) or (estimate is False and isinstance(spec_key_dict, dict)):
+
+else:
+
+    st_error = &#39;speckey=&#39; + speckey + &#39; and estimate=&#39; + str(estimate)
+    raise ValueError(st_error)</code></pre>
 </div>
-<div id="generate-a-testing-dataframe-with-string-and-numeric-values" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Generate a Testing Dataframe with String and Numeric Values</h2>
-<p>Generate a test dataframe with string and numeric variables. For testing purposes.</p>
-<pre class="python"><code># Seed
-np.random.seed(456)
-random.seed(456)
-
-# Numeric matrix 3 rows 4 columns
-mt_numeric = np.random.randint(10, size=(3, 4))
-
-# String block 5 letters per word, 3 rows and 3 columns of words
-st_rand_word_block = &#39;&#39;.join(random.choice(string.ascii_lowercase) for ctr in range(5*3*3))
-ls_st_rand_word = [st_rand_word_block[ctr: ctr + 5].capitalize() for ctr in range(0, len(st_rand_word_block), 5)]
-mt_string = np.reshape(ls_st_rand_word, [3,3])
-
-# Combine string and numeric matrix
-mt_data = np.column_stack([mt_numeric, mt_string])
-
-# Matrix to dataframe
-df_data = pd.DataFrame(data=mt_data,
-                       index=[ &#39;r&#39; + str(it_col) for it_col in np.array(range(1, mt_data.shape[0]+1))],
-                       columns=[ &#39;c&#39; + str(it_col) for it_col in np.array(range(1, mt_data.shape[1]+1))])
-            
-# Print table
-print(df_data)</code></pre>
-<pre><code>##    c1 c2 c3 c4     c5     c6     c7
-## r1  5  9  4  5  Xoonm  Zubtx  Zqdkp
-## r2  7  1  8  3  Ydcpw  Obiee  Gfxmq
-## r3  5  2  4  2  Tzrwu  Srwvp  Kcsrb</code></pre>
+<div id="proceed-despite-error" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Proceed Despite Error</h2>
+<p>Sometimes, code should proceed despite error, to finish a loop for example:</p>
+<pre class="python"><code># estimate at each initial random points
+for it_esti_ctr in range(esti_param_vec_count):
+    # Update the 3rd element of combo_type, which determines which draw index to use
+    combo_type[3] = it_esti_ctr
+    try:
+        invoke_run_main.invoke_main(combo_type, **dc_invoke_main_args)
+    except Exception:
+        logging.critical(f&#39;Finished this {it_esti_ctr=} of {range(esti_param_vec_count)=}&#39;)</code></pre>
 </div>
 </div>
 

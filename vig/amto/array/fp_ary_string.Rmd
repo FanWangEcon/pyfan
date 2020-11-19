@@ -9,12 +9,19 @@ core:
       zip()
       upper()
       fstring
+      join()
   - package: textwrap
     code: |
       fill(st, width = 20)
   - package: fstring
     code: |
       f
+  - package: random
+    code: |
+      choice
+  - package: string
+    code: |
+      ascii_lowercase
 date: 2020-06-17
 date_start: 2020-11-06
 output:
@@ -42,7 +49,43 @@ try(source("../../../.Rprofile"))
 
 ```{python}
 import numpy as np
+import string as string
+import random as random
 ```
+
+#### Generate Random Strings
+
+Generate some random strings:
+
+```{python}
+random.seed(123)
+it_word_length = 5
+st_rand_word = ''.join(random.choice(string.ascii_lowercase) for i in range(it_word_length))
+st_rand_word = st_rand_word.capitalize()
+print(f'{st_rand_word=}')
+```
+
+Generate a block or random text and then convert it to a one list of strings:
+
+```{python}
+random.seed(123)
+it_words_count = 15
+it_word_length = 5
+st_rand_word_block = ''.join(random.choice(string.ascii_lowercase) for ctr in range(it_word_length*it_words_count))
+ls_st_rand_word = [st_rand_word_block[ctr: ctr + it_word_length].capitalize() 
+                   for ctr in range(0, len(st_rand_word_block), it_word_length)]
+print(f'{ls_st_rand_word=}')
+```
+
+Reshape the array of words to a matrix:
+
+```{python}
+mt_st_rand_word = np.reshape(ls_st_rand_word, [3,5])
+print(f'{mt_st_rand_word=}')
+print(f'{mt_st_rand_word.shape=}')
+print(f'{type(mt_st_rand_word)=}')
+```
+
 
 #### Print Strings with Numeric Values and Other Strings
 

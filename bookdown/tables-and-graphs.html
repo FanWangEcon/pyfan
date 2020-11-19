@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Tables and Graphs | Data Structures and Cloud Services with Python</title>
-  <meta name="description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="description" content="Numpy documentation examples." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Tables and Graphs | Data Structures and Cloud Services with Python" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Python Implementation Examples for Research Tasks" />
+  <meta property="og:description" content="Numpy documentation examples." />
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Tables and Graphs | Data Structures and Cloud Services with Python" />
   
-  <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="twitter:description" content="Numpy documentation examples." />
   
 
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-11-08" />
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="functions.html"/>
 <link rel="next" href="amazon-web-services.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -64,18 +66,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -95,7 +96,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,102 +146,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a><ul>
-<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
+<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="data-structures.html"><a href="data-structures.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
 <li class="chapter" data-level="1.1.2" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>1.1.2</b> List</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
+<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="data-structures.html"><a href="data-structures.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a><ul>
+<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="data-structures.html"><a href="data-structures.html#generate-matrix-from-arrays"><i class="fa fa-check"></i><b>1.3.1</b> Generate Matrix from Arrays</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a><ul>
-<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a><ul>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="pandas.html"><a href="pandas.html#generate-matrix-from-arrays-1"><i class="fa fa-check"></i><b>2.1.1</b> Generate Matrix from Arrays</a></li>
+<li class="chapter" data-level="2.1.2" data-path="pandas.html"><a href="pandas.html#select-rows-and-columns-from-dataframe"><i class="fa fa-check"></i><b>2.1.2</b> Select Rows and Columns from Dataframe</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a><ul>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#function-arguments-1"><i class="fa fa-check"></i><b>3.1.1</b> Function Arguments</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#exceptions"><i class="fa fa-check"></i><b>3.2</b> Exceptions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>3.2.1</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a><ul>
-<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a><ul>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#line-and-scatter-plots"><i class="fa fa-check"></i><b>4.1.1</b> Line and Scatter Plots</a></li>
 <li class="chapter" data-level="4.1.2" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#text-plot"><i class="fa fa-check"></i><b>4.1.2</b> Text Plot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a><ul>
-<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a><ul>
+<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup-1"><i class="fa fa-check"></i><b>5.1.1</b> AWS Setup</a></li>
 <li class="chapter" data-level="5.1.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-boto3"><i class="fa fa-check"></i><b>5.1.2</b> AWS Boto3</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a><ul>
+<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3-usages"><i class="fa fa-check"></i><b>5.2.1</b> S3 Usages</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a><ul>
+<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-batch-run"><i class="fa fa-check"></i><b>5.3.1</b> AWS Batch Run</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a><ul>
-<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a><ul>
+<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup-1"><i class="fa fa-check"></i><b>6.1.1</b> Docker Setup</a></li>
 <li class="chapter" data-level="6.1.2" data-path="docker-container.html"><a href="docker-container.html#ecr-setup"><i class="fa fa-check"></i><b>6.1.2</b> ECR Setup</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a><ul>
-<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a><ul>
+<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="get-data.html"><a href="get-data.html#ecmwf-era5-data"><i class="fa fa-check"></i><b>7.1.1</b> ECMWF ERA5 Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a><ul>
-<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a><ul>
+<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="system-and-support.html"><a href="system-and-support.html#python-command-line"><i class="fa fa-check"></i><b>8.1.1</b> Python Command Line</a></li>
 <li class="chapter" data-level="8.1.2" data-path="system-and-support.html"><a href="system-and-support.html#run-matlab-functions"><i class="fa fa-check"></i><b>8.1.2</b> Run Matlab Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a><ul>
+<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="system-and-support.html"><a href="system-and-support.html#read-and-write-and-convert"><i class="fa fa-check"></i><b>8.2.1</b> Read and Write and Convert</a></li>
 <li class="chapter" data-level="8.2.2" data-path="system-and-support.html"><a href="system-and-support.html#folder-operations"><i class="fa fa-check"></i><b>8.2.2</b> Folder Operations</a></li>
 <li class="chapter" data-level="8.2.3" data-path="system-and-support.html"><a href="system-and-support.html#parse-yaml"><i class="fa fa-check"></i><b>8.2.3</b> Parse Yaml</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a><ul>
+<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="system-and-support.html"><a href="system-and-support.html#core-installations"><i class="fa fa-check"></i><b>8.3.1</b> Core Installations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a><ul>
+<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="system-and-support.html"><a href="system-and-support.html#numpy-doc-documentation-guide"><i class="fa fa-check"></i><b>8.4.1</b> Numpy Doc Documentation Guide</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a><ul>
-<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a><ul>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a>
+<ul>
 <li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
 <li class="chapter" data-level="A.1.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.2-dictionarydictionary-links"><i class="fa fa-check"></i><b>A.1.2</b> <span>Section 1.2 Dictionary</span> links</a></li>
 <li class="chapter" data-level="A.1.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.3-matrixmatrix-links"><i class="fa fa-check"></i><b>A.1.3</b> <span>Section 1.3 Matrix</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a><ul>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a>
+<ul>
 <li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-panda-basicspanda-basics-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 Panda Basics</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a><ul>
+<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a>
+<ul>
 <li class="chapter" data-level="A.3.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.1-function-argumentsfunction-arguments-links"><i class="fa fa-check"></i><b>A.3.1</b> <span>Section 3.1 Function Arguments</span> links</a></li>
+<li class="chapter" data-level="A.3.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.2-exceptionsexceptions-links"><i class="fa fa-check"></i><b>A.3.2</b> <span>Section 3.2 Exceptions</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a><ul>
+<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a>
+<ul>
 <li class="chapter" data-level="A.4.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-4.1-matplotlib-base-plotsmatplotlib-base-plots-links"><i class="fa fa-check"></i><b>A.4.1</b> <span>Section 4.1 Matplotlib Base Plots</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a><ul>
+<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a>
+<ul>
 <li class="chapter" data-level="A.5.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.1-aws-setupaws-setup-links"><i class="fa fa-check"></i><b>A.5.1</b> <span>Section 5.1 AWS Setup</span> links</a></li>
 <li class="chapter" data-level="A.5.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.2-s3s3-links"><i class="fa fa-check"></i><b>A.5.2</b> <span>Section 5.2 S3</span> links</a></li>
 <li class="chapter" data-level="A.5.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.3-batchbatch-links"><i class="fa fa-check"></i><b>A.5.3</b> <span>Section 5.3 Batch</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a><ul>
+<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a>
+<ul>
 <li class="chapter" data-level="A.6.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-6.1-docker-setupdocker-setup-links"><i class="fa fa-check"></i><b>A.6.1</b> <span>Section 6.1 Docker Setup</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a><ul>
+<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a>
+<ul>
 <li class="chapter" data-level="A.7.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-7.1-environmental-dataenvironmental-data-links"><i class="fa fa-check"></i><b>A.7.1</b> <span>Section 7.1 Environmental Data</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a><ul>
+<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a>
+<ul>
 <li class="chapter" data-level="A.8.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.1-command-linecommand-line-links"><i class="fa fa-check"></i><b>A.8.1</b> <span>Section 8.1 Command Line</span> links</a></li>
 <li class="chapter" data-level="A.8.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.2-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.8.2</b> <span>Section 8.2 File In and Out</span> links</a></li>
 <li class="chapter" data-level="A.8.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.3-install-pythoninstall-python-links"><i class="fa fa-check"></i><b>A.8.3</b> <span>Section 8.3 Install Python</span> links</a></li>
@@ -267,95 +306,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tables-and-graphs" class="section level1">
+<div id="tables-and-graphs" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Tables and Graphs</h1>
 
-<div id="matplotlib-base-plots" class="section level2">
+<div id="matplotlib-base-plots" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Matplotlib Base Plots</h2>
 
-<div id="line-and-scatter-plots" class="section level3">
+<div id="line-and-scatter-plots" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Line and Scatter Plots</h3>
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div id="plot-random-walk-and-white-noise-jointly" class="section level4">
+<div id="plot-random-walk-and-white-noise-jointly" class="section level4" number="4.1.1.1">
 <h4><span class="header-section-number">4.1.1.1</span> Plot Random Walk and White Noise Jointly</h4>
 <p>Given x and y coordinates, plot out two lines. see <a href="https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib.pyplot.plot</a>. Here we will plot out the extremes of AR(1), white noise (no persistence), and random walk (fully persistent shocks).</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="tables-and-graphs.html#cb88-1"></a><span class="co"># Import Packages</span></span>
-<span id="cb88-2"><a href="tables-and-graphs.html#cb88-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb88-3"><a href="tables-and-graphs.html#cb88-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb88-4"><a href="tables-and-graphs.html#cb88-4"></a></span>
-<span id="cb88-5"><a href="tables-and-graphs.html#cb88-5"></a><span class="co"># Generate X and Y</span></span>
-<span id="cb88-6"><a href="tables-and-graphs.html#cb88-6"></a>np.random.seed(<span class="dv">123</span>)</span>
-<span id="cb88-7"><a href="tables-and-graphs.html#cb88-7"></a>ar_fl_y1_rand <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb88-8"><a href="tables-and-graphs.html#cb88-8"></a>ar_fl_y2_rand <span class="op">=</span> np.cumsum(np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>))</span>
-<span id="cb88-9"><a href="tables-and-graphs.html#cb88-9"></a>ar_it_x_grid <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="bu">len</span>(ar_fl_y1_rand)<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb88-10"><a href="tables-and-graphs.html#cb88-10"></a></span>
-<span id="cb88-11"><a href="tables-and-graphs.html#cb88-11"></a><span class="co"># Start Figure</span></span>
-<span id="cb88-12"><a href="tables-and-graphs.html#cb88-12"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb88-13"><a href="tables-and-graphs.html#cb88-13"></a></span>
-<span id="cb88-14"><a href="tables-and-graphs.html#cb88-14"></a><span class="co"># Graph</span></span>
-<span id="cb88-15"><a href="tables-and-graphs.html#cb88-15"></a>ax.plot(ar_it_x_grid, ar_fl_y1_rand,</span>
-<span id="cb88-16"><a href="tables-and-graphs.html#cb88-16"></a>                     color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;dashed&#39;</span>,</span>
-<span id="cb88-17"><a href="tables-and-graphs.html#cb88-17"></a>                     label<span class="op">=</span><span class="st">&#39;sd=2, 0 persistence&#39;</span>)</span></code></pre></div>
-<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x00000200C904A820&gt;]</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="tables-and-graphs.html#cb90-1"></a>ax.plot(ar_it_x_grid, ar_fl_y2_rand,</span>
-<span id="cb90-2"><a href="tables-and-graphs.html#cb90-2"></a>                     color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;solid&#39;</span>,</span>
-<span id="cb90-3"><a href="tables-and-graphs.html#cb90-3"></a>                     label<span class="op">=</span><span class="st">&#39;sd=1, random walk&#39;</span>)</span>
-<span id="cb90-4"><a href="tables-and-graphs.html#cb90-4"></a>                     </span>
-<span id="cb90-5"><a href="tables-and-graphs.html#cb90-5"></a><span class="co"># Labeling</span></span></code></pre></div>
-<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x00000200C904ACA0&gt;]</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="tables-and-graphs.html#cb92-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</span></code></pre></div>
-<pre><code>## &lt;matplotlib.legend.Legend object at 0x00000200C904AF10&gt;</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="tables-and-graphs.html#cb94-1"></a>plt.ylabel(<span class="st">&#39;Random Standard Normal Draws&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="tables-and-graphs.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
+<span id="cb115-2"><a href="tables-and-graphs.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb115-3"><a href="tables-and-graphs.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb115-4"><a href="tables-and-graphs.html#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-5"><a href="tables-and-graphs.html#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate X and Y</span></span>
+<span id="cb115-6"><a href="tables-and-graphs.html#cb115-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb115-7"><a href="tables-and-graphs.html#cb115-7" aria-hidden="true" tabindex="-1"></a>ar_fl_y1_rand <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb115-8"><a href="tables-and-graphs.html#cb115-8" aria-hidden="true" tabindex="-1"></a>ar_fl_y2_rand <span class="op">=</span> np.cumsum(np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>))</span>
+<span id="cb115-9"><a href="tables-and-graphs.html#cb115-9" aria-hidden="true" tabindex="-1"></a>ar_it_x_grid <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="bu">len</span>(ar_fl_y1_rand)<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb115-10"><a href="tables-and-graphs.html#cb115-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-11"><a href="tables-and-graphs.html#cb115-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Figure</span></span>
+<span id="cb115-12"><a href="tables-and-graphs.html#cb115-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb115-13"><a href="tables-and-graphs.html#cb115-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-14"><a href="tables-and-graphs.html#cb115-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
+<span id="cb115-15"><a href="tables-and-graphs.html#cb115-15" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y1_rand,</span>
+<span id="cb115-16"><a href="tables-and-graphs.html#cb115-16" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;dashed&#39;</span>,</span>
+<span id="cb115-17"><a href="tables-and-graphs.html#cb115-17" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=2, 0 persistence&#39;</span>)</span></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x000001493817C820&gt;]</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="tables-and-graphs.html#cb117-1" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y2_rand,</span>
+<span id="cb117-2"><a href="tables-and-graphs.html#cb117-2" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;solid&#39;</span>,</span>
+<span id="cb117-3"><a href="tables-and-graphs.html#cb117-3" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=1, random walk&#39;</span>)</span>
+<span id="cb117-4"><a href="tables-and-graphs.html#cb117-4" aria-hidden="true" tabindex="-1"></a>                     </span>
+<span id="cb117-5"><a href="tables-and-graphs.html#cb117-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x000001493817C130&gt;]</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="tables-and-graphs.html#cb119-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</span></code></pre></div>
+<pre><code>## &lt;matplotlib.legend.Legend object at 0x0000014938185B80&gt;</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb121-1"><a href="tables-and-graphs.html#cb121-1" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Random Standard Normal Draws&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0, 0.5, &#39;Random Standard Normal Draws&#39;)</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="tables-and-graphs.html#cb96-1"></a>plt.xlabel(<span class="st">&#39;Time Periods&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="tables-and-graphs.html#cb123-1" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Time Periods&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0.5, 0, &#39;Time Periods&#39;)</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="tables-and-graphs.html#cb98-1"></a>plt.title(<span class="st">&#39;White Noise&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb125-1"><a href="tables-and-graphs.html#cb125-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;White Noise&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0.5, 1.0, &#39;White Noise&#39;)</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="tables-and-graphs.html#cb100-1"></a>plt.grid()</span>
-<span id="cb100-2"><a href="tables-and-graphs.html#cb100-2"></a>plt.show()</span></code></pre></div>
-<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-53-1.png" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a href="tables-and-graphs.html#cb127-1" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb127-2"><a href="tables-and-graphs.html#cb127-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-66-1.png" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
-<div id="text-plot" class="section level3">
+<div id="text-plot" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Text Plot</h3>
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div id="plot-text" class="section level4">
+<div id="plot-text" class="section level4" number="4.1.2.1">
 <h4><span class="header-section-number">4.1.2.1</span> Plot Text</h4>
 <p>Plot Text as Image. <a href="https://matplotlib.org/3.1.1/gallery/pyplots/text_layout.html#sphx-glr-gallery-pyplots-text-layout-py">Create text with different alignment and rotation.</a></p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="tables-and-graphs.html#cb101-1"></a><span class="co"># Import Packages</span></span>
-<span id="cb101-2"><a href="tables-and-graphs.html#cb101-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb101-3"><a href="tables-and-graphs.html#cb101-3"></a><span class="im">import</span> textwrap</span>
-<span id="cb101-4"><a href="tables-and-graphs.html#cb101-4"></a><span class="im">import</span> json</span>
-<span id="cb101-5"><a href="tables-and-graphs.html#cb101-5"></a></span>
-<span id="cb101-6"><a href="tables-and-graphs.html#cb101-6"></a><span class="co"># Dict of String to String</span></span>
-<span id="cb101-7"><a href="tables-and-graphs.html#cb101-7"></a>dc_path <span class="op">=</span> {<span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
-<span id="cb101-8"><a href="tables-and-graphs.html#cb101-8"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">equation</span><span class="ch">\\</span><span class="st">cases.tex&#39;</span>:</span>
-<span id="cb101-9"><a href="tables-and-graphs.html#cb101-9"></a>               <span class="st">&#39;C:/Users/fan/Documents/cases.pdf&#39;</span>,</span>
-<span id="cb101-10"><a href="tables-and-graphs.html#cb101-10"></a>           <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
-<span id="cb101-11"><a href="tables-and-graphs.html#cb101-11"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">symbols</span><span class="ch">\\</span><span class="st">fs_symbols.tex&#39;</span>:</span>
-<span id="cb101-12"><a href="tables-and-graphs.html#cb101-12"></a>               <span class="st">&#39;C:/Users/fan/Documents/fs_symbols.pdf&#39;</span>}</span>
-<span id="cb101-13"><a href="tables-and-graphs.html#cb101-13"></a>st_dc_path <span class="op">=</span> textwrap.fill(json.dumps(dc_path), width <span class="op">=</span> <span class="dv">70</span>)</span>
-<span id="cb101-14"><a href="tables-and-graphs.html#cb101-14"></a></span>
-<span id="cb101-15"><a href="tables-and-graphs.html#cb101-15"></a><span class="co"># Start Plot</span></span>
-<span id="cb101-16"><a href="tables-and-graphs.html#cb101-16"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb101-17"><a href="tables-and-graphs.html#cb101-17"></a></span>
-<span id="cb101-18"><a href="tables-and-graphs.html#cb101-18"></a><span class="co"># Text Plot</span></span>
-<span id="cb101-19"><a href="tables-and-graphs.html#cb101-19"></a>ax.text(<span class="fl">0.5</span>, <span class="fl">0.5</span>, st_dc_path,</span>
-<span id="cb101-20"><a href="tables-and-graphs.html#cb101-20"></a>        horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
-<span id="cb101-21"><a href="tables-and-graphs.html#cb101-21"></a>        verticalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
-<span id="cb101-22"><a href="tables-and-graphs.html#cb101-22"></a>        fontsize<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>,</span>
-<span id="cb101-23"><a href="tables-and-graphs.html#cb101-23"></a>        transform<span class="op">=</span>ax.transAxes)</span>
-<span id="cb101-24"><a href="tables-and-graphs.html#cb101-24"></a></span>
-<span id="cb101-25"><a href="tables-and-graphs.html#cb101-25"></a><span class="co"># Labeling</span></span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="tables-and-graphs.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
+<span id="cb128-2"><a href="tables-and-graphs.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb128-3"><a href="tables-and-graphs.html#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
+<span id="cb128-4"><a href="tables-and-graphs.html#cb128-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb128-5"><a href="tables-and-graphs.html#cb128-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-6"><a href="tables-and-graphs.html#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Dict of String to String</span></span>
+<span id="cb128-7"><a href="tables-and-graphs.html#cb128-7" aria-hidden="true" tabindex="-1"></a>dc_path <span class="op">=</span> {<span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
+<span id="cb128-8"><a href="tables-and-graphs.html#cb128-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">equation</span><span class="ch">\\</span><span class="st">cases.tex&#39;</span>:</span>
+<span id="cb128-9"><a href="tables-and-graphs.html#cb128-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/cases.pdf&#39;</span>,</span>
+<span id="cb128-10"><a href="tables-and-graphs.html#cb128-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
+<span id="cb128-11"><a href="tables-and-graphs.html#cb128-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">symbols</span><span class="ch">\\</span><span class="st">fs_symbols.tex&#39;</span>:</span>
+<span id="cb128-12"><a href="tables-and-graphs.html#cb128-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/fs_symbols.pdf&#39;</span>}</span>
+<span id="cb128-13"><a href="tables-and-graphs.html#cb128-13" aria-hidden="true" tabindex="-1"></a>st_dc_path <span class="op">=</span> textwrap.fill(json.dumps(dc_path), width <span class="op">=</span> <span class="dv">70</span>)</span>
+<span id="cb128-14"><a href="tables-and-graphs.html#cb128-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-15"><a href="tables-and-graphs.html#cb128-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Plot</span></span>
+<span id="cb128-16"><a href="tables-and-graphs.html#cb128-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb128-17"><a href="tables-and-graphs.html#cb128-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-18"><a href="tables-and-graphs.html#cb128-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Text Plot</span></span>
+<span id="cb128-19"><a href="tables-and-graphs.html#cb128-19" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.5</span>, <span class="fl">0.5</span>, st_dc_path,</span>
+<span id="cb128-20"><a href="tables-and-graphs.html#cb128-20" aria-hidden="true" tabindex="-1"></a>        horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
+<span id="cb128-21"><a href="tables-and-graphs.html#cb128-21" aria-hidden="true" tabindex="-1"></a>        verticalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
+<span id="cb128-22"><a href="tables-and-graphs.html#cb128-22" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>,</span>
+<span id="cb128-23"><a href="tables-and-graphs.html#cb128-23" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb128-24"><a href="tables-and-graphs.html#cb128-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-25"><a href="tables-and-graphs.html#cb128-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
 <pre><code>## Text(0.5, 0.5, &#39;{&quot;C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\equation\\\\cases.tex&quot;:\n&quot;C:/Users/fan/Documents/cases.pdf&quot;,\n&quot;C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\symbols\\\\fs_symbols.tex&quot;:\n&quot;C:/Users/fan/Documents/fs_symbols.pdf&quot;}&#39;)</code></pre>
-<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="tables-and-graphs.html#cb103-1"></a>ax.set_axis_off()</span>
-<span id="cb103-2"><a href="tables-and-graphs.html#cb103-2"></a>plt.show()</span></code></pre></div>
-<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-55-1.png" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="tables-and-graphs.html#cb130-1" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb130-2"><a href="tables-and-graphs.html#cb130-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-68-1.png" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

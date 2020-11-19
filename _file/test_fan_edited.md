@@ -1,10 +1,9 @@
 ---
 author:
-- '[Fan Wang](http://fanwangecon.github.io/) [^1]'
+- "[Fan Wang](http://fanwangecon.github.io/) [^1]"
 title: A Latex Testing File
 ---
 
-\maketitle
 Ipsum information dolor sit amet, consectetur adipiscing elit. Integer
 Latex placerat nunc orci.
 

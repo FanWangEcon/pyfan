@@ -1,8 +1,47 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
 ## import numpy as np
+
+## import string as string
+
+## import random as random
+
+
+## random.seed(123)
+
+## it_word_length = 5
+
+## st_rand_word = ''.join(random.choice(string.ascii_lowercase) for i in range(it_word_length))
+
+## st_rand_word = st_rand_word.capitalize()
+
+## print(f'{st_rand_word=}')
+
+
+## random.seed(123)
+
+## it_words_count = 15
+
+## it_word_length = 5
+
+## st_rand_word_block = ''.join(random.choice(string.ascii_lowercase) for ctr in range(it_word_length*it_words_count))
+
+## ls_st_rand_word = [st_rand_word_block[ctr: ctr + it_word_length].capitalize()
+
+##                    for ctr in range(0, len(st_rand_word_block), it_word_length)]
+
+## print(f'{ls_st_rand_word=}')
+
+
+## mt_st_rand_word = np.reshape(ls_st_rand_word, [3,5])
+
+## print(f'{mt_st_rand_word=}')
+
+## print(f'{mt_st_rand_word.shape=}')
+
+## print(f'{type(mt_st_rand_word)=}')
 
 
 ## dc_invoke_main_args = {'speckey': 'ng_s_t',

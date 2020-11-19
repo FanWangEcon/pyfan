@@ -19,10 +19,13 @@ rmd_files:
   - vig/panda/main.Rmd
   - vig/panda/basics/main.Rmd
   - vig/panda/basics/fs_matrix2dataframe.Rmd
+  - vig/panda/basics/fs_select.Rmd
 
   - vig/function/main.Rmd
   - vig/function/args/main.Rmd
   - vig/function/args/fs_func_args.Rmd
+  - vig/function/errors/main.Rmd
+  - vig/function/errors/fs_python_exceptions.Rmd
 
   - vig/tabgraph/main.Rmd
   - vig/tabgraph/baseplot/main.Rmd
@@ -37,7 +40,6 @@ rmd_files:
   - vig/aws/s3/fs_aws_s3.Rmd
   - vig/aws/batch/main.Rmd
   - vig/aws/batch/fs_aws_batch.Rmd
-
 
   - vig/docker/main.Rmd
   - vig/docker/setup/main.Rmd

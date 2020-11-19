@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Pandas | Data Structures and Cloud Services with Python</title>
-  <meta name="description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="description" content="Numpy documentation examples." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Pandas | Data Structures and Cloud Services with Python" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Python Implementation Examples for Research Tasks" />
+  <meta property="og:description" content="Numpy documentation examples." />
   <meta name="github-repo" content="fanwangecon/R4Econ" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Pandas | Data Structures and Cloud Services with Python" />
   
-  <meta name="twitter:description" content="Python Implementation Examples for Research Tasks" />
+  <meta name="twitter:description" content="Numpy documentation examples." />
   
 
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-11-08" />
+<meta name="date" content="2020-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="data-structures.html"/>
 <link rel="next" href="functions.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -64,18 +66,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -95,7 +96,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,102 +146,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a><ul>
-<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a><ul>
+<li class="chapter" data-level="1" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>1</b> Data Structures</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-structures.html"><a href="data-structures.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="data-structures.html"><a href="data-structures.html#strings"><i class="fa fa-check"></i><b>1.1.1</b> Strings</a></li>
 <li class="chapter" data-level="1.1.2" data-path="data-structures.html"><a href="data-structures.html#list"><i class="fa fa-check"></i><b>1.1.2</b> List</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a><ul>
+<li class="chapter" data-level="1.2" data-path="data-structures.html"><a href="data-structures.html#dictionary"><i class="fa fa-check"></i><b>1.2</b> Dictionary</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="data-structures.html"><a href="data-structures.html#dictionary-1"><i class="fa fa-check"></i><b>1.2.1</b> Dictionary</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a><ul>
+<li class="chapter" data-level="1.3" data-path="data-structures.html"><a href="data-structures.html#matrix"><i class="fa fa-check"></i><b>1.3</b> Matrix</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="data-structures.html"><a href="data-structures.html#generate-matrix-from-arrays"><i class="fa fa-check"></i><b>1.3.1</b> Generate Matrix from Arrays</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a><ul>
-<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a><ul>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#panda-basics"><i class="fa fa-check"></i><b>2.1</b> Panda Basics</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="pandas.html"><a href="pandas.html#generate-matrix-from-arrays-1"><i class="fa fa-check"></i><b>2.1.1</b> Generate Matrix from Arrays</a></li>
+<li class="chapter" data-level="2.1.2" data-path="pandas.html"><a href="pandas.html#select-rows-and-columns-from-dataframe"><i class="fa fa-check"></i><b>2.1.2</b> Select Rows and Columns from Dataframe</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a><ul>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#function-arguments-1"><i class="fa fa-check"></i><b>3.1.1</b> Function Arguments</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#exceptions"><i class="fa fa-check"></i><b>3.2</b> Exceptions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#exception-handling"><i class="fa fa-check"></i><b>3.2.1</b> Exception Handling</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a><ul>
-<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a><ul>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html"><i class="fa fa-check"></i><b>4</b> Tables and Graphs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#matplotlib-base-plots"><i class="fa fa-check"></i><b>4.1</b> Matplotlib Base Plots</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#line-and-scatter-plots"><i class="fa fa-check"></i><b>4.1.1</b> Line and Scatter Plots</a></li>
 <li class="chapter" data-level="4.1.2" data-path="tables-and-graphs.html"><a href="tables-and-graphs.html#text-plot"><i class="fa fa-check"></i><b>4.1.2</b> Text Plot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a><ul>
-<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a><ul>
+<li class="chapter" data-level="5" data-path="amazon-web-services.html"><a href="amazon-web-services.html"><i class="fa fa-check"></i><b>5</b> Amazon Web Services</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup"><i class="fa fa-check"></i><b>5.1</b> AWS Setup</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-setup-1"><i class="fa fa-check"></i><b>5.1.1</b> AWS Setup</a></li>
 <li class="chapter" data-level="5.1.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-boto3"><i class="fa fa-check"></i><b>5.1.2</b> AWS Boto3</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a><ul>
+<li class="chapter" data-level="5.2" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3"><i class="fa fa-check"></i><b>5.2</b> S3</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#s3-usages"><i class="fa fa-check"></i><b>5.2.1</b> S3 Usages</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a><ul>
+<li class="chapter" data-level="5.3" data-path="amazon-web-services.html"><a href="amazon-web-services.html#batch"><i class="fa fa-check"></i><b>5.3</b> Batch</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="amazon-web-services.html"><a href="amazon-web-services.html#aws-batch-run"><i class="fa fa-check"></i><b>5.3.1</b> AWS Batch Run</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a><ul>
-<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a><ul>
+<li class="chapter" data-level="6" data-path="docker-container.html"><a href="docker-container.html"><i class="fa fa-check"></i><b>6</b> Docker Container</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup"><i class="fa fa-check"></i><b>6.1</b> Docker Setup</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="docker-container.html"><a href="docker-container.html#docker-setup-1"><i class="fa fa-check"></i><b>6.1.1</b> Docker Setup</a></li>
 <li class="chapter" data-level="6.1.2" data-path="docker-container.html"><a href="docker-container.html#ecr-setup"><i class="fa fa-check"></i><b>6.1.2</b> ECR Setup</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a><ul>
-<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a><ul>
+<li class="chapter" data-level="7" data-path="get-data.html"><a href="get-data.html"><i class="fa fa-check"></i><b>7</b> Get Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="get-data.html"><a href="get-data.html#environmental-data"><i class="fa fa-check"></i><b>7.1</b> Environmental Data</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="get-data.html"><a href="get-data.html#ecmwf-era5-data"><i class="fa fa-check"></i><b>7.1.1</b> ECMWF ERA5 Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a><ul>
-<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a><ul>
+<li class="chapter" data-level="8" data-path="system-and-support.html"><a href="system-and-support.html"><i class="fa fa-check"></i><b>8</b> System and Support</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="system-and-support.html"><a href="system-and-support.html#command-line"><i class="fa fa-check"></i><b>8.1</b> Command Line</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="system-and-support.html"><a href="system-and-support.html#python-command-line"><i class="fa fa-check"></i><b>8.1.1</b> Python Command Line</a></li>
 <li class="chapter" data-level="8.1.2" data-path="system-and-support.html"><a href="system-and-support.html#run-matlab-functions"><i class="fa fa-check"></i><b>8.1.2</b> Run Matlab Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a><ul>
+<li class="chapter" data-level="8.2" data-path="system-and-support.html"><a href="system-and-support.html#file-in-and-out"><i class="fa fa-check"></i><b>8.2</b> File In and Out</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="system-and-support.html"><a href="system-and-support.html#read-and-write-and-convert"><i class="fa fa-check"></i><b>8.2.1</b> Read and Write and Convert</a></li>
 <li class="chapter" data-level="8.2.2" data-path="system-and-support.html"><a href="system-and-support.html#folder-operations"><i class="fa fa-check"></i><b>8.2.2</b> Folder Operations</a></li>
 <li class="chapter" data-level="8.2.3" data-path="system-and-support.html"><a href="system-and-support.html#parse-yaml"><i class="fa fa-check"></i><b>8.2.3</b> Parse Yaml</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a><ul>
+<li class="chapter" data-level="8.3" data-path="system-and-support.html"><a href="system-and-support.html#install-python"><i class="fa fa-check"></i><b>8.3</b> Install Python</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="system-and-support.html"><a href="system-and-support.html#core-installations"><i class="fa fa-check"></i><b>8.3.1</b> Core Installations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a><ul>
+<li class="chapter" data-level="8.4" data-path="system-and-support.html"><a href="system-and-support.html#documentation"><i class="fa fa-check"></i><b>8.4</b> Documentation</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="system-and-support.html"><a href="system-and-support.html#numpy-doc-documentation-guide"><i class="fa fa-check"></i><b>8.4.1</b> Numpy Doc Documentation Guide</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a><ul>
-<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a><ul>
+<li class="chapter" data-level="A" data-path="index-and-code-links.html"><a href="index-and-code-links.html"><i class="fa fa-check"></i><b>A</b> Index and Code Links</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#data-structures-links"><i class="fa fa-check"></i><b>A.1</b> Data Structures links</a>
+<ul>
 <li class="chapter" data-level="A.1.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.1-arrayarray-links"><i class="fa fa-check"></i><b>A.1.1</b> <span>Section 1.1 Array</span> links</a></li>
 <li class="chapter" data-level="A.1.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.2-dictionarydictionary-links"><i class="fa fa-check"></i><b>A.1.2</b> <span>Section 1.2 Dictionary</span> links</a></li>
 <li class="chapter" data-level="A.1.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-1.3-matrixmatrix-links"><i class="fa fa-check"></i><b>A.1.3</b> <span>Section 1.3 Matrix</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a><ul>
+<li class="chapter" data-level="A.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#pandas-links"><i class="fa fa-check"></i><b>A.2</b> Pandas links</a>
+<ul>
 <li class="chapter" data-level="A.2.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-2.1-panda-basicspanda-basics-links"><i class="fa fa-check"></i><b>A.2.1</b> <span>Section 2.1 Panda Basics</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a><ul>
+<li class="chapter" data-level="A.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#functions-links"><i class="fa fa-check"></i><b>A.3</b> Functions links</a>
+<ul>
 <li class="chapter" data-level="A.3.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.1-function-argumentsfunction-arguments-links"><i class="fa fa-check"></i><b>A.3.1</b> <span>Section 3.1 Function Arguments</span> links</a></li>
+<li class="chapter" data-level="A.3.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-3.2-exceptionsexceptions-links"><i class="fa fa-check"></i><b>A.3.2</b> <span>Section 3.2 Exceptions</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a><ul>
+<li class="chapter" data-level="A.4" data-path="index-and-code-links.html"><a href="index-and-code-links.html#tables-and-graphs-links"><i class="fa fa-check"></i><b>A.4</b> Tables and Graphs links</a>
+<ul>
 <li class="chapter" data-level="A.4.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-4.1-matplotlib-base-plotsmatplotlib-base-plots-links"><i class="fa fa-check"></i><b>A.4.1</b> <span>Section 4.1 Matplotlib Base Plots</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a><ul>
+<li class="chapter" data-level="A.5" data-path="index-and-code-links.html"><a href="index-and-code-links.html#amazon-web-services-links"><i class="fa fa-check"></i><b>A.5</b> Amazon Web Services links</a>
+<ul>
 <li class="chapter" data-level="A.5.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.1-aws-setupaws-setup-links"><i class="fa fa-check"></i><b>A.5.1</b> <span>Section 5.1 AWS Setup</span> links</a></li>
 <li class="chapter" data-level="A.5.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.2-s3s3-links"><i class="fa fa-check"></i><b>A.5.2</b> <span>Section 5.2 S3</span> links</a></li>
 <li class="chapter" data-level="A.5.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-5.3-batchbatch-links"><i class="fa fa-check"></i><b>A.5.3</b> <span>Section 5.3 Batch</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a><ul>
+<li class="chapter" data-level="A.6" data-path="index-and-code-links.html"><a href="index-and-code-links.html#docker-container-links"><i class="fa fa-check"></i><b>A.6</b> Docker Container links</a>
+<ul>
 <li class="chapter" data-level="A.6.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-6.1-docker-setupdocker-setup-links"><i class="fa fa-check"></i><b>A.6.1</b> <span>Section 6.1 Docker Setup</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a><ul>
+<li class="chapter" data-level="A.7" data-path="index-and-code-links.html"><a href="index-and-code-links.html#get-data-links"><i class="fa fa-check"></i><b>A.7</b> Get Data links</a>
+<ul>
 <li class="chapter" data-level="A.7.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-7.1-environmental-dataenvironmental-data-links"><i class="fa fa-check"></i><b>A.7.1</b> <span>Section 7.1 Environmental Data</span> links</a></li>
 </ul></li>
-<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a><ul>
+<li class="chapter" data-level="A.8" data-path="index-and-code-links.html"><a href="index-and-code-links.html#system-and-support-links"><i class="fa fa-check"></i><b>A.8</b> System and Support links</a>
+<ul>
 <li class="chapter" data-level="A.8.1" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.1-command-linecommand-line-links"><i class="fa fa-check"></i><b>A.8.1</b> <span>Section 8.1 Command Line</span> links</a></li>
 <li class="chapter" data-level="A.8.2" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.2-file-in-and-outfile-in-and-out-links"><i class="fa fa-check"></i><b>A.8.2</b> <span>Section 8.2 File In and Out</span> links</a></li>
 <li class="chapter" data-level="A.8.3" data-path="index-and-code-links.html"><a href="index-and-code-links.html#section-8.3-install-pythoninstall-python-links"><i class="fa fa-check"></i><b>A.8.3</b> <span>Section 8.3 Install Python</span> links</a></li>
@@ -267,34 +306,120 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pandas" class="section level1">
+<div id="pandas" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Pandas</h1>
 
-<div id="panda-basics" class="section level2">
+<div id="panda-basics" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Panda Basics</h2>
 
-<div id="generate-matrix-from-arrays-1" class="section level3">
+<div id="generate-matrix-from-arrays-1" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Generate Matrix from Arrays</h3>
 <blockquote>
 <p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pandas.html#cb74-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb74-2"><a href="pandas.html#cb74-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
-<div id="single-arrays-to-matrix" class="section level4">
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="pandas.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb92-2"><a href="pandas.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb92-3"><a href="pandas.html#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> random</span>
+<span id="cb92-4"><a href="pandas.html#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="im">as</span> string</span></code></pre></div>
+<div id="single-arrays-to-matrix" class="section level4" number="2.1.1.1">
 <h4><span class="header-section-number">2.1.1.1</span> Single Arrays to Matrix</h4>
 <p>Given various arrays, generate a matrix</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="pandas.html#cb75-1"></a><span class="co"># Concatenate to matrix</span></span>
-<span id="cb75-2"><a href="pandas.html#cb75-2"></a>mt_abc <span class="op">=</span> np.column_stack(np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>)))</span>
-<span id="cb75-3"><a href="pandas.html#cb75-3"></a><span class="co"># Matrix to data frame with columns and row names</span></span>
-<span id="cb75-4"><a href="pandas.html#cb75-4"></a>df_abc <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_abc,</span>
-<span id="cb75-5"><a href="pandas.html#cb75-5"></a>            index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
-<span id="cb75-6"><a href="pandas.html#cb75-6"></a>            columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
-<span id="cb75-7"><a href="pandas.html#cb75-7"></a><span class="co"># Print</span></span>
-<span id="cb75-8"><a href="pandas.html#cb75-8"></a><span class="bu">print</span>(df_abc)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="pandas.html#cb93-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb93-2"><a href="pandas.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate to matrix</span></span>
+<span id="cb93-3"><a href="pandas.html#cb93-3" aria-hidden="true" tabindex="-1"></a>mt_abc <span class="op">=</span> np.column_stack(np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">3</span>)))</span>
+<span id="cb93-4"><a href="pandas.html#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix to data frame with columns and row names</span></span>
+<span id="cb93-5"><a href="pandas.html#cb93-5" aria-hidden="true" tabindex="-1"></a>df_abc <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_abc,</span>
+<span id="cb93-6"><a href="pandas.html#cb93-6" aria-hidden="true" tabindex="-1"></a>            index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
+<span id="cb93-7"><a href="pandas.html#cb93-7" aria-hidden="true" tabindex="-1"></a>            columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_abc.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
+<span id="cb93-8"><a href="pandas.html#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print</span></span>
+<span id="cb93-9"><a href="pandas.html#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_abc)</span></code></pre></div>
 <pre><code>##     c1  c2  c3  c4  c5
-## r1   0   3   1   2   3
-## r2   7   4   5   1   5
-## r3   9   6   6   8   0</code></pre>
+## r1   2   1   6   1   0
+## r2   2   3   1   9   9
+## r3   6   9   0   0   3</code></pre>
+</div>
+<div id="generate-a-testing-dataframe-with-string-and-numeric-values" class="section level4" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Generate a Testing Dataframe with String and Numeric Values</h4>
+<p>Generate a test dataframe with string and numeric variables. For testing purposes.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="pandas.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seed</span></span>
+<span id="cb95-2"><a href="pandas.html#cb95-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">456</span>)</span>
+<span id="cb95-3"><a href="pandas.html#cb95-3" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">456</span>)</span>
+<span id="cb95-4"><a href="pandas.html#cb95-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="pandas.html#cb95-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Numeric matrix 3 rows 4 columns</span></span>
+<span id="cb95-6"><a href="pandas.html#cb95-6" aria-hidden="true" tabindex="-1"></a>mt_numeric <span class="op">=</span> np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb95-7"><a href="pandas.html#cb95-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-8"><a href="pandas.html#cb95-8" aria-hidden="true" tabindex="-1"></a><span class="co"># String block 5 letters per word, 3 rows and 3 columns of words</span></span>
+<span id="cb95-9"><a href="pandas.html#cb95-9" aria-hidden="true" tabindex="-1"></a>st_rand_word_block <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(random.choice(string.ascii_lowercase) <span class="cf">for</span> ctr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">3</span><span class="op">*</span><span class="dv">3</span>))</span>
+<span id="cb95-10"><a href="pandas.html#cb95-10" aria-hidden="true" tabindex="-1"></a>ls_st_rand_word <span class="op">=</span> [st_rand_word_block[ctr: ctr <span class="op">+</span> <span class="dv">5</span>].capitalize() <span class="cf">for</span> ctr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(st_rand_word_block), <span class="dv">5</span>)]</span>
+<span id="cb95-11"><a href="pandas.html#cb95-11" aria-hidden="true" tabindex="-1"></a>mt_string <span class="op">=</span> np.reshape(ls_st_rand_word, [<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb95-12"><a href="pandas.html#cb95-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-13"><a href="pandas.html#cb95-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine string and numeric matrix</span></span>
+<span id="cb95-14"><a href="pandas.html#cb95-14" aria-hidden="true" tabindex="-1"></a>mt_data <span class="op">=</span> np.column_stack([mt_numeric, mt_string])</span>
+<span id="cb95-15"><a href="pandas.html#cb95-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-16"><a href="pandas.html#cb95-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix to dataframe</span></span>
+<span id="cb95-17"><a href="pandas.html#cb95-17" aria-hidden="true" tabindex="-1"></a>df_data <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_data,</span>
+<span id="cb95-18"><a href="pandas.html#cb95-18" aria-hidden="true" tabindex="-1"></a>                       index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_data.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
+<span id="cb95-19"><a href="pandas.html#cb95-19" aria-hidden="true" tabindex="-1"></a>                       columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_data.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
+<span id="cb95-20"><a href="pandas.html#cb95-20" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb95-21"><a href="pandas.html#cb95-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print table</span></span>
+<span id="cb95-22"><a href="pandas.html#cb95-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_data)</span></code></pre></div>
+<pre><code>##    c1 c2 c3 c4     c5     c6     c7
+## r1  5  9  4  5  Xoonm  Zubtx  Zqdkp
+## r2  7  1  8  3  Ydcpw  Obiee  Gfxmq
+## r3  5  2  4  2  Tzrwu  Srwvp  Kcsrb</code></pre>
+
+</div>
+</div>
+<div id="select-rows-and-columns-from-dataframe" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Select Rows and Columns from Dataframe</h3>
+<blockquote>
+<p>Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+</blockquote>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="pandas.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb97-2"><a href="pandas.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb97-3"><a href="pandas.html#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> random</span>
+<span id="cb97-4"><a href="pandas.html#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="im">as</span> string</span></code></pre></div>
+<div id="generate-a-testing-dataframe" class="section level4" number="2.1.2.1">
+<h4><span class="header-section-number">2.1.2.1</span> Generate a Testing Dataframe</h4>
+<p>Generate a testing dataframe for selection and other tests.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="pandas.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seed</span></span>
+<span id="cb98-2"><a href="pandas.html#cb98-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">999</span>)</span>
+<span id="cb98-3"><a href="pandas.html#cb98-3" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">999</span>)</span>
+<span id="cb98-4"><a href="pandas.html#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Numeric matrix 3 rows 4 columns</span></span>
+<span id="cb98-5"><a href="pandas.html#cb98-5" aria-hidden="true" tabindex="-1"></a>mt_numeric <span class="op">=</span> np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
+<span id="cb98-6"><a href="pandas.html#cb98-6" aria-hidden="true" tabindex="-1"></a>st_rand_word_block <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(random.choice(string.ascii_lowercase) <span class="cf">for</span> ctr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span><span class="op">*</span><span class="dv">3</span>))</span>
+<span id="cb98-7"><a href="pandas.html#cb98-7" aria-hidden="true" tabindex="-1"></a>mt_string <span class="op">=</span> np.reshape([st_rand_word_block[ctr: ctr <span class="op">+</span> <span class="dv">5</span>].capitalize() <span class="cf">for</span> ctr <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(st_rand_word_block), <span class="dv">5</span>)], [<span class="dv">5</span>,<span class="dv">3</span>])</span>
+<span id="cb98-8"><a href="pandas.html#cb98-8" aria-hidden="true" tabindex="-1"></a>mt_data <span class="op">=</span> np.column_stack([mt_numeric, mt_string])</span>
+<span id="cb98-9"><a href="pandas.html#cb98-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-10"><a href="pandas.html#cb98-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix to dataframe</span></span>
+<span id="cb98-11"><a href="pandas.html#cb98-11" aria-hidden="true" tabindex="-1"></a>df_data <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>mt_data,</span>
+<span id="cb98-12"><a href="pandas.html#cb98-12" aria-hidden="true" tabindex="-1"></a>                       index<span class="op">=</span>[ <span class="st">&#39;r&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_data.shape[<span class="dv">0</span>]<span class="op">+</span><span class="dv">1</span>))],</span>
+<span id="cb98-13"><a href="pandas.html#cb98-13" aria-hidden="true" tabindex="-1"></a>                       columns<span class="op">=</span>[ <span class="st">&#39;c&#39;</span> <span class="op">+</span> <span class="bu">str</span>(it_col) <span class="cf">for</span> it_col <span class="kw">in</span> np.array(<span class="bu">range</span>(<span class="dv">1</span>, mt_data.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))])</span>
+<span id="cb98-14"><a href="pandas.html#cb98-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-15"><a href="pandas.html#cb98-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace values</span></span>
+<span id="cb98-16"><a href="pandas.html#cb98-16" aria-hidden="true" tabindex="-1"></a>df_data <span class="op">=</span> df_data.replace([<span class="st">&#39;Zvcss&#39;</span>, <span class="st">&#39;Dugei&#39;</span>, <span class="st">&#39;Ciagu&#39;</span>], <span class="st">&#39;Zqovt&#39;</span>)</span>
+<span id="cb98-17"><a href="pandas.html#cb98-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-18"><a href="pandas.html#cb98-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Print table</span></span>
+<span id="cb98-19"><a href="pandas.html#cb98-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_data)</span></code></pre></div>
+<pre><code>##    c1 c2 c3 c4     c5     c6     c7
+## r1  0  5  1  8  Zqovt  Rppez  Ukuzu
+## r2  1  9  3  0  Zqovt  Sbwyi  Mzhum
+## r3  5  8  8  0  Zqovt  Qgfvk  Fcrto
+## r4  5  2  5  7  Wxlev  Upoax  Bhdxu
+## r5  4  6  2  7  Hmziq  Lbyfo  Dntrz</code></pre>
+</div>
+<div id="select-rows-based-on-columnvariable-values" class="section level4" number="2.1.2.2">
+<h4><span class="header-section-number">2.1.2.2</span> Select Rows Based on Column/Variable Values</h4>
+<p>There is a dataframe with many rows, select a subset of rows where a particular column/variable’s value is equal to some value.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="pandas.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate to matrix</span></span>
+<span id="cb100-2"><a href="pandas.html#cb100-2" aria-hidden="true" tabindex="-1"></a>df_data_subset <span class="op">=</span> df_data.loc[df_data[<span class="st">&#39;c5&#39;</span>] <span class="op">==</span> <span class="st">&#39;Zqovt&#39;</span>]</span>
+<span id="cb100-3"><a href="pandas.html#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Print</span></span>
+<span id="cb100-4"><a href="pandas.html#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_data_subset)</span></code></pre></div>
+<pre><code>##    c1 c2 c3 c4     c5     c6     c7
+## r1  0  5  1  8  Zqovt  Rppez  Ukuzu
+## r2  1  9  3  0  Zqovt  Sbwyi  Mzhum
+## r3  5  8  8  0  Zqovt  Qgfvk  Fcrto</code></pre>
+<p>See <a href="https://stackoverflow.com/a/17071908/8280804">How to select rows from a DataFrame based on column values</a>.</p>
 
 </div>
 </div>

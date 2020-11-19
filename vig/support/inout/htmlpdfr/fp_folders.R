@@ -1,5 +1,70 @@
-## ----global_options, include = FALSE------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
+
+
+## import os
+
+## import pathlib
+
+## 
+## # suffix
+
+## st_suffix = "_mlt_region_ne"
+
+## srt_folder = "testfolder" + st_suffix + '_other_stuff'
+
+## # path join with os.sep
+
+## srt_path = os.path.join(os.sep, "users", "fan", "pyfan", "vig", "support", "inout", "_folder", "testfolder" + st_suffix, 'subfolder')
+
+## # Path Name
+
+## spn_path = os.path.abspath(srt_path)
+
+## # Create the folder
+
+## pathlib.Path(spn_path).mkdir(parents=True, exist_ok=True)
+
+## # Print
+
+## print(f'{srt_folder=}')
+
+## print(f'{srt_path=}')
+
+## print(f'{spn_path=}')
+
+
+## # Absolute path just created:
+
+## print(f'{spn_path=}')
+
+## # the suffix used
+
+## print(f'{st_suffix=}')
+
+## # get path without what comes after suffix
+
+## spn_path_no_suffix = spn_path[:spn_path.index(st_suffix)]
+
+## # Create the folder
+
+## pathlib.Path(spn_path_no_suffix).mkdir(parents=True, exist_ok=True)
+
+## # Get the new folder name create
+
+## spt_root_main, srt_new_subfolder = os.path.split(spn_path_no_suffix)
+
+## # Add Slash to new subfolder
+
+## spn_path_no_suffix = spn_path_no_suffix + os.sep
+
+## # Print
+
+## print(f'{spn_path_no_suffix=}')
+
+## print(f'{spt_root_main=}')
+
+## print(f'{srt_new_subfolder=}')
 
 
 ## import pathlib
@@ -132,8 +197,9 @@ try(source("../../../.Rprofile"))
 ## pathlib.Path('_folder/fd/faa/fe_images').mkdir(parents=True, exist_ok=True)
 
 
-## import pathlib
+## from pathlib import Path
 
+## 
 ## # the number of files in folder found with search critiera
 
 ## st_fle_search = '*.txt'
