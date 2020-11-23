@@ -1,14 +1,17 @@
 ---
-title: "Python Handle Exceptions"
-titleshort: "Python Handle Exceptions"
+title: "Python Raise, Try and Catch Exceptions"
+titleshort: "Python Raise, Try and Catch Exceptions"
 description: |
-  Exceptions handling.
+  Raise an Exception in a python function, try and catch and print to string.
 core:
   - package: python
     code: |
+      raise
+      try except
       ValueError
+      TypeError      
 date: 2020-11-04
-date_start: 2020-11-04
+date_start: 2020-11-23
 output:
   pdf_document:
     pandoc_args: '../../../_output_kniti_pdf.yaml'
@@ -35,6 +38,26 @@ try(source("../../../.Rprofile"))
 ```{python}
 ```
 
+#### A function That Raises an Error with Try Statement Catching it
+
+Below, we have a function that will raise a *TypeError* unless we provide an integer input. The function is called with integer input and then called with a string input. The string input is wrapped in a try and except call, where the exception catches the TypeError and prints it. 
+
+```{python}
+# define the function
+def error_test(gn_speckey=None):
+    if isinstance(gn_speckey, int):
+        print(f'{gn_speckey=} is an integer')
+    else:
+        raise TypeError(f'{gn_speckey=} is not an integer')
+# Call function with integer
+error_test(1)
+# Call function with string
+try:
+    error_test('abc')
+except TypeError as error:
+    print('Caught this error: ' + repr(error))
+```
+
 #### Handle Parameters When Conditions Not Satisfied
 
 There is a function, that can estimate or simulate, under both functionalities, there is a common string parameter, that requires specifying estimation or simulation conditions. The common string parameter should be a simple string without special separators in the case of simulation, and should be four strings concatenated together with equal sign for estimation. Generate an exception if the function is called for estimation but the string parameter does not have the required structure.
@@ -53,11 +76,10 @@ There is a function, that can estimate or simulate, under both functionalities, 
 #         print('simulate with ' + st_spec_key_dict)
 
 if estimate and not isinstance(spec_key_dict, str):
-
+    pass
 elif (estimate is False and isinstance(spec_key_dict, str)) or (estimate is False and isinstance(spec_key_dict, dict)):
-
+    pass
 else:
-
     st_error = 'speckey=' + speckey + ' and estimate=' + str(estimate)
     raise ValueError(st_error)
 ```

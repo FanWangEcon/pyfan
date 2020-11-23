@@ -13,7 +13,7 @@
 
 <meta name="date" content="2020-11-04" />
 
-<title>Python Handle Exceptions</title>
+<title>Python Raise, Try and Catch Exceptions</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1874,7 +1874,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Handle Exceptions</h1>
+<h1 class="title toc-ignore">Python Raise, Try and Catch Exceptions</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
 <h4 class="date">2020-11-04</h4>
 
@@ -1886,8 +1886,27 @@ div.tocify {
 <blockquote>
 <p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/errors//htmlpdfr/fs_python_exceptions.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/function/errors//htmlpdfr/fs_python_exceptions.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div id="handle-parameters-when-conditions-not-satisfied" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Handle Parameters When Conditions Not Satisfied</h2>
+<div id="a-function-that-raises-an-error-with-try-statement-catching-it" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> A function That Raises an Error with Try Statement Catching it</h2>
+<p>Below, we have a function that will raise a <em>TypeError</em> unless we provide an integer input. The function is called with integer input and then called with a string input. The string input is wrapped in a try and except call, where the exception catches the TypeError and prints it.</p>
+<pre class="python"><code># define the function
+def error_test(gn_speckey=None):
+    if isinstance(gn_speckey, int):
+        print(f&#39;{gn_speckey=} is an integer&#39;)
+    else:
+        raise TypeError(f&#39;{gn_speckey=} is not an integer&#39;)
+# Call function with integer
+error_test(1)
+# Call function with string</code></pre>
+<pre><code>## gn_speckey=1 is an integer</code></pre>
+<pre class="python"><code>try:
+    error_test(&#39;abc&#39;)
+except TypeError as error:
+    print(&#39;Caught this error: &#39; + repr(error))</code></pre>
+<pre><code>## Caught this error: TypeError(&quot;gn_speckey=&#39;abc&#39; is not an integer&quot;)</code></pre>
+</div>
+<div id="handle-parameters-when-conditions-not-satisfied" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Handle Parameters When Conditions Not Satisfied</h2>
 <p>There is a function, that can estimate or simulate, under both functionalities, there is a common string parameter, that requires specifying estimation or simulation conditions. The common string parameter should be a simple string without special separators in the case of simulation, and should be four strings concatenated together with equal sign for estimation. Generate an exception if the function is called for estimation but the string parameter does not have the required structure.</p>
 <ul>
 <li><a href="https://docs.python.org/3/library/exceptions.html#TypeError">Python 3 TypeError</a></li>
@@ -1903,16 +1922,15 @@ div.tocify {
 #         print(&#39;simulate with &#39; + st_spec_key_dict)
 
 if estimate and not isinstance(spec_key_dict, str):
-
+    pass
 elif (estimate is False and isinstance(spec_key_dict, str)) or (estimate is False and isinstance(spec_key_dict, dict)):
-
+    pass
 else:
-
     st_error = &#39;speckey=&#39; + speckey + &#39; and estimate=&#39; + str(estimate)
     raise ValueError(st_error)</code></pre>
 </div>
-<div id="proceed-despite-error" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Proceed Despite Error</h2>
+<div id="proceed-despite-error" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Proceed Despite Error</h2>
 <p>Sometimes, code should proceed despite error, to finish a loop for example:</p>
 <pre class="python"><code># estimate at each initial random points
 for it_esti_ctr in range(esti_param_vec_count):

@@ -4,6 +4,33 @@ try(source("../../../.Rprofile"))
 
 ## NA
 
+## # define the function
+
+## def error_test(gn_speckey=None):
+
+##     if isinstance(gn_speckey, int):
+
+##         print(f'{gn_speckey=} is an integer')
+
+##     else:
+
+##         raise TypeError(f'{gn_speckey=} is not an integer')
+
+## # Call function with integer
+
+## error_test(1)
+
+## # Call function with string
+
+## try:
+
+##     error_test('abc')
+
+## except TypeError as error:
+
+##     print('Caught this error: ' + repr(error))
+
+
 ## # ls_st_spec_key_dict = ['NG_S_D', 'NG_S_D=KAP_M0_NLD_M_SIMU=2=3']
 
 ## # st_connector = '='
@@ -23,13 +50,14 @@ try(source("../../../.Rprofile"))
 ## 
 ## if estimate and not isinstance(spec_key_dict, str):
 
-## 
+##     pass
+
 ## elif (estimate is False and isinstance(spec_key_dict, str)) or (estimate is False and isinstance(spec_key_dict, dict)):
 
-## 
+##     pass
+
 ## else:
 
-## 
 ##     st_error = 'speckey=' + speckey + ' and estimate=' + str(estimate)
 
 ##     raise ValueError(st_error)
