@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -20,6 +20,25 @@ try(source("../../../.Rprofile"))
 ## for speckey_key, speckey_val in dc_speckey_dict.items():
 
 ##     print('speckey_key:' + str(speckey_key) + ', speckey_val:' + speckey_val)
+
+
+## # select by key
+
+## ls_it_keys = [0, 4]
+
+## dc_speckey_dict_select_by_key = {it_key: dc_speckey_dict[it_key] for it_key in ls_it_keys}
+
+## print(f'{dc_speckey_dict_select_by_key=}')
+
+## # select by value
+
+## ls_st_keys = ['ng_s_d', 'ng_p_d']
+
+## dc_speckey_dict_select_by_val = {it_key: st_val for it_key, st_val in dc_speckey_dict.items()
+
+##                                  if st_val in ls_st_keys}
+
+## print(f'{dc_speckey_dict_select_by_val=}')
 
 
 ## # list update

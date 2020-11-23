@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -91,6 +91,11 @@ try(source("../../../.Rprofile"))
 ## -------
 
 ## None
+
+
+## **kwargs
+
+##   Arguments for functions that is called, including :func:`log_format`
 
 
 ## Examples

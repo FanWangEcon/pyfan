@@ -49,12 +49,16 @@
 	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
 	+ Pass a dictionary for named arguments to a function.
 	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
+2. [Python Function Data Type Handling](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_datatypes.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html)
+	+ Check if parameter is string or integer, conditional execution and exception handling.
+	+ Check if parameter is string or an integer between some values. 
+	+ **py**: *type + isinstance(abc, str) + isinstance(abc, int) + raise + try except*
 
 ## 3.2  Exceptions
 
-1. [Python Handle Exceptions](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html)
-	+ Exceptions handling.
-	+ **python**: *ValueError*
+1. [Python Raise, Try and Catch Exceptions](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html)
+	+ Raise an Exception in a python function, try and catch and print to string.
+	+ **python**: *raise + try except + ValueError + TypeError      *
 
 # 4  Tables and Graphs
 

@@ -45,8 +45,6 @@ import copy as copy
 
 Given a dictionary, loop through all of its elements
 
-#### Create a List of Dictionaries
-
 ```{python}
 dc_speckey_dict = {0: 'mpoly_1',
                    1: 'ng_s_t',
@@ -56,6 +54,24 @@ dc_speckey_dict = {0: 'mpoly_1',
 for speckey_key, speckey_val in dc_speckey_dict.items():
     print('speckey_key:' + str(speckey_key) + ', speckey_val:' + speckey_val)
 ```
+
+#### Select One Key-value Pair 
+
+Given a dictionary, select a single key-value pair, based on either the key or the value. 
+
+```{python}
+# select by key
+ls_it_keys = [0, 4]
+dc_speckey_dict_select_by_key = {it_key: dc_speckey_dict[it_key] for it_key in ls_it_keys}
+print(f'{dc_speckey_dict_select_by_key=}')
+# select by value
+ls_st_keys = ['ng_s_d', 'ng_p_d']
+dc_speckey_dict_select_by_val = {it_key: st_val for it_key, st_val in dc_speckey_dict.items() 
+                                 if st_val in ls_st_keys}
+print(f'{dc_speckey_dict_select_by_val=}')
+```
+
+See [Get key by value in dictionary](https://stackoverflow.com/questions/8023306/get-key-by-value-in-dictionary).
 
 #### Copying Dictionary and Updating Copied Dictionary
 
@@ -147,7 +163,7 @@ for tex, pdf in zip(ls_snm_tex, ls_snm_pdf):
 pprint.pprint(dc_tex_pdf, width=1)
 ```
 
-#### Select by Keys in Dictionary
+#### Select by Keys Dictionaries from list of Dictionaries
 
 Given a list of dictionary, search if key name is in list:
 

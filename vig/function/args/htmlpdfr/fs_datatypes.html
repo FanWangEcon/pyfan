@@ -11,9 +11,9 @@
 
 <meta name="author" content="Fan Wang" />
 
-<meta name="date" content="2020-10-21" />
+<meta name="date" content="2020-11-22" />
 
-<title>Python Documentation Numpy Doc</title>
+<title>Python Function Data Type Handling</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1874,119 +1874,71 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Documentation Numpy Doc</h1>
+<h1 class="title toc-ignore">Python Function Data Type Handling</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
-<h4 class="date">2020-10-21</h4>
+<h4 class="date">2020-11-22</h4>
 
 </div>
 
 
-<div id="numpy-doc-documentation-guide" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Numpy Doc Documentation Guide</h1>
+<div id="data-types" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Data Types</h1>
 <blockquote>
-<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/support/documentation//fs_numpy_doc.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/support/documentation//htmlpdfr/fs_numpy_doc.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/support/documentation//htmlpdfr/fs_numpy_doc.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/args//fs_datatypes.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/args//htmlpdfr/fs_datatypes.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/function/args//htmlpdfr/fs_datatypes.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<ul>
-<li><a href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html">sphinxcontrib-napoleon</a> examples.</li>
-<li><a href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a> examples.</li>
-<li><a href="https://developer.lsst.io/python/numpydoc.html#py-docstring-parameter-types">Documenting Python APIs with docstrings</a></li>
-<li><h2 id="parameters">Parameters</h2></li>
-</ul>
-<p>Check types:</p>
-<pre class="python"><code>print(type(111))
-print(type(&#39;111&#39;))
-import logging
-print(type(logging.WARNING))</code></pre>
-<p>Style 1:</p>
-<pre class="bash"><code>Parameters
-----------
-n : int
-    The upper limit of the range to generate, from 0 to `n` - 1.
-param1 : int
-    The first parameter.
-param1 : str
-    Description of `param1`.
-msg : str
-    Human readable string describing the exception.
-param1 : int
-    The first parameter.
-param2 : str
-    The second parameter.
-param3 : str, optional
-    The second parameter.
-param5: dict
-    A dictionary</code></pre>
-<p>Style 2, this will add a <a href="https://stackoverflow.com/questions/38968999/python-documentation-objstr-vs-str">link</a> to the types in python doc:</p>
-<pre class="bash"><code>Parameters
-----------
-param2 : :obj:`str`, optional
-    The second parameter.
-code : :obj:`int`, optional
-    Numeric error code.
-param3 : :obj:`int`, optional
-    Description of `param3`.
-param4 : :obj:`list` of :obj:`str`
-    Description of `param2`. Multiple
-    lines are supported.</code></pre>
-<p>For args and kwargs:</p>
-<pre class="bash"><code>Parameters
-----------
-*args
-    Variable length argument list.
-**kwargs
-    Arbitrary keyword arguments.</code></pre>
-<div id="returns" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Returns</h2>
-<pre class="bash"><code>Returns
--------
-numpy.array of shape (1, it_draws)
-    A vector of sorted or unsorted random grid points, or equi-quantile
-    points.</code></pre>
-<pre class="bash"><code>Returns
--------
-None</code></pre>
+<div id="check-parameter-type" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Check Parameter Type</h2>
+<p>There are parameters of a function, depending on the parameter type, execute the program differently. If integer, behave one way if string behave in another way.</p>
+<pre class="python"><code># define the function
+def get_speckey_dict(gn_speckey=None):
+    if isinstance(gn_speckey, str):
+        print(f&#39;{gn_speckey=} is a string&#39;)
+    elif isinstance(gn_speckey, int):
+        print(f&#39;{gn_speckey=} is an integer&#39;)
+    else:
+        raise TypeError(f&#39;{gn_speckey=} was not a string or an integer&#39;)
+# Call function with integer
+get_speckey_dict(1)
+# Call function with string</code></pre>
+<pre><code>## gn_speckey=1 is an integer</code></pre>
+<pre class="python"><code>get_speckey_dict(&#39;abc&#39;)
+# Call function with a list</code></pre>
+<pre><code>## gn_speckey=&#39;abc&#39; is a string</code></pre>
+<pre class="python"><code>try: 
+    get_speckey_dict([&#39;abc&#39;])
+except TypeError as e: 
+    print(f&#39;Exception{e=}&#39;)</code></pre>
+<pre><code>## Exceptione=TypeError(&quot;gn_speckey=[&#39;abc&#39;] was not a string or an integer&quot;)</code></pre>
 </div>
-<div id="function-calls" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Function Calls</h2>
-<p>To refer to functions in the same .py file, just need to use: <em>:func:<code>log_format</code></em> to refer to function name. For function in different .py files, might need its full path</p>
-<pre class="bash"><code>**kwargs
-  Arguments for functions that is called, including :func:`log_format`</code></pre>
-</div>
-<div id="examples" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Examples</h2>
-<p>Array outputs.</p>
-<pre class="bash"><code>Examples
---------
-&gt;&gt;&gt; fl_mu = 0
-&gt;&gt;&gt; fl_sd = 1
-&gt;&gt;&gt; it_draws = 5
-&gt;&gt;&gt; it_seed = 123
-&gt;&gt;&gt; fl_lower_sd = -1
-&gt;&gt;&gt; fl_higher_sd = 0.8
-&gt;&gt;&gt; it_draw_type = 0
-&gt;&gt;&gt; ar_draw_random_normal(fl_mu, fl_sd, it_draws,
-...                       it_seed, it_draw_type,
-...                       fl_lower_sd, fl_higher_sd)
-[-1.          0.8         0.2829785 - 1. - 0.57860025]
-&gt;&gt;&gt; it_draw_type = 1
-&gt;&gt;&gt; ar_draw_random_normal(fl_mu, fl_sd, it_draws,
-...                       it_seed, it_draw_type,
-...                       fl_lower_sd, fl_higher_sd)
-[-1. - 0.47883617 - 0.06672597  0.3338994   0.8]
-&gt;&gt;&gt; it_draw_type = 2
-&gt;&gt;&gt; ar_draw_random_normal(fl_mu, fl_sd, it_draws,
-...                       it_seed, it_draw_type,
-...                       fl_lower_sd, fl_higher_sd)
-[-1. - 1. - 0.57860025  0.2829785   0.8]</code></pre>
-<p>String outputs.</p>
-<pre class="bash"><code>Examples
---------
-&gt;&gt;&gt; log_vig_start(spt_root = proj_sys_sup.main_directory(),
-...               main_folder_name=&#39;logvig&#39;, sub_folder_name=&#39;parameters&#39;,
-...               subsub_folder_name=&#39;combo_type&#39;,
-...               file_name=&#39;fs_gen_combo_type&#39;,
-...               it_time_format=8, log_level=logging.INFO)
-C:\\Users\\fan\\logvig\\parameters\\combo_type\\fs_gen_combo_type_20201030.log.py</code></pre>
+<div id="check-if-parameter-is-string-or-integer-in-interval" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Check if Parameter is String or Integer In Interval</h2>
+<p>There is a function that takes a string or an integer between certain values. Execute if either of these two conditions are satisfied, do not if neither is satisfied. Below, print if string or an int between 1 and 11.</p>
+<pre class="python"><code># condition check function
+def check_condition(gn_invoke_set):
+
+  bl_is_str = isinstance(gn_invoke_set, str)
+  bl_is_int = isinstance(gn_invoke_set, int)
+  if bl_is_int:
+    bl_between = (gn_invoke_set &gt;= 1 and gn_invoke_set &lt;= 11)
+  else: 
+    bl_between = False
+    
+  if bl_between or bl_is_str:
+      print(f&#39;{gn_invoke_set=}&#39;)
+  else:
+      print(f&#39;{gn_invoke_set=} is not string or an integer between 1 and 11&#39;)
+      
+# call with string or integer
+check_condition(&#39;string&#39;)</code></pre>
+<pre><code>## gn_invoke_set=&#39;string&#39;</code></pre>
+<pre class="python"><code>check_condition(11)</code></pre>
+<pre><code>## gn_invoke_set=11</code></pre>
+<pre class="python"><code>check_condition(1)</code></pre>
+<pre><code>## gn_invoke_set=1</code></pre>
+<pre class="python"><code>check_condition(199)</code></pre>
+<pre><code>## gn_invoke_set=199 is not string or an integer between 1 and 11</code></pre>
+<pre class="python"><code>check_condition([&#39;abc&#39;])</code></pre>
+<pre><code>## gn_invoke_set=[&#39;abc&#39;] is not string or an integer between 1 and 11</code></pre>
 </div>
 </div>
 
