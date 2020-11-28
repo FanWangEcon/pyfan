@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -175,6 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#function-arguments-1"><i class="fa fa-check"></i><b>3.1.1</b> Function Arguments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#data-types"><i class="fa fa-check"></i><b>3.1.2</b> Data Types</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#exceptions"><i class="fa fa-check"></i><b>3.2</b> Exceptions</a>
 <ul>
@@ -320,41 +321,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plot-random-walk-and-white-noise-jointly" class="section level4" number="4.1.1.1">
 <h4><span class="header-section-number">4.1.1.1</span> Plot Random Walk and White Noise Jointly</h4>
 <p>Given x and y coordinates, plot out two lines. see <a href="https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib.pyplot.plot</a>. Here we will plot out the extremes of AR(1), white noise (no persistence), and random walk (fully persistent shocks).</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="tables-and-graphs.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
-<span id="cb115-2"><a href="tables-and-graphs.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb115-3"><a href="tables-and-graphs.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb115-4"><a href="tables-and-graphs.html#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-5"><a href="tables-and-graphs.html#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate X and Y</span></span>
-<span id="cb115-6"><a href="tables-and-graphs.html#cb115-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
-<span id="cb115-7"><a href="tables-and-graphs.html#cb115-7" aria-hidden="true" tabindex="-1"></a>ar_fl_y1_rand <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb115-8"><a href="tables-and-graphs.html#cb115-8" aria-hidden="true" tabindex="-1"></a>ar_fl_y2_rand <span class="op">=</span> np.cumsum(np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>))</span>
-<span id="cb115-9"><a href="tables-and-graphs.html#cb115-9" aria-hidden="true" tabindex="-1"></a>ar_it_x_grid <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="bu">len</span>(ar_fl_y1_rand)<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb115-10"><a href="tables-and-graphs.html#cb115-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-11"><a href="tables-and-graphs.html#cb115-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Figure</span></span>
-<span id="cb115-12"><a href="tables-and-graphs.html#cb115-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb115-13"><a href="tables-and-graphs.html#cb115-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-14"><a href="tables-and-graphs.html#cb115-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
-<span id="cb115-15"><a href="tables-and-graphs.html#cb115-15" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y1_rand,</span>
-<span id="cb115-16"><a href="tables-and-graphs.html#cb115-16" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;dashed&#39;</span>,</span>
-<span id="cb115-17"><a href="tables-and-graphs.html#cb115-17" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=2, 0 persistence&#39;</span>)</span></code></pre></div>
-<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x000001493817C820&gt;]</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="tables-and-graphs.html#cb117-1" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y2_rand,</span>
-<span id="cb117-2"><a href="tables-and-graphs.html#cb117-2" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;solid&#39;</span>,</span>
-<span id="cb117-3"><a href="tables-and-graphs.html#cb117-3" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=1, random walk&#39;</span>)</span>
-<span id="cb117-4"><a href="tables-and-graphs.html#cb117-4" aria-hidden="true" tabindex="-1"></a>                     </span>
-<span id="cb117-5"><a href="tables-and-graphs.html#cb117-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
-<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x000001493817C130&gt;]</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="tables-and-graphs.html#cb119-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</span></code></pre></div>
-<pre><code>## &lt;matplotlib.legend.Legend object at 0x0000014938185B80&gt;</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb121-1"><a href="tables-and-graphs.html#cb121-1" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Random Standard Normal Draws&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a href="tables-and-graphs.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
+<span id="cb139-2"><a href="tables-and-graphs.html#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb139-3"><a href="tables-and-graphs.html#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb139-4"><a href="tables-and-graphs.html#cb139-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-5"><a href="tables-and-graphs.html#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate X and Y</span></span>
+<span id="cb139-6"><a href="tables-and-graphs.html#cb139-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb139-7"><a href="tables-and-graphs.html#cb139-7" aria-hidden="true" tabindex="-1"></a>ar_fl_y1_rand <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb139-8"><a href="tables-and-graphs.html#cb139-8" aria-hidden="true" tabindex="-1"></a>ar_fl_y2_rand <span class="op">=</span> np.cumsum(np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>))</span>
+<span id="cb139-9"><a href="tables-and-graphs.html#cb139-9" aria-hidden="true" tabindex="-1"></a>ar_it_x_grid <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="bu">len</span>(ar_fl_y1_rand)<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb139-10"><a href="tables-and-graphs.html#cb139-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-11"><a href="tables-and-graphs.html#cb139-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Figure</span></span>
+<span id="cb139-12"><a href="tables-and-graphs.html#cb139-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb139-13"><a href="tables-and-graphs.html#cb139-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-14"><a href="tables-and-graphs.html#cb139-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
+<span id="cb139-15"><a href="tables-and-graphs.html#cb139-15" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y1_rand,</span>
+<span id="cb139-16"><a href="tables-and-graphs.html#cb139-16" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;dashed&#39;</span>,</span>
+<span id="cb139-17"><a href="tables-and-graphs.html#cb139-17" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=2, 0 persistence&#39;</span>)</span></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x00000251A3627160&gt;]</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb141-1"><a href="tables-and-graphs.html#cb141-1" aria-hidden="true" tabindex="-1"></a>ax.plot(ar_it_x_grid, ar_fl_y2_rand,</span>
+<span id="cb141-2"><a href="tables-and-graphs.html#cb141-2" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;solid&#39;</span>,</span>
+<span id="cb141-3"><a href="tables-and-graphs.html#cb141-3" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">&#39;sd=1, random walk&#39;</span>)</span>
+<span id="cb141-4"><a href="tables-and-graphs.html#cb141-4" aria-hidden="true" tabindex="-1"></a>                     </span>
+<span id="cb141-5"><a href="tables-and-graphs.html#cb141-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x00000251A3627CD0&gt;]</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb143-1"><a href="tables-and-graphs.html#cb143-1" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</span></code></pre></div>
+<pre><code>## &lt;matplotlib.legend.Legend object at 0x00000251A3627AF0&gt;</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb145-1"><a href="tables-and-graphs.html#cb145-1" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Random Standard Normal Draws&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0, 0.5, &#39;Random Standard Normal Draws&#39;)</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="tables-and-graphs.html#cb123-1" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Time Periods&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="tables-and-graphs.html#cb147-1" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Time Periods&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0.5, 0, &#39;Time Periods&#39;)</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb125-1"><a href="tables-and-graphs.html#cb125-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;White Noise&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb149-1"><a href="tables-and-graphs.html#cb149-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;White Noise&#39;</span>)</span></code></pre></div>
 <pre><code>## Text(0.5, 1.0, &#39;White Noise&#39;)</code></pre>
-<div class="sourceCode" id="cb127"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a href="tables-and-graphs.html#cb127-1" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb127-2"><a href="tables-and-graphs.html#cb127-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-66-1.png" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb151-1"><a href="tables-and-graphs.html#cb151-1" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb151-2"><a href="tables-and-graphs.html#cb151-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-75-1.png" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -366,35 +367,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="plot-text" class="section level4" number="4.1.2.1">
 <h4><span class="header-section-number">4.1.2.1</span> Plot Text</h4>
 <p>Plot Text as Image. <a href="https://matplotlib.org/3.1.1/gallery/pyplots/text_layout.html#sphx-glr-gallery-pyplots-text-layout-py">Create text with different alignment and rotation.</a></p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="tables-and-graphs.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
-<span id="cb128-2"><a href="tables-and-graphs.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb128-3"><a href="tables-and-graphs.html#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
-<span id="cb128-4"><a href="tables-and-graphs.html#cb128-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb128-5"><a href="tables-and-graphs.html#cb128-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-6"><a href="tables-and-graphs.html#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Dict of String to String</span></span>
-<span id="cb128-7"><a href="tables-and-graphs.html#cb128-7" aria-hidden="true" tabindex="-1"></a>dc_path <span class="op">=</span> {<span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
-<span id="cb128-8"><a href="tables-and-graphs.html#cb128-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">equation</span><span class="ch">\\</span><span class="st">cases.tex&#39;</span>:</span>
-<span id="cb128-9"><a href="tables-and-graphs.html#cb128-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/cases.pdf&#39;</span>,</span>
-<span id="cb128-10"><a href="tables-and-graphs.html#cb128-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
-<span id="cb128-11"><a href="tables-and-graphs.html#cb128-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">symbols</span><span class="ch">\\</span><span class="st">fs_symbols.tex&#39;</span>:</span>
-<span id="cb128-12"><a href="tables-and-graphs.html#cb128-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/fs_symbols.pdf&#39;</span>}</span>
-<span id="cb128-13"><a href="tables-and-graphs.html#cb128-13" aria-hidden="true" tabindex="-1"></a>st_dc_path <span class="op">=</span> textwrap.fill(json.dumps(dc_path), width <span class="op">=</span> <span class="dv">70</span>)</span>
-<span id="cb128-14"><a href="tables-and-graphs.html#cb128-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-15"><a href="tables-and-graphs.html#cb128-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Plot</span></span>
-<span id="cb128-16"><a href="tables-and-graphs.html#cb128-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb128-17"><a href="tables-and-graphs.html#cb128-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-18"><a href="tables-and-graphs.html#cb128-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Text Plot</span></span>
-<span id="cb128-19"><a href="tables-and-graphs.html#cb128-19" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.5</span>, <span class="fl">0.5</span>, st_dc_path,</span>
-<span id="cb128-20"><a href="tables-and-graphs.html#cb128-20" aria-hidden="true" tabindex="-1"></a>        horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
-<span id="cb128-21"><a href="tables-and-graphs.html#cb128-21" aria-hidden="true" tabindex="-1"></a>        verticalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
-<span id="cb128-22"><a href="tables-and-graphs.html#cb128-22" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>,</span>
-<span id="cb128-23"><a href="tables-and-graphs.html#cb128-23" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>ax.transAxes)</span>
-<span id="cb128-24"><a href="tables-and-graphs.html#cb128-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-25"><a href="tables-and-graphs.html#cb128-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb152-1"><a href="tables-and-graphs.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Packages</span></span>
+<span id="cb152-2"><a href="tables-and-graphs.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb152-3"><a href="tables-and-graphs.html#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
+<span id="cb152-4"><a href="tables-and-graphs.html#cb152-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb152-5"><a href="tables-and-graphs.html#cb152-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-6"><a href="tables-and-graphs.html#cb152-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Dict of String to String</span></span>
+<span id="cb152-7"><a href="tables-and-graphs.html#cb152-7" aria-hidden="true" tabindex="-1"></a>dc_path <span class="op">=</span> {<span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
+<span id="cb152-8"><a href="tables-and-graphs.html#cb152-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">equation</span><span class="ch">\\</span><span class="st">cases.tex&#39;</span>:</span>
+<span id="cb152-9"><a href="tables-and-graphs.html#cb152-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/cases.pdf&#39;</span>,</span>
+<span id="cb152-10"><a href="tables-and-graphs.html#cb152-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Users</span><span class="ch">\\</span><span class="st">fan</span><span class="ch">\\</span><span class="st">Documents</span><span class="ch">\\</span><span class="st">Dropbox (UH-ECON)</span><span class="ch">\\</span><span class="st">repos</span><span class="ch">\\</span><span class="st">Tex4Econ</span><span class="ch">\\</span><span class="st">&#39;</span></span>
+<span id="cb152-11"><a href="tables-and-graphs.html#cb152-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;_other</span><span class="ch">\\</span><span class="st">symbols</span><span class="ch">\\</span><span class="st">fs_symbols.tex&#39;</span>:</span>
+<span id="cb152-12"><a href="tables-and-graphs.html#cb152-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;C:/Users/fan/Documents/fs_symbols.pdf&#39;</span>}</span>
+<span id="cb152-13"><a href="tables-and-graphs.html#cb152-13" aria-hidden="true" tabindex="-1"></a>st_dc_path <span class="op">=</span> textwrap.fill(json.dumps(dc_path), width <span class="op">=</span> <span class="dv">70</span>)</span>
+<span id="cb152-14"><a href="tables-and-graphs.html#cb152-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-15"><a href="tables-and-graphs.html#cb152-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Plot</span></span>
+<span id="cb152-16"><a href="tables-and-graphs.html#cb152-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb152-17"><a href="tables-and-graphs.html#cb152-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-18"><a href="tables-and-graphs.html#cb152-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Text Plot</span></span>
+<span id="cb152-19"><a href="tables-and-graphs.html#cb152-19" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.5</span>, <span class="fl">0.5</span>, st_dc_path,</span>
+<span id="cb152-20"><a href="tables-and-graphs.html#cb152-20" aria-hidden="true" tabindex="-1"></a>        horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
+<span id="cb152-21"><a href="tables-and-graphs.html#cb152-21" aria-hidden="true" tabindex="-1"></a>        verticalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
+<span id="cb152-22"><a href="tables-and-graphs.html#cb152-22" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">14</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>,</span>
+<span id="cb152-23"><a href="tables-and-graphs.html#cb152-23" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb152-24"><a href="tables-and-graphs.html#cb152-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-25"><a href="tables-and-graphs.html#cb152-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Labeling</span></span></code></pre></div>
 <pre><code>## Text(0.5, 0.5, &#39;{&quot;C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\equation\\\\cases.tex&quot;:\n&quot;C:/Users/fan/Documents/cases.pdf&quot;,\n&quot;C:\\\\Users\\\\fan\\\\Documents\\\\Dropbox (UH-\nECON)\\\\repos\\\\Tex4Econ\\\\_other\\\\symbols\\\\fs_symbols.tex&quot;:\n&quot;C:/Users/fan/Documents/fs_symbols.pdf&quot;}&#39;)</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="tables-and-graphs.html#cb130-1" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
-<span id="cb130-2"><a href="tables-and-graphs.html#cb130-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-68-1.png" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb154-1"><a href="tables-and-graphs.html#cb154-1" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb154-2"><a href="tables-and-graphs.html#cb154-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="Data-Structures-and-Cloud-Services-with-Python_files/figure-html/unnamed-chunk-77-1.png" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

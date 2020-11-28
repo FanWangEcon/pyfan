@@ -24,7 +24,7 @@
 <meta name="author" content="Fan Wang" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -175,6 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#function-arguments"><i class="fa fa-check"></i><b>3.1</b> Function Arguments</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#function-arguments-1"><i class="fa fa-check"></i><b>3.1.1</b> Function Arguments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#data-types"><i class="fa fa-check"></i><b>3.1.2</b> Data Types</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#exceptions"><i class="fa fa-check"></i><b>3.2</b> Exceptions</a>
 <ul>
@@ -364,7 +365,7 @@ conda install -c anaconda boto3 -y</code></pre>
 <li>local computers with the right .pem file can talk to your AWS instances</li>
 <li>You might need to invoke the chmod command below to set permission:</li>
 </ul>
-<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb132-1"><a href="amazon-web-services.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 400 <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb156-1"><a href="amazon-web-services.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 400 <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div></li>
 <li><em>Launching Instance</em>: Go to your console, choose EC2, choose launch instance, select Amazon Linux Instance (review and launch)</li>
 <li><em>Instance security</em>: select VPC security group: I have for example: fan_wang_SG_us_east_nv_VPC (edit security group and submit)
 <ul>
@@ -381,22 +382,22 @@ conda install -c anaconda boto3 -y</code></pre>
 <ul>
 <li><a href="https://stackoverflow.com/questions/18683092/how-to-run-ssh-add-on-windows">open git bash</a> (install putty before)</li>
 </ul>
-<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="amazon-web-services.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-agent</span> -s</span>
-<span id="cb133-2"><a href="amazon-web-services.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb157-1"><a href="amazon-web-services.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-agent</span> -s</span>
+<span id="cb157-2"><a href="amazon-web-services.html#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="fu">ssh-agent</span> -s<span class="va">)</span></span></code></pre></div>
 <ul>
 <li>Tell SSH where pem key is:</li>
 </ul>
-<div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb134-1"><a href="amazon-web-services.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb158-1"><a href="amazon-web-services.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> <span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span></code></pre></div>
 <ul>
 <li>You will find a public DNS address for your aws instance on the AWS user interface page</li>
 </ul>
-<div class="sourceCode" id="cb135"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb135-1"><a href="amazon-web-services.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ssh git bash command line</span></span>
-<span id="cb135-2"><a href="amazon-web-services.html#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for ubuntu machine</span></span>
-<span id="cb135-3"><a href="amazon-web-services.html#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> ubuntu@ec2-54-197-6-153.compute-1.amazonaws.com</span>
-<span id="cb135-4"><a href="amazon-web-services.html#cb135-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for aws linux</span></span>
-<span id="cb135-5"><a href="amazon-web-services.html#cb135-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com</span>
-<span id="cb135-6"><a href="amazon-web-services.html#cb135-6" aria-hidden="true" tabindex="-1"></a><span class="co"># quit aws instance</span></span>
-<span id="cb135-7"><a href="amazon-web-services.html#cb135-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl + D</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb159-1"><a href="amazon-web-services.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ssh git bash command line</span></span>
+<span id="cb159-2"><a href="amazon-web-services.html#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for ubuntu machine</span></span>
+<span id="cb159-3"><a href="amazon-web-services.html#cb159-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> ubuntu@ec2-54-197-6-153.compute-1.amazonaws.com</span>
+<span id="cb159-4"><a href="amazon-web-services.html#cb159-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for aws linux</span></span>
+<span id="cb159-5"><a href="amazon-web-services.html#cb159-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> ec2-user@ec2-52-23-218-117.compute-1.amazonaws.com</span>
+<span id="cb159-6"><a href="amazon-web-services.html#cb159-6" aria-hidden="true" tabindex="-1"></a><span class="co"># quit aws instance</span></span>
+<span id="cb159-7"><a href="amazon-web-services.html#cb159-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl + D</span></span></code></pre></div>
 <ul>
 <li>if get: Permission denied (publickey), see:
 <ol style="list-style-type: decimal">
@@ -406,11 +407,11 @@ conda install -c anaconda boto3 -y</code></pre>
 </ol></li>
 <li>You can log in generally like this, note the instance gets new public DNS IP address every time you restart it:</li>
 </ul>
-<div class="sourceCode" id="cb136"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb136-1"><a href="amazon-web-services.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="va">LOCALPEM=</span><span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span>
-<span id="cb136-2"><a href="amazon-web-services.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="va">IPADD=</span>34.207.250.160</span>
-<span id="cb136-3"><a href="amazon-web-services.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="va">REMOTEIP=</span>ec2-user<span class="ex">@</span><span class="va">$IPADD</span></span>
-<span id="cb136-4"><a href="amazon-web-services.html#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> -R <span class="va">$IPADD</span></span>
-<span id="cb136-5"><a href="amazon-web-services.html#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> -i <span class="st">&quot;</span><span class="va">$LOCALPEM</span><span class="st">&quot;</span> <span class="va">$REMOTEIP</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb160-1"><a href="amazon-web-services.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="va">LOCALPEM=</span><span class="st">&quot;C:/Users/fan/Documents/Dropbox (UH-ECON)/Programming/AWS/fan_wang-key-pair-us_east_nv.pem&quot;</span></span>
+<span id="cb160-2"><a href="amazon-web-services.html#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="va">IPADD=</span>34.207.250.160</span>
+<span id="cb160-3"><a href="amazon-web-services.html#cb160-3" aria-hidden="true" tabindex="-1"></a><span class="va">REMOTEIP=</span>ec2-user<span class="ex">@</span><span class="va">$IPADD</span></span>
+<span id="cb160-4"><a href="amazon-web-services.html#cb160-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> -R <span class="va">$IPADD</span></span>
+<span id="cb160-5"><a href="amazon-web-services.html#cb160-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> -i <span class="st">&quot;</span><span class="va">$LOCALPEM</span><span class="st">&quot;</span> <span class="va">$REMOTEIP</span></span></code></pre></div></li>
 </ol>
 </div>
 <div id="use-awscli-to-start-and-stop-an-instance" class="section level4" number="5.1.1.5">
@@ -422,18 +423,18 @@ conda install -c anaconda boto3 -y</code></pre>
 <ul>
 <li>do not copy and paste the Key ID and Access Key. They are example, type these in as answers given config prompt:</li>
 </ul>
-<div class="sourceCode" id="cb137"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb137-1"><a href="amazon-web-services.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aws configure</span></span>
-<span id="cb137-2"><a href="amazon-web-services.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="ex">AWS</span> Access Key ID [None]: XXXXIOSFODNN7EXAMPLE</span>
-<span id="cb137-3"><a href="amazon-web-services.html#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="ex">AWS</span> Secret Access Key [None]: wXalrXXtnXXXX/X7XXXXX/bXxXfiCXXXXXXXXXXX</span>
-<span id="cb137-4"><a href="amazon-web-services.html#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Default</span> region name [None]: us-west-1</span>
-<span id="cb137-5"><a href="amazon-web-services.html#cb137-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Default</span> output format [None]: json</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb161-1"><a href="amazon-web-services.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aws configure</span></span>
+<span id="cb161-2"><a href="amazon-web-services.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="ex">AWS</span> Access Key ID [None]: XXXXIOSFODNN7EXAMPLE</span>
+<span id="cb161-3"><a href="amazon-web-services.html#cb161-3" aria-hidden="true" tabindex="-1"></a><span class="ex">AWS</span> Secret Access Key [None]: wXalrXXtnXXXX/X7XXXXX/bXxXfiCXXXXXXXXXXX</span>
+<span id="cb161-4"><a href="amazon-web-services.html#cb161-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Default</span> region name [None]: us-west-1</span>
+<span id="cb161-5"><a href="amazon-web-services.html#cb161-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Default</span> output format [None]: json</span></code></pre></div>
 <ul>
 <li>this creates under a folder like this: C:/Users/fan/.aws, inside the folder these info will be stored in a configuration file.</li>
 </ul>
-<div class="sourceCode" id="cb138"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb138-1"><a href="amazon-web-services.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the credentials file</span></span>
-<span id="cb138-2"><a href="amazon-web-services.html#cb138-2" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
-<span id="cb138-3"><a href="amazon-web-services.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_access_key_id</span> = XXXXIOSFODNN7EXAMPLE</span>
-<span id="cb138-4"><a href="amazon-web-services.html#cb138-4" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_secret_access_key</span> = wXalrXXtnXXXXX7XXXXXbXxXfiCXXXXXXXXXXX</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb162-1"><a href="amazon-web-services.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the credentials file</span></span>
+<span id="cb162-2"><a href="amazon-web-services.html#cb162-2" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
+<span id="cb162-3"><a href="amazon-web-services.html#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_access_key_id</span> = XXXXIOSFODNN7EXAMPLE</span>
+<span id="cb162-4"><a href="amazon-web-services.html#cb162-4" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_secret_access_key</span> = wXalrXXtnXXXXX7XXXXXbXxXfiCXXXXXXXXXXX</span></code></pre></div>
 <ul>
 <li>then when you use aws cli, you will automatically be authenticated</li>
 </ul></li>
@@ -441,17 +442,17 @@ conda install -c anaconda boto3 -y</code></pre>
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html">Launch an instance</a></li>
 </ul>
-<div class="sourceCode" id="cb139"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb139-1"><a href="amazon-web-services.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb163-1"><a href="amazon-web-services.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx</span></code></pre></div>
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/start-instances.html">Start</a> an instance</li>
 </ul>
-<div class="sourceCode" id="cb140"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb140-1"><a href="amazon-web-services.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-XXXXXXXX</span>
-<span id="cb140-2"><a href="amazon-web-services.html#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-040c856530b2619bc</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb164-1"><a href="amazon-web-services.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-XXXXXXXX</span>
+<span id="cb164-2"><a href="amazon-web-services.html#cb164-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 start-instances --instance-ids i-040c856530b2619bc</span></code></pre></div>
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html">Stop</a> an instance</li>
 </ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb141-1"><a href="amazon-web-services.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-XXXXXXXX</span>
-<span id="cb141-2"><a href="amazon-web-services.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-040c856530b2619bc</span></code></pre></div></li>
+<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb165-1"><a href="amazon-web-services.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-XXXXXXXX</span>
+<span id="cb165-2"><a href="amazon-web-services.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> ec2 stop-instances --instance-ids i-040c856530b2619bc</span></code></pre></div></li>
 </ol>
 </div>
 <div id="set-up-ssm-on-ec2-instance" class="section level4" number="5.1.1.6">
@@ -466,8 +467,8 @@ conda install -c anaconda boto3 -y</code></pre>
 <li>Instance does not have the AWS SSM agent installed and running.</li>
 </ul>
 <p>“You have to create and attach the policy AmazonSSMFullAccess to the machine (thats maybe more broad than you need) but that was why it wasn’t working for me… You do that by clicking on (when selected on the ec2 instance) Action &gt; Instance Settings &gt; Attach/Replace IAM Role then create a role for ec2 that has that permission then attach, should take like 5-10 mins to pop up in SYSTEMS MANAGER SHARED RESOURCES - Managed Instances as mark mentions. – Glen Thompson Sep 20 ’18 at 16:31”</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb142-1"><a href="amazon-web-services.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start SSM Agent with</span></span>
-<span id="cb142-2"><a href="amazon-web-services.html#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start amazon-ssm-agent</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb166-1"><a href="amazon-web-services.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start SSM Agent with</span></span>
+<span id="cb166-2"><a href="amazon-web-services.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start amazon-ssm-agent</span></code></pre></div>
 
 </div>
 </div>
@@ -479,60 +480,60 @@ conda install -c anaconda boto3 -y</code></pre>
 <div id="basics" class="section level4" number="5.1.2.1">
 <h4><span class="header-section-number">5.1.2.1</span> Basics</h4>
 <p>Create local .aws folder under user for example that has credential information, this will be useful for AWS command line operations.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb143-1"><a href="amazon-web-services.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IN C:\Users\fan\.aws</span></span>
-<span id="cb143-2"><a href="amazon-web-services.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="co"># config file</span></span>
-<span id="cb143-3"><a href="amazon-web-services.html#cb143-3" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
-<span id="cb143-4"><a href="amazon-web-services.html#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="ex">region</span> = us-east-1</span>
-<span id="cb143-5"><a href="amazon-web-services.html#cb143-5" aria-hidden="true" tabindex="-1"></a><span class="ex">output</span> = json</span>
-<span id="cb143-6"><a href="amazon-web-services.html#cb143-6" aria-hidden="true" tabindex="-1"></a><span class="co"># credentials file</span></span>
-<span id="cb143-7"><a href="amazon-web-services.html#cb143-7" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
-<span id="cb143-8"><a href="amazon-web-services.html#cb143-8" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_access_key_id</span> = XKIXXXGSXXXBZXX43XXX</span>
-<span id="cb143-9"><a href="amazon-web-services.html#cb143-9" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_secret_access_key</span> = xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb167-1"><a href="amazon-web-services.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IN C:\Users\fan\.aws</span></span>
+<span id="cb167-2"><a href="amazon-web-services.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="co"># config file</span></span>
+<span id="cb167-3"><a href="amazon-web-services.html#cb167-3" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
+<span id="cb167-4"><a href="amazon-web-services.html#cb167-4" aria-hidden="true" tabindex="-1"></a><span class="ex">region</span> = us-east-1</span>
+<span id="cb167-5"><a href="amazon-web-services.html#cb167-5" aria-hidden="true" tabindex="-1"></a><span class="ex">output</span> = json</span>
+<span id="cb167-6"><a href="amazon-web-services.html#cb167-6" aria-hidden="true" tabindex="-1"></a><span class="co"># credentials file</span></span>
+<span id="cb167-7"><a href="amazon-web-services.html#cb167-7" aria-hidden="true" tabindex="-1"></a>[<span class="ex">default</span>]</span>
+<span id="cb167-8"><a href="amazon-web-services.html#cb167-8" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_access_key_id</span> = XKIXXXGSXXXBZXX43XXX</span>
+<span id="cb167-9"><a href="amazon-web-services.html#cb167-9" aria-hidden="true" tabindex="-1"></a><span class="ex">aws_secret_access_key</span> = xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11</span></code></pre></div>
 <p>Additionally, or alternatively, for boto3 operations, store in for example a yml file, so that appropriate value could be obtained.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb144-1"><a href="amazon-web-services.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">main_aws_id</span><span class="kw">:</span><span class="at"> 710673677961,</span></span>
-<span id="cb144-2"><a href="amazon-web-services.html#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">aws_access_key_id</span><span class="kw">:</span><span class="at"> XKIXXXGSXXXBZXX43XXX</span></span>
-<span id="cb144-3"><a href="amazon-web-services.html#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">aws_secret_access_key</span><span class="kw">:</span><span class="at"> xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11</span></span>
-<span id="cb144-4"><a href="amazon-web-services.html#cb144-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">region</span><span class="kw">:</span><span class="at"> us-east-1</span></span>
-<span id="cb144-5"><a href="amazon-web-services.html#cb144-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_instance_id</span><span class="kw">:</span><span class="at"> i-YYYxYYYYYYx2619xx</span></span>
-<span id="cb144-6"><a href="amazon-web-services.html#cb144-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_linux_ami</span><span class="kw">:</span><span class="at"> ami-0xYYYYYxx95x71x9</span></span>
-<span id="cb144-7"><a href="amazon-web-services.html#cb144-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_public_subnet</span><span class="kw">:</span><span class="at"> subnet-d9xxxxYY</span></span>
-<span id="cb144-8"><a href="amazon-web-services.html#cb144-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_vpc_name</span><span class="kw">:</span><span class="at"> FanCluster</span></span>
-<span id="cb144-9"><a href="amazon-web-services.html#cb144-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_vpc_id</span><span class="kw">:</span><span class="at"> vpc-xxx5xYYY</span></span>
-<span id="cb144-10"><a href="amazon-web-services.html#cb144-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_public_subnet</span><span class="kw">:</span><span class="at"> subnet-e3dYYYxx</span></span>
-<span id="cb144-11"><a href="amazon-web-services.html#cb144-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_security_group</span><span class="kw">:</span><span class="at"> sg-17xxxxYx</span></span>
-<span id="cb144-12"><a href="amazon-web-services.html#cb144-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_task_executionRoleArn</span><span class="kw">:</span><span class="at"> ecsTaskExecutionRole</span></span>
-<span id="cb144-13"><a href="amazon-web-services.html#cb144-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">batch_task_executionRoleArn</span><span class="kw">:</span><span class="at"> ecsExecutionRole</span></span>
-<span id="cb144-14"><a href="amazon-web-services.html#cb144-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_route_table</span><span class="kw">:</span><span class="at"> rtb-5xxxYx25</span></span>
-<span id="cb144-15"><a href="amazon-web-services.html#cb144-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">date_start</span><span class="kw">:</span><span class="at"> </span><span class="dv">20180701</span></span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb168-1"><a href="amazon-web-services.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">main_aws_id</span><span class="kw">:</span><span class="at"> 710673677961,</span></span>
+<span id="cb168-2"><a href="amazon-web-services.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">aws_access_key_id</span><span class="kw">:</span><span class="at"> XKIXXXGSXXXBZXX43XXX</span></span>
+<span id="cb168-3"><a href="amazon-web-services.html#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">aws_secret_access_key</span><span class="kw">:</span><span class="at"> xxTgp9r0f4XXXXXXX1XXlG1vTy07wydxXXXXXX11</span></span>
+<span id="cb168-4"><a href="amazon-web-services.html#cb168-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">region</span><span class="kw">:</span><span class="at"> us-east-1</span></span>
+<span id="cb168-5"><a href="amazon-web-services.html#cb168-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_instance_id</span><span class="kw">:</span><span class="at"> i-YYYxYYYYYYx2619xx</span></span>
+<span id="cb168-6"><a href="amazon-web-services.html#cb168-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_linux_ami</span><span class="kw">:</span><span class="at"> ami-0xYYYYYxx95x71x9</span></span>
+<span id="cb168-7"><a href="amazon-web-services.html#cb168-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main_ec2_public_subnet</span><span class="kw">:</span><span class="at"> subnet-d9xxxxYY</span></span>
+<span id="cb168-8"><a href="amazon-web-services.html#cb168-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_vpc_name</span><span class="kw">:</span><span class="at"> FanCluster</span></span>
+<span id="cb168-9"><a href="amazon-web-services.html#cb168-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_vpc_id</span><span class="kw">:</span><span class="at"> vpc-xxx5xYYY</span></span>
+<span id="cb168-10"><a href="amazon-web-services.html#cb168-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_public_subnet</span><span class="kw">:</span><span class="at"> subnet-e3dYYYxx</span></span>
+<span id="cb168-11"><a href="amazon-web-services.html#cb168-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_security_group</span><span class="kw">:</span><span class="at"> sg-17xxxxYx</span></span>
+<span id="cb168-12"><a href="amazon-web-services.html#cb168-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_task_executionRoleArn</span><span class="kw">:</span><span class="at"> ecsTaskExecutionRole</span></span>
+<span id="cb168-13"><a href="amazon-web-services.html#cb168-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">batch_task_executionRoleArn</span><span class="kw">:</span><span class="at"> ecsExecutionRole</span></span>
+<span id="cb168-14"><a href="amazon-web-services.html#cb168-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fargate_route_table</span><span class="kw">:</span><span class="at"> rtb-5xxxYx25</span></span>
+<span id="cb168-15"><a href="amazon-web-services.html#cb168-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">date_start</span><span class="kw">:</span><span class="at"> </span><span class="dv">20180701</span></span></code></pre></div>
 </div>
 <div id="start-client-service" class="section level4" number="5.1.2.2">
 <h4><span class="header-section-number">5.1.2.2</span> Start Client Service</h4>
 <p>For the various AWS services, could use Boto3 to access and use programmatically. To use any particular service, first start the client for that service: <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html#boto3.session.Session.client">boto3 client</a>.</p>
 <p>We load AWS access key and secret acess key etc in from a <a href="https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_yaml.html">yaml file</a> to start boto3 client. We then start the client for <a href="https://aws.amazon.com/batch/">AWS Batch</a>. And then describe a <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.describe_compute_environments">compute environment</a>.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb145-1"><a href="amazon-web-services.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
-<span id="cb145-2"><a href="amazon-web-services.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
-<span id="cb145-3"><a href="amazon-web-services.html#cb145-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
-<span id="cb145-4"><a href="amazon-web-services.html#cb145-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb145-5"><a href="amazon-web-services.html#cb145-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file</span></span>
-<span id="cb145-6"><a href="amazon-web-services.html#cb145-6" aria-hidden="true" tabindex="-1"></a>son_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
-<span id="cb145-7"><a href="amazon-web-services.html#cb145-7" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(son_aws_yml)</span>
-<span id="cb145-8"><a href="amazon-web-services.html#cb145-8" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
-<span id="cb145-9"><a href="amazon-web-services.html#cb145-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the first element of the yml list of dicts</span></span>
-<span id="cb145-10"><a href="amazon-web-services.html#cb145-10" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
-<span id="cb145-11"><a href="amazon-web-services.html#cb145-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb145-12"><a href="amazon-web-services.html#cb145-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
-<span id="cb145-13"><a href="amazon-web-services.html#cb145-13" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
-<span id="cb145-14"><a href="amazon-web-services.html#cb145-14" aria-hidden="true" tabindex="-1"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
-<span id="cb145-15"><a href="amazon-web-services.html#cb145-15" aria-hidden="true" tabindex="-1"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
-<span id="cb145-16"><a href="amazon-web-services.html#cb145-16" aria-hidden="true" tabindex="-1"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
-<span id="cb145-17"><a href="amazon-web-services.html#cb145-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb145-18"><a href="amazon-web-services.html#cb145-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show a compute environment Delete some Personal Information</span></span>
-<span id="cb145-19"><a href="amazon-web-services.html#cb145-19" aria-hidden="true" tabindex="-1"></a>ob_response <span class="op">=</span> aws_batch.describe_compute_environments(computeEnvironments<span class="op">=</span>[<span class="st">&quot;SpotEnv2560&quot;</span>])</span>
-<span id="cb145-20"><a href="amazon-web-services.html#cb145-20" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;ResponseMetadata&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb145-21"><a href="amazon-web-services.html#cb145-21" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;ecsClusterArn&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb145-22"><a href="amazon-web-services.html#cb145-22" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;serviceRole&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb145-23"><a href="amazon-web-services.html#cb145-23" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;computeResources&#39;</span>][<span class="st">&#39;instanceRole&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb145-24"><a href="amazon-web-services.html#cb145-24" aria-hidden="true" tabindex="-1"></a>pprint.pprint(ob_response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb169-1"><a href="amazon-web-services.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb169-2"><a href="amazon-web-services.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb169-3"><a href="amazon-web-services.html#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
+<span id="cb169-4"><a href="amazon-web-services.html#cb169-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-5"><a href="amazon-web-services.html#cb169-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file</span></span>
+<span id="cb169-6"><a href="amazon-web-services.html#cb169-6" aria-hidden="true" tabindex="-1"></a>son_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
+<span id="cb169-7"><a href="amazon-web-services.html#cb169-7" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(son_aws_yml)</span>
+<span id="cb169-8"><a href="amazon-web-services.html#cb169-8" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
+<span id="cb169-9"><a href="amazon-web-services.html#cb169-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the first element of the yml list of dicts</span></span>
+<span id="cb169-10"><a href="amazon-web-services.html#cb169-10" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
+<span id="cb169-11"><a href="amazon-web-services.html#cb169-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-12"><a href="amazon-web-services.html#cb169-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
+<span id="cb169-13"><a href="amazon-web-services.html#cb169-13" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
+<span id="cb169-14"><a href="amazon-web-services.html#cb169-14" aria-hidden="true" tabindex="-1"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
+<span id="cb169-15"><a href="amazon-web-services.html#cb169-15" aria-hidden="true" tabindex="-1"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
+<span id="cb169-16"><a href="amazon-web-services.html#cb169-16" aria-hidden="true" tabindex="-1"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
+<span id="cb169-17"><a href="amazon-web-services.html#cb169-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-18"><a href="amazon-web-services.html#cb169-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show a compute environment Delete some Personal Information</span></span>
+<span id="cb169-19"><a href="amazon-web-services.html#cb169-19" aria-hidden="true" tabindex="-1"></a>ob_response <span class="op">=</span> aws_batch.describe_compute_environments(computeEnvironments<span class="op">=</span>[<span class="st">&quot;SpotEnv2560&quot;</span>])</span>
+<span id="cb169-20"><a href="amazon-web-services.html#cb169-20" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;ResponseMetadata&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb169-21"><a href="amazon-web-services.html#cb169-21" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;ecsClusterArn&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb169-22"><a href="amazon-web-services.html#cb169-22" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;serviceRole&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb169-23"><a href="amazon-web-services.html#cb169-23" aria-hidden="true" tabindex="-1"></a>ob_response[<span class="st">&#39;computeEnvironments&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;computeResources&#39;</span>][<span class="st">&#39;instanceRole&#39;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb169-24"><a href="amazon-web-services.html#cb169-24" aria-hidden="true" tabindex="-1"></a>pprint.pprint(ob_response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;ResponseMetadata&#39;: &#39;&#39;,
 ##  &#39;computeEnvironments&#39;: [{&#39;computeEnvironmentArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:compute-environment/SpotEnv2560&#39;,
 ##                           &#39;computeEnvironmentName&#39;: &#39;SpotEnv2560&#39;,
@@ -571,23 +572,23 @@ conda install -c anaconda boto3 -y</code></pre>
 <h4><span class="header-section-number">5.2.1.1</span> Upload Local File to S3</h4>
 <p>A program runs either locally or on a remote EC2 machine inside a docker container. Upon exit, data does not persist in the docker container and needs to be exported to be saved. The idea is to export program images, csv files, json files, etc to S3 when these are generated, if the program detects that it is been executed on an EC2 machine (in a container).</p>
 <p>First, inside the program, detect platform status. For Docker Container on EC2, AWS Linux 2 has platform.release of something like <em>4.14.193-194.317.amzn2.x86_64</em>.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="amazon-web-services.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform <span class="im">as</span> platform</span>
-<span id="cb147-2"><a href="amazon-web-services.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(platform.release())</span>
-<span id="cb147-3"><a href="amazon-web-services.html#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This assums using an EC2 instance where amzn is in platform name</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb171-1"><a href="amazon-web-services.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform <span class="im">as</span> platform</span>
+<span id="cb171-2"><a href="amazon-web-services.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(platform.release())</span>
+<span id="cb171-3"><a href="amazon-web-services.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This assums using an EC2 instance where amzn is in platform name</span></span></code></pre></div>
 <pre><code>## 10</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb149-1"><a href="amazon-web-services.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&#39;amzn&#39;</span> <span class="kw">in</span> platform.release():</span>
-<span id="cb149-2"><a href="amazon-web-services.html#cb149-2" aria-hidden="true" tabindex="-1"></a>    s3_status <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb149-3"><a href="amazon-web-services.html#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb149-4"><a href="amazon-web-services.html#cb149-4" aria-hidden="true" tabindex="-1"></a>    s3_status <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb149-5"><a href="amazon-web-services.html#cb149-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s3_status)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb173-1"><a href="amazon-web-services.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&#39;amzn&#39;</span> <span class="kw">in</span> platform.release():</span>
+<span id="cb173-2"><a href="amazon-web-services.html#cb173-2" aria-hidden="true" tabindex="-1"></a>    s3_status <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb173-3"><a href="amazon-web-services.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb173-4"><a href="amazon-web-services.html#cb173-4" aria-hidden="true" tabindex="-1"></a>    s3_status <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb173-5"><a href="amazon-web-services.html#cb173-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s3_status)</span></code></pre></div>
 <pre><code>## False</code></pre>
 <p>Second, on s3, create a bucket, <em>fans3testbucket</em> for example (no underscore in name allowed). Before doing this, set up AWS Access Key ID and AWS Secrete Acccess KEy in <em>/Users/fan/.aws</em> folder so that boto3 can access s3 from computer. Upon successful completion of the push, the file can be accessed at <a href="https://fans3testbucket.s3.amazonaws.com/_data/iris_s3.dta">https://fans3testbucket.s3.amazonaws.com/_data/iris_s3.dta</a>.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb151-1"><a href="amazon-web-services.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
-<span id="cb151-2"><a href="amazon-web-services.html#cb151-2" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> boto3.client(<span class="st">&#39;s3&#39;</span>)</span>
-<span id="cb151-3"><a href="amazon-web-services.html#cb151-3" aria-hidden="true" tabindex="-1"></a>spn_local_path_file_name <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/aws/setup/_data/iris_s3.dta&quot;</span></span>
-<span id="cb151-4"><a href="amazon-web-services.html#cb151-4" aria-hidden="true" tabindex="-1"></a>str_bucket_name <span class="op">=</span> <span class="st">&quot;fans3testbucket&quot;</span></span>
-<span id="cb151-5"><a href="amazon-web-services.html#cb151-5" aria-hidden="true" tabindex="-1"></a>spn_remote_path_file_name <span class="op">=</span> <span class="st">&quot;_data/iris_s3.dta&quot;</span></span>
-<span id="cb151-6"><a href="amazon-web-services.html#cb151-6" aria-hidden="true" tabindex="-1"></a>s3.upload_file(spn_local_path_file_name, str_bucket_name, spn_remote_path_file_name)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb175-1"><a href="amazon-web-services.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb175-2"><a href="amazon-web-services.html#cb175-2" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> boto3.client(<span class="st">&#39;s3&#39;</span>)</span>
+<span id="cb175-3"><a href="amazon-web-services.html#cb175-3" aria-hidden="true" tabindex="-1"></a>spn_local_path_file_name <span class="op">=</span> <span class="st">&quot;C:/Users/fan/pyfan/vig/aws/setup/_data/iris_s3.dta&quot;</span></span>
+<span id="cb175-4"><a href="amazon-web-services.html#cb175-4" aria-hidden="true" tabindex="-1"></a>str_bucket_name <span class="op">=</span> <span class="st">&quot;fans3testbucket&quot;</span></span>
+<span id="cb175-5"><a href="amazon-web-services.html#cb175-5" aria-hidden="true" tabindex="-1"></a>spn_remote_path_file_name <span class="op">=</span> <span class="st">&quot;_data/iris_s3.dta&quot;</span></span>
+<span id="cb175-6"><a href="amazon-web-services.html#cb175-6" aria-hidden="true" tabindex="-1"></a>s3.upload_file(spn_local_path_file_name, str_bucket_name, spn_remote_path_file_name)</span></code></pre></div>
 
 </div>
 </div>
@@ -620,68 +621,68 @@ conda install -c anaconda boto3 -y</code></pre>
 <p>These can be registered programmatically by using boto3: <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html">Boto3 Batch Documentation</a></p>
 <p>In the example below, will register a new job definition, this will add <em>pyfan-scatterline3-test-rmd</em> to <a href="https://console.aws.amazon.com/batch/v2/home?region=us-east-1#job-definition">job definition</a> as an additional job definition.</p>
 <p>Everytime, when the code below is re-run, a new batch revision number is generated. AWS allows per batch job to have potential hundreds of thousands of revisions.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb152-1"><a href="amazon-web-services.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
-<span id="cb152-2"><a href="amazon-web-services.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
-<span id="cb152-3"><a href="amazon-web-services.html#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
-<span id="cb152-4"><a href="amazon-web-services.html#cb152-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb152-5"><a href="amazon-web-services.html#cb152-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file with security info</span></span>
-<span id="cb152-6"><a href="amazon-web-services.html#cb152-6" aria-hidden="true" tabindex="-1"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
-<span id="cb152-7"><a href="amazon-web-services.html#cb152-7" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
-<span id="cb152-8"><a href="amazon-web-services.html#cb152-8" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
-<span id="cb152-9"><a href="amazon-web-services.html#cb152-9" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
-<span id="cb152-10"><a href="amazon-web-services.html#cb152-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb152-11"><a href="amazon-web-services.html#cb152-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary storing job definition related information</span></span>
-<span id="cb152-12"><a href="amazon-web-services.html#cb152-12" aria-hidden="true" tabindex="-1"></a>job_dict <span class="op">=</span> {<span class="st">&quot;jobDefinitionName&quot;</span>: <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span>,</span>
-<span id="cb152-13"><a href="amazon-web-services.html#cb152-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;type&quot;</span>: <span class="st">&quot;container&quot;</span>,</span>
-<span id="cb152-14"><a href="amazon-web-services.html#cb152-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;containerProperties&quot;</span>: {</span>
-<span id="cb152-15"><a href="amazon-web-services.html#cb152-15" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;image&quot;</span>: aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span> <span class="st">&quot;.dkr.ecr.&quot;</span> <span class="op">+</span></span>
-<span id="cb152-16"><a href="amazon-web-services.html#cb152-16" aria-hidden="true" tabindex="-1"></a>                         aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>] <span class="op">+</span> <span class="st">&quot;.amazonaws.com/fanconda&quot;</span>,</span>
-<span id="cb152-17"><a href="amazon-web-services.html#cb152-17" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;vcpus&quot;</span>: <span class="bu">int</span>(<span class="dv">1</span>),</span>
-<span id="cb152-18"><a href="amazon-web-services.html#cb152-18" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;memory&quot;</span>: <span class="bu">int</span>(<span class="dv">1024</span>),</span>
-<span id="cb152-19"><a href="amazon-web-services.html#cb152-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;command&quot;</span>: [<span class="st">&quot;python&quot;</span>,</span>
-<span id="cb152-20"><a href="amazon-web-services.html#cb152-20" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;/pyfan/pyfan/graph/exa/scatterline3.py&quot;</span>,</span>
-<span id="cb152-21"><a href="amazon-web-services.html#cb152-21" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;-A&quot;</span>, <span class="st">&quot;fans3testbucket&quot;</span>,</span>
-<span id="cb152-22"><a href="amazon-web-services.html#cb152-22" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;-B&quot;</span>, <span class="st">&quot;111&quot;</span>],</span>
-<span id="cb152-23"><a href="amazon-web-services.html#cb152-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;jobRoleArn&quot;</span>: <span class="st">&quot;arn:aws:iam::&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span></span>
-<span id="cb152-24"><a href="amazon-web-services.html#cb152-24" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;:role/&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;batch_task_executionRoleArn&#39;</span>]</span>
-<span id="cb152-25"><a href="amazon-web-services.html#cb152-25" aria-hidden="true" tabindex="-1"></a>            },</span>
-<span id="cb152-26"><a href="amazon-web-services.html#cb152-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;retryStrategy&quot;</span>: {</span>
-<span id="cb152-27"><a href="amazon-web-services.html#cb152-27" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;attempts&quot;</span>: <span class="dv">1</span></span>
-<span id="cb152-28"><a href="amazon-web-services.html#cb152-28" aria-hidden="true" tabindex="-1"></a>            }}</span>
-<span id="cb152-29"><a href="amazon-web-services.html#cb152-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb152-30"><a href="amazon-web-services.html#cb152-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
-<span id="cb152-31"><a href="amazon-web-services.html#cb152-31" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
-<span id="cb152-32"><a href="amazon-web-services.html#cb152-32" aria-hidden="true" tabindex="-1"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
-<span id="cb152-33"><a href="amazon-web-services.html#cb152-33" aria-hidden="true" tabindex="-1"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
-<span id="cb152-34"><a href="amazon-web-services.html#cb152-34" aria-hidden="true" tabindex="-1"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
-<span id="cb152-35"><a href="amazon-web-services.html#cb152-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb152-36"><a href="amazon-web-services.html#cb152-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Register a job definition</span></span>
-<span id="cb152-37"><a href="amazon-web-services.html#cb152-37" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> aws_batch.register_job_definition(</span>
-<span id="cb152-38"><a href="amazon-web-services.html#cb152-38" aria-hidden="true" tabindex="-1"></a>        jobDefinitionName <span class="op">=</span> job_dict[<span class="st">&#39;jobDefinitionName&#39;</span>],</span>
-<span id="cb152-39"><a href="amazon-web-services.html#cb152-39" aria-hidden="true" tabindex="-1"></a>        <span class="bu">type</span> <span class="op">=</span> job_dict[<span class="st">&#39;type&#39;</span>],</span>
-<span id="cb152-40"><a href="amazon-web-services.html#cb152-40" aria-hidden="true" tabindex="-1"></a>        containerProperties <span class="op">=</span> job_dict[<span class="st">&#39;containerProperties&#39;</span>],</span>
-<span id="cb152-41"><a href="amazon-web-services.html#cb152-41" aria-hidden="true" tabindex="-1"></a>        retryStrategy <span class="op">=</span> job_dict[<span class="st">&#39;retryStrategy&#39;</span>])</span>
-<span id="cb152-42"><a href="amazon-web-services.html#cb152-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb152-43"><a href="amazon-web-services.html#cb152-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Print response</span></span>
-<span id="cb152-44"><a href="amazon-web-services.html#cb152-44" aria-hidden="true" tabindex="-1"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="amazon-web-services.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb176-2"><a href="amazon-web-services.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb176-3"><a href="amazon-web-services.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
+<span id="cb176-4"><a href="amazon-web-services.html#cb176-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-5"><a href="amazon-web-services.html#cb176-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file with security info</span></span>
+<span id="cb176-6"><a href="amazon-web-services.html#cb176-6" aria-hidden="true" tabindex="-1"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
+<span id="cb176-7"><a href="amazon-web-services.html#cb176-7" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
+<span id="cb176-8"><a href="amazon-web-services.html#cb176-8" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
+<span id="cb176-9"><a href="amazon-web-services.html#cb176-9" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
+<span id="cb176-10"><a href="amazon-web-services.html#cb176-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-11"><a href="amazon-web-services.html#cb176-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary storing job definition related information</span></span>
+<span id="cb176-12"><a href="amazon-web-services.html#cb176-12" aria-hidden="true" tabindex="-1"></a>job_dict <span class="op">=</span> {<span class="st">&quot;jobDefinitionName&quot;</span>: <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span>,</span>
+<span id="cb176-13"><a href="amazon-web-services.html#cb176-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;type&quot;</span>: <span class="st">&quot;container&quot;</span>,</span>
+<span id="cb176-14"><a href="amazon-web-services.html#cb176-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;containerProperties&quot;</span>: {</span>
+<span id="cb176-15"><a href="amazon-web-services.html#cb176-15" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;image&quot;</span>: aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span> <span class="st">&quot;.dkr.ecr.&quot;</span> <span class="op">+</span></span>
+<span id="cb176-16"><a href="amazon-web-services.html#cb176-16" aria-hidden="true" tabindex="-1"></a>                         aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>] <span class="op">+</span> <span class="st">&quot;.amazonaws.com/fanconda&quot;</span>,</span>
+<span id="cb176-17"><a href="amazon-web-services.html#cb176-17" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;vcpus&quot;</span>: <span class="bu">int</span>(<span class="dv">1</span>),</span>
+<span id="cb176-18"><a href="amazon-web-services.html#cb176-18" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;memory&quot;</span>: <span class="bu">int</span>(<span class="dv">1024</span>),</span>
+<span id="cb176-19"><a href="amazon-web-services.html#cb176-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;command&quot;</span>: [<span class="st">&quot;python&quot;</span>,</span>
+<span id="cb176-20"><a href="amazon-web-services.html#cb176-20" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;/pyfan/pyfan/graph/exa/scatterline3.py&quot;</span>,</span>
+<span id="cb176-21"><a href="amazon-web-services.html#cb176-21" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;-A&quot;</span>, <span class="st">&quot;fans3testbucket&quot;</span>,</span>
+<span id="cb176-22"><a href="amazon-web-services.html#cb176-22" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;-B&quot;</span>, <span class="st">&quot;111&quot;</span>],</span>
+<span id="cb176-23"><a href="amazon-web-services.html#cb176-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;jobRoleArn&quot;</span>: <span class="st">&quot;arn:aws:iam::&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;main_aws_id&#39;</span>] <span class="op">+</span></span>
+<span id="cb176-24"><a href="amazon-web-services.html#cb176-24" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;:role/&quot;</span> <span class="op">+</span> aws_yml_dict_yml[<span class="st">&#39;batch_task_executionRoleArn&#39;</span>]</span>
+<span id="cb176-25"><a href="amazon-web-services.html#cb176-25" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb176-26"><a href="amazon-web-services.html#cb176-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;retryStrategy&quot;</span>: {</span>
+<span id="cb176-27"><a href="amazon-web-services.html#cb176-27" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;attempts&quot;</span>: <span class="dv">1</span></span>
+<span id="cb176-28"><a href="amazon-web-services.html#cb176-28" aria-hidden="true" tabindex="-1"></a>            }}</span>
+<span id="cb176-29"><a href="amazon-web-services.html#cb176-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-30"><a href="amazon-web-services.html#cb176-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
+<span id="cb176-31"><a href="amazon-web-services.html#cb176-31" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
+<span id="cb176-32"><a href="amazon-web-services.html#cb176-32" aria-hidden="true" tabindex="-1"></a>  aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
+<span id="cb176-33"><a href="amazon-web-services.html#cb176-33" aria-hidden="true" tabindex="-1"></a>  aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
+<span id="cb176-34"><a href="amazon-web-services.html#cb176-34" aria-hidden="true" tabindex="-1"></a>  region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
+<span id="cb176-35"><a href="amazon-web-services.html#cb176-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-36"><a href="amazon-web-services.html#cb176-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Register a job definition</span></span>
+<span id="cb176-37"><a href="amazon-web-services.html#cb176-37" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> aws_batch.register_job_definition(</span>
+<span id="cb176-38"><a href="amazon-web-services.html#cb176-38" aria-hidden="true" tabindex="-1"></a>        jobDefinitionName <span class="op">=</span> job_dict[<span class="st">&#39;jobDefinitionName&#39;</span>],</span>
+<span id="cb176-39"><a href="amazon-web-services.html#cb176-39" aria-hidden="true" tabindex="-1"></a>        <span class="bu">type</span> <span class="op">=</span> job_dict[<span class="st">&#39;type&#39;</span>],</span>
+<span id="cb176-40"><a href="amazon-web-services.html#cb176-40" aria-hidden="true" tabindex="-1"></a>        containerProperties <span class="op">=</span> job_dict[<span class="st">&#39;containerProperties&#39;</span>],</span>
+<span id="cb176-41"><a href="amazon-web-services.html#cb176-41" aria-hidden="true" tabindex="-1"></a>        retryStrategy <span class="op">=</span> job_dict[<span class="st">&#39;retryStrategy&#39;</span>])</span>
+<span id="cb176-42"><a href="amazon-web-services.html#cb176-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-43"><a href="amazon-web-services.html#cb176-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Print response</span></span>
+<span id="cb176-44"><a href="amazon-web-services.html#cb176-44" aria-hidden="true" tabindex="-1"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;ResponseMetadata&#39;: {&#39;HTTPHeaders&#39;: {&#39;connection&#39;: &#39;keep-alive&#39;,
 ##                                       &#39;content-length&#39;: &#39;169&#39;,
 ##                                       &#39;content-type&#39;: &#39;application/json&#39;,
-##                                       &#39;date&#39;: &#39;Thu, &#39;
-##                                               &#39;19 &#39;
+##                                       &#39;date&#39;: &#39;Sat, &#39;
+##                                               &#39;28 &#39;
 ##                                               &#39;Nov &#39;
 ##                                               &#39;2020 &#39;
-##                                               &#39;16:15:15 &#39;
+##                                               &#39;18:56:34 &#39;
 ##                                               &#39;GMT&#39;,
-##                                       &#39;x-amz-apigw-id&#39;: &#39;WQ0DHEkAoAMFsLw=&#39;,
-##                                       &#39;x-amzn-requestid&#39;: &#39;81775f10-4c2c-4c2c-bd8f-70e425b623ad&#39;,
-##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5fb69a13-3c979eab6576c572668162db;Sampled=0&#39;},
+##                                       &#39;x-amz-apigw-id&#39;: &#39;Wu2HbFpJoAMFjcg=&#39;,
+##                                       &#39;x-amzn-requestid&#39;: &#39;6fcc923c-4984-40e3-a600-08997075e854&#39;,
+##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5fc29d62-0cb90d9f433433e90aff7980;Sampled=0&#39;},
 ##                       &#39;HTTPStatusCode&#39;: 200,
-##                       &#39;RequestId&#39;: &#39;81775f10-4c2c-4c2c-bd8f-70e425b623ad&#39;,
+##                       &#39;RequestId&#39;: &#39;6fcc923c-4984-40e3-a600-08997075e854&#39;,
 ##                       &#39;RetryAttempts&#39;: 0},
-##  &#39;jobDefinitionArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:19&#39;,
+##  &#39;jobDefinitionArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:26&#39;,
 ##  &#39;jobDefinitionName&#39;: &#39;pyfan-scatterline3-test-rmd&#39;,
-##  &#39;revision&#39;: 19}</code></pre>
+##  &#39;revision&#39;: 26}</code></pre>
 </div>
 <div id="submit-a-batch-array" class="section level4" number="5.3.1.3">
 <h4><span class="header-section-number">5.3.1.3</span> Submit a Batch Array</h4>
@@ -689,66 +690,66 @@ conda install -c anaconda boto3 -y</code></pre>
 <p>create a <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">batch compute environment</a> that uses <a href="https://aws.amazon.com/ec2/pricing/">spot price instances</a>, which will be much cheaper than on demand costs. Will need to set proper AMI roles, <em>arn:aws:iam::XXXX7367XXXX:role/AmazonEC2SpotFleetRole</em> for <em>Spot fleet role</em>, and also proper securities.</p>
 <p>When the <em>array_size</em> parameter is equal to 100, that starts 100 child processes, with 1 through 100 for <em>AWS_BATCH_JOB_ARRAY_INDEX</em>, which, could be used directly by the python function by taking in the parameter from the os environment as shown earlier. For demonstration purposes, will only set <em>array_size=3</em> in the example below.</p>
 <p>Outputs from the <a href="https://github.com/FanWangEcon/pyfan/blob/master/pyfan/graph/exa/scatterline3.py#L138">scatterline3</a> has a timestamp, so each time the code below is run, will generate several new images, with the same set of random seeds, but different date prefix. The output <a href="https://s3.console.aws.amazon.com/s3/buckets/fans3testbucket/pyfan_gph_scatter_line_rand/?region=us-east-1&amp;tab=overview">s3 folder is public</a>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb154-1"><a href="amazon-web-services.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
-<span id="cb154-2"><a href="amazon-web-services.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
-<span id="cb154-3"><a href="amazon-web-services.html#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
-<span id="cb154-4"><a href="amazon-web-services.html#cb154-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-5"><a href="amazon-web-services.html#cb154-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> datetime</span>
-<span id="cb154-6"><a href="amazon-web-services.html#cb154-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-7"><a href="amazon-web-services.html#cb154-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the &quot;jobDefinitionName&quot;: &#39;pyfan-scatterline3-test-rmd&#39; from registering</span></span>
-<span id="cb154-8"><a href="amazon-web-services.html#cb154-8" aria-hidden="true" tabindex="-1"></a>jobDefinitionName <span class="op">=</span> <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span></span>
-<span id="cb154-9"><a href="amazon-web-services.html#cb154-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-10"><a href="amazon-web-services.html#cb154-10" aria-hidden="true" tabindex="-1"></a><span class="co"># How many child batch processes to start</span></span>
-<span id="cb154-11"><a href="amazon-web-services.html#cb154-11" aria-hidden="true" tabindex="-1"></a><span class="co"># child process differ in: AWS_BATCH_JOB_ARRAY_INDEX</span></span>
-<span id="cb154-12"><a href="amazon-web-services.html#cb154-12" aria-hidden="true" tabindex="-1"></a>array_size <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb154-13"><a href="amazon-web-services.html#cb154-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-14"><a href="amazon-web-services.html#cb154-14" aria-hidden="true" tabindex="-1"></a><span class="co"># job name</span></span>
-<span id="cb154-15"><a href="amazon-web-services.html#cb154-15" aria-hidden="true" tabindex="-1"></a>timestr <span class="op">=</span> <span class="st">&quot;{:%Y%m</span><span class="sc">%d</span><span class="st">%H%M%S</span><span class="sc">%f</span><span class="st">}&quot;</span>.<span class="bu">format</span>(datetime.datetime.now())</span>
-<span id="cb154-16"><a href="amazon-web-services.html#cb154-16" aria-hidden="true" tabindex="-1"></a>timesufx <span class="op">=</span> <span class="st">&#39;_&#39;</span> <span class="op">+</span> timestr</span>
-<span id="cb154-17"><a href="amazon-web-services.html#cb154-17" aria-hidden="true" tabindex="-1"></a>st_jobName <span class="op">=</span> jobDefinitionName <span class="op">+</span> timesufx</span>
-<span id="cb154-18"><a href="amazon-web-services.html#cb154-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-19"><a href="amazon-web-services.html#cb154-19" aria-hidden="true" tabindex="-1"></a><span class="co"># job queue (needs to design own queue in batch)</span></span>
-<span id="cb154-20"><a href="amazon-web-services.html#cb154-20" aria-hidden="true" tabindex="-1"></a>st_jobQueue <span class="op">=</span> <span class="st">&#39;Spot&#39;</span></span>
-<span id="cb154-21"><a href="amazon-web-services.html#cb154-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-22"><a href="amazon-web-services.html#cb154-22" aria-hidden="true" tabindex="-1"></a><span class="co"># start batch service</span></span>
-<span id="cb154-23"><a href="amazon-web-services.html#cb154-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file with security info</span></span>
-<span id="cb154-24"><a href="amazon-web-services.html#cb154-24" aria-hidden="true" tabindex="-1"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
-<span id="cb154-25"><a href="amazon-web-services.html#cb154-25" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
-<span id="cb154-26"><a href="amazon-web-services.html#cb154-26" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
-<span id="cb154-27"><a href="amazon-web-services.html#cb154-27" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
-<span id="cb154-28"><a href="amazon-web-services.html#cb154-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
-<span id="cb154-29"><a href="amazon-web-services.html#cb154-29" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
-<span id="cb154-30"><a href="amazon-web-services.html#cb154-30" aria-hidden="true" tabindex="-1"></a>                         aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
-<span id="cb154-31"><a href="amazon-web-services.html#cb154-31" aria-hidden="true" tabindex="-1"></a>                         aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
-<span id="cb154-32"><a href="amazon-web-services.html#cb154-32" aria-hidden="true" tabindex="-1"></a>                         region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
-<span id="cb154-33"><a href="amazon-web-services.html#cb154-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb154-34"><a href="amazon-web-services.html#cb154-34" aria-hidden="true" tabindex="-1"></a><span class="co"># aws batch submit job</span></span>
-<span id="cb154-35"><a href="amazon-web-services.html#cb154-35" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> aws_batch.submit_job(</span>
-<span id="cb154-36"><a href="amazon-web-services.html#cb154-36" aria-hidden="true" tabindex="-1"></a>    jobName<span class="op">=</span>st_jobName,</span>
-<span id="cb154-37"><a href="amazon-web-services.html#cb154-37" aria-hidden="true" tabindex="-1"></a>    jobQueue<span class="op">=</span>st_jobQueue,</span>
-<span id="cb154-38"><a href="amazon-web-services.html#cb154-38" aria-hidden="true" tabindex="-1"></a>    arrayProperties<span class="op">=</span>{<span class="st">&#39;size&#39;</span>: array_size},</span>
-<span id="cb154-39"><a href="amazon-web-services.html#cb154-39" aria-hidden="true" tabindex="-1"></a>    jobDefinition<span class="op">=</span>jobDefinitionName)</span>
-<span id="cb154-40"><a href="amazon-web-services.html#cb154-40" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb154-41"><a href="amazon-web-services.html#cb154-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Print response</span></span>
-<span id="cb154-42"><a href="amazon-web-services.html#cb154-42" aria-hidden="true" tabindex="-1"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb178-1"><a href="amazon-web-services.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> boto3</span>
+<span id="cb178-2"><a href="amazon-web-services.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span>
+<span id="cb178-3"><a href="amazon-web-services.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
+<span id="cb178-4"><a href="amazon-web-services.html#cb178-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-5"><a href="amazon-web-services.html#cb178-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> datetime</span>
+<span id="cb178-6"><a href="amazon-web-services.html#cb178-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-7"><a href="amazon-web-services.html#cb178-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the &quot;jobDefinitionName&quot;: &#39;pyfan-scatterline3-test-rmd&#39; from registering</span></span>
+<span id="cb178-8"><a href="amazon-web-services.html#cb178-8" aria-hidden="true" tabindex="-1"></a>jobDefinitionName <span class="op">=</span> <span class="st">&#39;pyfan-scatterline3-test-rmd&#39;</span></span>
+<span id="cb178-9"><a href="amazon-web-services.html#cb178-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-10"><a href="amazon-web-services.html#cb178-10" aria-hidden="true" tabindex="-1"></a><span class="co"># How many child batch processes to start</span></span>
+<span id="cb178-11"><a href="amazon-web-services.html#cb178-11" aria-hidden="true" tabindex="-1"></a><span class="co"># child process differ in: AWS_BATCH_JOB_ARRAY_INDEX</span></span>
+<span id="cb178-12"><a href="amazon-web-services.html#cb178-12" aria-hidden="true" tabindex="-1"></a>array_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb178-13"><a href="amazon-web-services.html#cb178-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-14"><a href="amazon-web-services.html#cb178-14" aria-hidden="true" tabindex="-1"></a><span class="co"># job name</span></span>
+<span id="cb178-15"><a href="amazon-web-services.html#cb178-15" aria-hidden="true" tabindex="-1"></a>timestr <span class="op">=</span> <span class="st">&quot;{:%Y%m</span><span class="sc">%d</span><span class="st">%H%M%S</span><span class="sc">%f</span><span class="st">}&quot;</span>.<span class="bu">format</span>(datetime.datetime.now())</span>
+<span id="cb178-16"><a href="amazon-web-services.html#cb178-16" aria-hidden="true" tabindex="-1"></a>timesufx <span class="op">=</span> <span class="st">&#39;_&#39;</span> <span class="op">+</span> timestr</span>
+<span id="cb178-17"><a href="amazon-web-services.html#cb178-17" aria-hidden="true" tabindex="-1"></a>st_jobName <span class="op">=</span> jobDefinitionName <span class="op">+</span> timesufx</span>
+<span id="cb178-18"><a href="amazon-web-services.html#cb178-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-19"><a href="amazon-web-services.html#cb178-19" aria-hidden="true" tabindex="-1"></a><span class="co"># job queue (needs to design own queue in batch)</span></span>
+<span id="cb178-20"><a href="amazon-web-services.html#cb178-20" aria-hidden="true" tabindex="-1"></a>st_jobQueue <span class="op">=</span> <span class="st">&#39;Spot&#39;</span></span>
+<span id="cb178-21"><a href="amazon-web-services.html#cb178-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-22"><a href="amazon-web-services.html#cb178-22" aria-hidden="true" tabindex="-1"></a><span class="co"># start batch service</span></span>
+<span id="cb178-23"><a href="amazon-web-services.html#cb178-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Load YAML file with security info</span></span>
+<span id="cb178-24"><a href="amazon-web-services.html#cb178-24" aria-hidden="true" tabindex="-1"></a>srn_aws_yml <span class="op">=</span> <span class="st">&quot;C:/Users/fan/fanwangecon.github.io/_data/aws.yml&quot;</span></span>
+<span id="cb178-25"><a href="amazon-web-services.html#cb178-25" aria-hidden="true" tabindex="-1"></a>fl_yaml <span class="op">=</span> <span class="bu">open</span>(srn_aws_yml)</span>
+<span id="cb178-26"><a href="amazon-web-services.html#cb178-26" aria-hidden="true" tabindex="-1"></a>ls_dict_yml <span class="op">=</span> yaml.load(fl_yaml, Loader<span class="op">=</span>yaml.BaseLoader)</span>
+<span id="cb178-27"><a href="amazon-web-services.html#cb178-27" aria-hidden="true" tabindex="-1"></a>aws_yml_dict_yml <span class="op">=</span> ls_dict_yml[<span class="dv">0</span>]</span>
+<span id="cb178-28"><a href="amazon-web-services.html#cb178-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Use AWS Personal Access Keys etc to start boto3 client</span></span>
+<span id="cb178-29"><a href="amazon-web-services.html#cb178-29" aria-hidden="true" tabindex="-1"></a>aws_batch <span class="op">=</span> boto3.client(<span class="st">&#39;batch&#39;</span>,</span>
+<span id="cb178-30"><a href="amazon-web-services.html#cb178-30" aria-hidden="true" tabindex="-1"></a>                         aws_access_key_id<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_access_key_id&#39;</span>],</span>
+<span id="cb178-31"><a href="amazon-web-services.html#cb178-31" aria-hidden="true" tabindex="-1"></a>                         aws_secret_access_key<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;aws_secret_access_key&#39;</span>],</span>
+<span id="cb178-32"><a href="amazon-web-services.html#cb178-32" aria-hidden="true" tabindex="-1"></a>                         region_name<span class="op">=</span>aws_yml_dict_yml[<span class="st">&#39;region&#39;</span>])</span>
+<span id="cb178-33"><a href="amazon-web-services.html#cb178-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb178-34"><a href="amazon-web-services.html#cb178-34" aria-hidden="true" tabindex="-1"></a><span class="co"># aws batch submit job</span></span>
+<span id="cb178-35"><a href="amazon-web-services.html#cb178-35" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> aws_batch.submit_job(</span>
+<span id="cb178-36"><a href="amazon-web-services.html#cb178-36" aria-hidden="true" tabindex="-1"></a>    jobName<span class="op">=</span>st_jobName,</span>
+<span id="cb178-37"><a href="amazon-web-services.html#cb178-37" aria-hidden="true" tabindex="-1"></a>    jobQueue<span class="op">=</span>st_jobQueue,</span>
+<span id="cb178-38"><a href="amazon-web-services.html#cb178-38" aria-hidden="true" tabindex="-1"></a>    arrayProperties<span class="op">=</span>{<span class="st">&#39;size&#39;</span>: array_size},</span>
+<span id="cb178-39"><a href="amazon-web-services.html#cb178-39" aria-hidden="true" tabindex="-1"></a>    jobDefinition<span class="op">=</span>jobDefinitionName)</span>
+<span id="cb178-40"><a href="amazon-web-services.html#cb178-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb178-41"><a href="amazon-web-services.html#cb178-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Print response</span></span>
+<span id="cb178-42"><a href="amazon-web-services.html#cb178-42" aria-hidden="true" tabindex="-1"></a>pprint.pprint(response, width<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## {&#39;ResponseMetadata&#39;: {&#39;HTTPHeaders&#39;: {&#39;connection&#39;: &#39;keep-alive&#39;,
 ##                                       &#39;content-length&#39;: &#39;198&#39;,
 ##                                       &#39;content-type&#39;: &#39;application/json&#39;,
-##                                       &#39;date&#39;: &#39;Thu, &#39;
-##                                               &#39;19 &#39;
+##                                       &#39;date&#39;: &#39;Sat, &#39;
+##                                               &#39;28 &#39;
 ##                                               &#39;Nov &#39;
 ##                                               &#39;2020 &#39;
-##                                               &#39;16:15:16 &#39;
+##                                               &#39;18:56:35 &#39;
 ##                                               &#39;GMT&#39;,
-##                                       &#39;x-amz-apigw-id&#39;: &#39;WQ0DLE9SoAMFbDw=&#39;,
-##                                       &#39;x-amzn-requestid&#39;: &#39;27241c3a-f926-4f67-9f65-0c3677f092c8&#39;,
-##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5fb69a14-50ad21ef179b473b37006af5;Sampled=0&#39;},
+##                                       &#39;x-amz-apigw-id&#39;: &#39;Wu2HfHLVoAMFUxg=&#39;,
+##                                       &#39;x-amzn-requestid&#39;: &#39;f0ae829d-12aa-4c5a-ad60-1f32032e06b2&#39;,
+##                                       &#39;x-amzn-trace-id&#39;: &#39;Root=1-5fc29d63-160ba1963b7dae191d233590;Sampled=0&#39;},
 ##                       &#39;HTTPStatusCode&#39;: 200,
-##                       &#39;RequestId&#39;: &#39;27241c3a-f926-4f67-9f65-0c3677f092c8&#39;,
+##                       &#39;RequestId&#39;: &#39;f0ae829d-12aa-4c5a-ad60-1f32032e06b2&#39;,
 ##                       &#39;RetryAttempts&#39;: 0},
-##  &#39;jobArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job/53595217-cd64-49e8-9eac-09140705f250&#39;,
-##  &#39;jobId&#39;: &#39;53595217-cd64-49e8-9eac-09140705f250&#39;,
-##  &#39;jobName&#39;: &#39;pyfan-scatterline3-test-rmd_20201119101516517305&#39;}</code></pre>
+##  &#39;jobArn&#39;: &#39;arn:aws:batch:us-east-1:710673677961:job/0a5deea3-5dcc-4f93-9a54-6b999c95f718&#39;,
+##  &#39;jobId&#39;: &#39;0a5deea3-5dcc-4f93-9a54-6b999c95f718&#39;,
+##  &#39;jobName&#39;: &#39;pyfan-scatterline3-test-rmd_20201128125633873910&#39;}</code></pre>
 
 </div>
 </div>

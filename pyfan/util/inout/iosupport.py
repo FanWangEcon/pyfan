@@ -61,7 +61,7 @@ class csvIO():
         addName = addName.replace('array(p', '')
         addName = addName.replace(')', '')
 
-        fullname = save_file_directory + addName[0:60] + '/'
+        fullname = save_file_directory + addName[0:60] + os.sep
 
         if not os.path.exists(fullname):
             try:

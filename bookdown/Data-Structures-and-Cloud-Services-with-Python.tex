@@ -149,7 +149,7 @@
 
 \title{Data Structures and Cloud Services with Python}
 \author{Fan Wang}
-\date{2020-11-19}
+\date{2020-11-28}
 
 \begin{document}
 \maketitle
@@ -752,9 +752,6 @@ Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon
 
 Given a dictionary, loop through all of its elements
 
-\hypertarget{create-a-list-of-dictionaries}{%
-\subsubsection{Create a List of Dictionaries}\label{create-a-list-of-dictionaries}}
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{dc\_speckey\_dict }\OperatorTok{=}\NormalTok{ \{}\DecValTok{0}\NormalTok{: }\StringTok{\textquotesingle{}mpoly\_1\textquotesingle{}}\NormalTok{,}
@@ -774,6 +771,40 @@ Given a dictionary, loop through all of its elements
 ## speckey_key:3, speckey_val:ng_p_t
 ## speckey_key:4, speckey_val:ng_p_d
 \end{verbatim}
+
+\hypertarget{select-one-key-value-pair}{%
+\subsubsection{Select One Key-value Pair}\label{select-one-key-value-pair}}
+
+Given a dictionary, select a single key-value pair, based on either the key or the value.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# select by key}
+\NormalTok{ls\_it\_keys }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{, }\DecValTok{4}\NormalTok{]}
+\NormalTok{dc\_speckey\_dict\_select\_by\_key }\OperatorTok{=}\NormalTok{ \{it\_key: dc\_speckey\_dict[it\_key] }\ControlFlowTok{for}\NormalTok{ it\_key }\KeywordTok{in}\NormalTok{ ls\_it\_keys\}}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{dc\_speckey\_dict\_select\_by\_key}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# select by value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## dc_speckey_dict_select_by_key={0: 'mpoly_1', 4: 'ng_p_d'}
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ls\_st\_keys }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}ng\_s\_d\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}ng\_p\_d\textquotesingle{}}\NormalTok{]}
+\NormalTok{dc\_speckey\_dict\_select\_by\_val }\OperatorTok{=}\NormalTok{ \{it\_key: st\_val }\ControlFlowTok{for}\NormalTok{ it\_key, st\_val }\KeywordTok{in}\NormalTok{ dc\_speckey\_dict.items() }
+                                 \ControlFlowTok{if}\NormalTok{ st\_val }\KeywordTok{in}\NormalTok{ ls\_st\_keys\}}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{dc\_speckey\_dict\_select\_by\_val}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## dc_speckey_dict_select_by_val={2: 'ng_s_d', 4: 'ng_p_d'}
+\end{verbatim}
+
+See \href{https://stackoverflow.com/questions/8023306/get-key-by-value-in-dictionary}{Get key by value in dictionary}.
 
 \hypertarget{copying-dictionary-and-updating-copied-dictionary}{%
 \subsubsection{Copying Dictionary and Updating Copied Dictionary}\label{copying-dictionary-and-updating-copied-dictionary}}
@@ -869,8 +900,8 @@ Now this has the intended result. After updating the deep-copied dictionary, the
   \href{https://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python}{Deep copy of a dict in python}
 \end{itemize}
 
-\hypertarget{create-a-list-of-dictionaries-1}{%
-\subsubsection{Create a List of Dictionaries}\label{create-a-list-of-dictionaries-1}}
+\hypertarget{create-a-list-of-dictionaries}{%
+\subsubsection{Create a List of Dictionaries}\label{create-a-list-of-dictionaries}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -956,8 +987,8 @@ Iteratively add additional Key and Value pairs to a dictionary.
 ##  'file3.tex': 'file3.pdf'}
 \end{verbatim}
 
-\hypertarget{select-by-keys-in-dictionary}{%
-\subsubsection{Select by Keys in Dictionary}\label{select-by-keys-in-dictionary}}
+\hypertarget{select-by-keys-dictionaries-from-list-of-dictionaries}{%
+\subsubsection{Select by Keys Dictionaries from list of Dictionaries}\label{select-by-keys-dictionaries-from-list-of-dictionaries}}
 
 Given a list of dictionary, search if key name is in list:
 
@@ -1571,6 +1602,133 @@ Provide inputs for the first two unnamed parameters explicitly. Then provided th
 ##  'workers': 1}
 \end{verbatim}
 
+\hypertarget{data-types}{%
+\subsection{Data Types}\label{data-types}}
+
+\begin{quote}
+Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
+\end{quote}
+
+\hypertarget{check-parameter-type}{%
+\subsubsection{Check Parameter Type}\label{check-parameter-type}}
+
+There are parameters of a function, depending on the parameter type, execute the program differently. If integer, behave one way if string behave in another way.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define the function}
+\KeywordTok{def}\NormalTok{ get\_speckey\_dict(gn\_speckey}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+    \ControlFlowTok{if} \BuiltInTok{isinstance}\NormalTok{(gn\_speckey, }\BuiltInTok{str}\NormalTok{):}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_speckey}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ is a string\textquotesingle{}}\NormalTok{)}
+    \ControlFlowTok{elif} \BuiltInTok{isinstance}\NormalTok{(gn\_speckey, }\BuiltInTok{int}\NormalTok{):}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_speckey}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ is an integer\textquotesingle{}}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \ControlFlowTok{raise} \PreprocessorTok{TypeError}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_speckey}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ was not a string or an integer\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Call function with integer}
+\NormalTok{get\_speckey\_dict(}\DecValTok{1}\NormalTok{)}
+\CommentTok{\# Call function with string}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_speckey=1 is an integer
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{get\_speckey\_dict(}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Call function with a list}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_speckey='abc' is a string
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{try}\NormalTok{: }
+\NormalTok{    get\_speckey\_dict([}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{])}
+\ControlFlowTok{except} \PreprocessorTok{TypeError} \ImportTok{as}\NormalTok{ e: }
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Exception}\SpecialCharTok{\{e}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Exceptione=TypeError("gn_speckey=['abc'] was not a string or an integer")
+\end{verbatim}
+
+\hypertarget{check-if-parameter-is-string-or-integer-in-interval}{%
+\subsubsection{Check if Parameter is String or Integer In Interval}\label{check-if-parameter-is-string-or-integer-in-interval}}
+
+There is a function that takes a string or an integer between certain values. Execute if either of these two conditions are satisfied, do not if neither is satisfied. Below, print if string or an int between 1 and 11.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# condition check function}
+\KeywordTok{def}\NormalTok{ check\_condition(gn\_invoke\_set):}
+
+\NormalTok{  bl\_is\_str }\OperatorTok{=} \BuiltInTok{isinstance}\NormalTok{(gn\_invoke\_set, }\BuiltInTok{str}\NormalTok{)}
+\NormalTok{  bl\_is\_int }\OperatorTok{=} \BuiltInTok{isinstance}\NormalTok{(gn\_invoke\_set, }\BuiltInTok{int}\NormalTok{)}
+  \ControlFlowTok{if}\NormalTok{ bl\_is\_int:}
+\NormalTok{    bl\_between }\OperatorTok{=}\NormalTok{ (gn\_invoke\_set }\OperatorTok{\textgreater{}=} \DecValTok{1} \KeywordTok{and}\NormalTok{ gn\_invoke\_set }\OperatorTok{\textless{}=} \DecValTok{11}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{: }
+\NormalTok{    bl\_between }\OperatorTok{=} \VariableTok{False}
+    
+  \ControlFlowTok{if}\NormalTok{ bl\_between }\KeywordTok{or}\NormalTok{ bl\_is\_str:}
+      \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_invoke\_set}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+      \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_invoke\_set}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ is not string or an integer between 1 and 11\textquotesingle{}}\NormalTok{)}
+      
+\CommentTok{\# call with string or integer}
+\NormalTok{check\_condition(}\StringTok{\textquotesingle{}string\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_invoke_set='string'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{check\_condition(}\DecValTok{11}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_invoke_set=11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{check\_condition(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_invoke_set=1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{check\_condition(}\DecValTok{199}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_invoke_set=199 is not string or an integer between 1 and 11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{check\_condition([}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_invoke_set=['abc'] is not string or an integer between 1 and 11
+\end{verbatim}
+
 \hypertarget{exceptions}{%
 \section{Exceptions}\label{exceptions}}
 
@@ -1580,6 +1738,42 @@ Provide inputs for the first two unnamed parameters explicitly. Then provided th
 \begin{quote}
 Go back to \href{http://fanwangecon.github.io/}{fan}'s \href{https://fanwangecon.github.io/pyfan/}{Python Code Examples} Repository (\href{https://fanwangecon.github.io/pyfan/bookdown}{bookdown site}).
 \end{quote}
+
+\hypertarget{a-function-that-raises-an-error-with-try-statement-catching-it}{%
+\subsubsection{A function That Raises an Error with Try Statement Catching it}\label{a-function-that-raises-an-error-with-try-statement-catching-it}}
+
+Below, we have a function that will raise a \emph{TypeError} unless we provide an integer input. The function is called with integer input and then called with a string input. The string input is wrapped in a try and except call, where the exception catches the TypeError and prints it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define the function}
+\KeywordTok{def}\NormalTok{ error\_test(gn\_speckey}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+    \ControlFlowTok{if} \BuiltInTok{isinstance}\NormalTok{(gn\_speckey, }\BuiltInTok{int}\NormalTok{):}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_speckey}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ is an integer\textquotesingle{}}\NormalTok{)}
+    \ControlFlowTok{else}\NormalTok{:}
+        \ControlFlowTok{raise} \PreprocessorTok{TypeError}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}}\SpecialCharTok{\{}\NormalTok{gn\_speckey}\OperatorTok{=}\SpecialCharTok{\}}\SpecialStringTok{ is not an integer\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Call function with integer}
+\NormalTok{error\_test(}\DecValTok{1}\NormalTok{)}
+\CommentTok{\# Call function with string}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## gn_speckey=1 is an integer
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{try}\NormalTok{:}
+\NormalTok{    error\_test(}\StringTok{\textquotesingle{}abc\textquotesingle{}}\NormalTok{)}
+\ControlFlowTok{except} \PreprocessorTok{TypeError} \ImportTok{as}\NormalTok{ error:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Caught this error: \textquotesingle{}} \OperatorTok{+} \BuiltInTok{repr}\NormalTok{(error))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Caught this error: TypeError("gn_speckey='abc' is not an integer")
+\end{verbatim}
 
 \hypertarget{handle-parameters-when-conditions-not-satisfied}{%
 \subsubsection{Handle Parameters When Conditions Not Satisfied}\label{handle-parameters-when-conditions-not-satisfied}}
@@ -1606,11 +1800,10 @@ There is a function, that can estimate or simulate, under both functionalities, 
 \CommentTok{\#         print(\textquotesingle{}simulate with \textquotesingle{} + st\_spec\_key\_dict)}
 
 \ControlFlowTok{if}\NormalTok{ estimate }\KeywordTok{and} \KeywordTok{not} \BuiltInTok{isinstance}\NormalTok{(spec\_key\_dict, }\BuiltInTok{str}\NormalTok{):}
-
+    \ControlFlowTok{pass}
 \ControlFlowTok{elif}\NormalTok{ (estimate }\KeywordTok{is} \VariableTok{False} \KeywordTok{and} \BuiltInTok{isinstance}\NormalTok{(spec\_key\_dict, }\BuiltInTok{str}\NormalTok{)) }\KeywordTok{or}\NormalTok{ (estimate }\KeywordTok{is} \VariableTok{False} \KeywordTok{and} \BuiltInTok{isinstance}\NormalTok{(spec\_key\_dict, }\BuiltInTok{dict}\NormalTok{)):}
-
+    \ControlFlowTok{pass}
 \ControlFlowTok{else}\NormalTok{:}
-
 \NormalTok{    st\_error }\OperatorTok{=} \StringTok{\textquotesingle{}speckey=\textquotesingle{}} \OperatorTok{+}\NormalTok{ speckey }\OperatorTok{+} \StringTok{\textquotesingle{} and estimate=\textquotesingle{}} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(estimate)}
     \ControlFlowTok{raise} \PreprocessorTok{ValueError}\NormalTok{(st\_error)}
 \end{Highlighting}
@@ -1675,7 +1868,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001493A82FA60>]
+## [<matplotlib.lines.Line2D object at 0x00000251A5C5E880>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -1689,7 +1882,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x000001493ABCB9A0>]
+## [<matplotlib.lines.Line2D object at 0x00000251A74932E0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -1699,7 +1892,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## <matplotlib.legend.Legend object at 0x0000014937008F40>
+## <matplotlib.legend.Legend object at 0x00000251A15AE6D0>
 \end{verbatim}
 
 \begin{Shaded}
@@ -1739,7 +1932,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-64-1} \end{center}
+\begin{center}\includegraphics{Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-70-1} \end{center}
 
 \hypertarget{text-plot}{%
 \subsection{Text Plot}\label{text-plot}}
@@ -1794,7 +1987,7 @@ Plot Text as Image. \href{https://matplotlib.org/3.1.1/gallery/pyplots/text_layo
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-66-1} \end{center}
+\begin{center}\includegraphics{Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-72-1} \end{center}
 
 \hypertarget{amazon-web-services}{%
 \chapter{Amazon Web Services}\label{amazon-web-services}}
@@ -2378,21 +2571,21 @@ Everytime, when the code below is re-run, a new batch revision number is generat
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
 ##                                       'content-length': '169',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Thu, '
-##                                               '19 '
+##                                       'date': 'Sat, '
+##                                               '28 '
 ##                                               'Nov '
 ##                                               '2020 '
-##                                               '16:15:57 '
+##                                               '18:57:11 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'WQ0JnFKKoAMF68A=',
-##                                       'x-amzn-requestid': '6318d37c-9084-4cd7-a9bf-3cf43350f95f',
-##                                       'x-amzn-trace-id': 'Root=1-5fb69a3d-6b4d52617687f2c94178477b;Sampled=0'},
+##                                       'x-amz-apigw-id': 'Wu2NNHRZoAMFnWw=',
+##                                       'x-amzn-requestid': '8dc2d40d-8de9-4800-81a9-a31f19878676',
+##                                       'x-amzn-trace-id': 'Root=1-5fc29d87-089fb67a44c1720925753a47;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': '6318d37c-9084-4cd7-a9bf-3cf43350f95f',
+##                       'RequestId': '8dc2d40d-8de9-4800-81a9-a31f19878676',
 ##                       'RetryAttempts': 0},
-##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:20',
+##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:27',
 ##  'jobDefinitionName': 'pyfan-scatterline3-test-rmd',
-##  'revision': 20}
+##  'revision': 27}
 \end{verbatim}
 
 \hypertarget{submit-a-batch-array}{%
@@ -2457,21 +2650,21 @@ Outputs from the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/gr
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
 ##                                       'content-length': '198',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Thu, '
-##                                               '19 '
+##                                       'date': 'Sat, '
+##                                               '28 '
 ##                                               'Nov '
 ##                                               '2020 '
-##                                               '16:15:57 '
+##                                               '18:57:12 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'WQ0JrEj2oAMF5Gw=',
-##                                       'x-amzn-requestid': '0358bc56-7f45-49f0-a30f-a788400a62ef',
-##                                       'x-amzn-trace-id': 'Root=1-5fb69a3d-480b442a206ff8474e42ef06;Sampled=0'},
+##                                       'x-amz-apigw-id': 'Wu2NSHsNoAMF60g=',
+##                                       'x-amzn-requestid': 'd63dd0e4-5360-4e01-96ed-dfcbf5f3d377',
+##                                       'x-amzn-trace-id': 'Root=1-5fc29d88-4086bb0260d84d4a3bb264fa;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': '0358bc56-7f45-49f0-a30f-a788400a62ef',
+##                       'RequestId': 'd63dd0e4-5360-4e01-96ed-dfcbf5f3d377',
 ##                       'RetryAttempts': 0},
-##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/f8b46d86-38da-4e32-85fd-061a641b4554',
-##  'jobId': 'f8b46d86-38da-4e32-85fd-061a641b4554',
-##  'jobName': 'pyfan-scatterline3-test-rmd_20201119101558081474'}
+##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/57d8e9e0-2bf5-4743-973a-b1fef952a3f5',
+##  'jobId': '57d8e9e0-2bf5-4743-973a-b1fef952a3f5',
+##  'jobName': 'pyfan-scatterline3-test-rmd_20201128125710955225'}
 \end{verbatim}
 
 \hypertarget{docker-container}{%
@@ -3385,7 +3578,7 @@ Show CSV results:
 
 \begin{table}[!h]
 
-\caption{\label{tab:unnamed-chunk-112}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
+\caption{\label{tab:unnamed-chunk-118}Chinese Long and Lat, Temperature Pressure, 2008 Jan 1st at 12 noon?}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
 \hline
@@ -5475,6 +5668,18 @@ For args and kwargs:
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{function-calls}{%
+\subsubsection{Function Calls}\label{function-calls}}
+
+To refer to functions in the same .py file, just need to use: \emph{:func:\texttt{log\_format}} to refer to function name. For function in different .py files, might need its full path
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{**kwargs}
+  \ExtensionTok{Arguments}\NormalTok{ for functions that is called, including :func:}\KeywordTok{\textasciigrave{}}\ExtensionTok{log\_format}\KeywordTok{\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{examples}{%
 \subsubsection{Examples}\label{examples}}
 
@@ -5667,6 +5872,18 @@ String outputs.
   \item
     \textbf{python}: \emph{dict3 = \{dict1, dict2\} + dict1.update(dict2) + func(par1=`val1', kwargs)}
   \end{itemize}
+\item
+  \href{https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html}{Python Function Data Type Handling}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_datatypes.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html}{\textbf{html}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check if parameter is string or integer, conditional execution and exception handling.
+  \item
+    Check if parameter is string or an integer between some values.
+  \item
+    \textbf{py}: \emph{type + isinstance(abc, str) + isinstance(abc, int) + raise + try except}
+  \end{itemize}
 \end{enumerate}
 
 \hypertarget{section-3.2-exceptionsexceptions-links}{%
@@ -5676,14 +5893,14 @@ String outputs.
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \href{https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html}{Python Handle Exceptions}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html}{\textbf{html}}
+  \href{https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html}{Python Raise, Try and Catch Exceptions}: \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd}{\textbf{rmd}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.R}{\textbf{r}} \textbar{} \href{https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.pdf}{\textbf{pdf}} \textbar{} \href{https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html}{\textbf{html}}
 
   \begin{itemize}
   \tightlist
   \item
-    Exceptions handling.
+    Raise an Exception in a python function, try and catch and print to string.
   \item
-    \textbf{python}: \emph{ValueError}
+    \textbf{python}: \emph{raise + try except + ValueError + TypeError }
   \end{itemize}
 \end{enumerate}
 
