@@ -1,6 +1,6 @@
 ---
 author:
-- '[Fan Wang](http://fanwangecon.github.io/) [^1]'
+- "[Fan Wang](http://fanwangecon.github.io/) [^1]"
 title: A Latex Testing File
 ---
 

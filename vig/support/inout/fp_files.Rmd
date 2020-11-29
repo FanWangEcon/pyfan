@@ -135,7 +135,7 @@ import os
 os.chdir("C:/Users/fan/pyfan/vig/support/inout")
 
 # Convert tex to pdf
-subprocess.call(['C:/texlive/2019/bin/win32/xelatex.exe', '-output-directory',
+subprocess.call(['C:/texlive/2020/bin/win32/xelatex.exe', '-output-directory',
                  srt_file_tex, srn_file_edited_tex], shell=False)
 # Clean pdf extraneous output
 ls_st_remove_suffix = ['aux','log','out','bbl','blg']

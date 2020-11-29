@@ -1,4 +1,4 @@
-.. _mod-pyfan.util.path.getfiles:
+﻿.. _mod-pyfan.util.path.getfiles:
 
 pyfan.util.path.getfiles
 ========================

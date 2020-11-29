@@ -1,4 +1,4 @@
-.. _mod-pyfan.util.rmd.bookdownparse:
+﻿.. _mod-pyfan.util.rmd.bookdownparse:
 
 pyfan.util.rmd.bookdownparse
 ============================
@@ -10,7 +10,7 @@ pyfan.util.rmd.bookdownparse
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: bookdownparse
+      :toctree: pyfan.util.rmd.bookdownparse
       :template: function.rst
    
       fs_yml2readme

@@ -1,4 +1,4 @@
-.. _mod-pyfan.util.rmd.mattexmd:
+﻿.. _mod-pyfan.util.rmd.mattexmd:
 
 pyfan.util.rmd.mattexmd
 =======================
@@ -10,7 +10,7 @@ pyfan.util.rmd.mattexmd
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: mattexmd
+      :toctree: pyfan.util.rmd.mattexmd
       :template: function.rst
    
       fp_md2rmd

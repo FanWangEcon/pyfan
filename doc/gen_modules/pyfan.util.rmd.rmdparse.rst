@@ -1,4 +1,4 @@
-.. _mod-pyfan.util.rmd.rmdparse:
+﻿.. _mod-pyfan.util.rmd.rmdparse:
 
 pyfan.util.rmd.rmdparse
 =======================

@@ -1,7 +1,10 @@
 """Generate README from Fan Rmd Frontmatter
+The :mod:`pyfan.util.rmd.bookdownparse` generates rmd frontmatter.
 
 Generates README.md TOC contents based on parsed YAML frontmatter from files listed
 in a bookdown yaml file that contains a list of RMD files to process through.
+
+Includes method :func:`fs_yml2readme`
 """
 
 import yaml
@@ -137,27 +140,26 @@ def fs_yml2readme(sfc_prj='R4Econ',
 
     f_core.close()
 
-
-if __name__ == '__main__':
-    # sfc_prj = 'R4Econ'
-    # sph_prj = 'C:/Users/fan/R4Econ/'
-    # spn_prj_bookdown_yml = '_bookdown.yml'
-    # spn_prj_readme_toc = 'README_toc_two.md'
-    #
-    # fs_yml2readme(sfc_prj=sfc_prj,
-    #               sph_prj=sph_prj,
-    #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
-    #               spn_prj_readme_toc=spn_prj_readme_toc)
-
-    # fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)
-
-    fs_yml2readme(sfc_prj='Math4Econ',
-                  sph_prj='C:/Users/fan/Math4Econ/',
-                  spn_prj_bookdown_yml='_bookdown.yml',
-                  spn_prj_readme_toc='README_toc.md',
-                  ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd'],
-                  sph_pdf='htmlpdfm',
-                  sph_html='htmlpdfm',
-                  sph_r='htmlpdfm',
-                  st_file_type='m',
-                  verbose=True)
+# if __name__ == '__main__':
+#     # sfc_prj = 'R4Econ'
+#     # sph_prj = 'C:/Users/fan/R4Econ/'
+#     # spn_prj_bookdown_yml = '_bookdown.yml'
+#     # spn_prj_readme_toc = 'README_toc_two.md'
+#     #
+#     # fs_yml2readme(sfc_prj=sfc_prj,
+#     #               sph_prj=sph_prj,
+#     #               spn_prj_bookdown_yml=spn_prj_bookdown_yml,
+#     #               spn_prj_readme_toc=spn_prj_readme_toc)
+#
+#     # fs_yml2readme(sfc_prj='pyfan', sph_prj='../../../', verbose=False)
+#
+#     fs_yml2readme(sfc_prj='Math4Econ',
+#                   sph_prj='C:/Users/fan/Math4Econ/',
+#                   spn_prj_bookdown_yml='_bookdown.yml',
+#                   spn_prj_readme_toc='README_toc.md',
+#                   ls_st_ignore=['index.Rmd', 'README_appendix.md', 'title.Rmd', 'main.Rmd'],
+#                   sph_pdf='htmlpdfm',
+#                   sph_html='htmlpdfm',
+#                   sph_r='htmlpdfm',
+#                   st_file_type='m',
+#                   verbose=True)

@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE-----------------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -32,7 +32,7 @@ try(source("../../../.Rprofile"))
 ## 
 ## # ls in current location
 
-## cmd_ls = subprocess.Popen(["ls"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE);
+## cmd_ls = subprocess.Popen(["ls"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True);
 
 ## stf_out_cmd_ls, err = cmd_ls.communicate()
 

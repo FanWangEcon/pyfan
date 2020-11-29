@@ -1,26 +1,42 @@
-.. _mod-graph.generic.allpurpose:
+﻿.. _mod-pyfan.graph.generic.allpurpose:
 
 pyfan.graph.generic.allpurpose
 ==============================
 
 .. automodule:: pyfan.graph.generic.allpurpose
 
-
-
-   .. rubric:: Classes
-
-   .. autosummary::
-      :toctree: graph.generic.allpurpose
-      :template: class.rst
-
-      graphFunc
-
-
-
+   
+   
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: graph.generic.allpurpose
+      :toctree: pyfan.graph.generic.allpurpose
       :template: function.rst
+   
+      OLSEmaxGraphs
+      OLSEmaxValAndChoicesGraphs
+      contourAnd3D
+      graph_emaxKCash_Value
+      grid
+      guassian_kde_graph
+      sampleDataGraphs
+      subplot_square_counter
+      tripleAngle3dSave
+   
+   
 
-      graphFunc.xyPlotMultiYOneX
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree: pyfan.graph.generic.allpurpose
+      :template: class.rst
+   
+      graphFunc
+   
+   
+
+   
+   
+   

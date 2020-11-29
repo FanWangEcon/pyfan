@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE------------------------------------------------------------------------------------------------
+## ----global_options, include = FALSE---------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -104,7 +104,7 @@ try(source("../../../.Rprofile"))
 ## 
 ## # Convert tex to pdf
 
-## subprocess.call(['C:/texlive/2019/bin/win32/xelatex.exe', '-output-directory',
+## subprocess.call(['C:/texlive/2020/bin/win32/xelatex.exe', '-output-directory',
 
 ##                  srt_file_tex, srn_file_edited_tex], shell=False)
 

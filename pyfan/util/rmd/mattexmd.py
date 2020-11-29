@@ -14,6 +14,7 @@ import os
 import yaml
 import pyfan.util.path.getfiles as getfiles
 
+
 def fp_md2rmd(spt_root="C:/Users/fan/Math4Econ/",
               ls_srt_subfolders=['calconevar/'],
               snm_folder_yml='preamble.yml',
@@ -213,7 +214,6 @@ def fp_mlxtex2md(spt_root="C:/Users/fan/Math4Econ/",
                           '-s', str(spn_found_tex), '-o', str(spn_md)])
         if verbose:
             print(spn_md)
-
 
 # if __name__ == '__main__':
 #     # spt_root_u = "C:/Users/fan/Math4Econ/"

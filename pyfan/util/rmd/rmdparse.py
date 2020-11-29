@@ -144,11 +144,10 @@ def fs_rmd_yml_parse(sfc_prj='R4Econ',
 
     return st_head_link, ls_desc_out, ls_code_out
 
-
-if __name__ == '__main__':
-    spn_prj_rmd = '/summarize/aggregate/fs_group_summ_wide.Rmd'
-    spn_prj_rmd = '/summarize/aggregate/fs_group_unique_agg.Rmd'
-    st_head_link_a, ls_desc_out_a, ls_code_out_a = fs_rmd_yml_parse(spn_prj_rmd=spn_prj_rmd)
-    print(st_head_link_a)
-    print(ls_desc_out_a)
-    print(ls_code_out_a)
+# if __name__ == '__main__':
+#     spn_prj_rmd = '/summarize/aggregate/fs_group_summ_wide.Rmd'
+#     spn_prj_rmd = '/summarize/aggregate/fs_group_unique_agg.Rmd'
+#     st_head_link_a, ls_desc_out_a, ls_code_out_a = fs_rmd_yml_parse(spn_prj_rmd=spn_prj_rmd)
+#     print(st_head_link_a)
+#     print(ls_desc_out_a)
+#     print(ls_code_out_a)

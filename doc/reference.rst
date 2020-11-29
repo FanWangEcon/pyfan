@@ -1,75 +1,336 @@
-.. _pyfan_api_reference:
+.. sectnum::
 
-API Reference
-=============
+This page provides the API reference for `package <https://pyfan.readthedocs.io/en/latest/>`__. Modules and functions are listed below in different sections.
 
-The complete ``pyfan`` project is automatically documented for every module.
+Data Structures
+---------------
 
-Generate
---------
+Various data structures.
 
-Data structure generate modules.
+Array
+~~~~~
+
+Functions to manipulate numpy arrays and other structures.
 
 .. currentmodule:: pyfan
 
 .. autosummary::
-   :toctree: gen_modules/
+   :toctree: gen_modules
    :template: module.rst
 
-   pyfan.gen.rand.randgrid
+   pyfan.amto.array.geomspace
+   pyfan.amto.array.gridminmax
+   pyfan.amto.array.mesh
+   pyfan.amto.array.scalararray
 
-Visualize
----------
+JSON
+~~~~~
 
-Utility modules.
+Function to manipulate JSON Structures
 
 .. currentmodule:: pyfan
 
 .. autosummary::
-  :toctree: gen_modules/
+  :toctree: gen_modules
   :template: module.rst
 
-  pyfan.graph.generic.allpurpose
+  pyfan.amto.json.json
 
-Utility
---------
 
-Utility modules.
+
+
+Amazon Web Services
+-------------------
+
+Functions to support AWS service usages.
+
+General
+~~~~~
+
+AWS general functions.
 
 .. currentmodule:: pyfan
 
 .. autosummary::
-   :toctree: gen_modules/
+   :toctree: gen_modules
    :template: module.rst
 
-   pyfan.util.path.getfiles
+   pyfan.aws.general.credentials
+   pyfan.aws.general.path
+
+S3
+~~~~~
+
+Functions for S3 storage.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.aws.s3.pushsync
+
+
 
 Development
 -----------
 
-Development modules.
+Package and function development support functions.
+
+Log Support
+~~~~~~~~~~~~~~~
+
+Log support functions.
 
 .. currentmodule:: pyfan
 
 .. autosummary::
-  :toctree: gen_modules/
-  :template: module.rst
+   :toctree: gen_modules
+   :template: module.rst
 
-  pyfan.devel.flog.logsupport
+   pyfan.devel.flog.logsupport
 
+Object
+~~~~~~
 
-Document
---------
-
-Documentaion generation support modules.
+Object support functions.
 
 .. currentmodule:: pyfan
 
 .. autosummary::
-  :toctree: gen_modules/
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.devel.obj.classobjsupport
+
+
+
+
+Generate
+-----------
+
+Generate specific data-structures.
+
+
+Random
+~~~~~~
+
+Data structures based on random seed draws.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.gen.rand.randgrid
+
+
+
+
+Graph
+-----------
+
+Graphing support tools.
+
+Example
+~~~~~~~
+
+Graphing example functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.graph.exa.scatterline3
+
+Generic
+~~~~~~~
+
+All purpose graph support functions
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.graph.generic.allpurpose
+
+Tools
+~~~~~
+
+Some graphing tools.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.graph.tools.subplot
+
+
+
+
+Pandas
+-----------
+
+Pandas related functions.
+
+Categorical
+~~~~~~~~~~~
+
+Functions to handle categorical variables.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.panda.categorical.catevars
+   pyfan.panda.categorical.strsvarskeys
+
+In and Out
+~~~~~~~~~~
+
+Functions for combine, export, etc dataframes.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.panda.inout.combine
+   pyfan.panda.inout.readexport
+
+Stats
+~~~~~
+
+Stats operations on dataframes.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.panda.stats.cutting
+   pyfan.panda.stats.mean_varcov
+   pyfan.panda.stats.polynomial_regression
+
+
+
+
+Statistics
+-----------
+
+Statistical functions.
+
+interpolate
+~~~~~~~~~~~
+
+Interpolation functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.stats.interpolate.interpolate2d
+
+Multinomial
+~~~~~~~~~~~
+
+Discrete choice multinomial functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.stats.multinomial.multilogit
+
+
+
+
+Utilities
+-----------
+
+General support functions.
+
+In and Out
+~~~~~~~~~~
+
+Export, import etc.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.util.inout.exportpanda
+   pyfan.util.inout.iosupport
+
+Path
+~~~~~
+
+Path and location related functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.util.path.getfiles
+   pyfan.util.path.movefiles
+
+PDF
+~~~~~
+
+PDF generation support functions
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.util.pdf.pdfgen
+
+RMD
+~~~~~
+
+RMD and bookdown related functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.util.rmd.bookdownparse
+   pyfan.util.rmd.mattexmd
+   pyfan.util.rmd.rmdparse
+
+Timer
+~~~~~
+
+Timer functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules
   :template: module.rst
 
-  pyfan.util.path.getfiles
-  pyfan.util.rmd.bookdownparse
-  pyfan.util.rmd.mattexmd
-  pyfan.util.rmd.rmdparse
+  pyfan.util.timer.timer

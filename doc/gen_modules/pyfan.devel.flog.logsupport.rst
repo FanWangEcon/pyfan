@@ -1,4 +1,4 @@
-.. _mod-pyfan.devel.flog.logsupport:
+﻿.. _mod-pyfan.devel.flog.logsupport:
 
 pyfan.devel.flog.logsupport
 ===========================
@@ -10,7 +10,7 @@ pyfan.devel.flog.logsupport
    .. rubric:: Functions
 
    .. autosummary::
-      :toctree: logsupport
+      :toctree: pyfan.devel.flog.logsupport
       :template: function.rst
    
       log_format

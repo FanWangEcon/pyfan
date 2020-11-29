@@ -2,8 +2,121 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46ae83e3-acb5-4af9-96c0-b4d43a97591e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.Rprofile" beforeDir="false" afterPath="$PROJECT_DIR$/.Rprofile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pyfan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyfan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/pdf/pdfgen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_bookdown_files/Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-70-1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/_bookdown_files/Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-70-1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_bookdown_files/Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-72-1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/_bookdown_files/Data-Structures-and-Cloud-Services-with-Python_files/figure-latex/unnamed-chunk-72-1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_file/test_ls_pyfanvig_stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_file/test_ls_pyfanvig_stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/Data-Structures-and-Cloud-Services-with-Python.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/Data-Structures-and-Cloud-Services-with-Python.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/Data-Structures-and-Cloud-Services-with-Python.tex" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/Data-Structures-and-Cloud-Services-with-Python.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/amazon-web-services.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/amazon-web-services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/data-structures.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/data-structures.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/docker-container.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/docker-container.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/get-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/get-data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/index-and-code-links.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index-and-code-links.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/anchor-sections-1.0/anchor-sections.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/anchor-sections-1.0/anchor-sections.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/anchor-sections-1.0/anchor-sections.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/anchor-sections-1.0/anchor-sections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-bookdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-bookdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-clipboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-clipboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-fontsettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-fontsettings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-highlight.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-highlight.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/plugin-table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/app.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/clipboard.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/jquery.highlight.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/jquery.highlight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/lunr.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/lunr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-bookdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-bookdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-clipboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-fontsettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-fontsettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-sharing.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/gitbook-2.6.7/js/plugin-sharing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/header-attrs-2.5/header-attrs.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/header-attrs-2.5/header-attrs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/jquery-2.2.3/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/jquery-2.2.3/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/kePrint-0.0.1/kePrint.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/kePrint-0.0.1/kePrint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/libs/lightable-0.0.1/lightable.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/libs/lightable-0.0.1/lightable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/pandas.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/pandas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/search_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/system-and-support.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/system-and-support.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookdown/tables-and-graphs.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookdown/tables-and-graphs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_001.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_001.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_002.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_002.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_003.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_graph_allpurpose_003.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_pdfgen_001.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_pdfgen_001.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_randgrid_001.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/sphx_glr_plot_randgrid_001.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_pdfgen_thumb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_pdfgen_thumb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_randgrid_thumb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/images/thumb/sphx_glr_plot_randgrid_thumb.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose_codeobj.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_graph_allpurpose_codeobj.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen_codeobj.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_pdfgen_codeobj.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid_codeobj.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/plot_randgrid_codeobj.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/searchindex.bak" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/searchindex.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/searchindex.dat" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/searchindex.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/searchindex.dir" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/searchindex.dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/sg_execution_times.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/sg_execution_times.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.gen.rand.randgrid.ar_draw_random_normal.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.gen.rand.randgrid.ar_draw_random_normal.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.xyPlotMultiYOneX.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.xyPlotMultiYOneX.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.graphFunc.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.graphFunc.xyPlotMultiYOneX.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.graphFunc.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.graphFunc.xyPlotMultiYOneX.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graphFunc.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graphFunc.xyPlotMultiYOneX.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.rmd.bookdownparse.fs_yml2readme.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.rmd.rmdparse.fs_rmd_yml_parse.examples" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/bookdownparse/pyfan.util.rmd.bookdownparse.fs_yml2readme.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/gen.rand.gen_rgrid/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/gen.rand.randgrid/pyfan.gen.rand.randgrid.ar_draw_random_normal.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/gen_rgrid/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/graph.generic.allpurpose/pyfan.graph.generic.allpurpose.graphFunc.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/graph.generic.allpurpose/pyfan.graph.generic.allpurpose.graphFunc.xyPlotMultiYOneX.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/logsupport/pyfan.devel.flog.logsupport.log_format.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/logsupport/pyfan.devel.flog.logsupport.log_vig_start.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/mattexmd/pyfan.util.rmd.mattexmd.fp_md2rmd.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/mattexmd/pyfan.util.rmd.mattexmd.fp_mlxtex2md.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.devel.flog.logsupport.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.devel.flog.logsupport.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.gen.rand.randgrid.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.gen.rand.randgrid.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.graph.generic.allpurpose.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.graph.generic.allpurpose.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.path.getfiles.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.path.getfiles.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.pdf.pdfgen.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.pdf.pdfgen.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.bookdownparse.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.bookdownparse.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.mattexmd.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.mattexmd.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.rmdparse.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/pyfan.util.rmd.rmdparse.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/reference.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/reference.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/bookdownparse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/mattexmd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyfan/util/rmd/rmdparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyfan/util/rmd/rmdparse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.md" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/_file/test_fan_edited.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/fp_files.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.R" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/inout/htmlpdfr/fp_files.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/system/_file/test_ls_pyfanvig_stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/system/_file/test_ls_pyfanvig_stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/system/fp_command.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/system/fp_command.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.R" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.html" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/vig/support/system/htmlpdfr/fp_command.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,19 +131,19 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../ThaiJMP" />
   </component>
   <component name="ProjectId" id="1am7fuGSr0AqI5mIBCNED9SOuK4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pyecon" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ThaiJMP" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.pdfgen">
     <configuration name="bookdownparse" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -148,18 +261,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -178,71 +280,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590369433464">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="714" y="449" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1606624034966">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="414" y="240" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590369433464" />
-    <state x="740" y="340" key="FileChooserDialogImpl" timestamp="1592312954116">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="714" y="449" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624034966" />
+    <state x="740" y="321" key="FileChooserDialogImpl" timestamp="1606624050966">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="340" key="FileChooserDialogImpl/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1592312954116" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom" timestamp="1591797428977">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="740" y="321" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624050966" />
+    <state x="461" y="225" key="SettingsEditor" timestamp="1606624100762">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1591797428977" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.center" timestamp="1591797428977">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1591797428977" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.left" timestamp="1591797428977">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1591797428977" />
-    <state width="1914" height="1046" key="GridCell.Tab.0.right" timestamp="1591797428977">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1914" height="1046" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1591797428977" />
-    <state width="1899" height="399" key="GridCell.Tab.1.bottom" timestamp="1590854888855">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1899" height="399" key="GridCell.Tab.1.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590854888855" />
-    <state width="1899" height="399" key="GridCell.Tab.1.center" timestamp="1590854888854">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1899" height="399" key="GridCell.Tab.1.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590854888854" />
-    <state width="1899" height="399" key="GridCell.Tab.1.left" timestamp="1590854888854">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1899" height="399" key="GridCell.Tab.1.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590854888854" />
-    <state width="1899" height="399" key="GridCell.Tab.1.right" timestamp="1590854888854">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state width="1899" height="399" key="GridCell.Tab.1.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590854888854" />
-    <state x="461" y="226" key="SettingsEditor" timestamp="1592312942572">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="461" y="226" key="SettingsEditor/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1592312942572" />
-    <state x="640" y="409" key="com.intellij.ide.util.TipDialog" timestamp="1592312751534">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="640" y="409" key="com.intellij.ide.util.TipDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1592312751534" />
-    <state x="614" y="178" width="692" height="813" key="find.popup" timestamp="1590322472507">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="614" y="178" width="692" height="813" key="find.popup/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590322472507" />
-    <state x="601" y="311" width="700" height="530" key="recent.locations.popup" timestamp="1590279505818">
-      <screen x="0" y="0" width="1920" height="1170" />
-    </state>
-    <state x="601" y="311" width="700" height="530" key="recent.locations.popup/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1590279505818" />
+    <state x="461" y="225" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624100762" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -52,6 +52,8 @@ pip-wheel-metadata
 # sphinx gitignore
 ###################
 
+gen_modules
+
 # sphinx build folder
 _build
 

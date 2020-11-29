@@ -59,7 +59,7 @@ Generate PDF for one specific file and clean afterwards
 
  .. code-block:: none
 
-    {'C:\\Users\\fan\\Documents\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\equation\\cases.tex': 'C:/Users/fan/Documents/cases.pdf'}
+    {}
 
 
 
@@ -99,7 +99,7 @@ Generate PDF from all tex files in all subfolders of a main folder, output PDF s
 
  .. code-block:: none
 
-    {'C:\\Users\\fan\\Documents\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\equation\\cases.tex': 'C:/Users/fan/Documents/cases.pdf', 'C:\\Users\\fan\\Documents\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\symbols\\fs_symbols.tex': 'C:/Users/fan/Documents/fs_symbols.pdf'}
+    {}
 
 
 
@@ -159,7 +159,7 @@ Plot String as Figure
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.329 seconds)
+   **Total running time of the script:** ( 0 minutes  0.027 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_pdfgen.py:

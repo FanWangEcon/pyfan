@@ -6,13 +6,12 @@
 \documentclass[
 ]{book}
 \usepackage{lmodern}
-\usepackage{amsmath}
+\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -88,7 +87,6 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
-\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -149,7 +147,7 @@
 
 \title{Data Structures and Cloud Services with Python}
 \author{Fan Wang}
-\date{2020-11-28}
+\date{2020-11-29}
 
 \begin{document}
 \maketitle
@@ -1868,7 +1866,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x00000251A5C5E880>]
+## [<matplotlib.lines.Line2D object at 0x0000020F93883460>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -1882,7 +1880,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## [<matplotlib.lines.Line2D object at 0x00000251A74932E0>]
+## [<matplotlib.lines.Line2D object at 0x0000020F914EABB0>]
 \end{verbatim}
 
 \begin{Shaded}
@@ -1892,7 +1890,7 @@ Given x and y coordinates, plot out two lines. see \href{https://matplotlib.org/
 \end{Shaded}
 
 \begin{verbatim}
-## <matplotlib.legend.Legend object at 0x00000251A15AE6D0>
+## <matplotlib.legend.Legend object at 0x0000020F934F5F10>
 \end{verbatim}
 
 \begin{Shaded}
@@ -2571,21 +2569,21 @@ Everytime, when the code below is re-run, a new batch revision number is generat
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
 ##                                       'content-length': '169',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Sat, '
-##                                               '28 '
+##                                       'date': 'Sun, '
+##                                               '29 '
 ##                                               'Nov '
 ##                                               '2020 '
-##                                               '18:57:11 '
+##                                               '17:52:13 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'Wu2NNHRZoAMFnWw=',
-##                                       'x-amzn-requestid': '8dc2d40d-8de9-4800-81a9-a31f19878676',
-##                                       'x-amzn-trace-id': 'Root=1-5fc29d87-089fb67a44c1720925753a47;Sampled=0'},
+##                                       'x-amz-apigw-id': 'Wx_oKEGhoAMFSxQ=',
+##                                       'x-amzn-requestid': '3125542c-4c35-4a6f-90e3-1999d92a8303',
+##                                       'x-amzn-trace-id': 'Root=1-5fc3dfcd-10f402af14efabb06b02ec5d;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': '8dc2d40d-8de9-4800-81a9-a31f19878676',
+##                       'RequestId': '3125542c-4c35-4a6f-90e3-1999d92a8303',
 ##                       'RetryAttempts': 0},
-##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:27',
+##  'jobDefinitionArn': 'arn:aws:batch:us-east-1:710673677961:job-definition/pyfan-scatterline3-test-rmd:38',
 ##  'jobDefinitionName': 'pyfan-scatterline3-test-rmd',
-##  'revision': 27}
+##  'revision': 38}
 \end{verbatim}
 
 \hypertarget{submit-a-batch-array}{%
@@ -2650,21 +2648,21 @@ Outputs from the \href{https://github.com/FanWangEcon/pyfan/blob/master/pyfan/gr
 ## {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
 ##                                       'content-length': '198',
 ##                                       'content-type': 'application/json',
-##                                       'date': 'Sat, '
-##                                               '28 '
+##                                       'date': 'Sun, '
+##                                               '29 '
 ##                                               'Nov '
 ##                                               '2020 '
-##                                               '18:57:12 '
+##                                               '17:52:14 '
 ##                                               'GMT',
-##                                       'x-amz-apigw-id': 'Wu2NSHsNoAMF60g=',
-##                                       'x-amzn-requestid': 'd63dd0e4-5360-4e01-96ed-dfcbf5f3d377',
-##                                       'x-amzn-trace-id': 'Root=1-5fc29d88-4086bb0260d84d4a3bb264fa;Sampled=0'},
+##                                       'x-amz-apigw-id': 'Wx_oOGCYIAMFVVw=',
+##                                       'x-amzn-requestid': '3101ad77-a5fc-4dfe-a220-b3646bf40730',
+##                                       'x-amzn-trace-id': 'Root=1-5fc3dfce-51c8e2c40540dd2229a671d7;Sampled=0'},
 ##                       'HTTPStatusCode': 200,
-##                       'RequestId': 'd63dd0e4-5360-4e01-96ed-dfcbf5f3d377',
+##                       'RequestId': '3101ad77-a5fc-4dfe-a220-b3646bf40730',
 ##                       'RetryAttempts': 0},
-##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/57d8e9e0-2bf5-4743-973a-b1fef952a3f5',
-##  'jobId': '57d8e9e0-2bf5-4743-973a-b1fef952a3f5',
-##  'jobName': 'pyfan-scatterline3-test-rmd_20201128125710955225'}
+##  'jobArn': 'arn:aws:batch:us-east-1:710673677961:job/cf3bb897-d5c7-45eb-b3de-b4c960184296',
+##  'jobId': 'cf3bb897-d5c7-45eb-b3de-b4c960184296',
+##  'jobName': 'pyfan-scatterline3-test-rmd_20201129095213437626'}
 \end{verbatim}
 
 \hypertarget{docker-container}{%
@@ -3950,11 +3948,9 @@ Use subprocess, where is python:
 \end{Shaded}
 
 \begin{verbatim}
-## C:\ProgramData\Anaconda3\envs\wk_pyfan\python.exe
-## C:\ProgramData\Anaconda3\python.exe
-## C:\Users\fan\.windows-build-tools\python27\python.exe
+## G:\ProgramData\Anaconda3\envs\wk_pyfan\python.exe
+## G:\ProgramData\Anaconda3\python.exe
 ## C:\Users\fan\AppData\Local\Microsoft\WindowsApps\python.exe
-## C:\Program Files\Inkscape\python.exe
 \end{verbatim}
 
 Command line file redirection symbol,
@@ -3965,60 +3961,16 @@ Command line file redirection symbol,
 \CommentTok{\# cd "C:\textbackslash{}users\textbackslash{}fan"}
 \CommentTok{\# ls \textgreater{} ls\_files.txt}
 \CommentTok{\# rm ls\_files.txt}
-\ImportTok{import}\NormalTok{ os }
-\ImportTok{import}\NormalTok{ subprocess }
+\ImportTok{import}\NormalTok{ os}
+\ImportTok{import}\NormalTok{ subprocess}
 
 \CommentTok{\# ls in current location}
-\NormalTok{cmd\_ls }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"ls"}\NormalTok{], stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE, stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE, stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE)}\OperatorTok{;}
+\NormalTok{cmd\_ls }\OperatorTok{=}\NormalTok{ subprocess.Popen([}\StringTok{"ls"}\NormalTok{], stdin}\OperatorTok{=}\NormalTok{subprocess.PIPE, stdout}\OperatorTok{=}\NormalTok{subprocess.PIPE, stderr}\OperatorTok{=}\NormalTok{subprocess.PIPE, shell}\OperatorTok{=}\VariableTok{True}\NormalTok{)}\OperatorTok{;}
 \NormalTok{stf\_out\_cmd\_ls, err }\OperatorTok{=}\NormalTok{ cmd\_ls.communicate()}
 \NormalTok{stf\_out\_cmd\_ls }\OperatorTok{=}\NormalTok{ stf\_out\_cmd\_ls.decode(}\StringTok{\textquotesingle{}utf{-}8\textquotesingle{}}\NormalTok{)}
 \BuiltInTok{print}\NormalTok{(stf\_out\_cmd\_ls)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## Data Structures and Cloud Services with Python.Rmd
-## Data-Structures-and-Cloud-Services-with-Python.Rmd
-## Data-Structures-and-Cloud-Services-with-Python_files
-## LICENSE
-## README.md
-## README_appendix.md
-## README_end.md
-## README_pre.md
-## README_toc.md
-## _bookdown.yml
-## _bookdown_files
-## _config.yml
-## _file
-## _folder
-## _log
-## _m
-## _output.yml
-## _output_kniti_html.yaml
-## _output_kniti_pdf.yaml
-## _templates
-## book.bib
-## bookdown
-## build
-## dist
-## doc
-## hdga.html
-## htmlpdfr
-## img
-## index.Rmd
-## packages.bib
-## poetry.lock
-## preamble.tex
-## preamble_book.tex
-## pyfan
-## pyfan.egg-info
-## pyproject.toml
-## setup.py
-## style.css
-## tests
-## title.Rmd
-## vig
-\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4031,7 +3983,7 @@ Command line file redirection symbol,
 \end{Shaded}
 
 \begin{verbatim}
-## 565
+## 0
 \end{verbatim}
 
 \begin{Shaded}
@@ -4145,8 +4097,7 @@ First, check where matlab is installed:
 \end{Shaded}
 
 \begin{verbatim}
-## C:\Program Files\MATLAB\R2020b\bin\matlab.exe
-## C:\Program Files\MATLAB\R2019b\bin\matlab.exe
+## G:\ProgramData\MATLAB\R2020b\bin\matlab.exe
 \end{verbatim}
 
 Second, run the matlab file, first definet he parameter x:
@@ -4160,7 +4111,7 @@ Second, run the matlab file, first definet he parameter x:
 \end{Shaded}
 
 \begin{verbatim}
-## C:\Users\fan\pyfan
+## G:\repos\pyfan
 \end{verbatim}
 
 \begin{Shaded}
@@ -4173,7 +4124,7 @@ Second, run the matlab file, first definet he parameter x:
 \end{Shaded}
 
 \begin{verbatim}
-## C:\Users\fan\pyfan\_m
+## G:\repos\pyfan\_m
 \end{verbatim}
 
 \begin{Shaded}
@@ -4210,7 +4161,7 @@ Third, run the function again, but with \emph{x=3}:
 \end{Shaded}
 
 \begin{verbatim}
-## C:\Users\fan\pyfan\_m
+## G:\repos\pyfan\_m
 \end{verbatim}
 
 \begin{Shaded}
@@ -4401,7 +4352,7 @@ Compile tex file to pdf and clean up the extraneous pdf outputs. See \href{https
 \NormalTok{os.chdir(}\StringTok{"C:/Users/fan/pyfan/vig/support/inout"}\NormalTok{)}
 
 \CommentTok{\# Convert tex to pdf}
-\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}C:/texlive/2019/bin/win32/xelatex.exe\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}output{-}directory\textquotesingle{}}\NormalTok{,}
+\NormalTok{subprocess.call([}\StringTok{\textquotesingle{}C:/texlive/2020/bin/win32/xelatex.exe\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}{-}output{-}directory\textquotesingle{}}\NormalTok{,}
 \NormalTok{                 srt\_file\_tex, srn\_file\_edited\_tex], shell}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
 \CommentTok{\# Clean pdf extraneous output}
 \end{Highlighting}
@@ -4622,7 +4573,7 @@ Create a platform free full absolute path to a particular folder
 \end{Shaded}
 
 \begin{verbatim}
-## spn_path='C:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder_mlt_region_ne\\subfolder'
+## spn_path='G:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder_mlt_region_ne\\subfolder'
 \end{verbatim}
 
 see: \href{https://stackoverflow.com/a/28080468/8280804}{constructing absolute path with os.path.join()}.
@@ -4641,7 +4592,7 @@ Suppose there is a directory with `abc\_suffix\_other/subfolder' as the name, ge
 \end{Shaded}
 
 \begin{verbatim}
-## spn_path='C:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder_mlt_region_ne\\subfolder'
+## spn_path='G:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder_mlt_region_ne\\subfolder'
 \end{verbatim}
 
 \begin{Shaded}
@@ -4670,7 +4621,7 @@ Suppose there is a directory with `abc\_suffix\_other/subfolder' as the name, ge
 \end{Shaded}
 
 \begin{verbatim}
-## spn_path_no_suffix='C:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder\\'
+## spn_path_no_suffix='G:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder\\testfolder\\'
 \end{verbatim}
 
 \begin{Shaded}
@@ -4680,7 +4631,7 @@ Suppose there is a directory with `abc\_suffix\_other/subfolder' as the name, ge
 \end{Shaded}
 
 \begin{verbatim}
-## spt_root_main='C:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder'
+## spt_root_main='G:\\users\\fan\\pyfan\\vig\\support\\inout\\_folder'
 \end{verbatim}
 
 \begin{Shaded}

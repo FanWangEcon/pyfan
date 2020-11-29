@@ -70,7 +70,7 @@ Plot Time Series Lines of Temperatures in Two Cities
  .. code-block:: none
 
 
-    <module 'pylab' from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
+    <module 'pylab' from 'G:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
 
 
 
@@ -115,7 +115,7 @@ Plot Three Densities of Test Score Distributions
  .. code-block:: none
 
 
-    <module 'pylab' from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
+    <module 'pylab' from 'G:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
 
 
 
@@ -157,14 +157,14 @@ Plot a Scatter Plot of the Relationship Between Wage and Education
  .. code-block:: none
 
 
-    <module 'pylab' from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
+    <module 'pylab' from 'G:\\ProgramData\\Anaconda3\\lib\\site-packages\\pylab.py'>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.259 seconds)
+   **Total running time of the script:** ( 0 minutes  0.289 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_graph_allpurpose.py:
