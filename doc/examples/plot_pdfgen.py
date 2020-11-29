@@ -19,10 +19,11 @@ import json
 # Generate PDF for one specific file and clean afterwards
 # -------------------------------------------------------
 
-spt_loc = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
+# spt_loc = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
+spt_loc = 'G:/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
 spt_loc_output = 'C:/Users/fan/Documents/'
 spn_file = 'cases.tex'
-spn_pdf_exe = 'C:/texlive/2019/bin/win32/pdflatex.exe'
+spn_pdf_exe = 'C:/texlive/2020/bin/win32/pdflatex.exe'
 dc_tex_pdf_a = pyfan_pdfgen.ff_pdf_gen_clean(ls_spt_srh=[spt_loc], spt_out=spt_loc_output,
                                              spn_pdf_exe=spn_pdf_exe, ls_st_contain=[spn_file],
                                              bl_clean=True)
@@ -39,11 +40,12 @@ print(dc_tex_pdf_a)
 # 5. PDF Destination Folder: same root path earlier folder to store possibly
 #
 
-spt_loc_search_root = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
+# spt_loc_search_root = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
+spt_loc_search_root = 'G:/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
 spt_loc_output = 'C:/Users/fan/Documents/'
 st_search_string = ['fs_', 'cases']
 ls_st_ignore = ['tikz', 'pandoc']
-spn_pdf_exe = 'C:/texlive/2019/bin/win32/pdflatex.exe'
+spn_pdf_exe = 'C:/texlive/2020/bin/win32/pdflatex.exe'
 dc_tex_pdf_b = pyfan_pdfgen.ff_pdf_gen_clean(ls_spt_srh=[spt_loc_search_root], spt_out=spt_loc_output,
                                              spn_pdf_exe=spn_pdf_exe,
                                              ls_st_contain=st_search_string, ls_st_ignore=ls_st_ignore,

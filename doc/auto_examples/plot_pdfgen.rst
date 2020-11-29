@@ -40,10 +40,11 @@ Generate PDF for one specific file and clean afterwards
 .. code-block:: default
 
 
-    spt_loc = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
+    # spt_loc = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
+    spt_loc = 'G:/Dropbox (UH-ECON)/repos/Tex4Econ/_other/equation/'
     spt_loc_output = 'C:/Users/fan/Documents/'
     spn_file = 'cases.tex'
-    spn_pdf_exe = 'C:/texlive/2019/bin/win32/pdflatex.exe'
+    spn_pdf_exe = 'C:/texlive/2020/bin/win32/pdflatex.exe'
     dc_tex_pdf_a = pyfan_pdfgen.ff_pdf_gen_clean(ls_spt_srh=[spt_loc], spt_out=spt_loc_output,
                                                  spn_pdf_exe=spn_pdf_exe, ls_st_contain=[spn_file],
                                                  bl_clean=True)
@@ -59,7 +60,7 @@ Generate PDF for one specific file and clean afterwards
 
  .. code-block:: none
 
-    {}
+    {'G:\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\equation\\cases.tex': 'C:/Users/fan/Documents/cases.pdf'}
 
 
 
@@ -78,11 +79,12 @@ Generate PDF from all tex files in all subfolders of a main folder, output PDF s
 .. code-block:: default
 
 
-    spt_loc_search_root = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
+    # spt_loc_search_root = 'C:/Users/fan/Documents/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
+    spt_loc_search_root = 'G:/Dropbox (UH-ECON)/repos/Tex4Econ/_other/'
     spt_loc_output = 'C:/Users/fan/Documents/'
     st_search_string = ['fs_', 'cases']
     ls_st_ignore = ['tikz', 'pandoc']
-    spn_pdf_exe = 'C:/texlive/2019/bin/win32/pdflatex.exe'
+    spn_pdf_exe = 'C:/texlive/2020/bin/win32/pdflatex.exe'
     dc_tex_pdf_b = pyfan_pdfgen.ff_pdf_gen_clean(ls_spt_srh=[spt_loc_search_root], spt_out=spt_loc_output,
                                                  spn_pdf_exe=spn_pdf_exe,
                                                  ls_st_contain=st_search_string, ls_st_ignore=ls_st_ignore,
@@ -99,7 +101,7 @@ Generate PDF from all tex files in all subfolders of a main folder, output PDF s
 
  .. code-block:: none
 
-    {}
+    {'G:\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\equation\\cases.tex': 'C:/Users/fan/Documents/cases.pdf', 'G:\\Dropbox (UH-ECON)\\repos\\Tex4Econ\\_other\\symbols\\fs_symbols.tex': 'C:/Users/fan/Documents/fs_symbols.pdf'}
 
 
 
@@ -159,7 +161,7 @@ Plot String as Figure
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.027 seconds)
+   **Total running time of the script:** ( 0 minutes  5.445 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_pdfgen.py:
