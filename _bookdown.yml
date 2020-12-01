@@ -11,6 +11,7 @@ rmd_files:
   - vig/amto/array/main.Rmd
   - vig/amto/array/fp_ary_string.Rmd
   - vig/amto/array/fs_list.Rmd
+  - vig/amto/array/fs_tuple.Rmd
   - vig/amto/dict/main.Rmd
   - vig/amto/dict/fp_dict.Rmd
   - vig/amto/matrix/main.Rmd
@@ -23,8 +24,9 @@ rmd_files:
 
   - vig/function/main.Rmd
   - vig/function/args/main.Rmd
-  - vig/function/args/fs_func_args.Rmd
   - vig/function/args/fs_datatypes.Rmd
+  - vig/function/args/fs_func_args.Rmd
+  - vig/function/args/fs_func_returns.Rmd
   - vig/function/errors/main.Rmd
   - vig/function/errors/fs_python_exceptions.Rmd
 

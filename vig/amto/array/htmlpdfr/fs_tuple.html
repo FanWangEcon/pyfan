@@ -13,7 +13,7 @@
 
 <meta name="date" content="2020-11-30" />
 
-<title>Python Function Returns Multiple Values</title>
+<title>Python Define and Unpack Tuple</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1859,49 +1859,76 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Function Returns Multiple Values</h1>
+<h1 class="title toc-ignore">Python Define and Unpack Tuple</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
 <h4 class="date">2020-11-30</h4>
 
 </div>
 
 
-<div id="function-returns" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Function Returns</h1>
+<div id="tuple" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Tuple</h1>
 <blockquote>
-<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/args//fs_func_args.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/function/args//htmlpdfr/fs_func_args.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/function/args//htmlpdfr/fs_func_args.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/amto/array//fs_tuple.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/amto/array//htmlpdfr/fs_tuple.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/amto/array//htmlpdfr/fs_tuple.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<div id="function-with-multiple-optional-returns" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Function with Multiple Optional Returns</h2>
-<p>There is a function that is already written, that returns some string value. Without interrupting the existing function, now add an additional return for the function. There is some conditional statement that controls whether the function returns one or two value.</p>
-<p>In the example below, if the path contains</p>
-<p>Create a testing function:</p>
-<pre class="python"><code>def get_val(spn_path):
-    if &#39;G:&#39; in spn_path:
-        # this returns a tuple of length 2
-        return spn_path, &#39;G:/repos&#39; 
-    else:
-        return spn_path </code></pre>
-<p>Call the function with one return, in the two calls below, the first call returns a tuple</p>
-<pre class="python"><code># Return tuple
-tp_st_return = get_val(&quot;G:/Dropbox (UH-ECON)&quot;)
-# Unpack tuple return
-st_path_a, st_path_b = get_val(&quot;G:/Dropbox (UH-ECON)&quot;)
-# Single element return
-st_return = get_val(&quot;C:/Dropbox (UH-ECON)&quot;)
+<pre class="python"><code>import numpy as np</code></pre>
+<div id="tuple-example" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Tuple Example</h2>
+<p>A tuple is created with parenthesis on the sides (or no parenthesis), not brackets on the sides. Can access values in a tuple as in list.</p>
+<pre class="python"><code># Define Tuple, with and without parenthesis
+tp_abc = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
+tp_abc_noparent = &#39;a&#39;, &#39;b&#39;, &#39;c&#39;
+print(f&#39;{tp_abc=}&#39;)</code></pre>
+<pre><code>## tp_abc=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</code></pre>
+<pre class="python"><code>print(f&#39;{len(tp_abc)=}&#39;)</code></pre>
+<pre><code>## len(tp_abc)=3</code></pre>
+<pre class="python"><code>print(f&#39;{tp_abc_noparent=}&#39;)</code></pre>
+<pre><code>## tp_abc_noparent=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</code></pre>
+<pre class="python"><code>print(f&#39;{(tp_abc==tp_abc_noparent)=}&#39;)
+# Check Type</code></pre>
+<pre><code>## (tp_abc==tp_abc_noparent)=True</code></pre>
+<pre class="python"><code>print(f&#39;{isinstance(tp_abc, list)=}&#39;)</code></pre>
+<pre><code>## isinstance(tp_abc, list)=False</code></pre>
+<pre class="python"><code>print(f&#39;{isinstance(tp_abc, tuple)=}&#39;)
+# select element</code></pre>
+<pre><code>## isinstance(tp_abc, tuple)=True</code></pre>
+<pre class="python"><code>print(f&#39;{tp_abc[1]=}&#39;)</code></pre>
+<pre><code>## tp_abc[1]=&#39;b&#39;</code></pre>
+<p>Convert tuple to a list:</p>
+<pre class="python"><code># convert Tuple to list
+ls_abc = [i for i in tp_abc]
+print(f&#39;{ls_abc=}&#39;)</code></pre>
+<pre><code>## ls_abc=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<pre class="python"><code>print(f&#39;{isinstance(ls_abc, list)=}&#39;)</code></pre>
+<pre><code>## isinstance(ls_abc, list)=True</code></pre>
+<pre class="python"><code>print(f&#39;{isinstance(ls_abc, tuple)=}&#39;)</code></pre>
+<pre><code>## isinstance(ls_abc, tuple)=False</code></pre>
+<p>Since the tuple is not mutable, we can not change values inside the tuple:</p>
+<pre class="python"><code># define the tuple
+tp_abc = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
+# update tuple value
+try:
+    tp_abc[0] = &#39;efg&#39;
+except TypeError as error:
+    print(&#39;Caught this error: &#39; + repr(error))</code></pre>
+<pre><code>## Caught this error: TypeError(&quot;&#39;tuple&#39; object does not support item assignment&quot;)</code></pre>
+</div>
+<div id="function-returns-tuple-and-unpack" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Function Returns Tuple and Unpack</h2>
+<p>When a function returns multiple <em>items</em> in a list, that is a tuple. Each element of the list can be accessed. And the tuple can be unpacked:</p>
+<pre class="python"><code># Results from some function
+tp_results = &#39;a&#39;, 123,  [1,2,3]
+# Unpack the results
+a_st, b_int, c_ls_int = tp_results
 # Print
-print(f&#39;{tp_st_return=} and {st_return=}&#39;)</code></pre>
-<pre><code>## tp_st_return=(&#39;G:/Dropbox (UH-ECON)&#39;, &#39;G:/repos&#39;) and st_return=&#39;C:/Dropbox (UH-ECON)&#39;</code></pre>
-<pre class="python"><code>print(f&#39;{st_path_a=} and {st_path_b=}&#39;)</code></pre>
-<pre><code>## st_path_a=&#39;G:/Dropbox (UH-ECON)&#39; and st_path_b=&#39;G:/repos&#39;</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(tp_st_return, str)=}&#39;)</code></pre>
-<pre><code>## isinstance(tp_st_return, str)=False</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(tp_st_return, tuple)=}&#39;)</code></pre>
-<pre><code>## isinstance(tp_st_return, tuple)=True</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(st_return, str)=}&#39;)</code></pre>
-<pre><code>## isinstance(st_return, str)=True</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(st_return, tuple)=}&#39;)</code></pre>
-<pre><code>## isinstance(st_return, tuple)=False</code></pre>
+print(f&#39;{tp_results=}&#39;)</code></pre>
+<pre><code>## tp_results=(&#39;a&#39;, 123, [1, 2, 3])</code></pre>
+<pre class="python"><code>print(f&#39;{a_st=}&#39;)</code></pre>
+<pre><code>## a_st=&#39;a&#39;</code></pre>
+<pre class="python"><code>print(f&#39;{b_int=}&#39;)</code></pre>
+<pre><code>## b_int=123</code></pre>
+<pre class="python"><code>print(f&#39;{c_ls_int=}&#39;)</code></pre>
+<pre><code>## c_ls_int=[1, 2, 3]</code></pre>
 </div>
 </div>
 

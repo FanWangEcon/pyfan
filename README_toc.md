@@ -13,6 +13,10 @@
 	+ Conditional statements based on list length and element value.
 	+ Provide default for element of a list when list does not have that element.
 	+ **py**: *lambda + join + append() + if len(X) >= 3 and X[2] is not None + if elif else*
+3. [Define and Unpack Tuple](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_tuple.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html)
+	+ Define tuple in python with and without parenthesis, unpack tuple.
+	+ Access tuple element and fail to mutate tuple element.
+	+ **py**: *isinstance(tp_abc, tuple)*
 
 ## 1.2  Dictionary
 
@@ -43,16 +47,19 @@
 
 # 3  Functions
 
-## 3.1  Function Arguments
+## 3.1  Function Arguments and Returns
 
-1. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
-	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
-	+ Pass a dictionary for named arguments to a function.
-	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
-2. [Python Function Data Type Handling](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_datatypes.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html)
+1. [Python Function Data Type Handling](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_datatypes.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html)
 	+ Check if parameter is string or integer, conditional execution and exception handling.
 	+ Check if parameter is string or an integer between some values. 
 	+ **py**: *type + isinstance(abc, str) + isinstance(abc, int) + raise + try except*
+2. [Function value returns](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
+	+ Return one or multiple values from function.
+	+ **python**: *return a, b, c*
+3. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_returns.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_returns.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_returns.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_returns.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_returns.html)
+	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
+	+ Pass a dictionary for named arguments to a function.
+	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
 
 ## 3.2  Exceptions
 
