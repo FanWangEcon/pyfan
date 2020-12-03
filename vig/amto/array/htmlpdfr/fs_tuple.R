@@ -1,4 +1,4 @@
-## ----global_options, include = FALSE--------------------------------------------------------------------------------
+## ----global_options, include = FALSE------------------------------------------------------------------------------------------------------------------------------
 try(source("../../../.Rprofile"))
 
 
@@ -73,4 +73,19 @@ try(source("../../../.Rprofile"))
 ## print(f'{b_int=}')
 
 ## print(f'{c_ls_int=}')
+
+
+## # Unpack only one
+
+## a_st_self_m1, _ , _ = tp_results
+
+## # Alternative shorter
+
+## a_st_self_m2, *_  = tp_results
+
+## # Print
+
+## print(f'{a_st_self_m1=}')
+
+## print(f'{a_st_self_m2=}')
 

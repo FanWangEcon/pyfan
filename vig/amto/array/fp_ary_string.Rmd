@@ -3,27 +3,31 @@ title: "Python String Manipulation Examples: Search, Replace, Wrap Strings"
 titleshort: "Python String Manipulation Examples"
 description: |
   Search for substring, replace string, wrap string.
+  Display and format numeric string with fstring. 
+  Change the decimal rounding given a list of estimates and standard error string arrays.
 core:
   - package: py
     code: |
-      zip()
-      upper()
-      fstring
-      join()
+      zip
+      upper
+      join
+      round
+      float
+      split
+      replace
+      ascii_lowercase
   - package: textwrap
     code: |
       fill(st, width = 20)
   - package: fstring
     code: |
       f
+      f'{fl_esti_rounded:.{it_round_decimal}f}'
   - package: random
     code: |
       choice
-  - package: string
-    code: |
-      ascii_lowercase
 date: 2020-06-17
-date_start: 2020-11-06
+date_start: 2020-12-02
 output:
   pdf_document:
     pandoc_args: '../../../_output_kniti_pdf.yaml'
@@ -51,6 +55,45 @@ try(source("../../../.Rprofile"))
 import numpy as np
 import string as string
 import random as random
+```
+
+#### Fstring Print Strings with Numeric Values and Other Strings
+
+After some code segment, print some outputs declaring the end of operation and print results.
+
+```{python}
+dc_invoke_main_args = {'speckey': 'ng_s_t',
+                       'numeric': 1.46,
+                       'ge': False,
+                       'multiprocess': False}
+                       
+print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args["speckey"]}.')
+print(f'numeric in dc_invoke_main_args is {dc_invoke_main_args["numeric"]}.')
+print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args}.')
+```
+
+### Fstring Format Floating Point Values 
+
+There is a number, it is a parameter value. The number of decimal points to be allowed is also a parameter value. Use Fstring to format.
+
+```{python}
+# Define a formatter function
+def fstring_formater(st_float, it_decimal):
+    # strip the string float, and format with it_decimal number of decimals
+    st_float = st_float.strip()
+    fl_float = float(st_float)
+    st_float_rounded = f'{fl_float:.{it_decimal}f}'
+    return st_float_rounded
+    
+# Print 
+f'{fstring_formater("1.2345", 3)=}'
+f'{fstring_formater("1.2345", 2)=}'
+f'{fstring_formater(" 1.2345 ", 1)=}'
+f'{fstring_formater(" 1.2345", 1)=}'
+# Alternatively
+it_decimal = 3
+fl_float = 123.456789
+print(f'Formating with .{it_decimal}f -> {fl_float:.{it_decimal}f}')
 ```
 
 #### Generate Random Strings
@@ -84,22 +127,6 @@ mt_st_rand_word = np.reshape(ls_st_rand_word, [3,5])
 print(f'{mt_st_rand_word=}')
 print(f'{mt_st_rand_word.shape=}')
 print(f'{type(mt_st_rand_word)=}')
-```
-
-
-#### Print Strings with Numeric Values and Other Strings
-
-After some code segment, print some outputs declaring the end of operation and print results.
-
-```{python}
-dc_invoke_main_args = {'speckey': 'ng_s_t',
-                       'numeric': 1.46,
-                       'ge': False,
-                       'multiprocess': False}
-                       
-print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args["speckey"]}.')
-print(f'numeric in dc_invoke_main_args is {dc_invoke_main_args["numeric"]}.')
-print(f'speckey in dc_invoke_main_args is {dc_invoke_main_args}.')
 ```
 
 #### Add String Suffix to Numeric Array 
@@ -189,4 +216,53 @@ str_dc_records = 'First Path:'.upper() + '\n' + \
               
 # Print
 print(str_dc_records)                 
+```
+
+
+#### Change Round for Lists of String Estimates
+
+Here we have two strings in a list, with point estimates and corresponding standard errors. Estimates are separated by commas. We want to change the number of decimal points shown and set appropriate roundings. Several steps: (1) split string by comma (2) Loop over (3) extract numerical elements (4) recover
+
+```{python}
+it_round_decimal = 1
+ls_st_all_estimates = ["84.506***, 91.758***, 107.950***, 115.879***, 133.560***\n",
+                       "(7.796), (4.848), (4.111), (5.044), (6.961)\n",
+                       "68.180***, 47.921***, 47.127***, 51.366***, 41.764***\n",
+                       "(8.986), (5.368), (4.995), (5.099), (8.637)\n"]
+
+for st_all_estimates in ls_st_all_estimates:
+
+    # delete linebreak at end of line 
+    st_all_estimates = st_all_estimates.replace("\n", "")
+    
+    # split
+    ls_st_estimates = st_all_estimates.split(",")
+
+    # Loop over each value separated by commas
+    for it_esti_ctr, st_esti in enumerate(ls_st_estimates):
+    
+        # Default update is to keep current
+        st_esti_update = st_esti
+    
+        # If estimates, might have stars
+        st_esti_numeric = st_esti.strip()
+        st_esti_numeric = st_esti_numeric.replace("*", "")
+        st_esti_numeric = st_esti_numeric.replace("(", "")
+        st_esti_numeric = st_esti_numeric.replace(")", "")
+    
+        # Decimal Rounding
+        fl_esti_rounded = round(float(st_esti_numeric), it_round_decimal)
+        st_esti_rounded = f'{fl_esti_rounded:.{it_round_decimal}f}'
+        
+        # Replace
+        print(f'{st_esti=} + {st_esti_numeric=} + {st_esti_rounded=}')
+        st_esti_rounded = st_esti.replace(st_esti_numeric, st_esti_rounded)
+        
+        # Update List
+        ls_st_estimates[it_esti_ctr] = st_esti_rounded
+    
+    # Flatten comman
+    st_text_out = ','.join(ls_st_estimates)
+    print(f'\n{st_text_out=}\n')
+    print()
 ```
