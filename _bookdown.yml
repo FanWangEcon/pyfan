@@ -30,6 +30,10 @@ rmd_files:
   - vig/function/errors/main.Rmd
   - vig/function/errors/fs_python_exceptions.Rmd
 
+  - vig/stats/main.Rmd
+  - vig/stats/markov/main.Rmd
+  - vig/stats/markov/fs_trans_mat_prob_check.Rmd
+
   - vig/tabgraph/main.Rmd
   - vig/tabgraph/baseplot/main.Rmd
   - vig/tabgraph/baseplot/fp_plot_base.Rmd

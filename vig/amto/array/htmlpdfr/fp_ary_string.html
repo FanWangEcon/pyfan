@@ -1671,22 +1671,7 @@ h6 {
 }
 </style>
 
-<style type="text/css">
-p.caption {
-color: #777;
-margin-top: 10px;
-}
-p code {
-white-space: inherit;
-}
-pre {
-word-break: normal;
-word-wrap: normal;
-}
-pre code {
-white-space: inherit;
-}
-</style>
+<style type="text/css">p.caption {color: #777;margin-top: 10px;}p code {white-space: inherit;}pre {word-break: normal;word-wrap: normal;}pre code {white-space: inherit;}</style>
 
 
 
@@ -1889,8 +1874,49 @@ div.tocify {
 <pre class="python"><code>import numpy as np
 import string as string
 import random as random</code></pre>
-<div id="generate-random-strings" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Generate Random Strings</h2>
+<div id="fstring-print-strings-with-numeric-values-and-other-strings" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Fstring Print Strings with Numeric Values and Other Strings</h2>
+<p>After some code segment, print some outputs declaring the end of operation and print results.</p>
+<pre class="python"><code>dc_invoke_main_args = {&#39;speckey&#39;: &#39;ng_s_t&#39;,
+                       &#39;numeric&#39;: 1.46,
+                       &#39;ge&#39;: False,
+                       &#39;multiprocess&#39;: False}
+                       
+print(f&#39;speckey in dc_invoke_main_args is {dc_invoke_main_args[&quot;speckey&quot;]}.&#39;)</code></pre>
+<pre><code>## speckey in dc_invoke_main_args is ng_s_t.</code></pre>
+<pre class="python"><code>print(f&#39;numeric in dc_invoke_main_args is {dc_invoke_main_args[&quot;numeric&quot;]}.&#39;)</code></pre>
+<pre><code>## numeric in dc_invoke_main_args is 1.46.</code></pre>
+<pre class="python"><code>print(f&#39;speckey in dc_invoke_main_args is {dc_invoke_main_args}.&#39;)</code></pre>
+<pre><code>## speckey in dc_invoke_main_args is {&#39;speckey&#39;: &#39;ng_s_t&#39;, &#39;numeric&#39;: 1.46, &#39;ge&#39;: False, &#39;multiprocess&#39;: False}.</code></pre>
+</div>
+</div>
+<div id="fstring-format-floating-point-values" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Fstring Format Floating Point Values</h1>
+<p>There is a number, it is a parameter value. The number of decimal points to be allowed is also a parameter value. Use Fstring to format.</p>
+<pre class="python"><code># Define a formatter function
+def fstring_formater(st_float, it_decimal):
+    # strip the string float, and format with it_decimal number of decimals
+    st_float = st_float.strip()
+    fl_float = float(st_float)
+    st_float_rounded = f&#39;{fl_float:.{it_decimal}f}&#39;
+    return st_float_rounded
+    
+# Print 
+f&#39;{fstring_formater(&quot;1.2345&quot;, 3)=}&#39;</code></pre>
+<pre><code>## &#39;fstring_formater(&quot;1.2345&quot;, 3)=\&#39;1.234\&#39;&#39;</code></pre>
+<pre class="python"><code>f&#39;{fstring_formater(&quot;1.2345&quot;, 2)=}&#39;</code></pre>
+<pre><code>## &#39;fstring_formater(&quot;1.2345&quot;, 2)=\&#39;1.23\&#39;&#39;</code></pre>
+<pre class="python"><code>f&#39;{fstring_formater(&quot; 1.2345 &quot;, 1)=}&#39;</code></pre>
+<pre><code>## &#39;fstring_formater(&quot; 1.2345 &quot;, 1)=\&#39;1.2\&#39;&#39;</code></pre>
+<pre class="python"><code>f&#39;{fstring_formater(&quot; 1.2345&quot;, 1)=}&#39;
+# Alternatively</code></pre>
+<pre><code>## &#39;fstring_formater(&quot; 1.2345&quot;, 1)=\&#39;1.2\&#39;&#39;</code></pre>
+<pre class="python"><code>it_decimal = 3
+fl_float = 123.456789
+print(f&#39;Formating with .{it_decimal}f -&gt; {fl_float:.{it_decimal}f}&#39;)</code></pre>
+<pre><code>## Formating with .3f -&gt; 123.457</code></pre>
+<div id="generate-random-strings" class="section level2" number="2.1">
+<h2 number="2.1"><span class="header-section-number">2.1</span> Generate Random Strings</h2>
 <p>Generate some random strings:</p>
 <pre class="python"><code>random.seed(123)
 it_word_length = 5
@@ -1918,30 +1944,15 @@ print(f&#39;{mt_st_rand_word=}&#39;)</code></pre>
 <pre class="python"><code>print(f&#39;{type(mt_st_rand_word)=}&#39;)</code></pre>
 <pre><code>## type(mt_st_rand_word)=&lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
 </div>
-<div id="print-strings-with-numeric-values-and-other-strings" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Print Strings with Numeric Values and Other Strings</h2>
-<p>After some code segment, print some outputs declaring the end of operation and print results.</p>
-<pre class="python"><code>dc_invoke_main_args = {&#39;speckey&#39;: &#39;ng_s_t&#39;,
-                       &#39;numeric&#39;: 1.46,
-                       &#39;ge&#39;: False,
-                       &#39;multiprocess&#39;: False}
-                       
-print(f&#39;speckey in dc_invoke_main_args is {dc_invoke_main_args[&quot;speckey&quot;]}.&#39;)</code></pre>
-<pre><code>## speckey in dc_invoke_main_args is ng_s_t.</code></pre>
-<pre class="python"><code>print(f&#39;numeric in dc_invoke_main_args is {dc_invoke_main_args[&quot;numeric&quot;]}.&#39;)</code></pre>
-<pre><code>## numeric in dc_invoke_main_args is 1.46.</code></pre>
-<pre class="python"><code>print(f&#39;speckey in dc_invoke_main_args is {dc_invoke_main_args}.&#39;)</code></pre>
-<pre><code>## speckey in dc_invoke_main_args is {&#39;speckey&#39;: &#39;ng_s_t&#39;, &#39;numeric&#39;: 1.46, &#39;ge&#39;: False, &#39;multiprocess&#39;: False}.</code></pre>
-</div>
-<div id="add-string-suffix-to-numeric-array" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Add String Suffix to Numeric Array</h2>
+<div id="add-string-suffix-to-numeric-array" class="section level2" number="2.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> Add String Suffix to Numeric Array</h2>
 <p>Given an numeric array, add string, for example to generate sequencial column names with suffix c:</p>
 <pre class="python"><code>ar_st_colnames = [ &#39;s&#39; + str(it_col) for it_col in np.array(range(1, 3))]
 print(ar_st_colnames)</code></pre>
 <pre><code>## [&#39;s1&#39;, &#39;s2&#39;]</code></pre>
 </div>
-<div id="search-if-names-include-strings" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Search if Names Include Strings</h2>
+<div id="search-if-names-include-strings" class="section level2" number="2.3">
+<h2 number="2.3"><span class="header-section-number">2.3</span> Search if Names Include Strings</h2>
 <p>Given a list of strings, loop but skip if string contains elements string list.</p>
 <pre class="python"><code># define string
 ls_st_ignore = [&#39;abc&#39;, &#39;efg&#39;, &#39;xyz&#39;]
@@ -1959,8 +1970,8 @@ for st_loop in ls_st_loop:
 ## skip: abc xyz
 ## not skip: good morning</code></pre>
 </div>
-<div id="replace-a-set-of-strings-in-string" class="section level2" number="1.5">
-<h2 number="1.5"><span class="header-section-number">1.5</span> Replace a Set of Strings in String</h2>
+<div id="replace-a-set-of-strings-in-string" class="section level2" number="2.4">
+<h2 number="2.4"><span class="header-section-number">2.4</span> Replace a Set of Strings in String</h2>
 <p>Replace terms in string</p>
 <pre class="python"><code># define string
 st_full = &quot;&quot;&quot;
@@ -1984,8 +1995,8 @@ print(st_full)</code></pre>
 ## eft good, EFG capitalized, 456 good again. 
 ## A B C or 123 or ABC. Interesting 789.</code></pre>
 </div>
-<div id="wrap-string-with-fixed-width" class="section level2" number="1.6">
-<h2 number="1.6"><span class="header-section-number">1.6</span> Wrap String with Fixed Width</h2>
+<div id="wrap-string-with-fixed-width" class="section level2" number="2.5">
+<h2 number="2.5"><span class="header-section-number">2.5</span> Wrap String with Fixed Width</h2>
 <p>Given a long string, wrap it into multiple lines with fixed width.</p>
 <pre class="python"><code>import textwrap
 
@@ -2032,6 +2043,85 @@ print(str_dc_records)                 </code></pre>
 ## C:/Users/fan/R4Econ/suppo
 ## rt/development/fs_packagi
 ## ng.html</code></pre>
+</div>
+<div id="change-round-for-lists-of-string-estimates" class="section level2" number="2.6">
+<h2 number="2.6"><span class="header-section-number">2.6</span> Change Round for Lists of String Estimates</h2>
+<p>Here we have two strings in a list, with point estimates and corresponding standard errors. Estimates are separated by commas. We want to change the number of decimal points shown and set appropriate roundings. Several steps: (1) split string by comma (2) Loop over (3) extract numerical elements (4) recover</p>
+<pre class="python"><code>it_round_decimal = 1
+ls_st_all_estimates = [&quot;84.506***, 91.758***, 107.950***, 115.879***, 133.560***\n&quot;,
+                       &quot;(7.796), (4.848), (4.111), (5.044), (6.961)\n&quot;,
+                       &quot;68.180***, 47.921***, 47.127***, 51.366***, 41.764***\n&quot;,
+                       &quot;(8.986), (5.368), (4.995), (5.099), (8.637)\n&quot;]
+
+for st_all_estimates in ls_st_all_estimates:
+
+    # delete linebreak at end of line 
+    st_all_estimates = st_all_estimates.replace(&quot;\n&quot;, &quot;&quot;)
+    
+    # split
+    ls_st_estimates = st_all_estimates.split(&quot;,&quot;)
+
+    # Loop over each value separated by commas
+    for it_esti_ctr, st_esti in enumerate(ls_st_estimates):
+    
+        # Default update is to keep current
+        st_esti_update = st_esti
+    
+        # If estimates, might have stars
+        st_esti_numeric = st_esti.strip()
+        st_esti_numeric = st_esti_numeric.replace(&quot;*&quot;, &quot;&quot;)
+        st_esti_numeric = st_esti_numeric.replace(&quot;(&quot;, &quot;&quot;)
+        st_esti_numeric = st_esti_numeric.replace(&quot;)&quot;, &quot;&quot;)
+    
+        # Decimal Rounding
+        fl_esti_rounded = round(float(st_esti_numeric), it_round_decimal)
+        st_esti_rounded = f&#39;{fl_esti_rounded:.{it_round_decimal}f}&#39;
+        
+        # Replace
+        print(f&#39;{st_esti=} + {st_esti_numeric=} + {st_esti_rounded=}&#39;)
+        st_esti_rounded = st_esti.replace(st_esti_numeric, st_esti_rounded)
+        
+        # Update List
+        ls_st_estimates[it_esti_ctr] = st_esti_rounded
+    
+    # Flatten comman
+    st_text_out = &#39;,&#39;.join(ls_st_estimates)
+    print(f&#39;\n{st_text_out=}\n&#39;)
+    print()</code></pre>
+<pre><code>## st_esti=&#39;84.506***&#39; + st_esti_numeric=&#39;84.506&#39; + st_esti_rounded=&#39;84.5&#39;
+## st_esti=&#39; 91.758***&#39; + st_esti_numeric=&#39;91.758&#39; + st_esti_rounded=&#39;91.8&#39;
+## st_esti=&#39; 107.950***&#39; + st_esti_numeric=&#39;107.950&#39; + st_esti_rounded=&#39;108.0&#39;
+## st_esti=&#39; 115.879***&#39; + st_esti_numeric=&#39;115.879&#39; + st_esti_rounded=&#39;115.9&#39;
+## st_esti=&#39; 133.560***&#39; + st_esti_numeric=&#39;133.560&#39; + st_esti_rounded=&#39;133.6&#39;
+## 
+## st_text_out=&#39;84.5***, 91.8***, 108.0***, 115.9***, 133.6***&#39;
+## 
+## 
+## st_esti=&#39;(7.796)&#39; + st_esti_numeric=&#39;7.796&#39; + st_esti_rounded=&#39;7.8&#39;
+## st_esti=&#39; (4.848)&#39; + st_esti_numeric=&#39;4.848&#39; + st_esti_rounded=&#39;4.8&#39;
+## st_esti=&#39; (4.111)&#39; + st_esti_numeric=&#39;4.111&#39; + st_esti_rounded=&#39;4.1&#39;
+## st_esti=&#39; (5.044)&#39; + st_esti_numeric=&#39;5.044&#39; + st_esti_rounded=&#39;5.0&#39;
+## st_esti=&#39; (6.961)&#39; + st_esti_numeric=&#39;6.961&#39; + st_esti_rounded=&#39;7.0&#39;
+## 
+## st_text_out=&#39;(7.8), (4.8), (4.1), (5.0), (7.0)&#39;
+## 
+## 
+## st_esti=&#39;68.180***&#39; + st_esti_numeric=&#39;68.180&#39; + st_esti_rounded=&#39;68.2&#39;
+## st_esti=&#39; 47.921***&#39; + st_esti_numeric=&#39;47.921&#39; + st_esti_rounded=&#39;47.9&#39;
+## st_esti=&#39; 47.127***&#39; + st_esti_numeric=&#39;47.127&#39; + st_esti_rounded=&#39;47.1&#39;
+## st_esti=&#39; 51.366***&#39; + st_esti_numeric=&#39;51.366&#39; + st_esti_rounded=&#39;51.4&#39;
+## st_esti=&#39; 41.764***&#39; + st_esti_numeric=&#39;41.764&#39; + st_esti_rounded=&#39;41.8&#39;
+## 
+## st_text_out=&#39;68.2***, 47.9***, 47.1***, 51.4***, 41.8***&#39;
+## 
+## 
+## st_esti=&#39;(8.986)&#39; + st_esti_numeric=&#39;8.986&#39; + st_esti_rounded=&#39;9.0&#39;
+## st_esti=&#39; (5.368)&#39; + st_esti_numeric=&#39;5.368&#39; + st_esti_rounded=&#39;5.4&#39;
+## st_esti=&#39; (4.995)&#39; + st_esti_numeric=&#39;4.995&#39; + st_esti_rounded=&#39;5.0&#39;
+## st_esti=&#39; (5.099)&#39; + st_esti_numeric=&#39;5.099&#39; + st_esti_rounded=&#39;5.1&#39;
+## st_esti=&#39; (8.637)&#39; + st_esti_numeric=&#39;8.637&#39; + st_esti_rounded=&#39;8.6&#39;
+## 
+## st_text_out=&#39;(9.0), (5.4), (5.0), (5.1), (8.6)&#39;</code></pre>
 </div>
 </div>
 

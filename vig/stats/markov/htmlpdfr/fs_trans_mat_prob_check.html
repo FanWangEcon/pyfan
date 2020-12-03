@@ -11,9 +11,9 @@
 
 <meta name="author" content="Fan Wang" />
 
-<meta name="date" content="2020-11-30" />
+<meta name="date" content="2020-12-03" />
 
-<title>Python Define and Unpack Tuple</title>
+<title>Python Markov Transition Conditional Probability Check Sum to 1</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1859,87 +1859,296 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Python Define and Unpack Tuple</h1>
+<h1 class="title toc-ignore">Python Markov Transition Conditional Probability Check Sum to 1</h1>
 <h4 class="author"><a href="https://fanwangecon.github.io/">Fan Wang</a></h4>
-<h4 class="date">2020-11-30</h4>
+<h4 class="date">2020-12-03</h4>
 
 </div>
 
 
-<div id="tuple" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Tuple</h1>
+<div id="close-value-comparison" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Close Value Comparison</h1>
 <blockquote>
-<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/amto/array//fs_tuple.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/amto/array//htmlpdfr/fs_tuple.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/amto/array//htmlpdfr/fs_tuple.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
+<p>Go to the <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/stats/markov//fs_trans_mat_prob_check.Rmd"><strong>RMD</strong></a>, <a href="https://github.com/FanWangEcon//pyfan/blob/master/vig/stats/markov//htmlpdfr/fs_trans_mat_prob_check.pdf"><strong>PDF</strong></a>, or <a href="https://fanwangecon.github.io//pyfan/vig/stats/markov//htmlpdfr/fs_trans_mat_prob_check.html"><strong>HTML</strong></a> version of this file. Go back to <a href="http://fanwangecon.github.io/">fan</a>’s <a href="https://fanwangecon.github.io/pyfan/">Python Code Examples</a> Repository (<a href="https://fanwangecon.github.io/pyfan/bookdown">bookdown site</a>).</p>
 </blockquote>
-<pre class="python"><code>import numpy as np</code></pre>
-<div id="tuple-example" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Tuple Example</h2>
-<p>A tuple is created with parenthesis on the sides (or no parenthesis), not brackets on the sides. Can access values in a tuple as in list.</p>
-<pre class="python"><code># Define Tuple, with and without parenthesis
-tp_abc = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
-tp_abc_noparent = &#39;a&#39;, &#39;b&#39;, &#39;c&#39;
-print(f&#39;{tp_abc=}&#39;)</code></pre>
-<pre><code>## tp_abc=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</code></pre>
-<pre class="python"><code>print(f&#39;{len(tp_abc)=}&#39;)</code></pre>
-<pre><code>## len(tp_abc)=3</code></pre>
-<pre class="python"><code>print(f&#39;{tp_abc_noparent=}&#39;)</code></pre>
-<pre><code>## tp_abc_noparent=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</code></pre>
-<pre class="python"><code>print(f&#39;{(tp_abc==tp_abc_noparent)=}&#39;)
-# Check Type</code></pre>
-<pre><code>## (tp_abc==tp_abc_noparent)=True</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(tp_abc, list)=}&#39;)</code></pre>
-<pre><code>## isinstance(tp_abc, list)=False</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(tp_abc, tuple)=}&#39;)
-# select element</code></pre>
-<pre><code>## isinstance(tp_abc, tuple)=True</code></pre>
-<pre class="python"><code>print(f&#39;{tp_abc[1]=}&#39;)</code></pre>
-<pre><code>## tp_abc[1]=&#39;b&#39;</code></pre>
-<p>Convert tuple to a list:</p>
-<pre class="python"><code># convert Tuple to list
-ls_abc = [i for i in tp_abc]
-print(f&#39;{ls_abc=}&#39;)</code></pre>
-<pre><code>## ls_abc=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(ls_abc, list)=}&#39;)</code></pre>
-<pre><code>## isinstance(ls_abc, list)=True</code></pre>
-<pre class="python"><code>print(f&#39;{isinstance(ls_abc, tuple)=}&#39;)</code></pre>
-<pre><code>## isinstance(ls_abc, tuple)=False</code></pre>
-<p>Since the tuple is not mutable, we can not change values inside the tuple:</p>
-<pre class="python"><code># define the tuple
-tp_abc = (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
-# update tuple value
-try:
-    tp_abc[0] = &#39;efg&#39;
-except TypeError as error:
-    print(&#39;Caught this error: &#39; + repr(error))</code></pre>
-<pre><code>## Caught this error: TypeError(&quot;&#39;tuple&#39; object does not support item assignment&quot;)</code></pre>
+<pre class="python"><code>import sys as sys
+import numpy as np
+import pprint</code></pre>
+<div id="generate-a-markov-transition-matrix" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Generate a Markov Transition Matrix</h2>
+<p>With numerical probability approximations, discrete random variables often are not exact, given an AR(1) transition matrix, how to check whether the conditional probabilities conditional on each current state (row) sums up to one?</p>
+<p>First define the AR(1) transition matrix, which is from a model of asset transitions. This is a 50 by 50 matrix.</p>
+<pre class="python"><code>mt_ar1_trans = np.array([[0.4334, 0.5183, 0.0454, 0.0027, 0.0002, 0., 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0.2624,
+0.5967, 0.1245, 0.0145, 0.0016, 0.0002, 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0.1673, 0.5918, 0.2005,
+0.0343, 0.0052, 0.0008, 0.0001, 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0.0312, 0.6497, 0.2774, 0.0371,
+0.0041, 0.0005, 0.0001, 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0.0681, 0.6569, 0.2379, 0.0327,
+0.0038, 0.0005, 0.0001, 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0.2201, 0.581 , 0.168 , 0.0264, 0.0038,
+0.0006, 0.0001, 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.,
+0., 0., 0., 0.], [0., 0., 0., 0.0044, 0.4312, 0.4356, 0.1069, 0.0183, 0.003 ,
+0.0005, 0.0001,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0.], [0., 0., 0., 0., 0.1408, 0.5552, 0.2403, 0.052 , 0.0095, 0.0017,
+0.0003,0.0001, 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0.], [0., 0., 0., 0., 0.1666, 0.5902, 0.2019, 0.0349, 0.0053, 0.0008,
+0.0001,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0.], [0., 0., 0., 0., 0., 0.2065, 0.5668, 0.1869, 0.0335, 0.0053, 0.0009,0.0001,
+0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0.,
+0., 0., 0., 0., 0.2414, 0.5453, 0.1748, 0.0321, 0.0053,0.0009, 0.0002, 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0.,
+0.0172, 0.4156, 0.4019, 0.1281, 0.0293, 0.0062,0.0013, 0.0003, 0.0001, 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0.,
+0.0033, 0.3222, 0.4594, 0.1655, 0.0391,0.0083, 0.0017, 0.0004, 0.0001, 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0.,
+0.0111, 0.3744, 0.4215, 0.1471,0.0357, 0.0079, 0.0017, 0.0004, 0.0001, 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0.,
+0.1555, 0.504 , 0.2526,0.0682, 0.0154, 0.0034, 0.0008, 0.0002, 0., 0., 0., 0.,
+0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.1987,
+0.5249, 0.215 ,0.0493, 0.0097, 0.0019, 0.0004, 0.0001, 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.0041,
+0.3513, 0.4533,0.1499, 0.0331, 0.0066, 0.0013, 0.0003, 0.0001, 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.0247,
+0.441 ,0.3835, 0.1174, 0.0264, 0.0055, 0.0012, 0.0003, 0.0001, 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.1049,0.502 , 0.2887, 0.0809, 0.0183, 0.004 , 0.0009, 0.0002, 0.0001, 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.0003,0.1962, 0.4888, 0.2319, 0.0636, 0.0148, 0.0034, 0.0008, 0.0002, 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0.0087, 0.3362, 0.4294, 0.1674, 0.0444, 0.0105, 0.0025, 0.0006, 0.0001, 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0.0001, 0.154 , 0.4801, 0.2617, 0.0785, 0.0195, 0.0046, 0.0011, 0.0003,
+0.0001, 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0.0001, 0.1467, 0.48  , 0.2664, 0.0804, 0.02  , 0.0048, 0.0012, 0.0003,
+0.0001, 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0., 0.0149, 0.3543, 0.4103, 0.1614, 0.0444, 0.011 , 0.0027, 0.0007,
+0.0002, 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0., 0., 0.0438, 0.4122, 0.3611, 0.1334, 0.0369, 0.0094, 0.0024, 0.0006,
+0.0002,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0.1159, 0.452 , 0.2939, 0.1007, 0.0278, 0.0072, 0.0019,
+0.0005,0.0001, 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0., 0., 0., 0.0012, 0.198 , 0.4463, 0.2436, 0.0804, 0.0224, 0.0059,
+0.0016,0.0004, 0.0001, 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0.0087, 0.2821, 0.4181, 0.2011, 0.0649, 0.0183, 0.005
+,0.0014, 0.0004, 0.0001, 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0., 0., 0., 0., 0., 0.0842, 0.4174, 0.3217, 0.1244, 0.0376,
+0.0105,0.0029, 0.0008, 0.0002, 0.0001, 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.0828, 0.4166, 0.3229, 0.1251, 0.0379,
+0.0106,0.0029, 0.0008, 0.0002, 0.0001, 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.0119, 0.2907, 0.4075, 0.1979, 0.0656,
+0.019 ,0.0053, 0.0015, 0.0004, 0.0001, 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.0424, 0.3654, 0.3618, 0.1581,
+0.0513,0.015 , 0.0043, 0.0012, 0.0004, 0.0001, 0., 0., 0., 0., 0., 0.,0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.0001, 0.1078, 0.4112, 0.3043,
+0.1217,0.0388, 0.0114, 0.0033, 0.001 , 0.0003, 0.0001, 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.0015, 0.1714, 0.4155,
+0.264 ,0.1015, 0.0323, 0.0097, 0.0029, 0.0009, 0.0003, 0.0001, 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0.0093,
+0.2496, 0.4001,0.2214, 0.082 , 0.0261, 0.0079, 0.0024, 0.0007, 0.0002, 0.0001,
+0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.],
+[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.041 , 0.3374,0.3591, 0.1729, 0.0615, 0.0195, 0.006 , 0.0018, 0.0006, 0.0002,
+0.0001, 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.,
+0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.0295, 0.315 ,0.3712, 0.186 , 0.0673, 0.0215, 0.0066, 0.002 , 0.0006,
+0.0002, 0.0001, 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.,
+0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.0295, 0.315 ,0.3712, 0.186 , 0.0673, 0.0215, 0.0066, 0.002 ,
+0.0006, 0.0002, 0.0001, 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.0036, 0.1927,0.4021, 0.2527, 0.1004, 0.0334, 0.0104,
+0.0032, 0.001 , 0.0003, 0.0001, 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.018 ,0.2749, 0.3813, 0.2082, 0.0792, 0.0262,
+0.0083, 0.0026, 0.0008, 0.0003, 0.0001, 0.,0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.0539, 0.3414, 0.344 , 0.1684, 0.0621,
+0.0205, 0.0065, 0.0021, 0.0007, 0.0002, 0.0001,0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.0005, 0.1155, 0.3788, 0.2986,
+0.1345, 0.0485, 0.016 , 0.0052, 0.0017, 0.0006, 0.0002,0.0001, 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.0042, 0.1819, 0.385
+, 0.259 , 0.1109, 0.0395, 0.0132, 0.0043, 0.0014, 0.0005,0.0002, 0.0001, 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0.0183,
+0.2571, 0.3709, 0.2174, 0.089 , 0.0314, 0.0105, 0.0035, 0.0012,0.0004, 0.0001,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.,
+0.0041, 0.1763, 0.3796, 0.2619, 0.1149, 0.0419, 0.0142, 0.0047, 0.0016,0.0005,
+0.0002, 0.0001, 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.], [0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+0.,0., 0., 0.0028, 0.1598, 0.3781, 0.2712, 0.1209, 0.0444, 0.0151, 0.005 ,
+0.0017,0.0006, 0.0002, 0.0001, 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0.0414, 0.3051, 0.3488, 0.1888, 0.0756, 0.0267, 0.009
+, 0.003 ,0.001 , 0.0004, 0.0001, 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0., 0.,
+0., 0., 0., 0.,0., 0., 0., 0.0002, 0.0784, 0.3412, 0.3202, 0.1621, 0.0637,
+0.0225, 0.0077,0.0026, 0.0009, 0.0003, 0.0001, 0., 0., 0., 0., 0., 0., 0.,0.,
+0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0.,
+0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0.0018, 0.1352, 0.3634, 0.2843, 0.135
+, 0.0521, 0.0184,0.0063, 0.0022, 0.0008, 0.0003, 0.0001, 0., 0., 0., 0., 0.,
+0.,0., 0., 0., 0., 0., 0.], [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0.,
+0., 0., 0., 0., 0., 0., 0., 0., 0.,0., 0., 0., 0., 0., 0.0111, 0.2115, 0.365 ,
+0.2415, 0.1079, 0.0409,0.0145, 0.005 , 0.0017, 0.0006, 0.0002, 0.0001, 0., 0.,
+0., 0., 0.,0., 0., 0., 0., 0., 0.]])
+# print
+print(f&#39;{mt_ar1_trans.shape=}&#39;)</code></pre>
+<pre><code>## mt_ar1_trans.shape=(50, 50)</code></pre>
+<p>What are the row sums, and how close is each to 1:</p>
+<pre class="python"><code># Sum for each row across columns
+ar_row_sums_ar1 = np.sum(mt_ar1_trans, axis=1)
+fl_sum_to_match = 1
+# print
+print(f&#39;{ar_row_sums_ar1=}&#39;)</code></pre>
+<pre><code>## ar_row_sums_ar1=array([1.    , 0.9999, 1.    , 1.0001, 1.    , 1.    , 1.    , 0.9999,
+##        0.9998, 1.    , 1.    , 1.    , 1.    , 0.9999, 1.0001, 1.    ,
+##        1.    , 1.0001, 1.    , 1.    , 0.9998, 1.    , 1.    , 0.9999,
+##        1.    , 1.    , 0.9999, 1.0001, 0.9998, 0.9999, 0.9999, 1.    ,
+##        1.    , 1.0001, 0.9998, 1.0001, 1.    , 1.    , 0.9999, 0.9999,
+##        0.9999, 1.0002, 1.0002, 0.9998, 1.    , 0.9999, 0.9999, 0.9999,
+##        0.9999, 1.    ])</code></pre>
+<pre class="python"><code>print(f&#39;Total Avg Diff = {np.mean(abs(ar_row_sums_ar1-fl_sum_to_match))=}&#39;)</code></pre>
+<pre><code>## Total Avg Diff = np.mean(abs(ar_row_sums_ar1-fl_sum_to_match))=6.800000000001916e-05</code></pre>
 </div>
-<div id="function-returns-tuple-and-unpack" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Function Returns Tuple and Unpack</h2>
-<p>When a function returns multiple <em>items</em> in a list, that is a tuple. Each element of the list can be accessed. And the tuple can be unpacked:</p>
-<pre class="python"><code># Results from some function
-tp_results = &#39;a&#39;, 123,  [1,2,3]
-# Unpack the results
-a_st, b_int, c_ls_int = tp_results
+<div id="check-row-by-row-tolerance" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Check Row by Row Tolerance</h2>
+<p>Check for tolerance, <em>rtol</em> is the absolute base gap allowed, <em>atol</em> is multipled by fl_sum_to_match, below, we can check row by row, and see if any rows does not meet the approximately equality condition. If there is any one row that does not match this, then set condition for overall matrix checking to false.</p>
+<pre class="python"><code>fl_atol = 1e-08
+print(f&#39;with {fl_atol=}, many rows do not approximately equal to 1&#39;)</code></pre>
+<pre><code>## with fl_atol=1e-08, many rows do not approximately equal to 1</code></pre>
+<pre class="python"><code>print(f&#39;{[np.allclose(fl_row_sum, fl_sum_to_match, rtol=0, atol=fl_atol) for fl_row_sum in ar_row_sums_ar1]=}&#39;)</code></pre>
+<pre><code>## [np.allclose(fl_row_sum, fl_sum_to_match, rtol=0, atol=fl_atol) for fl_row_sum in ar_row_sums_ar1]=[True, False, True, False, True, True, True, False, False, True, True, True, True, False, False, True, True, False, True, True, False, True, True, False, True, True, False, False, False, False, False, True, True, False, False, False, True, True, False, False, False, False, False, False, True, False, False, False, False, True]</code></pre>
+<pre class="python"><code>print(f&#39;{np.allclose(ar_row_sums_ar1, fl_sum_to_match, rtol=0, atol=fl_atol)=}&#39;)</code></pre>
+<pre><code>## np.allclose(ar_row_sums_ar1, fl_sum_to_match, rtol=0, atol=fl_atol)=False</code></pre>
+<pre class="python"><code>fl_atol = 1e-03
+print(f&#39;With {fl_atol=}, all rows approximately equal to 1&#39;)</code></pre>
+<pre><code>## With fl_atol=0.001, all rows approximately equal to 1</code></pre>
+<pre class="python"><code>print(f&#39;{[np.allclose(fl_row_sum, fl_sum_to_match, rtol=0, atol=fl_atol) for fl_row_sum in ar_row_sums_ar1]=}&#39;)</code></pre>
+<pre><code>## [np.allclose(fl_row_sum, fl_sum_to_match, rtol=0, atol=fl_atol) for fl_row_sum in ar_row_sums_ar1]=[True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]</code></pre>
+<pre class="python"><code>print(f&#39;{np.allclose(ar_row_sums_ar1, fl_sum_to_match, rtol=0, atol=fl_atol)=}&#39;)</code></pre>
+<pre><code>## np.allclose(ar_row_sums_ar1, fl_sum_to_match, rtol=0, atol=fl_atol)=True</code></pre>
+</div>
+<div id="check-joint-tolerance" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Check Joint Tolerance</h2>
+<p>For practical usages, we set joint condition. The difference between the sum of any row and 1 should be less than a threshold, additionally, the total average gap between row sums and 1 should be less than a threshold. Do this so that can have a more relaxed per-row tolerance requirement, and more stringent average requirement. Setting only a stringent per row requirement might be too restive, and reject transition matrixes that do not have problems.</p>
+<pre class="python"><code># criteria
+fl_atol_per_row = 1e-03
+fl_atol_avg_row = 1e-04
+# per-row check
+bl_per_row_pass = np.allclose(ar_row_sums_ar1, fl_sum_to_match, rtol=0, atol=fl_atol_per_row)
+# all-rows check
+fl_row_gap_mean = np.mean(abs(ar_row_sums_ar1-fl_sum_to_match))
+bl_avg_row_pass = np.allclose(fl_row_gap_mean+fl_sum_to_match, fl_sum_to_match, rtol=0, atol=fl_atol_avg_row)
+# Joint
+bl_ar1_sum_pass = bl_per_row_pass and bl_avg_row_pass
 # Print
-print(f&#39;{tp_results=}&#39;)</code></pre>
-<pre><code>## tp_results=(&#39;a&#39;, 123, [1, 2, 3])</code></pre>
-<pre class="python"><code>print(f&#39;{a_st=}&#39;)</code></pre>
-<pre><code>## a_st=&#39;a&#39;</code></pre>
-<pre class="python"><code>print(f&#39;{b_int=}&#39;)</code></pre>
-<pre><code>## b_int=123</code></pre>
-<pre class="python"><code>print(f&#39;{c_ls_int=}&#39;)</code></pre>
-<pre><code>## c_ls_int=[1, 2, 3]</code></pre>
-<p>Unpack only a subset of the elements in the tuple:</p>
-<pre class="python"><code># Unpack only one
-a_st_self_m1, _ , _ = tp_results
-# Alternative shorter
-a_st_self_m2, *_  = tp_results
-# Print
-print(f&#39;{a_st_self_m1=}&#39;)</code></pre>
-<pre><code>## a_st_self_m1=&#39;a&#39;</code></pre>
-<pre class="python"><code>print(f&#39;{a_st_self_m2=}&#39;)</code></pre>
-<pre><code>## a_st_self_m2=&#39;a&#39;</code></pre>
-<p>see <a href="https://stackoverflow.com/a/11371230/8280804">unpack the first two elements in list/tuple</a>.</p>
+print(f&#39;{bl_per_row_pass=}&#39;)</code></pre>
+<pre><code>## bl_per_row_pass=True</code></pre>
+<pre class="python"><code>print(f&#39;{bl_avg_row_pass=} and {fl_row_gap_mean=}&#39;)</code></pre>
+<pre><code>## bl_avg_row_pass=True and fl_row_gap_mean=6.800000000001916e-05</code></pre>
+<pre class="python"><code>print(f&#39;{bl_ar1_sum_pass=}&#39;)</code></pre>
+<pre><code>## bl_ar1_sum_pass=True</code></pre>
+</div>
+<div id="normalize-transition-matrix-row-sum" class="section level2" number="1.4">
+<h2 number="1.4"><span class="header-section-number">1.4</span> Normalize Transition Matrix Row Sum</h2>
+<p>Having pass the checks, would like to have conditional probability sum up to 1, so “normalize”. Division by broadcast, reshape the sum for each row as column, divide all columns for the same row by the same sum value. New sum of normalized ar(1) for each row is now equal to 1.</p>
+<pre class="python"><code># current row sums
+ar_row_sums_ar1 = np.sum(mt_ar1_trans, axis=1)
+ar_row_sums_ar1 = np.reshape(ar_row_sums_ar1, [-1, 1])
+# Update row values
+mt_ar1_trans_norm = mt_ar1_trans/np.reshape(ar_row_sums_ar1, [-1, 1])
+ar_row_sums_ar1_norm = np.sum(mt_ar1_trans_norm, axis=1)
+ar_row_sums_ar1_norm = np.reshape(ar_row_sums_ar1_norm, [-1, 1])
+# check sum
+print(f&#39;{np.column_stack([ar_row_sums_ar1, ar_row_sums_ar1_norm])=}&#39;)</code></pre>
+<pre><code>## np.column_stack([ar_row_sums_ar1, ar_row_sums_ar1_norm])=array([[1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [1.    , 1.    ],
+##        [1.0001, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9998, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [1.0001, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [1.0001, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9998, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [1.0001, 1.    ],
+##        [0.9998, 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [1.0001, 1.    ],
+##        [0.9998, 1.    ],
+##        [1.0001, 1.    ],
+##        [1.    , 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [1.0002, 1.    ],
+##        [1.0002, 1.    ],
+##        [0.9998, 1.    ],
+##        [1.    , 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [0.9999, 1.    ],
+##        [1.    , 1.    ]])</code></pre>
 </div>
 </div>
 

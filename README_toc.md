@@ -1,20 +1,21 @@
 # 1  Data Structures
 
-## 1.1  Array
+## 1.1  Strings, Lists and Tuples
 
 1. [Python String Manipulation Examples](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html)
 	+ Search for substring, replace string, wrap string.
-	+ **py**: *zip() + upper() + fstring + join()*
+	+ Display and format numeric string with fstring. 
+	+ Change the decimal rounding given a list of estimates and standard error string arrays.
+	+ **py**: *zip + upper + join + round + float + split + replace + ascii_lowercase*
 	+ **textwrap**: *fill(st, width = 20)*
-	+ **fstring**: *f*
+	+ **fstring**: *f + f'{fl_esti_rounded:.{it_round_decimal}f}'*
 	+ **random**: *choice*
-	+ **string**: *ascii_lowercase*
 2. [List Manipulations and Defaults](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_list.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html)
 	+ Conditional statements based on list length and element value.
 	+ Provide default for element of a list when list does not have that element.
 	+ **py**: *lambda + join + append() + if len(X) >= 3 and X[2] is not None + if elif else*
 3. [Define and Unpack Tuple](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_tuple.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html)
-	+ Define tuple in python with and without parenthesis, unpack tuple.
+	+ Define tuple in python with and without parenthesis, unpack tuple, get subset of elements.
 	+ Access tuple element and fail to mutate tuple element.
 	+ **py**: *isinstance(tp_abc, tuple)*
 
@@ -26,7 +27,7 @@
 	+ **py**: *dc = {'key': "name", 'val': 1}*
 	+ **copy**: *deepcopy*
 
-## 1.3  Matrix
+## 1.3  Numpy Arrays
 
 1. [Numpy Combine Arrays to Matrix](https://fanwangecon.github.io/pyfan/vig/amto/matrix/htmlpdfr/fs_array2mat.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix//fs_array2mat.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix/htmlpdfr/fs_array2mat.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/matrix/htmlpdfr/fs_array2mat.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/matrix/htmlpdfr/fs_array2mat.html)
 	+ Arrays to matrix.
@@ -67,9 +68,18 @@
 	+ Raise an Exception in a python function, try and catch and print to string.
 	+ **python**: *raise + try except + ValueError + TypeError      *
 
-# 4  Tables and Graphs
+# 4  Statistics
 
-## 4.1  Matplotlib Base Plots
+## 4.1  Markov Process
+
+1. [Markov Transition Conditional Probability Check Sum to 1](https://fanwangecon.github.io/pyfan/vig/stats/markov/htmlpdfr/fs_trans_mat_prob_check.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/stats/markov//fs_trans_mat_prob_check.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/stats/markov/htmlpdfr/fs_trans_mat_prob_check.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/stats/markov/htmlpdfr/fs_trans_mat_prob_check.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/stats/markov/htmlpdfr/fs_trans_mat_prob_check.html)
+	+ Generate a sample 50 by 50 markov transition matrix.
+	+ Check row sums for approximate equality to 1.
+	+ **numpy**: *allclose + reshape + sum*
+
+# 5  Tables and Graphs
+
+## 5.1  Matplotlib Base Plots
 
 1. [Mabplotlib Scatter and Line Plots](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot//fp_plot_base.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/tabgraph/baseplot/htmlpdfr/fp_plot_base.html)
 	+ Plot several arrays of data, grid, figure title, and line and point patterns and colors.
@@ -82,9 +92,9 @@
 	+ **textwrap**: *fill()*
 	+ **json**: *dump()*
 
-# 5  Amazon Web Services
+# 6  Amazon Web Services
 
-## 5.1  AWS Setup
+## 6.1  AWS Setup
 
 1. [AWS Account Set-up and Start Instance](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_aws_setup.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup//fs_aws_setup.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_aws_setup.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/setup/htmlpdfr/fs_aws_setup.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/setup/htmlpdfr/fs_aws_setup.html)
 	+ Generate keypair on AWS, launch instance, launch security, ssh access, and AWSCLI.
@@ -94,7 +104,7 @@
 	+ Start AWS services, send requests etc via boto3. 
 	+ **boto3**: *boto3.client(service, aws_access_key_id, aws_secret_access_key, region_name)*
 
-## 5.2  S3
+## 6.2  S3
 
 1. [AWS S3 Uploading Downloading and Syncing](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3//fs_aws_s3.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/s3/htmlpdfr/fs_aws_s3.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/s3/htmlpdfr/fs_aws_s3.html)
 	+ From EC2 or local computer upload files to S3 folders.
@@ -102,7 +112,7 @@
 	+ **py**: *platform.release()*
 	+ **boto3**: *boto3.client('s3') + s3.upload_file*
 
-## 5.3  Batch
+## 6.3  Batch
 
 1. [AWS Batch, Batch Array](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch//fs_aws_batch.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/aws/batch/htmlpdfr/fs_aws_batch.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/aws/batch/htmlpdfr/fs_aws_batch.html)
 	+ Set up python function that uses AWS_BATCH_JOB_ARRAY_INDEX.
@@ -110,9 +120,9 @@
 	+ **yaml**: *load()*
 	+ **boto3**: *client() + register_job_definition(jobDefinitionName, type, containerProperties, retryStrategy) + aws_batch.submit_job(jobName, jobQueue, arrayProperties={'size':10}, jobDefinition)*
 
-# 6  Docker Container
+# 7  Docker Container
 
-## 6.1  Docker Setup
+## 7.1  Docker Setup
 
 1. [Docker Container Set-Up and Run on AWS](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_setup.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup//fs_docker_setup.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_setup.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/docker/setup/htmlpdfr/fs_docker_setup.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/docker/setup/htmlpdfr/fs_docker_setup.html)
 	+ Install Docker on AWS and build Docker image.
@@ -126,9 +136,9 @@
 	+ **aws**: *aws ecr get-login*
 	+ **docker**: *docker login + docker build + docker tag + docker push + docker pull*
 
-# 7  Get Data
+# 8  Get Data
 
-## 7.1  Environmental Data
+## 8.1  Environmental Data
 
 1. [CDS ECMWF Global Enviornmental Data Download](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir//fs_ecmwf.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/getdata/envir/htmlpdfr/fs_ecmwf.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/getdata/envir/htmlpdfr/fs_ecmwf.html)
 	+ Using Python API get get ECMWF ERA5 data.
@@ -136,9 +146,9 @@
 	+ **r**: *file() + writeLines() + unzip() + list.files() + unlink()*
 	+ **r-reticulate**: *use_python() + Sys.setenv(RETICULATE_PYTHON = spth_conda_env)*
 
-# 8  System and Support
+# 9  System and Support
 
-## 8.1  Command Line
+## 9.1  Command Line
 
 1. [Execute Python from Command Line and Run Command Line in Python](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system//fp_command.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/system/htmlpdfr/fp_command.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/system/htmlpdfr/fp_command.html)
 	+ Run python functions from command line.
@@ -148,7 +158,7 @@
 	+ **decode**: *decode('utf-8')*
 	+ **os**: *chdir() + getcdw()*
 
-## 8.2  File In and Out
+## 9.2  File In and Out
 
 1. [Python Reading and Writing to File Examples](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_files.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_files.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_files.html)
 	+ Reading from file and replace strings in file.
@@ -174,13 +184,13 @@
 	+ **yaml**: *load(fl_yaml, Loader=yaml.BaseLoader)       + dump()*
 	+ **pprint**: *pprint.pprint(ls_dict_yml, width=1)*
 
-## 8.3  Install Python
+## 9.3  Install Python
 
 1. [Basic Conda Setup Instructions](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install//fs_install_basics.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/install/htmlpdfr/fs_install_basics.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/install/htmlpdfr/fs_install_basics.html)
 	+ Conda and git installations
 	+ **bash**: *where*
 
-## 8.4  Documentation
+## 9.4  Documentation
 
 1. [Python Documentation Numpy Doc](https://fanwangecon.github.io/pyfan/vig/support/documentation/htmlpdfr/fs_numpy_doc.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation//fs_numpy_doc.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation/htmlpdfr/fs_numpy_doc.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/documentation/htmlpdfr/fs_numpy_doc.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/documentation/htmlpdfr/fs_numpy_doc.html)
 	+ Numpy documentation examples.

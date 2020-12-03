@@ -2,7 +2,7 @@
 title: "Python Define and Unpack Tuple"
 titleshort: "Define and Unpack Tuple"
 description: |
-  Define tuple in python with and without parenthesis, unpack tuple.
+  Define tuple in python with and without parenthesis, unpack tuple, get subset of elements.
   Access tuple element and fail to mutate tuple element.
 core:
   - package: py
@@ -93,3 +93,17 @@ print(f'{a_st=}')
 print(f'{b_int=}')
 print(f'{c_ls_int=}')
 ```
+
+Unpack only a subset of the elements in the tuple:
+
+```{python}
+# Unpack only one
+a_st_self_m1, _ , _ = tp_results
+# Alternative shorter
+a_st_self_m2, *_  = tp_results
+# Print
+print(f'{a_st_self_m1=}')
+print(f'{a_st_self_m2=}')
+```
+
+see [unpack the first two elements in list/tuple](https://stackoverflow.com/a/11371230/8280804).
