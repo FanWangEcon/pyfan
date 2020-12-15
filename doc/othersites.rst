@@ -5,15 +5,14 @@ Here is a link to other associated Packages and Sites:
 Research Project Sites
 ----------------------
 
-1. `The Optimal Allocation of Resources Among Heterogeneous Individuals <https://fanwangecon.github.io/PrjOptiAlloc/>`__
+1. `Optimal Allocation of the COVID-19 Stimulus Checks <https://fanwangecon.github.io/PrjOptiSNW/>`__
+2. `The Optimal Allocation of Resources Among Heterogeneous Individuals <https://fanwangecon.github.io/PrjOptiAlloc/>`__
 
 Python Sites and Packages
 -------------------------
 
-1. Python tutorials: `pyfan tutorial <https://fanwangecon.github.io/pyfan/>`__
+1. Python examples: `Py4Econ tutorial <https://fanwangecon.github.io/Py4Econ/>`__
 2. Python research support package: `pyfan support <https://pyfan.readthedocs.io/en/latest/>`__
-3. Python Dynamic Heterogeneous Agents Models:
-   `pyecon <https://pyecon.readthedocs.io/en/latest/>`__
 
 R Sites and Packages
 --------------------

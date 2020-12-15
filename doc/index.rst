@@ -43,18 +43,10 @@
 
 ``pyfan`` is a work-in-progress `package <https://pypi.org/project/pyfan/>`__ consisting of various python support
 functions for various research related-tasks. This is a part of the `pyfan <https://github.com/fanwangecon/pyfan>`__
-repository, which has two components:
+repository. Materials are gathered from various `projects <https://fanwangecon.github.io/research>`__ in which python code is used
+for research and paper-administrative tasks. This package is to make it easier to reuse functions created for one project in another project.
 
-1. The `pyfan tutorial <https://fanwangecon.github.io/pyfan/bookdown/>`__
-   `book <https://fanwangecon.github.io/pyfan/bookdown/>`__ and
-   `reference site <https://fanwangecon.github.io/pyfan/>`__, which is built with Rmd files and bookdown.
-2. The `pyfan Package <https://pypi.org/project/pyfan/>`__, which has this sphinx based documentation
-   and tutorials to test and demonstrate package functions.
-
-Materials are gathered from various `projects <https://fanwangecon.github.io/research>`__ in which python code is used
-for research and paper-administrative tasks.  In addition, the `pyecon <https://github.com/FanWangEcon/pyecon>`__ repository
-and the associated `package <https://pyfan.readthedocs.io/en/latest/>`__  contain functions for solving dynamic heterogeneous
-agents models.
+There is an associated repository that contains a variety of python examples `Py4Econ <https://fanwangecon.github.io/Py4Econ/>`__.
 
 .. toctree::
     :hidden:
@@ -63,11 +55,3 @@ agents models.
     quickstart
     reference
     auto_examples/index
-    othersites
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
