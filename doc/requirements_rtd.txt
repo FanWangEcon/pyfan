@@ -12,7 +12,7 @@ tensorflow>=2
 Pygments
 sphinx_bootstrap_theme
 sphinx-autoapi>=1.3.0
-git+git://github.com/numpy/numpydoc@master
+numpydoc
 matplotlib
 seaborn
 statsmodels

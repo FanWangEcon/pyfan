@@ -12,20 +12,20 @@ logger = logging.getLogger(__name__)
 
 class UtilityMultiNomial():
     """
-        each_j_indirect_utility:
-            N by J matrix
-            
-        N is the number of individuals (unique states)
-        J is the number of choices
-        
-        N might be 0 
+    each_j_indirect_utility:
+        N by J matrix
+
+    N is the number of individuals (unique states)
+    J is the number of choices
+
+    N might be 0
     """
 
     def __init__(self, scale_coef=1):
         """
-        Paramters
+        Parameters
         ---------
-        scale_coef: scalar
+        scale_coef : float
             Usually this is not an important paramter, it is usually 1, but 
             based on my reading for nonlinear logit, need, could have a scale
             coefficient, could test this out, anyway, this is to be estimated
@@ -51,6 +51,7 @@ class UtilityMultiNomial():
                 np.exp(all_J_indirect_utility/self.scale_coef)/prob_denominator_tile = INVALID
         so there must be some minimal level for the division here. in terms of scaling
         '''
+
         #         all_J_indirect_utility/self.scale_coef
 
         #         prob_denominator = np.sum(np.exp(all_J_indirect_utility/self.scale_coef), axis=1)
