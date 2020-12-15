@@ -37,6 +37,18 @@ Function to manipulate JSON Structures
   pyfan.amto.json.json
 
 
+Numeric
+~~~~~
+
+Numeric manipulations
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules
+  :template: module.rst
+
+  pyfan.amto.numeric.round
 
 
 Amazon Web Services
@@ -232,7 +244,7 @@ Statistics
 
 Statistical functions.
 
-interpolate
+Interpolate
 ~~~~~~~~~~~
 
 Interpolation functions.
@@ -244,6 +256,19 @@ Interpolation functions.
    :template: module.rst
 
    pyfan.stats.interpolate.interpolate2d
+
+Markov
+~~~~~~
+
+Markov related functions.
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+   :toctree: gen_modules
+   :template: module.rst
+
+   pyfan.stats.markov.transprobcheck
 
 Multinomial
 ~~~~~~~~~~~

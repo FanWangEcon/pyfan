@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pyfan
-Version: 0.1.44
+Version: 0.1.46
 Summary: A Collection of Python Tools
 Home-page: http://pyfan.readthedocs.io/
 Author: Fan Wang
@@ -28,12 +28,19 @@ Description: [![HitCount](http://hits.dwyl.com/fanwangecon/pyfan.svg)](https://g
         
         1. [Python String Manipulation Examples](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fp_ary_string.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fp_ary_string.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fp_ary_string.html)
         	+ Search for substring, replace string, wrap string.
-        	+ **py**: *zip() + upper()*
+        	+ **py**: *zip() + upper() + fstring + join()*
         	+ **textwrap**: *fill(st, width = 20)*
+        	+ **fstring**: *f*
+        	+ **random**: *choice*
+        	+ **string**: *ascii_lowercase*
         2. [List Manipulations and Defaults](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_list.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_list.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_list.html)
         	+ Conditional statements based on list length and element value.
         	+ Provide default for element of a list when list does not have that element.
         	+ **py**: *lambda + join + append() + if len(X) >= 3 and X[2] is not None + if elif else*
+        3. [Define and Unpack Tuple](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array//fs_tuple.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/amto/array/htmlpdfr/fs_tuple.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/amto/array/htmlpdfr/fs_tuple.html)
+        	+ Define tuple in python with and without parenthesis, unpack tuple.
+        	+ Access tuple element and fail to mutate tuple element.
+        	+ **py**: *isinstance(tp_abc, tuple)*
         
         ## 1.2  Dictionary
         
@@ -41,6 +48,7 @@ Description: [![HitCount](http://hits.dwyl.com/fanwangecon/pyfan.svg)](https://g
         	+ Generate a dictionary, loop through a dictionary. 
         	+ List comprehension with dictionary. 
         	+ **py**: *dc = {'key': "name", 'val': 1}*
+        	+ **copy**: *deepcopy*
         
         ## 1.3  Matrix
         
@@ -52,18 +60,36 @@ Description: [![HitCount](http://hits.dwyl.com/fanwangecon/pyfan.svg)](https://g
         
         ## 2.1  Panda Basics
         
-        1. [Pandas Matrix to Dataframes](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics//fs_matrix2dataframe.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html)
-        	+ Arrays to matrix.
-        	+ **pandas**: *pd.DataFrame()*
+        1. [Pandas Generate Dataframes with Random Numeric and String Data](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics//fs_matrix2dataframe.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_matrix2dataframe.html)
+        	+ Generate a dataframe from arrays.
+        	+ Generate a dataframe with random integers as well as random string variables.
+        	+ **np**: *random.randint() + reshape() + column_stack()*
+        	+ **pandas**: *DataFrame()*
+        2. [Python Pandas Conditional Selection of Selectiotn Rows and Columns](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_select.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics//fs_select.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_select.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/panda/basics/htmlpdfr/fs_select.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/panda/basics/htmlpdfr/fs_select.html)
+        	+ Select subset of rows or columns based on cell value conditions.
+        	+ **pandas**: *pd.DataFrame() + replace(['Zvcss', 'Dugei'], 'Zqovt') + df.loc[df['c5'] == 'Zqovt']*
         
         # 3  Functions
         
-        ## 3.1  Function Arguments
+        ## 3.1  Function Arguments and Returns
         
-        1. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
+        1. [Python Function Data Type Handling](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_datatypes.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_datatypes.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_datatypes.html)
+        	+ Check if parameter is string or integer, conditional execution and exception handling.
+        	+ Check if parameter is string or an integer between some values. 
+        	+ **py**: *type + isinstance(abc, str) + isinstance(abc, int) + raise + try except*
+        2. [Function value returns](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_args.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_args.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_args.html)
+        	+ Return one or multiple values from function.
+        	+ **python**: *return a, b, c*
+        3. [Tuple and Dictionary as Arguments with args and kwargs](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_returns.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args//fs_func_returns.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_returns.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/args/htmlpdfr/fs_func_returns.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/args/htmlpdfr/fs_func_returns.html)
         	+ Update default parameters with dictionary that replaces and appends additional key-value paris using kwargs.
         	+ Pass a dictionary for named arguments to a function.
         	+ **python**: *dict3 = {dict1, dict2} + dict1.update(dict2) + func(par1='val1', kwargs)*
+        
+        ## 3.2  Exceptions
+        
+        1. [Python Raise, Try and Catch Exceptions](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors//fs_python_exceptions.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/function/errors/htmlpdfr/fs_python_exceptions.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/function/errors/htmlpdfr/fs_python_exceptions.html)
+        	+ Raise an Exception in a python function, try and catch and print to string.
+        	+ **python**: *raise + try except + ValueError + TypeError      *
         
         # 4  Tables and Graphs
         
@@ -158,12 +184,12 @@ Description: [![HitCount](http://hits.dwyl.com/fanwangecon/pyfan.svg)](https://g
         	+ **pathlib**: *Path().rglob() + Path().stem*
         	+ **os**: *remove() + listdir() + path.isfile() + path.splitdrive() + os.path.splitext() + os.path.split()*
         2. [Python Directory and Folder Operations](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html): [**rmd**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout//fp_folders.Rmd) \| [**r**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.R) \| [**pdf**](https://github.com/FanWangEcon/pyfan/blob/master/vig/support/inout/htmlpdfr/fp_folders.pdf) \| [**html**](https://fanwangecon.github.io/pyfan/vig/support/inout/htmlpdfr/fp_folders.html)
-        	+ Generate new folders and files.
+        	+ Join folder names to form absolute path.
+        	+ Generate new folders and files, with existing folder substrings.
         	+ Generate subfolder recursively.
         	+ Copying and moving files across folders. 
-        	+ Aggregate subfolders into a folder and move. 
         	+ **py**: *open(srt, 'w') + write() + close()*
-        	+ **os**: *os.listdir()       + os.path.join('/', 'c:', 'fa', 'fb')*
+        	+ **os**: *os.sep + os.listdir() + os.path.abspath() + os.path.abspath(os.path.join(os.sep, 'users', 'fan')) + os.path.join('/', 'c:', 'fa', 'fb')*
         	+ **pathlib**: *Path(srt).mkdir(parents=True, exist_ok=True) + [Path(spn).stem for spn in Path(srt).rglob(st)]*
         	+ **shutil**: *shutil.copyfile('/fa/fl.txt', '/fb/fl.txt') + shutil.copy2('/fa/fl.txt', '/fb') + shutil.rmtree('/fb')*
         	+ **distutils**: *dir_util.copy_tree('/fa', '/fb')*

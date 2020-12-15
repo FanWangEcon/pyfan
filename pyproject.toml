@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfan"
-version = "0.1.45"
+version = "0.1.47"
 description = ""
 authors = ["Fan Wang <wangfanbsg75@live.com>"]
 

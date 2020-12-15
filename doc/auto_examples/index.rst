@@ -6,7 +6,7 @@
 
 .. _examples-index:
 
-Gallery of examples
+Gallery of Examples
 ===================
 
 
@@ -73,6 +73,76 @@ Gallery of examples
    :hidden:
 
    /auto_examples/plot_graph_allpurpose
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_amto:
+
+.. _amto_example:
+
+Data Structures
+~~~~~~~~~~~~~~~~~~~
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Numeric Rounding Function">
+
+.. only:: html
+
+ .. figure:: /auto_examples/amto/images/thumb/sphx_glr_plot_amto_numeric_round_thumb.svg
+     :alt: Numeric Rounding Function
+
+     :ref:`sphx_glr_auto_examples_amto_plot_amto_numeric_round.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/amto/plot_amto_numeric_round
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_stats:
+
+.. _stats_example:
+
+Statistics Examples
+~~~~~~~~~~~~~~~~~~~
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, use several markov transition matrixes where each row does not sum up to 1 due...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/stats/images/thumb/sphx_glr_plot_markov_transprobcheck_thumb.svg
+     :alt: Markov Transition Probability Check and Transform
+
+     :ref:`sphx_glr_auto_examples_stats_plot_markov_transprobcheck.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/stats/plot_markov_transprobcheck
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

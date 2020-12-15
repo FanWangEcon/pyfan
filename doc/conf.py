@@ -82,7 +82,6 @@ sphinx_gallery_conf = {
     'default_thumb_file': '_static/img/logo.png',
     'backreferences_dir': 'gen_modules/backreferences',
     'doc_module': ('pyfan',),
-    'subsection_order': ["examples"].index,
     'image_scrapers': (matplotlib_svg_scraper(),),
     # 'binder': {
     #     # Required keys

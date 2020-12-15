@@ -1,6 +1,8 @@
 """
 The :mod:`pyfan.util.path.getfiles` generate and get various file paths.
 
+import pyfan.util.path.getfiles as getfiles
+
 Includes method :func:`gen_path_file`, :func:`gen_path`
 """
 
