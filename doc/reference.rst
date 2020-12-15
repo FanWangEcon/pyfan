@@ -38,7 +38,7 @@ Function to manipulate JSON Structures
 
 
 Numeric
-~~~~~
+~~~~~~~~
 
 Numeric manipulations
 
@@ -57,7 +57,7 @@ Amazon Web Services
 Functions to support AWS service usages.
 
 General
-~~~~~
+~~~~~~~~
 
 AWS general functions.
 

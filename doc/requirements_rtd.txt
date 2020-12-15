@@ -1,9 +1,9 @@
 Cython
-numpy
+numpy==1.19.3
 scipy
 scikit-learn
 numba
-sphinx>=1.6.1
+Sphinx>=3.2.1
 ipykernel
 nbsphinx
 sphinx-gallery
@@ -11,7 +11,7 @@ pillow
 tensorflow>=2
 Pygments
 sphinx_bootstrap_theme
-sphinx-autoapi
+sphinx-autoapi>=1.3.0
 git+git://github.com/numpy/numpydoc@master
 matplotlib
 seaborn

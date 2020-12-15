@@ -1,5 +1,5 @@
 theme: jekyll-theme-slate
-title: A Collection of Python Examples
+title: A Python Research Support Package
 google_analytics: UA-92953468-11
 plugins:
   - jekyll-sitemap
