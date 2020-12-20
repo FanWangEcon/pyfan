@@ -20,51 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46ae83e3-acb5-4af9-96c0-b4d43a97591e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE_AGGREGATE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE_CALLS.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE_ESTI.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE_IMPORTS.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ThaiJMP/GUIDE_JSON_EXCEL.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/estimation/estimate_objective_multiperiods.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/estimation/estimate_objective_multiperiods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/estimation/moments/moments_a.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/estimation/moments/moments_a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/estimation/postprocess/jsoncsv/gen_simu_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/estimation/postprocess/jsoncsv/gen_simu_params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/invoke/run_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/invoke/run_estimate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/invoke/run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/invoke/run_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/invoke/run_simulate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/invoke/run_simulate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/loop_param_combo_list/loops_gen_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/loop_param_combo_list/loops_gen_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/minmax/a_minmax.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/minmax/a_minmax.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/paramset/combo_list_e_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/paramset/combo_list_e_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/runspecs/estimate_specs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/runspecs/estimate_specs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/runspecs/get_compesti_specs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/runspecs/get_compesti_specs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/parameters/test_parameters/test_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/parameters/test_parameters/test_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/projectsupport/hardcode/string_shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/projectsupport/hardcode/string_shared.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/projectsupport/systemsupport.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/projectsupport/systemsupport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/solusteady/distribution/marginaldist.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/solusteady/distribution/marginaldist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/vig/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/combine/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/combine/fs_combine_oneparam_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/oneoparam_local/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/oneoparam_local/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/oneoparam_local/fs_estisimurand_oneparam_lin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/oneoparam_local/fs_estisimurand_oneparam_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/simu/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/estisimurand/simu/fs_estisimurand_oneparam_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/fs_run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/vig/fs_run_all.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/fs_run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/fs_run_all.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid/fs_run_main_grid_multiparam_each_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid/fs_run_main_grid_multiparam_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid/fs_run_main_grid_oneparam_local.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid_momobj/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simugrid_momobj/fs_run_main_grid_oneparam_local_mom.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simurand_momobj/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simugridrand/simurand_momobj/fs_run_main_rand_oneparam_local_mom.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simupoint/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/vig/simupoint/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simupoint/fs_run_all.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simupoint/simupoint/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThaiJMP/vig/simupoint/simupoint/fs_run_main_point_local.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/TODO.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_submit.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_submit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ec2/ec2_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ec2/ec2_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ecr/ecr_docker.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ecr/ecr_docker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/amto/sg_execution_times.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/amto/sg_execution_times.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/auto_examples/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/auto_examples/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/examples/amto/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/examples/amto/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/examples/plot_graph_allpurpose.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/examples/plot_pdfgen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/examples/plot_randgrid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/examples/stats/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/examples/stats/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.gen.rand.randgrid.ar_draw_random_normal.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.gen.rand.randgrid.ar_draw_random_normal.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.xyPlotMultiYOneX.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.graph.generic.allpurpose.graphFunc.xyPlotMultiYOneX.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.examples" beforeDir="false" afterPath="$PROJECT_DIR$/doc/gen_modules/backreferences/pyfan.util.pdf.pdfgen.ff_pdf_gen_clean.examples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/reference.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/reference.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +59,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../ThaiJMP" />
   </component>
   <component name="ProjectId" id="1am7fuGSr0AqI5mIBCNED9SOuK4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -90,8 +70,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc/examples/amto/numeric" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ThaiJMP/invoke" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myDropIntoDebuggerOnFailedTests" value="true" />
@@ -104,8 +84,8 @@
       <recent name="G:\repos\pyfan\doc\examples\stats" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fs_combo_list_auto_json">
-    <configuration name="fs_combo_list_auto_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.sandbox_batch_submit">
+    <configuration name="ec2_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ThaiJMP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -113,11 +93,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/vig/parameters/param_combo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ec2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/vig/parameters/param_combo/fs_combo_list_auto_json.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ec2/ec2_manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ecr_docker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ThaiJMP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ecr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_ecr/ecr_docker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="loops_gen_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="sandbox_batch_register" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ThaiJMP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,11 +156,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/parameters/loop_param_combo_list" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/parameters/loop_param_combo_list/loops_gen_json.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_register.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,19 +169,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot_amto_numeric_round" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pyfan" />
+    <configuration name="sandbox_batch_submit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ThaiJMP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/doc/examples/amto/numeric" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doc/examples/amto/numeric/plot_amto_numeric_round.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/boto3aws/aws_batch/sandbox_batch_submit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,20 +190,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="txt2textab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pyfan" />
+    <configuration name="terminalrun" type="PythonConfigurationType" factoryName="Python">
+      <module name="ThaiJMP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyfan/table/reg" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="G:\ProgramData\Anaconda3\envs\wk_cgefi\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ThaiJMP" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyfan/table/reg/txt2textab.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ThaiJMP/invoke/run_esr.py" />
+      <option name="PARAMETERS" value="1" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -210,13 +211,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.terminalrun" />
+      <item itemvalue="Python.fs_esr_oneparam_lin" />
+      <item itemvalue="Python.ec2_manage" />
+      <item itemvalue="Python.ecr_docker" />
+      <item itemvalue="Python.sandbox_batch_submit" />
+      <item itemvalue="Python.sandbox_batch_register" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fs_combo_list_auto_json" />
+        <item itemvalue="Python.sandbox_batch_submit" />
+        <item itemvalue="Python.sandbox_batch_register" />
+        <item itemvalue="Python.ec2_manage" />
+        <item itemvalue="Python.ecr_docker" />
         <item itemvalue="Python.fs_esr_oneparam_lin" />
-        <item itemvalue="Python.txt2textab" />
-        <item itemvalue="Python.plot_amto_numeric_round" />
-        <item itemvalue="Python.loops_gen_json" />
       </list>
     </recent_temporary>
   </component>
@@ -247,26 +256,27 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607289745067">
+    <state x="414" y="240" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608432009572">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="414" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1607289745067" />
+    <state x="414" y="240" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608432009572" />
     <state x="714" y="449" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1606624034966">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="714" y="449" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624034966" />
-    <state x="379" y="83" width="974" height="1087" key="#xdebugger.XInspectDialog" timestamp="1607836127017">
+    <state x="379" y="83" width="974" height="1087" key="#xdebugger.XInspectDialog" timestamp="1608235097834">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="379" y="83" width="974" height="1087" key="#xdebugger.XInspectDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1607836127017" />
-    <state x="2635" y="157" key="#xdebugger.evaluate" timestamp="1607371596090">
+    <state x="379" y="83" width="974" height="1087" key="#xdebugger.XInspectDialog/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608235097834" />
+    <state x="2635" y="157" key="#xdebugger.evaluate" timestamp="1608429748884">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2635" y="157" key="#xdebugger.evaluate/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1607371596090" />
-    <state x="740" y="321" key="FileChooserDialogImpl" timestamp="1606624050966">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="2635" y="157" key="#xdebugger.evaluate/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608429748884" />
+    <state x="740" y="324" key="FileChooserDialogImpl" timestamp="1608431638519">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="740" y="321" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624050966" />
+    <state x="740" y="324" key="FileChooserDialogImpl/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608431638519" />
     <state width="1921" height="1024" key="GridCell.Tab.-1.bottom" timestamp="1606857941021">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -283,121 +293,117 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1921" height="1024" key="GridCell.Tab.-1.right/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606857941021" />
-    <state width="958" height="1023" key="GridCell.Tab.0.bottom" timestamp="1608010007326">
+    <state width="958" height="1023" key="GridCell.Tab.0.bottom" timestamp="1608436284144">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="1921" height="984" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606689998637" />
     <state width="958" height="1023" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717708" />
     <state width="960" height="1112" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1607139190937" />
-    <state width="958" height="1023" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608010007326" />
-    <state width="960" height="1122" key="GridCell.Tab.0.bottom/0.0.1920.1170@0.0.1920.1170" timestamp="1607982253034" />
+    <state width="958" height="1023" key="GridCell.Tab.0.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608436284144" />
+    <state width="958" height="1113" key="GridCell.Tab.0.bottom/0.0.1920.1170@0.0.1920.1170" timestamp="1608152686688" />
     <state width="960" height="1032" key="GridCell.Tab.0.bottom/63.0.1857.1200/1920.0.1920.1080@63.0.1857.1200" timestamp="1607205349384" />
-    <state width="958" height="1023" key="GridCell.Tab.0.center" timestamp="1608010007326">
+    <state width="958" height="1023" key="GridCell.Tab.0.center" timestamp="1608436284144">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="1921" height="984" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606689998637" />
     <state width="958" height="1023" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717708" />
     <state width="960" height="1112" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1607139190936" />
-    <state width="958" height="1023" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608010007326" />
-    <state width="960" height="1122" key="GridCell.Tab.0.center/0.0.1920.1170@0.0.1920.1170" timestamp="1607982253034" />
+    <state width="958" height="1023" key="GridCell.Tab.0.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608436284144" />
+    <state width="958" height="1113" key="GridCell.Tab.0.center/0.0.1920.1170@0.0.1920.1170" timestamp="1608152686688" />
     <state width="960" height="1032" key="GridCell.Tab.0.center/63.0.1857.1200/1920.0.1920.1080@63.0.1857.1200" timestamp="1607205349384" />
-    <state width="958" height="1023" key="GridCell.Tab.0.left" timestamp="1608010007326">
+    <state width="958" height="1023" key="GridCell.Tab.0.left" timestamp="1608436284144">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="1921" height="984" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606689998637" />
     <state width="958" height="1023" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717708" />
     <state width="960" height="1112" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1607139190936" />
-    <state width="958" height="1023" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608010007326" />
-    <state width="960" height="1122" key="GridCell.Tab.0.left/0.0.1920.1170@0.0.1920.1170" timestamp="1607982253033" />
+    <state width="958" height="1023" key="GridCell.Tab.0.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608436284144" />
+    <state width="958" height="1113" key="GridCell.Tab.0.left/0.0.1920.1170@0.0.1920.1170" timestamp="1608152686687" />
     <state width="960" height="1032" key="GridCell.Tab.0.left/63.0.1857.1200/1920.0.1920.1080@63.0.1857.1200" timestamp="1607205349384" />
-    <state width="958" height="1023" key="GridCell.Tab.0.right" timestamp="1608010007326">
+    <state width="958" height="1023" key="GridCell.Tab.0.right" timestamp="1608436284144">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="1921" height="984" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606689998637" />
     <state width="958" height="1023" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717708" />
     <state width="960" height="1112" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607139190937" />
-    <state width="958" height="1023" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608010007326" />
-    <state width="960" height="1122" key="GridCell.Tab.0.right/0.0.1920.1170@0.0.1920.1170" timestamp="1607982253034" />
+    <state width="958" height="1023" key="GridCell.Tab.0.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608436284144" />
+    <state width="958" height="1113" key="GridCell.Tab.0.right/0.0.1920.1170@0.0.1920.1170" timestamp="1608152686688" />
     <state width="960" height="1032" key="GridCell.Tab.0.right/63.0.1857.1200/1920.0.1920.1080@63.0.1857.1200" timestamp="1607205349384" />
-    <state width="2349" height="653" key="GridCell.Tab.1.bottom" timestamp="1608003792584">
+    <state width="960" height="1032" key="GridCell.Tab.1.bottom" timestamp="1608431676454">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="958" height="1023" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717698" />
     <state width="391" height="653" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1607135419028" />
-    <state width="2349" height="653" key="GridCell.Tab.1.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608003792584" />
+    <state width="960" height="1032" key="GridCell.Tab.1.bottom/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608431676454" />
     <state width="958" height="993" key="GridCell.Tab.1.bottom/0.0.1920.1170@0.0.1920.1170" timestamp="1607553884512" />
-    <state width="2349" height="653" key="GridCell.Tab.1.center" timestamp="1608003792584">
+    <state width="960" height="1032" key="GridCell.Tab.1.center" timestamp="1608431676454">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="958" height="1023" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717698" />
     <state width="391" height="653" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1607135419028" />
-    <state width="2349" height="653" key="GridCell.Tab.1.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608003792584" />
+    <state width="960" height="1032" key="GridCell.Tab.1.center/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608431676454" />
     <state width="958" height="993" key="GridCell.Tab.1.center/0.0.1920.1170@0.0.1920.1170" timestamp="1607553884512" />
-    <state width="2349" height="653" key="GridCell.Tab.1.left" timestamp="1608003792583">
+    <state width="960" height="1032" key="GridCell.Tab.1.left" timestamp="1608431676454">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="958" height="1023" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717698" />
     <state width="391" height="653" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1607135419028" />
-    <state width="2349" height="653" key="GridCell.Tab.1.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608003792583" />
+    <state width="960" height="1032" key="GridCell.Tab.1.left/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608431676454" />
     <state width="958" height="993" key="GridCell.Tab.1.left/0.0.1920.1170@0.0.1920.1170" timestamp="1607553884512" />
-    <state width="2349" height="653" key="GridCell.Tab.1.right" timestamp="1608003792584">
+    <state width="960" height="1032" key="GridCell.Tab.1.right" timestamp="1608431676454">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state width="958" height="1023" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1607052717698" />
     <state width="391" height="653" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607135419028" />
-    <state width="2349" height="653" key="GridCell.Tab.1.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608003792584" />
+    <state width="960" height="1032" key="GridCell.Tab.1.right/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608431676454" />
     <state width="958" height="993" key="GridCell.Tab.1.right/0.0.1920.1170@0.0.1920.1170" timestamp="1607553884512" />
-    <state x="461" y="225" key="SettingsEditor" timestamp="1606873905371">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="325" y="188" key="SettingsEditor" timestamp="1608347810984">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="461" y="225" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1606624100762" />
     <state x="461" y="225" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606873905371" />
+    <state x="325" y="188" key="SettingsEditor/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608347810984" />
     <state width="527" height="446" key="SwitcherDM" timestamp="1606856148025">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="527" height="446" key="SwitcherDM/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606856148025" />
+    <state x="552" y="314" key="Vcs.Push.Dialog.v2" timestamp="1608235922041">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="552" y="314" key="Vcs.Push.Dialog.v2/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608235922041" />
     <state x="630" y="226" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607203413338">
       <screen x="63" y="0" width="1857" height="1200" />
     </state>
     <state x="630" y="226" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/63.0.1857.1200/1920.0.1920.1080@63.0.1857.1200" timestamp="1607203413338" />
-    <state x="777" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607359903225">
+    <state x="777" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608411951431">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="777" y="490" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606946643561" />
-    <state x="777" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1607359903225" />
-    <state x="491" y="229" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607352709619">
+    <state x="777" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608411951431" />
+    <state x="491" y="229" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608419717512">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="491" y="227" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606871109971" />
-    <state x="491" y="229" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1607352709619" />
+    <state x="491" y="229" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608419717512" />
     <state x="21" y="115" width="1915" height="1037" key="dock-window-1" timestamp="1608000869021">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="21" y="115" width="1915" height="1037" key="dock-window-1/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608000869021" />
-    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1606952519842">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="623" y="257" width="672" height="684" key="search.everywhere.popup" timestamp="1608411467273">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1920.1080@0.0.1920.1160" timestamp="1606952519842" />
+    <state x="623" y="257" width="672" height="684" key="search.everywhere.popup/0.0.1920.1170/1920.0.1920.1080@0.0.1920.1170" timestamp="1608411467273" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../ThaiJMP/estimation/moments/momcomp.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../ThaiJMP/projectsupport/hardcode/string_shared.py</url>
-          <line>353</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../ThaiJMP/parameters/paramset/combo_list_e_main.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

@@ -10,69 +10,6 @@ Gallery of Examples
 ===================
 
 
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we draw shock grids.">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_randgrid_thumb.svg
-     :alt: Draw Shock Grid
-
-     :ref:`sphx_glr_auto_examples_plot_randgrid.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_randgrid
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we generate PDFs in one location from tex files in possibly various other loca...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_pdfgen_thumb.svg
-     :alt: Generate PDFs and Clean
-
-     :ref:`sphx_glr_auto_examples_plot_pdfgen.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_pdfgen
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we generate a line plot, a density plot and a scatter plot.">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg
-     :alt: Generate Graphs using the Generic Graphing Tool
-
-     :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_graph_allpurpose
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
@@ -83,8 +20,8 @@ Gallery of Examples
 
 .. _amto_example:
 
-Data Structures
-~~~~~~~~~~~~~~~~~~~
+Data Type Examples
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -108,6 +45,97 @@ Data Structures
    :hidden:
 
    /auto_examples/amto/plot_amto_numeric_round
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="List and Dictionary Convertions">
+
+.. only:: html
+
+ .. figure:: /auto_examples/amto/images/thumb/sphx_glr_plot_lsdcconvert_thumb.svg
+     :alt: List and Dictionary Convertions
+
+     :ref:`sphx_glr_auto_examples_amto_plot_lsdcconvert.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/amto/plot_lsdcconvert
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_gen:
+
+.. _amto_example:
+
+Data Structures Examples
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we draw shock grids.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/gen/images/thumb/sphx_glr_plot_randgrid_thumb.svg
+     :alt: Draw Shock Grid
+
+     :ref:`sphx_glr_auto_examples_gen_plot_randgrid.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/gen/plot_randgrid
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_graph:
+
+.. _stats_example:
+
+Graph Examples
+~~~~~~~~~~~~~~~~~~~
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we generate a line plot, a density plot and a scatter plot.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg
+     :alt: Generate Graphs using the Generic Graphing Tool
+
+     :ref:`sphx_glr_auto_examples_graph_plot_graph_allpurpose.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/graph/plot_graph_allpurpose
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
@@ -118,7 +146,7 @@ Data Structures
 
 .. _stats_example:
 
-Statistics Examples
+Stats Examples
 ~~~~~~~~~~~~~~~~~~~
 
 
@@ -143,6 +171,41 @@ Statistics Examples
    :hidden:
 
    /auto_examples/stats/plot_markov_transprobcheck
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_util:
+
+.. _stats_example:
+
+Support Utilities Examples
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we generate PDFs in one location from tex files in possibly various other loca...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/util/images/thumb/sphx_glr_plot_pdfgen_thumb.svg
+     :alt: Generate PDFs and Clean
+
+     :ref:`sphx_glr_auto_examples_util_plot_pdfgen.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/util/plot_pdfgen
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

@@ -1,4 +1,4 @@
 .. _amto_example:
 
-Data Type Examples
+Data Structures Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~

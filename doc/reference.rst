@@ -37,6 +37,20 @@ Function to manipulate JSON Structures
   pyfan.amto.json.json
 
 
+List and Dict
+~~~~~~~~~~~~~~
+
+List and dictionary
+
+.. currentmodule:: pyfan
+
+.. autosummary::
+  :toctree: gen_modules
+  :template: module.rst
+
+  pyfan.amto.lsdc.lsdcconvert
+
+
 Numeric
 ~~~~~~~~
 

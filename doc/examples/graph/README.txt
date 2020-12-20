@@ -1,4 +1,4 @@
 .. _stats_example:
 
-Stats Examples
+Graph Examples
 ~~~~~~~~~~~~~~~~~~~

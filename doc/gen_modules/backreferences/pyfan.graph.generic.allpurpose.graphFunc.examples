@@ -9,10 +9,10 @@ Examples using ``pyfan.graph.generic.allpurpose.graphFunc``
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg
+ .. figure:: /auto_examples/graph/images/thumb/sphx_glr_plot_graph_allpurpose_thumb.svg
      :alt: Generate Graphs using the Generic Graphing Tool
 
-     :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py`
+     :ref:`sphx_glr_auto_examples_graph_plot_graph_allpurpose.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``pyfan.graph.generic.allpurpose.graphFunc``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_plot_graph_allpurpose.py`
+ * :ref:`sphx_glr_auto_examples_graph_plot_graph_allpurpose.py`

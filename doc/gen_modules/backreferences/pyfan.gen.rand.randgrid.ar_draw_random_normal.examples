@@ -9,10 +9,10 @@ Examples using ``pyfan.gen.rand.randgrid.ar_draw_random_normal``
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_randgrid_thumb.svg
+ .. figure:: /auto_examples/gen/images/thumb/sphx_glr_plot_randgrid_thumb.svg
      :alt: Draw Shock Grid
 
-     :ref:`sphx_glr_auto_examples_plot_randgrid.py`
+     :ref:`sphx_glr_auto_examples_gen_plot_randgrid.py`
 
 .. raw:: html
 
@@ -20,4 +20,4 @@ Examples using ``pyfan.gen.rand.randgrid.ar_draw_random_normal``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_plot_randgrid.py`
+ * :ref:`sphx_glr_auto_examples_gen_plot_randgrid.py`
